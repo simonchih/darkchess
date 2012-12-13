@@ -1,2 +1,2 @@
-Image source (XiangQi Wizard):
+Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory

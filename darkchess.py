@@ -23,6 +23,13 @@ image_chess_rn = 'Image/RN.gif'
 image_chess_rc = 'Image/RC.gif'
 image_chess_rp = 'Image/RP.gif'
 
+s_newgame = 'Sound/NEWGAME.WAV'
+s_capture = 'Sound/CAPTURE2.WAV'
+s_click   = 'Sound/CLICK.WAV'
+s_loss    = 'Sound/LOSS.WAV'
+s_move2   = 'Sound/MOVE2.WAV'
+s_win     = 'Sound/WIN.WAV'
+
 SCREEN_SIZE = (521, 313) 
 pygame.init()
 
@@ -46,6 +53,13 @@ chess_rn = pygame.image.load(image_chess_rn).convert()
 chess_rc = pygame.image.load(image_chess_rc).convert()
 chess_rp = pygame.image.load(image_chess_rp).convert()
 
+sound_new     = pygame.mixer.Sound(s_newgame)
+sound_capture = pygame.mixer.Sound(s_capture)
+sound_click   = pygame.mixer.Sound(s_click)
+sound_loss    = pygame.mixer.Sound(s_loss)
+sound_win     = pygame.mixer.Sound(s_win)
+sound_move    = pygame.mixer.Sound(s_move2)
+
 cstart_x = 34
 cstart_y = 51
 cstart_x2 = 260
@@ -62,6 +76,7 @@ my_ch = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chte
 chess_index = [0] * 32
 map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
+king_live = [1, 1]
 
 def index_to_chess_surface(index):
     if 0 <= index < 5:
@@ -286,7 +301,34 @@ def chess_ai():
         first = 0
     if turn_id == com_color:
         turn_id = 1 - turn_id
-                
+
+def move_score(org, dest):
+    global my_ch
+    global map
+    
+    (orgx, orgy) = org
+    (destx, desty) = dest
+
+def eating_value_to_score(value, king, owner_color):
+    opp_color = 1 - owner_color
+    if 1 == value:
+        if 1 == king[opp_color]:
+            return 40
+        else:
+            return 5
+    elif 2 == value:
+        return 80
+    elif 3 == value:
+        return 30
+    elif 4 == value:
+        return 40
+    elif 5 == value:
+        return 70
+    elif 6 == value:
+        return 80
+    elif 7 == value:
+        return 90
+    
 def main():
     global cstart_x
     global cstart_y
@@ -305,6 +347,7 @@ def main():
     selected_c = None
     first = 1
     move = 1
+    game_start = 1
     
     player_first = random.randint(0, 1)
     
@@ -323,6 +366,9 @@ def main():
             map[i][4+j] = (i, 4+j)
     
     while True:
+        if game_start:
+            sound_new.play()
+            game_start = 0
         screen.blit(background, (0,0))
         
         if 1 == move:
@@ -333,6 +379,7 @@ def main():
             if event.type == QUIT:
                 exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                sound_click.play()
                 for chr in my_ch:
                     for chc in chr:
                         ch_index = chc.click(pygame.mouse.get_pos())
@@ -351,6 +398,9 @@ def main():
                         if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
                             if map[pm[0]][pm[1]] != (-1, -1):
                                 my_ch[map[pm[0]][pm[1]][0]][map[pm[0]][pm[1]][1]].live = 0
+                                sound_capture.play()
+                            else:
+                                sound_move.play()
                             map[pm[0]][pm[1]] = map[selected_c.row][selected_c.col]
                             map[selected_c.row][selected_c.col] = (-1, -1)
                             selected_c.x = cor[pm[0]][pm[1]][0]
