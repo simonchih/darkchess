@@ -51,7 +51,11 @@ cstart_y = 51
 cstart_x2 = 260
 cstart_y2 = 51
 
+player_first = 0
+first = 1
 turn_id = 0
+player_color = 0
+com_color = 0
 
 chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back)
 my_ch = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
@@ -263,7 +267,26 @@ def mouse_position_to_block(mx, my, chess_back):
         for j in range(0, 4):
             if cstart_x2+j*chess_back.get_width() < mx < cstart_x2+(j+1)*chess_back.get_width() and cstart_y2+i*chess_back.get_height() < my < cstart_y2+(i+1)*chess_back.get_height():
                 return (i, 4+j)
+
+def chess_ai():
+    global turn_id
+    global first
+    global my_ch
+    global player_color
+    global com_color
+    global player_first
     
+    if 0 == player_first and  1 == first:
+        i = random.randint(0, 3) 
+        j = random.randint(0, 7) 
+        turn_id = my_ch[i][j].color
+        my_ch[i][j].back = 0
+        com_color = turn_id
+        player_color = 1 - com_color
+        first = 0
+    if turn_id == com_color:
+        turn_id = 1 - turn_id
+                
 def main():
     global cstart_x
     global cstart_y
@@ -271,13 +294,19 @@ def main():
     global cstart_y2
     global chess_index
     global turn_id
+    global player_color
+    global com_color
+    global player_first
     global my_ch
     global map
     global cor
+    global first
     
     selected_c = None
     first = 1
     move = 1
+    
+    player_first = random.randint(0, 1)
     
     chess_index = ini_random_chess(chess_index)
     for i in range(0, 4):
@@ -307,11 +336,13 @@ def main():
                 for chr in my_ch:
                     for chc in chr:
                         ch_index = chc.click(pygame.mouse.get_pos())
-                        if -1 == ch_index:
-                            selected_c = chc
-                        if 1 == first:
+                        if 1 == player_first and 1 == first:
                             turn_id = index_to_color(ch_index)
+                            player_color = turn_id
+                            com_color = 1 - player_color
                             first = 0
+                        elif -1 == ch_index and player_color == turn_id and chc.color == player_color:
+                            selected_c = chc
             elif event.type == pygame.MOUSEBUTTONUP:
                 if selected_c:
                     (mouseX, mouseY) = pygame.mouse.get_pos()
@@ -336,6 +367,8 @@ def main():
                     selected_c = None
                 else:
                     move = 1
+        
+        chess_ai()
         
         if selected_c:
             (mouseX, mouseY) = pygame.mouse.get_pos()
