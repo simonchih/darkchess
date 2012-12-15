@@ -366,10 +366,19 @@ def chess_ai():
                 dest = select_back_chess(map, my_ch)
                 print 'dest', dest
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-        elif score < 30:
+        elif org == dest:
+            print 'org == dest', org, dest
+        elif map[org[0]][org[1]] == (-1, -1):
+            print 'map org == (-1, -1)'
+        elif my_ch[map[org[0]][org[1]][0]][map[org[0]][org[1]][1]].color == player_color:
+            print 'p_color error'
+        elif score < 10:
             print 'ls30', 
-            dest = select_back_chess(map, my_ch)
-            my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+            if select_back_chess(map, my_ch) == (-1, -1):
+                map, my_ch = move(org, dest, map, my_ch)
+            else:
+                dest = select_back_chess(map, my_ch)
+                my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
         else:
             print 'el'
             print 'org=', org, 'dest=', dest
@@ -469,7 +478,7 @@ def move(org, dest, a_map, a_ch):
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        a_map[desti][destj] = a_map[orgi][orgj]
+        a_map[desti][destj] = list(a_map[orgi][orgj])
         a_map[orgi][orgj] = (-1, -1)
     else:
         dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
@@ -477,7 +486,7 @@ def move(org, dest, a_map, a_ch):
         dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        a_map[desti][destj] = a_map[orgi][orgj]
+        a_map[desti][destj] = list(a_map[orgi][orgj])
         a_map[orgi][orgj] = (-1, -1)
     
     #print 'af_a_map[desti][destj]', a_map[desti][destj]
@@ -495,7 +504,7 @@ def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
     a_map, a_ch = all_chess_move(a_map, a_ch)
     for chr in a_ch:
         for ch in chr:
-            if ch.color == owner_color:
+            if ch.color == owner_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     score = sc + move_score((ch.row, ch.col), pm, a_ch, a_map)
                     m.append([(ch.row, ch.col), pm, score])
@@ -511,7 +520,7 @@ def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
         af_map, af_ch = all_chess_move(af_map, af_ch)
         for chr in af_ch:
             for ch in chr:
-                if ch.color == opp_color:
+                if ch.color == opp_color and 1 == ch.live:
                     for pm in ch.possible_move:
                         score -= move_score((ch.row, ch.col), pm, af_ch, af_map)
                         mf.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
@@ -520,15 +529,25 @@ def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
         af2_map = copy.deepcopy(a_map)
         af2_ch  = copy.deepcopy(a_ch)
         sorted(m, key=lambda s: s[2])
-        print 'm', m
         top_map = [0]
         top_chess = [0]
         top_map[0] = af2_map
         top_chess[0] = af2_ch
-        print 's=', score
         if i == (-1, -1):
+            if map[m[0][0][0]][m[0][0][1]] == (-1, -1):
+                print 'map temp', m[0][0][0], m[0][0][1]
+                print crash
+            elif my_ch[map[m[0][0][0]][m[0][0][1]][0]][map[m[0][0][0]][m[0][0][1]][1]].color == player_color:
+                print 'map temp', m[0][0][0], m[0][0][1]
+                print crash
             return [[m[0][0], m[0][1], af2_map, af2_ch, m[0][2]]]
         else:
+            if map[i[0]][i[1]] == (-1, -1):
+                print 'map2 temp', i, j
+                print crash
+            elif my_ch[map[i[0]][i[1]][0]][map[i[0]][i[1]][1]].color == player_color:
+                print 'map2 temp', i, j
+                print crash
             return [[i, j, af2_map, af2_ch, m[0][2]]]
     
     sorted(mf, key=lambda ms: ms[4])   
@@ -548,10 +567,26 @@ def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
         top_map[ii], top_chess[ii] = move(mf[ii][0], mf[ii][1], a2_map, a2_ch)
         top_map[ii], top_chess[ii] = move(mf[ii][2], mf[ii][3], top_map[ii], top_chess[ii])
         if i == (-1, -1):
+            if map[mf[ii][0][0]][mf[ii][0][1]] == (-1, -1):
+                print 'map3 temp', mf[ii][0][0], mf[ii][0][1]
+                time.sleep(10)
+                #print crash
+            elif my_ch[map[mf[ii][0][0]][mf[ii][0][1]][0]][map[mf[ii][0][0]][mf[ii][0][1]][1]].color == player_color:
+                print 'map3 temp', mf[ii][0][0], mf[ii][0][1]
+                time.sleep(10)
+                #print crash
             top_score.append([mf[ii][0], mf[ii][1], top_map[ii], top_chess[ii], mf[ii][4]])
         else:
-             top_score.append([i, j, top_map[ii], top_chess[ii], mf[ii][4]])
-        
+            if map[i[0]][i[1]] == (-1, -1):
+                print 'map4 temp', i, j
+                time.sleep(10)
+                #print crash
+            elif my_ch[map[i[0]][i[1]][0]][map[i[0]][i[1]][1]].color == player_color:
+                print 'map4 temp', i, j
+                time.sleep(10)
+                #print crash
+            top_score.append([i, j, top_map[ii], top_chess[ii], mf[ii][4]])
+    
     return top_score
         
 def deep_think(a_map, a_ch):
