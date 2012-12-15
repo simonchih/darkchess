@@ -1,4 +1,4 @@
-import random, os
+﻿import random, os
 import math
 import time 
 import pygame
@@ -65,6 +65,8 @@ cstart_x = 34
 cstart_y = 51
 cstart_x2 = 260
 cstart_y2 = 51
+text_x = 237
+text_y = 16
 
 player_win = 0
 player_first = 0
@@ -678,6 +680,35 @@ def eating_value_to_score(value, king, owner_color):
         return 80
     elif 7 == value:
         return 90
+
+def display_font():
+    
+    if 1 == first:
+        if 1 == player_first:
+            up = u"玩家先"
+            screen.blit(write(up, (150, 150, 150)), (text_x, text_y))
+        else:
+            uc = u"電腦先"
+            screen.blit(write(uc, (150, 150, 150)), (text_x, text_y))
+    elif turn_id == player_color:
+        up = u"玩家下"
+        if 1 == player_color:
+            screen.blit(write(up, (255, 0, 0)), (text_x, text_y))
+        else:
+            screen.blit(write(up, (0, 0, 0)), (text_x, text_y))
+    else:
+        uc = u"電腦下"
+        if 1 == com_color:
+            screen.blit(write(uc, (255, 0, 0)), (text_x, text_y))
+        else:
+            screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))       
+        
+def write(msg="pygame is cool", color= (0,0,0)):    
+    #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
+    myfont = pygame.font.Font("wqy-zenhei.ttf",14)
+    mytext = myfont.render(msg, True, color)
+    mytext = mytext.convert_alpha()
+    return mytext 
         
 def main():
     global cstart_x
@@ -724,9 +755,11 @@ def main():
                 map[i][4+j] = (i, 4+j)
     
         while 0 == player_win:
+        
             if game_start:
                 sound_new.play()
                 game_start = 0
+
             screen.blit(background, (0,0))
             
             if 1 == moving:
@@ -794,7 +827,7 @@ def main():
                 selected_c.angle = 0.5*math.pi + math.atan2(dy, dx)
                 selected_c.speed = math.hypot(dx, dy) * 0.1
             
-            
+            display_font()
             for cr in my_ch:
                 for c in cr:
                     c.draw(screen, chess_back)
