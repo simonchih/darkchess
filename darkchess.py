@@ -365,6 +365,7 @@ def chess_ai():
                 print 'select_before'
                 dest = select_back_chess(map, my_ch)
                 print 'dest', dest
+                sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
         elif org == dest:
             print 'org == dest', org, dest
@@ -372,18 +373,20 @@ def chess_ai():
             print 'map org == (-1, -1)'
         elif my_ch[map[org[0]][org[1]][0]][map[org[0]][org[1]][1]].color == player_color:
             print 'p_color error'
-        elif score < 10:
-            print 'ls30', 
+        elif score < 0:
+            print 'ls 0'  
             if select_back_chess(map, my_ch) == (-1, -1):
-                map, my_ch = move(org, dest, map, my_ch)
+                map, my_ch = move_s(org, dest, map, my_ch)
             else:
                 dest = select_back_chess(map, my_ch)
+                sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                print 'map  select', dest 
         else:
             print 'el'
             print 'org=', org, 'dest=', dest
             print 'com_color', com_color
-            map, my_ch = move(org, dest, map, my_ch)
+            map, my_ch = move_s(org, dest, map, my_ch)
    
     if turn_id == com_color:
         turn_id = 1 - turn_id
@@ -464,12 +467,42 @@ def move_score(org, dest, my_chess, map):
         print 'org_color', my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color
         return eating_value_to_score(my_chess[map[desty][destx][0]][map[desty][destx][1]].value, king_live, my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color)
 
-def move(org, dest, a_map, a_ch):
+def move_s(org, dest, a_map, a_ch):
     global cor
     (orgi, orgj) = org
     (desti, destj) = dest
     
     print 'move', 'org', org, 'dest', dest
+    
+    #print 'b_a_map[desti][destj]', a_map[desti][destj]
+    #print 'b_map[desti][destj]', map[desti][destj]
+    
+    if (-1, -1) == a_map[desti][destj]:
+        org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
+        (org_ch.row, org_ch.col) = (desti, destj)
+        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        a_map[desti][destj] = list(a_map[orgi][orgj])
+        a_map[orgi][orgj] = (-1, -1)
+        sound_move.play()
+    else:
+        dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
+        org_ch  = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
+        dest_ch.live = 0
+        (org_ch.row, org_ch.col) = (desti, destj)
+        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        a_map[desti][destj] = list(a_map[orgi][orgj])
+        a_map[orgi][orgj] = (-1, -1)
+        sound_capture.play()
+    
+    #print 'af_a_map[desti][destj]', a_map[desti][destj]
+    #print 'af_map[desti][destj]', map[desti][destj]
+    
+    return a_map, a_ch    
+        
+def move(org, dest, a_map, a_ch):
+    global cor
+    (orgi, orgj) = org
+    (desti, destj) = dest
     
     #print 'b_a_map[desti][destj]', a_map[desti][destj]
     #print 'b_map[desti][destj]', map[desti][destj]
