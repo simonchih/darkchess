@@ -482,7 +482,7 @@ def move_s(org, dest, a_map, a_ch):
     if (-1, -1) == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
-        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
         a_map[desti][destj] = list(a_map[orgi][orgj])
         a_map[orgi][orgj] = (-1, -1)
         sound_move.play()
@@ -491,7 +491,7 @@ def move_s(org, dest, a_map, a_ch):
         org_ch  = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
-        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
         a_map[desti][destj] = list(a_map[orgi][orgj])
         a_map[orgi][orgj] = (-1, -1)
         sound_capture.play()
@@ -735,6 +735,7 @@ def main():
         com_color = 1
         first = 1
         moving = 1
+        com_mv = 0
         game_start = 1
         chess_num = [16, 16]
         
@@ -831,6 +832,19 @@ def main():
             for cr in my_ch:
                 for c in cr:
                     c.draw(screen, chess_back)
+            
+            com_mv = 0
+            for cr in my_ch:
+                for c in cr:
+                    if c.x != cor[c.row][c.col][0]:
+                        c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
+                        com_mv = 1
+                    if c.y != cor[c.row][c.col][1]:
+                        c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
+                        com_mv = 1
+                    if 1 == com_mv:
+                        c.draw(screen, chess_back)
+                        com_mv = 0
             
             chess_ai()
             
