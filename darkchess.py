@@ -2,6 +2,7 @@ import random, os
 import math
 import time 
 import pygame
+import copy
 from pygame.locals import *
 from sys import exit
 from chess import *
@@ -65,15 +66,16 @@ cstart_y = 51
 cstart_x2 = 260
 cstart_y2 = 51
 
+player_win = 0
 player_first = 0
 first = 1
 turn_id = 0
 player_color = 0
-com_color = 0
+com_color = 1
 max_value = 0
 
 top_number = 10
-deep_level = 9
+deep_level = 1
 
 top_chess = []
 top_map = []
@@ -84,6 +86,7 @@ map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 king_live = [1, 1]
+chess_num = [16, 16]
 
 def index_to_chess_surface(index):
     if 0 <= index < 5:
@@ -289,13 +292,59 @@ def mouse_position_to_block(mx, my, chess_back):
             if cstart_x2+j*chess_back.get_width() < mx < cstart_x2+(j+1)*chess_back.get_width() and cstart_y2+i*chess_back.get_height() < my < cstart_y2+(i+1)*chess_back.get_height():
                 return (i, 4+j)
 
+def select_back_chess(map, my_ch):
+    back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+    if 1 == check_back_exist(map, my_ch, back_mark):
+        return random_select_back_chess(map, my_ch, back_mark)
+    else:
+        return (-1, -1)
+
+def check_back_exist(map, my_ch, bm):
+    back_exist = 0
+    for i in range(0, 4):
+        for j in range(0, 8):
+            if map[i][j] != (-1, -1) and bm[i][j] != 1:
+                if 1 == my_ch[map[i][j][0]][map[i][j][1]].back:
+                    back_exist = 1
+    return back_exist
+    
+def random_select_back_chess(map, my_ch, bm):    
+    i = random.randint(0, 31)
+    ii = 0
+    
+    while i != -1:
+        y = ii/8
+        x = ii%8
+        if map[y][x] == (-1, -1) or bm[y][x] == 1:
+            ii += 1
+            if ii > 31:
+                ii = ii%32
+        elif 1 == my_ch[map[y][x][0]][map[y][x][1]].back:
+            i -= 1
+            if i < 0:
+                break
+            ii += 1
+            if ii > 31:
+                ii = ii%32
+        else:
+            ii += 1
+            if ii > 31:
+                ii = ii%32
+    
+    (y, x) = (ii/8, ii%8)
+    return (y, x)
+                
 def chess_ai():
     global turn_id
     global first
     global my_ch
+    global map
     global player_color
     global com_color
     global player_first
+    global player_win
+    
+    pygame.display.update()
     
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
@@ -305,21 +354,44 @@ def chess_ai():
         com_color = turn_id
         player_color = 1 - com_color
         first = 0
+    elif turn_id == com_color and 0 == first:
+        org, dest, score = deep_think(map, my_ch)
+        print 'org', org, 'score', score
+        if org == (-1, -1):
+            if select_back_chess(map, my_ch) == (-1, -1):
+                print 'player_win'
+                player_win = 1
+            else:
+                print 'select_before'
+                dest = select_back_chess(map, my_ch)
+                print 'dest', dest
+                my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+        elif score < 30:
+            print 'ls30', 
+            dest = select_back_chess(map, my_ch)
+            my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+        else:
+            print 'el'
+            print 'org=', org, 'dest=', dest
+            print 'com_color', com_color
+            map, my_ch = move(org, dest, map, my_ch)
+   
     if turn_id == com_color:
         turn_id = 1 - turn_id
+        
 
 def move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j):
     global max_value
     global mark
     
-    if 1 == mark[i][j]:
+    if i == -1 or j == -1 or i == 4 or j == 8:
+        return
+    elif 1 == mark[i][j]:
         return
     
     mark[i][j] = 1
     
-    if i == -1 or j == -1 or i == 4 or j == 8:
-        return
-    elif map[i][j] != (-1, -1): 
+    if map[i][j] != (-1, -1): 
         if 1 == my_chess[map[i][j][0]][map[i][j][1]].back:
             return
         elif opp_color == my_chess[map[i][j][0]][map[i][j][1]].color:
@@ -344,7 +416,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i+1, j)
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i-1, j)
-    elif orgy == desty and orgx-1 == dextx:
+    elif orgy == desty and orgx-1 == destx:
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j-1)
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i+1, j)
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i-1, j)
@@ -379,12 +451,19 @@ def move_score(org, dest, my_chess, map):
             return max_value
     
     elif 1 == my_chess[map[desty][destx][0]][map[desty][destx][1]].live:
+        print 'eat', eating_value_to_score(my_chess[map[desty][destx][0]][map[desty][destx][1]].value, king_live, my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color)
+        print 'org_color', my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color
         return eating_value_to_score(my_chess[map[desty][destx][0]][map[desty][destx][1]].value, king_live, my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color)
 
 def move(org, dest, a_map, a_ch):
     global cor
     (orgi, orgj) = org
     (desti, destj) = dest
+    
+    print 'move', 'org', org, 'dest', dest
+    
+    #print 'b_a_map[desti][destj]', a_map[desti][destj]
+    #print 'b_map[desti][destj]', map[desti][destj]
     
     if (-1, -1) == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
@@ -400,11 +479,13 @@ def move(org, dest, a_map, a_ch):
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
         a_map[desti][destj] = a_map[orgi][orgj]
         a_map[orgi][orgj] = (-1, -1)
-        
+    
+    #print 'af_a_map[desti][destj]', a_map[desti][destj]
+    #print 'af_map[desti][destj]', map[desti][destj]
+    
     return a_map, a_ch
         
-        
-def one_turn(a_map, a_ch, owner_color):
+def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
     global top_number
     global top_map
     global top_chess
@@ -415,33 +496,61 @@ def one_turn(a_map, a_ch, owner_color):
     for chr in a_ch:
         for ch in chr:
             if ch.color == owner_color:
-                score = move_score((ch.row, ch.col), ch.possible_move, a_ch, a_map)
-                m.append([(ch.row, ch.col), ch.possible_move, score])
+                for pm in ch.possible_move:
+                    score = sc + move_score((ch.row, ch.col), pm, a_ch, a_map)
+                    m.append([(ch.row, ch.col), pm, score])
     
     mf = []
     opp_color = 1 - owner_color
     
     for mm in m:
-        af_map = a_map
-        af_ch  = a_ch
+        af_map = copy.deepcopy(a_map)
+        af_ch  = copy.deepcopy(a_ch)
         af_map, af_ch = move(mm[0], mm[1], af_map, af_ch)
         score = mm[2]
+        af_map, af_ch = all_chess_move(af_map, af_ch)
         for chr in af_ch:
             for ch in chr:
                 if ch.color == opp_color:
-                    score -= move_score((ch.row, ch.col), ch.possible_move, af_ch, af_map)
-                    mf.append([mm[0], mm[1], (ch.row, ch.col), ch.possible_move, score])
+                    for pm in ch.possible_move:
+                        score -= move_score((ch.row, ch.col), pm, af_ch, af_map)
+                        mf.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
+    if not mf and m:
+        af2_map = copy.deepcopy(a_map)
+        af2_ch  = copy.deepcopy(a_ch)
+        sorted(m, key=lambda s: s[2])
+        print 'm', m
+        top_map = [0]
+        top_chess = [0]
+        top_map[0] = af2_map
+        top_chess[0] = af2_ch
+        print 's=', score
+        if i == (-1, -1):
+            return [[m[0][0], m[0][1], af2_map, af2_ch, m[0][2]]]
+        else:
+            return [[i, j, af2_map, af2_ch, m[0][2]]]
+    
     sorted(mf, key=lambda ms: ms[4])   
+    #print 'mf', mf
     
-    top_map = [0] * top_number
-    top_chess = [0] * top_number
+    num = top_number if top_number <= len(mf) else len(mf)
     
-    top_score = []
-    for ii in range(0, top_number):
-        top_map[ii], top_chess[ii] = move(mf[0], mf[1], a_map, a_ch)
-        top_map[ii], top_chess[ii] = move(mf[2], mf[3], top_map[ii], top_chess[ii])
-        top_score.append([mf[0], mf[1], top_map[ii], top_chess[ii], mf[4]])
+    top_map = [0] * num
+    top_chess = [0] * num
+    
+    top_score = []    
+    
+    for ii in range(0, num):
+        a2_map = copy.deepcopy(a_map)
+        a2_ch = copy.deepcopy(a_ch)
+        print 'ii move'
+        top_map[ii], top_chess[ii] = move(mf[ii][0], mf[ii][1], a2_map, a2_ch)
+        top_map[ii], top_chess[ii] = move(mf[ii][2], mf[ii][3], top_map[ii], top_chess[ii])
+        if i == (-1, -1):
+            top_score.append([mf[ii][0], mf[ii][1], top_map[ii], top_chess[ii], mf[ii][4]])
+        else:
+             top_score.append([i, j, top_map[ii], top_chess[ii], mf[ii][4]])
         
     return top_score
         
@@ -450,23 +559,37 @@ def deep_think(a_map, a_ch):
     global deep_level
     global top_number
     
-    max_top_score = []
-    ts = one_turn(a_map, a_ch, com_color)
+    ts = copy.deepcopy(one_turn(a_map, a_ch, com_color, 0))
     t_map = top_map
     t_chess = top_chess
+    if ts:
+        score = ts[0][4]
+    else:
+        return (-1, -1), (-1, -1), -1
     
-    max_ts = [0] * top_number
-    for level in range(0, deep_level):        
-        for ii in range(0, top_number):
-            max_ts[ii] = one_turn(t_map[ii], t_chess[ii], com_color) 
+    tn = top_number if top_number <= len(ts) else len(ts)
+    backup_top_score = ts
+    
+    for level in range(0, deep_level):
+        max_top_score = []
+        max_ts = [0] * tn
+        for ii in range(0, tn):
+            max_ts[ii] = copy.deepcopy(one_turn(t_map[ii], t_chess[ii], com_color, score, backup_top_score[ii][0], backup_top_score[ii][1]))
             max_top_score.extend(max_ts[ii])
         sorted(max_top_score, key=lambda s: s[4])
-        t_map = [0] * top_number
-        t_chess = [0] * top_number
-        for ii in range(0, top_number):
+        tn = top_number if top_number <= len(max_top_score) else len(max_top_score)
+        t_map = [0] * tn
+        t_chess = [0] * tn
+        backup_top_score = copy.deepcopy(max_top_score)
+        for ii in range(0, tn):
             (t_map[ii], t_chess[ii]) = (max_top_score[ii][2], max_top_score[ii][3])
+        if max_top_score:
+            score = max_top_score[0][4]
         
-        
+    if max_top_score:
+        return max_top_score[0][0], max_top_score[0][1], max_top_score[0][4]
+    else:
+        return (-1, -1), (-1, -1), -1
     
 def eating_value_to_score(value, king, owner_color):
     opp_color = 1 - owner_color
@@ -476,7 +599,7 @@ def eating_value_to_score(value, king, owner_color):
         else:
             return 5
     elif 2 == value:
-        return 80
+        return 70
     elif 3 == value:
         return 30
     elif 4 == value:
@@ -487,7 +610,7 @@ def eating_value_to_score(value, king, owner_color):
         return 80
     elif 7 == value:
         return 90
-    
+        
 def main():
     global cstart_x
     global cstart_y
@@ -502,103 +625,135 @@ def main():
     global map
     global cor
     global first
-    
-    selected_c = None
-    first = 1
-    move = 1
-    game_start = 1
-    
-    player_first = random.randint(0, 1)
-    
-    chess_index = ini_random_chess(chess_index)
-    for i in range(0, 4):
-        for j in range(0, 4):
-            ch = chess(chess_index[8*i+j],index_to_color(chess_index[8*i+j]), index_to_chess_value(chess_index[8*i+j]), (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+j]))
-            my_ch[i][j] = ch
-            cor[i][j] = (ch.x, ch.y)
-            map[i][j] = (i, j)
-    for i in range(0, 4):
-        for j in range(0, 4):
-            ch = chess(chess_index[8*i+4+j],index_to_color(chess_index[8*i+4+j]), index_to_chess_value(chess_index[8*i+4+j]), (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+4+j]))
-            my_ch[i][4+j] = ch
-            cor[i][4+j] = (ch.x, ch.y)
-            map[i][4+j] = (i, 4+j)
+    global player_win
+    global chess_num
     
     while True:
-        if game_start:
-            sound_new.play()
-            game_start = 0
-        screen.blit(background, (0,0))
+        selected_c = None
+        player_win = 0
+        turn_id = 0
+        player_color = 0
+        com_color = 1
+        first = 1
+        moving = 1
+        game_start = 1
+        chess_num = [16, 16]
         
-        if 1 == move:
-            map, my_ch = all_chess_move(map, my_ch)
-            move = 0
+        player_first = random.randint(0, 1)
         
-        for event in pygame.event.get():
-            if event.type == QUIT:
-                exit()
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                sound_click.play()
-                for chr in my_ch:
-                    for chc in chr:
-                        ch_index = chc.click(pygame.mouse.get_pos())
-                        if ch_index:                       
-                            if 1 == player_first and 1 == first:                            
-                                turn_id = index_to_color(ch_index)
-                                player_color = turn_id
-                                com_color = 1 - player_color
-                                first = 0
-                            elif -1 == ch_index and player_color == turn_id and chc.color == player_color:
-                                selected_c = chc
-            elif event.type == pygame.MOUSEBUTTONUP:
-                if selected_c:
-                    (mouseX, mouseY) = pygame.mouse.get_pos()
-                    move = 0
-                    for pm in selected_c.possible_move:
-                        if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
-                            if map[pm[0]][pm[1]] != (-1, -1):
-                                my_ch[map[pm[0]][pm[1]][0]][map[pm[0]][pm[1]][1]].live = 0
-                                sound_capture.play()
-                            else:
-                                sound_move.play()
-                            map[pm[0]][pm[1]] = map[selected_c.row][selected_c.col]
-                            map[selected_c.row][selected_c.col] = (-1, -1)
-                            selected_c.x = cor[pm[0]][pm[1]][0]
-                            selected_c.y = cor[pm[0]][pm[1]][1]
-                            selected_c.row = pm[0]
-                            selected_c.col = pm[1]
-                            move = 1
-                            break
+        chess_index = ini_random_chess(chess_index)
+        for i in range(0, 4):
+            for j in range(0, 4):
+                ch = chess(chess_index[8*i+j],index_to_color(chess_index[8*i+j]), index_to_chess_value(chess_index[8*i+j]), (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+j]))
+                my_ch[i][j] = ch
+                cor[i][j] = (ch.x, ch.y)
+                map[i][j] = (i, j)
+        for i in range(0, 4):
+            for j in range(0, 4):
+                ch = chess(chess_index[8*i+4+j],index_to_color(chess_index[8*i+4+j]), index_to_chess_value(chess_index[8*i+4+j]), (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+4+j]))
+                my_ch[i][4+j] = ch
+                cor[i][4+j] = (ch.x, ch.y)
+                map[i][4+j] = (i, 4+j)
+    
+        while 0 == player_win:
+            if game_start:
+                sound_new.play()
+                game_start = 0
+            screen.blit(background, (0,0))
+            
+            if 1 == moving:
+                map, my_ch = all_chess_move(map, my_ch)
+                moving = 0
+            
+            if 0 == player_first and 1 == first:
+                player_color = 1
+            
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
+                    sound_click.play()
+                    for chr in my_ch:
+                        for chc in chr:
+                            ch_index = chc.click(pygame.mouse.get_pos())
+                            if ch_index:                       
+                                if 1 == player_first and 1 == first:                            
+                                    turn_id = index_to_color(ch_index)
+                                    player_color = turn_id
+                                    com_color = 1 - player_color
+                                    first = 0
+                                    turn_id = 1 - turn_id
+                                elif -1 == ch_index and chc.color == player_color:
+                                    selected_c = chc
+                                elif ch_index != -1:
+                                    turn_id = 1 - turn_id
+                elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
+                    if selected_c:
+                        (mouseX, mouseY) = pygame.mouse.get_pos()
+                        moving = 0
+                        for pm in selected_c.possible_move:
+                            if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
+                                if map[pm[0]][pm[1]] != (-1, -1):
+                                    my_ch[map[pm[0]][pm[1]][0]][map[pm[0]][pm[1]][1]].live = 0
+                                    chess_num[my_ch[map[pm[0]][pm[1]][0]][map[pm[0]][pm[1]][1]].color] -= 1
+                                    sound_capture.play()
+                                else:
+                                    sound_move.play()
+                                map[pm[0]][pm[1]] = map[selected_c.row][selected_c.col]
+                                map[selected_c.row][selected_c.col] = (-1, -1)
+                                selected_c.x = cor[pm[0]][pm[1]][0]
+                                selected_c.y = cor[pm[0]][pm[1]][1]
+                                selected_c.row = pm[0]
+                                selected_c.col = pm[1]
+                                moving = 1
+                                turn_id = 1 - turn_id
+                                break
+                        
+                        if 0 == moving:
+                           (selected_c.x, selected_c.y) = cor[selected_c.row][selected_c.col] 
                     
-                    if 0 == move:
-                       (selected_c.x, selected_c.y) = cor[selected_c.row][selected_c.col] 
-                
-                    selected_c.speed = 0
-                    selected_c = None
-                else:
-                    move = 1
-        
-        chess_ai()
-        
-        if selected_c:
-            (mouseX, mouseY) = pygame.mouse.get_pos()
-            dx = mouseX - selected_c.x
-            dy = mouseY - selected_c.y
-            dx -= selected_c.size[0]/2
-            dy -= selected_c.size[1]/2
-            selected_c.angle = 0.5*math.pi + math.atan2(dy, dx)
-            selected_c.speed = math.hypot(dx, dy) * 0.1
-        
-        
-        for cr in my_ch:
-            for c in cr:
-                c.draw(screen, chess_back)
-        
-        if selected_c:
-            selected_c.move()
-            selected_c.draw(screen, chess_back)
-        
-        pygame.display.update()
+                        selected_c.speed = 0
+                        selected_c = None
+                    else:
+                        moving = 1
+                        
+            if selected_c:
+                (mouseX, mouseY) = pygame.mouse.get_pos()
+                dx = mouseX - selected_c.x
+                dy = mouseY - selected_c.y
+                dx -= selected_c.size[0]/2
+                dy -= selected_c.size[1]/2
+                selected_c.angle = 0.5*math.pi + math.atan2(dy, dx)
+                selected_c.speed = math.hypot(dx, dy) * 0.1
+            
+            
+            for cr in my_ch:
+                for c in cr:
+                    c.draw(screen, chess_back)
+            
+            chess_ai()
+            
+            if selected_c:
+                selected_c.move()
+                selected_c.draw(screen, chess_back)
+            
+            if 0 == chess_num[player_color]:
+                player_win = -1
+            elif 0 == chess_num[com_color]:
+                player_win = 1
+            
+            if 1 == player_win:
+                sound_win.play()
+                pygame.display.update()
+                time.sleep(5)
+            elif -1 == player_win:
+                sound_loss.play()
+                pygame.display.update()
+                time.sleep(5)
+            
+            pygame.display.update()
+            
+    exit()
 
 if __name__ == "__main__":
     main()
