@@ -373,6 +373,13 @@ def chess_ai():
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1
+        elif score <= 0:
+            map, my_ch = move_s(org, dest, map, my_ch)
+        elif select_back_chess(map, my_ch):
+            dest = select_back_chess(map, my_ch)
+            sound_click.play()
+            my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+            back_num -= 1
         else:
             map, my_ch = move_s(org, dest, map, my_ch)
    
@@ -538,37 +545,68 @@ def com_think(a_map, a_ch):
                         dest = pm   
     if m:
         mf = []
+        brk = 0
         for mm in m:
-            m2 = []
-            af_map = copy.deepcopy(a_map)
-            af_ch = copy.deepcopy(a_ch)
-            #print 'mm[0]', mm[0], 'mm[1]', mm[1]
-            #print 'before map', af_map
-            af_map, af_ch = move(mm[0], mm[1], af_map, af_ch)
-            af_map, af_ch = all_chess_move(af_map, af_ch)
-            #print 'af map', af_map
-            sc = mm[2]
-            #print 'mm', mm
-            if 1 == player_cant_move(af_ch):
-                return mm[0], mm[1], mm[2]
-                
-            for chr in af_ch:
-                for ch in chr:
-                    if ch.color == player_color and 1 == ch.live:
-                        for pm in ch.possible_move:
-                            score = sc + move_score((ch.row, ch.col), pm, af_ch, af_map)
-                            m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
-            if m2:
+            org2, dest2, score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2])
+            if org2:
+                return org2, dest2, score2
+            elif m2:
                 m2 = sorted(m2, key=lambda s:s[4])
+            else:
+                brk = 1
+            if 0 == brk:
+                org2, dest2, score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4])
+                if org2:
+                    return org2, dest2, score2
+                elif m3:
+                    m3 = sorted(m3, key=lambda s:s[4])
+                else:
+                    brk = 1
+            else:
+                mf.append((mm[0], mm[1], mm[2]))
+                brk = 2
+            if 0 == brk:
+                org2, dest2, score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4])
+                if org2:
+                    return org2, dest2, score2
+                elif m4:
+                    m4 = sorted(m4, key=lambda s:s[4])
+                    mf.append((mm[0], mm[1], m4[-1][4]))
+                else:
+                    mf.append((mm[0], mm[1], m3[0][4]))
+            elif 1 == brk:
                 mf.append((mm[0], mm[1], m2[-1][4]))
         if mf:
-            mf = sorted(mf, key=lambda s:s[2])
+            mf = sorted(mf, key=lambda s:s[2])           
             return mf[0][0], mf[0][1], mf[0][2]
         else:
             return org, dest, max_score
     else:
         return None, None, None     
-    
+
+def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc):
+    m2 = []
+    af_map = copy.deepcopy(a_map)
+    af_ch = copy.deepcopy(a_ch)
+    af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+    af_map, af_ch = all_chess_move(af_map, af_ch)
+    #print 'mm', mm
+    if 1 == player_cant_move(af_ch):
+        return mm[0], mm[1], mm[2], None, None, None
+        
+    for chr in af_ch:
+        for ch in chr:
+            if ch.color == owner_color and 1 == ch.live:
+                for pm in ch.possible_move:
+                    if owner_color == player_color:
+                        score = sc + move_score((ch.row, ch.col), pm, af_ch, af_map)
+                    else:
+                        score = sc - move_score((ch.row, ch.col), pm, af_ch, af_map)
+                    m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
+                    
+    return None, None, None, m2, af_map, af_ch
+
+        
 def eating_value_to_score(value, king, owner_color):
     opp_color = 1 - owner_color
     if 1 == value:
