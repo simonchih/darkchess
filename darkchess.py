@@ -71,6 +71,7 @@ text_y = 16
 player_win = 0
 player_first = 0
 first = 1
+# turn_id, 0:black, 1:red, 2:process_moving
 turn_id = 0
 player_color = 0
 com_color = 1
@@ -184,77 +185,77 @@ def findC(ch, x, y):
                 return p
     return None
 
-def all_chess_move(map, my_chess):
-    for rowm in map:
+def all_chess_move(a_map, my_chess):
+    for rowm in a_map:
         for m in rowm:
             if m!= (-1, -1) and 0 == my_chess[m[0]][m[1]].back:
-                my_chess[m[0]][m[1]].possible_move, map, my_chess= collect_possible_move(my_chess[m[0]][m[1]].row, my_chess[m[0]][m[1]].col, map, my_chess)
-    return map, my_chess
+                my_chess[m[0]][m[1]].possible_move, a_map, my_chess= collect_possible_move(my_chess[m[0]][m[1]].row, my_chess[m[0]][m[1]].col, a_map, my_chess)
+    return a_map, my_chess
     
-def collect_possible_move(i, j, map, my_ch):
+def collect_possible_move(i, j, a_map, my_chess):
     
     pm = []
     ncor = near(i,j)
     for nc in ncor:
-        if (-1, -1) == map[nc[0]][nc[1]]:
+        if (-1, -1) == a_map[nc[0]][nc[1]]:
             pm.append(nc)
-        elif my_ch[map[nc[0]][nc[1]][0]][map[nc[0]][nc[1]][1]].color != my_ch[map[i][j][0]][map[i][j][1]].color and 0 == my_ch[map[nc[0]][nc[1]][0]][map[nc[0]][nc[1]][1]].back:
-            if 1 == my_ch[map[i][j][0]][map[i][j][1]].value and 7 == my_ch[map[nc[0]][nc[1]][0]][map[nc[0]][nc[1]][1]].value:
+        elif my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].color != my_chess[a_map[i][j][0]][a_map[i][j][1]].color and 0 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].back:
+            if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value and 7 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].value:
                 pm.append(nc)
-            elif 7 == my_ch[map[i][j][0]][map[i][j][1]].value and 1 == my_ch[map[nc[0]][nc[1]][0]][map[nc[0]][nc[1]][1]].value:
+            elif 7 == my_chess[map[i][j][0]][a_map[i][j][1]].value and 1 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].value:
                 pass
-            elif my_ch[map[i][j][0]][map[i][j][1]].value != 2 and my_ch[map[i][j][0]][map[i][j][1]].value >= my_ch[map[nc[0]][nc[1]][0]][map[nc[0]][nc[1]][1]].value:
+            elif my_chess[a_map[i][j][0]][a_map[i][j][1]].value != 2 and my_chess[a_map[i][j][0]][a_map[i][j][1]].value >= my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].value:
                 pm.append(nc)
-    if 2 == my_ch[map[i][j][0]][map[i][j][1]].value:
+    if 2 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
         jump = 0
         for ii in range(i-1, -1, -1):
             if 1 == jump:
-                if map[ii][j] == (-1, -1):
+                if a_map[ii][j] == (-1, -1):
                     pass
-                elif 1 == my_ch[map[ii][j][0]][map[ii][j][1]].back or my_ch[map[ii][j][0]][map[ii][j][1]].color == my_ch[map[i][j][0]][map[i][j][1]].color:
+                elif 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((ii, j))
                     break
-            if map[ii][j] != (-1, -1):
+            if a_map[ii][j] != (-1, -1):
                 jump = 1
         jump = 0
         for ii in range(i+1, 4, 1):
             if 1 == jump:
-                if map[ii][j] == (-1, -1):
+                if a_map[ii][j] == (-1, -1):
                     pass
-                elif 1 == my_ch[map[ii][j][0]][map[ii][j][1]].back or my_ch[map[ii][j][0]][map[ii][j][1]].color == my_ch[map[i][j][0]][map[i][j][1]].color:
+                elif 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((ii, j))
                     break
-            if map[ii][j] != (-1, -1):
+            if a_map[ii][j] != (-1, -1):
                 jump = 1
         jump = 0
         for jj in range(j-1, -1, -1):
             if 1 == jump:
-                if map[i][jj] == (-1, -1):
+                if a_map[i][jj] == (-1, -1):
                     pass
-                elif 1 == my_ch[map[i][jj][0]][map[i][jj][1]].back or my_ch[map[i][jj][0]][map[i][jj][1]].color == my_ch[map[i][j][0]][map[i][j][1]].color:
+                elif 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((i, jj))
                     break
-            if map[i][jj] != (-1, -1):
+            if a_map[i][jj] != (-1, -1):
                 jump = 1
         jump = 0
         for jj in range(j+1, 8, 1):
             if map[i][jj] == (-1, -1):
                     pass
             elif 1 == jump:
-                if 1 == my_ch[map[i][jj][0]][map[i][jj][1]].back or my_ch[map[i][jj][0]][map[i][jj][1]].color == my_ch[map[i][j][0]][map[i][j][1]].color:
+                if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((i, jj))
                     break
-            if map[i][jj] != (-1, -1):
+            if a_map[i][jj] != (-1, -1):
                 jump = 1
-    return pm, map, my_ch
+    return pm, a_map, my_chess
     
 def near(i, j):
     n_cor = []
@@ -295,34 +296,34 @@ def mouse_position_to_block(mx, my, chess_back):
             if cstart_x2+j*chess_back.get_width() < mx < cstart_x2+(j+1)*chess_back.get_width() and cstart_y2+i*chess_back.get_height() < my < cstart_y2+(i+1)*chess_back.get_height():
                 return (i, 4+j)
 
-def select_back_chess(map, my_ch):
+def select_back_chess(a_map, my_chess):
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-    if 1 == check_back_exist(map, my_ch, back_mark):
-        return random_select_back_chess(map, my_ch, back_mark)
+    if 1 == check_back_exist(a_map, my_chess, back_mark):
+        return random_select_back_chess(a_map, my_chess, back_mark)
     else:
         return (-1, -1)
 
-def check_back_exist(map, my_ch, bm):
+def check_back_exist(a_map, my_chess, bm):
     back_exist = 0
     for i in range(0, 4):
         for j in range(0, 8):
-            if map[i][j] != (-1, -1) and bm[i][j] != 1:
-                if 1 == my_ch[map[i][j][0]][map[i][j][1]].back:
+            if a_map[i][j] != (-1, -1) and bm[i][j] != 1:
+                if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
                     back_exist = 1
     return back_exist
     
-def random_select_back_chess(map, my_ch, bm):    
+def random_select_back_chess(a_map, my_chess, bm):    
     i = random.randint(0, 31)
     ii = 0
     
     while i != -1:
         y = ii/8
         x = ii%8
-        if map[y][x] == (-1, -1) or bm[y][x] == 1:
+        if a_map[y][x] == (-1, -1) or bm[y][x] == 1:
             ii += 1
             if ii > 31:
                 ii = ii%32
-        elif 1 == my_ch[map[y][x][0]][map[y][x][1]].back:
+        elif 1 == my_chess[a_map[y][x][0]][a_map[y][x][1]].back:
             i -= 1
             if i < 0:
                 break
@@ -360,7 +361,7 @@ def chess_ai():
         #org, dest, score = deep_think(map, my_ch)
         org, dest, score = com_think(map, my_ch)
         print 'org', org, 'dest', dest, 'score', score
-        if org == (-1, -1):
+        if org == None:
             if select_back_chess(map, my_ch) == (-1, -1):
                 player_win = 1
             else:
@@ -384,7 +385,7 @@ def chess_ai():
             map, my_ch = move_s(org, dest, map, my_ch)
    
     if turn_id == com_color:
-        turn_id = 1 - turn_id
+        turn_id = 2
         
 
 def move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j):
@@ -436,7 +437,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, i, j-1)    
         
-def move_score(org, dest, my_chess, map):
+def move_score(org, dest, my_chess, a_map):
     
     global king_live
     global max_value
@@ -444,12 +445,12 @@ def move_score(org, dest, my_chess, map):
     
     (orgy, orgx) = org
     (desty, destx) = dest
-    if map[desty][destx] == (-1, -1):
+    if a_map[desty][destx] == (-1, -1):
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-        opp_color = 1 - my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color
-        org_value = my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].value
-        move_max_value(orgx, orgy, destx, desty, my_chess, map, org_value, opp_color, desty, destx)
+        opp_color = 1 - my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color
+        org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, desty, destx)
         if max_value > 7:
             return 0
         elif max_value > org_value:
@@ -457,8 +458,8 @@ def move_score(org, dest, my_chess, map):
         else:
             return max_value
     
-    elif 1 == my_chess[map[desty][destx][0]][map[desty][destx][1]].live:
-        return eating_value_to_score(my_chess[map[desty][destx][0]][map[desty][destx][1]].value, king_live, my_chess[map[orgy][orgx][0]][map[orgy][orgx][1]].color)
+    elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
+        return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
     global cor
@@ -478,7 +479,7 @@ def move_s(org, dest, a_map, a_ch):
         a_map[orgi][orgj] = (-1, -1)
         sound_move.play()
     else:
-        dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
+        #dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
         org_ch  = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         #dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
@@ -533,7 +534,7 @@ def com_think(a_map, a_ch):
     if m:
         return m[0][0], m[0][1], m[0][2]
     else:
-        return (-1, -1), (-1, -1), -1
+        return None, None, None
     
 #def one_turn(a_map, a_ch, owner_color, sc, i = (-1, -1), j = (-1, -1)):
 #    global top_number
@@ -703,7 +704,7 @@ def display_font():
             screen.blit(write(up, (255, 0, 0)), (text_x, text_y))
         else:
             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))
-    else:
+    else: #turn_id == com_color or turn_id == 2
         uc = u"電腦下"
         if 1 == com_color:
             screen.blit(write(uc, (255, 0, 0)), (text_x, text_y))
@@ -733,6 +734,7 @@ def main():
     global first
     global player_win
     global chess_num
+    global com_moving_end
     
     while True:
         selected_c = None
@@ -743,6 +745,7 @@ def main():
         first = 1
         moving = 1
         com_mv = 0
+        com_moving_end = 1
         game_start = 1
         chess_num = [16, 16]
         
@@ -780,7 +783,7 @@ def main():
             for event in pygame.event.get():
                 if event.type == QUIT:
                     exit()
-                elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color and 0 == com_mv:
+                elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
                     map, my_ch = all_chess_move(map, my_ch)
                     sound_click.play()
                     for chr in my_ch:
@@ -792,12 +795,15 @@ def main():
                                     player_color = turn_id
                                     com_color = 1 - player_color
                                     first = 0
-                                    turn_id = 1 - turn_id
+                                    selected_c = None
+                                    turn_id = com_color
                                 elif -1 == ch_index and chc.color == player_color:
                                     selected_c = chc
                                 elif ch_index != -1:
-                                    turn_id = 1 - turn_id
-                elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color and 0 == com_mv:
+                                    selected_c = None
+                                    print 'ch_index', ch_index
+                                    turn_id = com_color
+                elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
                     if selected_c:
                         (mouseX, mouseY) = pygame.mouse.get_pos()
                         moving = 0
@@ -809,6 +815,9 @@ def main():
                                     sound_capture.play()
                                 else:
                                     sound_move.play()
+                                if map[selected_c.row][selected_c.col] == (-1, -1):
+                                    print 'map selected_c error', 'row', selected_c.row, 'col', selected_c.col
+                                    print crash
                                 map[pm[0]][pm[1]] = map[selected_c.row][selected_c.col]
                                 map[selected_c.row][selected_c.col] = (-1, -1)
                                 selected_c.x = cor[pm[0]][pm[1]][0]
@@ -816,7 +825,7 @@ def main():
                                 selected_c.row = pm[0]
                                 selected_c.col = pm[1]
                                 moving = 1
-                                turn_id = 1 - turn_id
+                                turn_id = com_color
                                 break
                         
                         if 0 == moving:
@@ -842,31 +851,39 @@ def main():
                     c.draw(screen, chess_back)
             
             com_mv = 0
-            for cr in my_ch:
-                for c in cr:
-                    if c.x != cor[c.row][c.col][0]:
-                        c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
-                        com_mv = 1
-                        if (c.x, c.y) == cor[c.row][c.col]:
-                            (desti, destj) = map[c.row][c.col]
-                            if (desti, destj) != (-1, -1):
-                                dest_ch = my_ch[desti][destj]
-                                dest_ch.live = 0
-                                chess_num[dest_ch.color] -= 1
-                            map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
-                    if c.y != cor[c.row][c.col][1]:
-                        c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
-                        com_mv = 1
-                        if (c.x, c.y) == cor[c.row][c.col]:
-                            (desti, destj) = map[c.row][c.col]
-                            if (desti, destj) != (-1, -1):
-                                dest_ch = my_ch[desti][destj]
-                                dest_ch.live = 0
-                                chess_num[dest_ch.color] -= 1
-                            map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
-                    if 1 == com_mv:
-                        c.draw(screen, chess_back)
-                        com_mv = 0
+            no_move = 1
+            if 2 == turn_id:
+                for cr in my_ch:
+                    for c in cr:
+                        if c.x != cor[c.row][c.col][0]:
+                            c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
+                            com_mv = 1
+                            no_move = 0
+                            if (c.x, c.y) == cor[c.row][c.col]:
+                                (desti, destj) = map[c.row][c.col]
+                                if (desti, destj) != (-1, -1):
+                                    dest_ch = my_ch[desti][destj]
+                                    dest_ch.live = 0
+                                    chess_num[dest_ch.color] -= 1
+                                map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
+                                turn_id = player_color
+                        if c.y != cor[c.row][c.col][1]:
+                            c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
+                            com_mv = 1
+                            no_move = 0
+                            if (c.x, c.y) == cor[c.row][c.col]:
+                                (desti, destj) = map[c.row][c.col]
+                                if (desti, destj) != (-1, -1):
+                                    dest_ch = my_ch[desti][destj]
+                                    dest_ch.live = 0
+                                    chess_num[dest_ch.color] -= 1
+                                map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
+                                turn_id = player_color
+                        if 1 == com_mv:
+                            c.draw(screen, chess_back)
+                            com_mv = 0
+                if 1 == no_move:
+                    turn_id = player_color
             
             chess_ai()
             
@@ -876,16 +893,17 @@ def main():
             
             if 0 == chess_num[player_color]:
                 player_win = -1
-                display_font()
+                
             elif 0 == chess_num[com_color]:
                 player_win = 1
-                display_font()
             
             if 1 == player_win:
+                display_font()
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
             elif -1 == player_win:
+                display_font()
                 sound_loss.play()
                 pygame.display.update()
                 time.sleep(5)
