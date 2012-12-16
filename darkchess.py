@@ -297,7 +297,7 @@ def select_back_chess(a_map, my_chess):
     if 1 == check_back_exist(a_map, my_chess, back_mark):
         return random_select_back_chess(a_map, my_chess, back_mark)
     else:
-        return (-1, -1)
+        return None
 
 def check_back_exist(a_map, my_chess, bm):
     back_exist = 0
@@ -318,18 +318,18 @@ def random_select_back_chess(a_map, my_chess, bm):
         if a_map[y][x] == (-1, -1) or bm[y][x] == 1:
             ii += 1
             if ii > 31:
-                ii = ii%32
+                ii = 0
         elif 1 == my_chess[a_map[y][x][0]][a_map[y][x][1]].back:
             i -= 1
             if i < 0:
                 break
             ii += 1
             if ii > 31:
-                ii = ii%32
+                ii = 0
         else:
             ii += 1
             if ii > 31:
-                ii = ii%32
+                ii = 0
     
     return (y, x)
                 
@@ -358,21 +358,15 @@ def chess_ai():
         org, dest, score = com_think(map, my_ch)
         print 'org', org, 'dest', dest, 'score', score
         if org == None:
-            if select_back_chess(map, my_ch) == (-1, -1):
+            if select_back_chess(map, my_ch) == None:
                 player_win = 1
             else:
                 dest = select_back_chess(map, my_ch)
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1
-        elif org == dest:
-            print 'org == dest error', org, dest
-        elif map[org[0]][org[1]] == (-1, -1):
-            print 'map org == (-1, -1) error'
-        elif my_ch[map[org[0]][org[1]][0]][map[org[0]][org[1]][1]].color == player_color:
-            print 'p_color error'
-        elif score > 0: 
-            if select_back_chess(map, my_ch) == (-1, -1):
+        elif 1 == player_cant_move(my_ch): 
+            if select_back_chess(map, my_ch) == None or score < -20:
                 map, my_ch = move_s(org, dest, map, my_ch)
             else:
                 dest = select_back_chess(map, my_ch)
@@ -503,7 +497,7 @@ def move(org, dest, a_map, a_ch):
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        a_map[desti][destj] = list(a_map[orgi][orgj])
+        a_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         a_map[orgi][orgj] = (-1, -1)
     else:
         dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
@@ -511,12 +505,21 @@ def move(org, dest, a_map, a_ch):
         dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        a_map[desti][destj] = list(a_map[orgi][orgj])
+        a_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         a_map[orgi][orgj] = (-1, -1)
     
     return a_map, a_ch
 
+def player_cant_move(a_ch):
+    for chr in a_ch:
+        for ch in chr:
+            if ch.color == player_color and 1 == ch.live:
+                for pm in ch.possible_move:
+                    return 0
+    return 1
+    
 def com_think(a_map, a_ch):
+
     m = []
     
     max_score = 1
@@ -534,7 +537,35 @@ def com_think(a_map, a_ch):
                         org = (ch.row, ch.col)
                         dest = pm   
     if m:
-        return org, dest, max_score
+        mf = []
+        for mm in m:
+            m2 = []
+            af_map = copy.deepcopy(a_map)
+            af_ch = copy.deepcopy(a_ch)
+            #print 'mm[0]', mm[0], 'mm[1]', mm[1]
+            #print 'before map', af_map
+            af_map, af_ch = move(mm[0], mm[1], af_map, af_ch)
+            af_map, af_ch = all_chess_move(af_map, af_ch)
+            #print 'af map', af_map
+            sc = mm[2]
+            #print 'mm', mm
+            if 1 == player_cant_move(af_ch):
+                return mm[0], mm[1], mm[2]
+                
+            for chr in af_ch:
+                for ch in chr:
+                    if ch.color == player_color and 1 == ch.live:
+                        for pm in ch.possible_move:
+                            score = sc + move_score((ch.row, ch.col), pm, af_ch, af_map)
+                            m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
+            if m2:
+                m2 = sorted(m2, key=lambda s:s[4])
+                mf.append((mm[0], mm[1], m2[-1][4]))
+        if mf:
+            mf = sorted(mf, key=lambda s:s[2])
+            return mf[0][0], mf[0][1], mf[0][2]
+        else:
+            return org, dest, max_score
     else:
         return None, None, None     
     
