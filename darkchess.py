@@ -546,7 +546,7 @@ def com_think(a_map, a_ch):
         mf = []
         brk = 0
         for mm in m:
-            score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1)
+            score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if score2:
                 mf.append((mm[0], mm[1], score2))
                 brk = 1
