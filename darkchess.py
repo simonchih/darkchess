@@ -557,28 +557,28 @@ def com_think(a_map, a_ch):
                 mf.append((mm[0], mm[1], m2[-1][4]))
             else:
                 brk = 1
-            if 0 == brk:
-                org2, dest2, score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
-                if org2:
-                    return org2, dest2, score2
-                elif m3:
-                    m3 = sorted(m3, key=lambda s:s[4])
-                else:
-                    brk = 1
-            else:
-                mf.append((mm[0], mm[1], mm[2]))
-                brk = 2
-            if 0 == brk:
-                org2, dest2, score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
-                if org2:
-                    return org2, dest2, score2
-                elif m4:
-                    m4 = sorted(m4, key=lambda s:s[4])
-                    mf.append((mm[0], mm[1], m4[-1][4]))
-                else:
-                    mf.append((mm[0], mm[1], m3[0][4]))
-            elif 1 == brk:
-                mf.append((mm[0], mm[1], m2[-1][4]))
+            #if 0 == brk:
+            #    org2, dest2, score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
+            #    if org2:
+            #        return org2, dest2, score2
+            #    elif m3:
+            #        m3 = sorted(m3, key=lambda s:s[4])
+            #    else:
+            #        brk = 1
+            #else:
+            #    mf.append((mm[0], mm[1], mm[2]))
+            #    brk = 2
+            #if 0 == brk:
+            #    org2, dest2, score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
+            #    if org2:
+            #        return org2, dest2, score2
+            #    elif m4:
+            #        m4 = sorted(m4, key=lambda s:s[4])
+            #        mf.append((mm[0], mm[1], m4[-1][4]))
+            #    else:
+            #        mf.append((mm[0], mm[1], m3[0][4]))
+            #elif 1 == brk:
+            #    mf.append((mm[0], mm[1], m2[-1][4]))
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
@@ -594,8 +594,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
     af_map, af_ch = all_chess_move(af_map, af_ch)
-    #print 'mm', mm
+    print 'mm', mm
     if owner_color == player_color and 1 == player_cant_move(af_ch):
+        print 'mm out', 'mm[0], [1], [2]', mm[0], mm[1], mm[2]
         return mm[0], mm[1], mm[2], None, None, None
         
     for chr in af_ch:
@@ -603,10 +604,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
             if ch.color == owner_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     if owner_color == player_color:
-                        if pm == mm[1]:
-                            score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map)
-                        else:
-                            score = sc/2
+                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map)
                     else:
                         score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map)
                     m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
@@ -638,10 +636,10 @@ def display_font():
     
     if 1 == player_win:
         winer = u"玩家勝!!!"
-        screen.blit(write(winer, (0, 0, 255)), (text_x-150, text_y))
+        screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
     elif -1 == player_win:
         winer = u"電腦勝..."
-        screen.blit(write(winer, (0, 255, 0)), (text_x-150, text_y))
+        screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
     elif 1 == first:
         if 1 == player_first:
             up = u"玩家先"
@@ -850,12 +848,20 @@ def main():
                 player_win = 1
             
             if 1 == player_win:
+                screen.blit(background, (0,0))
                 display_font()
+                for cr in my_ch:
+                    for c in cr:
+                        c.draw(screen, chess_back)
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
             elif -1 == player_win:
+                screen.blit(background, (0,0))
                 display_font()
+                for cr in my_ch:
+                    for c in cr:
+                        c.draw(screen, chess_back)
                 sound_loss.play()
                 pygame.display.update()
                 time.sleep(5)
