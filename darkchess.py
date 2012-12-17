@@ -205,10 +205,8 @@ def collect_possible_move(i, j, a_map, my_chess):
     if 2 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
         jump = 0
         for ii in range(i-1, -1, -1):
-            if 1 == jump:
-                if a_map[ii][j] == (-1, -1):
-                    pass
-                elif 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+            if 1 == jump and a_map[ii][j] != (-1, -1):
+                if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((ii, j))
@@ -217,10 +215,8 @@ def collect_possible_move(i, j, a_map, my_chess):
                 jump = 1
         jump = 0
         for ii in range(i+1, 4, 1):
-            if 1 == jump:
-                if a_map[ii][j] == (-1, -1):
-                    pass
-                elif 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+            if 1 == jump and a_map[ii][j] != (-1, -1):
+                if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((ii, j))
@@ -229,10 +225,8 @@ def collect_possible_move(i, j, a_map, my_chess):
                 jump = 1
         jump = 0
         for jj in range(j-1, -1, -1):
-            if 1 == jump:
-                if a_map[i][jj] == (-1, -1):
-                    pass
-                elif 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+            if 1 == jump and a_map[i][jj] != (-1, -1):
+                if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
                     pm.append((i, jj))
@@ -241,9 +235,7 @@ def collect_possible_move(i, j, a_map, my_chess):
                 jump = 1
         jump = 0
         for jj in range(j+1, 8, 1):
-            if map[i][jj] == (-1, -1):
-                    pass
-            elif 1 == jump:
+            if 1 == jump and map[i][jj] != (-1, -1):
                 if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                     break
                 else:
@@ -373,7 +365,7 @@ def chess_ai():
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1
-        elif score < -10:
+        elif score <= 20:
             map, my_ch = move_s(org, dest, map, my_ch)
         elif select_back_chess(map, my_ch):
             dest = select_back_chess(map, my_ch)
