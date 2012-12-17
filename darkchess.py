@@ -34,6 +34,7 @@ s_win     = 'Sound/WIN.WAV'
 SCREEN_SIZE = (521, 313) 
 pygame.init()
 
+pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
 screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
 pygame.display.set_caption("Taiwan Blind Chess")
 
