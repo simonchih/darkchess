@@ -373,7 +373,7 @@ def chess_ai():
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1
-        elif score <= 0:
+        elif score < 0:
             map, my_ch = move_s(org, dest, map, my_ch)
         elif select_back_chess(map, my_ch):
             dest = select_back_chess(map, my_ch)
@@ -552,6 +552,7 @@ def com_think(a_map, a_ch):
                 return org2, dest2, score2
             elif m2:
                 m2 = sorted(m2, key=lambda s:s[4])
+                mf.append((mm[0], mm[1], m2[-1][4]))
             else:
                 brk = 1
             if 0 == brk:
@@ -722,9 +723,6 @@ def main():
                 map, my_ch = all_chess_move(map, my_ch)
                 moving = 0
             
-            if 0 == player_first and 1 == first:
-                player_color = 1
-            
             for event in pygame.event.get():
                 if event.type == QUIT:
                     exit()
@@ -741,6 +739,7 @@ def main():
                                     com_color = 1 - player_color
                                     first = 0
                                     selected_c = None
+                                    print 'ch_index first', ch_index
                                     turn_id = com_color
                                 elif -1 == ch_index and chc.color == player_color:
                                     selected_c = chc
@@ -771,6 +770,7 @@ def main():
                                 selected_c.row = pm[0]
                                 selected_c.col = pm[1]
                                 moving = 1
+                                print 'move down', 'row', selected_c.row, 'col', selected_c.col
                                 turn_id = com_color
                                 break
                         
