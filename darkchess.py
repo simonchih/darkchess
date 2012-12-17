@@ -366,7 +366,7 @@ def chess_ai():
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1
-        elif score < 0:
+        elif score <= 0:
             map, my_ch = move_s(org, dest, map, my_ch)
         elif select_back_chess(map, my_ch):
             dest = select_back_chess(map, my_ch)
@@ -404,7 +404,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_col
                     return
             elif 1 == org_value:
                 if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = 9
+                    max_value = 0
                     return
                 elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                     max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
@@ -431,7 +431,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_col
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j-1)    
         
-def move_score(org, dest, my_chess, a_map):
+def move_score(org, dest, my_chess, a_map, owner_color):
     
     global king_live
     global max_value
@@ -440,6 +440,8 @@ def move_score(org, dest, my_chess, a_map):
     (orgy, orgx) = org
     (desty, destx) = dest
     if a_map[desty][destx] == (-1, -1):
+        if owner_color == player_color:
+            return 0
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             return 0
         max_value = 0
@@ -449,6 +451,8 @@ def move_score(org, dest, my_chess, a_map):
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, desty, destx)
         if max_value > 7:
             return 0
+        elif max_value == 0:
+            return 7
         elif max_value > org_value:
             return (-1)*max_value
         else:
@@ -532,7 +536,7 @@ def com_think(a_map, a_ch):
         for ch in chr:
             if ch.color == com_color and 1 == ch.live:
                 for pm in ch.possible_move:
-                    score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map)
+                    score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
                     if score < max_score:
                         max_score = score
@@ -599,9 +603,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
             if ch.color == owner_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     if owner_color == player_color:
-                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map)
+                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
                     else:
-                        score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map)
+                        score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
                     
     return None, m2, af_map, af_ch
