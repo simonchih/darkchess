@@ -34,6 +34,7 @@ class chess():
                     return self.index
                 else:
                     return -1
+        return None
                     
     def move(self):
         self.x += math.sin(self.angle) * self.speed

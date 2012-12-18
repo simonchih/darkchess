@@ -741,6 +741,7 @@ def main():
         com_moving_end = 1
         game_start = 1
         chess_num = [16, 16]
+        back_num = 32
         
         player_first = random.randint(0, 1)
         
@@ -778,29 +779,30 @@ def main():
                             print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
                         map, my_ch = all_chess_move(map, my_ch)
                         sound_click.play()
-                        click_once = 0 # may double click
+                        click_once = 0
                         for chr in my_ch:
                             for chc in chr:
-                                ch_index = chc.click(pygame.mouse.get_pos())
-                                if ch_index and 0 == click_once:
-                                    if 1 == player_first and 1 == first:                            
-                                        turn_id = index_to_color(ch_index)
-                                        player_color = turn_id
-                                        com_color = 1 - player_color
-                                        first = 0
-                                        selected_c = None
-                                        print 'ch_index first', ch_index
-                                        back_num -= 1
-                                        turn_id = com_color
-                                    elif -1 == ch_index and chc.color == player_color:
-                                        selected_c = chc
-                                    elif ch_index != -1:
-                                        selected_c = None
-                                        back_num -= 1
-                                        print 'ch_index', ch_index
-                                        turn_id = com_color
-                                    click_once = 1
-                                    break
+                                if 0 == click_once:
+                                    ch_index = chc.click(pygame.mouse.get_pos())
+                                    if ch_index != None:
+                                        if 1 == player_first and 1 == first:                            
+                                            turn_id = index_to_color(ch_index)
+                                            player_color = turn_id
+                                            com_color = 1 - player_color
+                                            first = 0
+                                            selected_c = None
+                                            print 'ch_index first', ch_index
+                                            back_num -= 1
+                                            turn_id = com_color
+                                        elif -1 == ch_index and chc.color == player_color:
+                                            selected_c = chc
+                                        elif ch_index != -1:
+                                            selected_c = None
+                                            back_num -= 1
+                                            print 'ch_index', ch_index
+                                            turn_id = com_color
+                                        click_once = 1
+                                        break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
                         if selected_c:
                             (mouseX, mouseY) = pygame.mouse.get_pos()
