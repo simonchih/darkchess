@@ -582,7 +582,7 @@ def com_think(a_map, a_ch):
         for mm in m:
             brk = 0
             score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
-            if score2:
+            if score2 != None:
                 if mm[0] == mm[1]:
                     open_score = score2
                 mf.append((mm[0], mm[1], score2))
@@ -596,9 +596,9 @@ def com_think(a_map, a_ch):
                 brk = 1
             if mm[0] == mm[1]:
                 continue
-            if 0 == brk:
+            if 0 == brk and m2:
                 score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
-                if score2:
+                if score2 != None:
                     mf.append((mm[0], mm[1], score2))
                     brk = 1
                 elif m3:
@@ -608,9 +608,9 @@ def com_think(a_map, a_ch):
             else:
                 mf.append((mm[0], mm[1], mm[2]))
                 brk = 2
-            if 0 == brk:
+            if 0 == brk and m3:
                 score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
-                if score2:
+                if score2 != None:
                     mf.append((mm[0], mm[1], score2))
                 elif m4:
                     m4 = sorted(m4, key=lambda s:s[4])
@@ -760,7 +760,7 @@ def main():
                 map[i][4+j] = (i, 4+j)
     
         while 0 == player_win:
-            if game_start:
+            if 1 == game_start:
                 sound_new.play()
                 game_start = 0
 
@@ -804,7 +804,7 @@ def main():
                                         click_once = 1
                                         break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
-                        if selected_c:
+                        if selected_c != None:
                             (mouseX, mouseY) = pygame.mouse.get_pos()
                             moving = 0
                             for pm in selected_c.possible_move:
@@ -835,7 +835,7 @@ def main():
                         else:
                             moving = 1
                         
-            if selected_c:
+            if selected_c != None:
                 (mouseX, mouseY) = pygame.mouse.get_pos()
                 dx = mouseX - selected_c.x
                 dy = mouseY - selected_c.y
@@ -885,7 +885,7 @@ def main():
             
             chess_ai()
             
-            if selected_c:
+            if selected_c != None:
                 selected_c.move()
                 selected_c.draw(screen, chess_back)
             
