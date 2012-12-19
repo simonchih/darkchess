@@ -766,11 +766,10 @@ def main():
 
             screen.blit(background, (0,0))
             
-            if 1 == moving:
-                map, my_ch = all_chess_move(map, my_ch)
-                moving = 0
-            
             if turn_id == player_color:
+                if 0 == back_num and 1 == player_cant_move(my_ch):
+                    player_win = -1
+                
                 for event in pygame.event.get():
                     if event.type == QUIT:
                         exit()
@@ -832,9 +831,14 @@ def main():
                             selected_c.speed = 0
                             selected_c = None
                             moving = 1
+                            break
                         else:
                             moving = 1
-                        
+            
+            if 1 == moving:
+                map, my_ch = all_chess_move(map, my_ch)
+                moving = 0
+            
             if selected_c != None:
                 (mouseX, mouseY) = pygame.mouse.get_pos()
                 dx = mouseX - selected_c.x
