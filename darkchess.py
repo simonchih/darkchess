@@ -392,7 +392,7 @@ def chess_ai():
         turn_id = 2
         
 
-def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j):
+def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j):
     global max_value
     global mark
     
@@ -400,48 +400,47 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_col
         return
     elif 1 == mark[i][j]:
         return
+    elif 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
+        return
+    elif owner_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+        return
     
     mark[i][j] = 1
     
-    if map[i][j] != (-1, -1): 
-        if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
-            return
-        elif opp_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
-            if 7 == org_value:
-                if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = 8
-                    return
-                elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
-                    return
-            elif 1 == org_value:
-                if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = 0
-                    return
-                elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
-                    return
+    if map[i][j] != (-1, -1):
+        if 7 == org_value:
+            if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+                max_value = 8
+                return
             elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
                 return
-        else:
+        elif 1 == org_value:
+            if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+                max_value = 9
+                return
+            elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+                max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
+                return
+        elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+            max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
             return
     elif orgy == desty and orgx+1 == destx:
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i-1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
     elif orgy == desty and orgx-1 == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j-1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i-1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
     elif orgy+1 == desty and orgx == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j-1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)
     elif orgy-1 == desty and orgx == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i-1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, i, j-1)    
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
         
 def move_score(org, dest, my_chess, a_map, owner_color):
     
@@ -458,12 +457,11 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return 0
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-        opp_color = 1 - my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, opp_color, desty, destx)
-        if max_value > 7:
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
+        if 8 == max_value:
             return 0
-        elif max_value == 0:
+        elif 9 == max_value:
             return 7
         elif max_value > org_value:
             return (-1)*max_value
@@ -573,6 +571,8 @@ def com_think(a_map, a_ch):
                 for pm in ch.possible_move:
                     score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
+                    print 'm', m
+                    print 'mark', mark
                     if score < max_score:
                         max_score = score
                         org = (ch.row, ch.col)
@@ -583,12 +583,14 @@ def com_think(a_map, a_ch):
             brk = 0
             score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if score2 != None:
+                print 'score2', score2
                 if mm[0] == mm[1]:
                     open_score = score2
-                mf.append((mm[0], mm[1], score2))
+                #mf.append((mm[0], mm[1], score2))
                 brk = 1
             elif m2:
                 m2 = sorted(m2, key=lambda s:s[4])
+                print 'm2 sort', m2
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
                 mf.append((mm[0], mm[1], m2[-1][4]))
@@ -599,19 +601,21 @@ def com_think(a_map, a_ch):
             if 0 == brk and m2:
                 score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
                 if score2 != None:
-                    mf.append((mm[0], mm[1], score2))
+                    pass
+                    #mf.append((mm[0], mm[1], score2))
                     brk = 1
                 elif m3:
                     m3 = sorted(m3, key=lambda s:s[4])
                 else:
                     brk = 1
             else:
-                mf.append((mm[0], mm[1], mm[2]))
+                #mf.append((mm[0], mm[1], mm[2]))
                 brk = 2
             if 0 == brk and m3:
                 score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
                 if score2 != None:
-                    mf.append((mm[0], mm[1], score2))
+                    pass
+                    #mf.append((mm[0], mm[1], score2))
                 elif m4:
                     m4 = sorted(m4, key=lambda s:s[4])
                     mf.append((mm[0], mm[1], m4[-1][4]))
@@ -621,7 +625,7 @@ def com_think(a_map, a_ch):
                 mf.append((mm[0], mm[1], m2[-1][4]))
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
-            #print 'mf', mf
+            print 'mf', mf
             return mf[0][0], mf[0][1], mf[0][2]
         else:
             return org, dest, max_score
@@ -634,7 +638,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
     af_map, af_ch = all_chess_move(af_map, af_ch)
-    #print 'mm', mm
+    
     if owner_color == player_color and 1 == player_cant_move(af_ch):
         #print 'mm out', 'mm[0], [1], [2]', mm[0], mm[1], mm[2]
         return mm[2], None, None, None
