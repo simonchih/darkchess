@@ -438,37 +438,56 @@ def near2_have_same_value(org, dest, my_chess, a_map, owner_color):
     (desty, destx) = dest
     
     m = a_map[orgy][orgx]
+    if m == (-1, -1):
+        return 0
+    
     if desty-2 >= 0:
         n = a_map[desty-2][destx]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if desty+2 <= 3:
         n = a_map[desty+2][destx]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if destx-2 >= 0:
         n = a_map[desty][destx-2]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if destx+2 <= 7:
         n = a_map[desty][destx+2]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if desty-1 >= 0 and destx-1 >=0:
         n = a_map[desty-1][destx-1]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if desty-1 >= 0 and destx+1 <=7:
         n = a_map[desty-1][destx+1]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if desty+1 <= 3 and destx-1 >= 0:
         n = a_map[desty+1][destx-1]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
     if desty+1 <= 3 and destx+1 <= 7:
         n = a_map[desty+1][destx+1]
-        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        if n == (-1, -1):
+            return 0
+        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
         
 def move_score(org, dest, my_chess, a_map, owner_color):
