@@ -357,30 +357,19 @@ def chess_ai():
                         print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
         if 0 == back_num and 1 == cant_move(map, my_ch, com_color):
             player_win = 1
-        elif org == None and back_num > 0:
-            dest = select_back_chess(map, my_ch)
-            sound_click.play()
-            my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-            back_num -= 1
-        elif 1 == cant_move(map, my_ch, player_color): 
-            if back_num == 0 or score < -20:
-                map, my_ch = move_s(org, dest, map, my_ch)
-            else:
+        if back_num > 0:
+            if org == None or score > open_score:
                 dest = select_back_chess(map, my_ch)
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                back_num -= 1
-        elif open_score == None:
-            map, my_ch = move_s(org, dest, map, my_ch)
-        elif score < open_score:
-            map, my_ch = move_s(org, dest, map, my_ch)
-        elif back_num > 0:
-            dest = select_back_chess(map, my_ch)
-            sound_click.play()
-            my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-            back_num -= 1
+                back_num -= 1 
+            else:
+                map, my_ch = move_s(org, dest, map, my_ch)
         else:
-            map, my_ch = move_s(org, dest, map, my_ch) 
+            if org == None:
+                player_win = 1
+            else:
+                map, my_ch = move_s(org, dest, map, my_ch) 
    
     if turn_id == com_color:
         turn_id = 2
