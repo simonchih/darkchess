@@ -184,10 +184,10 @@ def findC(ch, x, y):
     return None
 
 def all_chess_move(a_map, my_chess):
-    for rowm in a_map:
-        for m in rowm:
-            if m!= (-1, -1) and 0 == my_chess[m[0]][m[1]].back and 1 == my_chess[m[0]][m[1]].live:
-                my_chess[m[0]][m[1]].possible_move, a_map, my_chess= collect_possible_move(my_chess[m[0]][m[1]].row, my_chess[m[0]][m[1]].col, a_map, my_chess)
+    for chr in my_chess:
+        for ch in chr:
+            if 0 == ch.back and 1 == ch.live:
+                ch.possible_move, a_map, my_chess= collect_possible_move(ch.row, ch.col, a_map, my_chess)
     return a_map, my_chess
     
 def collect_possible_move(i, j, a_map, my_chess):
@@ -353,8 +353,6 @@ def chess_ai():
         print 'back_num', back_num
         org, dest, score = com_think(map, my_ch)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
-        if back_num != temp_clac_num_back():
-                        print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
         if 0 == back_num and 1 == cant_move(map, my_ch, com_color):
             player_win = 1
         if back_num > 0:
@@ -363,13 +361,18 @@ def chess_ai():
                 sound_click.play()
                 my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
                 back_num -= 1 
+            elif score == open_score:
+                if 0 == score:
+                    dest = select_back_chess(map, my_ch)
+                    sound_click.play()
+                    my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                    back_num -= 1
+                else:
+                    map, my_ch = move_s(org, dest, map, my_ch)
             else:
                 map, my_ch = move_s(org, dest, map, my_ch)
-        else:
-            if org == None:
-                player_win = 1
-            else:
-                map, my_ch = move_s(org, dest, map, my_ch) 
+        elif 0 == player_win:
+            map, my_ch = move_s(org, dest, map, my_ch) 
    
     if turn_id == com_color:
         turn_id = 2
@@ -424,6 +427,47 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
+
+def near2_have_same_value(org, my_chess, a_map, owner_color):
+    if org == None:
+        return 0
+    elif owner_color == player_color:
+        return 0
+    
+    (orgy, orgx) = org
+    m = a_map[orgy][orgx]
+    if orgy-2 >= 0:
+        n = a_map[orgy-2][orgx]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgy+2 <= 3:
+        n = a_map[orgy+2][orgx]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgx-2 >= 0:
+        n = a_map[orgy][orgx-2]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgx+2 <= 7:
+        n = a_map[orgy][orgx+2]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgy-1 >= 0 and orgx-1 >=0:
+        n = a_map[orgy-1][orgx-1]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgy-1 >= 0 and orgx+1 <=7:
+        n = a_map[orgy-1][orgx+1]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgy+1 <= 3 and orgx-1 >= 0:
+        n = a_map[orgy+1][orgx-1]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
+    if orgy+1 <= 3 and orgx+1 <= 7:
+        n = a_map[orgy+1][orgx+1]
+        if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+            return 1
         
 def move_score(org, dest, my_chess, a_map, owner_color):
     
@@ -438,16 +482,19 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return 0
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             return 0
+        
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
+        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+            return -1 * org_value
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         if 8 == max_value:
-            return 0
+            return org_value/2
         elif 9 == max_value:
             return 7
         elif max_value > org_value:
-            return (-1)*max_value
+            return org_value/2
         else:
             return max_value
     
@@ -464,9 +511,9 @@ def move_s(org, dest, a_map, a_ch):
     #print 'b_a_map[desti][destj]', a_map[desti][destj]
     #print 'b_map[desti][destj]', map[desti][destj]
     
-    if org == dest:
-        print crash
-    elif (-1, -1) == a_map[desti][destj]:
+    #if org == dest:
+    #    print crash
+    if (-1, -1) == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
         #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
@@ -512,8 +559,8 @@ def move(org, dest, a_map, a_ch):
         a_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         a_map[orgi][orgj] = (-1, -1)
     
-    return a_map, a_ch
-
+    return a_map, a_ch    
+    
 def cant_move(a_map, a_ch, owner_color):
     a_map, a_ch = all_chess_move(a_map, a_ch)
     for chr in a_ch:
@@ -572,7 +619,6 @@ def com_think(a_map, a_ch):
                 open_score = mm[2]
             elif m2:
                 m2 = sorted(m2, key=lambda s:s[4])
-                print 'm2 sort', m2
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
                 mf.append((mm[0], mm[1], m2[-1][4]))
@@ -587,10 +633,12 @@ def com_think(a_map, a_ch):
                         mf.append((mm[0], mm[1], m4[-1][4]))
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
-            print 'mf', mf
+            #print 'mf', mf
             return mf[0][0], mf[0][1], mf[0][2]
         else:
             return org, dest, max_score
+    elif 1 == len(m):
+        return m[0][0], m[0][1], m[0][2]
     else:
         return None, None, 0     
 
@@ -602,7 +650,6 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_map, af_ch = all_chess_move(af_map, af_ch)
     
     if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color):
-        print 'player af_ch can not move!', 'mm[0], [1], [2]', mm[0], mm[1], mm[2]
         m2.append((mm[0], mm[1], None, None, mm[2]))
         return m2, af_map, af_ch
 
@@ -632,9 +679,9 @@ def eating_value_to_score(value, king, owner_color):
     elif 2 == value:
         return 70
     elif 3 == value:
-        return 30
-    elif 4 == value:
         return 40
+    elif 4 == value:
+        return 50
     elif 5 == value:
         return 70
     elif 6 == value:
@@ -741,8 +788,6 @@ def main():
                     if event.type == QUIT:
                         exit()
                     elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
-                        if back_num != temp_clac_num_back():
-                            print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
                         map, my_ch = all_chess_move(map, my_ch)
                         sound_click.play()
                         click_once = 0
@@ -757,7 +802,6 @@ def main():
                                             com_color = 1 - player_color
                                             first = 0
                                             selected_c = None
-                                            print 'ch_index first', ch_index
                                             back_num -= 1
                                             turn_id = com_color
                                         elif -1 == ch_index and chc.color == player_color:
@@ -765,7 +809,6 @@ def main():
                                         elif ch_index != -1:
                                             selected_c = None
                                             back_num -= 1
-                                            print 'ch_index', ch_index
                                             turn_id = com_color
                                         click_once = 1
                                         break
@@ -788,7 +831,6 @@ def main():
                                     selected_c.row = pm[0]
                                     selected_c.col = pm[1]
                                     moving = 1
-                                    print 'move down', 'row', selected_c.row, 'col', selected_c.col
                                     turn_id = com_color
                                     break
                             
