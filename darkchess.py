@@ -773,7 +773,7 @@ def main():
                 for event in pygame.event.get():
                     if event.type == QUIT:
                         exit()
-                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                    elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
                         if back_num != temp_clac_num_back():
                             print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
                         map, my_ch = all_chess_move(map, my_ch)
