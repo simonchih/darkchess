@@ -428,44 +428,46 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
 
-def near2_have_same_value(org, my_chess, a_map, owner_color):
+def near2_have_same_value(org, dest, my_chess, a_map, owner_color):
     if org == None:
         return 0
     elif owner_color == player_color:
         return 0
     
     (orgy, orgx) = org
+    (desty, destx) = dest
+    
     m = a_map[orgy][orgx]
-    if orgy-2 >= 0:
-        n = a_map[orgy-2][orgx]
+    if desty-2 >= 0:
+        n = a_map[desty-2][destx]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgy+2 <= 3:
-        n = a_map[orgy+2][orgx]
+    if desty+2 <= 3:
+        n = a_map[desty+2][destx]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgx-2 >= 0:
-        n = a_map[orgy][orgx-2]
+    if destx-2 >= 0:
+        n = a_map[desty][destx-2]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgx+2 <= 7:
-        n = a_map[orgy][orgx+2]
+    if destx+2 <= 7:
+        n = a_map[desty][destx+2]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgy-1 >= 0 and orgx-1 >=0:
-        n = a_map[orgy-1][orgx-1]
+    if desty-1 >= 0 and destx-1 >=0:
+        n = a_map[desty-1][destx-1]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgy-1 >= 0 and orgx+1 <=7:
-        n = a_map[orgy-1][orgx+1]
+    if desty-1 >= 0 and destx+1 <=7:
+        n = a_map[desty-1][destx+1]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgy+1 <= 3 and orgx-1 >= 0:
-        n = a_map[orgy+1][orgx-1]
+    if desty+1 <= 3 and destx-1 >= 0:
+        n = a_map[desty+1][destx-1]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if orgy+1 <= 3 and orgx+1 <= 7:
-        n = a_map[orgy+1][orgx+1]
+    if desty+1 <= 3 and destx+1 <= 7:
+        n = a_map[desty+1][destx+1]
         if my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
         
@@ -486,8 +488,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            return -1 * org_value
+        if 1 == near2_have_same_value(org, dest, my_chess, a_map, owner_color):
+            return -2 * org_value
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         if 8 == max_value:
             return org_value/2
