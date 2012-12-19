@@ -355,20 +355,14 @@ def chess_ai():
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
         if back_num != temp_clac_num_back():
                         print 'error', 'back_num', back_num, 'actual num', temp_clac_num_back() 
-        if org == None:
-            if back_num == 0:
-                player_win = 1
-            else:
-                dest = select_back_chess(map, my_ch)
-                sound_click.play()
-                my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                back_num -= 1
-        elif org == dest and back_num != 0:
+        if 0 == back_num and 1 == cant_move(map, my_ch, com_color):
+            player_win = 1
+        elif org == None and back_num > 0:
             dest = select_back_chess(map, my_ch)
             sound_click.play()
             my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
             back_num -= 1
-        elif 1 == player_cant_move(my_ch): 
+        elif 1 == cant_move(map, my_ch, player_color): 
             if back_num == 0 or score < -20:
                 map, my_ch = move_s(org, dest, map, my_ch)
             else:
@@ -378,7 +372,7 @@ def chess_ai():
                 back_num -= 1
         elif open_score == None:
             map, my_ch = move_s(org, dest, map, my_ch)
-        elif score < open_score - 10:
+        elif score < open_score:
             map, my_ch = move_s(org, dest, map, my_ch)
         elif back_num > 0:
             dest = select_back_chess(map, my_ch)
@@ -508,12 +502,13 @@ def move_s(org, dest, a_map, a_ch):
 def move(org, dest, a_map, a_ch):
     global cor
     
+    if org == dest:
+        return a_map, a_ch
+    
     (orgi, orgj) = org
     (desti, destj) = dest
     
-    if org == dest:
-        return a_map, a_ch
-    elif (-1, -1) == a_map[desti][destj]:
+    if (-1, -1) == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
         (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
@@ -530,10 +525,11 @@ def move(org, dest, a_map, a_ch):
     
     return a_map, a_ch
 
-def player_cant_move(a_ch):
+def cant_move(a_map, a_ch, owner_color):
+    a_map, a_ch = all_chess_move(a_map, a_ch)
     for chr in a_ch:
         for ch in chr:
-            if ch.color == player_color and 1 == ch.live:
+            if ch.color == owner_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     return 0
     return 1
@@ -558,10 +554,10 @@ def com_think(a_map, a_ch):
     
     if back_num > 0:
         open_score = 0
-        m.append(((None, None), (None, None), 0))
+        m.append((None, None, 0))
         max_score = 0
-        org = (None, None)
-        dest =(None, None)
+        org = None
+        dest = None
     else:
         open_score = None
     
@@ -571,58 +567,35 @@ def com_think(a_map, a_ch):
                 for pm in ch.possible_move:
                     score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
-                    print 'm', m
-                    print 'mark', mark
+                    #print 'm', m
                     if score < max_score:
                         max_score = score
                         org = (ch.row, ch.col)
                         dest = pm   
-    if m:
-        mf = []        
+    if len(m) > 1:
+        mf = []
+        m2 = []
+        m3 = []
+        m4 = []
         for mm in m:
-            brk = 0
-            score2, m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
-            if score2 != None:
-                print 'score2', score2
-                if mm[0] == mm[1]:
-                    open_score = score2
-                #mf.append((mm[0], mm[1], score2))
-                brk = 1
+            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.95)
+            if mm[0] == mm[1]:
+                open_score = mm[2]
             elif m2:
                 m2 = sorted(m2, key=lambda s:s[4])
                 print 'm2 sort', m2
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
                 mf.append((mm[0], mm[1], m2[-1][4]))
-            else:
-                brk = 1
-            if mm[0] == mm[1]:
-                continue
-            if 0 == brk and m2:
-                score2, m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
-                if score2 != None:
-                    pass
-                    #mf.append((mm[0], mm[1], score2))
-                    brk = 1
-                elif m3:
+                if mm[0] == mm[1]:
+                    continue
+                    m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
+                if m3:
                     m3 = sorted(m3, key=lambda s:s[4])
-                else:
-                    brk = 1
-            else:
-                #mf.append((mm[0], mm[1], mm[2]))
-                brk = 2
-            if 0 == brk and m3:
-                score2, m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
-                if score2 != None:
-                    pass
-                    #mf.append((mm[0], mm[1], score2))
-                elif m4:
-                    m4 = sorted(m4, key=lambda s:s[4])
-                    mf.append((mm[0], mm[1], m4[-1][4]))
-                else:
-                    mf.append((mm[0], mm[1], m3[0][4]))
-            elif 1 == brk:
-                mf.append((mm[0], mm[1], m2[-1][4]))
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
+                    if m4:
+                        m4 = sorted(m4, key=lambda s:s[4])
+                        mf.append((mm[0], mm[1], m4[-1][4]))
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
@@ -630,7 +603,7 @@ def com_think(a_map, a_ch):
         else:
             return org, dest, max_score
     else:
-        return None, None, None     
+        return None, None, 0     
 
 def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     m2 = []
@@ -639,12 +612,13 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
     af_map, af_ch = all_chess_move(af_map, af_ch)
     
-    if owner_color == player_color and 1 == player_cant_move(af_ch):
-        #print 'mm out', 'mm[0], [1], [2]', mm[0], mm[1], mm[2]
-        return mm[2], None, None, None
+    if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color):
+        print 'player af_ch can not move!', 'mm[0], [1], [2]', mm[0], mm[1], mm[2]
+        m2.append((mm[0], mm[1], None, None, mm[2]))
+        return m2, af_map, af_ch
 
     if back_num > 0:
-        m2.append((mm[0], mm[1], (None, None), (None, None), mm[2]))
+        m2.append((mm[0], mm[1], None, None, mm[2]))
     for chr in af_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live:
@@ -656,7 +630,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
                     
-    return None, m2, af_map, af_ch
+    return m2, af_map, af_ch
 
         
 def eating_value_to_score(value, king, owner_color):
@@ -771,7 +745,7 @@ def main():
             screen.blit(background, (0,0))
             
             if turn_id == player_color:
-                if 0 == back_num and 1 == player_cant_move(my_ch):
+                if 0 == back_num and 1 == cant_move(map, my_ch, player_color):
                     player_win = -1
                 
                 for event in pygame.event.get():
