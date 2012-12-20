@@ -358,17 +358,20 @@ def chess_ai():
         if 0 == back_num and 1 == cant_move(map, my_ch, com_color):
             player_win = 1
         if back_num > 0:
-            if org == None or score > open_score:
-                dest = select_back_chess(map, my_ch)
-                sound_click.play()
-                my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                back_num -= 1 
-            elif score == open_score:
-                if 0 == score:
+            if open_score != None:
+                if org == None or score > open_score:
                     dest = select_back_chess(map, my_ch)
                     sound_click.play()
                     my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                    back_num -= 1
+                    back_num -= 1 
+                elif score == open_score:
+                    if 0 == score:
+                        dest = select_back_chess(map, my_ch)
+                        sound_click.play()
+                        my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                        back_num -= 1
+                    else:
+                        map, my_ch = move_s(org, dest, map, my_ch)
                 else:
                     map, my_ch = move_s(org, dest, map, my_ch)
             else:
@@ -639,9 +642,7 @@ def com_think(a_map, a_ch):
         m4 = []
         for mm in m:
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.95)
-            if mm[0] == mm[1]:
-                open_score = mm[2]
-            elif m2:
+            if m2:
                 m2 = sorted(m2, key=lambda s:s[4])
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
@@ -697,13 +698,13 @@ def eating_value_to_score(value, king, owner_color):
     opp_color = 1 - owner_color
     if 1 == value:
         if 1 == king[opp_color]:
-            return 40
+            return 30
         else:
             return 5
     elif 2 == value:
         return 70
     elif 3 == value:
-        return 40
+        return 25
     elif 4 == value:
         return 50
     elif 5 == value:
