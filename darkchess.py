@@ -633,10 +633,10 @@ def com_think(a_map, a_ch):
                         dest = pm   
     if len(m) > 1:
         mf = []
-        m2 = []
-        m3 = []
-        m4 = []
         for mm in m:
+            m2 = []
+            m3 = []
+            m4 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.999)
             if m2:
                 m2 = sorted(m2, key=lambda s:s[4])
