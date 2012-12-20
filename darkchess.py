@@ -358,20 +358,17 @@ def chess_ai():
         if 0 == back_num and 1 == cant_move(map, my_ch, com_color):
             player_win = 1
         if back_num > 0:
-            if open_score != None:
-                if org == None or score > open_score:
+            if org == None or score > open_score - 4:
+                dest = select_back_chess(map, my_ch)
+                sound_click.play()
+                my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                back_num -= 1 
+            elif score == open_score:
+                if score >= 0:
                     dest = select_back_chess(map, my_ch)
                     sound_click.play()
                     my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                    back_num -= 1 
-                elif score == open_score:
-                    if 0 == score:
-                        dest = select_back_chess(map, my_ch)
-                        sound_click.play()
-                        my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
-                        back_num -= 1
-                    else:
-                        map, my_ch = move_s(org, dest, map, my_ch)
+                    back_num -= 1
                 else:
                     map, my_ch = move_s(org, dest, map, my_ch)
             else:
@@ -434,66 +431,65 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
 
-def near2_have_same_value(org, dest, my_chess, a_map, owner_color):
+def near2_have_same_value(org, my_chess, a_map, owner_color):
     if org == None:
         return 0
     elif owner_color == player_color:
         return 0
     
     (orgy, orgx) = org
-    (desty, destx) = dest
     
     m = a_map[orgy][orgx]
     if m == None:
         return 0
     
-    if desty-2 >= 0:
-        n = a_map[desty-2][destx]
+    if orgy-2 >= 0:
+        n = a_map[orgy-2][orgx]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if desty+2 <= 3:
-        n = a_map[desty+2][destx]
+    if orgy+2 <= 3:
+        n = a_map[orgy+2][orgx]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if destx-2 >= 0:
-        n = a_map[desty][destx-2]
+    if orgx-2 >= 0:
+        n = a_map[orgy][orgx-2]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if destx+2 <= 7:
-        n = a_map[desty][destx+2]
+    if orgx+2 <= 7:
+        n = a_map[orgy][orgx+2]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if desty-1 >= 0 and destx-1 >=0:
-        n = a_map[desty-1][destx-1]
+    if orgy-1 >= 0 and orgx-1 >=0:
+        n = a_map[orgy-1][orgx-1]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if desty-1 >= 0 and destx+1 <=7:
-        n = a_map[desty-1][destx+1]
+    if orgy-1 >= 0 and orgx+1 <=7:
+        n = a_map[orgy-1][orgx+1]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if desty+1 <= 3 and destx-1 >= 0:
-        n = a_map[desty+1][destx-1]
+    if orgy+1 <= 3 and orgx-1 >= 0:
+        n = a_map[orgy+1][orgx-1]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
-    if desty+1 <= 3 and destx+1 <= 7:
-        n = a_map[desty+1][destx+1]
+    if orgy+1 <= 3 and orgx+1 <= 7:
+        n = a_map[orgy+1][orgx+1]
         if n == None:
             return 0
-        elif my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+        elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
             return 1
         
 def move_score(org, dest, my_chess, a_map, owner_color):
@@ -513,8 +509,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        if 1 == near2_have_same_value(org, dest, my_chess, a_map, owner_color):
-            return -2 * org_value
+        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+            return -1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         if 8 == max_value:
             return org_value/2
@@ -637,28 +633,31 @@ def com_think(a_map, a_ch):
                         dest = pm   
     if len(m) > 1:
         mf = []
-        m2 = []
-        m3 = []
-        m4 = []
         for mm in m:
-            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.95)
+            m2 = []
+            m3 = []
+            m4 = []
+            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.999)
             if m2:
                 m2 = sorted(m2, key=lambda s:s[4])
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
+                if m2[-1][4] == mm[2]:
+                    a2_map = a_map
+                    a2_ch = a_ch
                 mf.append((mm[0], mm[1], m2[-1][4]))
                 if mm[0] == mm[1]:
                     continue
-                    m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.5)
+                    m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
                 if m3:
                     m3 = sorted(m3, key=lambda s:s[4])
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.5)
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.997)
                     if m4:
                         m4 = sorted(m4, key=lambda s:s[4])
                         mf.append((mm[0], mm[1], m4[-1][4]))
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
-            #print 'mf', mf
+            print 'mf', mf
             return mf[0][0], mf[0][1], mf[0][2]
         else:
             return org, dest, max_score
@@ -698,21 +697,21 @@ def eating_value_to_score(value, king, owner_color):
     opp_color = 1 - owner_color
     if 1 == value:
         if 1 == king[opp_color]:
-            return 30
+            return 19
         else:
-            return 5
+            return 7
     elif 2 == value:
-        return 70
+        return 79
     elif 3 == value:
-        return 25
+        return 15
     elif 4 == value:
-        return 50
+        return 39
     elif 5 == value:
-        return 70
+        return 79
     elif 6 == value:
-        return 80
+        return 159
     elif 7 == value:
-        return 90
+        return 319
 
 def display_font():
     
