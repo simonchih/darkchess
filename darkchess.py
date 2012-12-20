@@ -687,14 +687,32 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
             if ch.color == owner_color and 1 == ch.live:
                 #print 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
                 for pm in ch.possible_move:
-                    if owner_color == player_color:
-                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
+                    if 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
+                        if owner_color == player_color:
+                            score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
+                        else:
+                            score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
+                        score = sc
+                    
                     m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
                     
     return m2, af_map, af_ch
 
+def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
+    af_map = copy.deepcopy(a_map)
+    af_ch = copy.deepcopy(a_ch)
+    af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+    af_map, af_ch = all_chess_move(af_map, af_ch)
+    opp_color = 1 - owner_color
+    for chr in af_ch:
+        for ch in chr:
+            if ch.color == opp_color and 1 == ch.live:
+                for pm in ch.possible_move:
+                    if pm == nextj:
+                        return 1
+                        
+    return 0
         
 def eating_value_to_score(value, king, owner_color):
     opp_color = 1 - owner_color
