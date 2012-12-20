@@ -3,13 +3,14 @@ import math
 drag = 0.999
 
 class chess():
-    def __init__(self, index, color, value, (x, y), (row, col), size, surface):
+    def __init__(self, index, color, value, (x, y), (row, col), size, surface, select):
         self.x = x
         self.y = y
         self.row = row
         self.col = col
         self.size = size
         self.surface = surface
+        self.select = select
         self.index = index
         self.color = color
         self.value = value
@@ -23,6 +24,8 @@ class chess():
         if 1 == self.live:
             if 1 == self.back:
                 screen.blit(chess_back, (self.x, self.y))
+            elif -1 == self.back:
+                screen.blit(self.select, (self.x, self.y))
             else:
                 screen.blit(self.surface, (self.x, self.y))
                 

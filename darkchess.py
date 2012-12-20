@@ -24,6 +24,22 @@ image_chess_rn = 'Image/RN.gif'
 image_chess_rc = 'Image/RC.gif'
 image_chess_rp = 'Image/RP.gif'
 
+image_chess_bks = 'Image/BKS.gif'
+image_chess_bas = 'Image/BAS.gif'
+image_chess_bbs = 'Image/BBS.gif'
+image_chess_brs = 'Image/BRS.gif'
+image_chess_bns = 'Image/BNS.gif'
+image_chess_bcs = 'Image/BCS.gif'
+image_chess_bps = 'Image/BPS.gif'
+image_chess_rks = 'Image/RKS.gif'
+image_chess_ras = 'Image/RAS.gif'
+image_chess_rbs = 'Image/RBS.gif'
+image_chess_rrs = 'Image/RRS.gif'
+image_chess_rns = 'Image/RNS.gif'
+image_chess_rcs = 'Image/RCS.gif'
+image_chess_rps = 'Image/RPS.gif'
+
+
 s_newgame = 'Sound/NEWGAME.WAV'
 s_capture = 'Sound/CAPTURE2.WAV'
 s_click   = 'Sound/CLICK.WAV'
@@ -55,6 +71,21 @@ chess_rn = pygame.image.load(image_chess_rn).convert()
 chess_rc = pygame.image.load(image_chess_rc).convert()
 chess_rp = pygame.image.load(image_chess_rp).convert()
 
+chess_bks = pygame.image.load(image_chess_bks).convert()
+chess_bas = pygame.image.load(image_chess_bas).convert()
+chess_bbs = pygame.image.load(image_chess_bbs).convert()
+chess_brs = pygame.image.load(image_chess_brs).convert()
+chess_bns = pygame.image.load(image_chess_bns).convert()
+chess_bcs = pygame.image.load(image_chess_bcs).convert()
+chess_bps = pygame.image.load(image_chess_bps).convert()
+chess_rks = pygame.image.load(image_chess_rks).convert()
+chess_ras = pygame.image.load(image_chess_ras).convert()
+chess_rbs = pygame.image.load(image_chess_rbs).convert()
+chess_rrs = pygame.image.load(image_chess_rrs).convert()
+chess_rns = pygame.image.load(image_chess_rns).convert()
+chess_rcs = pygame.image.load(image_chess_rcs).convert()
+chess_rps = pygame.image.load(image_chess_rps).convert()
+
 sound_new     = pygame.mixer.Sound(s_newgame)
 sound_capture = pygame.mixer.Sound(s_capture)
 sound_click   = pygame.mixer.Sound(s_click)
@@ -79,7 +110,7 @@ com_color = 1
 max_value = 0
 open_score = None
 
-chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back)
+chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back, chess_back)
 my_ch = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 chess_index = [0] * 32
 map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
@@ -89,6 +120,36 @@ king_live = [1, 1]
 chess_num = [16, 16]
 com_mv_map = [0, 0]
 back_num = 32
+
+def index_to_chess_select(index):
+    if 0 <= index < 5:
+        return chess_bps
+    elif index < 7:
+        return chess_bcs
+    elif index < 9:
+        return chess_bns
+    elif index < 11:
+        return chess_brs
+    elif index < 13:
+        return chess_bbs
+    elif index < 15:
+        return chess_bas
+    elif 15 == index:
+        return chess_bks
+    elif 16 <= index < 21:
+        return chess_rps
+    elif index < 23:
+        return chess_rcs
+    elif index < 25:
+        return chess_rns
+    elif index < 27:
+        return chess_rrs
+    elif index < 29:
+        return chess_rbs
+    elif index < 31:
+        return chess_ras
+    elif 31 == index:
+        return chess_rks
 
 def index_to_chess_surface(index):
     if 0 <= index < 5:
@@ -186,7 +247,7 @@ def findC(ch, x, y):
 def all_chess_move(a_map, my_chess):
     for chr in my_chess:
         for ch in chr:
-            if 0 == ch.back and 1 == ch.live:
+            if ch.back < 1 and 1 == ch.live:
                 ch.possible_move, a_map, my_chess= collect_possible_move(ch.row, ch.col, a_map, my_chess)
     return a_map, my_chess
     
@@ -198,7 +259,7 @@ def collect_possible_move(i, j, a_map, my_chess):
         if None == a_map[nc[0]][nc[1]]:
             pm.append(nc)
         elif a_map[i][j] != None: #a_map[i][j] != None and a_map[nc[0]][nc[1]] != None 
-            if my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].color != my_chess[a_map[i][j][0]][a_map[i][j][1]].color and 0 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].back:
+            if my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].color != my_chess[a_map[i][j][0]][a_map[i][j][1]].color and my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].back < 1:
                 if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value and 7 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].value:
                     pm.append(nc)
                 elif 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value and 1 == my_chess[a_map[nc[0]][nc[1]][0]][a_map[nc[0]][nc[1]][1]].value:
@@ -346,12 +407,13 @@ def chess_ai():
         i = random.randint(0, 3) 
         j = random.randint(0, 7) 
         turn_id = my_ch[i][j].color
-        my_ch[i][j].back = 0
+        my_ch[i][j].back = -1
         back_num -= 1
         com_color = turn_id
         player_color = 1 - com_color
         first = 0
     elif turn_id == com_color and 0 == first:
+        my_ch = clean_back_n1_to_0(my_ch)
         print 'back_num', back_num
         org, dest, score = com_think(map, my_ch)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
@@ -362,13 +424,13 @@ def chess_ai():
                 if org == None or score > open_score - 4:
                     dest = select_back_chess(map, my_ch)
                     sound_click.play()
-                    my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                    my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = -1
                     back_num -= 1 
                 elif score == open_score:
                     if score >= 0:
                         dest = select_back_chess(map, my_ch)
                         sound_click.play()
-                        my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = 0
+                        my_ch[map[dest[0]][dest[1]][0]][map[dest[0]][dest[1]][1]].back = -1
                         back_num -= 1
                     else:
                         map, my_ch = move_s(org, dest, map, my_ch)
@@ -768,7 +830,14 @@ def write(msg="pygame is cool", color= (0,0,0)):
     mytext = myfont.render(msg, True, color)
     mytext = mytext.convert_alpha()
     return mytext 
-        
+
+def clean_back_n1_to_0(a_ch):
+    for chr in a_ch:
+        for ch in chr:
+            if -1 == ch.back:
+                ch.back = 0
+    return a_ch
+    
 def main():
     global cstart_x
     global cstart_y
@@ -807,13 +876,13 @@ def main():
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+j],index_to_color(chess_index[8*i+j]), index_to_chess_value(chess_index[8*i+j]), (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+j]))
+                ch = chess(chess_index[8*i+j],index_to_color(chess_index[8*i+j]), index_to_chess_value(chess_index[8*i+j]), (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+j]), index_to_chess_select(chess_index[8*i+j]))
                 my_ch[i][j] = ch
                 cor[i][j] = (ch.x, ch.y)
                 map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+4+j],index_to_color(chess_index[8*i+4+j]), index_to_chess_value(chess_index[8*i+4+j]), (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+4+j]))
+                ch = chess(chess_index[8*i+4+j],index_to_color(chess_index[8*i+4+j]), index_to_chess_value(chess_index[8*i+4+j]), (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+4+j]), index_to_chess_select(chess_index[8*i+4+j]))
                 my_ch[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 map[i][4+j] = (i, 4+j)
