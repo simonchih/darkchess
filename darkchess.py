@@ -309,6 +309,47 @@ def collect_possible_move(i, j, a_map, my_chess):
                 if a_map[i][jj] != None:
                     jump = 1
     return pm, a_map, my_chess
+
+def eat_by_bomb(org, a_map, my_chess):
+    (i, j) = org
+    jump = 0
+    for ii in range(i-1, -1, -1):
+        if 1 == jump and a_map[ii][j] != None:
+            if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+                break
+            elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
+                return 1
+        if a_map[ii][j] != None:
+            jump = 1
+    jump = 0
+    for ii in range(i+1, 4, 1):
+        if 1 == jump and a_map[ii][j] != None:
+            if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+                break
+            elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
+                return 1
+        if a_map[ii][j] != None:
+            jump = 1
+    jump = 0
+    for jj in range(j-1, -1, -1):
+        if 1 == jump and a_map[i][jj] != None:
+            if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+                break
+            elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
+                return 1
+        if a_map[i][jj] != None:
+            jump = 1
+    jump = 0
+    for jj in range(j+1, 8, 1):
+        if 1 == jump and a_map[i][jj] != None:
+            if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+                break
+            elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
+                return 1
+        if a_map[i][jj] != None:
+            jump = 1
+    return 0
+    
     
 def near(i, j):
     n_cor = []
@@ -351,10 +392,36 @@ def mouse_position_to_block(mx, my, chess_back):
 
 def select_back_chess(a_map, my_chess):
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-    if 1 == check_back_exist(a_map, my_chess, back_mark):
-        return random_select_back_chess(a_map, my_chess, back_mark)
+    (i, j) = (None, None)
+    for k in range(0, 10):
+        if 1 == check_back_exist(a_map, my_chess, back_mark):
+            (y, x) = random_select_back_chess(a_map, my_chess, back_mark)
+            if 0 == eat_by_bomb((y, x), a_map, my_chess):
+                near_cor = near(y, x)
+                n = 0
+                for kk in near_cor:
+                    (ni, nj) = kk
+                    if a_map[ni][nj] != None:
+                        an = a_map[ni][nj]
+                        if my_chess[an[0]][an[1]].back < 1:
+                            n = 1
+                            break
+                if 0 == n:
+                    (i, j) = (y, x)
+                else:
+                    back_mark[y][x] = 1
+            else:
+                back_mark[y][x] = 1
+        else:
+            break
+    if (i, j) != (None, None):
+        return (i, j)
     else:
-        return None
+        back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+        if 1 == check_back_exist(a_map, my_chess, back_mark):
+            return random_select_back_chess(a_map, my_chess, back_mark)
+        else:
+            return None
 
 def check_back_exist(a_map, my_chess, bm):
     back_exist = 0
