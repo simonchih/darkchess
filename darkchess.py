@@ -829,11 +829,17 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     return m2, af_map, af_ch
 
 def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
+    (y, x) = nexti
+    a = a_map[y][x]
+    if 1 == a_ch[a[0]][a[1]].value:
+        return 0
+    
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
     af_map, af_ch = all_chess_move(af_map, af_ch)
     opp_color = 1 - owner_color
+
     for chr in af_ch:
         for ch in chr:
             if ch.color == opp_color and 1 == ch.live:
