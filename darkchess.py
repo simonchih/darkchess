@@ -528,7 +528,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     
     mark[i][j] = 1
     
-    if map[i][j] != None:
+    if a_map[i][j] != None:
         if 7 == org_value:
             if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = 8
@@ -779,7 +779,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         elif 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             return -1
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
-            print 'caca', org, dest, owner_color
             return org_value+1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         if 8 == max_value:
@@ -801,9 +800,6 @@ def move_s(org, dest, a_map, a_ch):
     (orgi, orgj) = org
     (desti, destj) = dest
     
-    #print 'b_a_map[desti][destj]', a_map[desti][destj]
-    #print 'b_map[desti][destj]', map[desti][destj]
-    
     if org == dest:
         print crash
     if None == a_map[desti][destj]:
@@ -822,9 +818,6 @@ def move_s(org, dest, a_map, a_ch):
         com_mv_map = list(a_map[orgi][orgj])
         a_map[orgi][orgj] = None
         sound_capture.play()
-    
-    #print 'af_a_map[desti][destj]', a_map[desti][destj]
-    #print 'af_map[desti][destj]', map[desti][destj]
     
     return a_map, a_ch    
         
@@ -915,13 +908,17 @@ def com_think(a_map, a_ch):
                 if m2[-1][4] == mm[2]:
                     a2_map = a_map
                     a2_ch = a_ch
+                    m2[-1][2] = None
                 mf.append((mm[0], mm[1], m2[-1][4]))
-                if mm[0] == mm[1]:
+                if mm[0] == mm[1] or m2[-1][2] == None:
                     continue
-                    m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
                 if m3:
                     m3 = sorted(m3, key=lambda s:s[4])
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][0], m3[0][1], m3[0][4], 0.997)
+                    if m3[0][2] == None:
+                        continue
+                    m3[0][2], m3[0][3]
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
                     if m4:
                         m4 = sorted(m4, key=lambda s:s[4])
                         mf.append((mm[0], mm[1], m4[-1][4]))
@@ -944,11 +941,11 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_map, af_ch = all_chess_move(af_map, af_ch)
     
     if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color):
-        m2.append((mm[0], mm[1], None, None, mm[2]))
+        m2.append([mm[0], mm[1], None, None, mm[2]])
         return m2, af_map, af_ch
 
     if back_num > 0:
-        m2.append((mm[0], mm[1], None, None, mm[2]))
+        m2.append([mm[0], mm[1], None, None, mm[2]])
     for chr in af_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live:
@@ -962,7 +959,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     else:
                         score = sc
                     
-                    m2.append((mm[0], mm[1], (ch.row, ch.col), pm, score))
+                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
     return m2, af_map, af_ch
 
