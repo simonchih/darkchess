@@ -710,7 +710,50 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
             return 1
         elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
             return 1
-        
+
+def scan_king(my_chess):
+    global king_live
+    
+    for chr in my_chess:
+        for ch in chr:
+            if 7 == ch.value:
+                king_live[ch.color] = ch.live
+
+def can_escape(a_map, a_ch, nexti, nextj):
+    a_map, a_ch = all_chess_move(a_map, a_ch)
+    dead = 0
+    escape = 0
+    
+    (i, j) = nexti
+    cor_near = near(i, j)
+    
+    for cn in cor_near:
+        m = a_map[i][j]
+        n = a_map[cn[0]][cn[1]]
+        if n != None:
+            if a_ch[n[0]][n[1]].value == a_ch[m[0]][m[1]].value:
+                return 0
+    
+    for chr in a_ch:
+        for ch in chr:
+            for pm in ch.possible_move:
+                if pm == nexti:
+                    dead = 1
+                    break
+    if 1 == dead:
+        escape = 1
+        af_map = copy.deepcopy(a_map)
+        af_ch = copy.deepcopy(a_ch)
+        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+        af_map, af_ch = all_chess_move(af_map, af_ch)
+        for chr in af_ch:
+            for ch in chr:
+                for pm in ch.possible_move:
+                    if pm == nextj:
+                        escape = 0
+                        break
+    return escape
+                
 def move_score(org, dest, my_chess, a_map, owner_color):
     
     global king_live
@@ -719,6 +762,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     (orgy, orgx) = org
     (desty, destx) = dest
+    
+    scan_king(my_chess)
+    
     if a_map[desty][destx] == None:
         if owner_color == player_color:
             return 0
@@ -728,7 +774,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         max_value = 0
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+        if 1 == can_escape(a_map, my_chess, org, dest):
+            return 2*org_value
+        elif 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             return -1
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             print 'caca', org, dest, owner_color
@@ -940,9 +988,8 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     return 0
         
 def eating_value_to_score(value, king, owner_color):
-    opp_color = 1 - owner_color
     if 1 == value:
-        if 1 == king[opp_color]:
+        if 1 == king[owner_color]:
             return 19
         else:
             return 7
