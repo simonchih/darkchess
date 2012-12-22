@@ -909,7 +909,7 @@ def com_think(a_map, a_ch):
                     a2_map = a_map
                     a2_ch = a_ch
                     m2[-1][2] = None
-                mf.append((mm[0], mm[1], m2[-1][4]))
+                mf.append([mm[0], mm[1], m2[-1][4]])
                 if mm[0] == mm[1] or m2[-1][2] == None:
                     continue
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
@@ -921,7 +921,7 @@ def com_think(a_map, a_ch):
                     m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
                     if m4:
                         m4 = sorted(m4, key=lambda s:s[4])
-                        mf.append((mm[0], mm[1], m4[-1][4]))
+                        mf.append([mm[0], mm[1], m4[-1][4]])
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
