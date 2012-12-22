@@ -958,9 +958,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                             score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
                         if owner_color == player_color:
-                            score = sc - 400
+                            score = sc
                         else:
-                            score = sc + 400
+                            score = sc
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
