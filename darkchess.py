@@ -957,7 +957,10 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         else:
                             score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        score = sc
+                        if owner_color == player_color:
+                            score = sc - 400
+                        else:
+                            score = sc + 400
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
@@ -968,6 +971,12 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     a = a_map[y][x]
     if 1 == a_ch[a[0]][a[1]].value:
         return 0
+    elif nextj != None:
+        (ii, jj) = nextj
+        b = a_map[ii][jj]
+        if b != None:
+            if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
+                return 0
     
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
