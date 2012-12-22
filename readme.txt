@@ -14,3 +14,5 @@ Chinese readme only:
 2. 電腦可能長捉
 3. 沒有和棋
 ...
+
+*如果效能上有問題，請用0.1.6b (blindchess_016b.zip)以前的版本
