@@ -951,16 +951,13 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
             if ch.color == owner_color and 1 == ch.live:
                 #print 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
                 for pm in ch.possible_move:
-                    if 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
-                        if owner_color == player_color:
-                            score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
-                        else:
-                            score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
+                    if owner_color == player_color:
+                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
+                    elif 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
+                        #if owner_color != player_color:
+                        score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        if owner_color == player_color:
-                            score = sc
-                        else:
-                            score = sc
+                        score = sc
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
