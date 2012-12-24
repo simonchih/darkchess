@@ -972,6 +972,9 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
         (ii, jj) = nextj
         b = a_map[ii][jj]
         if b != None:
+            if 2 == a_ch[a[0]][a[1]].value:
+                if a_ch[b[0]][b[1]].value > 4:
+                    return 0
             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
                 return 0
     
