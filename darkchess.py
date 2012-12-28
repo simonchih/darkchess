@@ -481,7 +481,6 @@ def chess_ai():
         first = 0
     elif turn_id == com_color and 0 == first:
         main_chess = clean_back_n1_to_0(main_chess)
-        print 'back_num', back_num
         org, dest, score = com_think(main_map, main_chess)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
         if 0 == back_num and 1 == cant_move(main_map, main_chess, com_color):
@@ -910,18 +909,18 @@ def com_think(a_map, a_ch):
                     a2_ch = a_ch
                     m2[-1][2] = None
                 mf.append([mm[0], mm[1], m2[-1][4]])
-                if mm[0] == mm[1] or m2[-1][2] == None:
-                    continue
-                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
-                if m3:
-                    m3 = sorted(m3, key=lambda s:s[4])
-                    if m3[0][2] == None:
-                        continue
-                    m3[0][2], m3[0][3]
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
-                    if m4:
-                        m4 = sorted(m4, key=lambda s:s[4])
-                        mf.append([mm[0], mm[1], m4[-1][4]])
+                #if mm[0] == mm[1] or m2[-1][2] == None:
+                #    continue
+                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
+                #if m3:
+                #    m3 = sorted(m3, key=lambda s:s[4])
+                #    if m3[0][2] == None:
+                #        continue
+                #    m3[0][2], m3[0][3]
+                #    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
+                #    if m4:
+                #        m4 = sorted(m4, key=lambda s:s[4])
+                #        mf.append([mm[0], mm[1], m4[-1][4]])
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
@@ -948,16 +947,21 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
         m2.append([mm[0], mm[1], None, None, mm[2]])
     for chr in af_ch:
         for ch in chr:
-            if ch.color == owner_color and 1 == ch.live:
-                #print 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
+            if ch.color == owner_color and 1 == ch.live and ch.back < 1:
+                #print 'owner_color', owner_color, 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
                 for pm in ch.possible_move:
-                    if owner_color == player_color:
-                        score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
-                    elif 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
-                        #if owner_color != player_color:
-                        score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
+                    if 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
+                        #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
+                        if owner_color == player_color:
+                            score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
+                        else:
+                            score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        score = sc
+                        #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
+                        if owner_color == com_color:
+                            score = sc + eating_value_to_score(ch.value, king_live, player_color) 
+                        else:
+                            score = sc
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
