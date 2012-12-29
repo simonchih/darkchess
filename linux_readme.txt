@@ -1,6 +1,11 @@
 Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 
+Intall on Linux:
+1. Install Python 2.x
+2. Install Pygame
+3. Run darkchess.py
+
 Chinese readme only:
 
 字型來源：文泉驛開源矢量中文字體
@@ -14,3 +19,5 @@ Chinese readme only:
 2. 電腦可能長捉
 3. 沒有和棋
 ...
+
+
