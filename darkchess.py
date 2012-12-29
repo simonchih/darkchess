@@ -790,6 +790,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return max_value
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
+        print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
@@ -1004,17 +1005,42 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     af_map, af_ch = all_chess_move(af_map, af_ch)
     opp_color = 1 - owner_color
 
+    pity = 0
+    i2 = None
+    j2 = None
+    
     for chr in af_ch:
+        if 1 == pity:
+            break
         for ch in chr:
             if ch.color == opp_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     if pm == nextj:
                         if b == None:
-                            return 1
+                            pity = 1
+                            break
                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
-                            return 1
-                        
-    return 0
+                            i2 = (ch.row, ch.col)
+                            j2 = pm
+                            pity = 1
+                            break
+    
+    if i2!= None and j2!= None:                    
+        af2_map = copy.deepcopy(af_map)
+        af2_ch = copy.deepcopy(af_ch)
+        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
+        af2_map, af2_ch = all_chess_move(af2_map, af2_ch)
+        
+        for chr in af2_ch:
+            if 0 == pity:
+                break
+            for ch in chr:
+                if ch.color == owner_color and 1 == ch.live:
+                    for pm in ch.possible_move:
+                        if pm == j2:
+                            pity = 0
+                            break    
+    return pity
         
 def eating_value_to_score(value, king, owner_color):
     if 1 == value:
