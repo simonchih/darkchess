@@ -468,8 +468,6 @@ def chess_ai():
     global player_win
     global back_num
     
-    pygame.display.update()
-    
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
         j = random.randint(0, 7) 
