@@ -468,6 +468,8 @@ def chess_ai():
     global player_win
     global back_num
     
+    pygame.display.update()
+    
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
         j = random.randint(0, 7) 
@@ -884,7 +886,11 @@ def com_think(a_map, a_ch):
         for ch in chr:
             if ch.color == com_color and 1 == ch.live:
                 for pm in ch.possible_move:
-                    score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                    print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                    if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
+                        score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                    else:
+                        score = sc + 320
                     m.append(((ch.row, ch.col), pm, score))
                     #print 'm', m
                     if score < max_score:
@@ -907,18 +913,18 @@ def com_think(a_map, a_ch):
                     a2_ch = a_ch
                     m2[-1][2] = None
                 mf.append([mm[0], mm[1], m2[-1][4]])
-                #if mm[0] == mm[1] or m2[-1][2] == None:
-                #    continue
-                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
-                #if m3:
-                #    m3 = sorted(m3, key=lambda s:s[4])
-                #    if m3[0][2] == None:
-                #        continue
-                #    m3[0][2], m3[0][3]
-                #    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
-                #    if m4:
-                #        m4 = sorted(m4, key=lambda s:s[4])
-                #        mf.append([mm[0], mm[1], m4[-1][4]])
+                if mm[0] == mm[1] or m2[-1][2] == None:
+                    continue
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
+                if m3:
+                    m3 = sorted(m3, key=lambda s:s[4])
+                    if m3[0][2] == None:
+                        continue
+                    m3[0][2], m3[0][3]
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
+                    if m4:
+                        m4 = sorted(m4, key=lambda s:s[4])
+                        mf.append([mm[0], mm[1], m4[-1][4]])
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
@@ -946,26 +952,38 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     for chr in af_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live and ch.back < 1:
-                #print 'owner_color', owner_color, 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
+                print 'owner_color', owner_color, 'ch.row', ch.row, 'ch.col', ch.col, 'pm', ch.possible_move 
                 for pm in ch.possible_move:
                     if 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
-                        #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
+                        print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
                         if owner_color == player_color:
                             score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
                         else:
                             score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
+                        print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
                         if owner_color == com_color:
-                            score = sc + eating_value_to_score(ch.value, king_live, player_color) 
+                            score = sc + 320
                         else:
-                            score = sc
+                            score = sc - 320
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
     return m2, af_map, af_ch
 
+def will_dead(org, a_ch, opp_color):
+    for chr in a_ch:
+        for ch in chr:
+            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
+                for pm in ch.possible_move:
+                    if pm == org:
+                        return 1
+    return 0
+    
 def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
+    if 1 == will_dead(nexti, a_ch, 1-owner_color):
+        return 0
+    
     (y, x) = nexti
     a = a_map[y][x]
     if 1 == a_ch[a[0]][a[1]].value:
@@ -991,7 +1009,10 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
             if ch.color == opp_color and 1 == ch.live:
                 for pm in ch.possible_move:
                     if pm == nextj:
-                        return 1
+                        if b == None:
+                            return 1
+                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
+                            return 1
                         
     return 0
         
@@ -1004,7 +1025,7 @@ def eating_value_to_score(value, king, owner_color):
     elif 2 == value:
         return 79
     elif 3 == value:
-        return 15
+        return 18
     elif 4 == value:
         return 39
     elif 5 == value:
