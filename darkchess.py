@@ -108,6 +108,7 @@ turn_id = 0
 player_color = 0
 com_color = 1
 max_value = 0
+max_cor = None
 open_score = None
 
 chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back, chess_back)
@@ -514,6 +515,7 @@ def chess_ai():
 def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j):
     global max_value
     global mark
+    global max_cor
     
     if i == -1 or j == -1 or i == 4 or j == 8:
         return
@@ -531,19 +533,24 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         if 7 == org_value:
             if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = 8
+                max_cor = (i, j)
                 return
             elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
+                max_cor = (i, j)
                 return
         elif 1 == org_value:
             if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = 9
+                max_cor = (i, j)
                 return
             elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
+                max_cor = (i, j)
                 return
         elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
             max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
+            max_cor = (i, j)
             return
     elif orgy == desty and orgx+1 == destx:
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
@@ -783,11 +790,11 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
-            return 7
+            return 7 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
         elif max_value > org_value:
             return org_value/2
         else:
-            return max_value
+            return max_value - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
