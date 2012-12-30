@@ -790,11 +790,17 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
-            return 7 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            if max_cor != None:
+                return 7.00 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            else:
+                return 7
         elif max_value > org_value:
             return org_value/2
         else:
-            return max_value - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            if max_cor != None:
+                return (float)(max_value) - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            else:
+                return max_value
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
