@@ -765,6 +765,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     global king_live
     global max_value
     global mark
+    global max_cor
     
     (orgy, orgx) = org
     (desty, destx) = dest
@@ -778,6 +779,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return 0
         
         max_value = 0
+        max_cor = None
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == can_escape(a_map, my_chess, org, dest):
@@ -787,11 +789,12 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
+        print 'max_value', max_value, 'max_cor', max_cor, 'org', org
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
             if max_cor != None:
-                return 7.00 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                return 7.0 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return 7
         elif max_value > org_value:
@@ -803,7 +806,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 return max_value
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
-        print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+        #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
