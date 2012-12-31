@@ -8,6 +8,7 @@ from sys import exit
 from chess import *
 
 background_image_filename = 'Image/SHEET.gif'
+image_new        = 'Image/shield-and-swords.gif'
 image_chess_back = 'Image/back.gif'
 image_chess_bk = 'Image/BK.gif'
 image_chess_ba = 'Image/BA.gif'
@@ -55,6 +56,7 @@ screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32
 pygame.display.set_caption("Taiwan Blind Chess")
 
 background = pygame.image.load(background_image_filename).convert()
+new_game   = pygame.image.load(image_new).convert()
 chess_back = pygame.image.load(image_chess_back).convert()
 chess_bk = pygame.image.load(image_chess_bk).convert()
 chess_ba = pygame.image.load(image_chess_ba).convert()
@@ -99,6 +101,8 @@ cstart_x2 = 260
 cstart_y2 = 51
 text_x = 237
 text_y = 16
+new_game_iconi = 440
+new_game_iconj = 13
 
 player_win = 0
 player_first = 0
@@ -1138,6 +1142,7 @@ def main():
                 game_start = 0
 
             screen.blit(background, (0,0))
+            screen.blit(new_game, (new_game_iconi, new_game_iconj))
             
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
@@ -1147,13 +1152,16 @@ def main():
                     if event.type == QUIT:
                         exit()
                     elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
+                        (mouseX, mouseY) = pygame.mouse.get_pos()
+                        if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
+                            player_win = -1
                         main_map, main_chess = all_chess_move(main_map, main_chess)
                         sound_click.play()
                         click_once = 0
                         for chr in main_chess:
                             for chc in chr:
                                 if 0 == click_once:
-                                    ch_index = chc.click(pygame.mouse.get_pos())
+                                    ch_index = chc.click((mouseX, mouseY))
                                     if ch_index != None:
                                         if 1 == player_first and 1 == first:                            
                                             turn_id = index_to_color(ch_index)

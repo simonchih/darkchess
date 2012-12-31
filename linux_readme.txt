@@ -1,5 +1,6 @@
 Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
+http://www.freeiconsweb.com/Free-Downloads.asp?id=494
 
 Intall on Linux:
 1. Install Python 2.x
@@ -13,11 +14,12 @@ Chinese readme only:
 遊戲說明：
 按滑鼠鍵(左鍵 或 右鍵接可)翻開棋子，
 而托曳已翻開的我方棋子，可以合法移動或吃子。
+另外，藍色外框表示電腦翻開的棋子。
+而右上角，雙劍和盾的圖案，去按它可以投降(重開)。
 
 已知主要問題：
 1. AI有缺陷
 2. 電腦可能長捉
-3. 沒有和棋
 ...
 
 
