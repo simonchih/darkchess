@@ -1183,6 +1183,10 @@ def main():
                 if 1 == no_move:
                     turn_id = player_color
             
+            if selected_c != None:
+                selected_c.move()
+                selected_c.draw(screen, chess_back)
+            
             chess_ai()
             
             if turn_id == player_color:
@@ -1264,10 +1268,6 @@ def main():
                 dy -= selected_c.size[1]/2
                 selected_c.angle = 0.5*math.pi + math.atan2(dy, dx)
                 selected_c.speed = math.hypot(dx, dy) * 0.1
-            
-            if selected_c != None:
-                selected_c.move()
-                selected_c.draw(screen, chess_back)
             
             if 0 == chess_num[player_color]:
                 player_win = -1
