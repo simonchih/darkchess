@@ -1144,6 +1144,47 @@ def main():
             screen.blit(background, (0,0))
             screen.blit(new_game, (new_game_iconi, new_game_iconj))
             
+            display_font()
+            for cr in main_chess:
+                for c in cr:
+                    c.draw(screen, chess_back)
+                       
+            no_move = 1
+            if 2 == turn_id:
+                for cr in main_chess:
+                    for c in cr:
+                        com_mv = 0
+                        if c.x != cor[c.row][c.col][0]:
+                            c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
+                            com_mv = 1
+                            if (c.x, c.y) == cor[c.row][c.col]:                                
+                                if main_map[c.row][c.col] != None:
+                                    (desti, destj) = main_map[c.row][c.col]
+                                    dest_ch = main_chess[desti][destj]
+                                    dest_ch.live = 0
+                                    chess_num[dest_ch.color] -= 1
+                                main_map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
+                                turn_id = player_color
+                        if c.y != cor[c.row][c.col][1]:
+                            c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
+                            com_mv = 1  
+                            if (c.x, c.y) == cor[c.row][c.col]:                                
+                                if main_map[c.row][c.col] != None:
+                                    (desti, destj) = main_map[c.row][c.col]
+                                    dest_ch = main_chess[desti][destj]
+                                    dest_ch.live = 0
+                                    chess_num[dest_ch.color] -= 1
+                                main_map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
+                                turn_id = player_color
+                        if 1 == com_mv:
+                            no_move = 0
+                            c.draw(screen, chess_back)
+                            com_mv = 0
+                if 1 == no_move:
+                    turn_id = player_color
+            
+            chess_ai()
+            
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
                     player_win = -1
@@ -1173,7 +1214,7 @@ def main():
                                             turn_id = com_color
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
-                                        elif ch_index != -1:
+                                        elif ch_index != -1 and 0 == first:
                                             selected_c = None
                                             back_num -= 1
                                             turn_id = com_color
@@ -1223,47 +1264,6 @@ def main():
                 dy -= selected_c.size[1]/2
                 selected_c.angle = 0.5*math.pi + math.atan2(dy, dx)
                 selected_c.speed = math.hypot(dx, dy) * 0.1
-            
-            display_font()
-            for cr in main_chess:
-                for c in cr:
-                    c.draw(screen, chess_back)
-                       
-            no_move = 1
-            if 2 == turn_id:
-                for cr in main_chess:
-                    for c in cr:
-                        com_mv = 0
-                        if c.x != cor[c.row][c.col][0]:
-                            c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
-                            com_mv = 1
-                            if (c.x, c.y) == cor[c.row][c.col]:                                
-                                if main_map[c.row][c.col] != None:
-                                    (desti, destj) = main_map[c.row][c.col]
-                                    dest_ch = main_chess[desti][destj]
-                                    dest_ch.live = 0
-                                    chess_num[dest_ch.color] -= 1
-                                main_map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
-                                turn_id = player_color
-                        if c.y != cor[c.row][c.col][1]:
-                            c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
-                            com_mv = 1  
-                            if (c.x, c.y) == cor[c.row][c.col]:                                
-                                if main_map[c.row][c.col] != None:
-                                    (desti, destj) = main_map[c.row][c.col]
-                                    dest_ch = main_chess[desti][destj]
-                                    dest_ch.live = 0
-                                    chess_num[dest_ch.color] -= 1
-                                main_map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
-                                turn_id = player_color
-                        if 1 == com_mv:
-                            no_move = 0
-                            c.draw(screen, chess_back)
-                            com_mv = 0
-                if 1 == no_move:
-                    turn_id = player_color
-            
-            chess_ai()
             
             if selected_c != None:
                 selected_c.move()
