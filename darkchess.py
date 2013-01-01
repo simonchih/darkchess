@@ -492,7 +492,7 @@ def chess_ai():
             player_win = 1
         if back_num > 0:
             if open_score != None:
-                if org == None or score >= open_score - 1:
+                if org == None or score >= open_score - 4:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
@@ -1031,7 +1031,7 @@ def eating_value_to_score(value, king, owner_color):
         if 1 == king[owner_color]:
             return 19
         else:
-            return 7
+            return 15
     elif 2 == value:
         return 79
     elif 3 == value:
