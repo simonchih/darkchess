@@ -941,10 +941,11 @@ def com_think(a_map, a_ch):
                 m2 = sorted(m2, key=lambda s:s[4])
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
-                #if m2[-1][4] == mm[2]:
-                #    a2_map = a_map
-                #    a2_ch = a_ch
-                #    m2[-1][2] = None
+                if m2[-1][4] == mm[2] and back_num > 0:
+                    a2_map = a_map
+                    a2_ch = a_ch
+                    m2[-1][2] = None
+                    m2[-1][3] = None
                 mf.append([mm[0], mm[1], m2[-1][4]])
                 if mm[0] == mm[1]:
                     continue
