@@ -948,15 +948,15 @@ def com_think(a_map, a_ch):
                 mf.append([mm[0], mm[1], m2[-1][4]])
                 if mm[0] == mm[1]:
                     continue
-                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
-                if m3:
-                    m3 = sorted(m3, key=lambda s:s[4])
-                    if m3[0][2] == None:
-                        continue
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
-                    if m4:
-                        m4 = sorted(m4, key=lambda s:s[4])
-                        mf.append([mm[0], mm[1], m4[-1][4]])
+                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
+                #if m3:
+                #    m3 = sorted(m3, key=lambda s:s[4])
+                #    if m3[0][2] == None:
+                #        continue
+                #    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
+                #    if m4:
+                #        m4 = sorted(m4, key=lambda s:s[4])
+                #        mf.append([mm[0], mm[1], m4[-1][4]])
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
