@@ -756,8 +756,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
-        #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest
-        #print 'mark', mark
+        print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest
+        print 'mark', mark
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
@@ -1135,6 +1135,46 @@ def main():
                 main_chess[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
+        
+        #Test data, randon move?
+        '''
+        first = 0
+        turn_id = 0
+        player_color = 1
+        com_color = 0
+        
+        main_chess[3][3].live = 0
+        main_map[3][3] = None
+        main_chess[2][4].live = 0
+        main_map[2][4] = None
+        main_chess[3][5].live = 0
+        main_map[3][5] = None
+        main_chess[2][6].live = 0
+        main_map[2][6] = None
+        main_chess[3][6].live = 0
+        main_map[3][6] = None
+        
+        #3, 2
+        c = chess(31, 1, 7, (cstart_x+2*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 2), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        c.back = 0
+        main_chess[3][2] = c
+        
+        #2, 3
+        c = chess(28, 1, 5, (cstart_x+3*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 3), chess_back.get_size(), index_to_chess_surface(28), index_to_chess_select(28))
+        c.back = 0
+        main_chess[2][3] = c
+        
+        #3, 4
+        c = chess(0, 0, 1, (cstart_x2+0*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 4), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
+        c.back = 0
+        main_chess[3][4] = c
+        
+        #2, 5
+        c = chess(14, 0, 6, (cstart_x2+1*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 5), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
+        c.back = 0
+        main_chess[2][5] = c
+        '''
+        #End Test data
         
         while 0 == player_win:
             if 1 == game_start:
