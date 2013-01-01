@@ -492,7 +492,7 @@ def chess_ai():
             player_win = 1
         if back_num > 0:
             if open_score != None:
-                if org == None or score >= open_score:
+                if org == None or score >= open_score - 1:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
@@ -756,8 +756,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
-        print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest
-        print 'mark', mark
+        #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest
+        #print 'mark', mark
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
@@ -893,19 +893,18 @@ def com_think(a_map, a_ch):
                 m2 = sorted(m2, key=lambda s:s[4])
                 if mm[0] == mm[1]:
                     open_score = m2[-1][4]
-                if m2[-1][4] == mm[2]:
-                    a2_map = a_map
-                    a2_ch = a_ch
-                    m2[-1][2] = None
+                #if m2[-1][4] == mm[2]:
+                #    a2_map = a_map
+                #    a2_ch = a_ch
+                #    m2[-1][2] = None
                 mf.append([mm[0], mm[1], m2[-1][4]])
-                if mm[0] == mm[1] or m2[-1][2] == None:
+                if mm[0] == mm[1]:
                     continue
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
                 if m3:
                     m3 = sorted(m3, key=lambda s:s[4])
                     if m3[0][2] == None:
                         continue
-                    m3[0][2], m3[0][3]
                     m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
                     if m4:
                         m4 = sorted(m4, key=lambda s:s[4])
@@ -925,15 +924,16 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     m2 = []
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
-    af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-    af_map, af_ch = all_chess_move(af_map, af_ch)
+    if nexti != None and nextj != None:
+        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+        af_map, af_ch = all_chess_move(af_map, af_ch)
     
     if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color):
-        m2.append([mm[0], mm[1], None, None, mm[2]])
+        m2.append([mm[0], mm[1], None, None, sc])
         return m2, af_map, af_ch
 
     if back_num > 0:
-        m2.append([mm[0], mm[1], None, None, mm[2]])
+        m2.append([mm[0], mm[1], None, None, sc])
     for chr in af_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live and ch.back < 1:
@@ -1135,7 +1135,7 @@ def main():
                 main_chess[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
-    
+        
         while 0 == player_win:
             if 1 == game_start:
                 sound_new.play()
