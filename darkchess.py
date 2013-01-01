@@ -800,9 +800,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            return -1
+            return -0.001
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
-            return org_value+1
+            return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         print 'mark', mark
@@ -936,7 +936,7 @@ def com_think(a_map, a_ch):
             m2 = []
             m3 = []
             m4 = []
-            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.999)
+            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if m2:
                 m2 = sorted(m2, key=lambda s:s[4])
                 if mm[0] == mm[1]:
@@ -948,15 +948,15 @@ def com_think(a_map, a_ch):
                 mf.append([mm[0], mm[1], m2[-1][4]])
                 if mm[0] == mm[1]:
                     continue
-                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.998)
-                #if m3:
-                #    m3 = sorted(m3, key=lambda s:s[4])
-                #    if m3[0][2] == None:
-                #        continue
-                #    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.997)
-                #    if m4:
-                #        m4 = sorted(m4, key=lambda s:s[4])
-                #        mf.append([mm[0], mm[1], m4[-1][4]])
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.8)
+                if m3:
+                    m3 = sorted(m3, key=lambda s:s[4])
+                    if m3[0][2] == None:
+                        continue
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.7)
+                    if m4:
+                        m4 = sorted(m4, key=lambda s:s[4])
+                        mf.append([mm[0], mm[1], m4[-1][4]])
         if mf:
             mf = sorted(mf, key=lambda s:s[2])
             print 'mf', mf
@@ -998,7 +998,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         if owner_color == com_color:
                             score = sc + 320
                         else:
-                            score = sc - 320
+                            score = sc - 8
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
@@ -1019,9 +1019,8 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     
     (y, x) = nexti
     a = a_map[y][x]
-    if 1 == a_ch[a[0]][a[1]].value:
-        return 0
-    elif nextj != None:
+
+    if nextj != None:
         (ii, jj) = nextj
         b = a_map[ii][jj]
         if b != None:
