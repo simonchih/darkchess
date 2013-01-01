@@ -949,6 +949,8 @@ def com_think(a_map, a_ch):
                 mf.append([mm[0], mm[1], m2[-1][4]])
                 if mm[0] == mm[1]:
                     continue
+                elif 0 == back_num and m2[-1][4] == mm[2]:
+                    continue
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.8)
                 if m3:
                     m3 = sorted(m3, key=lambda s:s[4])
