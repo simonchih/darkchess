@@ -573,75 +573,75 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
 
-def caca(org, dest, my_chess, a_map, owner_color):        
-    if org == None:
-        return 0
-    
-    (orgy, orgx) = org
-    (desty, destx) = dest
-    
-    m = a_map[orgy][orgx]
-    if m == None:
-        return 0
-    elif 2 == my_chess[m[0]][m[1]].value:
-        return 0
-    
-    if desty-1 >= 0 and destx-1 >=0:
-        n = a_map[desty-1][destx-1]
-        if n == None:
-            return 0
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                return 0
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0 
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
-    if desty-1 >= 0 and destx+1 <=7:
-        n = a_map[desty-1][destx+1]
-        if n == None:
-            return 0
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                return 0
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
-    if desty+1 <= 3 and destx-1 >= 0:
-        n = a_map[desty+1][destx-1]
-        if n == None:
-            return 0
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                return 0
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
-    if desty+1 <= 3 and destx+1 <= 7:
-        n = a_map[desty+1][destx+1]
-        if n == None:
-            return 0
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                return 0
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+#def caca(org, dest, my_chess, a_map, owner_color):        
+#    if org == None:
+#        return 0
+#    
+#    (orgy, orgx) = org
+#    (desty, destx) = dest
+#    
+#    m = a_map[orgy][orgx]
+#    if m == None:
+#        return 0
+#    elif 2 == my_chess[m[0]][m[1]].value:
+#        return 0
+#    
+#    if desty-1 >= 0 and destx-1 >=0:
+#        n = a_map[desty-1][destx-1]
+#        if n == None:
+#            return 0
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                return 0
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 0 
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 1
+#    if desty-1 >= 0 and destx+1 <=7:
+#        n = a_map[desty-1][destx+1]
+#        if n == None:
+#            return 0
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                return 0
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 0
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 1
+#    if desty+1 <= 3 and destx-1 >= 0:
+#        n = a_map[desty+1][destx-1]
+#        if n == None:
+#            return 0
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                return 0
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 0
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 1
+#    if desty+1 <= 3 and destx+1 <= 7:
+#        n = a_map[desty+1][destx+1]
+#        if n == None:
+#            return 0
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                return 0
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 0
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                return 1
         
         
 def near2_have_same_value(org, my_chess, a_map, owner_color):
@@ -801,8 +801,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             return -0.001
-        elif 1 == caca(org, dest, my_chess, a_map, owner_color):
-            return org_value+0.001
+        #if 1 == caca(org, dest, my_chess, a_map, owner_color):
+        #    return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         print 'mark', mark
@@ -810,14 +810,14 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return org_value/2
         elif 9 == max_value:
             if max_cor != None:
-                return 7.0 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return 7
         elif max_value > org_value:
             return org_value/2
         else:
             if max_cor != None:
-                return (float)(max_value) - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return max_value
     
