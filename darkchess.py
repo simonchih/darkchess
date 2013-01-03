@@ -804,8 +804,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #if 1 == caca(org, dest, my_chess, a_map, owner_color):
         #    return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
-        print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
-        print 'mark', mark
+        #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
+        #print 'mark', mark
         if 8 == max_value:
             return org_value/2
         elif 9 == max_value:
@@ -947,7 +947,7 @@ def com_think(a_map, a_ch):
                     m2[-1][2] = None
                     m2[-1][3] = None
                 mf.append([mm[0], mm[1], m2[-1][4]])
-                if mm[0] == mm[1]:
+                if mm[0] == mm[1] or 1 == chess_num[player_color]:
                     continue
                 elif 0 == back_num and m2[-1][4] == mm[2]:
                     continue
