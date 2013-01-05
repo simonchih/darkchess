@@ -949,20 +949,26 @@ def com_think(a_map, a_ch):
                     a2_ch = a_ch
                     m2[max_index][2] = None
                     m2[max_index][3] = None
-                mf.append([mm[0], mm[1], m2[max_index][4]])
                 if mm[0] == mm[1] or 1 == chess_num[player_color]:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
                     continue
                 elif 0 == back_num and m2[max_index][4] == mm[2]:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
                     continue
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.8)
                 if m3:
                     min_index = m3.index(min(m3, key=lambda s:s[4]))
                     if m3[min_index][2] == None:
+                        mf.append([mm[0], mm[1], m2[max_index][4]])
                         continue
                     m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[min_index][2], m3[min_index][3], m3[min_index][4], 0.7)
                     if m4:
                         max_index = m4.index(max(m4, key=lambda s:s[4]))
                         mf.append([mm[0], mm[1], m4[max_index][4]])
+                    else:
+                        mf.append([mm[0], mm[1], m2[max_index][4]])
+                else:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
         if mf:
             min_index = mf.index(min(mf, key=lambda s:s[2]))
             print 'mf', mf
