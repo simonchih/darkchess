@@ -573,75 +573,76 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
 
-#def caca(org, dest, my_chess, a_map, owner_color):        
-#    if org == None:
-#        return 0
-#    
-#    (orgy, orgx) = org
-#    (desty, destx) = dest
-#    
-#    m = a_map[orgy][orgx]
-#    if m == None:
-#        return 0
-#    elif 2 == my_chess[m[0]][m[1]].value:
-#        return 0
-#    
-#    if desty-1 >= 0 and destx-1 >=0:
-#        n = a_map[desty-1][destx-1]
-#        if n == None:
-#            return 0
-#        else:
-#            mc = my_chess[n[0]][n[1]]
-#            if 0 == mc.live or 1 == mc.back:
-#                return 0
-#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 0 
-#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-#                return 1
-#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 1
-#    if desty-1 >= 0 and destx+1 <=7:
-#        n = a_map[desty-1][destx+1]
-#        if n == None:
-#            return 0
-#        else:
-#            mc = my_chess[n[0]][n[1]]
-#            if 0 == mc.live or 1 == mc.back:
-#                return 0
-#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 0
-#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-#                return 1
-#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 1
-#    if desty+1 <= 3 and destx-1 >= 0:
-#        n = a_map[desty+1][destx-1]
-#        if n == None:
-#            return 0
-#        else:
-#            mc = my_chess[n[0]][n[1]]
-#            if 0 == mc.live or 1 == mc.back:
-#                return 0
-#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 0
-#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-#                return 1
-#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 1
-#    if desty+1 <= 3 and destx+1 <= 7:
-#        n = a_map[desty+1][destx+1]
-#        if n == None:
-#            return 0
-#        else:
-#            mc = my_chess[n[0]][n[1]]
-#            if 0 == mc.live or 1 == mc.back:
-#                return 0
-#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 0
-#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-#                return 1
-#            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-#                return 1
+def caca(org, dest, my_chess, a_map, owner_color):        
+    if org == None:
+        return 0
+    
+    (orgy, orgx) = org
+    (desty, destx) = dest
+    
+    m = a_map[orgy][orgx]
+    if m == None:
+        return 0
+    elif 2 == my_chess[m[0]][m[1]].value:
+        return 0
+    
+    if desty-1 >= 0 and destx-1 >=0:
+        n = a_map[desty-1][destx-1]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass 
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+                return 1
+            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                return 1
+    if desty-1 >= 0 and destx+1 <=7:
+        n = a_map[desty-1][destx+1]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+                return 1
+            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                return 1
+    if desty+1 <= 3 and destx-1 >= 0:
+        n = a_map[desty+1][destx-1]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+                return 1
+            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                return 1
+    if desty+1 <= 3 and destx+1 <= 7:
+        n = a_map[desty+1][destx+1]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+                return 1
+            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                return 1
+    return 0
         
         
 def near2_have_same_value(org, my_chess, a_map, owner_color):
@@ -655,17 +656,19 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     m = a_map[orgy][orgx]
     if m == None:
         return 0
+    elif 2 == my_chess[m[0]][m[1]].value:
+        return 0
     
     if orgy-2 >= 0:
         n = a_map[orgy-2][orgx]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -673,13 +676,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgy+2 <= 3:
         n = a_map[orgy+2][orgx]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -687,13 +690,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgx-2 >= 0:
         n = a_map[orgy][orgx-2]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -701,13 +704,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgx+2 <= 7:
         n = a_map[orgy][orgx+2]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -715,13 +718,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgy-1 >= 0 and orgx-1 >=0:
         n = a_map[orgy-1][orgx-1]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -729,13 +732,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgy-1 >= 0 and orgx+1 <=7:
         n = a_map[orgy-1][orgx+1]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -743,13 +746,13 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgy+1 <= 3 and orgx-1 >= 0:
         n = a_map[orgy+1][orgx-1]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
@@ -757,17 +760,18 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
     if orgy+1 <= 3 and orgx+1 <= 7:
         n = a_map[orgy+1][orgx+1]
         if n == None:
-            return 0
+            pass
         else:
             mc = my_chess[n[0]][n[1]]
             if 0 == mc.live or 1 == mc.back:
-                return 0
+                pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 0
+                pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
             elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 return 1
+    return 0
 
 def scan_king(my_chess):
     global king_live
@@ -801,8 +805,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             return -0.001
-        #if 1 == caca(org, dest, my_chess, a_map, owner_color):
-        #    return org_value+0.001
+        elif 1 == caca(org, dest, my_chess, a_map, owner_color):
+            return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         #print 'mark', mark
@@ -955,13 +959,13 @@ def com_think(a_map, a_ch):
                 elif 0 == back_num and m2[max_index][4] == mm[2]:
                     mf.append([mm[0], mm[1], m2[max_index][4]])
                     continue
-                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.8)
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
                 if m3:
                     min_index = m3.index(min(m3, key=lambda s:s[4]))
                     if m3[min_index][2] == None:
                         mf.append([mm[0], mm[1], m2[max_index][4]])
                         continue
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[min_index][2], m3[min_index][3], m3[min_index][4], 0.7)
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[min_index][2], m3[min_index][3], m3[min_index][4], 0.729)
                     if m4:
                         max_index = m4.index(max(m4, key=lambda s:s[4]))
                         mf.append([mm[0], mm[1], m4[max_index][4]])
@@ -1197,9 +1201,9 @@ def main():
         
         # Test data
         #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
         #
         #back_num = 0
         #
@@ -1208,17 +1212,83 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(10,0, 4, (cstart_x2+3*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 7), chess_back.get_size(), index_to_chess_surface(10), index_to_chess_select(10))
+        #ch = chess(8,0, 3, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(8), index_to_chess_select(8))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+        #
+        #ch = chess(15,0, 7, (cstart_x+1*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 1), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
+        #
+        #ch = chess(14,0, 6, (cstart_x+3*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 3), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][3] = ch
+        #main_map[1][3] = (1, 3)
+        #
+        #ch = chess(12,0, 5, (cstart_x+1*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 1), chess_back.get_size(), index_to_chess_surface(12), index_to_chess_select(12))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][1] = ch
+        #main_map[3][1] = (3, 1)
+        #
+        #ch = chess(6,0, 2, (cstart_x+2*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(6), index_to_chess_select(6))
+        ##ch.back = 0
+        #ch.live = 1
+        #main_chess[0][2] = ch
+        #main_map[0][2] = (0, 2)
+        #
+        #ch = chess(4,0, 1, (cstart_x+2*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 2), chess_back.get_size(), index_to_chess_surface(4), index_to_chess_select(4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(31,1, 7, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        ##ch.back = 0
+        #ch.live = 1
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
+        #
+        #ch = chess(17,1, 1, (cstart_x2+1*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 5), chess_back.get_size(), index_to_chess_surface(17), index_to_chess_select(17))
+        ##ch.back = 0
+        #ch.live = 1
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
+        #
+        #ch = chess(30,1, 6, (cstart_x+1*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(30), index_to_chess_select(30))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)        
+        #
+        #ch = chess(29,1, 6, (cstart_x+0*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 0), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)        
+        #
+        #ch = chess(28,1, 5, (cstart_x2+2*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 6), chess_back.get_size(), index_to_chess_surface(28), index_to_chess_select(28))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(22,1, 2, (cstart_x2+3*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 7), chess_back.get_size(), index_to_chess_surface(22), index_to_chess_select(22))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(16,1, 1, (cstart_x2+3*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 7), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][7] = ch
         #main_map[2][7] = (2, 7)
-        #
-        #ch = chess(16,1, 1, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
         # End Test data
         
         while 0 == player_win:
