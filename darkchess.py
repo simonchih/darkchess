@@ -817,7 +817,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return org_value/2
         else:
             if max_cor != None:
-                return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                if max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
+                    return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                else:
+                    return 0.01
             else:
                 return max_value
     
@@ -938,32 +941,32 @@ def com_think(a_map, a_ch):
             m4 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if m2:
-                m2 = sorted(m2, key=lambda s:s[4])
+                max_index = m2.index(max(m2, key=lambda s:s[4]))
                 if mm[0] == mm[1]:
-                    open_score = m2[-1][4]
-                if m2[-1][4] == mm[2] and back_num > 0:
+                    open_score = m2[max_index][4]
+                if m2[max_index][4] == mm[2] and back_num > 0:
                     a2_map = a_map
                     a2_ch = a_ch
-                    m2[-1][2] = None
-                    m2[-1][3] = None
-                mf.append([mm[0], mm[1], m2[-1][4]])
+                    m2[max_index][2] = None
+                    m2[max_index][3] = None
+                mf.append([mm[0], mm[1], m2[max_index][4]])
                 if mm[0] == mm[1] or 1 == chess_num[player_color]:
                     continue
-                elif 0 == back_num and m2[-1][4] == mm[2]:
+                elif 0 == back_num and m2[max_index][4] == mm[2]:
                     continue
-                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[-1][2], m2[-1][3], m2[-1][4], 0.8)
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.8)
                 if m3:
-                    m3 = sorted(m3, key=lambda s:s[4])
-                    if m3[0][2] == None:
+                    min_index = m3.index(min(m3, key=lambda s:s[4]))
+                    if m3[min_index][2] == None:
                         continue
-                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[0][2], m3[0][3], m3[0][4], 0.7)
+                    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[min_index][2], m3[min_index][3], m3[min_index][4], 0.7)
                     if m4:
-                        m4 = sorted(m4, key=lambda s:s[4])
-                        mf.append([mm[0], mm[1], m4[-1][4]])
+                        max_index = m4.index(max(m4, key=lambda s:s[4]))
+                        mf.append([mm[0], mm[1], m4[max_index][4]])
         if mf:
-            mf = sorted(mf, key=lambda s:s[2])
+            min_index = mf.index(min(mf, key=lambda s:s[2]))
             print 'mf', mf
-            return mf[0][0], mf[0][1], mf[0][2]
+            return mf[min_index][0], mf[min_index][1], mf[min_index][2]
         else:
             return org, dest, max_score
     elif 1 == len(m):
@@ -1186,6 +1189,32 @@ def main():
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
         
+        # Test data
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #
+        #back_num = 0
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(10,0, 4, (cstart_x2+3*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 7), chess_back.get_size(), index_to_chess_surface(10), index_to_chess_select(10))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+        #
+        #ch = chess(16,1, 1, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
+        # End Test data
+        
         while 0 == player_win:
             if 1 == game_start:
                 sound_new.play()
@@ -1241,6 +1270,7 @@ def main():
             
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
+                    print 'player cant move'
                     player_win = -1
                 
                 for event in pygame.event.get():
