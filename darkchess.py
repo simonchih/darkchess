@@ -1206,7 +1206,6 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #
         #back_num = 0
         #
         #for i in range(0, 4):
