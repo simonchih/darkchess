@@ -932,7 +932,7 @@ def com_think(a_map, a_ch):
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     else:
-                        score = sc + 320
+                        score = sc + 330 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
                     #print 'm', m
                     if score < max_score:
@@ -1014,7 +1014,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     else:
                         #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color)
                         if owner_color == com_color:
-                            score = sc + 320
+                            score = sc + 330 - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                         else:
                             score = sc - 8
                     
