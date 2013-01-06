@@ -813,14 +813,14 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         #print 'mark', mark
         if 8 == max_value:
-            return org_value/2
+            return org_value/100
         elif 9 == max_value:
             if max_cor != None:
                 return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return 7
         elif max_value > org_value:
-            return org_value/2
+            return org_value/100
         else:
             if max_cor != None:
                 if max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
