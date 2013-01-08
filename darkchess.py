@@ -910,7 +910,7 @@ def com_think(a_map, a_ch):
 
     m = []
     
-    max_score = 1
+    max_score = 1000
     sc = 0
     
     a_map, a_ch = all_chess_move(a_map, a_ch)
