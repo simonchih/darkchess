@@ -910,7 +910,7 @@ def com_think(a_map, a_ch):
 
     m = []
     
-    max_score = 1000
+    min_score = 1000
     sc = 0
     
     a_map, a_ch = all_chess_move(a_map, a_ch)
@@ -918,7 +918,7 @@ def com_think(a_map, a_ch):
     if back_num > 0:
         open_score = 0
         m.append((None, None, 0))
-        max_score = 0
+        min_score = 0
         org = None
         dest = None
     else:
@@ -935,8 +935,8 @@ def com_think(a_map, a_ch):
                         score = sc + 330 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
                     #print 'm', m
-                    if score < max_score:
-                        max_score = score
+                    if score < min_score:
+                        min_score = score
                         org = (ch.row, ch.col)
                         dest = pm   
     if len(m) > 1:
@@ -980,7 +980,7 @@ def com_think(a_map, a_ch):
             print 'mf', mf
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
         else:
-            return org, dest, max_score
+            return org, dest, min_score
     elif 1 == len(m):
         return m[0][0], m[0][1], m[0][2]
     else:
