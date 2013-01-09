@@ -492,7 +492,7 @@ def chess_ai():
             player_win = 1
         if back_num > 0:
             if open_score != None:
-                if org == None or score >= open_score - 4:
+                if org == None or score > open_score - 0.1:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
