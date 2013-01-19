@@ -469,7 +469,7 @@ def bomb_may_eat(org, a_map, my_chess):
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ii, nj), None, a_map, my_chess) < 2:
                             return (ii, nj)
-                        break
+                    break
                 if a_map[ii][nj] != None:
                     jump = 1
         elif 1 == n:
@@ -482,7 +482,7 @@ def bomb_may_eat(org, a_map, my_chess):
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ii, nj), None, a_map, my_chess) < 2:
                             return (ii, nj)
-                        break
+                    break
                 if a_map[ii][nj] != None:
                     jump = 1
         elif 2 == n:
@@ -495,7 +495,7 @@ def bomb_may_eat(org, a_map, my_chess):
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ni, jj), None, a_map, my_chess) < 2:
                             return (ni, jj)
-                        break
+                    break
                 if a_map[ni][jj] != None:
                     jump = 1
         elif 3 == n:
@@ -508,7 +508,7 @@ def bomb_may_eat(org, a_map, my_chess):
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ni, jj), None, a_map, my_chess) < 2:
                             return (ni, jj)
-                        break
+                    break
                 if a_map[ni][jj] != None:
                     jump = 1
     return None
