@@ -460,43 +460,55 @@ def bomb_may_eat(org, a_map, my_chess):
         n = (i+i2)%4
         (ni, nj) = org
         if 0 == n:
+            print 'n', n
             jump = 0
             for ii in range(ni-1, -1, -1):
                 if 1 == jump and a_map[ii][nj] != None:
                     an = a_map[ii][nj]
+                    print '(ii, nj)', (ii, nj)
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ii, nj), None, a_map, my_chess) < 2:
                             return (ii, nj)
+                        break
                 if a_map[ii][nj] != None:
                     jump = 1
         elif 1 == n:
+            print 'n', n
             jump = 0
             for ii in range(ni+1, 4, 1):
                 if 1 == jump and a_map[ii][nj] != None:
                     an = a_map[ii][nj]
+                    print '(ii, nj)', (ii, nj)
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ii, nj), None, a_map, my_chess) < 2:
                             return (ii, nj)
+                        break
                 if a_map[ii][nj] != None:
                     jump = 1
         elif 2 == n:
+            print 'n', n
             jump = 0
             for jj in range(nj-1, -1, -1):
                 if 1 == jump and a_map[ni][jj] != None:
                     an = a_map[ni][jj]
+                    print '(ni, jj)', (ni, jj)
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ni, jj), None, a_map, my_chess) < 2:
                             return (ni, jj)
+                        break
                 if a_map[ni][jj] != None:
                     jump = 1
         elif 3 == n:
+            print 'n', n
             jump = 0
             for jj in range(nj+1, 8, 1):
                 if 1 == jump and a_map[ni][jj] != None:
                     an = a_map[ni][jj]
+                    print '(ni, jj)', (ni, jj)
                     if 1 == my_chess[an[0]][an[1]].back:
                         if near_max_value((ni, jj), None, a_map, my_chess) < 2:
                             return (ni, jj)
+                        break
                 if a_map[ni][jj] != None:
                     jump = 1
     return None
