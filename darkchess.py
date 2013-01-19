@@ -432,12 +432,34 @@ def scan_player_bomb(a_map, my_chess):
                     if near_max_value(near_cor[n], (c.row, c.col), a_map, my_chess) <= 3:
                         return near_cor[n]
     return None
+
+def scan_com_second_big(a_map, my_chess):
+    for cr in my_chess:
+        for c in cr:
+            if 1 == c.live and c.back < 1 and 6 == c.value and com_color == c.color:
+                near_cor = near(c.row, c.col)
+                i = random.randint(0, len(near_cor)-1)
+                for ii in range(0, len(near_cor)):
+                    n = (i+ii)%len(near_cor)
+                    (ni, nj) = near_cor[n]
+                    an = a_map[ni][nj]
+                    if None == an:
+                        continue
+                    elif 0 == my_chess[an[0]][an[1]].live or my_chess[an[0]][an[1]].back < 1:
+                        continue
+                    if near_max_value(near_cor[n], (c.row, c.col), a_map, my_chess) <= 5:
+                        return near_cor[n]
+    return None
     
 def select_back_chess(a_map, my_chess):
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
     
     cor = scan_player_bomb(a_map, my_chess)
+    if cor != None:
+        return cor
+    
+    cor = scan_com_second_big(a_map, my_chess)
     if cor != None:
         return cor
     
