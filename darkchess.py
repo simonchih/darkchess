@@ -946,6 +946,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         if owner_color == player_color:
             if 1 == will_dead((desty, destx), my_chess, com_color):
                 return -7
+            elif 1 == will_dead((orgy, orgx), my_chess, com_color):
+                #escape, 0 == will_dead((desty, destx), my_chess, com_color)
+                return 8
             else:
                 return 0
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
