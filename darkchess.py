@@ -1100,10 +1100,10 @@ def com_think(a_map, a_ch):
             m4 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             #print 'map2', a2_map
-            print 'mm', mm
+            #print 'mm', mm
             if m2:
                 max_index = m2.index(max(m2, key=lambda s:s[4]))
-                print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
+                #print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 if m2[max_index][4] == mm[2] and back_num > 0:
@@ -1118,7 +1118,7 @@ def com_think(a_map, a_ch):
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
                 if m3:
                     min_index = m3.index(min(m3, key=lambda s:s[4]))
-                    print 'm3 score', m3[min_index][4], m3[min_index][2], m3[min_index][3]
+                    #print 'm3 score', m3[min_index][4], m3[min_index][2], m3[min_index][3]
                     if m3[min_index][2] == None:
                         mf.append([mm[0], mm[1], m2[max_index][4]])
                         continue
@@ -1126,7 +1126,7 @@ def com_think(a_map, a_ch):
                     #print 'map4', a4_map
                     if m4:
                         max2_index = m4.index(max(m4, key=lambda s:s[4]))
-                        print 'm4 score', m4[max2_index][4]
+                        #print 'm4 score', m4[max2_index][4]
                         mf.append([mm[0], mm[1], m4[max2_index][4]])
                     else:
                         mf.append([mm[0], mm[1], m2[max_index][4]])
