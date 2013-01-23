@@ -943,9 +943,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     scan_king(my_chess)
     
     if a_map[desty][destx] == None:
-        if 1 == will_dead((desty, destx), my_chess, com_color):
+        if 1 == will_dead((desty, destx), my_chess, a_map, com_color):
+            #print 'will dead', (desty, destx) 
             return -7
-        elif 1 == will_dead((orgy, orgx), my_chess, com_color):
+        elif 1 == will_dead((orgy, orgx), my_chess, a_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
             return 8
         elif owner_color == player_color:
@@ -981,6 +982,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 else:
                     return 0.01
             else:
+                #print 'max_value', max_value, 'org_value', org_value
                 return max_value
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
@@ -1100,10 +1102,10 @@ def com_think(a_map, a_ch):
             m4 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             #print 'map2', a2_map
-            #print 'mm', mm
+            print 'mm', mm
             if m2:
                 max_index = m2.index(max(m2, key=lambda s:s[4]))
-                #print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
+                print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 if m2[max_index][4] == mm[2] and back_num > 0:
@@ -1118,7 +1120,7 @@ def com_think(a_map, a_ch):
                 m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
                 if m3:
                     min_index = m3.index(min(m3, key=lambda s:s[4]))
-                    #print 'm3 score', m3[min_index][4], m3[min_index][2], m3[min_index][3]
+                    print 'm3 score', m3[min_index][4], m3[min_index][2], m3[min_index][3]
                     if m3[min_index][2] == None:
                         mf.append([mm[0], mm[1], m2[max_index][4]])
                         continue
@@ -1126,7 +1128,7 @@ def com_think(a_map, a_ch):
                     #print 'map4', a4_map
                     if m4:
                         max2_index = m4.index(max(m4, key=lambda s:s[4]))
-                        #print 'm4 score', m4[max2_index][4]
+                        print 'm4 score', m4[max2_index][4]
                         mf.append([mm[0], mm[1], m4[max2_index][4]])
                     else:
                         mf.append([mm[0], mm[1], m2[max_index][4]])
@@ -1179,9 +1181,15 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     
     return m2, af_map, af_ch
 
-def will_dead(org, a_ch, opp_color):
+def will_dead(org, a_ch, a_map, opp_color):
+    n = a_map[org[0]][org[1]]
+    if None == n:
+        return 0
+    my = a_ch[n[0]][n[1]]
     for chr in a_ch:
         for ch in chr:
+            if ch == my:
+                continue
             if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
                 for pm in ch.possible_move:
                     if pm == org:
@@ -1189,7 +1197,7 @@ def will_dead(org, a_ch, opp_color):
     return 0
     
 def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
-    if 1 == will_dead(nexti, a_ch, 1-owner_color):
+    if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):
         return 0
     
     (y, x) = nexti
@@ -1360,52 +1368,46 @@ def main():
         
         # Test data
         #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 1
-        #back_num = 3
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 0
         #
-        ##for i in range(0, 4):
-        ##    for j in range(0, 8):
-        ##        main_chess[i][j].live = 0
-        ##        main_map[i][j] = None
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None        
         #
-        #main_chess[1][6].live = 0
-        #main_map[1][6] = None
-        #
-        #main_chess[2][4].live = 0
-        #main_map[2][4] = None
-        #
-        ##ch = chess(9,0, 4, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(9), index_to_chess_select(9))
-        ###ch.back = 0
-        ##ch.live = 1
-        ##main_chess[1][2] = ch
-        ##main_map[1][2] = (1, 2)
-        ##
-        ##ch = chess(15,0, 7, (cstart_x+3*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 3), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
-        ###ch.back = 0
-        ##ch.live = 1
-        ##main_chess[2][3] = ch
-        ##main_map[2][3] = (2, 3)
-        ##
-        ##ch = chess(10,0, 4, (cstart_x+3*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 3), chess_back.get_size(), index_to_chess_surface(10), index_to_chess_select(10))
-        ##ch.back = 0
-        ##ch.live = 1
-        ##main_chess[1][3] = ch
-        ##main_map[1][3] = (1, 3)
-        #
-        #ch = chess(16,1, 1, (cstart_x2+3*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 7), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
+        #ch = chess(15,0, 7, (cstart_x+0*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 0), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
         #
-        #ch = chess(17,1, 1, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(17), index_to_chess_select(17))
+        #ch = chess(31,1, 7, (cstart_x+1*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 1), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
+        #
+        #ch = chess(24,1, 3, (cstart_x+3*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 3), chess_back.get_size(), index_to_chess_surface(24), index_to_chess_select(24))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][3] = ch
+        #main_map[0][3] = (0, 3)
+        #
+        #ch = chess(22,1, 2, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(22), index_to_chess_select(22))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
         #main_map[1][5] = (1, 5)
         #
+        #ch = chess(14,0, 6, (cstart_x2+2*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 6), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        
         #ch = chess(18,1, 1, (cstart_x2+0*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 4), chess_back.get_size(), index_to_chess_surface(18), index_to_chess_select(18))
         #ch.back = 0
         #ch.live = 1
@@ -1429,13 +1431,13 @@ def main():
         #ch.live = 1
         #main_chess[2][7] = ch
         #main_map[2][7] = (2, 7)        
-        
+        #
         #ch = chess(29,1, 6, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][3] = ch
         #main_map[3][3] = (3, 3)        
-        
+        #
         #ch = chess(22,1, 2, (cstart_x+0*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 0), chess_back.get_size(), index_to_chess_surface(22), index_to_chess_select(22))
         #ch.back = 0
         #ch.live = 1
