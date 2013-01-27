@@ -946,11 +946,11 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     if a_map[desty][destx] == None:
         if 1 == will_dead((desty, destx), my_chess, a_map, com_color):
             #print 'will dead', (desty, destx) 
-            return -0.1
+            return -7
         elif 1 == will_dead((orgy, orgx), my_chess, a_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
             #print 'will dead org', org
-            return 0.2
+            return 8
         elif owner_color == player_color:
             return 0
         
