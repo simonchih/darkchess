@@ -1243,11 +1243,17 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 1
                             break
     
+    if 1 == pity:
+        print 'pity', nexti, nextj
+    
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
         af2_map, af2_ch = all_chess_move(af2_map, af2_ch)
+        
+        (ii, jj) = j2
+        b = af2_map[ii][jj]
         
         for chr in af2_ch:
             if 0 == pity:
@@ -1255,7 +1261,7 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
             for ch in chr:
                 if ch.color == owner_color and 1 == ch.live:
                     for pm in ch.possible_move:
-                        if pm == j2:
+                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                             pity = 0
                             break    
     return pity
