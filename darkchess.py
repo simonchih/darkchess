@@ -700,7 +700,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
                 max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
                 max_cor = (i, j)
                 return
-        elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value and my_chess[a_map[i][j][0]][a_map[i][j][1]] <= org_value:
+        elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
             max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
             max_cor = (i, j)
             return
@@ -945,24 +945,15 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     if a_map[desty][destx] == None:
         
-        if owner_color == player_color:
-            if 1 == will_dead((desty, destx), my_chess, a_map, com_color):
-                #print 'will dead', (desty, destx) 
-                return -7
-            elif 1 == will_dead((orgy, orgx), my_chess, a_map, com_color):
-                #escape, 0 == will_dead((desty, destx), my_chess, com_color)
-                #print 'will dead org', org
-                return 0.2
-            elif owner_color == player_color:
-                return 0
-        else:    
-            if 1 == will_dead((desty, destx), my_chess, a_map, com_color):
-                #print 'will dead', (desty, destx) 
-                return -7
-            elif 1 == will_dead((orgy, orgx), my_chess, a_map, com_color):
-                #escape, 0 == will_dead((desty, destx), my_chess, com_color)
-                #print 'will dead org', org
-                return 8
+        if 1 == will_dead((desty, destx), my_chess, a_map, com_color):
+            #print 'will dead', (desty, destx) 
+            return -7
+        elif 1 == will_dead((orgy, orgx), my_chess, a_map, com_color):
+            #escape, 0 == will_dead((desty, destx), my_chess, com_color)
+            #print 'will dead org', org
+            return 8
+        elif owner_color == player_color:
+            return 0
         
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             return 0
