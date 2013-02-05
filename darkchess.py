@@ -961,7 +961,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            return -0.001
+            return -1
         elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
@@ -985,7 +985,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                     return 0.01
             else:
                 #print 'max_value', max_value, 'org_value', org_value
-                return -14
+                return -0.1
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
