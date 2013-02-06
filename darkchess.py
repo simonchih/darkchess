@@ -960,9 +960,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         max_cor = None
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            return -1
-        elif 1 == caca(org, dest, my_chess, a_map, owner_color):
+        #if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+        #    return -1
+        if 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
