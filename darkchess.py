@@ -684,8 +684,8 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     if a_map[i][j] != None:
         if 7 == org_value:
             if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                max_value = 8
-                max_cor = (i, j)
+                #max_value = 8
+                #max_cor = (i, j)
                 return
             elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                 max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
@@ -967,16 +967,17 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         #print 'mark', mark
-        if 8 == max_value:
-            return (float)(org_value)/100
-        elif 9 == max_value:
+        
+        #if 8 == max_value:
+        #    return (float)(org_value)/100
+        if 9 == max_value:
             if max_cor != None:
                 return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return 7
-        elif max_value > org_value:
+        #elif max_value > org_value:
             #print 'org_value', org_value
-            return (float)(org_value)/100
+            #return (float)(org_value)/100
         else:
             if max_cor != None:
                 if max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
