@@ -821,8 +821,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgy+2 <= 3:
         n = a_map[orgy+2][orgx]
         if n == None:
@@ -835,8 +835,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgx-2 >= 0:
         n = a_map[orgy][orgx-2]
         if n == None:
@@ -849,8 +849,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgx+2 <= 7:
         n = a_map[orgy][orgx+2]
         if n == None:
@@ -863,8 +863,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgy-1 >= 0 and orgx-1 >=0:
         n = a_map[orgy-1][orgx-1]
         if n == None:
@@ -877,8 +877,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgy-1 >= 0 and orgx+1 <=7:
         n = a_map[orgy-1][orgx+1]
         if n == None:
@@ -891,8 +891,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgy+1 <= 3 and orgx-1 >= 0:
         n = a_map[orgy+1][orgx-1]
         if n == None:
@@ -905,8 +905,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     if orgy+1 <= 3 and orgx+1 <= 7:
         n = a_map[orgy+1][orgx+1]
         if n == None:
@@ -919,8 +919,8 @@ def near2_have_same_value(org, my_chess, a_map, owner_color):
                 pass
             elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
                 return 1
-            elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                return 1
+            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+            #    return 1
     return 0
 
 def scan_king(my_chess):
@@ -945,7 +945,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     if a_map[desty][destx] == None:
         
-        print 'will dead dest', will_dead((desty, destx), main_chess, main_map, com_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, com_color)
+        #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
         if owner_color == player_color:
             return 0
         elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == will_dead((orgy, orgx), main_chess, main_map, player_color):
@@ -960,9 +960,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         max_cor = None
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        #if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-        #    return -1
-        if 1 == caca(org, dest, my_chess, a_map, owner_color):
+        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+            return -0.1
+        elif 1 == caca(org, dest, my_chess, a_map, owner_color):
             return org_value+0.001
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
@@ -1105,11 +1105,11 @@ def com_think(a_map, a_ch):
             m2 = []
             m3 = []
             m4 = []
-            print 'mm', mm
+            #print 'mm', mm
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if m2:
                 max_index = m2.index(max(m2, key=lambda s:s[4]))
-                print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
+                #print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 mf.append([mm[0], mm[1], m2[max_index][4]])
@@ -1229,6 +1229,9 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     i2 = None
     j2 = None
     
+    #print 'b', b
+    #print 'ea', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
+    
     for chr in af_ch:
         if 1 == pity:
             break
@@ -1237,6 +1240,8 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                 for pm in ch.possible_move:
                     if pm == nextj:
                         if b == None:
+                            i2 = (ch.row, ch.col)
+                            j2 = pm
                             pity = 1
                             break
                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
@@ -1245,8 +1250,9 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 1
                             break
     
-    if 1 == pity:
-        print 'pity', nexti, nextj
+    #if 1 == pity:
+    #    print 'pity', nexti, nextj
+    #    print 'i2', i2, 'j2', j2
     
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
@@ -1256,6 +1262,9 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
+        
+        #print 'e a_ch[a]', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
+        #print 'e af2_ch[b]', eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color)
         
         for chr in af2_ch:
             if 0 == pity:
@@ -1390,23 +1399,23 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None        
         #
-        #ch = chess(31,1, 7, (cstart_x+2*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        #ch = chess(31,1, 7, (cstart_x+0*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 0), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)
+        #
+        #ch = chess(0,0, 1, (cstart_x+3*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 3), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][3] = ch
+        #main_map[1][3] = (1, 3)
+        #
+        #ch = chess(15,0, 7, (cstart_x+2*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][2] = ch
         #main_map[0][2] = (0, 2)
-        #
-        #ch = chess(0,0, 1, (cstart_x+1*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
-        #
-        #ch = chess(12,0, 5, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(12), index_to_chess_select(12))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
         #
         ##ch = chess(22,1, 2, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(22), index_to_chess_select(22))
         ##ch.back = 0
@@ -1449,12 +1458,12 @@ def main():
         #ch.live = 1
         #main_chess[2][2] = ch
         #main_map[2][2] = (2, 2)        
-        #
-        #ch = chess(8,0, 3, (cstart_x+2*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 2), chess_back.get_size(), index_to_chess_surface(8), index_to_chess_select(8))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][2] = ch
-        #main_map[3][2] = (3, 2)
+        
+        ##ch = chess(8,0, 3, (cstart_x+2*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 2), chess_back.get_size(), index_to_chess_surface(8), index_to_chess_select(8))
+        ##ch.back = 0
+        ##ch.live = 1
+        ##main_chess[3][2] = ch
+        ##main_map[3][2] = (3, 2)
         #End Test data
         
         while 0 == player_win:
