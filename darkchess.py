@@ -948,7 +948,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
         if owner_color == player_color:
             return 0
-        elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == will_dead((orgy, orgx), main_chess, main_map, player_color):
+        elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
             #print 'will dead org', org
             return 8
@@ -1098,7 +1098,7 @@ def com_think(a_map, a_ch):
                         org = (ch.row, ch.col)
                         dest = pm   
     
-    print 'map', a_map
+    #print 'map', a_map
     if len(m) > 1:
         mf = []
         for mm in m:
@@ -1200,6 +1200,23 @@ def will_dead(org, a_ch, a_map, opp_color):
                 for pm in ch.possible_move:
                     if pm == org:
                         return 1
+    return 0
+
+def stand_will_dead_pity(org, a_ch, a_map, owner_color):
+    opp_color = 1-owner_color
+    n = a_map[org[0]][org[1]]
+    if None == n:
+        return 0
+    my = a_ch[n[0]][n[1]]
+    for chr in a_ch:
+        for ch in chr:
+            if ch == my:
+                continue
+            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
+                for pm in ch.possible_move:
+                    if pm == org:
+                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
+                            return 1
     return 0
     
 def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
