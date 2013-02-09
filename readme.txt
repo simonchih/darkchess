@@ -1,3 +1,5 @@
+Home page: http://sourceforge.net/projects/darkchess/
+
 Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 http://www.freeiconsweb.com/Free-Downloads.asp?id=494

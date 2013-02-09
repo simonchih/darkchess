@@ -1,3 +1,5 @@
+Home page: http://sourceforge.net/projects/darkchess/
+
 Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 http://www.freeiconsweb.com/Free-Downloads.asp?id=494
@@ -5,7 +7,7 @@ http://www.freeiconsweb.com/Free-Downloads.asp?id=494
 Intall on Linux:
 1. Install Python 2.x
 2. Install Pygame
-3. Run darkchess.py
+3. Run 'Python darkchess.py'
 
 Chinese readme only:
 
