@@ -954,7 +954,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'nem'
             return 8
         elif owner_color == player_color:
-            return 0
+            if 0 == will_dead((desty, destx), main_chess, main_map, com_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, player_color):
+                return 1
+            else:
+                return 0
         elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
             #print 'will dead org', org
@@ -989,7 +992,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'org_value', org_value
             #return (float)(org_value)/100
         else:
-            print 'lmv', max_value
+            #print 'lmv', max_value
             if max_cor != None:
                 if max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
                     #print 'r', (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
@@ -1117,7 +1120,7 @@ def com_think(a_map, a_ch):
         for mm in m:
             m2 = []
             m3 = []
-            m4 = []
+            #m4 = []
             #print 'mm', mm
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if m2:
@@ -1125,33 +1128,30 @@ def com_think(a_map, a_ch):
                 #print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
-                mf.append([mm[0], mm[1], m2[max_index][4]])
-                #if m2[max_index][4] == mm[2] and back_num > 0:
-                #    m2[max_index][2] = None
-                #    m2[max_index][3] = None
-                #if mm[0] == mm[1] or 1 == chess_num[player_color]:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
-                #    continue
-                #elif 0 == back_num and m2[max_index][4] == mm[2]:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
-                #    continue
-                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
-                #if m3:
-                #    min_index = m3.index(min(m3, key=lambda s:s[4]))
-                #    print 'm3 score', m3[min_index][4], m3[min_index][2], m3[min_index][3]
-                #    if m3[min_index][2] == None:
-                #        mf.append([mm[0], mm[1], m2[max_index][4]])
-                #        continue
-                #    m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, m3[min_index][2], m3[min_index][3], m3[min_index][4], 0.729)
-                #    #print 'map4', a4_map
-                #    if m4:
-                #        max2_index = m4.index(max(m4, key=lambda s:s[4]))
-                #        print 'm4 score', m4[max2_index][4]
-                #        mf.append([mm[0], mm[1], m4[max2_index][4]])
-                #    else:
-                #        mf.append([mm[0], mm[1], m2[max_index][4]])
-                #else:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
+                #mf.append([mm[0], mm[1], m2[max_index][4]])
+                if m2[max_index][4] == mm[2] and back_num > 0:
+                    m2[max_index][2] = None
+                    m2[max_index][3] = None
+                if mm[0] == mm[1] or 1 == chess_num[player_color]:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
+                    continue
+                elif 0 == back_num and m2[max_index][4] == mm[2]:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
+                    continue                
+                m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
+                if m3:
+                    mf2 = []
+                    for mm3 in m3:
+                        m4 = []
+                        m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, mm3[2], mm3[3], mm3[4], 0.729)
+                        if m4:
+                            max2_index = m4.index(max(m4, key=lambda s:s[4]))
+                            #print 'm4 score', m4[max2_index][4]
+                            mf2.append([mm[0], mm[1], m4[max2_index][4]])
+                    min_index = mf2.index(min(mf2, key=lambda s:s[2]))
+                    mf.append([mm[0], mm[1], mf2[min_index][2]])
+                else:
+                    mf.append([mm[0], mm[1], m2[max_index][4]])
         if mf:
             min_index = mf.index(min(mf, key=lambda s:s[2]))
             print 'mf', mf
