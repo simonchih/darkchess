@@ -947,13 +947,13 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
         if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
-            return 10
+            return 8
         elif owner_color == player_color:
             return 0
         elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
             #print 'will dead org', org
-            return 8
+            return 9
             
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             return 0
