@@ -946,7 +946,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     if a_map[desty][destx] == None:
         
         #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
-        if owner_color == player_color:
+        if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
+            return 10
+        elif owner_color == player_color:
             return 0
         elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
@@ -1202,6 +1204,25 @@ def will_dead(org, a_ch, a_map, opp_color):
                         return 1
     return 0
 
+def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):    
+    opp_color = 1-owner_color
+    can_eat = 0
+    af_map = copy.deepcopy(a_map)
+    af_ch = copy.deepcopy(a_ch)
+    if nexti != None and nextj != None:
+        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+        af_map, af_ch = all_chess_move(af_map, af_ch)
+    for chr in af_ch:
+        for ch in chr:
+            if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
+                for pm in ch.possible_move:
+                    if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
+                        can_eat += 1
+    if can_eat >= 2:
+        return 1
+    else:
+        return 0
+    
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
     opp_color = 1-owner_color
     n = a_map[org[0]][org[1]]
