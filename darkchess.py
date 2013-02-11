@@ -955,7 +955,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return 8
         elif owner_color == player_color:
             if 0 == will_dead((desty, destx), main_chess, main_map, com_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, player_color):
-                return 1
+                return 9
             else:
                 return 0
         elif 0 == will_dead((desty, destx), main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
