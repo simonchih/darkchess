@@ -1107,7 +1107,7 @@ def com_think(a_map, a_ch):
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     else:
-                        score = sc + 40 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                        score = sc + 80 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
                     #print 'm', m
                     if score < min_score:
