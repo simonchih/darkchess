@@ -5,7 +5,7 @@
 
 [Setup]
 AppName=My Program
-AppVersion=0.5.6
+AppVersion=0.5.6b
 DefaultDirName={pf}\Basic Blind Chess
 DefaultGroupName=Basic Blind Chess
 UninstallDisplayIcon={app}\darkchess.exe
@@ -21,5 +21,5 @@ Source: "E:\darkchess\darkchess_056\Image\*.*"; DestDir: "{app}\Image"; Flags: i
 Source: "E:\darkchess\darkchess_056\Sound\*.*"; DestDir: "{app}\Sound"; Flags: ignoreversion recursesubdirs  
 
 [Icons]
-Name: "{group}\Basic Blind Chess"; Filename: "{app}\darkchess.exe"
+Name: "{group}\Basic Blind Chess"; Filename: "{app}\darkchess.exe"; IconFilename: "{app}\Image\darkchess_default.ico"
 Name: "{group}\Uninstall Basic Blind Chess"; Filename: "{uninstallexe}";
