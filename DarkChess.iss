@@ -4,8 +4,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
 
 [Setup]
-AppName=My Program
-AppVersion=0.5.6b
+AppName=Basic Blind Chess
+AppVersion=0.5.6c
 DefaultDirName={pf}\Basic Blind Chess
 DefaultGroupName=Basic Blind Chess
 UninstallDisplayIcon={app}\darkchess.exe
