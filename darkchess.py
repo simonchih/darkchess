@@ -333,9 +333,8 @@ def bomb_can_eat(org, dest, my_chess, a_map):
                 ch2 = my_chess[mi][mj]
                 break
         if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back == 0 and ch2.back == 0) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back == 0 and ch2.back == 0):
-                if (ch1.color == 1 - o_color and ch1.value == 2) or (ch2.color == 1 - o_color and ch2.value == 2):
-                    return 1        
+            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
+                return 1        
     else:       
         for kj in range(jj+1, 8):
             if a_map[ii][kj] != None:
@@ -348,9 +347,8 @@ def bomb_can_eat(org, dest, my_chess, a_map):
                 ch2 = my_chess[mi][mj]
                 break
         if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back == 0 and ch2.back == 0) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back == 0 and ch2.back == 0) :
-                if (ch1.color == 1 - o_color and ch1.value == 2) or (ch2.color == 1 - o_color and ch2.value == 2):
-                    return 1
+            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
+                return 1
     return 0
     
 def eat_by_bomb(org, a_map, my_chess):
