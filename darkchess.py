@@ -315,6 +315,44 @@ def collect_possible_move(i, j, a_map, my_chess):
                     jump = 1
     return pm, a_map, my_chess
 
+def bomb_can_eat(org, dest, my_chess, a_map):
+    (i, j) = org
+    (ii, jj) = dest
+    o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
+    ch1 = None
+    ch2 = None
+    if i == ii:
+        for ki in range(ii+1, 4):
+            if a_map[ki][jj] != None:
+                (mi, mj) = a_map[ki][jj]
+                ch1 = my_chess[mi][mj]
+                break
+        for ki in range(ii-1, -1, -1):
+            if a_map[ki][jj] != None:
+                (mi, mj) = a_map[ki][jj]
+                ch2 = my_chess[mi][mj]
+                break
+        if ch1 != None and ch2 != None:
+            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back == 0 and ch2.back == 0) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back == 0 and ch2.back == 0):
+                if ch1.value == 2 or ch2.value == 2:
+                    return 1        
+    else:       
+        for kj in range(jj+1, 8):
+            if a_map[ii][kj] != None:
+                (mi, mj) = a_map[ii][kj]
+                ch1 = my_chess[mi][mj]
+                break
+        for kj in range(jj-1, -1, -1):
+            if a_map[ii][kj] != None:
+                (mi, mj) = a_map[ii][kj]
+                ch2 = my_chess[mi][mj]
+                break
+        if ch1 != None and ch2 != None:
+            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back == 0 and ch2.back == 0) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back == 0 and ch2.back == 0) :
+                if ch1.value == 2 or ch2.value == 2:
+                    return 1
+    return 0
+    
 def eat_by_bomb(org, a_map, my_chess):
     (i, j) = org
     jump = 0
@@ -946,7 +984,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
         if 1 == next_will_dead(org, dest, my_chess, a_map, owner_color):
             #print 'nwd'
-            return 8
+            if 1 == bomb_can_eat(org, dest, my_chess, a_map):
+                return 7.5
+            else:
+                return 8
         elif 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
             #print 'nem'
             return 8
@@ -1646,35 +1687,38 @@ def main():
         ##        main_chess[i][j].live = 0
         ##        main_map[i][j] = None        
         #
-        #main_chess[1][1].live = 0
-        #main_map[1][1] = None
+        #main_chess[1][5].live = 0
+        #main_map[1][5] = None
         #
-        #main_chess[2][0].live = 0
-        #main_map[2][0] = None
-        #
-        #ch = chess(21,1, 2, (cstart_x+0*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 0), chess_back.get_size(), index_to_chess_surface(21), index_to_chess_select(21))
+        #ch = chess(9,0, 4, (cstart_x+0*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 0), chess_back.get_size(), index_to_chess_surface(9), index_to_chess_select(9))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][0] = ch
         #main_map[0][0] = (0, 0)
         #
-        #ch = chess(0,0, 1, (cstart_x+0*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 0), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
+        #ch = chess(29,1, 6, (cstart_x+0*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 0), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][0] = ch
         #main_map[1][0] = (1, 0)
         #
-        #ch = chess(14,0, 6, (cstart_x+0*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 0), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
+        #ch = chess(21,1, 2, (cstart_x2+2*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 6), chess_back.get_size(), index_to_chess_surface(21), index_to_chess_select(21))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][0] = ch
-        #main_map[3][0] = (3, 0)
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
         #
-        #ch = chess(16,1, 1, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
+        #ch = chess(10,0, 4, (cstart_x2+0*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 4), chess_back.get_size(), index_to_chess_surface(10), index_to_chess_select(10))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)        
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
+        #
+        #ch = chess(14,0, 6, (cstart_x2+1*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 5), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5)
         # Test data2
         #first = 0
         #com_color = 0
