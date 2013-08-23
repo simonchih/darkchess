@@ -637,7 +637,8 @@ def scan_com_bomb(a_map, my_chess):
 
 def scan_open_bomb(a_map, my_chess):
     cor = None
-    for s in range(0, 32):
+    for s_num in range(0, 32):
+        s = random.randint(0, 31)
         j = s/4
         i = s%4
         a = a_map[i][j]
