@@ -487,6 +487,76 @@ def scan_com_second_big(a_map, my_chess):
                         return near_cor[n]
     return None
 
+def bomb_will_eat(org, a_map, my_chess):
+    if None == org:
+        return None
+    i = random.randint(0, 3)
+    
+    for i2 in range(0, 4):
+        n = (i+i2)%4
+        (ni, nj) = org
+        if 0 == n:
+            jump = 0
+            for ii in range(ni-1, -1, -1):
+                if 1 == jump and a_map[ii][nj] != None:
+                    an = a_map[ii][nj]
+                    if my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color == player_color:
+                        if near_max_value((ii, nj), None, a_map, my_chess) < 2:
+                            return org
+                    break
+                if a_map[ii][nj] != None:
+                    bn = a_map[ii][nj]
+                    if 1 == my_chess[bn[0]][bn[1]].back:
+                        jump = 1
+                    else:
+                        break
+        elif 1 == n:
+            jump = 0
+            for ii in range(ni+1, 4, 1):
+                if 1 == jump and a_map[ii][nj] != None:
+                    an = a_map[ii][nj]
+                    if my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color == player_color:
+                        if near_max_value((ii, nj), None, a_map, my_chess) < 2:
+                            return org
+                    break
+                if a_map[ii][nj] != None:
+                    bn = a_map[ii][nj]
+                    if 1 == my_chess[bn[0]][bn[1]].back:
+                        jump = 1
+                    else:
+                        break
+        elif 2 == n:
+            jump = 0
+            for jj in range(nj-1, -1, -1):
+                if 1 == jump and a_map[ni][jj] != None:
+                    an = a_map[ni][jj]
+                    if my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color == player_color:
+                        if near_max_value((ni, jj), None, a_map, my_chess) < 2:
+                            return org
+                    break
+                if a_map[ni][jj] != None:
+                    bn = a_map[ni][jj]
+                    if 1 == my_chess[bn[0]][bn[1]].back:
+                        jump = 1
+                    else:
+                        break
+        elif 3 == n:
+            jump = 0
+            for jj in range(nj+1, 8, 1):
+                if 1 == jump and a_map[ni][jj] != None:
+                    an = a_map[ni][jj]
+                    if my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color == player_color:
+                        if near_max_value((ni, jj), None, a_map, my_chess) < 2:
+                            return org
+                    break
+                if a_map[ni][jj] != None:
+                    bn = a_map[ni][jj]
+                    if 1 == my_chess[bn[0]][bn[1]].back:
+                        jump = 1
+                    else:
+                        break
+    return None    
+    
 def bomb_may_eat(org, a_map, my_chess):
     if None == org:
         return None
@@ -564,6 +634,36 @@ def scan_com_bomb(a_map, my_chess):
             if 1 == c.live and c.back < 1 and 2 == c.value and com_color == c.color:
                 cor = bomb_may_eat((c.row, c.col), a_map, my_chess)
     return cor
+
+def scan_open_bomb(a_map, my_chess):
+    cor = None
+    for s in range(0, 32):
+        j = s/4
+        i = s%4
+        a = a_map[i][j]
+        if None == a:
+            continue
+        m = my_chess[a[0]][a[1]]
+        if m.back < 1 or 0 == m.live:
+            continue
+        cor = bomb_will_eat((i,j), a_map, my_chess)
+        if None == cor:
+            continue
+        ncor = near(a[0], a[1])
+        for nc in ncor:
+            b = a_map[nc[0]][nc[1]]
+            if None == b:
+                continue
+            mn = my_chess[b[0]][b[1]]
+            if 0 == mn.live or None == mn:
+                continue
+            if mn.back < 1:
+                if mn.color == player_color and mn.value > 2:
+                    cor = None
+                    break
+        if cor != None:
+            return cor
+    return cor
     
 def select_back_chess(a_map, my_chess):
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
@@ -574,6 +674,10 @@ def select_back_chess(a_map, my_chess):
         return cor
     
     cor = scan_com_bomb(a_map, my_chess)
+    if cor != None:
+        return cor
+    
+    cor = scan_open_bomb(a_map, my_chess)
     if cor != None:
         return cor
     
@@ -675,7 +779,7 @@ def chess_ai():
             player_win = 1
         if back_num > 0:
             if open_score != None:
-                r = random.randint(1, 70)
+                r = random.randint(1, 9)
                 if org == None or score > open_score - (float)(r)/10:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
@@ -1715,7 +1819,7 @@ def main():
         #main_chess[1][1] = ch
         #main_map[1][1] = (1, 1)
         #
-        #ch = chess(29,1, 6, (cstart_x+2*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
+        #ch = chess(28,1, 5, (cstart_x+2*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(28), index_to_chess_select(28))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][2] = ch
