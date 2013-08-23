@@ -1147,7 +1147,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
-        return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+        if my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
+            return 2.5*eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+        else:
+            return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
     global cor
