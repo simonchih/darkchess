@@ -125,6 +125,8 @@ king_live = [1, 1]
 chess_num = [16, 16]
 com_mv_map = [0, 0]
 back_num = 32
+com_will_eat_chess = []
+will_eat_escape_chess = []
 
 def index_to_chess_select(index):
     if 0 <= index < 5:
@@ -760,6 +762,8 @@ def chess_ai():
     global player_first
     global player_win
     global back_num
+    global com_will_eat_chess
+    global will_eat_escape_chess
     
     pygame.display.update()
     
@@ -773,6 +777,8 @@ def chess_ai():
         player_color = 1 - com_color
         first = 0
     elif turn_id == com_color and 0 == first:
+        com_will_eat_chess = []
+        will_eat_escape_chess = []
         main_chess = clean_back_n1_to_0(main_chess)
         org, dest, score = com_think(main_map, main_chess)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
@@ -1078,6 +1084,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     global max_value
     global mark
     global max_cor
+    global com_will_eat_chess
+    global will_eat_escape_chess
     
     (orgy, orgx) = org
     (desty, destx) = dest
@@ -1149,9 +1157,19 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         if owner_color == com_color and my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].possible_move == [] and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
-            return 10
+            if (orgy, orgx) in will_eat_escape_chess:
+                return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+            else:
+                if False == (orgy, orgx) in com_will_eat_chess:
+                    com_will_eat_chess.append((orgy, orgx))
+                return 10 + (eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)/100)
         else:
-            return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+            if (orgy, orgx) in com_will_eat_chess:
+                return 10 + (eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)/100)
+            else:
+                if False == (orgy, orgx) in will_eat_escape_chess:
+                    will_eat_escape_chess.append((orgy, orgx))
+                return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
     global cor
