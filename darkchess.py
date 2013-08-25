@@ -1713,13 +1713,13 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
 def eating_value_to_score(value, king, owner_color):
     if 1 == value:
         if 1 == king[owner_color]:
-            return 25
-        else:
             return 24
+        else:
+            return 20
     elif 2 == value:
         return 99
     elif 3 == value:
-        return 20
+        return 22
     elif 4 == value:
         return 49
     elif 5 == value:
