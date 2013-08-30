@@ -1719,7 +1719,7 @@ def eating_value_to_score(value, king, owner_color):
     elif 2 == value:
         return 99
     elif 3 == value:
-        return 22
+        return 23
     elif 4 == value:
         return 49
     elif 5 == value:
