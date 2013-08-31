@@ -763,7 +763,7 @@ def chess_ai():
     global player_win
     global back_num
     global com_will_eat_chess
-    global will_eat_escape_chess
+    global will_eat_escape_chess 
     
     pygame.display.update()
     
@@ -778,7 +778,7 @@ def chess_ai():
         first = 0
     elif turn_id == com_color and 0 == first:
         com_will_eat_chess = []
-        will_eat_escape_chess = []
+        will_eat_escape_chess = [] 
         main_chess = clean_back_n1_to_0(main_chess)
         org, dest, score = com_think(main_map, main_chess)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
@@ -1085,7 +1085,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     global mark
     global max_cor
     global com_will_eat_chess
-    global will_eat_escape_chess
+    global will_eat_escape_chess 
     
     (orgy, orgx) = org
     (desty, destx) = dest
@@ -1161,7 +1161,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
-        if owner_color == com_color and my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].possible_move == [] and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
+        #print 'next_will_dead %d' % next_will_dead(dest, dest, my_chess, a_map, 1-owner_color)
+        if owner_color == com_color and 1 == next_will_dead(dest, dest, my_chess, a_map, 1-owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
             if (orgy, orgx) in will_eat_escape_chess:
                 return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
             else:
@@ -1443,6 +1444,8 @@ def next_will_dead(nexti, nextj, a_ch, a_map, owner_color):
                     #print 'eat_step', eat_step, 'pm', pm, 'len', len(nch.possible_move)
                 if eat_step == len(nch.possible_move):
                     return 1
+    if my.possible_move == []:
+        return stand_will_dead_pity(nexti, a_ch, a_map, owner_color)
     return 0
     
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
