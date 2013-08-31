@@ -1125,7 +1125,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 return -0.1
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
             #print 'caca'
-            return org_value+0.001
+            if 0 == caca(org, org, my_chess, a_map, owner_color):
+                return org_value+0.001
+            else:
+                return 0.1
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         #print 'mark', mark
