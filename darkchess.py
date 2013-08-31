@@ -1162,7 +1162,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         #print 'next_will_dead %d' % next_will_dead(dest, dest, my_chess, a_map, 1-owner_color)
-        if owner_color == com_color and 1 == next_will_dead(dest, dest, my_chess, a_map, 1-owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
+        if owner_color == com_color and 1 == next_will_dead(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
             if (orgy, orgx) in will_eat_escape_chess:
                 return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
             else:
@@ -1444,8 +1444,6 @@ def next_will_dead(nexti, nextj, a_ch, a_map, owner_color):
                     #print 'eat_step', eat_step, 'pm', pm, 'len', len(nch.possible_move)
                 if eat_step == len(nch.possible_move):
                     return 1
-    if my.possible_move == []:
-        return stand_will_dead_pity(nexti, a_ch, a_map, owner_color)
     return 0
     
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
