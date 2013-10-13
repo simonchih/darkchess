@@ -4,7 +4,12 @@ Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 http://www.freeiconsweb.com/Free-Downloads.asp?id=494
 
-Chinese readme only:
+For English User, please refer Software Requirements Specification.pdf.
+(In installation folder)
+Or you can download from:
+https://sourceforge.net/projects/darkchess/files/Specification/
+
+Following is Chinese readme:
 
 字型來源：文泉驛開源矢量中文字體
 
