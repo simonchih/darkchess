@@ -317,7 +317,7 @@ def collect_possible_move(i, j, a_map, my_chess):
                     jump = 1
     return pm, a_map, my_chess
 
-def bomb_can_eat(org, dest, my_chess, a_map):
+def opp_cannon_can_eat(org, dest, my_chess, a_map):
     (i, j) = org
     (ii, jj) = dest
     o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
@@ -1093,9 +1093,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     if a_map[desty][destx] == None:
         #print 'org', org, 'dest', dest
         #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
-        if 1 == next_will_dead(org, dest, my_chess, a_map, owner_color):
+        if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
             #print 'nwd'
-            if 1 == bomb_can_eat(org, dest, my_chess, a_map):
+            if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
             else:
                 return 8
@@ -1175,8 +1175,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
-        #print 'next_will_dead %d' % next_will_dead(dest, dest, my_chess, a_map, 1-owner_color)
-        if owner_color == com_color and 1 == next_will_dead(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
+        #print 'owner_next_can_eat_dead_p %d' % owner_next_can_eat_dead_p(dest, dest, my_chess, a_map, 1-owner_color)
+        if owner_color == com_color and 1 == owner_next_can_eat_dead_p(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
             if (orgy, orgx) in will_eat_escape_chess:
                 return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
             else:
@@ -1432,7 +1432,7 @@ def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):
     else:
         return 0
 
-def next_will_dead(nexti, nextj, a_ch, a_map, owner_color):
+def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
     opp_color = 1-owner_color
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
