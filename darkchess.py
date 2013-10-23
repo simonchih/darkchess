@@ -1155,7 +1155,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'mv', max_value
             
             if max_cor != None:
-                if max_cor[0] != orgy and max_cor[1] != orgx:
+                if max_cor[0] != desty and max_cor[1] != destx:
                     return 7.0 - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
                 else:
                     return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
@@ -1165,7 +1165,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             if max_value == 2:
                 max_value = 5.5
             if max_cor != None:
-                if max_cor[0] != orgy and max_cor[1] != orgx:
+                if max_cor[0] != desty and max_cor[1] != destx:
                     if max_value > 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
                         return (float)(max_value) - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
                     else:
