@@ -1153,21 +1153,24 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #    return (float)(org_value)/100
         if 9 == max_value:
             #print 'mv', max_value
+            
             if max_cor != None:
-                return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                if max_cor[0] != orgy and max_cor[1] != orgx:
+                    return 7.0 - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                else:
+                    return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
             else:
                 return 7
-        #elif max_value > org_value:
-            #print 'org_value', org_value
-            #return (float)(org_value)/100
         else:
-            #print 'lmv', max_value
             if max_cor != None:
-                if max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
-                    #print 'r', (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                if max_cor[0] != orgy and max_cor[1] != orgx:
+                    if max_value > 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
+                        return (float)(max_value) - 0.1*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                    else:
+                        return 0.01
+                elif max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
                     return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
                 else:
-                    #print 'r 0.01'
                     return 0.01
             else:
                 #print 'max_value', max_value, 'org_value', org_value
