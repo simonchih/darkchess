@@ -823,8 +823,8 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     elif a_map[i][j] != None:
         if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
             return
-        elif owner_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
-            return
+        #elif owner_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
+        #    return
     
     mark[i][j] = 1
     
