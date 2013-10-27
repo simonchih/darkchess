@@ -1822,9 +1822,9 @@ def eating_value_to_score(value, king, owner_color):
     elif 5 == value:
         return 99
     elif 6 == value:
-        return 299
+        return 500
     elif 7 == value:
-        return 599
+        return 999
 
 def display_font():
     
