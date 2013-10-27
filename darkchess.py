@@ -127,6 +127,7 @@ com_mv_map = [0, 0]
 back_num = 32
 com_will_eat_chess = []
 will_eat_escape_chess = []
+cannon_cor = []
 
 def index_to_chess_select(index):
     if 0 <= index < 5:
@@ -352,16 +353,52 @@ def opp_cannon_can_eat(org, dest, my_chess, a_map):
             if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
                 return 1
     return 0
+
+def next_cannon_can_eat_more(org, dest, a_map, my_chess):
+    global cannon_cor
+    cannon_cor = []
+    (i, j) = org
+    n = a_map[i][j]
+    if n == None:
+        return 0
+    nc = my_chess[n[0]][n[1]]
+    
+    was_ate = eat_by_bomb(org, a_map, my_chess)
+    if was_ate == 0:
+        return 0
+    else:
+        af_map = copy.deepcopy(a_map)
+        af_ch = copy.deepcopy(my_chess)
+        if org != None and dest != None:
+            af_map, af_ch = move(org, dest, af_map, af_ch)
+            af_map, af_ch = all_chess_move(af_map, af_ch)
+            
+            for cc in cannon_cor:
+                afm = af_map[cc[0]][cc[1]]
+                if afm != None:
+                    afc = af_ch[afm[0]][afm[1]]
+                    for fcp in afc.possible_move:
+                        (pi, pj) = fcp
+                        c = af_map[pi][pj]
+                        if c != None and (pi == i or pj == j):
+                            ch = af_ch[c[0]][c[1]]
+                            if  eating_value_to_score(ch.value, king_live, ch.color) > eating_value_to_score(nc.value, king_live, nc.color):
+                                return 1
+    return 0                                
     
 def eat_by_bomb(org, a_map, my_chess):
+    global cannon_cor
     (i, j) = org
     jump = 0
+    was_ate = 0
     for ii in range(i-1, -1, -1):
         if 1 == jump and a_map[ii][j] != None:
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
-                return 1
+                cannon_cor.append((ii,j))
+                was_ate = 1
+                break
         if a_map[ii][j] != None:
             jump = 1
     jump = 0
@@ -370,7 +407,9 @@ def eat_by_bomb(org, a_map, my_chess):
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
-                return 1
+                cannon_cor.append((ii,j))
+                was_ate = 1
+                break
         if a_map[ii][j] != None:
             jump = 1
     jump = 0
@@ -379,7 +418,9 @@ def eat_by_bomb(org, a_map, my_chess):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
-                return 1
+                cannon_cor.append((i,jj))
+                was_ate = 1
+                break
         if a_map[i][jj] != None:
             jump = 1
     jump = 0
@@ -388,10 +429,12 @@ def eat_by_bomb(org, a_map, my_chess):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
-                return 1
+                cannon_cor.append((i,jj))
+                was_ate = 1
+                break
         if a_map[i][jj] != None:
             jump = 1
-    return 0
+    return was_ate
     
     
 def near(i, j):
@@ -1107,11 +1150,14 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #    return 9
             #else:
             return 0
-        elif 0 == dest_will_dead_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
+        elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             #escape, 0 == will_dead((desty, destx), my_chess, com_color)
-            print 'will dead org', org
-            return 9
-            
+            #print 'will dead org', org, dest
+            if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
+                return -8
+            else:
+                return 9        
+        
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             af_map = copy.deepcopy(a_map)
             af_ch = copy.deepcopy(my_chess)
@@ -1397,7 +1443,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     
     return m2, af_map, af_ch
 
-def dest_will_dead_wont_eat(org, dest, a_ch, a_map, opp_color):
+def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
     n = a_map[org[0]][org[1]]
     m = a_map[dest[0]][dest[1]]
     if None == n:
@@ -1405,8 +1451,15 @@ def dest_will_dead_wont_eat(org, dest, a_ch, a_map, opp_color):
     elif m != None:
     #eat
         return 0
-    my = a_ch[n[0]][n[1]]
-    for chr in a_ch:
+    
+    af_map = copy.deepcopy(a_map)
+    af_ch = copy.deepcopy(a_ch)
+    af_map, af_ch = move(org, dest, af_map, af_ch)
+    af_map, af_ch = all_chess_move(af_map, af_ch)
+    mm = af_map[dest[0]][dest[1]]
+    my = af_ch[mm[0]][mm[1]]
+    
+    for chr in af_ch:
         for ch in chr:
             if ch == my:
                 continue
