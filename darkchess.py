@@ -1233,10 +1233,16 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             else:
                 if False == ((orgy, orgx) in com_will_eat_chess):
                     com_will_eat_chess.append((orgy, orgx))
-                return float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/2
+                if my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value != 2:
+                    return 10 + float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/100
+                else:
+                    return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         else:
             if (orgy, orgx) in com_will_eat_chess:
-                return float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/2
+                if my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value != 2:
+                    return 10 + float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/100
+                else:
+                    return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
             else:
                 if False == ((orgy, orgx) in will_eat_escape_chess):
                     will_eat_escape_chess.append((orgy, orgx))
