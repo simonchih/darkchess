@@ -751,7 +751,7 @@ def select_back_chess(a_map, my_chess):
     if cor != None:
         return cor
     
-    for k in range(0, 50):
+    for k in range(0, 32):
         if 1 == check_back_exist(a_map, my_chess, back_mark):
             (y, x) = random_select_back_chess(a_map, my_chess, back_mark)
             if 0 == eat_by_bomb((y, x), a_map, my_chess):
