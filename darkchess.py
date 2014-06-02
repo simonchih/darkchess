@@ -749,38 +749,40 @@ def scan_com_bomb(a_map, my_chess):
                 cor = bomb_may_eat((c.row, c.col), a_map, my_chess)
     return cor
 
-def scan_open_bomb(a_map, my_chess):
-    cor = None
-    for s_num in range(0, 32):
-        s = random.randint(0, 31)
-        j = s/4
-        i = s%4
-        a = a_map[i][j]
-        if None == a:
-            continue
-        m = my_chess[a[0]][a[1]]
-        if m.back < 1 or 0 == m.live:
-            continue
-        cor = bomb_will_eat((i,j), a_map, my_chess)
-        if None == cor:
-            continue
-        ncor = near(a[0], a[1])
-        for nc in ncor:
-            b = a_map[nc[0]][nc[1]]
-            if None == b:
-                continue
-            mn = my_chess[b[0]][b[1]]
-            if 0 == mn.live or None == mn:
-                continue
-            if mn.back < 1:
-                if mn.color == player_color and mn.value > 2:
-                    cor = None
-                    break
-        if cor != None:
-            return cor
-    return cor
+#def scan_open_bomb(a_map, my_chess):
+#    cor = None
+#    for s_num in range(0, 32):
+#        s = random.randint(0, 31)
+#        j = s/4
+#        i = s%4
+#        a = a_map[i][j]
+#        if None == a:
+#            continue
+#        m = my_chess[a[0]][a[1]]
+#        if m.back < 1 or 0 == m.live:
+#            continue
+#        cor = bomb_will_eat((i,j), a_map, my_chess)
+#        if None == cor:
+#            continue
+#        ncor = near(a[0], a[1])
+#        for nc in ncor:
+#            b = a_map[nc[0]][nc[1]]
+#            if None == b:
+#                continue
+#            mn = my_chess[b[0]][b[1]]
+#            if 0 == mn.live or None == mn:
+#                continue
+#            if mn.back < 1:
+#                if mn.color == player_color and mn.value > 2:
+#                    cor = None
+#                    break
+#        if cor != None:
+#            return cor
+#    return cor
     
 def select_back_chess(a_map, my_chess, org = None):
+    global back_num
+    
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
     
@@ -801,19 +803,13 @@ def select_back_chess(a_map, my_chess, org = None):
     # temp
     print '2'
     
-    # cor = scan_open_bomb(a_map, my_chess)
-    # if cor != None:
-    #   return cor
+    if back_num > 6:
+        cor = scan_com_second_big(a_map, my_chess)
+        if cor != None:
+            return cor
     
     # temp
     print '3'
-    
-    cor = scan_com_second_big(a_map, my_chess)
-    if cor != None:
-        return cor
-    
-    # temp
-    print '4'
     
     for k in range(0, 32):
         if 1 == check_back_exist(a_map, my_chess, back_mark):
