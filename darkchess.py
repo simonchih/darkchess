@@ -731,7 +731,7 @@ def scan_open_bomb(a_map, my_chess):
             return cor
     return cor
     
-def select_back_chess(a_map, my_chess):
+def select_back_chess(a_map, my_chess, org = None):
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
     
@@ -774,6 +774,9 @@ def select_back_chess(a_map, my_chess):
             break
     if (i, j) != (None, None):
         return (i, j)
+    elif org != None:
+        # (-1, -1) to move a piece
+        return (-1, -1)
     else:
         back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         if 1 == check_back_exist(a_map, my_chess, back_mark):
@@ -850,17 +853,28 @@ def chess_ai():
         if back_num > 0:
             if open_score != None:
                 r = random.randint(1, 9)
-                if org == None or score > open_score - (float)(r)/10:
+                if None == org:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
-                    back_num -= 1 
+                    back_num -= 1
+                elif score > open_score - (float)(r)/10:
+                    temp = select_back_chess(main_map, main_chess, org)
+                    if (-1, -1) == temp:
+                        main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                    else:
+                        sound_click.play()
+                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
+                        back_num -= 1 
                 elif score == open_score:
                     if score >= 0:
-                        dest = select_back_chess(main_map, main_chess)
-                        sound_click.play()
-                        main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
-                        back_num -= 1
+                        temp = select_back_chess(main_map, main_chess, org)
+                        if (-1, -1) == temp:
+                            main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                        else:
+                            sound_click.play()
+                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
+                            back_num -= 1
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
                 else:
