@@ -1526,7 +1526,7 @@ def com_think(a_map, a_ch):
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     else:
-                        score = sc + 40 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                        score = sc + 50 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
                     #print 'm', m
                     if score < min_score:
@@ -2006,9 +2006,9 @@ def eating_value_to_score(value, king, owner_color):
     elif 5 == value:
         return 99
     elif 6 == value:
-        return 500
+        return 300
     elif 7 == value:
-        return 999
+        return 599
 
 def display_font():
     
