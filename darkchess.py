@@ -112,7 +112,8 @@ turn_id = 0
 player_color = 0
 com_color = 1
 max_value = 0
-max_cor = None
+max_dist = 32
+#max_cor = None
 open_score = None
 
 chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back, chess_back)
@@ -947,15 +948,34 @@ def chess_ai():
     if turn_id == com_color:
         turn_id = 2
         
-
-def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j):
+def short_dist(i, j, dist, a_map):
+    d = 0
+    ncor = near(i, j)
+    for nc in ncor:
+        if mark[nc[0]][nc[1]] != 0 and mark[nc[0]][nc[1]] < dist:
+            if 0 == d:
+                d = mark[nc[0]][nc[1]]+1
+            elif mark[nc[0]][nc[1]]+1 < d:
+                d = mark[nc[0]][nc[1]]+1
+    
+    if 0 == d and None == a_map[i][j]:
+        d = dist
+    
+    return d
+        
+        
+def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j, dist=1):
     global max_value
     global mark
-    global max_cor
+    #global max_cor
+    global max_dist
     
     if i == -1 or j == -1 or i == 4 or j == 8:
         return
-    elif 1 == mark[i][j]:
+    elif i == orgy and j == orgx:
+        return
+    #elif 1 == mark[i][j]:
+    elif mark[i][j] > 0:
         return
     elif a_map[i][j] != None:
         if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
@@ -964,7 +984,12 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         #    return
     
     opp_color = 1 - owner_color
-    mark[i][j] = 1
+    current_dist = 32
+    
+    if  a_map[i][j] != None:
+        current_dist = short_dist(i, j, dist, a_map)
+    else:
+        mark[i][j] = short_dist(i, j, dist, a_map)
     
     if a_map[i][j] != None:
         if opp_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
@@ -973,41 +998,79 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
                     #max_value = 8
                     #max_cor = (i, j)
                     return
-                elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
-                    max_cor = (i, j)
+                elif 2 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value and max_value <= 5.5:
+                    if max_value < 5.5:
+                        max_value = 5.5
+                        max_dist = current_dist
+                    elif current_dist < max_dist:
+                        max_dist = current_dist
+                    return
+                elif max_value <= my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+                    if max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
+                        max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
+                        max_dist = current_dist
+                    #max_cor = (i, j)
+                    elif current_dist < max_dist:
+                        max_dist = current_dist
                     return
             elif 1 == org_value:
                 #print 'max_value', max_value
                 if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
-                    max_value = 9
-                    max_cor = (i, j)
+                    if max_value != 9:
+                        max_value = 9
+                        max_dist = current_dist
+                    #max_cor = (i, j)
+                    elif current_dist < max_dist:
+                        max_dist = current_dist
                     return
-                elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value and my_chess[a_map[i][j][0]][a_map[i][j][1]].value <= 2:
+                elif my_chess[a_map[i][j][0]][a_map[i][j][1]].value == 1:
+                    if max_value != 1:
+                        max_value = 1
+                        max_dist = current_dist
+                    #max_cor = (i, j)
+                    elif current_dist < max_dist:
+                        max_dist = current_dist
+                    return
+            elif 2 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value and org_value > 2 and max_value <= 5.5:
+                if max_value < 5.5:
+                    max_value = 5.5
+                    max_dist = current_dist
+                elif current_dist < max_dist:
+                    max_dist = current_dist
+                return
+            elif max_value <= my_chess[a_map[i][j][0]][a_map[i][j][1]].value and my_chess[a_map[i][j][0]][a_map[i][j][1]].value <= org_value:
+                if max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                     max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
-                    max_cor = (i, j)
-                    return
-            elif max_value < my_chess[a_map[i][j][0]][a_map[i][j][1]].value and my_chess[a_map[i][j][0]][a_map[i][j][1]].value <= org_value:
-                max_value = my_chess[a_map[i][j][0]][a_map[i][j][1]].value
-                max_cor = (i, j)
-                #print 'org_value', org_value, 'max_value', max_value, max_cor
+                    max_dist = current_dist
+                #max_cor = (i, j)
+                elif current_dist < max_dist:
+                    max_dist = current_dist
                 return
     elif orgy == desty and orgx+1 == destx:
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
-    elif orgy == desty and orgx-1 == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
-    elif orgy+1 == desty and orgx == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)
-    elif orgy-1 == desty and orgx == destx:                
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1)    
+        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1) 
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+    elif orgy == desty and orgx-1 == destx:
+        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
+    elif orgy+1 == desty and orgx == destx:
+        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
+    elif orgy-1 == desty and orgx == destx:
+        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)        
+       
 
 def caca(org, dest, my_chess, a_map, owner_color):        
     if org == None:
@@ -1222,7 +1285,8 @@ def scan_king(my_chess):
 def move_score(org, dest, my_chess, a_map, owner_color):
     global max_value
     global mark
-    global max_cor
+    #global max_cor
+    global max_dist
     global com_will_eat_chess
     global will_eat_escape_chess 
     
@@ -1271,7 +1335,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             return 0
         
         max_value = 0
-        max_cor = None
+        max_dist = 32
+        #max_cor = None
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
@@ -1292,27 +1357,45 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         #if 8 == max_value:
         #    return (float)(org_value)/100
+        
+        #print 'max_value = %g' % max_value
+        #print 'mv', org, dest, max_dist
+        
         if 9 == max_value:
-            print 'mv', org, dest, max_cor
+            #print 'mv', org, dest, max_dist
             
-            if max_cor != None:
-                if max_cor[0] != desty and max_cor[1] != destx:
-                    return 7.0 - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #if max_cor != None:
+            #    if max_cor[0] != desty and max_cor[1] != destx:
+            #        return 7.0 - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #    else:
+            #        return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #else:
+            #    return 7
+            if max_dist != 0:
+                if 7.0 > 0.25*max_dist:
+                    return 7.0 - 0.25*max_dist
                 else:
-                    return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+                    return 0.01
             else:
-                return 7
+                # impossible
+                return 0
         else:
-            if max_value == 2:
-                max_value = 5.5
-            if max_cor != None:
-                if max_cor[0] != desty and max_cor[1] != destx:
-                    if max_value > 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
-                        return (float)(max_value) - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
-                    else:
-                        return 0.01
-                elif max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
-                    return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #if max_value == 2:
+            #    max_value = 5.5
+            
+            #if max_cor != None:
+            #    if max_cor[0] != desty and max_cor[1] != destx:
+            #        if max_value > 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
+            #            return (float)(max_value) - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #        else:
+            #            return 0.01
+            #    elif max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
+            #        return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
+            #    else:
+            #        return 0.01
+            if max_dist != 0:
+                if max_value > 0.25 * max_dist:
+                    return (float)(max_value) - 0.25 * max_dist
                 else:
                     return 0.01
             else:
@@ -2030,87 +2113,60 @@ def main():
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        main_chess[i][j].live = 1
-        #        #main_map[i][j] = None        
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None        
         #
-        #ch = chess(29, 1, 6, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
+        #ch = chess(13, 0, 6, (cstart_x+1*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(13), index_to_chess_select(13))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(21, 1, 2, (cstart_x2+0*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 4), chess_back.get_size(), index_to_chess_surface(21), index_to_chess_select(21))
+        #ch = chess(31, 1, 7, (cstart_x2+3*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 7), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][4] = ch
-        #main_map[1][4] = (1, 4)
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
         #
-        #ch = chess(23, 1, 3, (cstart_x2+0*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 4), chess_back.get_size(), index_to_chess_surface(23), index_to_chess_select(23))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][4] = ch
-        #main_map[2][4] = (2, 4)
-        #
-        #ch = chess(5,0, 2, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(5), index_to_chess_select(5))
+        #ch = chess(5, 0, 2, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(5), index_to_chess_select(5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
         #main_map[1][5] = (1, 5)
-        #
-        #ch = chess(13, 0, 6, (cstart_x2+2*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 6), chess_back.get_size(), index_to_chess_surface(13), index_to_chess_select(13))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
-        #
-        #ch = chess(15, 0, 7, (cstart_x2+2*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 6), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
-        #
-        #ch = chess(16, 1, 1, (cstart_x2+1*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 5), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
-        #ch.back = 1
-        #ch.live = 1
-        #main_chess[3][5] = ch
-        #main_map[3][5] = (3, 5)
         
         # Test data2
         #first = 0
         #com_color = 1
         #player_color = 0
         #turn_id = 1
-        #back_num = 0
+        #back_num = 25
         #king_live = [1, 1]
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None
+        #        main_chess[i][j].live = 1
+        #        #main_map[i][j] = None
         #    
-        #ch = chess(15,0, 7, (cstart_x+0*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 0), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
+        #ch = chess(15,0, 7, (cstart_x2+2*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 6), chess_back.get_size(), index_to_chess_surface(15), index_to_chess_select(15))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0) 
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6) 
         #
-        ##ch = chess(14,0, 6, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size(), index_to_chess_surface(14), index_to_chess_select(14))
-        ##ch.back = 0
-        ##ch.live = 1
-        ##main_chess[3][3] = ch
-        ##main_map[3][3] = (3, 3)
-        #
-        #ch = chess(31,1, 7, (cstart_x+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(31), index_to_chess_select(31))
+        #ch = chess(16,1, 1, (cstart_x2+0*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 4), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
+        #main_chess[2][4] = ch
+        #main_map[2][4] = (2, 4)
         #
-        #ch = chess(16,1, 1, (cstart_x+2*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 2), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][2] = ch
-        #main_map[0][2] = (0, 2)
+        #main_chess[3][4].live = 0
+        #main_map[3][4] = None
+        #
+        #main_chess[3][5].live = 0
+        #main_map[3][5] = None
+        #
+        #main_chess[3][6].live = 0
+        #main_map[3][6] = None
         
         #End Test data
         #Test data3
@@ -2118,39 +2174,39 @@ def main():
         #com_color = 1
         #player_color = 0
         #turn_id = 1
-        #back_num = 29
+        #back_num = 0
         #
-        ##for i in range(0, 4):
-        ##    for j in range(0, 8):
-        ##        main_chess[i][j].live = 0
-        ##        main_map[i][j] = None        
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None        
         #
-        #ch = chess(7,0, 3, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
+        #ch = chess(7,0, 3, (cstart_x2+2*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 6), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][5] = ch
-        #main_map[1][5] = (1, 5)
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
         #
-        #ch = chess(13,0, 6, (cstart_x2+3*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 7), chess_back.get_size(), index_to_chess_surface(13), index_to_chess_select(13))
+        #ch = chess(29,1, 6, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
         #
-        #ch = chess(5,0, 2, (cstart_x2+3*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 7), chess_back.get_size(), index_to_chess_surface(5), index_to_chess_select(5))
+        #ch = chess(5,0, 2, (cstart_x2+0*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 4), chess_back.get_size(), index_to_chess_surface(5), index_to_chess_select(5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
+        #main_chess[0][4] = ch
+        #main_map[0][4] = (0, 4)
         #
         #main_chess[1][6].live = 0
         #main_map[1][6] = None
         #
-        #ch = chess(21,1, 2, (cstart_x2+1*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 5), chess_back.get_size(), index_to_chess_surface(21), index_to_chess_select(21))
+        #ch = chess(16,1, 1, (cstart_x+3*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 3), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][5] = ch
-        #main_map[3][5] = (3, 5)      
+        #main_chess[1][3] = ch
+        #main_map[1][3] = (1, 3)      
         #End Test3 
         
         while 0 == player_win:
