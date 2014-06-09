@@ -1053,29 +1053,28 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     elif orgy == desty and orgx+1 == destx:
         #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1) 
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)   
     elif orgy == desty and orgx-1 == destx:
         #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
     elif orgy+1 == desty and orgx == destx:
         #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
     elif orgy-1 == desty and orgx == destx:
         #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)        
-       
-
+                
 def caca(org, dest, my_chess, a_map, owner_color):        
     if org == None:
         return 0
