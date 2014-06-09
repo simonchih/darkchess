@@ -920,6 +920,8 @@ def chess_ai():
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
                     back_num -= 1
                 elif score > open_score - (float)(r)/10:
+                    if score > 18:
+                        org = None
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
@@ -929,6 +931,8 @@ def chess_ai():
                         back_num -= 1 
                 elif score == open_score:
                     if score >= 0:
+                        if score > 18:
+                            org = None
                         temp = select_back_chess(main_map, main_chess, org)
                         if (-1, -1) == temp:
                             main_map, main_chess = move_s(org, dest, main_map, main_chess)
