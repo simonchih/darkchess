@@ -836,7 +836,7 @@ def select_back_chess(a_map, my_chess, org = None):
     if (i, j) != (None, None):
         return (i, j)
     elif org != None:
-        # (-1, -1) to move a piece
+        #  (-1, -1) to move a piece
         return (-1, -1)
     else:
         back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
