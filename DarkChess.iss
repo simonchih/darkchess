@@ -5,7 +5,7 @@
 
 [Setup]
 AppName=Basic Blind Chess
-AppVersion=0.7.0
+AppVersion=0.7.1
 DefaultDirName={pf}\Basic Blind Chess
 DefaultGroupName=Basic Blind Chess
 UninstallDisplayIcon={app}\darkchess.exe
@@ -14,12 +14,12 @@ SolidCompression=yes
 OutputDir=E:\darkchess
 
 [Files]
-Source: "E:\darkchess\darkchess_070\darkchess.exe"; DestDir: "{app}"
-Source: "E:\darkchess\darkchess_070\wqy-zenhei.ttf"; DestDir: "{app}"
-Source: "E:\darkchess\darkchess_070\Software Requirements Specification.pdf"; DestDir: "{app}"
-Source: "E:\darkchess\darkchess_070\readme.txt"; DestDir: "{app}"; Flags: isreadme
-Source: "E:\darkchess\darkchess_070\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
-Source: "E:\darkchess\darkchess_070\Sound\*.*"; DestDir: "{app}\Sound"; Flags: ignoreversion recursesubdirs  
+Source: "E:\darkchess\darkchess_071\darkchess.exe"; DestDir: "{app}"
+Source: "E:\darkchess\darkchess_071\wqy-zenhei.ttf"; DestDir: "{app}"
+Source: "E:\darkchess\darkchess_071\Software Requirements Specification.pdf"; DestDir: "{app}"
+Source: "E:\darkchess\darkchess_071\readme.txt"; DestDir: "{app}"; Flags: isreadme
+Source: "E:\darkchess\darkchess_071\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
+Source: "E:\darkchess\darkchess_071\Sound\*.*"; DestDir: "{app}\Sound"; Flags: ignoreversion recursesubdirs  
 
 [Icons]
 Name: "{group}\Basic Blind Chess"; Filename: "{app}\darkchess.exe"; IconFilename: "{app}\Image\darkchess_default.ico"

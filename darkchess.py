@@ -1378,7 +1378,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 if 7.0 > 0.25*max_dist:
                     return 7.0 - 0.25*max_dist
                 else:
-                    return 0.01
+                    return 0.25 - (float)(max_dist)/100
             else:
                 # impossible
                 return 0
@@ -1400,7 +1400,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 if max_value > 0.25 * max_dist:
                     return (float)(max_value) - 0.25 * max_dist
                 else:
-                    return 0.01
+                    return 0.25 - (float)(max_dist)/100
             else:
                 return -0.1
     
@@ -2184,32 +2184,29 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None        
         #
-        #ch = chess(7,0, 3, (cstart_x2+2*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 6), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
+        #ch = chess(7,0, 3, (cstart_x2+3*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 7), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
         #
-        #ch = chess(29,1, 6, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
+        #ch = chess(29,1, 6, (cstart_x+1*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(5,0, 2, (cstart_x2+0*chess_back.get_width(),cstart_y2+0*chess_back.get_height()), (0, 4), chess_back.get_size(), index_to_chess_surface(5), index_to_chess_select(5))
+        #ch = chess(0,0, 1, (cstart_x2+0*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 4), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][4] = ch
-        #main_map[0][4] = (0, 4)
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
         #
-        #main_chess[1][6].live = 0
-        #main_map[1][6] = None
-        #
-        #ch = chess(16,1, 1, (cstart_x+3*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 3), chess_back.get_size(), index_to_chess_surface(16), index_to_chess_select(16))
+        #ch = chess(23,1, 3, (cstart_x+2*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 2), chess_back.get_size(), index_to_chess_surface(23), index_to_chess_select(23))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][3] = ch
-        #main_map[1][3] = (1, 3)      
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)      
         #End Test3 
         
         while 0 == player_win:
