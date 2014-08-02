@@ -906,11 +906,6 @@ def chess_ai():
     global back_num
     global com_will_eat_chess
     global will_eat_escape_chess 
-    global move_step
-    global sindex
-    global break_long_capture_dest
-    global break_long_capture_org
-    global com_ban_step
     
     pygame.display.update()
     
@@ -932,8 +927,14 @@ def chess_ai():
         move_pre2 = move_step[(sindex-2)%4] # com
         move_pre3 = move_step[(sindex-3)%4] # player
         move_pre4 = move_step[sindex]       # com
-        
+                
         if move_pre1 != None and move_pre2 != None and move_pre3 != None and move_pre4 != None:
+            # print 'map 1=', main_map[move_pre1[2][0]][move_pre1[2][1]]
+            # print 'chess 1=', main_chess[main_map[move_pre1[2][0]][move_pre1[2][1]][0]][main_map[move_pre1[2][0]][move_pre1[2][1]][1]].value
+            
+            # print 'map 2=', main_map[move_pre2[2][0]][move_pre2[2][1]]
+            # print 'chess 2=', main_chess[main_map[move_pre2[2][0]][move_pre2[2][1]][0]][main_map[move_pre2[2][0]][move_pre2[2][1]][1]].value
+            
             if move_pre1[0] == player_color and move_pre2[0] == com_color and move_pre3[0] == player_color and move_pre4[0] == com_color and 1 == can_be_ate(main_chess[main_map[move_pre1[2][0]][move_pre1[2][1]][0]][main_map[move_pre1[2][0]][move_pre1[2][1]][1]].value, main_chess[main_map[move_pre2[2][0]][move_pre2[2][1]][0]][main_map[move_pre2[2][0]][move_pre2[2][1]][1]].value) and move_pre2[2] == move_pre4[1] and move_pre1[2] == move_pre3[1]:
                 n1 = move_pre1[1]
                 n2 = move_pre2[1]
@@ -947,35 +948,7 @@ def chess_ai():
         
         org, dest, score = com_think(main_map, main_chess)
         print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
-        if org != dest:
-            move_step[sindex] = [com_color, org, dest]
-            sindex = (sindex+1)%4
-            br = 0
-            while(br < len(break_long_capture_dest)):
-                b = 0
-                for d in break_long_capture_dest[br]:
-                    if dest == d:
-                        del break_long_capture_dest[br]
-                        del break_long_capture_org[br]
-                        del com_ban_step[br]
-                        b = 1
-                        break
-                if 0 == b:
-                    br += 1
-                    
-            br = 0
-            while(br < len(break_long_capture_org)):
-                b = 0
-                for o in break_long_capture_org[br]:
-                    if org == o:
-                        del break_long_capture_dest[br]
-                        del break_long_capture_org[br]
-                        del com_ban_step[br]
-                        b = 1
-                        break
-                if 0 == b:
-                    br += 1
-                    
+                            
         if 0 == back_num and 1 == cant_move(main_map, main_chess, com_color):
             player_win = 1
         if back_num > 0:
@@ -992,6 +965,7 @@ def chess_ai():
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                        save_step_and_break_long_capture(org, dest)
                     else:
                         sound_click.play()
                         main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
@@ -1003,18 +977,23 @@ def chess_ai():
                         temp = select_back_chess(main_map, main_chess, org)
                         if (-1, -1) == temp:
                             main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                            save_step_and_break_long_capture(org, dest)
                         else:
                             sound_click.play()
                             main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
                             back_num -= 1
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                        save_step_and_break_long_capture(org, dest)
                 else:
                     main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                    save_step_and_break_long_capture(org, dest)
             else:
                 main_map, main_chess = move_s(org, dest, main_map, main_chess)
+                save_step_and_break_long_capture(org, dest)
         elif 0 == player_win:
-            main_map, main_chess = move_s(org, dest, main_map, main_chess) 
+            main_map, main_chess = move_s(org, dest, main_map, main_chess)
+            save_step_and_break_long_capture(org, dest)
    
     if turn_id == com_color:
         turn_id = 2
@@ -1351,6 +1330,42 @@ def scan_king(my_chess):
         for ch in chr:
             if 7 == ch.value:
                 king_live[ch.color] = ch.live
+
+def save_step_and_break_long_capture(org, dest):
+    global move_step
+    global sindex
+    global break_long_capture_dest
+    global break_long_capture_org
+    global com_ban_step
+    
+    if org != dest:
+        move_step[sindex] = [com_color, org, dest]
+        sindex = (sindex+1)%4
+        br = 0
+        while(br < len(break_long_capture_dest)):
+            b = 0
+            for d in break_long_capture_dest[br]:
+                if dest == d:
+                    del break_long_capture_dest[br]
+                    del break_long_capture_org[br]
+                    del com_ban_step[br]
+                    b = 1
+                    break
+            if 0 == b:
+                br += 1
+                
+        br = 0
+        while(br < len(break_long_capture_org)):
+            b = 0
+            for o in break_long_capture_org[br]:
+                if org == o:
+                    del break_long_capture_dest[br]
+                    del break_long_capture_org[br]
+                    del com_ban_step[br]
+                    b = 1
+                    break
+            if 0 == b:
+                br += 1
                 
 def move_score(org, dest, my_chess, a_map, owner_color):
     global max_value
@@ -1425,6 +1440,15 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         for ban in com_ban_step:
             if org == ban:
                 return -0.1
+        
+        ncor = near(orgy, orgx)
+        for nc in ncor:
+            if a_map[nc[0]][nc[1]] != None:
+                a = a_map[nc[0]][nc[1]]
+                small_value = my_chess[a[0]][a[1]].value
+                if 1 == can_be_ate(small_value, org_value):
+                    return -0.1
+                
         
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
