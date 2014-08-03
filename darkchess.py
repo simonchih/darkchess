@@ -1388,8 +1388,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 m = a_map[orgy][orgx]
                 if 3 == my_chess[m[0]][m[1]].value:
                     return 7
-            else:
-                return 10
+                else:
+                    return 10
         elif 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
             #print 'nem'
             return 8
