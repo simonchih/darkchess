@@ -1811,12 +1811,13 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
             if nch.value == my.value:
                 continue
             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
-                for pm in nch.possible_move:
-                    if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
-                        eat_step += 1
-                    #print 'eat_step', eat_step, 'pm', pm, 'len', len(nch.possible_move)
-                if eat_step == len(nch.possible_move):
-                    return 1
+                if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
+                    for pm in nch.possible_move:
+                        if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
+                            eat_step += 1
+                        #print 'eat_step', eat_step, 'pm', pm, 'len', len(nch.possible_move)
+                    if eat_step == len(nch.possible_move):
+                        return 1
     return 0
     
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
@@ -2269,7 +2270,7 @@ def main():
         #main_chess[1][2] = ch
         #main_map[1][2] = (1, 2)
         #
-        #ch = chess(7, 0, 3, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
+        #ch = chess(11, 0, 5, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(11), index_to_chess_select(11))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][1] = ch
@@ -2288,17 +2289,17 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None        
         #
-        #ch = chess(7,0, 3, (cstart_x2+3*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 7), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
+        #ch = chess(7,0, 3, (cstart_x2+1*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 5), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
         #
-        #ch = chess(29,1, 6, (cstart_x+1*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 1), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
+        #ch = chess(29,1, 6, (cstart_x2+2*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 6), chess_back.get_size(), index_to_chess_surface(29), index_to_chess_select(29))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
         #
         #ch = chess(0,0, 1, (cstart_x2+0*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 4), chess_back.get_size(), index_to_chess_surface(0), index_to_chess_select(0))
         #ch.back = 0
