@@ -1384,6 +1384,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
+            elif a_map[orgy][orgx] != None:
+                m = a_map[orgy][orgx]
+                if 3 == my_chess[m[0]][m[1]].value:
+                    return 7
             else:
                 return 10
         elif 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
@@ -1416,7 +1420,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                         continue
                     c = af_ch[am[0]][am[1]]
                     if c.value > 5:
-                        return 7            
+                        return 7.3            
             return 0
         
         max_value = 0
@@ -2270,7 +2274,7 @@ def main():
         #main_chess[1][2] = ch
         #main_map[1][2] = (1, 2)
         #
-        #ch = chess(11, 0, 5, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(11), index_to_chess_select(11))
+        #ch = chess(7, 0, 3, (cstart_x+1*chess_back.get_width(),cstart_y+0*chess_back.get_height()), (0, 1), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][1] = ch
