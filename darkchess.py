@@ -2194,6 +2194,10 @@ def main():
         game_start = 1
         chess_num = [16, 16]
         back_num = 32
+        break_long_capture_dest = []
+        break_long_capture_org = []
+        com_ban_step = []
+        move_step = [None, None, None, None]
         
         player_first = random.randint(0, 1)
         
