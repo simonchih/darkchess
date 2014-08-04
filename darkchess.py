@@ -2198,6 +2198,7 @@ def main():
         break_long_capture_org = []
         com_ban_step = []
         move_step = [None, None, None, None]
+        sindex = 0
         
         player_first = random.randint(0, 1)
         
