@@ -230,6 +230,8 @@ def can_be_ate(small_value, big_value):
         return 0
     elif 1 == big_value and 7 == small_value:
         return 1
+    elif 7 == big_value and 1 == small_value:
+        return 0
     elif big_value > small_value:
         return 1
     else:
