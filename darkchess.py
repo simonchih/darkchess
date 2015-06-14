@@ -10,36 +10,6 @@ from chess import *
 background_image_filename = 'Image/SHEET.gif'
 image_new        = 'Image/shield-and-swords.gif'
 image_chess_back = 'Image/back.gif'
-image_chess_bk = 'Image/BK.GIF'
-image_chess_ba = 'Image/BA.GIF'
-image_chess_bb = 'Image/BB.GIF'
-image_chess_br = 'Image/BR.GIF'
-image_chess_bn = 'Image/BN.GIF'
-image_chess_bc = 'Image/BC.GIF'
-image_chess_bp = 'Image/BP.GIF'
-image_chess_rk = 'Image/RK.GIF'
-image_chess_ra = 'Image/RA.GIF'
-image_chess_rb = 'Image/RB.GIF'
-image_chess_rr = 'Image/RR.GIF'
-image_chess_rn = 'Image/RN.GIF'
-image_chess_rc = 'Image/RC.GIF'
-image_chess_rp = 'Image/RP.GIF'
-
-image_chess_bks = 'Image/BKS.GIF'
-image_chess_bas = 'Image/BAS.GIF'
-image_chess_bbs = 'Image/BBS.GIF'
-image_chess_brs = 'Image/BRS.GIF'
-image_chess_bns = 'Image/BNS.GIF'
-image_chess_bcs = 'Image/BCS.GIF'
-image_chess_bps = 'Image/BPS.GIF'
-image_chess_rks = 'Image/RKS.GIF'
-image_chess_ras = 'Image/RAS.GIF'
-image_chess_rbs = 'Image/RBS.GIF'
-image_chess_rrs = 'Image/RRS.GIF'
-image_chess_rns = 'Image/RNS.GIF'
-image_chess_rcs = 'Image/RCS.GIF'
-image_chess_rps = 'Image/RPS.GIF'
-
 
 s_newgame = 'Sound/NEWGAME.WAV'
 s_capture = 'Sound/CAPTURE2.WAV'
@@ -48,45 +18,9 @@ s_loss    = 'Sound/LOSS.WAV'
 s_move2   = 'Sound/MOVE2.WAV'
 s_win     = 'Sound/WIN.WAV'
 
-SCREEN_SIZE = (521, 313) 
-pygame.init()
-
-pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
-screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
-pygame.display.set_caption("Taiwan Blind Chess")
-
 background = pygame.image.load(background_image_filename).convert()
 new_game   = pygame.image.load(image_new).convert()
 chess_back = pygame.image.load(image_chess_back).convert()
-chess_bk = pygame.image.load(image_chess_bk).convert()
-chess_ba = pygame.image.load(image_chess_ba).convert()
-chess_bb = pygame.image.load(image_chess_bb).convert()
-chess_br = pygame.image.load(image_chess_br).convert()
-chess_bn = pygame.image.load(image_chess_bn).convert()
-chess_bc = pygame.image.load(image_chess_bc).convert()
-chess_bp = pygame.image.load(image_chess_bp).convert()
-chess_rk = pygame.image.load(image_chess_rk).convert()
-chess_ra = pygame.image.load(image_chess_ra).convert()
-chess_rb = pygame.image.load(image_chess_rb).convert()
-chess_rr = pygame.image.load(image_chess_rr).convert()
-chess_rn = pygame.image.load(image_chess_rn).convert()
-chess_rc = pygame.image.load(image_chess_rc).convert()
-chess_rp = pygame.image.load(image_chess_rp).convert()
-
-chess_bks = pygame.image.load(image_chess_bks).convert()
-chess_bas = pygame.image.load(image_chess_bas).convert()
-chess_bbs = pygame.image.load(image_chess_bbs).convert()
-chess_brs = pygame.image.load(image_chess_brs).convert()
-chess_bns = pygame.image.load(image_chess_bns).convert()
-chess_bcs = pygame.image.load(image_chess_bcs).convert()
-chess_bps = pygame.image.load(image_chess_bps).convert()
-chess_rks = pygame.image.load(image_chess_rks).convert()
-chess_ras = pygame.image.load(image_chess_ras).convert()
-chess_rbs = pygame.image.load(image_chess_rbs).convert()
-chess_rrs = pygame.image.load(image_chess_rrs).convert()
-chess_rns = pygame.image.load(image_chess_rns).convert()
-chess_rcs = pygame.image.load(image_chess_rcs).convert()
-chess_rps = pygame.image.load(image_chess_rps).convert()
 
 sound_new     = pygame.mixer.Sound(s_newgame)
 sound_capture = pygame.mixer.Sound(s_capture)
@@ -117,12 +51,17 @@ sindex = 0
 #max_cor = None
 open_score = None
 
-chtemp = chess(0, 0, 0, (0, 0), (0, 0), chess_back.get_size(), chess_back, chess_back)
+#default chess
+chtemp = chess(0,(0, 0), (0, 0), chess_back.get_size())
+
 main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 chess_index = [0] * 32
 main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
+
 mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+
 king_live = [1, 1]
 chess_num = [16, 16]
 com_mv_map = [0, 0]
@@ -134,96 +73,6 @@ break_long_capture_dest = []
 break_long_capture_org = []
 com_ban_step = []
 move_step = [None, None, None, None]
-
-def index_to_chess_select(index):
-    if 0 <= index < 5:
-        return chess_bps
-    elif index < 7:
-        return chess_bcs
-    elif index < 9:
-        return chess_bns
-    elif index < 11:
-        return chess_brs
-    elif index < 13:
-        return chess_bbs
-    elif index < 15:
-        return chess_bas
-    elif 15 == index:
-        return chess_bks
-    elif 16 <= index < 21:
-        return chess_rps
-    elif index < 23:
-        return chess_rcs
-    elif index < 25:
-        return chess_rns
-    elif index < 27:
-        return chess_rrs
-    elif index < 29:
-        return chess_rbs
-    elif index < 31:
-        return chess_ras
-    elif 31 == index:
-        return chess_rks
-
-def index_to_chess_surface(index):
-    if 0 <= index < 5:
-        return chess_bp
-    elif index < 7:
-        return chess_bc
-    elif index < 9:
-        return chess_bn
-    elif index < 11:
-        return chess_br
-    elif index < 13:
-        return chess_bb
-    elif index < 15:
-        return chess_ba
-    elif 15 == index:
-        return chess_bk
-    elif 16 <= index < 21:
-        return chess_rp
-    elif index < 23:
-        return chess_rc
-    elif index < 25:
-        return chess_rn
-    elif index < 27:
-        return chess_rr
-    elif index < 29:
-        return chess_rb
-    elif index < 31:
-        return chess_ra
-    elif 31 == index:
-        return chess_rk
-
-def index_to_chess_value(index):
-    if 0 <= index < 5:
-        return 1
-    elif index < 7:
-        return 2
-    elif index < 9:
-        return 3
-    elif index < 11:
-        return 4
-    elif index < 13:
-        return 5
-    elif index < 15:
-        return 6
-    elif 15 == index:
-        return 7
-    elif 16 <= index < 21:
-        return 1
-    elif index < 23:
-        return 2
-    elif index < 25:
-        return 3
-    elif index < 27:
-        return 4
-    elif index < 29:
-        return 5
-    elif index < 31:
-        return 6
-    elif 31 == index:
-        return 7
 
 def can_be_ate(small_value, big_value):       
     if 2 == big_value:
@@ -256,12 +105,6 @@ def ini_random_chess(list):
         all_list[start] = 1
         list[31-end] = start
     return list
-
-def index_to_color(index):
-    if 0 <= index < 16:
-        return 0
-    else:
-        return 1
 
 def findC(ch, x, y):
     for pr in ch:
@@ -1020,6 +863,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     global max_value
     global mark
     #global max_cor
+    global cannon_mark
     global max_dist
     
     if i == -1 or j == -1 or i == 4 or j == 8:
@@ -1027,7 +871,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     elif i == orgy and j == orgx:
         return
     #elif 1 == mark[i][j]:
-    elif mark[i][j] > 0:
+    elif mark[i][j] > 0 or cannon_mark[i][j] > 0:
         return
     elif a_map[i][j] != None:
         if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
@@ -1368,6 +1212,55 @@ def save_step_and_break_long_capture(org, dest):
                     break
             if 0 == b:
                 br += 1
+
+def calc_cannon_mark(my_chess, a_map, owner_color):
+    cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+    find_player_cannon_num = 0
+    jump = 0
+    
+    if owner_color == player_color:
+        return cannon_mark
+    
+    for i in range(0, 4):
+        for j in range(0, 8):
+            if 2 == find_player_cannon_num:
+                break
+            if 1 == my_chess[i][j].live and 0 == my_chess[i][j].back and player_color == my_chess[i][j].color and 2 == my_chess[i][j].value:
+                find_player_cannon_num += 1
+                for ii in range(i-1, -1, -1):
+                    if 1 == jump and a_map[ii][j] != None:
+                        break
+                    elif 1 == jump and None == a_map[ii][j]:
+                        cannon_mark[ii][j] = 1
+                    elif a_map[ii][j] != None:
+                        jump = 1
+                jump = 0
+                for ii in range(i+1, 4, 1):
+                    if 1 == jump and a_map[ii][j] != None:
+                            break
+                    elif 1 == jump and None == a_map[ii][j]:
+                        cannon[ii][j] = 1
+                    elif a_map[ii][j] != None:
+                        jump = 1
+                jump = 0
+                for jj in range(j-1, -1, -1):
+                    if 1 == jump and a_map[i][jj] != None:
+                        break
+                    elif 1 == jump and None == a_map[i][jj]:
+                        cannon_mark[i][jj] = 1
+                    elif a_map[i][jj] != None:
+                        jump = 1
+                jump = 0
+                for jj in range(j+1, 8, 1):
+                    if 1 == jump and a_map[i][jj] != None:
+                        break
+                    elif 1 == jump and None == a_map[i][jj]:
+                        cannon_mark[i][jj] = 1
+                    elif a_map[i][jj] != None:
+                        jump = 1
+                  
+    return cannon_mark
+
                 
 def move_score(org, dest, my_chess, a_map, owner_color):
     global max_value
@@ -1375,7 +1268,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     #global max_cor
     global max_dist
     global com_will_eat_chess
-    global will_eat_escape_chess 
+    global will_eat_escape_chess
+    global cannon_mark
     
     (orgy, orgx) = org
     (desty, destx) = dest
@@ -1455,8 +1349,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
                 
+        cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)          
+        
         #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
         #print 'mark', mark
         
@@ -2207,13 +2103,13 @@ def main():
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+j],index_to_color(chess_index[8*i+j]), index_to_chess_value(chess_index[8*i+j]), (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+j]), index_to_chess_select(chess_index[8*i+j]))
+                ch = chess(chess_index[8*i+j], (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size())
                 main_chess[i][j] = ch
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+4+j],index_to_color(chess_index[8*i+4+j]), index_to_chess_value(chess_index[8*i+4+j]), (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size(), index_to_chess_surface(chess_index[8*i+4+j]), index_to_chess_select(chess_index[8*i+4+j]))
+                ch = chess(chess_index[8*i+4+j], (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size())
                 main_chess[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
@@ -2227,22 +2123,56 @@ def main():
         ## chess_num[0] = 3
         ## chess_num[1] = 3
         #
-        #for i in range(2, 4):
-        #    for j in range(0, 8):
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None        
+        ##for i in range(0, 4):
+        #for j in range(0, 8):
+        #    main_chess[1][j].live = 0
+        #    main_map[1][j] = None
         #
-        #ch = chess(25, 1, 4, (cstart_x2+0*chess_back.get_width(),cstart_y2+2*chess_back.get_height()), (2, 4), chess_back.get_size(), index_to_chess_surface(25), index_to_chess_select(25))
+        #for i in range(0, 4):
+        #    main_chess[i][5].live = 0
+        #    main_map[i][5] = None
+        #
+        #ch = chess(5, (cstart_x+2*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 2), chess_back.get_size())
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][4] = ch
-        #main_map[2][4] = (2, 4)
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
         #
-        #ch = chess(7, 0, 3, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size(), index_to_chess_surface(7), index_to_chess_select(7))
+        #ch = chess(0, (cstart_x+2*chess_back.get_width(),cstart_y+2*chess_back.get_height()), (2, 2), chess_back.get_size())
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(1, (cstart_x+3*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 3), chess_back.get_size())
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][3] = ch
         #main_map[3][3] = (3, 3)
+        #
+        #ch = chess(2, (cstart_x+1*chess_back.get_width(),cstart_y+3*chess_back.get_height()), (3, 1), chess_back.get_size())
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][1] = ch
+        #main_map[3][1] = (3, 1)
+        #
+        #ch = chess(30, (cstart_x2+1*chess_back.get_width(),cstart_y2+1*chess_back.get_height()), (1, 5), chess_back.get_size())
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
+        #        
+        #ch = chess(7, (cstart_x2+2*chess_back.get_width(),cstart_y2+3*chess_back.get_height()), (3, 6), chess_back.get_size())
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(12, (cstart_x+0*chess_back.get_width(),cstart_y+1*chess_back.get_height()), (1, 0), chess_back.get_size())
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
         
         # Test data2
         #first = 0

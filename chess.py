@@ -1,19 +1,20 @@
 import math
+from chess_data import *
 
 drag = 0.999
 
 class chess():
-    def __init__(self, index, color, value, (x, y), (row, col), size, surface, select):
+    def __init__(self, index, (x, y), (row, col), size):
         self.x = x
         self.y = y
         self.row = row
         self.col = col
         self.size = size
-        self.surface = surface
-        self.select = select
         self.index = index
-        self.color = color
-        self.value = value
+        self.surface = index_to_chess_surface(index)
+        self.select = index_to_chess_select(index)
+        self.color = index_to_color(index)
+        self.value = index_to_chess_value(index)
         self.back = 1
         self.live = 1
         self.speed = 0
