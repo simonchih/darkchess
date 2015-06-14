@@ -1,11 +1,18 @@
 import pygame
 
+cstart_x = 34
+cstart_y = 51
+cstart_x2 = 260
+cstart_y2 = 51
+
 SCREEN_SIZE = (521, 313) 
 pygame.init()
 
 pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
 screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
 pygame.display.set_caption("Taiwan Blind Chess")
+
+image_chess_back = 'Image/back.gif'
 
 image_chess_bk = 'Image/BK.GIF'
 image_chess_ba = 'Image/BA.GIF'
@@ -36,6 +43,8 @@ image_chess_rrs = 'Image/RRS.GIF'
 image_chess_rns = 'Image/RNS.GIF'
 image_chess_rcs = 'Image/RCS.GIF'
 image_chess_rps = 'Image/RPS.GIF'
+
+chess_back = pygame.image.load(image_chess_back).convert()
 
 chess_bk = pygame.image.load(image_chess_bk).convert()
 chess_ba = pygame.image.load(image_chess_ba).convert()

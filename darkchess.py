@@ -9,7 +9,6 @@ from chess import *
 
 background_image_filename = 'Image/SHEET.gif'
 image_new        = 'Image/shield-and-swords.gif'
-image_chess_back = 'Image/back.gif'
 
 s_newgame = 'Sound/NEWGAME.WAV'
 s_capture = 'Sound/CAPTURE2.WAV'
@@ -20,7 +19,6 @@ s_win     = 'Sound/WIN.WAV'
 
 background = pygame.image.load(background_image_filename).convert()
 new_game   = pygame.image.load(image_new).convert()
-chess_back = pygame.image.load(image_chess_back).convert()
 
 sound_new     = pygame.mixer.Sound(s_newgame)
 sound_capture = pygame.mixer.Sound(s_capture)
@@ -29,10 +27,6 @@ sound_loss    = pygame.mixer.Sound(s_loss)
 sound_win     = pygame.mixer.Sound(s_win)
 sound_move    = pygame.mixer.Sound(s_move2)
 
-cstart_x = 34
-cstart_y = 51
-cstart_x2 = 260
-cstart_y2 = 51
 text_x = 237
 text_y = 16
 new_game_iconi = 440
@@ -52,7 +46,7 @@ sindex = 0
 open_score = None
 
 #default chess
-chtemp = chess(0,(0, 0), (0, 0), chess_back.get_size())
+chtemp = chess(0, (0, 0), chess_back.get_size())
 
 main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 chess_index = [0] * 32
@@ -1239,7 +1233,7 @@ def calc_cannon_mark(my_chess, a_map, owner_color):
                     if 1 == jump and a_map[ii][j] != None:
                             break
                     elif 1 == jump and None == a_map[ii][j]:
-                        cannon[ii][j] = 1
+                        cannon_mark[ii][j] = 1
                     elif a_map[ii][j] != None:
                         jump = 1
                 jump = 0
@@ -2103,13 +2097,13 @@ def main():
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+j], (cstart_x+j*chess_back.get_width(),cstart_y+i*chess_back.get_height()), (i, j), chess_back.get_size())
+                ch = chess(chess_index[8*i+j], (i, j), chess_back.get_size())
                 main_chess[i][j] = ch
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+4+j], (cstart_x2+j*chess_back.get_width(),cstart_y2+i*chess_back.get_height()), (i, 4+j), chess_back.get_size())
+                ch = chess(chess_index[8*i+4+j], (i, 4+j), chess_back.get_size())
                 main_chess[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
@@ -2266,7 +2260,7 @@ def main():
             display_font()
             for cr in main_chess:
                 for c in cr:
-                    c.draw(screen, chess_back)
+                    c.draw(screen)
                        
             no_move = 1
             if 2 == turn_id:
@@ -2297,14 +2291,14 @@ def main():
                                 turn_id = player_color
                         if 1 == com_mv:
                             no_move = 0
-                            c.draw(screen, chess_back)
+                            c.draw(screen)
                             com_mv = 0
                 if 1 == no_move:
                     turn_id = player_color
             
             if selected_c != None:
                 selected_c.move()
-                selected_c.draw(screen, chess_back)
+                selected_c.draw(screen)
             
             chess_ai()
             
@@ -2432,7 +2426,7 @@ def main():
                 display_font()
                 for cr in main_chess:
                     for c in cr:
-                        c.draw(screen, chess_back)
+                        c.draw(screen)
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
@@ -2441,7 +2435,7 @@ def main():
                 display_font()
                 for cr in main_chess:
                     for c in cr:
-                        c.draw(screen, chess_back)
+                        c.draw(screen)
                 sound_loss.play()
                 pygame.display.update()
                 time.sleep(5)

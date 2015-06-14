@@ -4,9 +4,7 @@ from chess_data import *
 drag = 0.999
 
 class chess():
-    def __init__(self, index, (x, y), (row, col), size):
-        self.x = x
-        self.y = y
+    def __init__(self, index, (row, col), size):
         self.row = row
         self.col = col
         self.size = size
@@ -15,13 +13,21 @@ class chess():
         self.select = index_to_chess_select(index)
         self.color = index_to_color(index)
         self.value = index_to_chess_value(index)
+        if col < 4:
+            self.x = cstart_x+col*chess_back.get_width()
+            self.y = cstart_y+row*chess_back.get_height()
+        else:
+            self.x = cstart_x2+(col-4)*chess_back.get_width()
+            self.y = cstart_y2+row*chess_back.get_height()
         self.back = 1
         self.live = 1
         self.speed = 0
         self.angle = 0
         self.possible_move = []
         
-    def draw(self, screen, chess_back):
+    def draw(self, screen):
+        global chess_back
+        
         if 1 == self.live:
             if 1 == self.back:
                 screen.blit(chess_back, (self.x, self.y))
