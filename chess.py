@@ -4,10 +4,10 @@ from chess_data import *
 drag = 0.999
 
 class chess():
-    def __init__(self, index, (row, col), size):
+    def __init__(self, index, (row, col)):
         self.row = row
         self.col = col
-        self.size = size
+        self.size = chess_back.get_size()
         self.index = index
         self.surface = index_to_chess_surface(index)
         self.select = index_to_chess_select(index)

@@ -42,11 +42,12 @@ com_color = 1
 max_value = 0
 max_dist = 32
 sindex = 0
+AI_min_score = 2000
 #max_cor = None
 open_score = None
 
 #default chess
-chtemp = chess(0, (0, 0), chess_back.get_size())
+chtemp = chess(0, (0, 0))
 
 main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 chess_index = [0] * 32
@@ -1494,6 +1495,7 @@ def temp_clac_num_back():
     
 def com_think(a_map, a_ch):
     global open_score
+    global AI_min_score
 
     m = []
     
@@ -1513,6 +1515,8 @@ def com_think(a_map, a_ch):
         dest = None
     else:
         open_score = None
+    
+    AI_min_score = 2000
     
     for chr in a_ch:
         for ch in chr:
@@ -1545,6 +1549,8 @@ def com_think(a_map, a_ch):
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 mf.append([mm[0], mm[1], m2[max_index][4]])
+                if m2[max_index][4] < AI_min_score:
+                    AI_min_score = m2[max_index][4]
                 #if m2[max_index][4] == mm[2] and back_num > 0:
                 #    m2[max_index][2] = None
                 #    m2[max_index][3] = None
@@ -1580,6 +1586,8 @@ def com_think(a_map, a_ch):
         return None, None, 0     
 
 def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
+    global AI_min_score
+    
     m2 = []
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
@@ -1591,6 +1599,11 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
         m2.append([mm[0], mm[1], None, None, sc])
         return m2, af_map, af_ch
 
+    # Pruning
+    if owner_color == player_color and sc > AI_min_score:
+        m2.append([mm[0], mm[1], None, None, sc])
+        return m2, af_map, af_ch
+    
     if back_num > 0:
         m2.append([mm[0], mm[1], None, None, sc])
     
@@ -2098,13 +2111,13 @@ def main():
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+j], (i, j), chess_back.get_size())
+                ch = chess(chess_index[8*i+j], (i, j))
                 main_chess[i][j] = ch
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+4+j], (i, 4+j), chess_back.get_size())
+                ch = chess(chess_index[8*i+4+j], (i, 4+j))
                 main_chess[i][4+j] = ch
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
@@ -2117,8 +2130,8 @@ def main():
         #back_num = 16
         ## chess_num[0] = 3
         ## chess_num[1] = 3
-        #
-        ##for i in range(0, 4):
+        
+        #for i in range(0, 4):
         #for j in range(0, 8):
         #    main_chess[1][j].live = 0
         #    main_map[1][j] = None
@@ -2127,43 +2140,43 @@ def main():
         #    main_chess[i][5].live = 0
         #    main_map[i][5] = None
         #
-        #ch = chess(5, (3, 2), chess_back.get_size())
+        #ch = chess(5, (3, 2))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][2] = ch
         #main_map[3][2] = (3, 2)
         #
-        #ch = chess(0, (2, 2), chess_back.get_size())
+        #ch = chess(0, (2, 2))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][2] = ch
         #main_map[2][2] = (2, 2)
         #
-        #ch = chess(1, (3, 3), chess_back.get_size())
+        #ch = chess(1, (3, 3))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][3] = ch
         #main_map[3][3] = (3, 3)
         #
-        #ch = chess(2, (3, 1), chess_back.get_size())
+        #ch = chess(2, (3, 1))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][1] = ch
         #main_map[3][1] = (3, 1)
         #
-        #ch = chess(30, (1, 5), chess_back.get_size())
+        #ch = chess(30, (1, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
         #main_map[1][5] = (1, 5)
         #        
-        #ch = chess(7, (3, 6), chess_back.get_size())
+        #ch = chess(7, (3, 6))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][6] = ch
         #main_map[3][6] = (3, 6)
         #
-        #ch = chess(12, (1, 0), chess_back.get_size())
+        #ch = chess(12, (1, 0))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][0] = ch
