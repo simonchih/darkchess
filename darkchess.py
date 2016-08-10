@@ -2123,64 +2123,50 @@ def main():
                 main_map[i][4+j] = (i, 4+j)
         
         # Test data
+        # It's known issue
         #first = 0
         #com_color = 1
         #player_color = 0
         #turn_id = 1
-        #back_num = 16
-        ## chess_num[0] = 3
-        ## chess_num[1] = 3
-        
-        #for i in range(0, 4):
-        #for j in range(0, 8):
-        #    main_chess[1][j].live = 0
-        #    main_map[1][j] = None
+        #back_num = 0
+        #
+        #chess_num[0] = 2
+        #chess_num[1] = 3
         #
         #for i in range(0, 4):
-        #    main_chess[i][5].live = 0
-        #    main_map[i][5] = None
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #ch = chess(5, (3, 2))
+        #ch = chess(31, (0, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][2] = ch
-        #main_map[3][2] = (3, 2)
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
         #
-        #ch = chess(0, (2, 2))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][2] = ch
-        #main_map[2][2] = (2, 2)
-        #
-        #ch = chess(1, (3, 3))
+        #ch = chess(30, (3, 3))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][3] = ch
         #main_map[3][3] = (3, 3)
         #
-        #ch = chess(2, (3, 1))
+        #ch = chess(23, (2, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][1] = ch
-        #main_map[3][1] = (3, 1)
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
         #
-        #ch = chess(30, (1, 5))
+        #ch = chess(14, (1, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
         #main_map[1][5] = (1, 5)
-        #        
-        #ch = chess(7, (3, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
         #
-        #ch = chess(12, (1, 0))
+        #ch = chess(9, (0, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
         #End Test data
         
         while 0 == player_win:
