@@ -2176,58 +2176,6 @@ def main():
         #main_map[0][1] = (0, 1)
         #End Test data
         
-        # Test data 2
-        #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 0
-        #back_num = 2
-        #
-        #chess_num[0] = 5
-        #chess_num[1] = 1
-        #
-        #for i in range(0, 4):
-        #    for j in range(0, 8):
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None
-        #
-        #ch = chess(16, (2, 7))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
-        #
-        #ch = chess(14, (1, 7))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
-        #
-        #ch = chess(13, (3, 7))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
-        #
-        #ch = chess(12, (2, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
-        #
-        #ch = chess(11, (0, 0))
-        #ch.back = 1
-        #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0)
-        #
-        #ch = chess(10, (1, 0))
-        #ch.back = 1
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
-        #End Test data 2
-        
         while 0 == player_win:
             if 1 == game_start:
                 sound_new.play()
