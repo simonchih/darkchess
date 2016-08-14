@@ -2195,7 +2195,15 @@ def main():
                     for c in cr:
                         com_mv = 0
                         if c.x != cor[c.row][c.col][0]:
-                            c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
+                            #c.x = c.x+1 if c.x < cor[c.row][c.col][0] else c.x-1
+                            if c.x < cor[c.row][c.col][0]:
+                                c.x += 10
+                                if c.x > cor[c.row][c.col][0]:
+                                    c.x = cor[c.row][c.col][0]
+                            elif c.x > cor[c.row][c.col][0]:
+                                c.x -= 10
+                                if c.x < cor[c.row][c.col][0]:
+                                    c.x = cor[c.row][c.col][0]
                             com_mv = 1
                             if (c.x, c.y) == cor[c.row][c.col]:                                
                                 if main_map[c.row][c.col] != None:
@@ -2206,7 +2214,15 @@ def main():
                                 main_map[c.row][c.col] = (com_mv_map[0], com_mv_map[1])
                                 turn_id = player_color
                         if c.y != cor[c.row][c.col][1]:
-                            c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
+                            #c.y = c.y+1 if c.y < cor[c.row][c.col][1] else c.y-1
+                            if c.y < cor[c.row][c.col][1]:
+                                c.y += 10
+                                if c.y > cor[c.row][c.col][1]:
+                                    c.y = cor[c.row][c.col][1]
+                            elif c.y > cor[c.row][c.col][1]:
+                                c.y -= 10
+                                if c.y < cor[c.row][c.col][1]:
+                                    c.y = cor[c.row][c.col][1]
                             com_mv = 1  
                             if (c.x, c.y) == cor[c.row][c.col]:                                
                                 if main_map[c.row][c.col] != None:

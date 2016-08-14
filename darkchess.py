@@ -1,4 +1,11 @@
-﻿import random, os
+﻿# Allow pygame_sdl2 to be imported as pygame.
+try:
+    import pygame_sdl2
+    pygame_sdl2.import_as_pygame()
+except ImportError:
+    pass
+
+import random, os
 import math
 import time 
 import pygame
