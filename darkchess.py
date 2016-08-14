@@ -17,8 +17,8 @@ s_loss    = 'Sound/LOSS.WAV'
 s_move2   = 'Sound/MOVE2.WAV'
 s_win     = 'Sound/WIN.WAV'
 
-background = pygame.image.load(background_image_filename).convert()
-new_game   = pygame.image.load(image_new).convert()
+background = pygame.image.load(background_image_filename).convert_alpha()
+new_game   = pygame.image.load(image_new).convert_alpha()
 
 sound_new     = pygame.mixer.Sound(s_newgame)
 sound_capture = pygame.mixer.Sound(s_capture)
