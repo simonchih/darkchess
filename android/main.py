@@ -2076,10 +2076,10 @@ def clean_back_n1_to_0(a_ch):
 def get_android_mouse_pos():
     (mouseX, mouseY) = pygame.mouse.get_pos()
     (sX, sY) = SCREEN_SIZE
-    if mouseX >= sX:
+    if mouseX >= sX - chess_back.get_width()/2:
         mouseX = sX - 1 - chess_back.get_width()/2
-    if mouseY >= sY:
-        mouseY = sY - 1 - chess_back.get_width()/2
+    if mouseY >= sY - chess_back.get_height()/2:
+        mouseY = sY - 1 - chess_back.get_height()/2
     
     return (mouseX, mouseY)
     
