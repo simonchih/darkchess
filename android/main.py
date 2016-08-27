@@ -2072,6 +2072,16 @@ def clean_back_n1_to_0(a_ch):
             if -1 == ch.back:
                 ch.back = 0
     return a_ch
+
+def get_android_mouse_pos():
+    (mouseX, mouseY) = pygame.mouse.get_pos()
+    (sX, sY) = SCREEN_SIZE
+    if mouseX >= sX:
+        mouseX = sX - 1 - chess_back.get_width()/2
+    if mouseY >= sY:
+        mouseY = sY - 1 - chess_back.get_width()/2
+    
+    return (mouseX, mouseY)
     
 def main():
     global cstart_x
@@ -2265,7 +2275,7 @@ def main():
                         sleeping = False
                         screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
                     elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
-                        (mouseX, mouseY) = pygame.mouse.get_pos()
+                        (mouseX, mouseY) = get_android_mouse_pos()
                         if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
                             player_win = -1
                         main_map, main_chess = all_chess_move(main_map, main_chess)
@@ -2294,7 +2304,7 @@ def main():
                                         break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
                         if selected_c != None:
-                            (mouseX, mouseY) = pygame.mouse.get_pos()
+                            (mouseX, mouseY) = get_android_mouse_pos()
                             moving = 0
                             for pm in selected_c.possible_move:
                                 if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
@@ -2361,7 +2371,7 @@ def main():
                 moving = 0
             
             if selected_c != None:
-                (mouseX, mouseY) = pygame.mouse.get_pos()
+                (mouseX, mouseY) = get_android_mouse_pos()
                 dx = mouseX - selected_c.x
                 dy = mouseY - selected_c.y
                 dx -= selected_c.size[0]/2
