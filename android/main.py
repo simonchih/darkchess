@@ -3,12 +3,13 @@ try:
     import pygame_sdl2
     pygame_sdl2.import_as_pygame()
 except ImportError:
-    pass
+    import pygame
+    pygame.APP_WILLENTERBACKGROUND = 0xffffff01 #fake data
+    pygame.APP_DIDENTERFOREGROUND  = 0xffffff02 #fake data
 
 import random, os
 import math
 import time 
-import pygame
 import copy
 from pygame.locals import *
 from sys import exit
@@ -52,6 +53,7 @@ sindex = 0
 AI_min_score = 2000
 #max_cor = None
 open_score = None
+sleeping = False
 
 #default chess
 chtemp = chess(0, (0, 0))
@@ -752,9 +754,11 @@ def chess_ai():
     global player_win
     global back_num
     global com_will_eat_chess
-    global will_eat_escape_chess 
+    global will_eat_escape_chess
+    global sleeping
     
-    pygame.display.update()
+    if not sleeping:
+        pygame.display.update()
     
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
@@ -2093,6 +2097,8 @@ def main():
     global break_long_capture_dest
     global break_long_capture_org
     global com_ban_step
+    global screen
+    global sleeping
     
     while True:
         selected_c = None
@@ -2253,6 +2259,11 @@ def main():
                 for event in pygame.event.get():
                     if event.type == QUIT:
                         exit()
+                    elif event.type == pygame.APP_WILLENTERBACKGROUND:
+                        sleeping = True
+                    elif event.type == pygame.APP_DIDENTERFOREGROUND:
+                        sleeping = False
+                        screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
                     elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
                         (mouseX, mouseY) = pygame.mouse.get_pos()
                         if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
@@ -2381,7 +2392,8 @@ def main():
                     for c in cr:
                         c.draw(screen)
                 sound_win.play()
-                pygame.display.update()
+                if not sleeping:
+                    pygame.display.update()
                 time.sleep(5)
             elif -1 == player_win:
                 screen.blit(background, (0,0))
@@ -2390,10 +2402,12 @@ def main():
                     for c in cr:
                         c.draw(screen)
                 sound_loss.play()
-                pygame.display.update()
+                if not sleeping:
+                    pygame.display.update()
                 time.sleep(5)
             
-            pygame.display.update()
+            if not sleeping:
+                pygame.display.update()
             
     exit()
 
