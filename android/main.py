@@ -2302,6 +2302,7 @@ def main():
                                             turn_id = com_color
                                         click_once = 1
                                         break
+                        break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
                         if selected_c != None:
                             (mouseX, mouseY) = get_android_mouse_pos()
@@ -2362,10 +2363,11 @@ def main():
                             selected_c.speed = 0
                             selected_c = None
                             moving = 1
-                            break
+                            #break
                         else:
                             moving = 1
-            
+                        break
+                        
             if 1 == moving:
                 main_map, main_chess = all_chess_move(main_map, main_chess)
                 moving = 0
