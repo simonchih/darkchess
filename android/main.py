@@ -2266,106 +2266,109 @@ def main():
                     print 'player cant move'
                     player_win = -1
                 
-                event = pygame.event.wait()
+                for e16 in range(0, 16):
+                    event = pygame.event.wait()
                 
-                if event.type == pygame.QUIT:
-                    exit()
-                elif event.type == pygame.APP_WILLENTERBACKGROUND:
-                    sleeping = True
-                elif event.type == pygame.APP_DIDENTERFOREGROUND:
-                    sleeping = False
-                    screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
-                elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
-                    (mouseX, mouseY) = get_android_mouse_pos()
-                    if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
-                        player_win = -1
-                    main_map, main_chess = all_chess_move(main_map, main_chess)
-                    sound_click.play()
-                    click_once = 0
-                    for chr in main_chess:
-                        for chc in chr:
-                            if 0 == click_once:
-                                ch_index = chc.click((mouseX, mouseY))
-                                if ch_index != None:
-                                    if 1 == player_first and 1 == first:                            
-                                        turn_id = index_to_color(ch_index)
-                                        player_color = turn_id
-                                        com_color = 1 - player_color
-                                        first = 0
-                                        selected_c = None
-                                        back_num -= 1
-                                        turn_id = com_color
-                                    elif -1 == ch_index and chc.color == player_color:
-                                        selected_c = chc
-                                    elif ch_index != -1 and 0 == first:
-                                        selected_c = None
-                                        back_num -= 1
-                                        turn_id = com_color
-                                    click_once = 1
-                                    break
-                elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
-                    if selected_c != None:
+                    if event.type == QUIT:
+                        exit()
+                    elif event.type == pygame.APP_WILLENTERBACKGROUND:
+                        sleeping = True
+                    elif event.type == pygame.APP_DIDENTERFOREGROUND:
+                        sleeping = False
+                        screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
+                    elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
                         (mouseX, mouseY) = get_android_mouse_pos()
-                        moving = 0
-                        for pm in selected_c.possible_move:
-                            if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
-                                if main_map[pm[0]][pm[1]] != None:
-                                    main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].live = 0
-                                    chess_num[main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].color] -= 1
-                                    sound_capture.play()
-                                else:
-                                    sound_move.play()
-                                main_map[pm[0]][pm[1]] = main_map[selected_c.row][selected_c.col]
-                                main_map[selected_c.row][selected_c.col] = None
-                                org = (selected_c.row, selected_c.col)
-                                selected_c.x = cor[pm[0]][pm[1]][0]
-                                selected_c.y = cor[pm[0]][pm[1]][1]
-                                selected_c.row = pm[0]
-                                selected_c.col = pm[1]
-                                dest = (selected_c.row, selected_c.col)
-                                moving = 1
-                                turn_id = com_color
-                                move_step[sindex] = [selected_c.color, org, dest]
-                                #print move_step[sindex]
-                                sindex = (sindex+1)%4
-                                
-                                br = 0
-                                while(br < len(break_long_capture_dest)):
-                                    b = 0
-                                    for d in break_long_capture_dest[br]:
-                                        if dest == d:
-                                            del break_long_capture_dest[br]
-                                            del break_long_capture_org[br]
-                                            del com_ban_step[br]
-                                            b = 1
-                                            break
-                                    if 0 == b:
-                                        br += 1
+                        if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
+                            player_win = -1
+                        main_map, main_chess = all_chess_move(main_map, main_chess)
+                        sound_click.play()
+                        click_once = 0
+                        for chr in main_chess:
+                            for chc in chr:
+                                if 0 == click_once:
+                                    ch_index = chc.click((mouseX, mouseY))
+                                    if ch_index != None:
+                                        if 1 == player_first and 1 == first:                            
+                                            turn_id = index_to_color(ch_index)
+                                            player_color = turn_id
+                                            com_color = 1 - player_color
+                                            first = 0
+                                            selected_c = None
+                                            back_num -= 1
+                                            turn_id = com_color
+                                        elif -1 == ch_index and chc.color == player_color:
+                                            selected_c = chc
+                                        elif ch_index != -1 and 0 == first:
+                                            selected_c = None
+                                            back_num -= 1
+                                            turn_id = com_color
+                                        click_once = 1
+                                        break
+                        break
+                    elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
+                        if selected_c != None:
+                            (mouseX, mouseY) = get_android_mouse_pos()
+                            moving = 0
+                            for pm in selected_c.possible_move:
+                                if pm == mouse_position_to_block(mouseX, mouseY, chess_back):
+                                    if main_map[pm[0]][pm[1]] != None:
+                                        main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].live = 0
+                                        chess_num[main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].color] -= 1
+                                        sound_capture.play()
+                                    else:
+                                        sound_move.play()
+                                    main_map[pm[0]][pm[1]] = main_map[selected_c.row][selected_c.col]
+                                    main_map[selected_c.row][selected_c.col] = None
+                                    org = (selected_c.row, selected_c.col)
+                                    selected_c.x = cor[pm[0]][pm[1]][0]
+                                    selected_c.y = cor[pm[0]][pm[1]][1]
+                                    selected_c.row = pm[0]
+                                    selected_c.col = pm[1]
+                                    dest = (selected_c.row, selected_c.col)
+                                    moving = 1
+                                    turn_id = com_color
+                                    move_step[sindex] = [selected_c.color, org, dest]
+                                    #print move_step[sindex]
+                                    sindex = (sindex+1)%4
+                                    
+                                    br = 0
+                                    while(br < len(break_long_capture_dest)):
+                                        b = 0
+                                        for d in break_long_capture_dest[br]:
+                                            if dest == d:
+                                                del break_long_capture_dest[br]
+                                                del break_long_capture_org[br]
+                                                del com_ban_step[br]
+                                                b = 1
+                                                break
+                                        if 0 == b:
+                                            br += 1
 
-                                br = 0
-                                while(br < len(break_long_capture_org)):
-                                    b = 0
-                                    for o in break_long_capture_org[br]:
-                                        if org == o:
-                                            del break_long_capture_dest[br]
-                                            del break_long_capture_org[br]
-                                            del com_ban_step[br]
-                                            b = 1
-                                            break
-                                    if 0 == b:
-                                        br += 1
-                
-                                break
-                        
-                        if 0 == moving:
-                           (selected_c.x, selected_c.y) = cor[selected_c.row][selected_c.col] 
+                                    br = 0
+                                    while(br < len(break_long_capture_org)):
+                                        b = 0
+                                        for o in break_long_capture_org[br]:
+                                            if org == o:
+                                                del break_long_capture_dest[br]
+                                                del break_long_capture_org[br]
+                                                del com_ban_step[br]
+                                                b = 1
+                                                break
+                                        if 0 == b:
+                                            br += 1
                     
-                        selected_c.speed = 0
-                        selected_c = None
-                        moving = 1
-                        #break
-                    else:
-                        moving = 1
+                                    break
+                            
+                            if 0 == moving:
+                               (selected_c.x, selected_c.y) = cor[selected_c.row][selected_c.col] 
+                        
+                            selected_c.speed = 0
+                            selected_c = None
+                            moving = 1
+                            #break
+                        else:
+                            moving = 1
+                        break
                         
             if 1 == moving:
                 main_map, main_chess = all_chess_move(main_map, main_chess)
