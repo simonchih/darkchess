@@ -300,21 +300,31 @@ def eat_by_bomb(org, a_map, my_chess):
     return was_ate
 
 # analyze all back pieces, it's pssible for human player, NOT cheating
-def check_eat_rate(a_map, my_chess, n_max):
+def check_eat_rate(a_map, my_chess, n_max, no_min):
     global back_num
     global com_color
+    global player_color
     
     eat_possible_num = 0
+    was_ate_num = 0
+    
     for cr in my_chess:
         for c in cr:
             if c.back == 1:
-                if 2 == c.value and n_max < 3:
-                    if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, com_color):
+                if com_color == c.color:
+                    if 2 == c.value and n_max < 3:
+                        if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, com_color):
+                            eat_possible_num += 1
+                    elif c.value > n_max:
                         eat_possible_num += 1
-                elif c.value > n_max:
-                    eat_possible_num += 1
+                else: # player_color == c.color
+                    if 2 == c.value and 0 == no_min:
+                        if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, player_color):
+                            was_ate_num += 1
+                    elif c.value >= no_min:
+                        was_ate_num += 1
     
-    return float(eat_possible_num)/back_num              
+    return float(eat_possible_num - was_ate_num)/back_num              
 
 def if_cannon_can_eat(org, a_map, my_chess, owner_color):
     (i, j) = org
@@ -710,10 +720,12 @@ def scan_com_bomb(a_map, my_chess):
 def select_back_chess(a_map, my_chess, org = None):
     global back_num
     global player_color
+    global com_color
     
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
     near_max = 0
+    near_our_min = 8
     max_eat_rate = 0
     
     # temp
@@ -740,7 +752,7 @@ def select_back_chess(a_map, my_chess, org = None):
     #        return cor
     
     # temp
-    print '3'
+    #print '3'
     
     for k in range(0, 32):
         if 1 == check_back_exist(a_map, my_chess, back_mark):
@@ -751,9 +763,12 @@ def select_back_chess(a_map, my_chess, org = None):
                     (ni, nj) = kk
                     if a_map[ni][nj] != None:
                         an = a_map[ni][nj]
-                        if my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].value > near_max:
-                            near_max = my_chess[an[0]][an[1]].value                            
-                n = check_eat_rate(a_map, my_chess, near_max)
+                        if my_chess[an[0]][an[1]].back < 1:
+                            if my_chess[an[0]][an[1]].value > near_max and player_color == my_chess[an[0]][an[1]].color:
+                                near_max = my_chess[an[0]][an[1]].value
+                            if my_chess[an[0]][an[1]].value < near_our_min and com_color ==  my_chess[an[0]][an[1]].color:
+                                near_our_min = my_chess[an[0]][an[1]].value
+                n = check_eat_rate(a_map, my_chess, near_max, near_our_min)
                 if float(n) > max_eat_rate:
                     max_eat_rate = n
                     print max_eat_rate
