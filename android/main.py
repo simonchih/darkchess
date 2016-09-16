@@ -2361,7 +2361,7 @@ def main():
                     print 'player cant move'
                     player_win = -1
                 
-                for e16 in range(0, 16):
+                for e16 in range(16):
                     event = pygame.event.wait()
                 
                     if event.type == QUIT:
