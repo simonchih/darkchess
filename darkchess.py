@@ -323,9 +323,10 @@ def check_eat_rate(a_map, my_chess, n_max, no_min):
                     else:
                         was_ate_num += 1
                 else: # player_color == c.color
-                    if 2 == c.value and 0 == no_min:
-                        if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, player_color):
-                            was_ate_num += 1
+                    if 2 == c.value:
+                        if 8 == no_min:
+                            if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, player_color):
+                                was_ate_num += 1
                     elif 8 == no_min:
                         continue
                     elif c.value >= no_min:
