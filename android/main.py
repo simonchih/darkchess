@@ -312,11 +312,13 @@ def check_eat_rate(a_map, my_chess, n_max, no_min):
     
     for cr in my_chess:
         for c in cr:
-            if c.back == 1:
+            if 1 == c.back and 1 == c.live:
                 if com_color == c.color:
                     if 2 == c.value and n_max < 3:
                         if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, com_color):
                             eat_possible_num += 1
+                    elif 0 == n_max:
+                        continue
                     elif c.value > n_max:
                         eat_possible_num += 1
                     #elif c.value <= n_max:
@@ -326,6 +328,8 @@ def check_eat_rate(a_map, my_chess, n_max, no_min):
                     if 2 == c.value and 0 == no_min:
                         if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, player_color):
                             was_ate_num += 1
+                    elif 8 == no_min:
+                        continue
                     elif c.value >= no_min:
                         was_ate_num += 1
                     #elif c.value < no_min:
@@ -732,8 +736,6 @@ def select_back_chess(a_map, my_chess, org = None):
     
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
-    near_max = 0
-    near_our_min = 8
     max_eat_rate = 0
     
     # temp
@@ -763,6 +765,8 @@ def select_back_chess(a_map, my_chess, org = None):
     #print '3'
     
     for k in range(0, 32):
+        near_max = 0
+        near_our_min = 8
         if 1 == check_back_exist(a_map, my_chess, back_mark):
             (y, x) = random_select_back_chess(a_map, my_chess, back_mark)
             if 0 == eat_by_player_bomb((y, x), a_map, my_chess, player_color):
@@ -779,7 +783,7 @@ def select_back_chess(a_map, my_chess, org = None):
                 n = check_eat_rate(a_map, my_chess, near_max, near_our_min)
                 if float(n) > max_eat_rate:
                     max_eat_rate = n
-                    print max_eat_rate
+                    #print max_eat_rate
                     (i, j) = (y, x)
                 back_mark[y][x] = 1
             else:
