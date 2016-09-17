@@ -302,8 +302,7 @@ def eat_by_bomb(org, a_map, my_chess):
     return was_ate
 
 # analyze all back pieces, it's pssible for human player, NOT cheating
-def check_eat_rate(a_map, my_chess, n_max, no_min, no_max):
-    global back_num
+def check_eat_number(a_map, my_chess, n_max, no_min, no_max):
     global com_color
     global player_color
     
@@ -345,7 +344,7 @@ def check_eat_rate(a_map, my_chess, n_max, no_min, no_max):
                     else:
                         eat_possible_num += 1
     
-    return float(eat_possible_num - was_ate_num)/back_num              
+    return eat_possible_num - was_ate_num
 
 def if_cannon_can_eat(org, a_map, my_chess, owner_color):
     (i, j) = org
@@ -745,7 +744,7 @@ def select_back_chess(a_map, my_chess, org = None):
     
     back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
-    max_eat_rate = 0
+    max_eat_number = 0
     
     # temp
     #print '0'
@@ -792,10 +791,10 @@ def select_back_chess(a_map, my_chess, org = None):
                                 near_our_min = my_chess[an[0]][an[1]].value
                             if my_chess[an[0]][an[1]].value > near_our_max and com_color ==  my_chess[an[0]][an[1]].color:
                                 near_our_max = my_chess[an[0]][an[1]].value
-                n = check_eat_rate(a_map, my_chess, near_max, near_our_min, near_our_max)
-                if float(n) > max_eat_rate:
-                    max_eat_rate = n
-                    #print max_eat_rate
+                n = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max)
+                if n > max_eat_number:
+                    max_eat_number = n
+                    #print float(max_eat_number)/back_num
                     (i, j) = (y, x)
                 back_mark[y][x] = 1
             else:
@@ -2251,7 +2250,7 @@ def main():
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
         
-        # Test data
+		# Test data
         # It's known issue
         #first = 0
         #com_color = 1
@@ -2260,43 +2259,89 @@ def main():
         #back_num = 0
         #
         #chess_num[0] = 2
-        #chess_num[1] = 3
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(31, (0, 6))
+        #ch = chess(30, (0, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
+        #main_chess[0][3] = ch
+        #main_map[0][3] = (0, 3)
         #
-        #ch = chess(30, (3, 3))
+        #ch = chess(23, (2, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
         #
-        #ch = chess(23, (2, 2))
+        #ch = chess(14, (3, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][2] = ch
-        #main_map[2][2] = (2, 2)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
         #
-        #ch = chess(14, (1, 5))
+        #ch = chess(7, (1, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][5] = ch
-        #main_map[1][5] = (1, 5)
-        #
-        #ch = chess(9, (0, 1))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
         #End Test data
+        
+        # Test data 2
+        #first = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 0
+        #back_num = 2
+        #
+        #chess_num[0] = 5
+        #chess_num[1] = 1
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(16, (2, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+        #
+        #ch = chess(14, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
+        #
+        #ch = chess(13, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(12, (2, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        #
+        #ch = chess(11, (0, 0))
+        #ch.back = 1
+        #ch.live = 1
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)
+        #
+        #ch = chess(10, (1, 0))
+        #ch.back = 1
+        #ch.live = 1
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
+        #End Test data 2
         
         while 0 == player_win:
             if 1 == game_start:
