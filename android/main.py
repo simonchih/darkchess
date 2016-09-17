@@ -319,6 +319,10 @@ def check_eat_rate(a_map, my_chess, n_max, no_min):
                             eat_possible_num += 1
                     elif 0 == n_max:
                         continue
+                    elif 1 == n_max and 7 == c.value:
+                        was_ate_num += 1
+                    elif 7 == n_max and 1 == c.value:
+                        eat_possible_num += 1
                     elif c.value > n_max:
                         eat_possible_num += 1
                     #elif c.value <= n_max:
@@ -331,6 +335,10 @@ def check_eat_rate(a_map, my_chess, n_max, no_min):
                                 was_ate_num += 1
                     elif 8 == no_min:
                         continue
+                    elif 1 == no_min and 7 == c.value:
+                        eat_possible_num += 1
+                    elif 7 == no_min and 1 == c.value:
+                        was_ate_num += 1
                     elif c.value >= no_min:
                         was_ate_num += 1
                     #elif c.value < no_min:
