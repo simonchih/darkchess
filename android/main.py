@@ -743,7 +743,6 @@ def select_back_chess(a_map, my_chess, org = None):
     global player_color
     global com_color
     
-    back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
     (i, j) = (None, None)
     max_eat_number = 0
     
@@ -778,7 +777,7 @@ def select_back_chess(a_map, my_chess, org = None):
             near_max = 0
             near_our_min = 8
             near_our_max = 0
-            if 1 == check_back_exist(a_map, my_chess, back_mark):
+            if 1 == check_back_exist(a_map, my_chess):
                 if None == a_map[y][x]:
                     continue
                 
@@ -804,9 +803,6 @@ def select_back_chess(a_map, my_chess, org = None):
                         max_eat_number = n
                         #print y, x, float(max_eat_number)/back_num
                         (i, j) = (y, x)
-                    back_mark[y][x] = 1
-                else:
-                    back_mark[y][x] = 1
             else:
                 break
     if (i, j) != (None, None):
@@ -815,30 +811,29 @@ def select_back_chess(a_map, my_chess, org = None):
         #  (-1, -1) to move a piece
         return (-1, -1)
     else:
-        back_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-        if 1 == check_back_exist(a_map, my_chess, back_mark):
-            return random_select_back_chess(a_map, my_chess, back_mark)
+        if 1 == check_back_exist(a_map, my_chess):
+            return random_select_back_chess(a_map, my_chess)
         else:
             return None
 
-def check_back_exist(a_map, my_chess, bm):
+def check_back_exist(a_map, my_chess):
     back_exist = 0
     for i in range(0, 4):
         for j in range(0, 8):
-            if a_map[i][j] != None and bm[i][j] != 1:
+            if a_map[i][j] != None:
                 if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
                     #back_exist = 1
 					return 1
     return back_exist
     
-def random_select_back_chess(a_map, my_chess, bm):    
+def random_select_back_chess(a_map, my_chess):    
     i = random.randint(0, 31)
     ii = 0
     
     while i != -1:
         y = ii/8
         x = ii%8
-        if a_map[y][x] == None or bm[y][x] == 1:
+        if a_map[y][x] == None:
             ii += 1
             if ii > 31:
                 ii = 0
