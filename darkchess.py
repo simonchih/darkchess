@@ -300,7 +300,7 @@ def eat_by_bomb(org, a_map, my_chess):
     return was_ate
 
 # analyze all back pieces, it's pssible for human player, NOT cheating
-def check_eat_number(a_map, my_chess, n_max, no_min, no_max):
+def check_eat_number(a_map, my_chess, n_max, no_min, no_max, y, x):
     global com_color
     global player_color
     
@@ -312,7 +312,7 @@ def check_eat_number(a_map, my_chess, n_max, no_min, no_max):
             if 1 == c.back and 1 == c.live:
                 if com_color == c.color:
                     if 2 == c.value and n_max < 3:
-                        if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, com_color):
+                        if 0 < if_cannon_can_eat((y, x), a_map, my_chess, com_color):
                             eat_possible_num += 1
                     elif 0 == n_max:
                         continue
@@ -328,7 +328,7 @@ def check_eat_number(a_map, my_chess, n_max, no_min, no_max):
                 else: # player_color == c.color
                     if 2 == c.value:
                         if 8 == no_min:
-                            if 0 < if_cannon_can_eat((c.row, c.col), a_map, my_chess, player_color):
+                            if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
                                 was_ate_num += 1
                     elif 8 == no_min:
                         continue
@@ -389,6 +389,7 @@ def if_cannon_can_eat(org, a_map, my_chess, owner_color):
                 break
         elif a_map[i][jj] != None:
             jump = 1
+    
     return eat_number
    
 def eat_by_player_bomb(org, a_map, my_chess, player_color):
@@ -770,35 +771,42 @@ def select_back_chess(a_map, my_chess, org = None):
     # temp
     #print '3'
     
-    for k in range(0, 32):
-        near_max = 0
-        near_our_min = 8
-        near_our_max = 0
-        if 1 == check_back_exist(a_map, my_chess, back_mark):
-            (y, x) = random_select_back_chess(a_map, my_chess, back_mark)
-            if 0 == eat_by_player_bomb((y, x), a_map, my_chess, player_color):
-                near_cor = near(y, x)
-                for kk in near_cor:
-                    (ni, nj) = kk
-                    if a_map[ni][nj] != None:
-                        an = a_map[ni][nj]
-                        if my_chess[an[0]][an[1]].back < 1:
-                            if my_chess[an[0]][an[1]].value > near_max and player_color == my_chess[an[0]][an[1]].color:
-                                near_max = my_chess[an[0]][an[1]].value
-                            if my_chess[an[0]][an[1]].value < near_our_min and com_color ==  my_chess[an[0]][an[1]].color:
-                                near_our_min = my_chess[an[0]][an[1]].value
-                            if my_chess[an[0]][an[1]].value > near_our_max and com_color ==  my_chess[an[0]][an[1]].color:
-                                near_our_max = my_chess[an[0]][an[1]].value
-                n = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max)
-                if n > max_eat_number:
-                    max_eat_number = n
-                    #print float(max_eat_number)/back_num
-                    (i, j) = (y, x)
-                back_mark[y][x] = 1
+    for y in range(4):
+        for x in range(8):
+            near_max = 0
+            near_our_min = 8
+            near_our_max = 0
+            if 1 == check_back_exist(a_map, my_chess, back_mark):
+                if None == a_map[y][x]:
+                    continue
+                
+                n = a_map[y][x]
+                if my_chess[n[0]][n[1]].back < 1:
+                    continue
+                    
+                if 0 == eat_by_player_bomb((y, x), a_map, my_chess, player_color):
+                    near_cor = near(y, x)
+                    for kk in near_cor:
+                        (ni, nj) = kk
+                        if a_map[ni][nj] != None:
+                            an = a_map[ni][nj]
+                            if my_chess[an[0]][an[1]].back < 1:
+                                if my_chess[an[0]][an[1]].value > near_max and player_color == my_chess[an[0]][an[1]].color:
+                                    near_max = my_chess[an[0]][an[1]].value
+                                if my_chess[an[0]][an[1]].value < near_our_min and com_color ==  my_chess[an[0]][an[1]].color:
+                                    near_our_min = my_chess[an[0]][an[1]].value
+                                if my_chess[an[0]][an[1]].value > near_our_max and com_color ==  my_chess[an[0]][an[1]].color:
+                                    near_our_max = my_chess[an[0]][an[1]].value
+                    n = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max, y, x)
+                    if n > max_eat_number:
+                        max_eat_number = n
+                        #print y, x, float(max_eat_number)/back_num
+                        (i, j) = (y, x)
+                    back_mark[y][x] = 1
+                else:
+                    back_mark[y][x] = 1
             else:
-                back_mark[y][x] = 1
-        else:
-            break
+                break
     if (i, j) != (None, None):
         return (i, j)
     elif org != None:
