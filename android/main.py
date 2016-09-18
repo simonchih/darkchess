@@ -78,6 +78,18 @@ break_long_capture_org = []
 com_ban_step = []
 move_step = [None, None, None, None]
 
+def can_be_ate_equal(small_value, big_value):       
+    if 2 == big_value:
+        return 0
+    elif 1 == big_value and 7 == small_value:
+        return 1
+    elif 7 == big_value and 1 == small_value:
+        return 0
+    elif big_value >= small_value:
+        return 1
+    else:
+        return 0
+
 def can_be_ate(small_value, big_value):       
     if 2 == big_value:
         return 0
@@ -1106,7 +1118,7 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass 
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
                 return 1
             #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
             #    return 1
@@ -1120,7 +1132,7 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
                 return 1
             #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
             #    return 1
@@ -1134,7 +1146,7 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
                 return 1
             #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
             #    return 1
@@ -1148,7 +1160,7 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
                 return 1
             #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
             #    return 1
