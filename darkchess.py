@@ -782,8 +782,8 @@ def select_back_chess(a_map, my_chess, org = None):
     # temp
     #print '3'
     
-    i = random.randint(0, 1)
-    if 0 == i:
+    randomi = random.randint(0, 1)
+    if 0 == randomi:
         y0 = 0
         y1 = 4
         y2 = 1
@@ -792,8 +792,8 @@ def select_back_chess(a_map, my_chess, org = None):
         y1 = -1
         y2 = -1
         
-    i = random.randint(0, 1)
-    if 0 == i:
+    randomi = random.randint(0, 1)
+    if 0 == randomi:
         x0 = 0
         x1 = 8
         x2 = 1
