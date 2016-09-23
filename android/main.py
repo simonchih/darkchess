@@ -1003,6 +1003,26 @@ def short_dist(i, j, dist, a_map):
     
     return d
         
+def calc_move_score(max_value, max_dist):
+    if 9 == max_value:
+        #print max_dist
+        
+        if max_dist != 0:
+            if 7.0 > 0.25*max_dist:
+                return 7.0 - 0.25*max_dist
+            else:
+                return 0.25 - (float)(max_dist)/100
+        else:
+            # impossible
+            return 0
+    else:
+        if max_dist != 0:
+            if max_value > 0.25 * max_dist:
+                return (float)(max_value) - 0.25 * max_dist
+            else:
+                return 0.25 - (float)(max_dist)/100
+        else:
+            return -0.1
         
 def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j, dist=1):
     global max_value
@@ -1474,14 +1494,11 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'nhsv'
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
                 return -0.1
+        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
+        
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
-            #print 'caca'
-            #following comment:No need due to function near2_have_same_value will check it
-            #if 0 == caca(org, org, my_chess, a_map, owner_color):
-            #    return org_value+0.001
-            #else:
-            #    return 0.1
-            return org_value+0.001
+            #print "max_value=%s" % max_value
+            return calc_move_score(max_value, max_dist)+0.001
             
         for ban in com_ban_step:
             if org == ban:
@@ -1497,60 +1514,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 
         cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
-        move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)          
-        
-        #print 'max_value', max_value, 'max_cor', max_cor, 'org', org, 'dest', dest, 'owner_color', owner_color
-        #print 'mark', mark
-        
-        #if 8 == max_value:
-        #    return (float)(org_value)/100
-        
-        #print 'max_value = %g' % max_value
-        #print 'mv', org, dest, max_dist
-        
-        if 9 == max_value:
-            #print 'mv', org, dest, max_dist
-            
-            #if max_cor != None:
-            #    if max_cor[0] != desty and max_cor[1] != destx:
-            #        return 7.0 - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
-            #    else:
-            #        return 7.0 - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
-            #else:
-            #    return 7
-            if max_dist != 0:
-                if 7.0 > 0.25*max_dist:
-                    return 7.0 - 0.25*max_dist
-                else:
-                    return 0.25 - (float)(max_dist)/100
-            else:
-                # impossible
-                return 0
-        else:
-            #if max_value == 2:
-            #    max_value = 5.5
-            
-            #if max_cor != None:
-            #    if max_cor[0] != desty and max_cor[1] != destx:
-            #        if max_value > 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
-            #            return (float)(max_value) - 0.29*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
-            #        else:
-            #            return 0.01
-            #    elif max_value > 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx)):
-            #        return (float)(max_value) - 0.3*(abs(max_cor[0]-orgy)+abs(max_cor[1]-orgx))
-            #    else:
-            #        return 0.01
-            if max_dist != 0:
-                if max_value > 0.25 * max_dist:
-                    return (float)(max_value) - 0.25 * max_dist
-                else:
-                    return 0.25 - (float)(max_dist)/100
-            else:
-                return -0.1
+        return calc_move_score(max_value, max_dist)
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
-        #print 'owner_color', owner_color, 'org', org, 'dest', dest, 'eating score', eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
-        #print 'owner_next_can_eat_dead_p %d' % owner_next_can_eat_dead_p(dest, dest, my_chess, a_map, 1-owner_color)
         if owner_color == com_color and 1 == owner_next_can_eat_dead_p(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
             if (orgy, orgx) in will_eat_escape_chess:
                 return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
@@ -2292,7 +2258,7 @@ def main():
         #turn_id = 1
         #back_num = 0
         #
-        #chess_num[0] = 2
+        #chess_num[0] = 3
         #chess_num[1] = 2
         #
         #for i in range(0, 4):
@@ -2300,29 +2266,36 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(30, (0, 3))
+        #ch = chess(31, (1, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
         #
-        #ch = chess(23, (2, 7))
+        #ch = chess(7, (0, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
         #
-        #ch = chess(14, (3, 0))
+        #ch = chess(8, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(4, (3, 0))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][0] = ch
         #main_map[3][0] = (3, 0)
         #
-        #ch = chess(7, (1, 4))
+        #ch = chess(28, (3, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][4] = ch
-        #main_map[1][4] = (1, 4)
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
+        
         #End Test data
         
         # Test data 2
