@@ -1038,7 +1038,18 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
     #elif 1 == mark[i][j]:
     elif mark[i][j] > 0 or cannon_mark[i][j] > 0:
         return
-    elif a_map[i][j] != None:
+        
+    n_c = near(i, j)
+    
+    for nc in n_c:
+        (ni, nj) = nc
+        if a_map[ni][nj] != None:
+            an = a_map[ni][nj]
+            if my_chess[an[0]][an[1]].live == 1 and my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color != owner_color:
+                if 1 == can_be_ate_equal(my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value, my_chess[an[0]][an[1]].value):
+                    return
+    
+    if a_map[i][j] != None:
         if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
             return
         #elif owner_color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
@@ -2259,43 +2270,37 @@ def main():
         #back_num = 0
         #
         #chess_num[0] = 3
-        #chess_num[1] = 2
+        #chess_num[1] = 1
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(31, (1, 4))
+        #ch = chess(31, (3, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][4] = ch
-        #main_map[1][4] = (1, 4)
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
         #
-        #ch = chess(7, (0, 6))
+        #ch = chess(1, (2, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
         #
-        #ch = chess(8, (3, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
-        #
-        #ch = chess(4, (3, 0))
+        #ch = chess(14, (3, 0))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][0] = ch
         #main_map[3][0] = (3, 0)
         #
-        #ch = chess(28, (3, 3))
+        #ch = chess(12, (2, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
-        
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+               
         #End Test data
         
         # Test data 2
