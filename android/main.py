@@ -756,7 +756,7 @@ def select_back_chess(a_map, my_chess, org = None):
     global com_color
     
     (i, j) = (None, None)
-    max_eat_number = 0
+    max_eat_number = -0.1
     
     # temp
     #print '0'
@@ -830,9 +830,9 @@ def select_back_chess(a_map, my_chess, org = None):
                                 near_our_min = my_chess[an[0]][an[1]].value
                             if my_chess[an[0]][an[1]].value > near_our_max and com_color ==  my_chess[an[0]][an[1]].color:
                                 near_our_max = my_chess[an[0]][an[1]].value
-                n = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max, y, x)
-                if n > max_eat_number:
-                    max_eat_number = n
+                ne = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max, y, x)
+                if ne > max_eat_number:
+                    max_eat_number = ne
                     #print y, x, float(max_eat_number)/back_num
                     (i, j) = (y, x)
                     
