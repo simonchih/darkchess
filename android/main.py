@@ -1505,6 +1505,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'nhsv'
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
                 return -0.1
+        
+        cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
+        
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
@@ -1522,8 +1525,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 small_value = my_chess[a[0]][a[1]].value
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
-                
-        cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
         return calc_move_score(max_value, max_dist)
     
