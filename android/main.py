@@ -1046,7 +1046,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         if a_map[ni][nj] != None:
             an = a_map[ni][nj]
             if my_chess[an[0]][an[1]].live == 1 and my_chess[an[0]][an[1]].back < 1 and my_chess[an[0]][an[1]].color != owner_color:
-                if 1 == can_be_ate_equal(my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value, my_chess[an[0]][an[1]].value):
+                if 1 == can_be_ate(my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value, my_chess[an[0]][an[1]].value):
                     return
     
     if a_map[i][j] != None:
@@ -1365,6 +1365,8 @@ def save_step_and_break_long_capture(org, dest):
         sindex = (sindex+1)%4
         br = 0
         while(br < len(break_long_capture_dest)):
+            #print "dest"
+            #print break_long_capture_dest[br]
             b = 0
             for d in break_long_capture_dest[br]:
                 if dest == d:
@@ -1379,6 +1381,8 @@ def save_step_and_break_long_capture(org, dest):
         br = 0
         while(br < len(break_long_capture_org)):
             b = 0
+            #print "org"
+            #print break_long_capture_org[br]
             for o in break_long_capture_org[br]:
                 if org == o:
                     del break_long_capture_dest[br]
