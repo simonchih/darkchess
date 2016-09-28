@@ -1014,10 +1014,12 @@ def calc_move_score(max_value, max_dist, my_value):
         #print max_dist
         
         if max_dist != 0:
-            if 7.0 > 0.2 * max_dist:
-                return 7.0 - 0.2 * max_dist + mvalue
+            if 3.5 > 0.2 * max_dist:
+                # return 3.5 - 0.2 * max_dist + 0.7
+                return 4.2 - 0.2 * max_dist
             else:
-                return 0.2 - (float)(max_dist)/100 + mvalue
+                # return 0.2 - (float)(max_dist)/100 + mvalue
+                return 0.9 - (float)(max_dist)/100
         else:
             # impossible
             return 0
