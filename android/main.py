@@ -78,6 +78,7 @@ break_long_capture_org = []
 com_ban_step = []
 move_step = [None, None, None, None]
 
+# return 0: can't eat, 1: can eat, 2: equal
 def can_be_ate_equal(small_value, big_value):       
     if 2 == big_value:
         return 0
@@ -85,8 +86,10 @@ def can_be_ate_equal(small_value, big_value):
         return 1
     elif 7 == big_value and 1 == small_value:
         return 0
-    elif big_value >= small_value:
+    elif big_value >  small_value:
         return 1
+    elif big_value == small_value:
+        return 2
     else:
         return 0
 
@@ -1145,7 +1148,8 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
-                
+
+# return 0: NOT caca, 1: caca, 2:equal        
 def caca(org, dest, my_chess, a_map, owner_color):        
     if org == None:
         return 0
@@ -1170,11 +1174,13 @@ def caca(org, dest, my_chess, a_map, owner_color):
             if 0 == mc.live or 1 == mc.back:
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass 
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
+                pass                
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 1 == eat_value:
+                    return 1
+                elif 2 == eat_value:
+                    return 2
     if desty-1 >= 0 and destx+1 <=7:
         n = a_map[desty-1][destx+1]
         if n == None:
@@ -1185,10 +1191,12 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 1 == eat_value:
+                    return 1
+                elif 2 == eat_value:
+                    return 2
     if desty+1 <= 3 and destx-1 >= 0:
         n = a_map[desty+1][destx-1]
         if n == None:
@@ -1199,10 +1207,12 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 1 == eat_value:
+                    return 1
+                elif 2 == eat_value:
+                    return 2
     if desty+1 <= 3 and destx+1 <= 7:
         n = a_map[desty+1][destx+1]
         if n == None:
@@ -1213,10 +1223,12 @@ def caca(org, dest, my_chess, a_map, owner_color):
                 pass
             elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
                 pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value):
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 1 == eat_value:
+                    return 1
+                elif 2 == eat_value:
+                    return 2
     return 0
         
         
@@ -1523,11 +1535,12 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         
-        if 1 == caca(org, dest, my_chess, a_map, owner_color):
-            #print "max_value=%s" % max_value
-            
-                return calc_move_score(max_value, max_dist, mvalue) + 0.3
-            
+        cvalue = caca(org, dest, my_chess, a_map, owner_color)
+        if 1 == cvalue:
+            return calc_move_score(max_value, max_dist, mvalue) + 0.1
+        elif 2 == cvalue:
+            return calc_move_score(max_value, max_dist, mvalue) + 0.3
+        
         for ban in com_ban_step:
             if org == ban:
                 return -0.1
@@ -2332,13 +2345,13 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(30, (1, 5))
+        #ch = chess(30, (1, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][5] = ch
-        #main_map[1][5] = (1, 5)
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
         #
-        #ch = chess(9, (0, 6))
+        #ch = chess(11, (0, 6))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][6] = ch
