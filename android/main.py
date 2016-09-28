@@ -1003,24 +1003,27 @@ def short_dist(i, j, dist, a_map):
     
     return d
         
-def calc_move_score(max_value, max_dist):
+def calc_move_score(max_value, max_dist, my_value):
+    
+    mvalue = float(my_value)/11
+    
     if 9 == max_value:
         #print max_dist
         
         if max_dist != 0:
             if 7.0 > 0.2 * max_dist:
-                return 7.0 - 0.2 * max_dist
+                return 7.0 - 0.2 * max_dist + mvalue
             else:
-                return 0.2 - (float)(max_dist)/100
+                return 0.2 - (float)(max_dist)/100 + mvalue
         else:
             # impossible
             return 0
     else:
         if max_dist != 0:
             if float(max_value)/2 > 0.2 * max_dist:
-                return float(max_value)/2 - 0.2 * max_dist
+                return float(max_value)/2 - 0.2 * max_dist + mvalue
             else:
-                return 0.2 - float(max_dist)/100
+                return 0.2 - float(max_dist)/100 + mvalue
         else:
             return -0.1
         
@@ -1510,16 +1513,20 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
                 return -0.1
         
+        mvalue = 0
+        
+        if a_map[orgy][orgx] != None:
+                mp = a_map[orgy][orgx]
+                mvalue = my_chess[mp[0]][mp[1]].value
+                
         cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
             #print "max_value=%s" % max_value
-            if a_map[orgy][orgx] != None:
-                mp = a_map[orgy][orgx]
-                mvalue = my_chess[mp[0]][mp[1]].value
-                return calc_move_score(max_value, max_dist)+float(mvalue)/2
+            
+                return calc_move_score(max_value, max_dist, mvalue) + 0.3
             
         for ban in com_ban_step:
             if org == ban:
@@ -1533,7 +1540,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
         
-        return calc_move_score(max_value, max_dist)
+        return calc_move_score(max_value, max_dist, mvalue)
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         if owner_color == com_color and 1 == owner_next_can_eat_dead_p(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
@@ -2307,60 +2314,53 @@ def main():
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
-               
+        #main_map[1][0] = (1, 0)               
         #End Test data
         
         # Test data 2
         #first = 0
         #com_color = 1
         #player_color = 0
-        #turn_id = 0
-        #back_num = 2
+        #turn_id = 1
+        #back_num = 0
         #
-        #chess_num[0] = 5
-        #chess_num[1] = 1
+        #chess_num[0] = 3
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(16, (2, 7))
+        #ch = chess(30, (1, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
         #
-        #ch = chess(14, (1, 7))
+        #ch = chess(9, (0, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
         #
-        #ch = chess(13, (3, 7))
+        #ch = chess(12, (3, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
         #
-        #ch = chess(12, (2, 6))
+        #ch = chess(10, (3, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
         #
-        #ch = chess(11, (0, 0))
-        #ch.back = 1
+        #ch = chess(28, (0, 1))
+        #ch.back = 0
         #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0)
-        #
-        #ch = chess(10, (1, 0))
-        #ch.back = 1
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
         #End Test data 2
         
         while 0 == player_win:
