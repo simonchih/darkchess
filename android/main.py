@@ -1008,19 +1008,19 @@ def calc_move_score(max_value, max_dist):
         #print max_dist
         
         if max_dist != 0:
-            if 7.0 > 0.25*max_dist:
-                return 7.0 - 0.25*max_dist
+            if 7.0 > 0.2 * max_dist:
+                return 7.0 - 0.2 * max_dist
             else:
-                return 0.25 - (float)(max_dist)/100
+                return 0.2 - (float)(max_dist)/100
         else:
             # impossible
             return 0
     else:
         if max_dist != 0:
-            if max_value > 0.25 * max_dist:
-                return (float)(max_value) - 0.25 * max_dist
+            if float(max_value)/2 > 0.2 * max_dist:
+                return float(max_value)/2 - 0.2 * max_dist
             else:
-                return 0.25 - (float)(max_dist)/100
+                return 0.2 - float(max_dist)/100
         else:
             return -0.1
         
@@ -1516,7 +1516,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
             #print "max_value=%s" % max_value
-            return calc_move_score(max_value, max_dist)+0.001
+            if a_map[orgy][orgx] != None:
+                mp = a_map[orgy][orgx]
+                mvalue = my_chess[mp[0]][mp[1]].value
+                return calc_move_score(max_value, max_dist)+float(mvalue)/2
             
         for ban in com_ban_step:
             if org == ban:
@@ -2274,37 +2277,37 @@ def main():
         #turn_id = 1
         #back_num = 0
         #
-        #chess_num[0] = 3
-        #chess_num[1] = 1
+        #chess_num[0] = 2
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(31, (3, 3))
+        #ch = chess(31, (0, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
+        #main_chess[0][3] = ch
+        #main_map[0][3] = (0, 3)
         #
-        #ch = chess(1, (2, 1))
+        #ch = chess(30, (2, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][1] = ch
-        #main_map[2][1] = (2, 1)
+        #main_chess[2][3] = ch
+        #main_map[2][3] = (2, 3)
         #
-        #ch = chess(14, (3, 0))
+        #ch = chess(14, (1, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][0] = ch
-        #main_map[3][0] = (3, 0)
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
         #
-        #ch = chess(12, (2, 7))
+        #ch = chess(1, (1, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
                
         #End Test data
         

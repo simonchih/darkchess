@@ -1004,19 +1004,19 @@ def calc_move_score(max_value, max_dist):
         #print max_dist
         
         if max_dist != 0:
-            if 7.0 > 0.25*max_dist:
-                return 7.0 - 0.25*max_dist
+            if 7.0 > 0.2 * max_dist:
+                return 7.0 - 0.2 * max_dist
             else:
-                return 0.25 - (float)(max_dist)/100
+                return 0.2 - (float)(max_dist)/100
         else:
             # impossible
             return 0
     else:
         if max_dist != 0:
-            if max_value > 0.25 * max_dist:
-                return (float)(max_value) - 0.25 * max_dist
+            if float(max_value)/2 > 0.2 * max_dist:
+                return float(max_value)/2 - 0.2 * max_dist
             else:
-                return 0.25 - (float)(max_dist)/100
+                return 0.2 - float(max_dist)/100
         else:
             return -0.1
         
@@ -1512,7 +1512,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         if 1 == caca(org, dest, my_chess, a_map, owner_color):
             #print "max_value=%s" % max_value
-            return calc_move_score(max_value, max_dist)+0.001
+            if a_map[orgy][orgx] != None:
+                mp = a_map[orgy][orgx]
+                mvalue = my_chess[mp[0]][mp[1]].value
+                return calc_move_score(max_value, max_dist)+float(mvalue)/2
             
         for ban in com_ban_step:
             if org == ban:
