@@ -1552,6 +1552,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             if a_map[nc[0]][nc[1]] != None:
                 a = a_map[nc[0]][nc[1]]
                 small_value = my_chess[a[0]][a[1]].value
+                if 1 == my_chess[a[0]][a[1]].back:
+                    continue
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
         
