@@ -835,8 +835,8 @@ def check_back_exist(a_map, my_chess):
 					return 1
     return back_exist
 
-# return (i, j) won't be (None, None) if max_eat_number = -16
-def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = -16):
+# return (i, j) won't be (None, None) if max_eat_number = -33
+def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = -33):
     (i, j) = (None, None)
     
     for y in range(y0, y1, y2):
