@@ -342,7 +342,8 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
                         eat_possible_num += 1
                     #elif c.value <= n_max:
                     else:
-                        was_ate_num += 1
+                        if c.value != 1 or n_max != 2 or n_min != 2:
+                            was_ate_num += 1
                 else: # player_color == c.color
                     if 2 == c.value:
                         if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
@@ -362,7 +363,8 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
                         was_ate_num += 1
                     #elif c.value < no_min:
                     else:
-                        eat_possible_num += 1
+                        if c.value != 1 or n_max != 2 or n_min != 2:
+                            eat_possible_num += 1
     
     return eat_possible_num - was_ate_num
 
