@@ -1018,17 +1018,16 @@ def calc_move_score(max_value, max_dist, my_value):
                 # return 3.5 - 0.2 * max_dist + 0.7
                 return 4.2 - 0.2 * max_dist
             else:
-                # return 0.2 - (float)(max_dist)/100 + mvalue
-                return 0.9 - (float)(max_dist)/100
+                return 0.7 - float(max_dist)/1000
         else:
             # impossible
             return 0
     else:
-        if max_dist != 0:
+        if max_value != 0:
             if float(max_value)/2 > 0.2 * max_dist:
                 return float(max_value)/2 - 0.2 * max_dist + mvalue
             else:
-                return 0.2 - float(max_dist)/100 + mvalue
+                return mvalue - float(max_dist)/1000
         else:
             return -0.1
         
@@ -2296,42 +2295,30 @@ def main():
 		# Test data
         # It's known issue
         #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 1
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
         #back_num = 0
         #
-        #chess_num[0] = 2
-        #chess_num[1] = 2
+        #chess_num[0] = 1
+        #chess_num[1] = 1
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(31, (0, 3))
+        #ch = chess(0, (0, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
         #
-        #ch = chess(30, (2, 3))
+        #ch = chess(16, (3, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)
-        #
-        #ch = chess(14, (1, 5))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][5] = ch
-        #main_map[1][5] = (1, 5)
-        #
-        #ch = chess(1, (1, 0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)               
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
         #End Test data
         
         # Test data 2
