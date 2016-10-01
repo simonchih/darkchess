@@ -315,7 +315,7 @@ def eat_by_bomb(org, a_map, my_chess):
     return was_ate
 
 # analyze all back pieces, it's pssible for human player, NOT cheating
-def check_eat_number(a_map, my_chess, n_max, no_min, no_max, y, x):
+def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
     global com_color
     global player_color
     
@@ -334,23 +334,28 @@ def check_eat_number(a_map, my_chess, n_max, no_min, no_max, y, x):
                     elif 1 == n_max and 7 == c.value:
                         was_ate_num += 1
                     elif 7 == n_max and 1 == c.value:
-                        eat_possible_num += 1
+                        if 7 == n_min or 2 == n_min:
+                            eat_possible_num += 1
+                        else:
+                            was_ate_num += 1
                     elif c.value > n_max:
                         eat_possible_num += 1
                     #elif c.value <= n_max:
                     else:
                         was_ate_num += 1
                 else: # player_color == c.color
-                    if 2 == c.value:
-                        if 8 == no_min:
-                            if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
-                                was_ate_num += 1
+                    if 2 == c.value and no_max < 3:
+                        if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
+                            was_ate_num += 1
                     elif 8 == no_min:
                         continue
                     elif 1 == no_min and 7 == c.value:
-                        eat_possible_num += 1
+                        if 1 == no_max:
+                            eat_possible_num += 1
+                        else:
+                            was_ate_num += 1
                     elif 7 == no_max and 1 == c.value:
-                        was_ate_num += 1
+                            was_ate_num += 1
                     elif c.value >= no_min:
                         was_ate_num += 1
                     #elif c.value < no_min:
@@ -757,7 +762,7 @@ def select_back_chess(a_map, my_chess, org = None):
     global com_color
     
     (i, j) = (None, None)
-    max_eat_number = -0.1
+    
     
     # temp
     #print '0'
@@ -805,8 +810,36 @@ def select_back_chess(a_map, my_chess, org = None):
         x1 = -1
         x2 = -1
     
+    (i, j) = calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = 0)
+                    
+    if (i, j) != (None, None):
+        return (i, j)
+    elif org != None:
+        #  (-1, -1) to move a piece
+        return (-1, -1)
+    else:
+        if 1 == check_back_exist(a_map, my_chess):
+            return calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess)
+        else:
+            return None
+
+def check_back_exist(a_map, my_chess):
+    back_exist = 0
+    for i in range(0, 4):
+        for j in range(0, 8):
+            if a_map[i][j] != None:
+                if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
+                    #back_exist = 1
+					return 1
+    return back_exist
+
+# return (i, j) won't be (None, None) if max_eat_number = -16
+def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = -16):
+    (i, j) = (None, None)
+    
     for y in range(y0, y1, y2):
         for x in range(x0, x1, x2):
+            near_min = 8
             near_max = 0
             near_our_min = 8
             near_our_max = 0
@@ -825,63 +858,45 @@ def select_back_chess(a_map, my_chess, org = None):
                     if a_map[ni][nj] != None:
                         an = a_map[ni][nj]
                         if my_chess[an[0]][an[1]].back < 1:
+                            if my_chess[an[0]][an[1]].value < near_min and player_color ==  my_chess[an[0]][an[1]].color:
+                                near_min = my_chess[an[0]][an[1]].value
                             if my_chess[an[0]][an[1]].value > near_max and player_color == my_chess[an[0]][an[1]].color:
                                 near_max = my_chess[an[0]][an[1]].value
                             if my_chess[an[0]][an[1]].value < near_our_min and com_color ==  my_chess[an[0]][an[1]].color:
                                 near_our_min = my_chess[an[0]][an[1]].value
                             if my_chess[an[0]][an[1]].value > near_our_max and com_color ==  my_chess[an[0]][an[1]].color:
                                 near_our_max = my_chess[an[0]][an[1]].value
-                ne = check_eat_number(a_map, my_chess, near_max, near_our_min, near_our_max, y, x)
+                ne = check_eat_number(a_map, my_chess, near_min, near_max, near_our_min, near_our_max, y, x)
                 if ne > max_eat_number:
                     max_eat_number = ne
                     #print y, x, float(max_eat_number)/back_num
                     (i, j) = (y, x)
-                    
-    if (i, j) != (None, None):
-        return (i, j)
-    elif org != None:
-        #  (-1, -1) to move a piece
-        return (-1, -1)
-    else:
-        if 1 == check_back_exist(a_map, my_chess):
-            return random_select_back_chess(a_map, my_chess)
-        else:
-            return None
-
-def check_back_exist(a_map, my_chess):
-    back_exist = 0
-    for i in range(0, 4):
-        for j in range(0, 8):
-            if a_map[i][j] != None:
-                if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
-                    #back_exist = 1
-					return 1
-    return back_exist
+    return (i, j)
     
-def random_select_back_chess(a_map, my_chess):    
-    i = random.randint(0, 31)
-    ii = 0
-    
-    while i != -1:
-        y = ii/8
-        x = ii%8
-        if a_map[y][x] == None:
-            ii += 1
-            if ii > 31:
-                ii = 0
-        elif 1 == my_chess[a_map[y][x][0]][a_map[y][x][1]].back:
-            i -= 1
-            if i < 0:
-                break
-            ii += 1
-            if ii > 31:
-                ii = 0
-        else:
-            ii += 1
-            if ii > 31:
-                ii = 0
-    
-    return (y, x)
+#def random_select_back_chess(a_map, my_chess):    
+#    i = random.randint(0, 31)
+#    ii = 0
+#    
+#    while i != -1:
+#        y = ii/8
+#        x = ii%8
+#        if a_map[y][x] == None:
+#            ii += 1
+#            if ii > 31:
+#                ii = 0
+#        elif 1 == my_chess[a_map[y][x][0]][a_map[y][x][1]].back:
+#            i -= 1
+#            if i < 0:
+#                break
+#            ii += 1
+#            if ii > 31:
+#                ii = 0
+#        else:
+#            ii += 1
+#            if ii > 31:
+#                ii = 0
+#    
+#    return (y, x)
                 
 def chess_ai():
     global turn_id
