@@ -342,9 +342,7 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
                         eat_possible_num += 1
                     #elif c.value <= n_max:
                     else:
-                        if 1 == c.value and 1 == n_min:
-                            was_ate_num += 1
-                        elif c.value != 1 or n_max != 2 or n_min != 2:
+                        if c.value != 1 or n_max != 2 or n_min != 2:
                             was_ate_num += 1
                 else: # player_color == c.color
                     if 2 == c.value:
