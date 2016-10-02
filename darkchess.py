@@ -559,7 +559,7 @@ def scan_player_bomb(a_map, my_chess):
                         continue
                     elif 0 == my_chess[an[0]][an[1]].live or my_chess[an[0]][an[1]].back < 1:
                         continue
-                    if near_max_value(near_cor[n], (c.row, c.col), a_map, my_chess) <= 3:
+                    if near_max_value(near_cor[n], (c.row, c.col), a_map, my_chess) <= 3 and 0 == eat_by_player_bomb(near_cor[n], a_map, my_chess, player_color):
                         return near_cor[n]
     return None
 
@@ -839,6 +839,8 @@ def check_back_exist(a_map, my_chess):
 
 # return (i, j) won't be (None, None) if max_eat_number = -33
 def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = -33):
+    global back_num
+    
     (i, j) = (None, None)
     
     for y in range(y0, y1, y2):
@@ -875,6 +877,9 @@ def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number 
                     max_eat_number = ne
                     #print y, x, float(max_eat_number)/back_num
                     (i, j) = (y, x)
+            elif -33 == max_eat_number:
+                max_eat_number = -1 * back_num
+                (i, j) = (y, x)
     return (i, j)
     
 #def random_select_back_chess(a_map, my_chess):    
@@ -2301,27 +2306,33 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 0
+        #back_num = 1
         #
         #chess_num[0] = 1
-        #chess_num[1] = 1
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(0, (0, 1))
-        #ch.back = 0
+        #ch = chess(0, (3, 4))
+        #ch.back = 1
         #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
         #
-        #ch = chess(16, (3, 7))
+        #ch = chess(21, (3, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(22, (3, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
         #End Test data
         
         # Test data 2
