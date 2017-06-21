@@ -332,43 +332,43 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
             if com_color == c:
                 if 2 == v and n_max < 3:
                     if 0 < if_cannon_can_eat((y, x), a_map, my_chess, com_color):
-                        eat_possible_num += 1
+                        eat_possible_num += num
                 elif 0 == n_max:
                     continue
                 elif 1 == n_max and 7 == v:
-                    was_ate_num += 1
+                    was_ate_num += num
                 elif 7 == n_max and 1 == v:
                     if 7 == n_min or 2 == n_min:
-                        eat_possible_num += 1
+                        eat_possible_num += num
                     else:
-                        was_ate_num += 1
+                        was_ate_num += num
                 elif v > n_max:
-                    eat_possible_num += 1
+                    eat_possible_num += num
                 #elif c.value <= n_max:
                 else:
                     if v != 1 or n_max != 2 or n_min != 2:
-                        was_ate_num += 1
+                        was_ate_num += num
             else: # player_color == c.color
                 if 2 == v:
                     if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
-                        was_ate_num += 1
+                        was_ate_num += num
                     elif no_max >= 3:
-                        eat_possible_num += 1
+                        eat_possible_num += num
                 elif 8 == no_min:
                     continue
                 elif 1 == no_min and 7 == v:
                     if 1 == no_max:
-                        eat_possible_num += 1
+                        eat_possible_num += num
                     else:
-                        was_ate_num += 1
+                        was_ate_num += num
                 elif 7 == no_max and 1 == v:
-                        was_ate_num += 1
+                        was_ate_num += num
                 elif v >= no_min:
-                    was_ate_num += 1
+                    was_ate_num += num
                 #elif c.value < no_min:
                 else:
                     if v != 1 or n_max != 2 or n_min != 2:
-                        eat_possible_num += 1
+                        eat_possible_num += num
     
     return eat_possible_num - was_ate_num
 
