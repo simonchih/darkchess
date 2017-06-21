@@ -42,7 +42,7 @@ class chess():
         if 1 == self.live:
             if self.x < mouseX < self.x + self.size[0] and self.y < mouseY < self.y + self.size[1]:
                 if 1 == self.back:
-                    self.back = 0
+                    #self.back = 0
                     return self.index
                 else:
                     return -1

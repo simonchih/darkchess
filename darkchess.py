@@ -57,6 +57,7 @@ open_score = None
 chtemp = chess(0, (0, 0))
 
 main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
+server_main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 chess_index = [0] * 32
 main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
@@ -64,7 +65,8 @@ cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 
-# back_value_num[0, 1] color, index 0: reserved, index 1~7, (1-based)
+# back_value_num[0, 1] color, index 0: reserved, index 1~7, the back chess number of chess value. (1-based)
+# e.g. back_value_num[0][3] = 2, color=0, chess value 3 have 2 back pieces
 back_value_num = [ [0] * 8, [0] * 8 ]
 
 king_live = [1, 1]
@@ -914,7 +916,8 @@ def chess_ai():
     
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
-        j = random.randint(0, 7) 
+        j = random.randint(0, 7)
+        main_chess[i][j] = server_main_chess[i][j]
         turn_id = main_chess[i][j].color
         main_chess[i][j].back = -1
         back_num -= 1
@@ -933,12 +936,6 @@ def chess_ai():
         move_pre4 = move_step[sindex]       # com
                 
         if move_pre1 != None and move_pre2 != None and move_pre3 != None and move_pre4 != None:
-            # print 'map 1=', main_map[move_pre1[2][0]][move_pre1[2][1]]
-            # print 'chess 1=', main_chess[main_map[move_pre1[2][0]][move_pre1[2][1]][0]][main_map[move_pre1[2][0]][move_pre1[2][1]][1]].value
-            
-            # print 'map 2=', main_map[move_pre2[2][0]][move_pre2[2][1]]
-            # print 'chess 2=', main_chess[main_map[move_pre2[2][0]][move_pre2[2][1]][0]][main_map[move_pre2[2][0]][move_pre2[2][1]][1]].value
-            
             if move_pre1[0] == player_color and move_pre2[0] == com_color and move_pre3[0] == player_color and move_pre4[0] == com_color and 1 == can_be_ate(main_chess[main_map[move_pre1[2][0]][move_pre1[2][1]][0]][main_map[move_pre1[2][0]][move_pre1[2][1]][1]].value, main_chess[main_map[move_pre2[2][0]][move_pre2[2][1]][0]][main_map[move_pre2[2][0]][move_pre2[2][1]][1]].value) and move_pre2[2] == move_pre4[1] and move_pre1[2] == move_pre3[1]:
                 n1 = move_pre1[1]
                 n2 = move_pre2[1]
@@ -960,9 +957,10 @@ def chess_ai():
                 if None == org:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
-                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
-                    back_num -= 1
+                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]] = server_main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
                     m = main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
+                    m.back = -1
+                    back_num -= 1
                     back_value_num[m.color][m.value] -= 1
                 elif score > open_score - (float)(r)/10:
                     if score > 18:
@@ -973,9 +971,10 @@ def chess_ai():
                         save_step_and_break_long_capture(org, dest)
                     else:
                         sound_click.play()
-                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
-                        back_num -= 1
+                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                         m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                        m.back = -1
+                        back_num -= 1
                         back_value_num[m.color][m.value] -= 1
                 elif score == open_score:
                     if score >= 0:
@@ -987,9 +986,10 @@ def chess_ai():
                             save_step_and_break_long_capture(org, dest)
                         else:
                             sound_click.play()
-                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
-                            back_num -= 1
+                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                             m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                            m.back = -1
+                            back_num -= 1
                             back_value_num[m.color][m.value] -= 1
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
@@ -1488,8 +1488,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     (desty, destx) = dest
     
     if a_map[desty][destx] == None:
-        #print 'org', org, 'dest', dest
-        #print 'will dead dest', will_dead((desty, destx), main_chess, main_map, player_color), 'will dead org', will_dead((orgy, orgx), main_chess, main_map, player_color)
         if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
@@ -1503,13 +1501,8 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             #print 'nem'
             return 8
         elif owner_color == player_color:
-            #if 0 == will_dead((desty, destx), main_chess, main_map, com_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, player_color):
-            #    return 9
-            #else:
             return 0
         elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
-            #escape, 0 == will_dead((desty, destx), my_chess, com_color)
-            #print 'will dead org', org, dest
             if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
                 return -8
             else:
@@ -2222,6 +2215,7 @@ def main():
     global player_color
     global com_color
     global player_first
+    global server_main_chess
     global main_chess
     global main_map
     global cor
@@ -2264,13 +2258,15 @@ def main():
         for i in range(0, 4):
             for j in range(0, 4):
                 ch = chess(chess_index[8*i+j], (i, j))
-                main_chess[i][j] = ch
+                server_main_chess[i][j] = ch
+                main_chess[i][j] = chess(33, (i,j))
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
                 ch = chess(chess_index[8*i+4+j], (i, 4+j))
-                main_chess[i][4+j] = ch
+                server_main_chess[i][4+j] = ch
+                main_chess[i][4+j] = chess(33, (i, 4+j))
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
         
@@ -2423,12 +2419,14 @@ def main():
                         main_map, main_chess = all_chess_move(main_map, main_chess)
                         sound_click.play()
                         click_once = 0
-                        for chr in main_chess:
-                            for chc in chr:
+                        for i, chr in enumerate(main_chess):
+                            for j, chc in enumerate(chr):
                                 if 0 == click_once:
                                     ch_index = chc.click((mouseX, mouseY))
                                     if ch_index != None:
                                         if 1 == player_first and 1 == first:
+                                            main_chess[i][j] = server_main_chess[i][j]
+                                            main_chess[i][j].back = 0
                                             turn_id = index_to_color(ch_index)
                                             player_color = turn_id
                                             com_color = 1 - player_color
@@ -2436,13 +2434,15 @@ def main():
                                             selected_c = None
                                             back_num -= 1
                                             turn_id = com_color
-                                            back_value_num[player_color][index_to_chess_value(ch_index)] -= 1
+                                            back_value_num[player_color][index_to_chess_value(main_chess[i][j].index)] -= 1
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
+                                            main_chess[i][j] = server_main_chess[i][j]
+                                            main_chess[i][j].back = 0
                                             selected_c = None
                                             back_num -= 1
-                                            back_value_num[index_to_color(ch_index)][index_to_chess_value(ch_index)] -= 1
+                                            back_value_num[index_to_color(ch_index)][index_to_chess_value(main_chess[i][j].index)] -= 1
                                             turn_id = com_color
                                         click_once = 1
                                         break
@@ -2525,18 +2525,20 @@ def main():
             
             if 0 == chess_num[player_color]:
                 #Open all chess
-                for cr in main_chess:
-                    for c in cr:
-                        if 1 == c.live:
-                            c.back = 0
+                for i, cr in enumerate(main_chess):
+                    for j, c in enumerate(cr):
+                        if 33 == c.index:
+                            main_chess[i][j] = server_main_chess[i][j]
+                            main_chess[i][j].back = 0
                 player_win = -1
                 
             elif 0 == chess_num[com_color]:
                 #Open all chess
-                for cr in main_chess:
-                    for c in cr:
-                        if 1 == c.live:
-                            c.back = 0
+                for i, cr in enumerate(main_chess):
+                    for j, c in enumerate(cr):
+                        if 33 == c.index:
+                            main_chess[i][j] = server_main_chess[i][j]
+                            main_chess[i][j].back = 0
                 player_win = 1
             
             if 1 == player_win:
