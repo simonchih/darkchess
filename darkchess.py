@@ -64,6 +64,9 @@ cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 
+# back_value_num[0, 1] color, index 0: reserved, index 1~7, (1-based)
+back_value_num = [ [0] * 8, [0] * 8 ]
+
 king_live = [1, 1]
 chess_num = [16, 16]
 com_mv_map = [0, 0]
@@ -322,49 +325,50 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
     eat_possible_num = 0
     was_ate_num = 0
     
-    for cr in my_chess:
-        for c in cr:
-            if 1 == c.back and 1 == c.live:
-                if com_color == c.color:
-                    if 2 == c.value and n_max < 3:
-                        if 0 < if_cannon_can_eat((y, x), a_map, my_chess, com_color):
-                            eat_possible_num += 1
-                    elif 0 == n_max:
-                        continue
-                    elif 1 == n_max and 7 == c.value:
-                        was_ate_num += 1
-                    elif 7 == n_max and 1 == c.value:
-                        if 7 == n_min or 2 == n_min:
-                            eat_possible_num += 1
-                        else:
-                            was_ate_num += 1
-                    elif c.value > n_max:
+    for c, val in enumerate(back_value_num):
+        for v, num in enumerate(val[1:]):
+            if 0 == num:
+                continue
+            if com_color == c:
+                if 2 == v and n_max < 3:
+                    if 0 < if_cannon_can_eat((y, x), a_map, my_chess, com_color):
                         eat_possible_num += 1
-                    #elif c.value <= n_max:
+                elif 0 == n_max:
+                    continue
+                elif 1 == n_max and 7 == v:
+                    was_ate_num += 1
+                elif 7 == n_max and 1 == v:
+                    if 7 == n_min or 2 == n_min:
+                        eat_possible_num += 1
                     else:
-                        if c.value != 1 or n_max != 2 or n_min != 2:
-                            was_ate_num += 1
-                else: # player_color == c.color
-                    if 2 == c.value:
-                        if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
-                            was_ate_num += 1
-                        elif no_max >= 3:
-                            eat_possible_num += 1
-                    elif 8 == no_min:
-                        continue
-                    elif 1 == no_min and 7 == c.value:
-                        if 1 == no_max:
-                            eat_possible_num += 1
-                        else:
-                            was_ate_num += 1
-                    elif 7 == no_max and 1 == c.value:
-                            was_ate_num += 1
-                    elif c.value >= no_min:
                         was_ate_num += 1
-                    #elif c.value < no_min:
+                elif v > n_max:
+                    eat_possible_num += 1
+                #elif c.value <= n_max:
+                else:
+                    if v != 1 or n_max != 2 or n_min != 2:
+                        was_ate_num += 1
+            else: # player_color == c.color
+                if 2 == v:
+                    if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
+                        was_ate_num += 1
+                    elif no_max >= 3:
+                        eat_possible_num += 1
+                elif 8 == no_min:
+                    continue
+                elif 1 == no_min and 7 == v:
+                    if 1 == no_max:
+                        eat_possible_num += 1
                     else:
-                        if c.value != 1 or n_max != 2 or n_min != 2:
-                            eat_possible_num += 1
+                        was_ate_num += 1
+                elif 7 == no_max and 1 == v:
+                        was_ate_num += 1
+                elif v >= no_min:
+                    was_ate_num += 1
+                #elif c.value < no_min:
+                else:
+                    if v != 1 or n_max != 2 or n_min != 2:
+                        eat_possible_num += 1
     
     return eat_possible_num - was_ate_num
 
@@ -761,7 +765,6 @@ def scan_com_bomb(a_map, my_chess):
 #    return cor
     
 def select_back_chess(a_map, my_chess, org = None):
-    global back_num
     global player_color
     global com_color
     
@@ -781,18 +784,6 @@ def select_back_chess(a_map, my_chess, org = None):
     cor = scan_com_bomb(a_map, my_chess)
     if cor != None:
         return cor
-    
-    # temp
-    #print '2'
-    
-    # old method
-    #if back_num > 6:
-    #    cor = scan_com_second_big(a_map, my_chess)
-    #    if cor != None:
-    #        return cor
-    
-    # temp
-    #print '3'
     
     randomi = random.randint(0, 1)
     if 0 == randomi:
@@ -834,7 +825,7 @@ def check_back_exist(a_map, my_chess):
             if a_map[i][j] != None:
                 if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
                     #back_exist = 1
-					return 1
+                    return 1
     return back_exist
 
 # return (i, j) won't be (None, None) if max_eat_number = -33
@@ -875,7 +866,6 @@ def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number 
                 ne = check_eat_number(a_map, my_chess, near_min, near_max, near_our_min, near_our_max, y, x)
                 if ne > max_eat_number:
                     max_eat_number = ne
-                    #print y, x, float(max_eat_number)/back_num
                     (i, j) = (y, x)
             elif -33 == max_eat_number:
                 max_eat_number = -1 * back_num
@@ -931,6 +921,7 @@ def chess_ai():
         com_color = turn_id
         player_color = 1 - com_color
         first = 0
+        back_value_num[com_color][main_chess[i][j].value] -= 1
     elif turn_id == com_color and 0 == first:
         com_will_eat_chess = []
         will_eat_escape_chess = [] 
@@ -957,10 +948,9 @@ def chess_ai():
                     break_long_capture_dest.append([n1, n2, p, c])
                     break_long_capture_org.append([p, c])
                     com_ban_step.append(move_pre4[1])
-                    print 'long capture'
         
         org, dest, score = com_think(main_map, main_chess)
-        print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
+        #print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
                             
         if 0 == back_num and 1 == cant_move(main_map, main_chess, com_color):
             player_win = 1
@@ -972,6 +962,8 @@ def chess_ai():
                     sound_click.play()
                     main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]].back = -1
                     back_num -= 1
+                    m = main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
+                    back_value_num[m.color][m.value] -= 1
                 elif score > open_score - (float)(r)/10:
                     if score > 18:
                         org = None
@@ -982,7 +974,9 @@ def chess_ai():
                     else:
                         sound_click.play()
                         main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
-                        back_num -= 1 
+                        back_num -= 1
+                        m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                        back_value_num[m.color][m.value] -= 1
                 elif score == open_score:
                     if score >= 0:
                         if score > 18:
@@ -995,6 +989,8 @@ def chess_ai():
                             sound_click.play()
                             main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]].back = -1
                             back_num -= 1
+                            m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                            back_value_num[m.color][m.value] -= 1
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest)
@@ -1608,7 +1604,7 @@ def move_s(org, dest, a_map, a_ch):
     (desti, destj) = dest
     
     if org == dest:
-        print crash
+        print("crash")
     if None == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
@@ -1729,32 +1725,8 @@ def com_think(a_map, a_ch):
                 mf.append([mm[0], mm[1], m2[max_index][4]])
                 if m2[max_index][4] < AI_min_score:
                     AI_min_score = m2[max_index][4]
-                #if m2[max_index][4] == mm[2] and back_num > 0:
-                #    m2[max_index][2] = None
-                #    m2[max_index][3] = None
-                #if mm[0] == mm[1] or 1 == chess_num[player_color]:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
-                #    continue
-                #elif 0 == back_num and m2[max_index][4] == mm[2]:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
-                #    continue                
-                #m3, a3_map, a3_ch= one_turn(a2_map, a2_ch, mm, com_color, m2[max_index][2], m2[max_index][3], m2[max_index][4], 0.81)
-                #if m3:
-                #    mf2 = []
-                #    for mm3 in m3:
-                #        m4 = []
-                #        m4, a4_map, a4_ch= one_turn(a3_map, a3_ch, mm, player_color, mm3[2], mm3[3], mm3[4], 0.729)
-                #        if m4:
-                #            max2_index = m4.index(max(m4, key=lambda s:s[4]))
-                #            #print 'm4 score', m4[max2_index][4]
-                #            mf2.append([mm[0], mm[1], m4[max2_index][4]])
-                #    min_index = mf2.index(min(mf2, key=lambda s:s[2]))
-                #    mf.append([mm[0], mm[1], mf2[min_index][2]])
-                #else:
-                #    mf.append([mm[0], mm[1], m2[max_index][4]])
         if mf:
             min_index = mf.index(min(mf, key=lambda s:s[2]))
-            print 'mf', mf
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
         else:
             return org, dest, min_score
@@ -2264,6 +2236,7 @@ def main():
     global break_long_capture_dest
     global break_long_capture_org
     global com_ban_step
+    global back_value_num
     
     while True:
         selected_c = None
@@ -2283,6 +2256,7 @@ def main():
         com_ban_step = []
         move_step = [None, None, None, None]
         sindex = 0
+        back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
         
         player_first = random.randint(0, 1)
         
@@ -2436,7 +2410,7 @@ def main():
             
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
-                    print 'player cant move'
+                    print('player cant move')
                     player_win = -1
                 
                 for event in pygame.event.get():
@@ -2454,7 +2428,7 @@ def main():
                                 if 0 == click_once:
                                     ch_index = chc.click((mouseX, mouseY))
                                     if ch_index != None:
-                                        if 1 == player_first and 1 == first:                            
+                                        if 1 == player_first and 1 == first:
                                             turn_id = index_to_color(ch_index)
                                             player_color = turn_id
                                             com_color = 1 - player_color
@@ -2462,11 +2436,13 @@ def main():
                                             selected_c = None
                                             back_num -= 1
                                             turn_id = com_color
+                                            back_value_num[player_color][index_to_chess_value(ch_index)] -= 1
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
                                             selected_c = None
                                             back_num -= 1
+                                            back_value_num[index_to_color(ch_index)][index_to_chess_value(ch_index)] -= 1
                                             turn_id = com_color
                                         click_once = 1
                                         break

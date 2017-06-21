@@ -4,7 +4,8 @@ from chess_data import *
 drag = 0.999
 
 class chess():
-    def __init__(self, index, (row, col)):
+    def __init__(self, index, rc):
+        (row, col) = rc
         self.row = row
         self.col = col
         self.size = chess_back.get_size()
@@ -36,7 +37,8 @@ class chess():
             else:
                 screen.blit(self.surface, (self.x, self.y))
                 
-    def click(self, (mouseX, mouseY)):
+    def click(self, mXY):
+        (mouseX, mouseY) = mXY
         if 1 == self.live:
             if self.x < mouseX < self.x + self.size[0] and self.y < mouseY < self.y + self.size[1]:
                 if 1 == self.back:
