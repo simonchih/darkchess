@@ -926,6 +926,7 @@ def chess_ai():
         player_color = 1 - com_color
         first = 0
         back_value_num[com_color][main_chess[i][j].value] -= 1
+        print(back_value_num)
     elif turn_id == com_color and 0 == first:
         com_will_eat_chess = []
         will_eat_escape_chess = [] 
@@ -965,6 +966,7 @@ def chess_ai():
                     m.back = -1
                     back_num -= 1
                     back_value_num[m.color][m.value] -= 1
+                    print(back_value_num)
                 elif score > open_score - (float)(r)/10:
                     if score > 18:
                         org = None
@@ -981,6 +983,7 @@ def chess_ai():
                         m.back = -1
                         back_num -= 1
                         back_value_num[m.color][m.value] -= 1
+                        print(back_value_num)
                 elif score == open_score:
                     if score >= 0:
                         if score > 18:
@@ -998,6 +1001,7 @@ def chess_ai():
                             m.back = -1
                             back_num -= 1
                             back_value_num[m.color][m.value] -= 1
+                            print(back_value_num)
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest)
@@ -2435,14 +2439,15 @@ def main():
                                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                                             main_chess[i][j] = chess(cindex, (i,j))
                                             main_chess[i][j].back = 0
-                                            turn_id = index_to_color(ch_index)
+                                            turn_id = index_to_color(cindex)
                                             player_color = turn_id
                                             com_color = 1 - player_color
                                             first = 0
                                             selected_c = None
                                             back_num -= 1
                                             turn_id = com_color
-                                            back_value_num[player_color][index_to_chess_value(main_chess[i][j].index)] -= 1
+                                            back_value_num[player_color][index_to_chess_value(cindex)] -= 1
+                                            print(back_value_num)
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
@@ -2451,8 +2456,9 @@ def main():
                                             main_chess[i][j].back = 0
                                             selected_c = None
                                             back_num -= 1
-                                            back_value_num[index_to_color(ch_index)][index_to_chess_value(main_chess[i][j].index)] -= 1
+                                            back_value_num[index_to_color(cindex)][index_to_chess_value(cindex)] -= 1
                                             turn_id = com_color
+                                            print(back_value_num)
                                         click_once = 1
                                         break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
