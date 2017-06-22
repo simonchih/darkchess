@@ -171,3 +171,38 @@ def index_to_color(index):
         return 0
     else:
         return 1
+        
+def color_value_to_index(color, value, bvalue_num):
+    if 0 == bvalue_num[color][value]:
+        return None
+    
+    if 0 == color:
+        if 1 == value:
+            return bvalue_num[color][value] - 1
+        elif 2 == value:
+            return bvalue_num[color][value] + 4
+        elif 3 == value:
+            return bvalue_num[color][value] + 6
+        elif 4 == value:
+            return bvalue_num[color][value] + 8
+        elif 5 == value:
+            return bvalue_num[color][value] + 10
+        elif 6 == value:
+            return bvalue_num[color][value] + 12
+        elif 7 == value:
+            return bvalue_num[color][value] + 14
+    elif 1 == color:
+        if 1 == value:
+            return bvalue_num[color][value] + 15
+        elif 2 == value:
+            return bvalue_num[color][value] + 20
+        elif 3 == value:
+            return bvalue_num[color][value] + 22
+        elif 4 == value:
+            return bvalue_num[color][value] + 24
+        elif 5 == value:
+            return bvalue_num[color][value] + 26
+        elif 6 == value:
+            return bvalue_num[color][value] + 28
+        elif 7 == value:
+            return bvalue_num[color][value] + 30

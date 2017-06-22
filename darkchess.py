@@ -917,7 +917,8 @@ def chess_ai():
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
         j = random.randint(0, 7)
-        main_chess[i][j] = server_main_chess[i][j]
+        cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+        main_chess[i][j] = chess(cindex, (i, j))
         turn_id = main_chess[i][j].color
         main_chess[i][j].back = -1
         back_num -= 1
@@ -957,7 +958,9 @@ def chess_ai():
                 if None == org:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
-                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]] = server_main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
+                    sc = server_main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
+                    cindex = color_value_to_index(sc.color, sc.value, back_value_num)
+                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]] = chess(cindex, (main_map[dest[0]][dest[1]][0], main_map[dest[0]][dest[1]][1]))
                     m = main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
                     m.back = -1
                     back_num -= 1
@@ -971,7 +974,9 @@ def chess_ai():
                         save_step_and_break_long_capture(org, dest)
                     else:
                         sound_click.play()
-                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                        sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                        cindex = color_value_to_index(sc.color, sc.value, back_value_num)
+                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0], main_map[temp[0]][temp[1]][1]))
                         m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                         m.back = -1
                         back_num -= 1
@@ -986,7 +991,9 @@ def chess_ai():
                             save_step_and_break_long_capture(org, dest)
                         else:
                             sound_click.play()
-                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                            sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
+                            cindex = color_value_to_index(sc.color, sc.value, back_value_num)
+                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0],main_map[temp[0]][temp[1]][1]))
                             m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                             m.back = -1
                             back_num -= 1
@@ -2425,7 +2432,8 @@ def main():
                                     ch_index = chc.click((mouseX, mouseY))
                                     if ch_index != None:
                                         if 1 == player_first and 1 == first:
-                                            main_chess[i][j] = server_main_chess[i][j]
+                                            cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+                                            main_chess[i][j] = chess(cindex, (i,j))
                                             main_chess[i][j].back = 0
                                             turn_id = index_to_color(ch_index)
                                             player_color = turn_id
@@ -2438,7 +2446,8 @@ def main():
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
-                                            main_chess[i][j] = server_main_chess[i][j]
+                                            cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+                                            main_chess[i][j] = chess(cindex, (i, j))
                                             main_chess[i][j].back = 0
                                             selected_c = None
                                             back_num -= 1
@@ -2528,7 +2537,8 @@ def main():
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
                         if 33 == c.index:
-                            main_chess[i][j] = server_main_chess[i][j]
+                            cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+                            main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
                 player_win = -1
                 
@@ -2537,7 +2547,8 @@ def main():
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
                         if 33 == c.index:
-                            main_chess[i][j] = server_main_chess[i][j]
+                            cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+                            main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
                 player_win = 1
             
