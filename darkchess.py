@@ -39,6 +39,7 @@ text_y = 16
 new_game_iconi = 440
 new_game_iconj = 13
 
+# 0: ini, 1: human win, -1: com win, -2: drawn game
 player_win = 0
 player_first = 0
 first = 1
@@ -52,6 +53,9 @@ sindex = 0
 AI_min_score = 2000
 #max_cor = None
 open_score = None
+# 0: human vs AI, 1: AI vs AI
+AI_vs_AI = 0
+step = 0
 
 #default chess
 chtemp = chess(0, (0, 0))
@@ -772,16 +776,9 @@ def select_back_chess(a_map, my_chess, org = None):
     
     (i, j) = (None, None)
     
-    
-    # temp
-    #print '0'
-    
     cor = scan_player_bomb(a_map, my_chess)
     if cor != None:
         return cor
-    
-    # temp
-    #print '1'
     
     cor = scan_com_bomb(a_map, my_chess)
     if cor != None:
@@ -910,7 +907,8 @@ def chess_ai():
     global player_win
     global back_num
     global com_will_eat_chess
-    global will_eat_escape_chess 
+    global will_eat_escape_chess
+    global step
     
     pygame.display.update()
     
@@ -926,7 +924,7 @@ def chess_ai():
         player_color = 1 - com_color
         first = 0
         back_value_num[com_color][main_chess[i][j].value] -= 1
-        print(back_value_num)
+        #print(back_value_num)
     elif turn_id == com_color and 0 == first:
         com_will_eat_chess = []
         will_eat_escape_chess = [] 
@@ -966,7 +964,7 @@ def chess_ai():
                     m.back = -1
                     back_num -= 1
                     back_value_num[m.color][m.value] -= 1
-                    print(back_value_num)
+                    #print(back_value_num)
                 elif score > open_score - (float)(r)/10:
                     if score > 18:
                         org = None
@@ -983,7 +981,7 @@ def chess_ai():
                         m.back = -1
                         back_num -= 1
                         back_value_num[m.color][m.value] -= 1
-                        print(back_value_num)
+                        #print(back_value_num)
                 elif score == open_score:
                     if score >= 0:
                         if score > 18:
@@ -1001,7 +999,7 @@ def chess_ai():
                             m.back = -1
                             back_num -= 1
                             back_value_num[m.color][m.value] -= 1
-                            print(back_value_num)
+                            #print(back_value_num)
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest)
@@ -1016,6 +1014,8 @@ def chess_ai():
             save_step_and_break_long_capture(org, dest)
    
     if turn_id == com_color:
+        step += 1
+        print("step = %d" % step)
         turn_id = 2
         
 def short_dist(i, j, dist, a_map):
@@ -1038,7 +1038,6 @@ def calc_move_score(max_value, max_dist, my_value):
     mvalue = float(my_value)/11
     
     if 9 == max_value:
-        #print max_dist
         
         if max_dist != 0:
             if 3.5 > 0.2 * max_dist:
@@ -1120,7 +1119,6 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
                         max_dist = current_dist
                     return
             elif 1 == org_value:
-                #print 'max_value', max_value
                 if 7 == my_chess[a_map[i][j][0]][a_map[i][j][1]].value:
                     if max_value != 9:
                         max_value = 9
@@ -1153,25 +1151,21 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
                     max_dist = current_dist
                 return
     elif orgy == desty and orgx+1 == destx:
-        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)   
     elif orgy == desty and orgx-1 == destx:
-        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
     elif orgy+1 == desty and orgx == destx:
-        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
     elif orgy-1 == desty and orgx == destx:
-        #print 'org_value', org_value, 'max_value', max_value, 'i=', i, 'j=', j, 'dist=', dist, 'mark[i][j]=', mark[i][j]
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i-1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i+1, j, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
@@ -1408,8 +1402,6 @@ def save_step_and_break_long_capture(org, dest):
         sindex = (sindex+1)%4
         br = 0
         while(br < len(break_long_capture_dest)):
-            #print "dest"
-            #print break_long_capture_dest[br]
             b = 0
             for d in break_long_capture_dest[br]:
                 if dest == d:
@@ -1424,8 +1416,6 @@ def save_step_and_break_long_capture(org, dest):
         br = 0
         while(br < len(break_long_capture_org)):
             b = 0
-            #print "org"
-            #print break_long_capture_org[br]
             for o in break_long_capture_org[br]:
                 if org == o:
                     del break_long_capture_dest[br]
@@ -1509,7 +1499,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
                 else:
                     return 10
         elif 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
-            #print 'nem'
             return 8
         elif owner_color == player_color:
             return 0
@@ -1542,7 +1531,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            #print 'nhsv'
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
                 return -0.1
         
@@ -1683,7 +1671,6 @@ def com_think(a_map, a_ch):
     a_map, a_ch = all_chess_move(a_map, a_ch)
     
     scan_king(a_ch)
-    #print 'k_live', king_live
     
     if back_num > 0:
         open_score = 0
@@ -1700,30 +1687,24 @@ def com_think(a_map, a_ch):
         for ch in chr:
             if ch.color == com_color and 1 == ch.live:
                 for pm in ch.possible_move:
-                    #print (ch.row, ch.col), pm, 'will dead pity', will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     else:
                         score = sc + 50 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
                     m.append(((ch.row, ch.col), pm, score))
-                    #print 'm', m
                     if score < min_score:
                         min_score = score
                         org = (ch.row, ch.col)
                         dest = pm   
     
-    #print 'map', a_map
     if len(m) > 1:
         mf = []
         for mm in m:
             m2 = []
             m3 = []
-            #m4 = []
-            #print 'mm', mm
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
             if m2:
                 max_index = m2.index(max(m2, key=lambda s:s[4]))
-                #print 'm2 score', m2[max_index][4], m2[max_index][2], m2[max_index][3]
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 mf.append([mm[0], mm[1], m2[max_index][4]])
@@ -1766,24 +1747,18 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
             if ch.color == owner_color and 1 == ch.live and ch.back < 1:
                 for pm in ch.possible_move:
                     if 0 == will_dead_pity((ch.row, ch.col), pm, af_ch, af_map, owner_color):
-                        #print (ch.row, ch.col), pm, 'owner_color', owner_color, 'ni', nexti, 'nj', nextj
                         if owner_color == player_color:
                             if 0 == will_dead_pity_even_equal((ch.row, ch.col), pm, af_ch, af_map, owner_color):#equal
                                 score = sc + div * move_score((ch.row, ch.col), pm, af_ch, af_map, player_color)
-                                #print 'score', score
                             else:
-                                #print 'sc', sc
                                 score = sc
                         else:
                             score = sc - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
                     else:
-                        #print (ch.row, ch.col), pm, 'owner_color', owner_color, 'ni', nexti, 'nj', nextj
                         if owner_color == com_color:
                             score = sc + 40 - div * move_score((ch.row, ch.col), pm, af_ch, af_map, com_color)
-                            #print 'sc40', score
                         else:
                             score = sc - 8
-                            #print 'sc10', score, (ch.row, ch.col), pm
                     
                     m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                     
@@ -1845,7 +1820,6 @@ def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):
                     n = af_map[pm[0]][pm[1]]
                     if n != None:
                         nch = af_ch[n[0]][n[1]]
-                        #print 'ch_value', ch.value, nch.value
                         if ch.value == nch.value:
                             continue
                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
@@ -1864,14 +1838,13 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
         af_map, af_ch = all_chess_move(af_map, af_ch)
     m = af_map[nextj[0]][nextj[1]]
     my = af_ch[m[0]][m[1]]
-    #print 'nexti', nexti, 'nextj', nextj
+    
     for eat_pm in my.possible_move:
         if af_map[eat_pm[0]][eat_pm[1]] != None:
             eat_step = 0
             n = af_map[eat_pm[0]][eat_pm[1]]
-            #print 'eat_pm', eat_pm
             nch = af_ch[n[0]][n[1]]
-            #print 'value', nch.value, my.value
+
             if nch.value == my.value:
                 continue
             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
@@ -1879,7 +1852,6 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
                     for pm in nch.possible_move:
                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
                             eat_step += 1
-                        #print 'eat_step', eat_step, 'pm', pm, 'len', len(nch.possible_move)
                     if eat_step == len(nch.possible_move):
                         return 1
     return 0
@@ -1927,9 +1899,6 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
     i2 = None
     j2 = None
     
-    #print 'b', b
-    #print 'ea', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-    
     for chr in af_ch:
         if 1 == pity:
             break
@@ -1948,10 +1917,6 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 1
                             break
     
-    #if 1 == pity:
-    #    print 'pity', nexti, nextj
-    #    print 'i2', i2, 'j2', j2
-    
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
@@ -1960,9 +1925,6 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
-        
-        #print 'e a_ch[a]', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-        #print 'e af2_ch[b]', eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color)
         
         for chr in af2_ch:
             if 0 == pity:
@@ -2004,9 +1966,6 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
     i2 = None
     j2 = None
     
-    #print 'b', b
-    #print 'ea', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-    
     for chr in af_ch:
         if 1 == pity:
             break
@@ -2025,10 +1984,6 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 1
                             break
     
-    #if 1 == pity:
-    #    print 'pity', nexti, nextj
-    #    print 'i2', i2, 'j2', j2
-    
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
@@ -2037,9 +1992,6 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
-        
-        #print 'e a_ch[a]', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-        #print 'e af2_ch[b]', eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color)
         
         for chr in af2_ch:
             if 0 == pity:
@@ -2083,9 +2035,6 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     i3 = None
     j3 = None
     
-    #print 'b', b
-    #print 'ea', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-    
     for chr in af_ch:
         if 1 == pity:
             break
@@ -2104,10 +2053,6 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 1
                             break
     
-    #if 1 == pity:
-    #    print 'pity', nexti, nextj
-    #    print 'i2', i2, 'j2', j2
-    
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
@@ -2116,11 +2061,6 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
-        
-        #print 'e a_ch[a]', eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color)
-        #print 'e af2_ch[b]', eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color)
-        #print 'i2', i2, 'j2', j2
-        #print 'king_live', king_live
         
         for chr in af2_ch:
             if 0 == pity:
@@ -2134,15 +2074,11 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 0
                             break 
     
-    #print 'pity', pity
     if i3!= None and j3!= None:                    
         af3_map = copy.deepcopy(af2_map)
         af3_ch = copy.deepcopy(af2_ch)
         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
         af3_map, af3_ch = all_chess_move(af3_map, af3_ch)
-        
-        #(ii, jj) = j3
-        #b = af3_map[ii][jj]
         
         for chr in af3_ch:
             if 1 == pity:
@@ -2176,11 +2112,17 @@ def eating_value_to_score(value, king, owner_color):
 
 def display_font():
     
-    if 1 == player_win:
-        winer = u"玩家勝!!!"
+    if 1 == player_win:        
+        if 0 == AI_vs_AI:
+            winer = u"玩家勝!!!"
+        else:
+            winer = u"電腦勝!!!"
         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
     elif -1 == player_win:
         winer = u"電腦勝..."
+        screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
+    elif -2 == player_win:
+        winer = u"強制結束..."
         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
     elif 1 == first:
         if 1 == player_first:
@@ -2242,6 +2184,7 @@ def main():
     global break_long_capture_org
     global com_ban_step
     global back_value_num
+    global step
     
     while True:
         selected_c = None
@@ -2261,23 +2204,29 @@ def main():
         com_ban_step = []
         move_step = [None, None, None, None]
         sindex = 0
+        step = 0
         back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
         
         player_first = random.randint(0, 1)
+        
+        if 1 == AI_vs_AI:
+            player_first = 0
         
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
                 ch = chess(chess_index[8*i+j], (i, j))
                 server_main_chess[i][j] = ch
-                main_chess[i][j] = chess(33, (i,j))
+                # 32 is invalid value for initiation value only
+                main_chess[i][j] = chess(32, (i,j))
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
                 ch = chess(chess_index[8*i+4+j], (i, 4+j))
                 server_main_chess[i][4+j] = ch
-                main_chess[i][4+j] = chess(33, (i, 4+j))
+                # 32 is invalid value for initiation value only
+                main_chess[i][4+j] = chess(32, (i, 4+j))
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
         
@@ -2415,6 +2364,11 @@ def main():
             
             chess_ai()
             
+            if 1 == AI_vs_AI and turn_id != 2:
+               player_color, com_color = com_color, player_color
+               if 128 == step:
+                    player_win = -2
+            
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
                     print('player cant move')
@@ -2437,6 +2391,7 @@ def main():
                                     if ch_index != None:
                                         if 1 == player_first and 1 == first:
                                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
+                                            # ch_index may different with cindex
                                             main_chess[i][j] = chess(cindex, (i,j))
                                             main_chess[i][j].back = 0
                                             turn_id = index_to_color(cindex)
@@ -2447,7 +2402,8 @@ def main():
                                             back_num -= 1
                                             turn_id = com_color
                                             back_value_num[player_color][index_to_chess_value(cindex)] -= 1
-                                            print(back_value_num)
+                                            step += 1
+                                            #print(back_value_num)
                                         elif -1 == ch_index and chc.color == player_color:
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
@@ -2458,7 +2414,8 @@ def main():
                                             back_num -= 1
                                             back_value_num[index_to_color(cindex)][index_to_chess_value(cindex)] -= 1
                                             turn_id = com_color
-                                            print(back_value_num)
+                                            step += 1
+                                            #print(back_value_num)
                                         click_once = 1
                                         break
                     elif event.type == pygame.MOUSEBUTTONUP and turn_id == player_color:
@@ -2483,8 +2440,9 @@ def main():
                                     dest = (selected_c.row, selected_c.col)
                                     moving = 1
                                     turn_id = com_color
+                                    step += 1
                                     move_step[sindex] = [selected_c.color, org, dest]
-                                    #print move_step[sindex]
+
                                     sindex = (sindex+1)%4
                                     
                                     br = 0
@@ -2542,7 +2500,7 @@ def main():
                 #Open all chess
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
-                        if 33 == c.index:
+                        if 32 == c.index:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                             main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
@@ -2552,7 +2510,7 @@ def main():
                 #Open all chess
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
-                        if 33 == c.index:
+                        if 32 == c.index:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                             main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
@@ -2567,7 +2525,7 @@ def main():
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
-            elif -1 == player_win:
+            elif -1 == player_win or -2 == player_win:
                 screen.blit(background, (0,0))
                 display_font()
                 for cr in main_chess:
