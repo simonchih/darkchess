@@ -1552,7 +1552,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         
         for ban in com_ban_step:
             if org == ban:
-                return -0.1
+                return -0.2
         
         ncor = near(orgy, orgx)
         for nc in ncor:
