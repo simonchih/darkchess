@@ -332,8 +332,8 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
     was_ate_num = 0
     
     for c, val in enumerate(back_value_num):
-        for v, num in enumerate(val[1:]):
-            if 0 == num:
+        for v, num in enumerate(val):
+            if 0 == num or 0 == v:
                 continue
             if com_color == c:
                 if 2 == v and n_max < 3:
