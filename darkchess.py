@@ -2364,6 +2364,10 @@ def main():
             
             chess_ai()
             
+            if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
+                    print('player cant move')
+                    player_win = -1
+            
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
                 if 128 == step:
@@ -2372,16 +2376,12 @@ def main():
                 for event in pygame.event.get():
                     if event.type == QUIT:
                         exit()
-            
-            if turn_id == player_color:
-                if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
-                    print('player cant move')
-                    player_win = -1
-                
-                for event in pygame.event.get():
-                    if event.type == QUIT:
-                        exit()
-                    elif event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
+                            
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    exit()
+                elif turn_id == player_color:
+                    if event.type == pygame.MOUSEBUTTONDOWN and turn_id == player_color:
                         (mouseX, mouseY) = pygame.mouse.get_pos()
                         if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
                             player_win = -1
