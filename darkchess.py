@@ -54,7 +54,7 @@ AI_min_score = 2000
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
-AI_vs_AI = 1
+AI_vs_AI = 0
 step = 0
 
 #default chess
