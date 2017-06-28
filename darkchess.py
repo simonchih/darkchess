@@ -2365,9 +2365,13 @@ def main():
             chess_ai()
             
             if 1 == AI_vs_AI and turn_id != 2:
-               player_color, com_color = com_color, player_color
-               if 128 == step:
+                player_color, com_color = com_color, player_color
+                if 128 == step:
                     player_win = -2
+                
+                for event in pygame.event.get():
+                    if event.type == QUIT:
+                        exit()
             
             if turn_id == player_color:
                 if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
