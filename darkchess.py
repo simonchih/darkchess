@@ -54,7 +54,7 @@ AI_min_score = 2000
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
-AI_vs_AI = 0
+AI_vs_AI = 1
 step = 0
 
 #default chess
@@ -2364,19 +2364,19 @@ def main():
             
             chess_ai()
             
-            if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
-                    print('player cant move')
-                    player_win = -1
-            
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
-                if 128 == step:
+                if 160 == step:
                     player_win = -2
                 
                 for event in pygame.event.get():
                     if event.type == QUIT:
                         exit()
-                            
+            
+            if 0 == back_num and 1 == cant_move(main_map, main_chess, player_color):
+                    print('player cant move')
+                    player_win = -1
+            
             for event in pygame.event.get():
                 if event.type == QUIT:
                     exit()
