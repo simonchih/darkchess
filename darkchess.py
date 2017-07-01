@@ -1530,10 +1530,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         #max_cor = None
         mark = [[0]*8, [0]*8, [0]*8, [0]*8]
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
-        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
-                return -0.1
-        
+                
         mvalue = 0
         
         if a_map[orgy][orgx] != None:
@@ -1543,6 +1540,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
+                
+        for ban in com_ban_step:
+            if org == ban:
+                return -0.2
         
         cvalue = caca(org, dest, my_chess, a_map, owner_color)
         if 1 == cvalue:
@@ -1550,9 +1551,9 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         elif 2 == cvalue:
             return calc_move_score(max_value, max_dist, mvalue) + 0.3
         
-        for ban in com_ban_step:
-            if org == ban:
-                return -0.2
+        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+            if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
+                return -0.1
         
         ncor = near(orgy, orgx)
         for nc in ncor:
