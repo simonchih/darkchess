@@ -1491,7 +1491,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     if a_map[desty][destx] == None:
         for ban in com_ban_step:
             if org == ban:
-                return -0.1
+                return -0.2
                 
         if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
