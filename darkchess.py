@@ -1489,6 +1489,10 @@ def move_score(org, dest, my_chess, a_map, owner_color):
     (desty, destx) = dest
     
     if a_map[desty][destx] == None:
+        for ban in com_ban_step:
+            if org == ban:
+                return -0.1
+                
         if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
@@ -1540,10 +1544,6 @@ def move_score(org, dest, my_chess, a_map, owner_color):
         cannon_mark = calc_cannon_mark(my_chess, a_map, owner_color)
         
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
-                
-        for ban in com_ban_step:
-            if org == ban:
-                return -0.2
         
         cvalue = caca(org, dest, my_chess, a_map, owner_color)
         if 1 == cvalue:

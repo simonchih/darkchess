@@ -4,6 +4,11 @@ Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 http://www.freeiconsweb.com/Free-Downloads.asp?id=494
 
+Intall with Python (For Mac and Linux):
+1. Install Python 3.5
+2. Install Pygame
+3. Run 'Python darkchess.py'
+
 For English User, please refer Software Requirements Specification.pdf.
 (In installation folder)
 Or you can download from:
@@ -26,3 +31,4 @@ Basic Blind Chess，並不是說此遊戲是用Basic所寫，
 先手翻開什麼顏色棋，就是用那個顏色棋。
 另外，藍色外框表示電腦翻開的棋子。
 而右上角，雙劍和盾的圖案，去按它可以投降(重開)。
+
