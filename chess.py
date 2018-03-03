@@ -10,8 +10,9 @@ class chess():
         self.col = col
         self.size = chess_back.get_size()
         self.index = index
-        self.surface = index_to_chess_surface(index)
-        self.select = index_to_chess_select(index)
+        # To avoid deepcopy error with Python 3.6
+        #self.surface = index_to_chess_surface(index)
+        #self.select = index_to_chess_select(index)
         self.color = index_to_color(index)
         self.value = index_to_chess_value(index)
         if col < 4:
@@ -29,13 +30,16 @@ class chess():
     def draw(self, screen):
         global chess_back
         
+        surface = index_to_chess_surface(self.index)
+        select = index_to_chess_select(self.index)
+        
         if 1 == self.live:
             if 1 == self.back:
                 screen.blit(chess_back, (self.x, self.y))
             elif -1 == self.back:
-                screen.blit(self.select, (self.x, self.y))
+                screen.blit(select, (self.x, self.y))
             else:
-                screen.blit(self.surface, (self.x, self.y))
+                screen.blit(surface, (self.x, self.y))
                 
     def click(self, mXY):
         (mouseX, mouseY) = mXY

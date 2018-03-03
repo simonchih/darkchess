@@ -86,7 +86,7 @@ com_ban_step = []
 move_step = [None, None, None, None]
 
 # return 0: can't eat, 1: can eat, 2: equal
-def can_be_ate_equal(small_value, big_value):       
+def can_be_ate_equal(small_value, big_value):
     if 2 == big_value:
         return 0
     elif 1 == big_value and 7 == small_value:
