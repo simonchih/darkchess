@@ -970,7 +970,7 @@ def chess_ai():
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                        save_step_and_break_long_capture(org, dest)
+                        save_step_and_break_long_capture(org, dest, main_map, main_chess)
                     else:
                         sound_click.play()
                         sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
@@ -988,7 +988,7 @@ def chess_ai():
                         temp = select_back_chess(main_map, main_chess, org)
                         if (-1, -1) == temp:
                             main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                            save_step_and_break_long_capture(org, dest)
+                            save_step_and_break_long_capture(org, dest, main_map, main_chess)
                         else:
                             sound_click.play()
                             sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
@@ -1001,16 +1001,16 @@ def chess_ai():
                             #print(back_value_num)
                     else:
                         main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                        save_step_and_break_long_capture(org, dest)
+                        save_step_and_break_long_capture(org, dest, main_map, main_chess)
                 else:
                     main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                    save_step_and_break_long_capture(org, dest)
+                    save_step_and_break_long_capture(org, dest, main_map, main_chess)
             else:
                 main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                save_step_and_break_long_capture(org, dest)
+                save_step_and_break_long_capture(org, dest, main_map, main_chess)
         elif 0 == player_win:
             main_map, main_chess = move_s(org, dest, main_map, main_chess)
-            save_step_and_break_long_capture(org, dest)
+            save_step_and_break_long_capture(org, dest, main_map, main_chess)
    
     if turn_id == com_color:
         step += 1
@@ -1389,7 +1389,7 @@ def scan_king(my_chess):
             if 7 == ch.value:
                 king_live[ch.color] = ch.live
 
-def save_step_and_break_long_capture(org, dest):
+def save_step_and_break_long_capture(org, dest, a_map, my_chess):
     global move_step
     global sindex
     global break_long_capture_dest
@@ -1397,7 +1397,8 @@ def save_step_and_break_long_capture(org, dest):
     global com_ban_step
     
     if org != dest:
-        move_step[sindex] = [com_color, org, dest]
+        possible_mv = collect_possible_move(dest[0], dest[1], a_map, my_chess)
+        move_step[sindex] = [com_color, org, dest, possible_mv]
         sindex = (sindex+1)%4
         br = 0
         while(br < len(break_long_capture_dest)):
@@ -2445,7 +2446,9 @@ def main():
                                     moving = 1
                                     turn_id = com_color
                                     step += 1
-                                    move_step[sindex] = [selected_c.color, org, dest]
+                                    
+                                    possible_mv = collect_possible_move(selected_c.row, selected_c.col, main_map, main_chess)
+                                    move_step[sindex] = [selected_c.color, org, dest, possible_mv]
 
                                     sindex = (sindex+1)%4
                                     
