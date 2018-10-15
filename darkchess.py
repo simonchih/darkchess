@@ -143,8 +143,7 @@ def all_chess_move(a_map, my_chess):
     for chr in my_chess:
         for ch in chr:
             if ch.back < 1 and 1 == ch.live:
-                ch.possible_move, a_map, my_chess= collect_possible_move(ch.row, ch.col, a_map, my_chess)
-    return a_map, my_chess
+                ch.possible_move = collect_possible_move(ch.row, ch.col, a_map, my_chess)
     
 def collect_possible_move(i, j, a_map, my_chess):
     
@@ -203,7 +202,7 @@ def collect_possible_move(i, j, a_map, my_chess):
                         break
                 if a_map[i][jj] != None:
                     jump = 1
-    return pm, a_map, my_chess
+    return pm
 
 def opp_cannon_can_eat(org, dest, my_chess, a_map):
     (i, j) = org
@@ -258,7 +257,7 @@ def next_cannon_can_eat_more(org, dest, a_map, my_chess):
         af_ch = copy.deepcopy(my_chess)
         if org != None and dest != None:
             af_map, af_ch = move(org, dest, af_map, af_ch)
-            af_map, af_ch = all_chess_move(af_map, af_ch)
+            all_chess_move(af_map, af_ch)
             
             for cc in cannon_cor:
                 afm = af_map[cc[0]][cc[1]]
@@ -1517,7 +1516,7 @@ def move_score(org, dest, my_chess, a_map, owner_color):
             af_ch = copy.deepcopy(my_chess)
             if org != None and dest != None:
                 af_map, af_ch = move(org, dest, af_map, af_ch)
-                af_map, af_ch = all_chess_move(af_map, af_ch)
+                all_chess_move(af_map, af_ch)
                 cannon = af_ch[af_map[dest[0]][dest[1]][0]][af_map[dest[0]][dest[1]][1]]
                 for pm in cannon.possible_move:
                     (pmy, pmx) = pm
@@ -1644,7 +1643,7 @@ def move(org, dest, a_map, a_ch):
     return a_map, a_ch    
     
 def cant_move(a_map, a_ch, owner_color):
-    a_map, a_ch = all_chess_move(a_map, a_ch)
+    all_chess_move(a_map, a_ch)
     for chr in a_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live:
@@ -1669,7 +1668,7 @@ def com_think(a_map, a_ch):
     min_score = 1000
     sc = 0
     
-    a_map, a_ch = all_chess_move(a_map, a_ch)
+    all_chess_move(a_map, a_ch)
     
     scan_king(a_ch)
     
@@ -1729,7 +1728,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        af_map, af_ch = all_chess_move(af_map, af_ch)
+        all_chess_move(af_map, af_ch)
     
     if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color):
         m2.append([mm[0], mm[1], None, None, sc])
@@ -1777,7 +1776,7 @@ def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(org, dest, af_map, af_ch)
-    af_map, af_ch = all_chess_move(af_map, af_ch)
+    all_chess_move(af_map, af_ch)
     mm = af_map[dest[0]][dest[1]]
     my = af_ch[mm[0]][mm[1]]
     
@@ -1813,7 +1812,7 @@ def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        af_map, af_ch = all_chess_move(af_map, af_ch)
+        all_chess_move(af_map, af_ch)
     for chr in af_ch:
         for ch in chr:
             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
@@ -1836,7 +1835,7 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        af_map, af_ch = all_chess_move(af_map, af_ch)
+        all_chess_move(af_map, af_ch)
     m = af_map[nextj[0]][nextj[1]]
     my = af_ch[m[0]][m[1]]
     
@@ -1893,7 +1892,7 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-    af_map, af_ch = all_chess_move(af_map, af_ch)
+    all_chess_move(af_map, af_ch)
     opp_color = 1 - owner_color
 
     pity = 0
@@ -1922,7 +1921,7 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
-        af2_map, af2_ch = all_chess_move(af2_map, af2_ch)
+        all_chess_move(af2_map, af2_ch)
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
@@ -1960,7 +1959,7 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-    af_map, af_ch = all_chess_move(af_map, af_ch)
+    all_chess_move(af_map, af_ch)
     opp_color = 1 - owner_color
 
     pity = 0
@@ -1989,7 +1988,7 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
-        af2_map, af2_ch = all_chess_move(af2_map, af2_ch)
+        all_chess_move(af2_map, af2_ch)
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
@@ -2027,7 +2026,7 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-    af_map, af_ch = all_chess_move(af_map, af_ch)
+    all_chess_move(af_map, af_ch)
     opp_color = 1 - owner_color
 
     pity = 0
@@ -2058,7 +2057,7 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
         af2_map = copy.deepcopy(af_map)
         af2_ch = copy.deepcopy(af_ch)
         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
-        af2_map, af2_ch = all_chess_move(af2_map, af2_ch)
+        all_chess_move(af2_map, af2_ch)
         
         (ii, jj) = j2
         b = af2_map[ii][jj]
@@ -2079,7 +2078,7 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
         af3_map = copy.deepcopy(af2_map)
         af3_ch = copy.deepcopy(af2_ch)
         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
-        af3_map, af3_ch = all_chess_move(af3_map, af3_ch)
+        all_chess_move(af3_map, af3_ch)
         
         for chr in af3_ch:
             if 1 == pity:
@@ -2386,7 +2385,7 @@ def main():
                         (mouseX, mouseY) = pygame.mouse.get_pos()
                         if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
                             player_win = -1
-                        main_map, main_chess = all_chess_move(main_map, main_chess)
+                        all_chess_move(main_map, main_chess)
                         sound_click.play()
                         click_once = 0
                         for i, chr in enumerate(main_chess):
@@ -2489,7 +2488,7 @@ def main():
                             moving = 1
             
             if 1 == moving:
-                main_map, main_chess = all_chess_move(main_map, main_chess)
+                all_chess_move(main_map, main_chess)
                 moving = 0
             
             if selected_c != None:
