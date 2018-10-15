@@ -935,12 +935,12 @@ def chess_ai():
         move_pre4 = move_step[sindex]       # com
                 
         if move_pre1 != None and move_pre2 != None and move_pre3 != None and move_pre4 != None:
-            if move_pre1[0] == player_color and move_pre2[0] == com_color and move_pre3[0] == player_color and move_pre4[0] == com_color and 1 == can_be_ate(main_chess[main_map[move_pre1[2][0]][move_pre1[2][1]][0]][main_map[move_pre1[2][0]][move_pre1[2][1]][1]].value, main_chess[main_map[move_pre2[2][0]][move_pre2[2][1]][0]][main_map[move_pre2[2][0]][move_pre2[2][1]][1]].value) and move_pre2[2] == move_pre4[1] and move_pre1[2] == move_pre3[1]:
+            if move_pre1[0] == player_color and move_pre2[0] == com_color and move_pre3[0] == player_color and move_pre4[0] == com_color and in_com_possible_move(move_pre1[1], move_pre2[3])and in_com_possible_move(move_pre3[1], move_pre4[3]) and move_pre2[2] == move_pre4[1] and move_pre1[2] == move_pre3[1]:
                 n1 = move_pre1[1]
                 n2 = move_pre2[1]
                 p  = move_pre1[2]
                 c  = move_pre2[2]
-                if None == main_map[n1[0]][n1[1]] and None == main_map[n2[0]][n2[1]] and 1 == abs(p[0]-n1[0]) + abs(p[1]-n1[1]) and 1 == abs(p[0]-n2[0]) + abs(p[1]-n2[1]):
+                if None == main_map[n1[0]][n1[1]] and None == main_map[n2[0]][n2[1]]:
                     break_long_capture_dest.append([n1, n2, p, c])
                     break_long_capture_org.append([p, c])
                     com_ban_step.append(move_pre4[1])
@@ -1389,6 +1389,13 @@ def scan_king(my_chess):
             if 7 == ch.value:
                 king_live[ch.color] = ch.live
 
+def in_com_possible_move(org, possible_mv):
+    for pm in possible_mv:
+        if org == pm:
+            return True
+            
+    return False
+                
 def save_step_and_break_long_capture(org, dest, a_map, my_chess):
     global move_step
     global sindex
