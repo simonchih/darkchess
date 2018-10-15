@@ -836,7 +836,7 @@ def check_back_exist(a_map, my_chess):
             if a_map[i][j] != None:
                 if 1 == my_chess[a_map[i][j][0]][a_map[i][j][1]].back:
                     #back_exist = 1
-					return 1
+                    return 1
     return back_exist
 
 # return (i, j) won't be (None, None) if max_eat_number = -33
