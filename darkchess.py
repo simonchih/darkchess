@@ -969,8 +969,8 @@ def chess_ai():
                         org = None
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
-                        main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                        save_step_and_break_long_capture(org, dest, main_map, main_chess)
+                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+                        save_step_and_break_long_capture(org, dest, a_map, main_chess)
                     else:
                         sound_click.play()
                         sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
@@ -987,8 +987,8 @@ def chess_ai():
                             org = None
                         temp = select_back_chess(main_map, main_chess, org)
                         if (-1, -1) == temp:
-                            main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                            save_step_and_break_long_capture(org, dest, main_map, main_chess)
+                            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+                            save_step_and_break_long_capture(org, dest, a_map, main_chess)
                         else:
                             sound_click.play()
                             sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
@@ -1000,17 +1000,17 @@ def chess_ai():
                             back_value_num[m.color][m.value] -= 1
                             #print(back_value_num)
                     else:
-                        main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                        save_step_and_break_long_capture(org, dest, main_map, main_chess)
+                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+                        save_step_and_break_long_capture(org, dest, a_map, main_chess)
                 else:
-                    main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                    save_step_and_break_long_capture(org, dest, main_map, main_chess)
+                    main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+                    save_step_and_break_long_capture(org, dest, a_map, main_chess)
             else:
-                main_map, main_chess = move_s(org, dest, main_map, main_chess)
-                save_step_and_break_long_capture(org, dest, main_map, main_chess)
+                main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+                save_step_and_break_long_capture(org, dest, a_map, main_chess)
         elif 0 == player_win:
-            main_map, main_chess = move_s(org, dest, main_map, main_chess)
-            save_step_and_break_long_capture(org, dest, main_map, main_chess)
+            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
+            save_step_and_break_long_capture(org, dest, a_map, main_chess)
    
     if turn_id == com_color:
         step += 1
@@ -1603,13 +1603,17 @@ def move_s(org, dest, a_map, a_ch):
     (orgi, orgj) = org
     (desti, destj) = dest
     
+    af_map = copy.deepcopy(a_map)
+    
     if org == dest:
         print("crash")
     if None == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
         #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        com_mv_map = list(a_map[orgi][orgj])
+        com_mv_map = list(a_map[orgi][orgj])        
+        af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
+        af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
         sound_move.play()
     else:
@@ -1618,11 +1622,13 @@ def move_s(org, dest, a_map, a_ch):
         #dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
         #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
-        com_mv_map = list(a_map[orgi][orgj])
+        com_mv_map = list(a_map[orgi][orgj])        
+        af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
+        af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
         sound_capture.play()
     
-    return a_map, a_ch    
+    return a_map, a_ch, af_map    
         
 def move(org, dest, a_map, a_ch):
     global cor
@@ -2244,7 +2250,7 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 1
+        #back_num = 0
         #
         #chess_num[0] = 1
         #chess_num[1] = 2
@@ -2254,19 +2260,25 @@ def main():
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(0, (3, 4))
-        #ch.back = 1
-        #ch.live = 1
-        #main_chess[3][4] = ch
-        #main_map[3][4] = (3, 4)
-        #
-        #ch = chess(21, (3, 6))
+        #ch = chess(13, (3, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
         #
-        #ch = chess(22, (3, 5))
+        #ch = chess(9, (2, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][0] = ch
+        #main_map[2][0] = (2, 0)
+        #
+        #ch = chess(16, (0, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
+        #
+        #ch = chess(27, (3, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][5] = ch
@@ -2278,27 +2290,28 @@ def main():
         #com_color = 1
         #player_color = 0
         #turn_id = 1
-        #back_num = 0
+        #back_num = 4
         #
         #chess_num[0] = 3
         #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None
+        #        if j != 1:
+        #            main_chess[i][j].live = 0
+        #            main_map[i][j] = None
         #
-        #ch = chess(30, (1, 4))
+        #ch = chess(21, (1, 4))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][4] = ch
         #main_map[1][4] = (1, 4)
         #
-        #ch = chess(11, (0, 6))
+        #ch = chess(14, (0, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)
         #
         #ch = chess(12, (3, 6))
         #ch.back = 0
@@ -2312,11 +2325,11 @@ def main():
         #main_chess[3][0] = ch
         #main_map[3][0] = (3, 0)
         #
-        #ch = chess(28, (0, 1))
+        #ch = chess(28, (0, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7)
         #End Test data 2
         
         while 0 == player_win:
@@ -2514,7 +2527,7 @@ def main():
                 #Open all chess
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
-                        if 32 == c.index:
+                        if 32 == c.index and 1 == main_chess[i][j].live:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                             main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
@@ -2524,7 +2537,7 @@ def main():
                 #Open all chess
                 for i, cr in enumerate(main_chess):
                     for j, c in enumerate(cr):
-                        if 32 == c.index:
+                        if 32 == c.index and 1 == main_chess[i][j].live:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                             main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
