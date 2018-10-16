@@ -940,10 +940,9 @@ def chess_ai():
                 n2 = move_pre2[1]
                 p  = move_pre1[2]
                 c  = move_pre2[2]
-                if None == main_map[n1[0]][n1[1]] and None == main_map[n2[0]][n2[1]]:
-                    break_long_capture_dest.append([n1, n2, p, c])
-                    break_long_capture_org.append([p, c])
-                    com_ban_step.append(move_pre4[1])
+                break_long_capture_dest.append([n1, n2, p, c])
+                break_long_capture_org.append([p, c])
+                com_ban_step.append(move_pre4[1])
         
         org, dest, score = com_think(main_map, main_chess)
         #print 'org', org, 'dest', dest, 'score', score, 'op score', open_score
@@ -2387,7 +2386,7 @@ def main():
             
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
-                if 160 == step:
+                if 200 == step:
                     player_win = -2
                 
                 for event in pygame.event.get():
