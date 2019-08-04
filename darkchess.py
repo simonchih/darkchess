@@ -1740,6 +1740,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     
     # add 20190804
     beta = -2000 #max
+    max_p_score = -2000
     
     m2 = []
     af_map = copy.deepcopy(a_map)
@@ -1834,14 +1835,18 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                                             score3 = score2 + 40 - div * move_score((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, com_color)
                                                         else:
                                                             score3 = score - 8
-                                                            
-                                                    if score3 < alpha:
-                                                        alpha = score3
-                                                        
-                                                    if score3 > beta:
-                                                        beta = score3
                                                     
-                                                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score3])
+                                                    if score3 > max_p_score: #for turn color = player
+                                                        max_p_score = score3
+                                                        
+                                    if max_p_score > beta: 
+                                        beta = max_p_score
+                                                        
+                                    if alpha > max_p_score:
+                                        alpha = max_p_score
+                                    
+                                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, max_p_score])
+                                    max_p_score = -2000
                     ###############################
                     
                     
