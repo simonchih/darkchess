@@ -1713,15 +1713,14 @@ def com_think(a_map, a_ch):
         mf = []
         for mm in m:
             m2 = []
-            m3 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1)
             if m2:
-                max_index = m2.index(max(m2, key=lambda s:s[4]))
+                #max_index = m2.index(max(m2, key=lambda s:s[4]))
                 if mm[0] == mm[1]:
-                    open_score = m2[max_index][4]
-                mf.append([mm[0], mm[1], m2[max_index][4]])
-                #if m2[max_index][4] < AI_min_score:
-                #    AI_min_score = m2[max_index][4]
+                    #open_score = m2[max_index][4]
+                    open_score = m2[0][4]
+                #mf.append([mm[0], mm[1], m2[max_index][4]])
+                mf.append([mm[0], mm[1], m2[0][4]])
         if mf:
             min_index = mf.index(min(mf, key=lambda s:s[2]))
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
@@ -1743,6 +1742,8 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     max_p_score = -2000
     
     m2 = []
+    m3 = []
+    m4 = []
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
@@ -1794,8 +1795,12 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     
                     for chr_com in af_ch_2:
                         for ch_com in chr_com:
+                            ch_comp = ch_com
+                        
                             if ch_com.color == 1 - owner_color and 1 == ch_com.live and ch_com.back < 1:
                                 for pm_com in ch_com.possible_move:
+                                    pm_comp = pm_com
+                                    
                                     if 0 == will_dead_pity((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, 1 - owner_color):
                                         if (1 - owner_color) == com_color:
                                             if 0 == will_dead_pity_even_equal((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, 1 - owner_color):#equal
@@ -1824,6 +1829,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                         for ch_p in chr_p:
                                             if ch_p.color == owner_color and 1 == ch_p.live and ch_p.back < 1:
                                                 for pm_p in ch_p.possible_move:
+                                                    
                                                     if 0 == will_dead_pity((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):
                                                         if owner_color == player_color:
                                                             if 0 == will_dead_pity_even_equal((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):#equal
@@ -1840,17 +1846,37 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                                     
                                                     if score3 > max_p_score: #for turn color = player
                                                         max_p_score = score3
+                                                        ch_player = ch_p
+                                                        pm_player = pm_p
                                                         
-                                    if max_p_score > beta: 
-                                        beta = max_p_score
-                                                        
-                                    if alpha > max_p_score:
-                                        alpha = max_p_score
-                                    
-                                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, max_p_score])
-                                    max_p_score = -2000
+                                    if max_p_score != -2000:
+                                        if max_p_score > beta: 
+                                            beta = max_p_score
+                                                            
+                                        if alpha > max_p_score:
+                                            alpha = max_p_score
+                                        
+                                        
+                                        m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
+                                        max_p_score = -2000
                     ###############################
-                    
+                    if m4:
+                        min_index = m4.index(min(m4, key=lambda s:s[4]))
+                        coms = m4[min_index][4]
+                        ch_comp = m4[min_index][0]
+                        pm_comp = m4[min_index][1]
+                        
+                        m3.append([(ch.row, ch.col), pm, ch_comp, pm_comp,coms])
+                    ###############################
+    ###############################
+    if m3:
+        max_index = m3.index(max(m3, key=lambda s:s[4]))
+        ps = m3[max_index][4]
+        ch_1 = m3[max_index][0]
+        pm_1 = m3[max_index][1]
+        
+        m2.append([mm[0], mm[1], ch_1, pm_1, ps])
+    ###############################                   
                     
     return m2, af_map, af_ch
 
