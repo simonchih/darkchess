@@ -1715,7 +1715,7 @@ def com_think(a_map, a_ch):
         for mm in m:
             m2 = []
             m3 = []
-            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.9)
+            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1)
             if m2:
                 max_index = m2.index(max(m2, key=lambda s:s[4]))
                 if mm[0] == mm[1]:
@@ -1733,8 +1733,15 @@ def com_think(a_map, a_ch):
     else:
         return None, None, 0     
 
+# extend one_turn to 2-level-deep
+# original one_turn for player(next to com player)
+# extend to player-com-player
 def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     global AI_min_score
+    
+    # add 20190804
+    alpha = AI_min_score #mini
+    beta = -2000 #max
     
     m2 = []
     af_map = copy.deepcopy(a_map)
@@ -1773,10 +1780,78 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         else:
                             score = sc - 8
                     
-                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
+                    if score < beta:
+                        m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
+                        continue
+                    
+                    #############################
+                    af_map_2 = copy.deepcopy(af_map)
+                    af_ch_2 = copy.deepcopy(af_ch)
+                    if ch != None and pm != None:
+                        af_map_2, af_ch_2 = move((ch.row, ch.col), pm, af_map_2, af_ch_2)
+                        all_chess_move(af_map_2, af_ch_2)
+                    
+                    for chr_com in af_ch_2:
+                        for ch_com in chr_com:
+                            if ch_com.color == 1 - owner_color and 1 == ch_com.live and ch_com.back < 1:
+                                for pm_com in ch_com.possible_move:
+                                    if 0 == will_dead_pity((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, 1 - owner_color):
+                                        if (1 - owner_color) == com_color:
+                                            if 0 == will_dead_pity_even_equal((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, 1 - owner_color):#equal
+                                                score2 = score - div * move_score((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, com_color)
+                                            else:
+                                                score2 = score
+                                        else:
+                                            score2 = score + div * move_score((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, player_color)
+                                    else:
+                                        if (1 - owner_color) == player_color:
+                                            score2 = score - 40 + div * move_score((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, player_color)
+                                        else:
+                                            score2 = score - 8
+                                            
+                                    if score2 < alpha:
+                                        alpha = score2
+                                    else:
+                                        m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score2])
+                                        continue
+                    ###############################
+                                    af_map_3 = copy.deepcopy(af_map)
+                                    af_ch_3 = copy.deepcopy(af_ch)
+                                    if ch_com != None and pm_com != None:
+                                        af_map_3, af_ch_3 = move((ch_com.row, ch_com.col), pm_com, af_map_3, af_ch_3)
+                                        all_chess_move(af_map_3, af_ch_3)
+                                    
+                                    for chr_p in af_ch_3:
+                                        for ch_p in chr_p:
+                                            if ch_p.color == owner_color and 1 == ch_p.live and ch_p.back < 1:
+                                                for pm_p in ch_p.possible_move:
+                                                    if 0 == will_dead_pity((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):
+                                                        if owner_color == player_color:
+                                                            if 0 == will_dead_pity_even_equal((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):#equal
+                                                                score3 = score2 + div * move_score((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, player_color)
+                                                            else:
+                                                                score3 = score2
+                                                        else:
+                                                            score3 = score2 - div * move_score((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, com_color)
+                                                    else:
+                                                        if owner_color == com_color:
+                                                            score3 = score2 + 40 - div * move_score((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, com_color)
+                                                        else:
+                                                            score3 = score - 8
+                                                            
+                                                    if score3 < alpha:
+                                                        alpha = score3
+                                                        
+                                                    if score3 > beta:
+                                                        beta = score3
+                                                    
+                                                    m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score3])
+                    ###############################
+                    
                     
     return m2, af_map, af_ch
 
+# dest_will_be_dead ...
 def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
     n = a_map[org[0]][org[1]]
     m = a_map[dest[0]][dest[1]]
@@ -1802,7 +1877,8 @@ def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
                     if pm == dest:
                         return 1
     return 0
-    
+
+# will_be_dead    
 def will_dead(org, a_ch, a_map, opp_color):
     n = a_map[org[0]][org[1]]
     if None == n:
@@ -1868,7 +1944,8 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
                     if eat_step == len(nch.possible_move):
                         return 1
     return 0
-    
+
+# stand_will_be_dead_pity    
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
     opp_color = 1-owner_color
     n = a_map[org[0]][org[1]]
@@ -1886,6 +1963,7 @@ def stand_will_dead_pity(org, a_ch, a_map, owner_color):
                             return 1
     return 0
 
+# will_be_dead_pity...
 def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
     global king_live
     
@@ -1950,6 +2028,7 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
                             break    
     return pity
 
+# will_be_dead_pity...
 def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
     global king_live
     
@@ -2016,7 +2095,8 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
                             pity = 0
                             break    
     return pity
-    
+
+# will_be_dead_pity    
 def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
     global king_live
     
