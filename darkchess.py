@@ -51,7 +51,7 @@ max_value = 0
 max_dist = 32
 sindex = 0
 AI_min_score = 2000
-alpha = AI_min_score # alpha beta pruning, alpha: mini, beta: max
+alpha = AI_min_score # alpha: mini
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
@@ -1738,7 +1738,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     global alpha #mini
     
     # add 20190804
-    beta = -2000 #max
+    #beta = -2000 #max
     max_p_score = -2000
     
     m2 = []
@@ -1782,9 +1782,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     
                     # It's NOT beta of alpha beta pruning
                     # It's NOT always good but just pruning for speed
-                    if score + 10 < beta:
-                        #m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
-                        continue
+                    #if score + 10 < beta:
+                    #    #m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
+                    #    continue
                     
                     #############################
                     af_map_2 = copy.deepcopy(af_map)
@@ -1850,13 +1850,10 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                                         pm_player = pm_p
                                                         
                                     if max_p_score != -2000:
-                                        if max_p_score > beta: 
-                                            beta = max_p_score
                                                             
                                         if alpha > max_p_score:
                                             alpha = max_p_score
-                                        
-                                        
+                                                                               
                                         m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
                                         max_p_score = -2000
                     ###############################
