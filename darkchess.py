@@ -1809,9 +1809,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                         else:
                                             score2 = score - 8
                                             
-                                    if score2 < alpha:
-                                        alpha = score2
-                                    else:
+                                    if score2 > alpha:
                                         m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score2])
                                         continue
                     ###############################
