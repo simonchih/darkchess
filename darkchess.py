@@ -1779,8 +1779,10 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         else:
                             score = sc - 8
                     
+                    # It's NOT beta of alpha beta pruning
+                    # It's NOT always good but just pruning for speed
                     if score < beta:
-                        m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
+                        #m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                         continue
                     
                     #############################
@@ -1809,7 +1811,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                             score2 = score - 8
                                             
                                     if score2 > alpha:
-                                        m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score2])
+                                        #m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score2])
                                         continue
                     ###############################
                                     af_map_3 = copy.deepcopy(af_map)
