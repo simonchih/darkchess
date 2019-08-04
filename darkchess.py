@@ -51,7 +51,6 @@ max_value = 0
 max_dist = 32
 sindex = 0
 AI_min_score = 2000
-alpha = AI_min_score # alpha: mini
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
@@ -1675,7 +1674,6 @@ def temp_clac_num_back():
     
 def com_think(a_map, a_ch):
     global open_score
-    global alpha #mini
 
     m = []
     
@@ -1735,9 +1733,8 @@ def com_think(a_map, a_ch):
 # original one_turn for player(next to com player)
 # extend to player-com-player
 def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
-    global alpha #mini
-    
     # add 20190804
+    alpha = AI_min_score #mini
     #beta = -2000 #max
     max_p_score = -2000
     
