@@ -51,6 +51,7 @@ max_value = 0
 max_dist = 32
 sindex = 0
 AI_min_score = 2000
+alpha = AI_min_score # alpha beta pruning, alpha: mini, beta: max
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
@@ -1674,7 +1675,7 @@ def temp_clac_num_back():
     
 def com_think(a_map, a_ch):
     global open_score
-    global AI_min_score
+    global alpha #mini
 
     m = []
     
@@ -1693,8 +1694,6 @@ def com_think(a_map, a_ch):
         dest = None
     else:
         open_score = None
-    
-    AI_min_score = 2000
     
     for chr in a_ch:
         for ch in chr:
@@ -1721,8 +1720,8 @@ def com_think(a_map, a_ch):
                 if mm[0] == mm[1]:
                     open_score = m2[max_index][4]
                 mf.append([mm[0], mm[1], m2[max_index][4]])
-                if m2[max_index][4] < AI_min_score:
-                    AI_min_score = m2[max_index][4]
+                #if m2[max_index][4] < AI_min_score:
+                #    AI_min_score = m2[max_index][4]
         if mf:
             min_index = mf.index(min(mf, key=lambda s:s[2]))
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
@@ -1737,10 +1736,9 @@ def com_think(a_map, a_ch):
 # original one_turn for player(next to com player)
 # extend to player-com-player
 def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
-    global AI_min_score
+    global alpha #mini
     
     # add 20190804
-    alpha = AI_min_score #mini
     beta = -2000 #max
     
     m2 = []
@@ -1755,9 +1753,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
         return m2, af_map, af_ch
 
     # Pruning
-    if owner_color == player_color and sc > AI_min_score:
-        m2.append([mm[0], mm[1], None, None, sc])
-        return m2, af_map, af_ch
+    #if owner_color == player_color and sc > AI_min_score:
+    #    m2.append([mm[0], mm[1], None, None, sc])
+    #    return m2, af_map, af_ch
     
     if back_num > 0:
         m2.append([mm[0], mm[1], None, None, sc])
