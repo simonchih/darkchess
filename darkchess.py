@@ -1782,7 +1782,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     
                     # It's NOT beta of alpha beta pruning
                     # It's NOT always good but just pruning for speed
-                    if score < beta:
+                    if score + 10 < beta:
                         #m2.append([mm[0], mm[1], (ch.row, ch.col), pm, score])
                         continue
                     
