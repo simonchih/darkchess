@@ -1779,8 +1779,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
     #    return m2, af_map, af_ch
     
     #if back_num > 0:
-    #    #m2.append([mm[0], mm[1], None, None, sc])
-    #    m2.append([mm[0], mm[1], None, None, 10])
+    #    m2.append([mm[0], mm[1], None, None, sc])
     
     for chr in af_ch:
         for ch in chr:
@@ -1894,8 +1893,8 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                             beta = coms
                             
                         # marked 20190805
-                        if coms > alpha_2:
-                            break
+                        #if coms > alpha_2:                            
+                        #    break
                         
                         if back_num > 0:
                             if coms < score: #min
