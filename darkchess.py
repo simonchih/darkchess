@@ -1725,7 +1725,7 @@ def com_think(a_map, a_ch):
             m2 = []
             m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1)
             if m2:
-                #print('m2=', m2)
+                print('m2=', m2)
                 #max_index = m2.index(max(m2, key=lambda s:s[4]))
                 if mm[0] == mm[1]:
                     #open_score = m2[max_index][4]
@@ -1738,7 +1738,7 @@ def com_think(a_map, a_ch):
                     
                 mf.append([mm[0], mm[1], m2[0][4]])
         if mf:
-            #print('mf=', mf)
+            print('mf=', mf)
             min_index = mf.index(min(mf, key=lambda s:s[2]))
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
         else:
@@ -1823,7 +1823,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                     ###############################
                                     af_map_3 = copy.deepcopy(af_map_2)
                                     af_ch_3 = copy.deepcopy(af_ch_2)
-                                    if ch_com != None and pm_com != None:
+                                    if ch_com != None and pm_com != None:                                        
                                         af_map_3, af_ch_3 = move((ch_com.row, ch_com.col), pm_com, af_map_3, af_ch_3)
                                         all_chess_move(af_map_3, af_ch_3)
                                     
@@ -1833,8 +1833,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                     for chr_p in af_ch_3:
                                         for ch_p in chr_p:
                                             if ch_p.color == owner_color and 1 == ch_p.live and ch_p.back < 1:
+
                                                 for pm_p in ch_p.possible_move:
-                                                    
+
                                                     if 0 == will_dead_pity((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):
                                                         if owner_color == player_color:
                                                             if 0 == will_dead_pity_even_equal((ch_p.row, ch_p.col), pm_p, af_ch_3, af_map_3, owner_color):#equal
@@ -1854,6 +1855,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                                         ch_player = ch_p
                                                         pm_player = pm_p
                                                     
+                                                    # marked 20190805
                                                     #if score3 > alpha:
                                                     #    break
                                                         
@@ -1862,6 +1864,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                         if alpha > max_p_score:
                                             alpha = max_p_score
                                             
+                                        # marked 20190805
                                         #if max_p_score < beta:
                                         #    break
                                         
@@ -1869,7 +1872,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                             if max_p_score > sc: #max
                                                 m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
                                             else:
-                                                m4.append([(ch_com.row, ch_com.col), pm_com, None, None, sc])
+                                                m4.append([(ch_com.row, ch_com.col), pm_com, None, None, score2])
                                         else:
                                             m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
                                                 
@@ -1889,6 +1892,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                         if beta < coms:
                             beta = coms
                             
+                        # marked 20190805
                         #if coms > alpha_2:
                         #    break
                         
@@ -1896,7 +1900,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                             if coms < sc: #min
                                 m3.append([(ch.row, ch.col), pm, ch_comp, pm_comp, coms])
                             else:
-                                m3.append([(ch.row, ch.col), pm, None, None, sc])
+                                m3.append([(ch.row, ch.col), pm, None, None, score])
                         else:
                             m3.append([(ch.row, ch.col), pm, ch_comp, pm_comp, coms])                           
                         
@@ -2399,7 +2403,6 @@ def main():
                 main_map[i][4+j] = (i, 4+j)
         
 		# Test data
-        # It's known issue
         #first = 0
         #com_color = 0
         #player_color = 1
@@ -2484,6 +2487,49 @@ def main():
         #main_map[3][5] = (3, 5)
         
         #End Test data 2
+        
+        # Test data 3
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 1
+        #
+        #chess_num[0] = 2
+        #chess_num[1] = 2
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 1 == i and 3 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(27, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(29, (2, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        #
+        #ch = chess(13, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(15, (0, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][5] = ch
+        #main_map[0][5] = (0, 5)
+        
+        #End Test data 3
         
         while 0 == player_win:
             if 1 == game_start:
