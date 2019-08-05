@@ -1856,20 +1856,21 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                                         pm_player = pm_p
                                                     
                                                     # marked 20190805
-                                                    #if score3 > alpha:
-                                                    #    break
+                                                    if score3 > alpha:
+                                                        break
                                                         
+                                    #############################
                                     if max_p_score != -2000:
                                                             
                                         if alpha > max_p_score:
                                             alpha = max_p_score
                                             
                                         # marked 20190805
-                                        #if max_p_score < beta:
-                                        #    break
+                                        if max_p_score < beta:
+                                            break
                                         
                                         if back_num > 0:
-                                            if max_p_score > sc: #max
+                                            if max_p_score > score2: #max
                                                 m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
                                             else:
                                                 m4.append([(ch_com.row, ch_com.col), pm_com, None, None, score2])
@@ -1893,11 +1894,11 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                             beta = coms
                             
                         # marked 20190805
-                        #if coms > alpha_2:
-                        #    break
+                        if coms > alpha_2:
+                            break
                         
                         if back_num > 0:
-                            if coms < sc: #min
+                            if coms < score: #min
                                 m3.append([(ch.row, ch.col), pm, ch_comp, pm_comp, coms])
                             else:
                                 m3.append([(ch.row, ch.col), pm, None, None, score])
