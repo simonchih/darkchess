@@ -1879,6 +1879,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, final_score):
                                         
                                         # marked 20190805
                                         if max_p_score < beta:
+                                            max_p_score = -2000
                                             break                                        
                                         
                                         max_p_score = -2000
