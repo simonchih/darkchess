@@ -1716,14 +1716,16 @@ def com_think(a_map, a_ch):
                         dest = pm   
     
     alpha = AI_min_score #mini
-    alpha_2 = AI_min_score #mini
+    alpha_2 = AI_min_score #mini and final score
+    min_index = None # final score index
+    
     beta = -1 *  AI_min_score#max
     
     if len(m) > 1:
         mf = []
         for mm in m:
             m2 = []
-            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1)
+            m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1, alpha_2)
             if m2:
                 print('m2=', m2)
                 #max_index = m2.index(max(m2, key=lambda s:s[4]))
@@ -1735,11 +1737,12 @@ def com_think(a_map, a_ch):
                 
                 if alpha_2 > m2[0][4]:
                     alpha_2 = m2[0][4]
+                    min_index = len(mf)
                     
                 mf.append([mm[0], mm[1], m2[0][4]])
         if mf:
             print('mf=', mf)
-            min_index = mf.index(min(mf, key=lambda s:s[2]))
+            #min_index = mf.index(min(mf, key=lambda s:s[2]))
             return mf[min_index][0], mf[min_index][1], mf[min_index][2]
         else:
             return org, dest, min_score
@@ -1751,7 +1754,7 @@ def com_think(a_map, a_ch):
 # extend one_turn to 2-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player
-def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
+def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, final_score):
     
     # add 20190804
     global alpha
@@ -1818,7 +1821,9 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div):
                                         score2 = score - div * move_score((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, com_color)
                                     else:
                                         score2 = score + 50 - div * move_score((ch_com.row, ch_com.col), pm_com, af_ch_2, af_map_2, com_color)
-                                            
+                                    
+                                    if score2 > final_score:
+                                        continue
                     ###############################
                                     af_map_3 = copy.deepcopy(af_map_2)
                                     af_ch_3 = copy.deepcopy(af_ch_2)
