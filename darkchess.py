@@ -1876,12 +1876,12 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, final_score):
                                                 m4.append([(ch_com.row, ch_com.col), pm_com, None, None, score2])
                                         else:
                                             m4.append([(ch_com.row, ch_com.col), pm_com, (ch_player.row, ch_player.col), pm_player, max_p_score])
-                                                
-                                        max_p_score = -2000
                                         
                                         # marked 20190805
                                         if max_p_score < beta:
-                                            break
+                                            break                                        
+                                        
+                                        max_p_score = -2000
                                             
                                     else:
                                         m4.append([(ch_com.row, ch_com.col), pm_com, None, None, score2])
@@ -2409,44 +2409,50 @@ def main():
         
 		# Test data
         #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
-        #back_num = 8
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 0
         #
-        #chess_num[0] = 4
-        #chess_num[1] = 4
+        #chess_num[0] = 5
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 1 == i:
+        #        if 0 == i:
         #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(7, (3, 3))
+        #ch = chess(9, (1, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
         #
-        #ch = chess(16, (3, 4))
+        #ch = chess(27, (1, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][4] = ch
-        #main_map[3][4] = (3, 4)
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
         #
-        #ch = chess(0, (2, 3))
+        #ch = chess(13, (1, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
         #
-        #ch = chess(17, (2, 4))
+        #ch = chess(5, (2, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][4] = ch
-        #main_map[2][4] = (2, 4)
+        #main_chess[2][0] = ch
+        #main_map[2][0] = (2, 0)
+        #
+        #ch = chess(0, (2, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
 
         #End Test data
         
