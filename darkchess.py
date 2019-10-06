@@ -1921,14 +1921,8 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, be
                                     
                 if alpha > max_p_score:
                     alpha = max_p_score
-                                                            
-                if back_num > 0:
-                    if max_p_score > score2: #max
-                        m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])
-                    else:
-                        m4.append([ch_position2, pm_com, None, None, score2])
-                else:
-                    m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])
+                    
+                m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])
                 
                 # marked 20190805
                 if max_p_score < beta:
@@ -1953,15 +1947,14 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, be
             
             if beta < coms:
                 beta = coms
-                                        
-            if back_num > 0:
-                if coms < score: #min
-                    m3.append([ch_position, pm, ch_comp, pm_comp, coms])
-                else:
-                    m3.append([ch_position, pm, None, None, score])
-            else:
-                m3.append([ch_position, pm, ch_comp, pm_comp, coms])                           
+            
+            m3.append([ch_position, pm, ch_comp, pm_comp, coms])                           
             m4 = []
+            
+            # marked 20190805
+            if coms > final_score:                            
+                break
+
         else:
             m3.append([ch_position, pm, None, None,score])
             #m4 = []
@@ -2471,47 +2464,35 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 27
+        #back_num = 4
         #
-        #chess_num[0] = 16
-        #chess_num[1] = 16
+        #chess_num[0] = 2
+        #chess_num[1] = 3
         #
-        ##for i in range(0, 4):
-        ##    for j in range(0, 8):
-        ##        if j > 3:
-        ##            continue
-        ##        main_chess[i][j].live = 0
-        ##        main_map[i][j] = None
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 1 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #ch = chess(31, (1, 1))
+        #ch = chess(30, (0, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)
         #
-        #ch = chess(30, (1, 2))
+        #ch = chess(16, (3, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
         #
-        #ch = chess(15, (3, 1))
+        #ch = chess(5, (2, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][1] = ch
-        #main_map[3][1] = (3, 1)
-        #
-        #ch = chess(27, (2, 1))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][1] = ch
-        #main_map[2][1] = (2, 1)
-        #
-        #ch = chess(1, (1, 0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
 
         #End Test data
         
@@ -2525,10 +2506,6 @@ def main():
         #chess_num[0] = 16
         #chess_num[1] = 16
         #
-        #for i in range(0, 4):
-        #    for j in range(0, 8):
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None
         #main_chess[3][6].live = 0
         #main_map[3][6] = None
         #
