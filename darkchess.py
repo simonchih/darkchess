@@ -954,7 +954,6 @@ def chess_ai():
             player_win = 1
         if back_num > 0:
             if open_score != None:
-                r = random.randint(1, 9)
                 if None == org:
                     dest = select_back_chess(main_map, main_chess)
                     sound_click.play()
@@ -966,7 +965,7 @@ def chess_ai():
                     back_num -= 1
                     back_value_num[m.color][m.value] -= 1
                     #print(back_value_num)
-                elif score > open_score - (float)(r)/10:
+                elif score > open_score:
                     if score > 18:
                         org = None
                     temp = select_back_chess(main_map, main_chess, org)
@@ -1892,18 +1891,26 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, be
             for ch_position3, pm_p in all_pm_3:
                 pity = will_dead_pity(ch_position3, pm_p, af_ch_3, af_map_3, owner_color)
                 if 0 == pity:
-                    if owner_color == player_color:
-                        if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
-                            score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
-                        else: # 1 == , None ==
-                            score3 = score2
-                    else:
-                        score3 = score2 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
+                    #if owner_color == player_color:
+                    #    if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
+                    #        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
+                    #    else: # 1 == , None ==
+                    #        score3 = score2
+                    #else:
+                    #    score3 = score2 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
+                    
+                    if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
+                        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
+                    else: # 1 == , None ==
+                        score3 = score2
+                        
                 elif 1 == pity:
-                    if owner_color == com_color:
-                        score3 = score2 + 40 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
-                    else:
-                        score3 = score2 - 8
+                    #if owner_color == com_color:
+                    #    score3 = score2 + 40 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
+                    #else:
+                    #    score3 = score2 - 8
+                    
+                    score3 = score2 - 8
                 else: # None == pity
                     score3 = score2
                 
@@ -2608,6 +2615,56 @@ def main():
         #main_map[2][3] = (2, 3)        
         
         #End Test data 3
+        
+        # Test data 4
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 27
+        #
+        #chess_num[0] = 15
+        #chess_num[1] = 16
+        #
+        ##for i in range(0, 4):
+        ##    for j in range(0, 8):
+        ##        main_chess[i][j].live = 0
+        ##        main_map[i][j] = None
+        #
+        #main_chess[2][6].live = 0
+        #main_map[2][6] = None
+        #
+        #ch = chess(0, (0, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][3] = ch
+        #main_map[0][3] = (0, 3)
+        #
+        #ch = chess(1, (2, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+        #
+        #ch = chess(9, (1, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][3] = ch
+        #main_map[1][3] = (1, 3)
+        #
+        #ch = chess(16, (2, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][3] = ch
+        #main_map[2][3] = (2, 3)
+        #
+        #ch = chess(25, (2, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5)        
+        
+        #End Test data 4
         
         while 0 == player_win:
             if 1 == game_start:
