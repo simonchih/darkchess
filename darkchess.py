@@ -1592,13 +1592,13 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
                 if False == ((orgy, orgx) in com_will_eat_chess):
                     com_will_eat_chess.append((orgy, orgx))
                 if my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value != 2:
-                    return 10 + float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/5
+                    return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color) - 1
                 else:
                     return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         else:
             if (orgy, orgx) in com_will_eat_chess:
                 if my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value != 2:
-                    return 10 + float(eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color))/5
+                    return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color) - 1
                 else:
                     return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
             else:
@@ -1965,7 +1965,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, be
         else:
             m3.append([ch_position, pm, None, None,score])
             #m4 = []
-            
+        
         #print('m3',m3)
         ###############################
     ###############################
