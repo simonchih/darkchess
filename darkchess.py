@@ -1504,8 +1504,9 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
             if org == ban:
                 return -10.2
                 #return -0.2
-                
-        if 1 == owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color):
+        
+        ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
+        if 1 == ndead:
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
             elif a_map[orgy][orgx] != None:
@@ -1582,7 +1583,7 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
         
-        return calc_move_score(max_value, max_dist, mvalue)
+        return calc_move_score(max_value, max_dist, mvalue) + ndead
     
     elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
         if owner_color == com_color and 1 == owner_next_can_eat_dead_p(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
@@ -2065,6 +2066,7 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
     m = af_map[nextj[0]][nextj[1]]
     my = af_ch[m[0]][m[1]]
     
+    escape_step = 0
     for eat_pm in my.possible_move:
         if af_map[eat_pm[0]][eat_pm[1]] != None:
             eat_step = 0
@@ -2080,7 +2082,10 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
                             eat_step += 1
                     if eat_step == len(nch.possible_move):
                         return 1
-    return 0
+                    elif escape_step > eat_step - len(nch.possible_move):
+                        escape_step = eat_step - len(nch.possible_move) #negative
+    #return 0
+    return escape_step/100
 
 # stand_will_be_dead_pity    
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
@@ -2471,31 +2476,29 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 4
+        #back_num = 0
         #
         #chess_num[0] = 2
-        #chess_num[1] = 3
+        #chess_num[1] = 1
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 1 == j:
-        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(30, (0, 0))
+        #ch = chess(15, (1, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(16, (3, 0))
+        #ch = chess(13, (3, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][0] = ch
-        #main_map[3][0] = (3, 0)
+        #main_chess[3][1] = ch
+        #main_map[3][1] = (3, 1)
         #
-        #ch = chess(5, (2, 2))
+        #ch = chess(29, (2, 2))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][2] = ch
