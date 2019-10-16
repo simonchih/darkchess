@@ -1408,18 +1408,39 @@ def save_step_and_break_long_capture(org, dest, a_map, my_chess):
         possible_mv = collect_possible_move(dest[0], dest[1], a_map, my_chess)
         move_step[sindex] = [com_color, org, dest, possible_mv]
         sindex = (sindex+1)%4
-        br = 0
-        while(br < len(break_long_capture_dest)):
-            b = 0
-            for d in break_long_capture_dest[br]:
-                if dest == d:
-                    del break_long_capture_dest[br]
-                    del break_long_capture_org[br]
-                    del com_ban_step[br]
-                    b = 1
-                    break
-            if 0 == b:
-                br += 1
+        
+        # Simon added 20191016
+        (row, col) = dest
+        for i in range(-2, 3):
+            for j in range(-2, 3):
+                if abs(i)+abs(j) <= 2 and 0 <= row + i <= 3 and 0 <= col + j <= 7:
+                    br = 0
+                    dt = (row+i, col+j)
+                    while(br < len(break_long_capture_dest)):
+                        b = 0
+                        for d in break_long_capture_dest[br]:
+                            if dt == d:
+                                del break_long_capture_dest[br]
+                                del break_long_capture_org[br]
+                                del com_ban_step[br]
+                                b = 1
+                                break
+                        if 0 == b:
+                            br += 1
+        # End Simon added 20191016
+                                    
+        #br = 0
+        #while(br < len(break_long_capture_dest)):
+        #    b = 0
+        #    for d in break_long_capture_dest[br]:
+        #        if dest == d:
+        #            del break_long_capture_dest[br]
+        #            del break_long_capture_org[br]
+        #            del com_ban_step[br]
+        #            b = 1
+        #            break
+        #    if 0 == b:
+        #        br += 1
                 
         br = 0
         while(br < len(break_long_capture_org)):
@@ -2626,11 +2647,11 @@ def main():
         #main_chess[1][3] = ch
         #main_map[1][3] = (1, 3) 
         #
-        ##ch = chess(16, (0, 7))
-        ##ch.back = 0
-        ##ch.live = 1
-        ##main_chess[0][7] = ch
-        ##main_map[0][7] = (0, 7) 
+        #ch = chess(16, (0, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7) 
         
         #End Test data 3
         
