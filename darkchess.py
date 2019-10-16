@@ -1523,7 +1523,7 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
             if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
                 return -8
             else:
-                return 9        
+                return 9 + ndead        
         
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             af_map = copy.deepcopy(a_map)
@@ -2085,7 +2085,10 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
                     elif escape_step > eat_step - len(nch.possible_move):
                         escape_step = eat_step - len(nch.possible_move) #negative
     #return 0
-    return escape_step/100
+    if 0 == escape_step:
+        return -0.09
+    else:
+        return escape_step/100
 
 # stand_will_be_dead_pity    
 def stand_will_dead_pity(org, a_ch, a_map, owner_color):
@@ -2479,7 +2482,7 @@ def main():
         #back_num = 0
         #
         #chess_num[0] = 2
-        #chess_num[1] = 1
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
@@ -2503,6 +2506,12 @@ def main():
         #ch.live = 1
         #main_chess[2][2] = ch
         #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(16, (1, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
 
         #End Test data
         
@@ -2589,33 +2598,39 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 29
+        #back_num = 0
         #
         #chess_num[0] = 16
         #chess_num[1] = 16
         #
-        ##for i in range(0, 4):
-        ##    for j in range(0, 8):
-        ##        main_chess[i][j].live = 0
-        ##        main_map[i][j] = None
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #ch = chess(7, (0, 3))
+        #ch = chess(13, (1, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(23, (1, 3))
+        #ch = chess(15, (2, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(29, (1, 3))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][3] = ch
-        #main_map[1][3] = (1, 3)
+        #main_map[1][3] = (1, 3) 
         #
-        #ch = chess(24, (2, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)        
+        ##ch = chess(16, (0, 7))
+        ##ch.back = 0
+        ##ch.live = 1
+        ##main_chess[0][7] = ch
+        ##main_map[0][7] = (0, 7) 
         
         #End Test data 3
         
