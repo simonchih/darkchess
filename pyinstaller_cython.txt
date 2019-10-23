@@ -1,1 +1,1 @@
-pyinstaller -F --noconsole dchess.py --hidden-import random --hidden-import os --hidden-import math --hidden-import time --hidden-import pygame --hidden-import copy --hidden-import threading --hidden-import sys --hidden-import chess --hidden-import chess_data --hidden-import pygame.locals
+PyInstaller -F --noconsole dchess.py --hidden-import random --hidden-import os --hidden-import math --hidden-import time --hidden-import pygame --hidden-import copy --hidden-import threading --hidden-import sys --hidden-import chess --hidden-import chess_data --hidden-import pygame.locals
