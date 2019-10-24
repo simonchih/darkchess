@@ -76,7 +76,7 @@ chess_rns = pygame.image.load(image_chess_rns).convert_alpha()
 chess_rcs = pygame.image.load(image_chess_rcs).convert_alpha()
 chess_rps = pygame.image.load(image_chess_rps).convert_alpha()
 
-def index_to_chess_select(index):
+def index_to_chess_select(int index):
     if 0 <= index < 5:
         return chess_bps
     elif index < 7:
@@ -106,7 +106,7 @@ def index_to_chess_select(index):
     elif 31 == index:
         return chess_rks
 
-def index_to_chess_surface(index):
+def index_to_chess_surface(int index):
     if 0 <= index < 5:
         return chess_bp
     elif index < 7:
@@ -136,7 +136,7 @@ def index_to_chess_surface(index):
     elif 31 == index:
         return chess_rk
         
-def index_to_chess_value(index):
+cpdef int index_to_chess_value(int index):
     if 0 <= index < 5:
         return 1
     elif index < 7:
@@ -166,13 +166,13 @@ def index_to_chess_value(index):
     elif 31 == index:
         return 7
         
-def index_to_color(index):
+cpdef int index_to_color(int index):
     if 0 <= index < 16:
         return 0
     else:
         return 1
         
-def color_value_to_index(color, value, bvalue_num):
+def color_value_to_index(color, int value, bvalue_num):
     if 0 == bvalue_num[color][value]:
         return None
     

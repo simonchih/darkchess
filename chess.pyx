@@ -1,10 +1,10 @@
 import math
 from chess_data import *
 
-drag = 0.999
+cdef double drag = 0.999
 
 class chess():
-    def __init__(self, index, rc):
+    def __init__(self, int index, rc):
         (row, col) = rc
         self.row = row
         self.col = col

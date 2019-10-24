@@ -35,30 +35,30 @@ sound_loss    = pygame.mixer.Sound(s_loss)
 sound_win     = pygame.mixer.Sound(s_win)
 sound_move    = pygame.mixer.Sound(s_move2)
 
-text_x = 237
-text_y = 16
-new_game_iconi = 440
-new_game_iconj = 13
+cdef int text_x = 237
+cdef int text_y = 16
+cdef int new_game_iconi = 440
+cdef int new_game_iconj = 13
 
 # 0: ini, 1: human win, -1: com win, -2: drawn game
-player_win = 0
-player_first = 0
-first = 1
+cdef int player_win = 0
+cdef int player_first = 0
+cdef int first = 1
 # turn_id, 0:black, 1:red, 2:process_moving
-turn_id = 0
-player_color = 0
-com_color = 1
-max_value = 0
-max_dist = 32
-sindex = 0
+cdef int turn_id = 0
+cdef int player_color = 0
+cdef int com_color = 1
+cdef float max_value = 0
+cdef float max_dist = 32
+cdef int sindex = 0
 AI_min_score = 2000
 final_score = AI_min_score #mini
 gb_m2 = []
 #max_cor = None
 open_score = None
 # 0: human vs AI, 1: AI vs AI
-AI_vs_AI = 0
-step = 0
+cdef int AI_vs_AI = 0
+cdef int step = 0
 
 #default chess
 chtemp = chess(0, (0, 0))
@@ -79,7 +79,7 @@ back_value_num = [ [0] * 8, [0] * 8 ]
 king_live = [1, 1]
 chess_num = [16, 16]
 com_mv_map = [0, 0]
-back_num = 32
+cdef int back_num = 32
 com_will_eat_chess = []
 will_eat_escape_chess = []
 cannon_cor = []
@@ -89,7 +89,7 @@ com_ban_step = []
 move_step = [None, None, None, None]
 
 # return 0: can't eat, 1: can eat, 2: equal
-def can_be_ate_equal(small_value, big_value):
+cdef int can_be_ate_equal(int small_value, int big_value):
     if 2 == big_value:
         return 0
     elif 1 == big_value and 7 == small_value:
@@ -103,7 +103,7 @@ def can_be_ate_equal(small_value, big_value):
     else:
         return 0
 
-def can_be_ate(small_value, big_value):       
+cdef int can_be_ate(int small_value, int big_value):       
     if 2 == big_value:
         return 0
     elif 1 == big_value and 7 == small_value:
@@ -135,12 +135,12 @@ def ini_random_chess(list):
         list[31-end] = start
     return list
 
-def findC(ch, x, y):
-    for pr in ch:
-        for p in pr:
-            if math.hypot(p.x-x, p.y-y) <= p.size:
-                return p
-    return None
+#def findC(ch, x, y):
+#    for pr in ch:
+#        for p in pr:
+#            if math.hypot(p.x-x, p.y-y) <= p.size:
+#                return p
+#    return None
 
 def all_chess_move(a_map, my_chess):
     for chr in my_chess:
@@ -380,11 +380,11 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
     
     return eat_possible_num - was_ate_num
 
-def if_cannon_can_eat(org, a_map, my_chess, owner_color):
+cpdef int if_cannon_can_eat(org, a_map, my_chess, owner_color):
     (i, j) = org
-    jump = 0
-    eat_number = 0
-    opp_color = 1 - owner_color
+    cdef int jump = 0
+    cdef int eat_number = 0
+    cdef int opp_color = 1 - owner_color
     
     for ii in range(i-1, -1, -1):
         if 1 == jump and a_map[ii][j] != None:
@@ -428,11 +428,11 @@ def if_cannon_can_eat(org, a_map, my_chess, owner_color):
     
     return eat_number
    
-def eat_by_player_bomb(org, a_map, my_chess, player_color):
+cpdef int eat_by_player_bomb(org, a_map, my_chess, int player_color):
     global cannon_cor
     (i, j) = org
-    jump = 0
-    was_ate = 0
+    cdef int jump = 0
+    cdef int was_ate = 0
     for ii in range(i-1, -1, -1):
         if 1 == jump and a_map[ii][j] != None:
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back:
