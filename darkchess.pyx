@@ -1722,7 +1722,7 @@ def com_think(a_map, a_ch):
     
     if back_num > 0:
         open_score = 0
-        m.append((None, None, 0))
+        m.append((None, None, 0, 0))
         min_score = 0
         org = None
         dest = None
@@ -1733,12 +1733,14 @@ def com_think(a_map, a_ch):
         for ch in chr:
             if ch.color == com_color and 1 == ch.live:
                 for pm in ch.possible_move:
-                    if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):
+                    pity = 0
+                    if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):                        
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
-                    else:
+                    else:                        
                         score = sc + 50 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                        pity = 1
                     
-                    m.append(((ch.row, ch.col), pm, score))
+                    m.append(((ch.row, ch.col), pm, score, pity))
                     
                     if score < min_score:
                         min_score = score
@@ -1760,7 +1762,7 @@ def com_think(a_map, a_ch):
   
         for mm in m:
             #print('mm', mm)
-            threads.append(threading.Thread(target = one_turn, args = (a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 0.95, i, alpha, beta)))
+            threads.append(threading.Thread(target = one_turn, args = (a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta)))
             threads[i].start()
             i += 1
             #m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1, alpha, beta)
@@ -1804,7 +1806,7 @@ def com_think(a_map, a_ch):
 # extend one_turn to 2-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player
-def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, beta):
+def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, pt, div, ind, alpha, beta):
     global open_score
     global final_score
     global gb_m2
@@ -1856,7 +1858,11 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, div, ind, alpha, be
         #        score = sc - 8
         #else: # None == pity
         #    score = sc
-        score = sc + div * move_score(ch_position, pm, af_ch, af_map, player_color)
+        mscore =  move_score(ch_position, pm, af_ch, af_map, player_color)
+        if 1 == pt and mscore > 0:
+            score = sc + div * 4 * mscore
+        else:
+            score = sc + div * mscore
         
         #############################
         af_map_2 = copy.deepcopy(af_map)
@@ -2661,48 +2667,53 @@ def main():
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 27
+        #back_num = 1
         #
-        #chess_num[0] = 15
-        #chess_num[1] = 16
+        #chess_num[0] = 4
+        #chess_num[1] = 4
         #
-        ##for i in range(0, 4):
-        ##    for j in range(0, 8):
-        ##        main_chess[i][j].live = 0
-        ##        main_map[i][j] = None
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 3 == i and 4 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #main_chess[2][6].live = 0
-        #main_map[2][6] = None
-        #
-        #ch = chess(0, (0, 3))
+        #ch = chess(16, (0, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
         #
-        #ch = chess(1, (2, 7))
+        #ch = chess(17, (3, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
         #
-        #ch = chess(9, (1, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][3] = ch
-        #main_map[1][3] = (1, 3)
-        #
-        #ch = chess(16, (2, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)
-        #
-        #ch = chess(25, (2, 5))
+        #ch = chess(0, (2, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][5] = ch
-        #main_map[2][5] = (2, 5)        
+        #main_map[2][5] = (2, 5)
+        #
+        #ch = chess(15, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(13, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2) 
+        #
+        #ch = chess(29, (0, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1) 
         
         #End Test data 4
         
