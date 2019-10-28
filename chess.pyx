@@ -1,5 +1,6 @@
 import math
 from chess_data import *
+from chess_data cimport *
 
 cdef double drag = 0.999
 

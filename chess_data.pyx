@@ -1,9 +1,9 @@
 import pygame
 
-cstart_x = 34
-cstart_y = 51
-cstart_x2 = 260
-cstart_y2 = 51
+cdef int cstart_x = 34
+cdef int cstart_y = 51
+cdef int cstart_x2 = 260
+cdef int cstart_y2 = 51
 
 SCREEN_SIZE = (521, 313) 
 pygame.init()
@@ -136,7 +136,7 @@ def index_to_chess_surface(int index):
     elif 31 == index:
         return chess_rk
         
-cpdef int index_to_chess_value(int index):
+cdef int index_to_chess_value(int index):
     if 0 <= index < 5:
         return 1
     elif index < 7:
@@ -166,7 +166,7 @@ cpdef int index_to_chess_value(int index):
     elif 31 == index:
         return 7
         
-cpdef int index_to_color(int index):
+cdef int index_to_color(int index):
     if 0 <= index < 16:
         return 0
     else:

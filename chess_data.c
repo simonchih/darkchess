@@ -1144,13 +1144,30 @@ static CYTHON_INLINE int __Pyx_PyErr_GivenExceptionMatches2(PyObject *err, PyObj
 /* CheckBinaryVersion.proto */
 static int __Pyx_check_binary_version(void);
 
+/* PyObjectSetAttrStr.proto */
+#if CYTHON_USE_TYPE_SLOTS
+#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
+#else
+#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
+#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
+#endif
+
+/* VoidPtrExport.proto */
+static int __Pyx_ExportVoidPtr(PyObject *name, void *p, const char *sig);
+
+/* FunctionExport.proto */
+static int __Pyx_ExportFunction(const char *name, void (*f)(void), const char *sig);
+
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
 /* Module declarations from 'chess_data' */
-static int __pyx_f_10chess_data_index_to_chess_value(int, int __pyx_skip_dispatch); /*proto*/
-static int __pyx_f_10chess_data_index_to_color(int, int __pyx_skip_dispatch); /*proto*/
+static int __pyx_v_10chess_data_cstart_x;
+static int __pyx_v_10chess_data_cstart_y;
+static int __pyx_v_10chess_data_cstart_x2;
+static int __pyx_v_10chess_data_cstart_y2;
 #define __Pyx_MODULE_NAME "chess_data"
 extern int __pyx_module_is_main_chess_data;
 int __pyx_module_is_main_chess_data = 0;
@@ -1185,6 +1202,7 @@ static const char __pyx_k_chess_rp[] = "chess_rp";
 static const char __pyx_k_chess_rr[] = "chess_rr";
 static const char __pyx_k_cstart_x[] = "cstart_x";
 static const char __pyx_k_cstart_y[] = "cstart_y";
+static const char __pyx_k_pyx_capi[] = "__pyx_capi__";
 static const char __pyx_k_set_icon[] = "set_icon";
 static const char __pyx_k_set_mode[] = "set_mode";
 static const char __pyx_k_chess_bas[] = "chess_bas";
@@ -1386,6 +1404,7 @@ static PyObject *__pyx_n_s_load;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_pygame;
+static PyObject *__pyx_n_s_pyx_capi;
 static PyObject *__pyx_n_s_screen;
 static PyObject *__pyx_n_s_set_caption;
 static PyObject *__pyx_n_s_set_icon;
@@ -1394,9 +1413,7 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_value;
 static PyObject *__pyx_pf_10chess_data_index_to_chess_select(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
 static PyObject *__pyx_pf_10chess_data_2index_to_chess_surface(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
-static PyObject *__pyx_pf_10chess_data_4index_to_chess_value(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
-static PyObject *__pyx_pf_10chess_data_6index_to_color(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
-static PyObject *__pyx_pf_10chess_data_8color_value_to_index(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_color, int __pyx_v_value, PyObject *__pyx_v_bvalue_num); /* proto */
+static PyObject *__pyx_pf_10chess_data_4color_value_to_index(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_color, int __pyx_v_value, PyObject *__pyx_v_bvalue_num); /* proto */
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_4;
@@ -1413,9 +1430,6 @@ static PyObject *__pyx_int_26;
 static PyObject *__pyx_int_28;
 static PyObject *__pyx_int_30;
 static PyObject *__pyx_int_32;
-static PyObject *__pyx_int_34;
-static PyObject *__pyx_int_51;
-static PyObject *__pyx_int_260;
 static PyObject *__pyx_int_313;
 static PyObject *__pyx_int_521;
 static PyObject *__pyx_tuple_;
@@ -2452,7 +2466,7 @@ static PyObject *__pyx_pf_10chess_data_2index_to_chess_surface(CYTHON_UNUSED PyO
  *     elif 31 == index:
  *         return chess_rk             # <<<<<<<<<<<<<<
  * 
- * cpdef int index_to_chess_value(int index):
+ * cdef int index_to_chess_value(int index):
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_chess_rk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
@@ -2494,13 +2508,12 @@ static PyObject *__pyx_pf_10chess_data_2index_to_chess_surface(CYTHON_UNUSED PyO
 /* "chess_data.pyx":139
  *         return chess_rk
  * 
- * cpdef int index_to_chess_value(int index):             # <<<<<<<<<<<<<<
+ * cdef int index_to_chess_value(int index):             # <<<<<<<<<<<<<<
  *     if 0 <= index < 5:
  *         return 1
  */
 
-static PyObject *__pyx_pw_10chess_data_5index_to_chess_value(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -2509,7 +2522,7 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
 
   /* "chess_data.pyx":140
  * 
- * cpdef int index_to_chess_value(int index):
+ * cdef int index_to_chess_value(int index):
  *     if 0 <= index < 5:             # <<<<<<<<<<<<<<
  *         return 1
  *     elif index < 7:
@@ -2522,7 +2535,7 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
   if (__pyx_t_2) {
 
     /* "chess_data.pyx":141
- * cpdef int index_to_chess_value(int index):
+ * cdef int index_to_chess_value(int index):
  *     if 0 <= index < 5:
  *         return 1             # <<<<<<<<<<<<<<
  *     elif index < 7:
@@ -2533,7 +2546,7 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
 
     /* "chess_data.pyx":140
  * 
- * cpdef int index_to_chess_value(int index):
+ * cdef int index_to_chess_value(int index):
  *     if 0 <= index < 5:             # <<<<<<<<<<<<<<
  *         return 1
  *     elif index < 7:
@@ -2907,7 +2920,7 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
  *     elif 31 == index:
  *         return 7             # <<<<<<<<<<<<<<
  * 
- * cpdef int index_to_color(int index):
+ * cdef int index_to_color(int index):
  */
     __pyx_r = 7;
     goto __pyx_L0;
@@ -2924,7 +2937,7 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
   /* "chess_data.pyx":139
  *         return chess_rk
  * 
- * cpdef int index_to_chess_value(int index):             # <<<<<<<<<<<<<<
+ * cdef int index_to_chess_value(int index):             # <<<<<<<<<<<<<<
  *     if 0 <= index < 5:
  *         return 1
  */
@@ -2936,62 +2949,15 @@ static int __pyx_f_10chess_data_index_to_chess_value(int __pyx_v_index, CYTHON_U
   return __pyx_r;
 }
 
-/* Python wrapper */
-static PyObject *__pyx_pw_10chess_data_5index_to_chess_value(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static PyObject *__pyx_pw_10chess_data_5index_to_chess_value(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
-  int __pyx_v_index;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("index_to_chess_value (wrapper)", 0);
-  assert(__pyx_arg_index); {
-    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("chess_data.index_to_chess_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10chess_data_4index_to_chess_value(__pyx_self, ((int)__pyx_v_index));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10chess_data_4index_to_chess_value(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("index_to_chess_value", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_10chess_data_index_to_chess_value(__pyx_v_index, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("chess_data.index_to_chess_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
 /* "chess_data.pyx":169
  *         return 7
  * 
- * cpdef int index_to_color(int index):             # <<<<<<<<<<<<<<
+ * cdef int index_to_color(int index):             # <<<<<<<<<<<<<<
  *     if 0 <= index < 16:
  *         return 0
  */
 
-static PyObject *__pyx_pw_10chess_data_7index_to_color(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -3000,7 +2966,7 @@ static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index, CYTHON_UNUSED 
 
   /* "chess_data.pyx":170
  * 
- * cpdef int index_to_color(int index):
+ * cdef int index_to_color(int index):
  *     if 0 <= index < 16:             # <<<<<<<<<<<<<<
  *         return 0
  *     else:
@@ -3013,7 +2979,7 @@ static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index, CYTHON_UNUSED 
   if (__pyx_t_2) {
 
     /* "chess_data.pyx":171
- * cpdef int index_to_color(int index):
+ * cdef int index_to_color(int index):
  *     if 0 <= index < 16:
  *         return 0             # <<<<<<<<<<<<<<
  *     else:
@@ -3024,7 +2990,7 @@ static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index, CYTHON_UNUSED 
 
     /* "chess_data.pyx":170
  * 
- * cpdef int index_to_color(int index):
+ * cdef int index_to_color(int index):
  *     if 0 <= index < 16:             # <<<<<<<<<<<<<<
  *         return 0
  *     else:
@@ -3046,59 +3012,13 @@ static int __pyx_f_10chess_data_index_to_color(int __pyx_v_index, CYTHON_UNUSED 
   /* "chess_data.pyx":169
  *         return 7
  * 
- * cpdef int index_to_color(int index):             # <<<<<<<<<<<<<<
+ * cdef int index_to_color(int index):             # <<<<<<<<<<<<<<
  *     if 0 <= index < 16:
  *         return 0
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10chess_data_7index_to_color(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static PyObject *__pyx_pw_10chess_data_7index_to_color(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
-  int __pyx_v_index;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("index_to_color (wrapper)", 0);
-  assert(__pyx_arg_index); {
-    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("chess_data.index_to_color", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10chess_data_6index_to_color(__pyx_self, ((int)__pyx_v_index));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10chess_data_6index_to_color(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("index_to_color", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_10chess_data_index_to_color(__pyx_v_index, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("chess_data.index_to_color", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
@@ -3112,9 +3032,9 @@ static PyObject *__pyx_pf_10chess_data_6index_to_color(CYTHON_UNUSED PyObject *_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10chess_data_9color_value_to_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_10chess_data_9color_value_to_index = {"color_value_to_index", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10chess_data_9color_value_to_index, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10chess_data_9color_value_to_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_10chess_data_5color_value_to_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_10chess_data_5color_value_to_index = {"color_value_to_index", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10chess_data_5color_value_to_index, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10chess_data_5color_value_to_index(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_color = 0;
   int __pyx_v_value;
   PyObject *__pyx_v_bvalue_num = 0;
@@ -3177,14 +3097,14 @@ static PyObject *__pyx_pw_10chess_data_9color_value_to_index(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10chess_data_8color_value_to_index(__pyx_self, __pyx_v_color, __pyx_v_value, __pyx_v_bvalue_num);
+  __pyx_r = __pyx_pf_10chess_data_4color_value_to_index(__pyx_self, __pyx_v_color, __pyx_v_value, __pyx_v_bvalue_num);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10chess_data_8color_value_to_index(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_color, int __pyx_v_value, PyObject *__pyx_v_bvalue_num) {
+static PyObject *__pyx_pf_10chess_data_4color_value_to_index(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_color, int __pyx_v_value, PyObject *__pyx_v_bvalue_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3739,8 +3659,6 @@ static PyObject *__pyx_pf_10chess_data_8color_value_to_index(CYTHON_UNUSED PyObj
 }
 
 static PyMethodDef __pyx_methods[] = {
-  {"index_to_chess_value", (PyCFunction)__pyx_pw_10chess_data_5index_to_chess_value, METH_O, 0},
-  {"index_to_color", (PyCFunction)__pyx_pw_10chess_data_7index_to_color, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3898,6 +3816,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_pygame, __pyx_k_pygame, sizeof(__pyx_k_pygame), 0, 0, 1, 1},
+  {&__pyx_n_s_pyx_capi, __pyx_k_pyx_capi, sizeof(__pyx_k_pyx_capi), 0, 0, 1, 1},
   {&__pyx_n_s_screen, __pyx_k_screen, sizeof(__pyx_k_screen), 0, 0, 1, 1},
   {&__pyx_n_s_set_caption, __pyx_k_set_caption, sizeof(__pyx_k_set_caption), 0, 0, 1, 1},
   {&__pyx_n_s_set_icon, __pyx_k_set_icon, sizeof(__pyx_k_set_icon), 0, 0, 1, 1},
@@ -3915,7 +3834,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "chess_data.pyx":8
- * cstart_y2 = 51
+ * cdef int cstart_y2 = 51
  * 
  * SCREEN_SIZE = (521, 313)             # <<<<<<<<<<<<<<
  * pygame.init()
@@ -4007,9 +3926,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   __pyx_int_28 = PyInt_FromLong(28); if (unlikely(!__pyx_int_28)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_30 = PyInt_FromLong(30); if (unlikely(!__pyx_int_30)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_32 = PyInt_FromLong(32); if (unlikely(!__pyx_int_32)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_34 = PyInt_FromLong(34); if (unlikely(!__pyx_int_34)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_51 = PyInt_FromLong(51); if (unlikely(!__pyx_int_51)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_260 = PyInt_FromLong(260); if (unlikely(!__pyx_int_260)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_313 = PyInt_FromLong(313); if (unlikely(!__pyx_int_313)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_521 = PyInt_FromLong(521); if (unlikely(!__pyx_int_521)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
@@ -4037,16 +3953,28 @@ static int __Pyx_modinit_variable_export_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_variable_export_code", 0);
   /*--- Variable export code ---*/
+  if (__Pyx_ExportVoidPtr(__pyx_n_s_cstart_x, (void *)&__pyx_v_10chess_data_cstart_x, "int") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportVoidPtr(__pyx_n_s_cstart_y, (void *)&__pyx_v_10chess_data_cstart_y, "int") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportVoidPtr(__pyx_n_s_cstart_x2, (void *)&__pyx_v_10chess_data_cstart_x2, "int") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportVoidPtr(__pyx_n_s_cstart_y2, (void *)&__pyx_v_10chess_data_cstart_y2, "int") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_modinit_function_export_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_function_export_code", 0);
   /*--- Function export code ---*/
+  if (__Pyx_ExportFunction("index_to_chess_value", (void (*)(void))__pyx_f_10chess_data_index_to_chess_value, "int (int)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("index_to_color", (void (*)(void))__pyx_f_10chess_data_index_to_color, "int (int)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_modinit_type_init_code(void) {
@@ -4269,8 +4197,8 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_InitCachedConstants() < 0) goto __pyx_L1_error;
   /*--- Global type/function init code ---*/
   (void)__Pyx_modinit_global_init_code();
-  (void)__Pyx_modinit_variable_export_code();
-  (void)__Pyx_modinit_function_export_code();
+  if (unlikely(__Pyx_modinit_variable_export_code() != 0)) goto __pyx_L1_error;
+  if (unlikely(__Pyx_modinit_function_export_code() != 0)) goto __pyx_L1_error;
   (void)__Pyx_modinit_type_init_code();
   (void)__Pyx_modinit_type_import_code();
   (void)__Pyx_modinit_variable_import_code();
@@ -4283,7 +4211,7 @@ if (!__Pyx_RefNanny) {
   /* "chess_data.pyx":1
  * import pygame             # <<<<<<<<<<<<<<
  * 
- * cstart_x = 34
+ * cdef int cstart_x = 34
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_pygame, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4293,41 +4221,41 @@ if (!__Pyx_RefNanny) {
   /* "chess_data.pyx":3
  * import pygame
  * 
- * cstart_x = 34             # <<<<<<<<<<<<<<
- * cstart_y = 51
- * cstart_x2 = 260
+ * cdef int cstart_x = 34             # <<<<<<<<<<<<<<
+ * cdef int cstart_y = 51
+ * cdef int cstart_x2 = 260
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cstart_x, __pyx_int_34) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_v_10chess_data_cstart_x = 34;
 
   /* "chess_data.pyx":4
  * 
- * cstart_x = 34
- * cstart_y = 51             # <<<<<<<<<<<<<<
- * cstart_x2 = 260
- * cstart_y2 = 51
+ * cdef int cstart_x = 34
+ * cdef int cstart_y = 51             # <<<<<<<<<<<<<<
+ * cdef int cstart_x2 = 260
+ * cdef int cstart_y2 = 51
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cstart_y, __pyx_int_51) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_v_10chess_data_cstart_y = 51;
 
   /* "chess_data.pyx":5
- * cstart_x = 34
- * cstart_y = 51
- * cstart_x2 = 260             # <<<<<<<<<<<<<<
- * cstart_y2 = 51
+ * cdef int cstart_x = 34
+ * cdef int cstart_y = 51
+ * cdef int cstart_x2 = 260             # <<<<<<<<<<<<<<
+ * cdef int cstart_y2 = 51
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cstart_x2, __pyx_int_260) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_v_10chess_data_cstart_x2 = 0x104;
 
   /* "chess_data.pyx":6
- * cstart_y = 51
- * cstart_x2 = 260
- * cstart_y2 = 51             # <<<<<<<<<<<<<<
+ * cdef int cstart_y = 51
+ * cdef int cstart_x2 = 260
+ * cdef int cstart_y2 = 51             # <<<<<<<<<<<<<<
  * 
  * SCREEN_SIZE = (521, 313)
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cstart_y2, __pyx_int_51) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_v_10chess_data_cstart_y2 = 51;
 
   /* "chess_data.pyx":8
- * cstart_y2 = 51
+ * cdef int cstart_y2 = 51
  * 
  * SCREEN_SIZE = (521, 313)             # <<<<<<<<<<<<<<
  * pygame.init()
@@ -5601,7 +5529,7 @@ if (!__Pyx_RefNanny) {
  *     if 0 == bvalue_num[color][value]:
  *         return None
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_10chess_data_9color_value_to_index, NULL, __pyx_n_s_chess_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_10chess_data_5color_value_to_index, NULL, __pyx_n_s_chess_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_color_value_to_index, __pyx_t_2) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5609,7 +5537,7 @@ if (!__Pyx_RefNanny) {
   /* "chess_data.pyx":1
  * import pygame             # <<<<<<<<<<<<<<
  * 
- * cstart_x = 34
+ * cdef int cstart_x = 34
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7438,6 +7366,88 @@ static int __Pyx_check_binary_version(void) {
         return PyErr_WarnEx(NULL, message, 1);
     }
     return 0;
+}
+
+/* PyObjectSetAttrStr */
+#if CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_setattro))
+        return tp->tp_setattro(obj, attr_name, value);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_setattr))
+        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
+#endif
+    return PyObject_SetAttr(obj, attr_name, value);
+}
+#endif
+
+/* VoidPtrExport */
+static int __Pyx_ExportVoidPtr(PyObject *name, void *p, const char *sig) {
+    PyObject *d;
+    PyObject *cobj = 0;
+    d = PyDict_GetItem(__pyx_d, __pyx_n_s_pyx_capi);
+    Py_XINCREF(d);
+    if (!d) {
+        d = PyDict_New();
+        if (!d)
+            goto bad;
+        if (__Pyx_PyObject_SetAttrStr(__pyx_m, __pyx_n_s_pyx_capi, d) < 0)
+            goto bad;
+    }
+#if PY_VERSION_HEX >= 0x02070000
+    cobj = PyCapsule_New(p, sig, 0);
+#else
+    cobj = PyCObject_FromVoidPtrAndDesc(p, (void *)sig, 0);
+#endif
+    if (!cobj)
+        goto bad;
+    if (PyDict_SetItem(d, name, cobj) < 0)
+        goto bad;
+    Py_DECREF(cobj);
+    Py_DECREF(d);
+    return 0;
+bad:
+    Py_XDECREF(cobj);
+    Py_XDECREF(d);
+    return -1;
+}
+
+/* FunctionExport */
+static int __Pyx_ExportFunction(const char *name, void (*f)(void), const char *sig) {
+    PyObject *d = 0;
+    PyObject *cobj = 0;
+    union {
+        void (*fp)(void);
+        void *p;
+    } tmp;
+    d = PyObject_GetAttrString(__pyx_m, (char *)"__pyx_capi__");
+    if (!d) {
+        PyErr_Clear();
+        d = PyDict_New();
+        if (!d)
+            goto bad;
+        Py_INCREF(d);
+        if (PyModule_AddObject(__pyx_m, (char *)"__pyx_capi__", d) < 0)
+            goto bad;
+    }
+    tmp.fp = f;
+#if PY_VERSION_HEX >= 0x02070000
+    cobj = PyCapsule_New(tmp.p, sig, 0);
+#else
+    cobj = PyCObject_FromVoidPtrAndDesc(tmp.p, (void *)sig, 0);
+#endif
+    if (!cobj)
+        goto bad;
+    if (PyDict_SetItemString(d, name, cobj) < 0)
+        goto bad;
+    Py_DECREF(cobj);
+    Py_DECREF(d);
+    return 0;
+bad:
+    Py_XDECREF(cobj);
+    Py_XDECREF(d);
+    return -1;
 }
 
 /* InitStrings */

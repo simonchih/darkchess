@@ -14,6 +14,7 @@ import threading
 from pygame.locals import *
 from sys import exit
 from chess import *
+from chess_data cimport *
 
 background_image_filename = 'Image/SHEET.gif'
 image_new        = 'Image/shield-and-swords.gif'
