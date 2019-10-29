@@ -502,7 +502,7 @@ def near(i, j):
     
     return n_cor
     
-def mouse_position_to_block(mx, my, chess_back):
+def mouse_position_to_block(int mx, int my, chess_back):
     global cstart_x
     global cstart_y
     global cstart_x2
@@ -523,7 +523,7 @@ def near_max_value(open, org, a_map, my_chess):
         return None
     (y, x) = open
     near_cor = near(y, x)
-    max = 0
+    cdef int max = 0
     for kk in near_cor:
         if kk == org:
             continue
@@ -543,7 +543,7 @@ def near_max_value_not_consider_com_color(open, org, a_map, my_chess):
         return None
     (y, x) = open
     near_cor = near(y, x)
-    max = 0
+    cdef int max = 0
     for kk in near_cor:
         if kk == org:
             continue
@@ -597,7 +597,7 @@ def scan_player_bomb(a_map, my_chess):
 def bomb_will_eat(org, a_map, my_chess):
     if None == org:
         return None
-    i = random.randint(0, 3)
+    cdef int i = random.randint(0, 3)
     
     for i2 in range(0, 4):
         n = (i+i2)%4
@@ -667,7 +667,7 @@ def bomb_will_eat(org, a_map, my_chess):
 def bomb_may_eat(org, a_map, my_chess):
     if None == org:
         return None
-    i = random.randint(0, 3)
+    cdef int i = random.randint(0, 3)
     
     for i2 in range(0, 4):
         n = (i+i2)%4
@@ -821,7 +821,7 @@ def select_back_chess(a_map, my_chess, org = None):
             return None
 
 def check_back_exist(a_map, my_chess):
-    back_exist = 0
+    cdef int back_exist = 0
     for i in range(0, 4):
         for j in range(0, 8):
             if a_map[i][j] != None:
@@ -831,7 +831,7 @@ def check_back_exist(a_map, my_chess):
     return back_exist
 
 # return (i, j) won't be (None, None) if max_eat_number = -33
-def calc_good_backchess(y0, y1, y2, x0, x1, x2, a_map, my_chess, max_eat_number = -33):
+def calc_good_backchess(int y0, int y1, int y2, int x0, int x1, int x2, a_map, my_chess, int max_eat_number = -33):
     global back_num
     
     (i, j) = (None, None)
@@ -1019,7 +1019,7 @@ def chess_ai():
         print("step = %d" % step)
         turn_id = 2
         
-def short_dist(i, j, dist, a_map):
+def short_dist(int i, int j, dist, a_map):
     d = 0
     ncor = near(i, j)
     for nc in ncor:
@@ -1860,7 +1860,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, pt, div, ind, alpha
         #    score = sc
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color)
         if 1 == pt and mscore > 0:
-            score = sc + div * 4 * mscore
+            score = sc + div * 2 * mscore
         else:
             score = sc + div * mscore
         
