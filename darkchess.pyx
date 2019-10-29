@@ -70,15 +70,33 @@ chess_index = [0] * 32
 main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 
-mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+cdef int mark[4][8]
+mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+#mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+
+cdef int cannon_mark[4][8]
+cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+#cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 
 # back_value_num[0, 1] color, index 0: reserved, index 1~7, the back chess number of chess value. (1-based)
 # e.g. back_value_num[0][3] = 2, color=0, chess value 3 have 2 back pieces
-back_value_num = [ [0] * 8, [0] * 8 ]
+cdef int back_value_num[2][8]
+back_value_num[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+back_value_num[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+#back_value_num = [ [0] * 8, [0] * 8 ]
 
-king_live = [1, 1]
-chess_num = [16, 16]
+cdef int king_live[2]
+king_live[:] = [1, 1]
+
+cdef int chess_num[2]
+chess_num[:] = [16, 16]
+
 com_mv_map = [0, 0]
 cdef int back_num = 32
 #com_will_eat_chess = []
@@ -1034,9 +1052,9 @@ def short_dist(int i, int j, dist, a_map):
     
     return d
         
-def calc_move_score(max_value, max_dist, my_value):
+cdef double calc_move_score(double max_value, double max_dist, double my_value):
     
-    mvalue = float(my_value)/11
+    mvalue = my_value/11
     
     if 9 == max_value:
         
@@ -1045,20 +1063,20 @@ def calc_move_score(max_value, max_dist, my_value):
                 # return 3.5 - 0.2 * max_dist + 0.7
                 return 4.2 - 0.2 * max_dist
             else:
-                return 0.7 - float(max_dist)/1000
+                return 0.7 - max_dist/1000
         else:
             # impossible
             return 0
     else:
         if max_value != 0:
-            if float(max_value)/2 > 0.2 * max_dist:
-                return float(max_value)/2 - 0.2 * max_dist + mvalue
+            if max_value/2 > 0.2 * max_dist:
+                return max_value/2 - 0.2 * max_dist + mvalue
             else:
-                return mvalue - float(max_dist)/1000
+                return mvalue - max_dist/1000
         else:
             return -0.1
         
-def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j, dist=1):
+def move_max_value(int orgx, int orgy, int destx, int desty, my_chess, a_map, int org_value, int owner_color, int i, int j, int dist=1):
     global max_value
     global mark
     #global max_cor
@@ -1173,7 +1191,7 @@ def move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
 
 # return 0: NOT caca, 1: caca, 2:equal        
-def caca(org, dest, my_chess, a_map, owner_color):        
+cdef int caca(org, dest, my_chess, a_map, int owner_color):        
     if org == None:
         return 0
     elif owner_color == player_color:
@@ -1255,7 +1273,7 @@ def caca(org, dest, my_chess, a_map, owner_color):
     return 0
         
         
-def near2_have_same_value(org, my_chess, a_map, owner_color):
+cdef int near2_have_same_value(org, my_chess, a_map, int owner_color):
     if org == None:
         return 0
     elif owner_color == player_color:
@@ -1456,8 +1474,13 @@ def save_step_and_break_long_capture(org, dest, a_map, my_chess):
             if 0 == b:
                 br += 1
 
-def calc_cannon_mark(my_chess, a_map, owner_color):
-    cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+def calc_cannon_mark(my_chess, a_map, int owner_color):
+    #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+    cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+    
     find_player_cannon_num = 0
     jump = 0
     
@@ -1506,7 +1529,7 @@ def calc_cannon_mark(my_chess, a_map, owner_color):
     return cannon_mark
 
                 
-def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
+cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1):
     global max_value
     global mark
     #global max_cor
@@ -1572,7 +1595,12 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
         max_value = 0
         max_dist = 32
         #max_cor = None
-        mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+        #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
+        mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
                 
         mvalue = 0
@@ -1607,7 +1635,8 @@ def move_score(org, dest, my_chess, a_map, owner_color, step = 1):
         
         return calc_move_score(max_value, max_dist, mvalue) + ndead
     
-    elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
+    #elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
+    else:
         return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
         #if owner_color == com_color and 1 == owner_next_can_eat_dead_p(org, org, my_chess, a_map, owner_color) and 0 == stand_will_dead_pity((orgy, orgx), my_chess, a_map, com_color):
         #    if (orgy, orgx) in will_eat_escape_chess:
@@ -1690,7 +1719,7 @@ def move(org, dest, a_map, a_ch):
     
     return a_map, a_ch    
     
-def cant_move(a_map, a_ch, owner_color):
+cdef int cant_move(a_map, a_ch, int owner_color):
     all_chess_move(a_map, a_ch)
     for chr in a_ch:
         for ch in chr:
@@ -1699,7 +1728,7 @@ def cant_move(a_map, a_ch, owner_color):
                     return 0
     return 1
 
-def temp_clac_num_back():
+cdef int temp_clac_num_back():
     cb = 0
     for chr in my_ch:
         for ch in chr:
@@ -1714,8 +1743,8 @@ def com_think(a_map, a_ch):
 
     m = []
     
-    min_score = 2000
-    sc = 0
+    cdef double min_score = 2000
+    cdef double sc = 0
     
     all_chess_move(a_map, a_ch)
     
@@ -1807,12 +1836,12 @@ def com_think(a_map, a_ch):
 # extend one_turn to 2-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player
-def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, pt, div, ind, alpha, beta):
+def one_turn(a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta):
     global open_score
     global final_score
     global gb_m2
     
-    max_p_score = -2000
+    cdef double max_p_score = -2000
     
     m2 = []
     m3 = []
@@ -2019,7 +2048,7 @@ def one_turn(a_map, a_ch, mm, owner_color, nexti, nextj, sc, pt, div, ind, alpha
     #return m2, af_map, af_ch
 
 # dest_will_be_dead ...
-def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
+cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
     n = a_map[org[0]][org[1]]
     m = a_map[dest[0]][dest[1]]
     if None == n:
@@ -2046,7 +2075,7 @@ def dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, opp_color):
     return 0
 
 # will_be_dead    
-def will_dead(org, a_ch, a_map, opp_color):
+cdef int will_dead(org, a_ch, a_map, int opp_color):
     n = a_map[org[0]][org[1]]
     if None == n:
         return 0
@@ -2061,7 +2090,7 @@ def will_dead(org, a_ch, a_map, opp_color):
                         return 1
     return 0
 
-def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):    
+cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):    
     opp_color = 1-owner_color
     can_eat = 0
     af_map = copy.deepcopy(a_map)
@@ -2085,7 +2114,7 @@ def will_eat2_more(nexti, nextj, a_ch, a_map, owner_color):
     else:
         return 0
 
-def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
+cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
     opp_color = 1-owner_color
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
@@ -2120,7 +2149,7 @@ def owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, owner_color):
         return escape_step/100
 
 # stand_will_be_dead_pity    
-def stand_will_dead_pity(org, a_ch, a_map, owner_color):
+cdef int stand_will_dead_pity(org, a_ch, a_map, int owner_color):
     opp_color = 1-owner_color
     n = a_map[org[0]][org[1]]
     if None == n:
@@ -2138,7 +2167,7 @@ def stand_will_dead_pity(org, a_ch, a_map, owner_color):
     return 0
 
 # will_be_dead_pity...
-def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
+cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_color):
     global king_live
     
     (y, x) = nexti
@@ -2203,7 +2232,7 @@ def will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, owner_color):
     return pity
 
 # will_be_dead_pity...
-def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
+def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
     global king_live
     
     if None == nexti or None == nextj:
@@ -2274,7 +2303,7 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, owner_color):
     return pity
 
 # will_be_dead_pity    
-def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
+def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
     global king_live
     
     if None == nexti or None == nextj:
@@ -2364,7 +2393,7 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, owner_color):
                             break     
     return pity
         
-cdef int eating_value_to_score(int value, king, int owner_color):
+cdef int eating_value_to_score(int value, int king[], int owner_color):
     if 1 == value:
         if 1 == king[owner_color]:
             return 24
@@ -2470,7 +2499,7 @@ def main():
         com_mv = 0
         com_moving_end = 1
         game_start = 1
-        chess_num = [16, 16]
+        chess_num[:] = [16, 16]
         back_num = 32
         break_long_capture_dest = []
         break_long_capture_org = []
@@ -2478,7 +2507,9 @@ def main():
         move_step = [None, None, None, None]
         sindex = 0
         step = 0
-        back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
+        back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]
+        back_value_num[1] = [0, 5, 2, 2, 2, 2, 2, 1]
+        #back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
         
         player_first = random.randint(0, 1)
         
