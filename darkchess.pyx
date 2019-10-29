@@ -71,24 +71,24 @@ main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 
 cdef int mark[4][8]
-mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
-mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
-mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
-mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
 #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 
 cdef int cannon_mark[4][8]
-cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
-cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
-cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
-cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
 #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
 
 # back_value_num[0, 1] color, index 0: reserved, index 1~7, the back chess number of chess value. (1-based)
 # e.g. back_value_num[0][3] = 2, color=0, chess value 3 have 2 back pieces
 cdef int back_value_num[2][8]
-back_value_num[0] = [0, 0, 0, 0, 0, 0, 0, 0]
-back_value_num[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+back_value_num[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+back_value_num[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
 #back_value_num = [ [0] * 8, [0] * 8 ]
 
 cdef int king_live[2]
@@ -1476,10 +1476,10 @@ def save_step_and_break_long_capture(org, dest, a_map, my_chess):
 
 def calc_cannon_mark(my_chess, a_map, int owner_color):
     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-    cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
-    cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
-    cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
-    cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+    cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
     
     find_player_cannon_num = 0
     jump = 0
@@ -1596,10 +1596,10 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
         max_dist = 32
         #max_cor = None
         #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
-        mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
-        mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
-        mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
-        mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+        mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
 
         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
                 
@@ -2507,8 +2507,8 @@ def main():
         move_step = [None, None, None, None]
         sindex = 0
         step = 0
-        back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]
-        back_value_num[1] = [0, 5, 2, 2, 2, 2, 2, 1]
+        back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]
+        back_value_num[1][:] = [0, 5, 2, 2, 2, 2, 2, 1]
         #back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
         
         player_first = random.randint(0, 1)

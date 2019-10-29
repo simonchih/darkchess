@@ -39078,7 +39078,7 @@ static PyObject *__pyx_pf_9darkchess_50save_step_and_break_long_capture(CYTHON_U
  * 
  * def calc_cannon_mark(my_chess, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
 
 /* Python wrapper */
@@ -39185,9 +39185,9 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
   /* "darkchess.pyx":1479
  * def calc_cannon_mark(my_chess, a_map, int owner_color):
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *     cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *     cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_1[0] = 0;
   __pyx_t_1[1] = 0;
@@ -39201,10 +39201,10 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
 
   /* "darkchess.pyx":1480
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *     cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *     cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_2[0] = 0;
   __pyx_t_2[1] = 0;
@@ -39217,10 +39217,10 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
   memcpy(&((__pyx_v_9darkchess_cannon_mark[1])[0]), __pyx_t_2, sizeof((__pyx_v_9darkchess_cannon_mark[1])[0]) * (8));
 
   /* "darkchess.pyx":1481
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *     cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *     cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * 
  */
   __pyx_t_3[0] = 0;
@@ -39234,9 +39234,9 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
   memcpy(&((__pyx_v_9darkchess_cannon_mark[2])[0]), __pyx_t_3, sizeof((__pyx_v_9darkchess_cannon_mark[2])[0]) * (8));
 
   /* "darkchess.pyx":1482
- *     cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- *     cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *     cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
  * 
  *     find_player_cannon_num = 0
  */
@@ -39251,7 +39251,7 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
   memcpy(&((__pyx_v_9darkchess_cannon_mark[3])[0]), __pyx_t_4, sizeof((__pyx_v_9darkchess_cannon_mark[3])[0]) * (8));
 
   /* "darkchess.pyx":1484
- *     cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * 
  *     find_player_cannon_num = 0             # <<<<<<<<<<<<<<
  *     jump = 0
@@ -40351,7 +40351,7 @@ static PyObject *__pyx_pf_9darkchess_52calc_cannon_mark(CYTHON_UNUSED PyObject *
  * 
  * def calc_cannon_mark(my_chess, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
 
   /* function exit code */
@@ -41758,9 +41758,9 @@ static double __pyx_f_9darkchess_move_score(PyObject *__pyx_v_org, PyObject *__p
     /* "darkchess.pyx":1599
  *         #max_cor = None
  *         #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *         mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *         mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *         mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
     __pyx_t_11[0] = 0;
     __pyx_t_11[1] = 0;
@@ -41774,10 +41774,10 @@ static double __pyx_f_9darkchess_move_score(PyObject *__pyx_v_org, PyObject *__p
 
     /* "darkchess.pyx":1600
  *         #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *         mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *         mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *         mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
     __pyx_t_12[0] = 0;
     __pyx_t_12[1] = 0;
@@ -41790,10 +41790,10 @@ static double __pyx_f_9darkchess_move_score(PyObject *__pyx_v_org, PyObject *__p
     memcpy(&((__pyx_v_9darkchess_mark[1])[0]), __pyx_t_12, sizeof((__pyx_v_9darkchess_mark[1])[0]) * (8));
 
     /* "darkchess.pyx":1601
- *         mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- *         mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *         mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * 
  */
     __pyx_t_13[0] = 0;
@@ -41807,9 +41807,9 @@ static double __pyx_f_9darkchess_move_score(PyObject *__pyx_v_org, PyObject *__p
     memcpy(&((__pyx_v_9darkchess_mark[2])[0]), __pyx_t_13, sizeof((__pyx_v_9darkchess_mark[2])[0]) * (8));
 
     /* "darkchess.pyx":1602
- *         mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- *         mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ *         mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
  * 
  *         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value
  */
@@ -41824,7 +41824,7 @@ static double __pyx_f_9darkchess_move_score(PyObject *__pyx_v_org, PyObject *__p
     memcpy(&((__pyx_v_9darkchess_mark[3])[0]), __pyx_t_14, sizeof((__pyx_v_9darkchess_mark[3])[0]) * (8));
 
     /* "darkchess.pyx":1604
- *         mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *         mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * 
  *         org_value = my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value             # <<<<<<<<<<<<<<
  * 
@@ -62208,7 +62208,7 @@ static PyObject *__pyx_pf_9darkchess_72main(CYTHON_UNUSED PyObject *__pyx_self) 
  *         move_step = [None, None, None, None]
  *         sindex = 0             # <<<<<<<<<<<<<<
  *         step = 0
- *         back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]
+ *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]
  */
     __pyx_v_9darkchess_sindex = 0;
 
@@ -62216,16 +62216,16 @@ static PyObject *__pyx_pf_9darkchess_72main(CYTHON_UNUSED PyObject *__pyx_self) 
  *         move_step = [None, None, None, None]
  *         sindex = 0
  *         step = 0             # <<<<<<<<<<<<<<
- *         back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]
- *         back_value_num[1] = [0, 5, 2, 2, 2, 2, 2, 1]
+ *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]
+ *         back_value_num[1][:] = [0, 5, 2, 2, 2, 2, 2, 1]
  */
     __pyx_v_9darkchess_step = 0;
 
     /* "darkchess.pyx":2510
  *         sindex = 0
  *         step = 0
- *         back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
- *         back_value_num[1] = [0, 5, 2, 2, 2, 2, 2, 1]
+ *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
+ *         back_value_num[1][:] = [0, 5, 2, 2, 2, 2, 2, 1]
  *         #back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
  */
     __pyx_t_3[0] = 0;
@@ -62240,8 +62240,8 @@ static PyObject *__pyx_pf_9darkchess_72main(CYTHON_UNUSED PyObject *__pyx_self) 
 
     /* "darkchess.pyx":2511
  *         step = 0
- *         back_value_num[0] = [0, 5, 2, 2, 2, 2, 2, 1]
- *         back_value_num[1] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
+ *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]
+ *         back_value_num[1][:] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
  *         #back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
  * 
  */
@@ -71497,7 +71497,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * def calc_cannon_mark(my_chess, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_tuple__80 = PyTuple_Pack(11, __pyx_n_s_my_chess, __pyx_n_s_a_map, __pyx_n_s_owner_color, __pyx_n_s_find_player_cannon_num, __pyx_n_s_jump, __pyx_n_s_r, __pyx_n_s_c, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_ii, __pyx_n_s_jj); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 1477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__80);
@@ -73187,9 +73187,9 @@ if (!__Pyx_RefNanny) {
   /* "darkchess.pyx":74
  * 
  * cdef int mark[4][8]
- * mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_17[0] = 0;
   __pyx_t_17[1] = 0;
@@ -73203,10 +73203,10 @@ if (!__Pyx_RefNanny) {
 
   /* "darkchess.pyx":75
  * cdef int mark[4][8]
- * mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_18[0] = 0;
   __pyx_t_18[1] = 0;
@@ -73219,10 +73219,10 @@ if (!__Pyx_RefNanny) {
   memcpy(&((__pyx_v_9darkchess_mark[1])[0]), __pyx_t_18, sizeof((__pyx_v_9darkchess_mark[1])[0]) * (8));
 
   /* "darkchess.pyx":76
- * mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
  */
   __pyx_t_19[0] = 0;
@@ -73236,9 +73236,9 @@ if (!__Pyx_RefNanny) {
   memcpy(&((__pyx_v_9darkchess_mark[2])[0]), __pyx_t_19, sizeof((__pyx_v_9darkchess_mark[2])[0]) * (8));
 
   /* "darkchess.pyx":77
- * mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- * mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
  * #mark = [[0]*8, [0]*8, [0]*8, [0]*8]
  * 
  */
@@ -73255,9 +73255,9 @@ if (!__Pyx_RefNanny) {
   /* "darkchess.pyx":81
  * 
  * cdef int cannon_mark[4][8]
- * cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_21[0] = 0;
   __pyx_t_21[1] = 0;
@@ -73271,10 +73271,10 @@ if (!__Pyx_RefNanny) {
 
   /* "darkchess.pyx":82
  * cdef int cannon_mark[4][8]
- * cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_22[0] = 0;
   __pyx_t_22[1] = 0;
@@ -73287,10 +73287,10 @@ if (!__Pyx_RefNanny) {
   memcpy(&((__pyx_v_9darkchess_cannon_mark[1])[0]), __pyx_t_22, sizeof((__pyx_v_9darkchess_cannon_mark[1])[0]) * (8));
 
   /* "darkchess.pyx":83
- * cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
  */
   __pyx_t_23[0] = 0;
@@ -73304,9 +73304,9 @@ if (!__Pyx_RefNanny) {
   memcpy(&((__pyx_v_9darkchess_cannon_mark[2])[0]), __pyx_t_23, sizeof((__pyx_v_9darkchess_cannon_mark[2])[0]) * (8));
 
   /* "darkchess.pyx":84
- * cannon_mark[1] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[2] = [0, 0, 0, 0, 0, 0, 0, 0]
- * cannon_mark[3] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * cannon_mark[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[2][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * cannon_mark[3][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
  * #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
  * 
  */
@@ -73323,8 +73323,8 @@ if (!__Pyx_RefNanny) {
   /* "darkchess.pyx":90
  * # e.g. back_value_num[0][3] = 2, color=0, chess value 3 have 2 back pieces
  * cdef int back_value_num[2][8]
- * back_value_num[0] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
- * back_value_num[1] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * back_value_num[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * back_value_num[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  * #back_value_num = [ [0] * 8, [0] * 8 ]
  */
   __pyx_t_25[0] = 0;
@@ -73339,8 +73339,8 @@ if (!__Pyx_RefNanny) {
 
   /* "darkchess.pyx":91
  * cdef int back_value_num[2][8]
- * back_value_num[0] = [0, 0, 0, 0, 0, 0, 0, 0]
- * back_value_num[1] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
+ * back_value_num[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
+ * back_value_num[1][:] = [0, 0, 0, 0, 0, 0, 0, 0]             # <<<<<<<<<<<<<<
  * #back_value_num = [ [0] * 8, [0] * 8 ]
  * 
  */
@@ -73768,7 +73768,7 @@ if (!__Pyx_RefNanny) {
  * 
  * def calc_cannon_mark(my_chess, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     #cannon_mark = [[0]*8, [0]*8, [0]*8, [0]*8]
- *     cannon_mark[0] = [0, 0, 0, 0, 0, 0, 0, 0]
+ *     cannon_mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
  */
   __pyx_t_4 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_53calc_cannon_mark, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
