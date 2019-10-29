@@ -1,4 +1,4 @@
 from darkchess import main
 
 if __name__ == "__main__":
-    main()
+    main(AI_vs_AI = 0)

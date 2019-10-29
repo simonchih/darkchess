@@ -57,8 +57,6 @@ final_score = AI_min_score #mini
 gb_m2 = []
 #max_cor = None
 open_score = None
-# 0: human vs AI, 1: AI vs AI
-cdef int AI_vs_AI = 0
 cdef int step = 0
 
 #default chess
@@ -1560,9 +1558,9 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
                     return 7
                 else:
                     return 10
-        elif 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
-            return 8
         elif owner_color == player_color:
+            if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
+                return 8
             return 0
         elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
             if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
@@ -2412,7 +2410,7 @@ cdef int eating_value_to_score(int value, int king[], int owner_color):
     elif 7 == value:
         return 599
 
-def display_font():
+def display_font(int AI_vs_AI = 0):
     
     if 1 == player_win:        
         if 0 == AI_vs_AI:
@@ -2459,8 +2457,9 @@ def clean_back_n1_to_0(a_ch):
             if -1 == ch.back:
                 ch.back = 0
     return a_ch
-    
-def main():
+
+# AI_vs_AI -> 0: human vs AI, 1: AI vs AI    
+def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
     global cstart_x
     global cstart_y
     global cstart_x2
@@ -2655,42 +2654,56 @@ def main():
         
         # Test data 3
         #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
-        #back_num = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 1
         #
-        #chess_num[0] = 16
-        #chess_num[1] = 16
+        #chess_num[0] = 3
+        #chess_num[1] = 4
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
+        #        if 1 == i and 4 == j:
+        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(13, (1, 1))
+        #ch = chess(31, (1, 1))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][1] = ch
         #main_map[1][1] = (1, 1)
         #
-        #ch = chess(15, (2, 2))
+        #ch = chess(9, (1, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][2] = ch
-        #main_map[2][2] = (2, 2)
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
         #
-        #ch = chess(29, (1, 3))
+        #ch = chess(10, (2, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][3] = ch
-        #main_map[1][3] = (1, 3) 
+        #main_chess[2][4] = ch
+        #main_map[2][4] = (2, 4) 
         #
-        #ch = chess(16, (0, 7))
+        #ch = chess(27, (2, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][7] = ch
-        #main_map[0][7] = (0, 7) 
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5) 
+        #
+        #ch = chess(29, (3, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
+        #
+        #ch = chess(16, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
         
         #End Test data 3
         
@@ -2757,7 +2770,7 @@ def main():
             screen.blit(background, (0,0))
             screen.blit(new_game, (new_game_iconi, new_game_iconj))
             
-            display_font()
+            display_font(AI_vs_AI)
             for cr in main_chess:
                 for c in cr:
                     c.draw(screen)
@@ -2804,7 +2817,7 @@ def main():
             
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
-                if 200 == step:
+                if AI_Limit_step == step:
                     player_win = -2
                 
                 for event in pygame.event.get():
@@ -2962,7 +2975,7 @@ def main():
             
             if 1 == player_win:
                 screen.blit(background, (0,0))
-                display_font()
+                display_font(AI_vs_AI)
                 for cr in main_chess:
                     for c in cr:
                         c.draw(screen)
@@ -2971,7 +2984,7 @@ def main():
                 time.sleep(5)
             elif -1 == player_win or -2 == player_win:
                 screen.blit(background, (0,0))
-                display_font()
+                display_font(AI_vs_AI)
                 for cr in main_chess:
                     for c in cr:
                         c.draw(screen)
