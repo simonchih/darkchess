@@ -13,6 +13,7 @@ import copy
 import threading
 from pygame.locals import *
 from sys import exit
+from multiprocessing import Process, Queue
 
 from chess cimport *
 from chess_data import *
@@ -1793,15 +1794,18 @@ def com_think(a_map, a_ch):
         i = 0
         mnum = len(m)
         gb_m2 = [None] * mnum
+        q = Queue()
   
         for mm in m:
             #print('mm', mm)
-            threads.append(threading.Thread(target = one_turn, args = (a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta)))
+            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))
             threads[i].start()
+            #threads[i].join()
             i += 1
             #m2, a2_map, a2_ch= one_turn(a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], 1, alpha, beta)
             
-        while threading.activeCount() > 1:
+        #while threading.activeCount() > 1:
+        while not q.empty():
             for i in range(mnum):
                 if gb_m2[i] is not None:
                     if final_score > gb_m2[i][0][4]:
@@ -1811,9 +1815,9 @@ def com_think(a_map, a_ch):
                     mf.append([gb_m2[i][0][0], gb_m2[i][0][1], gb_m2[i][0][4]])
                     gb_m2[i] = None
                     
-            for event in pygame.event.get():
-                    if event.type == QUIT:
-                        exit()
+            #for event in pygame.event.get():
+            #        if event.type == QUIT:
+            #            exit()
         
         # re-check again
         for i in range(mnum):
@@ -1840,16 +1844,17 @@ def com_think(a_map, a_ch):
 # extend one_turn to 2-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player
-cdef void one_turn(a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta):
+def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, list gb_m2):
     global open_score
     global final_score
-    global gb_m2
+    #global gb_m2
     
     cdef double max_p_score = -2000
     
     cdef list m2 = []
     cdef list m3 = []
     cdef list m4 = []
+    q.put(ind)
     
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
@@ -2045,11 +2050,12 @@ cdef void one_turn(a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, in
         
     #print('m2', m2)
     ###############################
-        
+    
     gb_m2[ind] = m2
     if nexti == nextj:
         open_score = m2[0][4]
     
+    return q.get()
     #return m2, af_map, af_ch
 
 # dest_will_be_dead ...
