@@ -13,18 +13,20 @@ import copy
 import threading
 from pygame.locals import *
 from sys import exit
+
 from chess import *
+from chess_data import *
 from chess_data cimport *
 
-background_image_filename = 'Image/SHEET.gif'
-image_new        = 'Image/shield-and-swords.gif'
+cdef char* background_image_filename = 'Image/SHEET.gif'
+cdef char* image_new        = 'Image/shield-and-swords.gif'
 
-s_newgame = 'Sound/NEWGAME.WAV'
-s_capture = 'Sound/CAPTURE2.WAV'
-s_click   = 'Sound/CLICK.WAV'
-s_loss    = 'Sound/LOSS.WAV'
-s_move2   = 'Sound/MOVE2.WAV'
-s_win     = 'Sound/WIN.WAV'
+cdef char* s_newgame = 'Sound/NEWGAME.WAV'
+cdef char* s_capture = 'Sound/CAPTURE2.WAV'
+cdef char* s_click   = 'Sound/CLICK.WAV'
+cdef char* s_loss    = 'Sound/LOSS.WAV'
+cdef char* s_move2   = 'Sound/MOVE2.WAV'
+cdef char* s_win     = 'Sound/WIN.WAV'
 
 background = pygame.image.load(background_image_filename).convert_alpha()
 new_game   = pygame.image.load(image_new).convert_alpha()
@@ -49,12 +51,12 @@ cdef int first = 1
 cdef int turn_id = 0
 cdef int player_color = 0
 cdef int com_color = 1
-cdef float max_value = 0
-cdef float max_dist = 32
+cdef double max_value = 0
+cdef double max_dist = 32
 cdef int sindex = 0
-AI_min_score = 2000
-final_score = AI_min_score #mini
-gb_m2 = []
+cdef int AI_min_score = 2000
+cdef double final_score = 2000.0 #mini
+cdef list gb_m2 = []
 #max_cor = None
 open_score = None
 cdef int step = 0
@@ -62,11 +64,15 @@ cdef int step = 0
 #default chess
 chtemp = chess(0, (0, 0))
 
-main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
-server_main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
-chess_index = [0] * 32
-main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
-cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
+cdef list main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
+
+cdef list server_main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
+
+cdef int chess_index[32]
+chess_index[:] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+cdef list main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
+cdef list cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 
 cdef int mark[4][8]
 mark[0][:] = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -95,15 +101,15 @@ king_live[:] = [1, 1]
 cdef int chess_num[2]
 chess_num[:] = [16, 16]
 
-com_mv_map = [0, 0]
+cdef list com_mv_map = [0, 0]
 cdef int back_num = 32
 #com_will_eat_chess = []
 #will_eat_escape_chess = []
-cannon_cor = []
-break_long_capture_dest = []
-break_long_capture_org = []
-com_ban_step = []
-move_step = [None, None, None, None]
+cdef list cannon_cor = []
+cdef list break_long_capture_dest = []
+cdef list break_long_capture_org = []
+cdef list com_ban_step = []
+cdef list move_step = [None, None, None, None]
 
 # return 0: can't eat, 1: can eat, 2: equal
 cdef int can_be_ate_equal(int small_value, int big_value):
@@ -132,7 +138,7 @@ cdef int can_be_ate(int small_value, int big_value):
     else:
         return 0
     
-def ini_random_chess(list):
+cdef list ini_random_chess(list list):
     all_list = [0] * 32
     for end in range(31, -1, -1):
         start = random.randint(0, end)
@@ -159,15 +165,15 @@ def ini_random_chess(list):
 #                return p
 #    return None
 
-def all_chess_move(a_map, my_chess):
+cdef void all_chess_move(a_map, my_chess):
     for chr in my_chess:
         for ch in chr:
             if ch.back < 1 and 1 == ch.live:
                 ch.possible_move = collect_possible_move(ch.row, ch.col, a_map, my_chess)
     
-def collect_possible_move(i, j, a_map, my_chess):
+cdef list collect_possible_move(int i, int j, a_map, my_chess):
     
-    pm = []
+    cdef list pm = []
     ncor = near(i,j)
     for nc in ncor:
         if None == a_map[nc[0]][nc[1]]:
@@ -224,7 +230,7 @@ def collect_possible_move(i, j, a_map, my_chess):
                     jump = 1
     return pm
 
-def opp_cannon_can_eat(org, dest, my_chess, a_map):
+cdef int opp_cannon_can_eat((int, int)org, (int, int)dest, my_chess, a_map):
     (i, j) = org
     (ii, jj) = dest
     o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
@@ -260,7 +266,7 @@ def opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 1
     return 0
 
-def next_cannon_can_eat_more(org, dest, a_map, my_chess):
+cdef int next_cannon_can_eat_more((int, int)org, dest, a_map, my_chess):
     global cannon_cor
     cannon_cor = []
     (i, j) = org
@@ -292,11 +298,11 @@ def next_cannon_can_eat_more(org, dest, a_map, my_chess):
                                 return 1
     return 0                                
     
-def eat_by_bomb(org, a_map, my_chess):
+cdef int eat_by_bomb((int, int)org, a_map, my_chess):
     global cannon_cor
     (i, j) = org
-    jump = 0
-    was_ate = 0
+    cdef int jump = 0
+    cdef int was_ate = 0
     for ii in range(i-1, -1, -1):
         if 1 == jump and a_map[ii][j] != None:
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
@@ -343,12 +349,12 @@ def eat_by_bomb(org, a_map, my_chess):
     return was_ate
 
 # analyze all back pieces, it's pssible for human player, NOT cheating
-def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
+cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int no_max, int y, int x):
     global com_color
     global player_color
     
-    eat_possible_num = 0
-    was_ate_num = 0
+    cdef int eat_possible_num = 0
+    cdef int was_ate_num = 0
     
     for c, val in enumerate(back_value_num):
         for v, num in enumerate(val):
@@ -397,7 +403,7 @@ def check_eat_number(a_map, my_chess, n_min, n_max, no_min, no_max, y, x):
     
     return eat_possible_num - was_ate_num
 
-cpdef int if_cannon_can_eat(org, a_map, my_chess, owner_color):
+cpdef int if_cannon_can_eat((int, int)org, a_map, my_chess, int owner_color):
     (i, j) = org
     cdef int jump = 0
     cdef int eat_number = 0
@@ -445,7 +451,7 @@ cpdef int if_cannon_can_eat(org, a_map, my_chess, owner_color):
     
     return eat_number
    
-cpdef int eat_by_player_bomb(org, a_map, my_chess, int player_color):
+cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
     global cannon_cor
     (i, j) = org
     cdef int jump = 0
@@ -495,8 +501,8 @@ cpdef int eat_by_player_bomb(org, a_map, my_chess, int player_color):
             jump = 1
     return was_ate
     
-def near(i, j):
-    n_cor = []
+cdef list near(int i, int j):
+    cdef list n_cor = []
     if 0 == i and 0 == j:
         n_cor.extend([(1,0), (0,1)])
     elif 3 == i and 0 == j:
@@ -518,7 +524,7 @@ def near(i, j):
     
     return n_cor
     
-def mouse_position_to_block(int mx, int my, chess_back):
+cdef (int, int) mouse_position_to_block(int mx, int my, chess_back):
     global cstart_x
     global cstart_y
     global cstart_x2
@@ -836,7 +842,7 @@ def select_back_chess(a_map, my_chess, org = None):
         else:
             return None
 
-def check_back_exist(a_map, my_chess):
+cdef int check_back_exist(a_map, my_chess):
     cdef int back_exist = 0
     for i in range(0, 4):
         for j in range(0, 8):
@@ -1035,7 +1041,7 @@ def chess_ai():
         print("step = %d" % step)
         turn_id = 2
         
-def short_dist(int i, int j, dist, a_map):
+cdef int short_dist(int i, int j, dist, a_map):
     d = 0
     ncor = near(i, j)
     for nc in ncor:
@@ -1074,7 +1080,7 @@ cdef double calc_move_score(double max_value, double max_dist, double my_value):
         else:
             return -0.1
         
-def move_max_value(int orgx, int orgy, int destx, int desty, my_chess, a_map, int org_value, int owner_color, int i, int j, int dist=1):
+cdef void move_max_value(int orgx, int orgy, int destx, int desty, my_chess, a_map, int org_value, int owner_color, int i, int j, int dist=1):
     global max_value
     global mark
     #global max_cor
@@ -1399,7 +1405,7 @@ cdef int near2_have_same_value(org, my_chess, a_map, int owner_color):
             #    return 1
     return 0
 
-def scan_king(my_chess):
+cdef void scan_king(my_chess):
     global king_live
     
     for chr in my_chess:
@@ -1407,14 +1413,14 @@ def scan_king(my_chess):
             if 7 == ch.value:
                 king_live[ch.color] = ch.live
 
-def in_com_possible_move(org, possible_mv):
+cdef bint in_com_possible_move(org, possible_mv):
     for pm in possible_mv:
         if org == pm:
             return True
             
     return False
                 
-def save_step_and_break_long_capture(org, dest, a_map, my_chess):
+cdef void save_step_and_break_long_capture(org, dest, a_map, my_chess):
     global move_step
     global sindex
     global break_long_capture_dest
@@ -1739,7 +1745,7 @@ def com_think(a_map, a_ch):
     global final_score
     global gb_m2
 
-    m = []
+    cdef list m = []
     
     cdef double min_score = 2000
     cdef double sc = 0
@@ -1834,16 +1840,17 @@ def com_think(a_map, a_ch):
 # extend one_turn to 2-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player
-def one_turn(a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta):
+cdef void one_turn(a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta):
     global open_score
     global final_score
     global gb_m2
     
     cdef double max_p_score = -2000
     
-    m2 = []
-    m3 = []
-    m4 = []
+    cdef list m2 = []
+    cdef list m3 = []
+    cdef list m4 = []
+    
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
@@ -2073,7 +2080,7 @@ cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
     return 0
 
 # will_be_dead    
-cdef int will_dead(org, a_ch, a_map, int opp_color):
+cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
     n = a_map[org[0]][org[1]]
     if None == n:
         return 0
@@ -2089,8 +2096,8 @@ cdef int will_dead(org, a_ch, a_map, int opp_color):
     return 0
 
 cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):    
-    opp_color = 1-owner_color
-    can_eat = 0
+    cdef int opp_color = 1-owner_color
+    cdef int can_eat = 0
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
@@ -2147,8 +2154,8 @@ cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color
         return escape_step/100
 
 # stand_will_be_dead_pity    
-cdef int stand_will_dead_pity(org, a_ch, a_map, int owner_color):
-    opp_color = 1-owner_color
+cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
+    cdef int opp_color = 1-owner_color
     n = a_map[org[0]][org[1]]
     if None == n:
         return 0
@@ -2410,7 +2417,7 @@ cdef int eating_value_to_score(int value, int king[], int owner_color):
     elif 7 == value:
         return 599
 
-def display_font(int AI_vs_AI = 0):
+cdef void display_font(int AI_vs_AI = 0):
     
     if 1 == player_win:        
         if 0 == AI_vs_AI:
@@ -2444,7 +2451,7 @@ def display_font(int AI_vs_AI = 0):
         else:
             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))       
         
-def write(msg="pygame is cool", color= (0,0,0)):    
+def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):    
     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
     myfont = pygame.font.Font("wqy-zenhei.ttf",14)
     mytext = myfont.render(msg, True, color)

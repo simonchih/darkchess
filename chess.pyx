@@ -2,10 +2,22 @@ import math
 from chess_data import *
 from chess_data cimport *
 
+"""
+cdef double drag = 0.999
+
+cdef class chess:
+    cdef int row, col
+    cdef int size[2]
+    cdef int color
+    cdef int index, value, x, y, back, live
+    cdef double speed, angle
+    cdef list possible_move
+"""
+
 cdef double drag = 0.999
 
 class chess():
-    def __init__(self, int index, rc):
+    def __init__(self, int index, (int, int) rc):
         (row, col) = rc
         self.row = row
         self.col = col

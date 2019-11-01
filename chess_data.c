@@ -1168,6 +1168,35 @@ static int __pyx_v_10chess_data_cstart_x;
 static int __pyx_v_10chess_data_cstart_y;
 static int __pyx_v_10chess_data_cstart_x2;
 static int __pyx_v_10chess_data_cstart_y2;
+static char *__pyx_v_10chess_data_image_chess_back;
+static char *__pyx_v_10chess_data_image_chess_bk;
+static char *__pyx_v_10chess_data_image_chess_ba;
+static char *__pyx_v_10chess_data_image_chess_bb;
+static char *__pyx_v_10chess_data_image_chess_br;
+static char *__pyx_v_10chess_data_image_chess_bn;
+static char *__pyx_v_10chess_data_image_chess_bc;
+static char *__pyx_v_10chess_data_image_chess_bp;
+static char *__pyx_v_10chess_data_image_chess_rk;
+static char *__pyx_v_10chess_data_image_chess_ra;
+static char *__pyx_v_10chess_data_image_chess_rb;
+static char *__pyx_v_10chess_data_image_chess_rr;
+static char *__pyx_v_10chess_data_image_chess_rn;
+static char *__pyx_v_10chess_data_image_chess_rc;
+static char *__pyx_v_10chess_data_image_chess_rp;
+static char *__pyx_v_10chess_data_image_chess_bks;
+static char *__pyx_v_10chess_data_image_chess_bas;
+static char *__pyx_v_10chess_data_image_chess_bbs;
+static char *__pyx_v_10chess_data_image_chess_brs;
+static char *__pyx_v_10chess_data_image_chess_bns;
+static char *__pyx_v_10chess_data_image_chess_bcs;
+static char *__pyx_v_10chess_data_image_chess_bps;
+static char *__pyx_v_10chess_data_image_chess_rks;
+static char *__pyx_v_10chess_data_image_chess_ras;
+static char *__pyx_v_10chess_data_image_chess_rbs;
+static char *__pyx_v_10chess_data_image_chess_rrs;
+static char *__pyx_v_10chess_data_image_chess_rns;
+static char *__pyx_v_10chess_data_image_chess_rcs;
+static char *__pyx_v_10chess_data_image_chess_rps;
 #define __Pyx_MODULE_NAME "chess_data"
 extern int __pyx_module_is_main_chess_data;
 int __pyx_module_is_main_chess_data = 0;
@@ -1226,101 +1255,14 @@ static const char __pyx_k_chess_back[] = "chess_back";
 static const char __pyx_k_chess_data[] = "chess_data";
 static const char __pyx_k_SCREEN_SIZE[] = "SCREEN_SIZE";
 static const char __pyx_k_set_caption[] = "set_caption";
-static const char __pyx_k_Image_BA_GIF[] = "Image/BA.GIF";
-static const char __pyx_k_Image_BB_GIF[] = "Image/BB.GIF";
-static const char __pyx_k_Image_BC_GIF[] = "Image/BC.GIF";
-static const char __pyx_k_Image_BK_GIF[] = "Image/BK.GIF";
-static const char __pyx_k_Image_BN_GIF[] = "Image/BN.GIF";
-static const char __pyx_k_Image_BP_GIF[] = "Image/BP.GIF";
-static const char __pyx_k_Image_BR_GIF[] = "Image/BR.GIF";
-static const char __pyx_k_Image_RA_GIF[] = "Image/RA.GIF";
-static const char __pyx_k_Image_RB_GIF[] = "Image/RB.GIF";
-static const char __pyx_k_Image_RC_GIF[] = "Image/RC.GIF";
-static const char __pyx_k_Image_RK_GIF[] = "Image/RK.GIF";
-static const char __pyx_k_Image_RN_GIF[] = "Image/RN.GIF";
-static const char __pyx_k_Image_RP_GIF[] = "Image/RP.GIF";
-static const char __pyx_k_Image_RR_GIF[] = "Image/RR.GIF";
-static const char __pyx_k_Image_BAS_GIF[] = "Image/BAS.GIF";
-static const char __pyx_k_Image_BBS_GIF[] = "Image/BBS.GIF";
-static const char __pyx_k_Image_BCS_GIF[] = "Image/BCS.GIF";
-static const char __pyx_k_Image_BKS_GIF[] = "Image/BKS.GIF";
-static const char __pyx_k_Image_BNS_GIF[] = "Image/BNS.GIF";
-static const char __pyx_k_Image_BPS_GIF[] = "Image/BPS.GIF";
-static const char __pyx_k_Image_BRS_GIF[] = "Image/BRS.GIF";
-static const char __pyx_k_Image_RAS_GIF[] = "Image/RAS.GIF";
-static const char __pyx_k_Image_RBS_GIF[] = "Image/RBS.GIF";
-static const char __pyx_k_Image_RCS_GIF[] = "Image/RCS.GIF";
-static const char __pyx_k_Image_RKS_GIF[] = "Image/RKS.GIF";
-static const char __pyx_k_Image_RNS_GIF[] = "Image/RNS.GIF";
-static const char __pyx_k_Image_RPS_GIF[] = "Image/RPS.GIF";
-static const char __pyx_k_Image_RRS_GIF[] = "Image/RRS.GIF";
 static const char __pyx_k_convert_alpha[] = "convert_alpha";
-static const char __pyx_k_Image_back_gif[] = "Image/back.gif";
 static const char __pyx_k_chess_data_pyx[] = "chess_data.pyx";
-static const char __pyx_k_image_chess_ba[] = "image_chess_ba";
-static const char __pyx_k_image_chess_bb[] = "image_chess_bb";
-static const char __pyx_k_image_chess_bc[] = "image_chess_bc";
-static const char __pyx_k_image_chess_bk[] = "image_chess_bk";
-static const char __pyx_k_image_chess_bn[] = "image_chess_bn";
-static const char __pyx_k_image_chess_bp[] = "image_chess_bp";
-static const char __pyx_k_image_chess_br[] = "image_chess_br";
-static const char __pyx_k_image_chess_ra[] = "image_chess_ra";
-static const char __pyx_k_image_chess_rb[] = "image_chess_rb";
-static const char __pyx_k_image_chess_rc[] = "image_chess_rc";
-static const char __pyx_k_image_chess_rk[] = "image_chess_rk";
-static const char __pyx_k_image_chess_rn[] = "image_chess_rn";
-static const char __pyx_k_image_chess_rp[] = "image_chess_rp";
-static const char __pyx_k_image_chess_rr[] = "image_chess_rr";
-static const char __pyx_k_image_chess_bas[] = "image_chess_bas";
-static const char __pyx_k_image_chess_bbs[] = "image_chess_bbs";
-static const char __pyx_k_image_chess_bcs[] = "image_chess_bcs";
-static const char __pyx_k_image_chess_bks[] = "image_chess_bks";
-static const char __pyx_k_image_chess_bns[] = "image_chess_bns";
-static const char __pyx_k_image_chess_bps[] = "image_chess_bps";
-static const char __pyx_k_image_chess_brs[] = "image_chess_brs";
-static const char __pyx_k_image_chess_ras[] = "image_chess_ras";
-static const char __pyx_k_image_chess_rbs[] = "image_chess_rbs";
-static const char __pyx_k_image_chess_rcs[] = "image_chess_rcs";
-static const char __pyx_k_image_chess_rks[] = "image_chess_rks";
-static const char __pyx_k_image_chess_rns[] = "image_chess_rns";
-static const char __pyx_k_image_chess_rps[] = "image_chess_rps";
-static const char __pyx_k_image_chess_rrs[] = "image_chess_rrs";
-static const char __pyx_k_image_chess_back[] = "image_chess_back";
 static const char __pyx_k_Taiwan_Blind_Chess[] = "Taiwan Blind Chess";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_color_value_to_index[] = "color_value_to_index";
 static const char __pyx_k_index_to_chess_select[] = "index_to_chess_select";
 static const char __pyx_k_index_to_chess_surface[] = "index_to_chess_surface";
 static const char __pyx_k_Image_darkchess_default_png[] = "Image/darkchess_default.png";
-static PyObject *__pyx_kp_s_Image_BAS_GIF;
-static PyObject *__pyx_kp_s_Image_BA_GIF;
-static PyObject *__pyx_kp_s_Image_BBS_GIF;
-static PyObject *__pyx_kp_s_Image_BB_GIF;
-static PyObject *__pyx_kp_s_Image_BCS_GIF;
-static PyObject *__pyx_kp_s_Image_BC_GIF;
-static PyObject *__pyx_kp_s_Image_BKS_GIF;
-static PyObject *__pyx_kp_s_Image_BK_GIF;
-static PyObject *__pyx_kp_s_Image_BNS_GIF;
-static PyObject *__pyx_kp_s_Image_BN_GIF;
-static PyObject *__pyx_kp_s_Image_BPS_GIF;
-static PyObject *__pyx_kp_s_Image_BP_GIF;
-static PyObject *__pyx_kp_s_Image_BRS_GIF;
-static PyObject *__pyx_kp_s_Image_BR_GIF;
-static PyObject *__pyx_kp_s_Image_RAS_GIF;
-static PyObject *__pyx_kp_s_Image_RA_GIF;
-static PyObject *__pyx_kp_s_Image_RBS_GIF;
-static PyObject *__pyx_kp_s_Image_RB_GIF;
-static PyObject *__pyx_kp_s_Image_RCS_GIF;
-static PyObject *__pyx_kp_s_Image_RC_GIF;
-static PyObject *__pyx_kp_s_Image_RKS_GIF;
-static PyObject *__pyx_kp_s_Image_RK_GIF;
-static PyObject *__pyx_kp_s_Image_RNS_GIF;
-static PyObject *__pyx_kp_s_Image_RN_GIF;
-static PyObject *__pyx_kp_s_Image_RPS_GIF;
-static PyObject *__pyx_kp_s_Image_RP_GIF;
-static PyObject *__pyx_kp_s_Image_RRS_GIF;
-static PyObject *__pyx_kp_s_Image_RR_GIF;
-static PyObject *__pyx_kp_s_Image_back_gif;
 static PyObject *__pyx_kp_s_Image_darkchess_default_png;
 static PyObject *__pyx_n_s_SCREEN_SIZE;
 static PyObject *__pyx_kp_s_Taiwan_Blind_Chess;
@@ -1366,35 +1308,6 @@ static PyObject *__pyx_n_s_cstart_y;
 static PyObject *__pyx_n_s_cstart_y2;
 static PyObject *__pyx_n_s_display;
 static PyObject *__pyx_n_s_image;
-static PyObject *__pyx_n_s_image_chess_ba;
-static PyObject *__pyx_n_s_image_chess_back;
-static PyObject *__pyx_n_s_image_chess_bas;
-static PyObject *__pyx_n_s_image_chess_bb;
-static PyObject *__pyx_n_s_image_chess_bbs;
-static PyObject *__pyx_n_s_image_chess_bc;
-static PyObject *__pyx_n_s_image_chess_bcs;
-static PyObject *__pyx_n_s_image_chess_bk;
-static PyObject *__pyx_n_s_image_chess_bks;
-static PyObject *__pyx_n_s_image_chess_bn;
-static PyObject *__pyx_n_s_image_chess_bns;
-static PyObject *__pyx_n_s_image_chess_bp;
-static PyObject *__pyx_n_s_image_chess_bps;
-static PyObject *__pyx_n_s_image_chess_br;
-static PyObject *__pyx_n_s_image_chess_brs;
-static PyObject *__pyx_n_s_image_chess_ra;
-static PyObject *__pyx_n_s_image_chess_ras;
-static PyObject *__pyx_n_s_image_chess_rb;
-static PyObject *__pyx_n_s_image_chess_rbs;
-static PyObject *__pyx_n_s_image_chess_rc;
-static PyObject *__pyx_n_s_image_chess_rcs;
-static PyObject *__pyx_n_s_image_chess_rk;
-static PyObject *__pyx_n_s_image_chess_rks;
-static PyObject *__pyx_n_s_image_chess_rn;
-static PyObject *__pyx_n_s_image_chess_rns;
-static PyObject *__pyx_n_s_image_chess_rp;
-static PyObject *__pyx_n_s_image_chess_rps;
-static PyObject *__pyx_n_s_image_chess_rr;
-static PyObject *__pyx_n_s_image_chess_rrs;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_index;
 static PyObject *__pyx_n_s_index_to_chess_select;
@@ -3704,35 +3617,6 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_s_Image_BAS_GIF, __pyx_k_Image_BAS_GIF, sizeof(__pyx_k_Image_BAS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BA_GIF, __pyx_k_Image_BA_GIF, sizeof(__pyx_k_Image_BA_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BBS_GIF, __pyx_k_Image_BBS_GIF, sizeof(__pyx_k_Image_BBS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BB_GIF, __pyx_k_Image_BB_GIF, sizeof(__pyx_k_Image_BB_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BCS_GIF, __pyx_k_Image_BCS_GIF, sizeof(__pyx_k_Image_BCS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BC_GIF, __pyx_k_Image_BC_GIF, sizeof(__pyx_k_Image_BC_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BKS_GIF, __pyx_k_Image_BKS_GIF, sizeof(__pyx_k_Image_BKS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BK_GIF, __pyx_k_Image_BK_GIF, sizeof(__pyx_k_Image_BK_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BNS_GIF, __pyx_k_Image_BNS_GIF, sizeof(__pyx_k_Image_BNS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BN_GIF, __pyx_k_Image_BN_GIF, sizeof(__pyx_k_Image_BN_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BPS_GIF, __pyx_k_Image_BPS_GIF, sizeof(__pyx_k_Image_BPS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BP_GIF, __pyx_k_Image_BP_GIF, sizeof(__pyx_k_Image_BP_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BRS_GIF, __pyx_k_Image_BRS_GIF, sizeof(__pyx_k_Image_BRS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_BR_GIF, __pyx_k_Image_BR_GIF, sizeof(__pyx_k_Image_BR_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RAS_GIF, __pyx_k_Image_RAS_GIF, sizeof(__pyx_k_Image_RAS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RA_GIF, __pyx_k_Image_RA_GIF, sizeof(__pyx_k_Image_RA_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RBS_GIF, __pyx_k_Image_RBS_GIF, sizeof(__pyx_k_Image_RBS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RB_GIF, __pyx_k_Image_RB_GIF, sizeof(__pyx_k_Image_RB_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RCS_GIF, __pyx_k_Image_RCS_GIF, sizeof(__pyx_k_Image_RCS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RC_GIF, __pyx_k_Image_RC_GIF, sizeof(__pyx_k_Image_RC_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RKS_GIF, __pyx_k_Image_RKS_GIF, sizeof(__pyx_k_Image_RKS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RK_GIF, __pyx_k_Image_RK_GIF, sizeof(__pyx_k_Image_RK_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RNS_GIF, __pyx_k_Image_RNS_GIF, sizeof(__pyx_k_Image_RNS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RN_GIF, __pyx_k_Image_RN_GIF, sizeof(__pyx_k_Image_RN_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RPS_GIF, __pyx_k_Image_RPS_GIF, sizeof(__pyx_k_Image_RPS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RP_GIF, __pyx_k_Image_RP_GIF, sizeof(__pyx_k_Image_RP_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RRS_GIF, __pyx_k_Image_RRS_GIF, sizeof(__pyx_k_Image_RRS_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_RR_GIF, __pyx_k_Image_RR_GIF, sizeof(__pyx_k_Image_RR_GIF), 0, 0, 1, 0},
-  {&__pyx_kp_s_Image_back_gif, __pyx_k_Image_back_gif, sizeof(__pyx_k_Image_back_gif), 0, 0, 1, 0},
   {&__pyx_kp_s_Image_darkchess_default_png, __pyx_k_Image_darkchess_default_png, sizeof(__pyx_k_Image_darkchess_default_png), 0, 0, 1, 0},
   {&__pyx_n_s_SCREEN_SIZE, __pyx_k_SCREEN_SIZE, sizeof(__pyx_k_SCREEN_SIZE), 0, 0, 1, 1},
   {&__pyx_kp_s_Taiwan_Blind_Chess, __pyx_k_Taiwan_Blind_Chess, sizeof(__pyx_k_Taiwan_Blind_Chess), 0, 0, 1, 0},
@@ -3778,35 +3662,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cstart_y2, __pyx_k_cstart_y2, sizeof(__pyx_k_cstart_y2), 0, 0, 1, 1},
   {&__pyx_n_s_display, __pyx_k_display, sizeof(__pyx_k_display), 0, 0, 1, 1},
   {&__pyx_n_s_image, __pyx_k_image, sizeof(__pyx_k_image), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_ba, __pyx_k_image_chess_ba, sizeof(__pyx_k_image_chess_ba), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_back, __pyx_k_image_chess_back, sizeof(__pyx_k_image_chess_back), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bas, __pyx_k_image_chess_bas, sizeof(__pyx_k_image_chess_bas), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bb, __pyx_k_image_chess_bb, sizeof(__pyx_k_image_chess_bb), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bbs, __pyx_k_image_chess_bbs, sizeof(__pyx_k_image_chess_bbs), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bc, __pyx_k_image_chess_bc, sizeof(__pyx_k_image_chess_bc), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bcs, __pyx_k_image_chess_bcs, sizeof(__pyx_k_image_chess_bcs), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bk, __pyx_k_image_chess_bk, sizeof(__pyx_k_image_chess_bk), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bks, __pyx_k_image_chess_bks, sizeof(__pyx_k_image_chess_bks), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bn, __pyx_k_image_chess_bn, sizeof(__pyx_k_image_chess_bn), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bns, __pyx_k_image_chess_bns, sizeof(__pyx_k_image_chess_bns), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bp, __pyx_k_image_chess_bp, sizeof(__pyx_k_image_chess_bp), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_bps, __pyx_k_image_chess_bps, sizeof(__pyx_k_image_chess_bps), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_br, __pyx_k_image_chess_br, sizeof(__pyx_k_image_chess_br), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_brs, __pyx_k_image_chess_brs, sizeof(__pyx_k_image_chess_brs), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_ra, __pyx_k_image_chess_ra, sizeof(__pyx_k_image_chess_ra), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_ras, __pyx_k_image_chess_ras, sizeof(__pyx_k_image_chess_ras), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rb, __pyx_k_image_chess_rb, sizeof(__pyx_k_image_chess_rb), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rbs, __pyx_k_image_chess_rbs, sizeof(__pyx_k_image_chess_rbs), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rc, __pyx_k_image_chess_rc, sizeof(__pyx_k_image_chess_rc), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rcs, __pyx_k_image_chess_rcs, sizeof(__pyx_k_image_chess_rcs), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rk, __pyx_k_image_chess_rk, sizeof(__pyx_k_image_chess_rk), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rks, __pyx_k_image_chess_rks, sizeof(__pyx_k_image_chess_rks), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rn, __pyx_k_image_chess_rn, sizeof(__pyx_k_image_chess_rn), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rns, __pyx_k_image_chess_rns, sizeof(__pyx_k_image_chess_rns), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rp, __pyx_k_image_chess_rp, sizeof(__pyx_k_image_chess_rp), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rps, __pyx_k_image_chess_rps, sizeof(__pyx_k_image_chess_rps), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rr, __pyx_k_image_chess_rr, sizeof(__pyx_k_image_chess_rr), 0, 0, 1, 1},
-  {&__pyx_n_s_image_chess_rrs, __pyx_k_image_chess_rrs, sizeof(__pyx_k_image_chess_rrs), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_index, __pyx_k_index, sizeof(__pyx_k_index), 0, 0, 1, 1},
   {&__pyx_n_s_index_to_chess_select, __pyx_k_index_to_chess_select, sizeof(__pyx_k_index_to_chess_select), 0, 0, 1, 1},
@@ -3860,7 +3715,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
  * pygame.display.set_caption("Taiwan Blind Chess")             # <<<<<<<<<<<<<<
  * 
- * image_chess_back = 'Image/back.gif'
+ * cdef char* image_chess_back = 'Image/back.gif'
  */
   __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Taiwan_Blind_Chess); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
@@ -4352,7 +4207,7 @@ if (!__Pyx_RefNanny) {
  * screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
  * pygame.display.set_caption("Taiwan Blind Chess")             # <<<<<<<<<<<<<<
  * 
- * image_chess_back = 'Image/back.gif'
+ * cdef char* image_chess_back = 'Image/back.gif'
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_pygame); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -4370,266 +4225,266 @@ if (!__Pyx_RefNanny) {
   /* "chess_data.pyx":15
  * pygame.display.set_caption("Taiwan Blind Chess")
  * 
- * image_chess_back = 'Image/back.gif'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_back = 'Image/back.gif'             # <<<<<<<<<<<<<<
  * 
- * image_chess_bk = 'Image/BK.GIF'
+ * cdef char* image_chess_bk = 'Image/BK.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_back, __pyx_kp_s_Image_back_gif) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_back = ((char *)"Image/back.gif");
 
   /* "chess_data.pyx":17
- * image_chess_back = 'Image/back.gif'
+ * cdef char* image_chess_back = 'Image/back.gif'
  * 
- * image_chess_bk = 'Image/BK.GIF'             # <<<<<<<<<<<<<<
- * image_chess_ba = 'Image/BA.GIF'
- * image_chess_bb = 'Image/BB.GIF'
+ * cdef char* image_chess_bk = 'Image/BK.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_ba = 'Image/BA.GIF'
+ * cdef char* image_chess_bb = 'Image/BB.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bk, __pyx_kp_s_Image_BK_GIF) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bk = ((char *)"Image/BK.GIF");
 
   /* "chess_data.pyx":18
  * 
- * image_chess_bk = 'Image/BK.GIF'
- * image_chess_ba = 'Image/BA.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bb = 'Image/BB.GIF'
- * image_chess_br = 'Image/BR.GIF'
+ * cdef char* image_chess_bk = 'Image/BK.GIF'
+ * cdef char* image_chess_ba = 'Image/BA.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bb = 'Image/BB.GIF'
+ * cdef char* image_chess_br = 'Image/BR.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_ba, __pyx_kp_s_Image_BA_GIF) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_ba = ((char *)"Image/BA.GIF");
 
   /* "chess_data.pyx":19
- * image_chess_bk = 'Image/BK.GIF'
- * image_chess_ba = 'Image/BA.GIF'
- * image_chess_bb = 'Image/BB.GIF'             # <<<<<<<<<<<<<<
- * image_chess_br = 'Image/BR.GIF'
- * image_chess_bn = 'Image/BN.GIF'
+ * cdef char* image_chess_bk = 'Image/BK.GIF'
+ * cdef char* image_chess_ba = 'Image/BA.GIF'
+ * cdef char* image_chess_bb = 'Image/BB.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_br = 'Image/BR.GIF'
+ * cdef char* image_chess_bn = 'Image/BN.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bb, __pyx_kp_s_Image_BB_GIF) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bb = ((char *)"Image/BB.GIF");
 
   /* "chess_data.pyx":20
- * image_chess_ba = 'Image/BA.GIF'
- * image_chess_bb = 'Image/BB.GIF'
- * image_chess_br = 'Image/BR.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bn = 'Image/BN.GIF'
- * image_chess_bc = 'Image/BC.GIF'
+ * cdef char* image_chess_ba = 'Image/BA.GIF'
+ * cdef char* image_chess_bb = 'Image/BB.GIF'
+ * cdef char* image_chess_br = 'Image/BR.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bn = 'Image/BN.GIF'
+ * cdef char* image_chess_bc = 'Image/BC.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_br, __pyx_kp_s_Image_BR_GIF) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_br = ((char *)"Image/BR.GIF");
 
   /* "chess_data.pyx":21
- * image_chess_bb = 'Image/BB.GIF'
- * image_chess_br = 'Image/BR.GIF'
- * image_chess_bn = 'Image/BN.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bc = 'Image/BC.GIF'
- * image_chess_bp = 'Image/BP.GIF'
+ * cdef char* image_chess_bb = 'Image/BB.GIF'
+ * cdef char* image_chess_br = 'Image/BR.GIF'
+ * cdef char* image_chess_bn = 'Image/BN.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bc = 'Image/BC.GIF'
+ * cdef char* image_chess_bp = 'Image/BP.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bn, __pyx_kp_s_Image_BN_GIF) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bn = ((char *)"Image/BN.GIF");
 
   /* "chess_data.pyx":22
- * image_chess_br = 'Image/BR.GIF'
- * image_chess_bn = 'Image/BN.GIF'
- * image_chess_bc = 'Image/BC.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bp = 'Image/BP.GIF'
- * image_chess_rk = 'Image/RK.GIF'
+ * cdef char* image_chess_br = 'Image/BR.GIF'
+ * cdef char* image_chess_bn = 'Image/BN.GIF'
+ * cdef char* image_chess_bc = 'Image/BC.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bp = 'Image/BP.GIF'
+ * cdef char* image_chess_rk = 'Image/RK.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bc, __pyx_kp_s_Image_BC_GIF) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bc = ((char *)"Image/BC.GIF");
 
   /* "chess_data.pyx":23
- * image_chess_bn = 'Image/BN.GIF'
- * image_chess_bc = 'Image/BC.GIF'
- * image_chess_bp = 'Image/BP.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rk = 'Image/RK.GIF'
- * image_chess_ra = 'Image/RA.GIF'
+ * cdef char* image_chess_bn = 'Image/BN.GIF'
+ * cdef char* image_chess_bc = 'Image/BC.GIF'
+ * cdef char* image_chess_bp = 'Image/BP.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rk = 'Image/RK.GIF'
+ * cdef char* image_chess_ra = 'Image/RA.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bp, __pyx_kp_s_Image_BP_GIF) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bp = ((char *)"Image/BP.GIF");
 
   /* "chess_data.pyx":24
- * image_chess_bc = 'Image/BC.GIF'
- * image_chess_bp = 'Image/BP.GIF'
- * image_chess_rk = 'Image/RK.GIF'             # <<<<<<<<<<<<<<
- * image_chess_ra = 'Image/RA.GIF'
- * image_chess_rb = 'Image/RB.GIF'
+ * cdef char* image_chess_bc = 'Image/BC.GIF'
+ * cdef char* image_chess_bp = 'Image/BP.GIF'
+ * cdef char* image_chess_rk = 'Image/RK.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_ra = 'Image/RA.GIF'
+ * cdef char* image_chess_rb = 'Image/RB.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rk, __pyx_kp_s_Image_RK_GIF) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rk = ((char *)"Image/RK.GIF");
 
   /* "chess_data.pyx":25
- * image_chess_bp = 'Image/BP.GIF'
- * image_chess_rk = 'Image/RK.GIF'
- * image_chess_ra = 'Image/RA.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rb = 'Image/RB.GIF'
- * image_chess_rr = 'Image/RR.GIF'
+ * cdef char* image_chess_bp = 'Image/BP.GIF'
+ * cdef char* image_chess_rk = 'Image/RK.GIF'
+ * cdef char* image_chess_ra = 'Image/RA.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rb = 'Image/RB.GIF'
+ * cdef char* image_chess_rr = 'Image/RR.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_ra, __pyx_kp_s_Image_RA_GIF) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_ra = ((char *)"Image/RA.GIF");
 
   /* "chess_data.pyx":26
- * image_chess_rk = 'Image/RK.GIF'
- * image_chess_ra = 'Image/RA.GIF'
- * image_chess_rb = 'Image/RB.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rr = 'Image/RR.GIF'
- * image_chess_rn = 'Image/RN.GIF'
+ * cdef char* image_chess_rk = 'Image/RK.GIF'
+ * cdef char* image_chess_ra = 'Image/RA.GIF'
+ * cdef char* image_chess_rb = 'Image/RB.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rr = 'Image/RR.GIF'
+ * cdef char* image_chess_rn = 'Image/RN.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rb, __pyx_kp_s_Image_RB_GIF) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rb = ((char *)"Image/RB.GIF");
 
   /* "chess_data.pyx":27
- * image_chess_ra = 'Image/RA.GIF'
- * image_chess_rb = 'Image/RB.GIF'
- * image_chess_rr = 'Image/RR.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rn = 'Image/RN.GIF'
- * image_chess_rc = 'Image/RC.GIF'
+ * cdef char* image_chess_ra = 'Image/RA.GIF'
+ * cdef char* image_chess_rb = 'Image/RB.GIF'
+ * cdef char* image_chess_rr = 'Image/RR.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rn = 'Image/RN.GIF'
+ * cdef char* image_chess_rc = 'Image/RC.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rr, __pyx_kp_s_Image_RR_GIF) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rr = ((char *)"Image/RR.GIF");
 
   /* "chess_data.pyx":28
- * image_chess_rb = 'Image/RB.GIF'
- * image_chess_rr = 'Image/RR.GIF'
- * image_chess_rn = 'Image/RN.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rc = 'Image/RC.GIF'
- * image_chess_rp = 'Image/RP.GIF'
+ * cdef char* image_chess_rb = 'Image/RB.GIF'
+ * cdef char* image_chess_rr = 'Image/RR.GIF'
+ * cdef char* image_chess_rn = 'Image/RN.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rc = 'Image/RC.GIF'
+ * cdef char* image_chess_rp = 'Image/RP.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rn, __pyx_kp_s_Image_RN_GIF) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rn = ((char *)"Image/RN.GIF");
 
   /* "chess_data.pyx":29
- * image_chess_rr = 'Image/RR.GIF'
- * image_chess_rn = 'Image/RN.GIF'
- * image_chess_rc = 'Image/RC.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rp = 'Image/RP.GIF'
+ * cdef char* image_chess_rr = 'Image/RR.GIF'
+ * cdef char* image_chess_rn = 'Image/RN.GIF'
+ * cdef char* image_chess_rc = 'Image/RC.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rp = 'Image/RP.GIF'
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rc, __pyx_kp_s_Image_RC_GIF) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rc = ((char *)"Image/RC.GIF");
 
   /* "chess_data.pyx":30
- * image_chess_rn = 'Image/RN.GIF'
- * image_chess_rc = 'Image/RC.GIF'
- * image_chess_rp = 'Image/RP.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rn = 'Image/RN.GIF'
+ * cdef char* image_chess_rc = 'Image/RC.GIF'
+ * cdef char* image_chess_rp = 'Image/RP.GIF'             # <<<<<<<<<<<<<<
  * 
- * image_chess_bks = 'Image/BKS.GIF'
+ * cdef char* image_chess_bks = 'Image/BKS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rp, __pyx_kp_s_Image_RP_GIF) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rp = ((char *)"Image/RP.GIF");
 
   /* "chess_data.pyx":32
- * image_chess_rp = 'Image/RP.GIF'
+ * cdef char* image_chess_rp = 'Image/RP.GIF'
  * 
- * image_chess_bks = 'Image/BKS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bas = 'Image/BAS.GIF'
- * image_chess_bbs = 'Image/BBS.GIF'
+ * cdef char* image_chess_bks = 'Image/BKS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bas = 'Image/BAS.GIF'
+ * cdef char* image_chess_bbs = 'Image/BBS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bks, __pyx_kp_s_Image_BKS_GIF) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bks = ((char *)"Image/BKS.GIF");
 
   /* "chess_data.pyx":33
  * 
- * image_chess_bks = 'Image/BKS.GIF'
- * image_chess_bas = 'Image/BAS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bbs = 'Image/BBS.GIF'
- * image_chess_brs = 'Image/BRS.GIF'
+ * cdef char* image_chess_bks = 'Image/BKS.GIF'
+ * cdef char* image_chess_bas = 'Image/BAS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bbs = 'Image/BBS.GIF'
+ * cdef char* image_chess_brs = 'Image/BRS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bas, __pyx_kp_s_Image_BAS_GIF) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bas = ((char *)"Image/BAS.GIF");
 
   /* "chess_data.pyx":34
- * image_chess_bks = 'Image/BKS.GIF'
- * image_chess_bas = 'Image/BAS.GIF'
- * image_chess_bbs = 'Image/BBS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_brs = 'Image/BRS.GIF'
- * image_chess_bns = 'Image/BNS.GIF'
+ * cdef char* image_chess_bks = 'Image/BKS.GIF'
+ * cdef char* image_chess_bas = 'Image/BAS.GIF'
+ * cdef char* image_chess_bbs = 'Image/BBS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_brs = 'Image/BRS.GIF'
+ * cdef char* image_chess_bns = 'Image/BNS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bbs, __pyx_kp_s_Image_BBS_GIF) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bbs = ((char *)"Image/BBS.GIF");
 
   /* "chess_data.pyx":35
- * image_chess_bas = 'Image/BAS.GIF'
- * image_chess_bbs = 'Image/BBS.GIF'
- * image_chess_brs = 'Image/BRS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bns = 'Image/BNS.GIF'
- * image_chess_bcs = 'Image/BCS.GIF'
+ * cdef char* image_chess_bas = 'Image/BAS.GIF'
+ * cdef char* image_chess_bbs = 'Image/BBS.GIF'
+ * cdef char* image_chess_brs = 'Image/BRS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bns = 'Image/BNS.GIF'
+ * cdef char* image_chess_bcs = 'Image/BCS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_brs, __pyx_kp_s_Image_BRS_GIF) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_brs = ((char *)"Image/BRS.GIF");
 
   /* "chess_data.pyx":36
- * image_chess_bbs = 'Image/BBS.GIF'
- * image_chess_brs = 'Image/BRS.GIF'
- * image_chess_bns = 'Image/BNS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bcs = 'Image/BCS.GIF'
- * image_chess_bps = 'Image/BPS.GIF'
+ * cdef char* image_chess_bbs = 'Image/BBS.GIF'
+ * cdef char* image_chess_brs = 'Image/BRS.GIF'
+ * cdef char* image_chess_bns = 'Image/BNS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bcs = 'Image/BCS.GIF'
+ * cdef char* image_chess_bps = 'Image/BPS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bns, __pyx_kp_s_Image_BNS_GIF) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bns = ((char *)"Image/BNS.GIF");
 
   /* "chess_data.pyx":37
- * image_chess_brs = 'Image/BRS.GIF'
- * image_chess_bns = 'Image/BNS.GIF'
- * image_chess_bcs = 'Image/BCS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_bps = 'Image/BPS.GIF'
- * image_chess_rks = 'Image/RKS.GIF'
+ * cdef char* image_chess_brs = 'Image/BRS.GIF'
+ * cdef char* image_chess_bns = 'Image/BNS.GIF'
+ * cdef char* image_chess_bcs = 'Image/BCS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_bps = 'Image/BPS.GIF'
+ * cdef char* image_chess_rks = 'Image/RKS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bcs, __pyx_kp_s_Image_BCS_GIF) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bcs = ((char *)"Image/BCS.GIF");
 
   /* "chess_data.pyx":38
- * image_chess_bns = 'Image/BNS.GIF'
- * image_chess_bcs = 'Image/BCS.GIF'
- * image_chess_bps = 'Image/BPS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rks = 'Image/RKS.GIF'
- * image_chess_ras = 'Image/RAS.GIF'
+ * cdef char* image_chess_bns = 'Image/BNS.GIF'
+ * cdef char* image_chess_bcs = 'Image/BCS.GIF'
+ * cdef char* image_chess_bps = 'Image/BPS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rks = 'Image/RKS.GIF'
+ * cdef char* image_chess_ras = 'Image/RAS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_bps, __pyx_kp_s_Image_BPS_GIF) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_bps = ((char *)"Image/BPS.GIF");
 
   /* "chess_data.pyx":39
- * image_chess_bcs = 'Image/BCS.GIF'
- * image_chess_bps = 'Image/BPS.GIF'
- * image_chess_rks = 'Image/RKS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_ras = 'Image/RAS.GIF'
- * image_chess_rbs = 'Image/RBS.GIF'
+ * cdef char* image_chess_bcs = 'Image/BCS.GIF'
+ * cdef char* image_chess_bps = 'Image/BPS.GIF'
+ * cdef char* image_chess_rks = 'Image/RKS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_ras = 'Image/RAS.GIF'
+ * cdef char* image_chess_rbs = 'Image/RBS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rks, __pyx_kp_s_Image_RKS_GIF) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rks = ((char *)"Image/RKS.GIF");
 
   /* "chess_data.pyx":40
- * image_chess_bps = 'Image/BPS.GIF'
- * image_chess_rks = 'Image/RKS.GIF'
- * image_chess_ras = 'Image/RAS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rbs = 'Image/RBS.GIF'
- * image_chess_rrs = 'Image/RRS.GIF'
+ * cdef char* image_chess_bps = 'Image/BPS.GIF'
+ * cdef char* image_chess_rks = 'Image/RKS.GIF'
+ * cdef char* image_chess_ras = 'Image/RAS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rbs = 'Image/RBS.GIF'
+ * cdef char* image_chess_rrs = 'Image/RRS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_ras, __pyx_kp_s_Image_RAS_GIF) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_ras = ((char *)"Image/RAS.GIF");
 
   /* "chess_data.pyx":41
- * image_chess_rks = 'Image/RKS.GIF'
- * image_chess_ras = 'Image/RAS.GIF'
- * image_chess_rbs = 'Image/RBS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rrs = 'Image/RRS.GIF'
- * image_chess_rns = 'Image/RNS.GIF'
+ * cdef char* image_chess_rks = 'Image/RKS.GIF'
+ * cdef char* image_chess_ras = 'Image/RAS.GIF'
+ * cdef char* image_chess_rbs = 'Image/RBS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rrs = 'Image/RRS.GIF'
+ * cdef char* image_chess_rns = 'Image/RNS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rbs, __pyx_kp_s_Image_RBS_GIF) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rbs = ((char *)"Image/RBS.GIF");
 
   /* "chess_data.pyx":42
- * image_chess_ras = 'Image/RAS.GIF'
- * image_chess_rbs = 'Image/RBS.GIF'
- * image_chess_rrs = 'Image/RRS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rns = 'Image/RNS.GIF'
- * image_chess_rcs = 'Image/RCS.GIF'
+ * cdef char* image_chess_ras = 'Image/RAS.GIF'
+ * cdef char* image_chess_rbs = 'Image/RBS.GIF'
+ * cdef char* image_chess_rrs = 'Image/RRS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rns = 'Image/RNS.GIF'
+ * cdef char* image_chess_rcs = 'Image/RCS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rrs, __pyx_kp_s_Image_RRS_GIF) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rrs = ((char *)"Image/RRS.GIF");
 
   /* "chess_data.pyx":43
- * image_chess_rbs = 'Image/RBS.GIF'
- * image_chess_rrs = 'Image/RRS.GIF'
- * image_chess_rns = 'Image/RNS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rcs = 'Image/RCS.GIF'
- * image_chess_rps = 'Image/RPS.GIF'
+ * cdef char* image_chess_rbs = 'Image/RBS.GIF'
+ * cdef char* image_chess_rrs = 'Image/RRS.GIF'
+ * cdef char* image_chess_rns = 'Image/RNS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rcs = 'Image/RCS.GIF'
+ * cdef char* image_chess_rps = 'Image/RPS.GIF'
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rns, __pyx_kp_s_Image_RNS_GIF) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rns = ((char *)"Image/RNS.GIF");
 
   /* "chess_data.pyx":44
- * image_chess_rrs = 'Image/RRS.GIF'
- * image_chess_rns = 'Image/RNS.GIF'
- * image_chess_rcs = 'Image/RCS.GIF'             # <<<<<<<<<<<<<<
- * image_chess_rps = 'Image/RPS.GIF'
+ * cdef char* image_chess_rrs = 'Image/RRS.GIF'
+ * cdef char* image_chess_rns = 'Image/RNS.GIF'
+ * cdef char* image_chess_rcs = 'Image/RCS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rps = 'Image/RPS.GIF'
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rcs, __pyx_kp_s_Image_RCS_GIF) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rcs = ((char *)"Image/RCS.GIF");
 
   /* "chess_data.pyx":45
- * image_chess_rns = 'Image/RNS.GIF'
- * image_chess_rcs = 'Image/RCS.GIF'
- * image_chess_rps = 'Image/RPS.GIF'             # <<<<<<<<<<<<<<
+ * cdef char* image_chess_rns = 'Image/RNS.GIF'
+ * cdef char* image_chess_rcs = 'Image/RCS.GIF'
+ * cdef char* image_chess_rps = 'Image/RPS.GIF'             # <<<<<<<<<<<<<<
  * 
  * chess_back = pygame.image.load(image_chess_back).convert_alpha()
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_image_chess_rps, __pyx_kp_s_Image_RPS_GIF) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_v_10chess_data_image_chess_rps = ((char *)"Image/RPS.GIF");
 
   /* "chess_data.pyx":47
- * image_chess_rps = 'Image/RPS.GIF'
+ * cdef char* image_chess_rps = 'Image/RPS.GIF'
  * 
  * chess_back = pygame.image.load(image_chess_back).convert_alpha()             # <<<<<<<<<<<<<<
  * 
@@ -4643,7 +4498,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4673,7 +4528,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4703,7 +4558,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_ba); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_ba); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4733,7 +4588,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4763,7 +4618,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_br); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_br); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4793,7 +4648,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4823,7 +4678,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4853,7 +4708,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4883,7 +4738,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4913,7 +4768,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_ra); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_ra); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4943,7 +4798,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4973,7 +4828,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5003,7 +4858,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5033,7 +4888,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5063,7 +4918,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5093,7 +4948,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5123,7 +4978,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bas); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bas); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5153,7 +5008,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5183,7 +5038,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_brs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_brs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5213,7 +5068,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5243,7 +5098,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5273,7 +5128,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_bps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_bps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5303,7 +5158,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5333,7 +5188,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_ras); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_ras); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5363,7 +5218,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5393,7 +5248,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rrs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rrs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5423,7 +5278,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5453,7 +5308,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5483,7 +5338,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_image_chess_rps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_10chess_data_image_chess_rps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
