@@ -5,7 +5,7 @@ cdef int cstart_y = 51
 cdef int cstart_x2 = 260
 cdef int cstart_y2 = 51
 
-SCREEN_SIZE = (521, 313) 
+SCREEN_SIZE = (521, 313)
 pygame.init()
 
 pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
