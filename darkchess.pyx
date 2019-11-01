@@ -14,7 +14,7 @@ import threading
 from pygame.locals import *
 from sys import exit
 
-from chess import *
+from chess cimport *
 from chess_data import *
 from chess_data cimport *
 
@@ -62,7 +62,7 @@ open_score = None
 cdef int step = 0
 
 #default chess
-chtemp = chess(0, (0, 0))
+cdef chess chtemp = chess(0, (0, 0))
 
 cdef list main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
 
