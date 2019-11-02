@@ -1823,15 +1823,15 @@ def com_think(a_map, a_ch):
             #            exit()
         
         # re-check again
-        for i in range(mnum):
-            if gb_m2[i] is not None:
-                if final_score > gb_m2[i][0][4]:
-                    final_score = gb_m2[i][0][4]
-                    min_index = len(mf)
-                    
-                #mf.append([mm[0], mm[1], gb_m2[i][0][4]])
-                mf.append([gb_m2[i][0][0], gb_m2[i][0][1], gb_m2[i][0][4]])
-                gb_m2[i] = None
+        #for i in range(mnum):
+        #    if gb_m2[i] is not None:
+        #        if final_score > gb_m2[i][0][4]:
+        #            final_score = gb_m2[i][0][4]
+        #            min_index = len(mf)
+        #            
+        #        #mf.append([mm[0], mm[1], gb_m2[i][0][4]])
+        #        mf.append([gb_m2[i][0][0], gb_m2[i][0][1], gb_m2[i][0][4]])
+        #        gb_m2[i] = None
         
         if mf:
             print('mf=', mf)
