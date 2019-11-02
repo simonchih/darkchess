@@ -1072,8 +1072,8 @@ def chess_ai(sound_all):
                     back_value_num[m.color][m.value] -= 1
                     #print(back_value_num)
                 elif score > open_score:
-                    if score > 18:
-                        org = None
+                    #if score > 18:
+                    #    org = None
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
                         main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
@@ -2861,42 +2861,46 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         
 		# Test data
         #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
-        #back_num = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 5
         #
-        #chess_num[0] = 2
-        #chess_num[1] = 2
+        #chess_num[0] = 5
+        #chess_num[1] = 5
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
+        #        if 1 == i and j == 3:
+        #            continue
+        #        elif 2 == i and j > 3:
+        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(15, (1, 1))
+        #ch = chess(16, (2, 1), chess_back)
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
         #
-        #ch = chess(13, (3, 1))
+        #ch = chess(13, (3, 2), chess_back)
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][1] = ch
-        #main_map[3][1] = (3, 1)
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
         #
-        #ch = chess(29, (2, 2))
+        #ch = chess(27, (3, 3), chess_back)
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][2] = ch
-        #main_map[2][2] = (2, 2)
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
         #
-        #ch = chess(16, (1, 6))
+        #ch = chess(23, (3, 4), chess_back)
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][6] = ch
-        #main_map[1][6] = (1, 6)
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
 
         #End Test data
         
