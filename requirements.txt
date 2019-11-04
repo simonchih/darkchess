@@ -10,7 +10,11 @@ py -3 -m pip install pygame
 
 4. Change to game directory
 
-5. Try to execute darkchess.py:
+5. Try to execute <dchess or darkchess>.py:
+Case I, greater or equal v0.9.0:
+py -3 dchess.py
+
+Case II, lower than v0.9.0:
 py -3 darkchess.py
 
 For Linux:
