@@ -8,7 +8,7 @@ Intall with Python (For Mac and Linux):
 1. Install Python 3.5
 2. Install Pygame
 3. 
-Case I, greater or equal v0.9.0: (NOT test)
+Case I, greater or equal v0.9.0:
 Run 'Python dchess.py'
 
 Case II, lower than v0.9.0:

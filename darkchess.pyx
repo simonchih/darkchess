@@ -8,78 +8,36 @@ except ImportError:
 import random, os
 import math
 import time 
+import pygame
 import copy
 import threading
-
+from pygame.locals import *
 from sys import exit
 from multiprocessing import Process, Queue
 
-cdef int cstart_x = 34
-cdef int cstart_y = 51
-cdef int cstart_x2 = 260
-cdef int cstart_y2 = 51
+from chess cimport *
+from chess_data import *
+from chess_data cimport *
 
-cdef double drag = 0.999
+cdef char* background_image_filename = 'Image/SHEET.gif'
+cdef char* image_new        = 'Image/shield-and-swords.gif'
 
-cdef class chess:
-    cdef public int row, col
-    cdef public int size[2]
-    cdef public int color
-    cdef public int index, value, x, y, back, live
-    cdef public double speed, angle
-    cdef public list possible_move
+cdef char* image_chess_back = 'Image/back.gif'
 
-    def __init__(self, int index, (int, int) rc, chess_back):
-        (row, col) = rc
-        self.row = row
-        self.col = col
-        self.size = chess_back.get_size()
-        self.index = index
-        # To avoid deepcopy error with Python 3.6
-        #self.surface = index_to_chess_surface(index)
-        #self.select = index_to_chess_select(index)
-        self.color = index_to_color(index)
-        self.value = index_to_chess_value(index)
-        if col < 4:
-            self.x = cstart_x+col*chess_back.get_width()
-            self.y = cstart_y+row*chess_back.get_height()
-        else:
-            self.x = cstart_x2+(col-4)*chess_back.get_width()
-            self.y = cstart_y2+row*chess_back.get_height()
-        self.back = 1
-        self.live = 1
-        self.speed = 0
-        self.angle = 0
-        self.possible_move = []
-        
-    def draw(self, screen, chess_back, chess_image_sel, chess_image):
-        
-        surface = index_to_chess_surface(self.index, chess_image)
-        select = index_to_chess_select(self.index, chess_image_sel)
-        
-        if 1 == self.live:
-            if 1 == self.back:
-                screen.blit(chess_back, (self.x, self.y))
-            elif -1 == self.back:
-                screen.blit(select, (self.x, self.y))
-            else:
-                screen.blit(surface, (self.x, self.y))
-                
-    def click(self, mXY):
-        (mouseX, mouseY) = mXY
-        if 1 == self.live:
-            if self.x < mouseX < self.x + self.size[0] and self.y < mouseY < self.y + self.size[1]:
-                if 1 == self.back:
-                    #self.back = 0
-                    return self.index
-                else:
-                    return -1
-        return None
-                    
-    def move(self):
-        self.x += math.sin(self.angle) * self.speed
-        self.y -= math.cos(self.angle) * self.speed
-        self.speed *= drag
+cdef char* image_chess_bk = 'Image/BK.GIF'
+cdef char* image_chess_ba = 'Image/BA.GIF'
+cdef char* image_chess_bb = 'Image/BB.GIF'
+cdef char* image_chess_br = 'Image/BR.GIF'
+cdef char* image_chess_bn = 'Image/BN.GIF'
+cdef char* image_chess_bc = 'Image/BC.GIF'
+cdef char* image_chess_bp = 'Image/BP.GIF'
+cdef char* image_chess_rk = 'Image/RK.GIF'
+cdef char* image_chess_ra = 'Image/RA.GIF'
+cdef char* image_chess_rb = 'Image/RB.GIF'
+cdef char* image_chess_rr = 'Image/RR.GIF'
+cdef char* image_chess_rn = 'Image/RN.GIF'
+cdef char* image_chess_rc = 'Image/RC.GIF'
+cdef char* image_chess_rp = 'Image/RP.GIF'
 
 cdef char* image_chess_bks = 'Image/BKS.GIF'
 cdef char* image_chess_bas = 'Image/BAS.GIF'
@@ -96,20 +54,19 @@ cdef char* image_chess_rns = 'Image/RNS.GIF'
 cdef char* image_chess_rcs = 'Image/RCS.GIF'
 cdef char* image_chess_rps = 'Image/RPS.GIF'
 
-cdef char* image_chess_bk = 'Image/BK.GIF'
-cdef char* image_chess_ba = 'Image/BA.GIF'
-cdef char* image_chess_bb = 'Image/BB.GIF'
-cdef char* image_chess_br = 'Image/BR.GIF'
-cdef char* image_chess_bn = 'Image/BN.GIF'
-cdef char* image_chess_bc = 'Image/BC.GIF'
-cdef char* image_chess_bp = 'Image/BP.GIF'
-cdef char* image_chess_rk = 'Image/RK.GIF'
-cdef char* image_chess_ra = 'Image/RA.GIF'
-cdef char* image_chess_rb = 'Image/RB.GIF'
-cdef char* image_chess_rr = 'Image/RR.GIF'
-cdef char* image_chess_rn = 'Image/RN.GIF'
-cdef char* image_chess_rc = 'Image/RC.GIF'
-cdef char* image_chess_rp = 'Image/RP.GIF'
+cdef char* s_newgame = 'Sound/NEWGAME.WAV'
+cdef char* s_capture = 'Sound/CAPTURE2.WAV'
+cdef char* s_click   = 'Sound/CLICK.WAV'
+cdef char* s_loss    = 'Sound/LOSS.WAV'
+cdef char* s_move2   = 'Sound/MOVE2.WAV'
+cdef char* s_win     = 'Sound/WIN.WAV'
+
+sound_new     = pygame.mixer.Sound(s_newgame)
+sound_capture = pygame.mixer.Sound(s_capture)
+sound_click   = pygame.mixer.Sound(s_click)
+sound_loss    = pygame.mixer.Sound(s_loss)
+sound_win     = pygame.mixer.Sound(s_win)
+sound_move    = pygame.mixer.Sound(s_move2)
 
 cdef int text_x = 237
 cdef int text_y = 16
@@ -127,27 +84,20 @@ cdef int com_color = 1
 cdef double max_value = 0
 cdef double max_dist = 32
 cdef int sindex = 0
-cdef int AI_min_score = 2000
+cdef double AI_min_score = 2000.0
 cdef double final_score = 2000.0 #mini
 cdef list gb_m2 = []
 #max_cor = None
 open_score = None
 cdef int step = 0
 
-cdef int chess_index[32]
-chess_index[:] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-#default chess
-#cdef chess chtemp = chess(0, (0, 0))
-
-#cdef list main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
-
-#cdef list server_main_chess = [[chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp], [chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp, chtemp]]
-
 cdef list main_chess = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0 ,0, 0],  [0, 0, 0, 0, 0, 0 ,0, 0],  [0, 0, 0, 0, 0, 0 ,0, 0]]
 
 cdef list server_main_chess = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0 ,0, 0],  [0, 0, 0, 0, 0, 0 ,0, 0],  [0, 0, 0, 0, 0, 0 ,0, 0]]
-    
+
+cdef int chess_index[32]
+chess_index[:] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 cdef list main_map = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 cdef list cor = [[(0,0)]*8, [(0,0)]*8, [(0,0)]*8, [(0,0)]*8]
 
@@ -998,9 +948,7 @@ def calc_good_backchess(int y0, int y1, int y2, int x0, int x1, int x2, a_map, m
 #    
 #    return (y, x)
                 
-def chess_ai(sound_all):
-    import pygame
-
+def chess_ai():
     global turn_id
     global first
     global main_chess
@@ -1016,14 +964,11 @@ def chess_ai(sound_all):
     
     pygame.display.update()
     
-    cdef char* image_chess_back = 'Image/back.gif'
-    chess_back = pygame.image.load(image_chess_back).convert_alpha()
-    
     if 0 == player_first and  1 == first:
         i = random.randint(0, 3) 
         j = random.randint(0, 7)
         cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
-        main_chess[i][j] = chess(cindex, (i, j), chess_back)
+        main_chess[i][j] = chess(cindex, (i, j))
         turn_id = main_chess[i][j].color
         main_chess[i][j].back = -1
         back_num -= 1
@@ -1061,11 +1006,10 @@ def chess_ai(sound_all):
             if open_score != None:
                 if None == org:
                     dest = select_back_chess(main_map, main_chess)
-                    #sound_click.play()
-                    sound_all[2].play()
+                    sound_click.play()
                     sc = server_main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
                     cindex = color_value_to_index(sc.color, sc.value, back_value_num)
-                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]] = chess(cindex, (main_map[dest[0]][dest[1]][0], main_map[dest[0]][dest[1]][1]), chess_back)
+                    main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]] = chess(cindex, (main_map[dest[0]][dest[1]][0], main_map[dest[0]][dest[1]][1]))
                     m = main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
                     m.back = -1
                     back_num -= 1
@@ -1074,17 +1018,15 @@ def chess_ai(sound_all):
                 elif score > open_score:
                     if score > 18:
                         org = None
-                    
                     temp = select_back_chess(main_map, main_chess, org)
                     if (-1, -1) == temp:
-                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest, a_map, main_chess)
                     else:
-                        #sound_click.play()
-                        sound_all[2].play()
+                        sound_click.play()
                         sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                         cindex = color_value_to_index(sc.color, sc.value, back_value_num)
-                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0], main_map[temp[0]][temp[1]][1]), chess_back)
+                        main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0], main_map[temp[0]][temp[1]][1]))
                         m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                         m.back = -1
                         back_num -= 1
@@ -1096,30 +1038,29 @@ def chess_ai(sound_all):
                             org = None
                         temp = select_back_chess(main_map, main_chess, org)
                         if (-1, -1) == temp:
-                            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+                            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                             save_step_and_break_long_capture(org, dest, a_map, main_chess)
                         else:
-                            #sound_click.play()
-                            sound_all[2].play()
+                            sound_click.play()
                             sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                             cindex = color_value_to_index(sc.color, sc.value, back_value_num)
-                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0],main_map[temp[0]][temp[1]][1]), chess_back)
+                            main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]] = chess(cindex, (main_map[temp[0]][temp[1]][0],main_map[temp[0]][temp[1]][1]))
                             m = main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                             m.back = -1
                             back_num -= 1
                             back_value_num[m.color][m.value] -= 1
                             #print(back_value_num)
                     else:
-                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+                        main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest, a_map, main_chess)
                 else:
-                    main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+                    main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                     save_step_and_break_long_capture(org, dest, a_map, main_chess)
             else:
-                main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+                main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                 save_step_and_break_long_capture(org, dest, a_map, main_chess)
         elif 0 == player_win:
-            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess, sound_all)
+            main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
             save_step_and_break_long_capture(org, dest, a_map, main_chess)
    
     if turn_id == com_color:
@@ -1749,7 +1690,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
         #            will_eat_escape_chess.append((orgy, orgx))
         #        return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
-def move_s(org, dest, a_map, a_ch, sound_all):
+def move_s(org, dest, a_map, a_ch):
     global cor
     global com_mv_map
     
@@ -1768,8 +1709,7 @@ def move_s(org, dest, a_map, a_ch, sound_all):
         af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
-        #sound_move.play()
-        sound_all[5].play()
+        sound_move.play()
     else:
         #dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
         org_ch  = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
@@ -1780,8 +1720,7 @@ def move_s(org, dest, a_map, a_ch, sound_all):
         af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
-        #sound_capture.play()
-        sound_all[1].play()
+        sound_capture.play()
     
     return a_map, a_ch, af_map    
         
@@ -1819,6 +1758,14 @@ cdef int cant_move(a_map, a_ch, int owner_color):
                 for pm in ch.possible_move:
                     return 0
     return 1
+
+cdef int temp_clac_num_back():
+    cb = 0
+    for chr in my_ch:
+        for ch in chr:
+            if ch.back == 1:
+                cb += 1
+    return cb
     
 def com_think(a_map, a_ch):
     global open_score
@@ -1887,16 +1834,14 @@ def com_think(a_map, a_ch):
         nump = 0
         while nump < len(m):
             for i in range(mnum):
-                
                 gb_m2[i] = q.get()
-                
                 if gb_m2[i] is not None:
                     nump += 1
                     
                     # if nexti == nextj:
                     if gb_m2[i][0][0] == gb_m2[i][0][1]:
                         open_score = gb_m2[i][0][4]
-                        
+                    
                     if final_score > gb_m2[i][0][4]:
                         final_score = gb_m2[i][0][4]
                         min_index = len(mf)
@@ -1907,17 +1852,6 @@ def com_think(a_map, a_ch):
             #for event in pygame.event.get():
             #        if event.type == QUIT:
             #            exit()
-        
-        # re-check again
-        #for i in range(mnum):
-        #    if gb_m2[i] is not None:
-        #        if final_score > gb_m2[i][0][4]:
-        #            final_score = gb_m2[i][0][4]
-        #            min_index = len(mf)
-        #            
-        #        #mf.append([mm[0], mm[1], gb_m2[i][0][4]])
-        #        mf.append([gb_m2[i][0][0], gb_m2[i][0][1], gb_m2[i][0][4]])
-        #        gb_m2[i] = None
         
         if mf:
             print('mf=', mf)
@@ -1934,10 +1868,6 @@ def com_think(a_map, a_ch):
 # original one_turn for player(next to com player)
 # extend to player-com-player
 def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, list gb_m2):
-    global final_score # It may NOT work in multi-process
-    #global gb_m2
-    
-    #print(final_score)
     
     cdef double max_p_score = -2000
     
@@ -1971,22 +1901,6 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 score = sc
             
     for ch_position, pm in all_pm:
-        #pity = will_dead_pity(ch_position, pm, af_ch, af_map, owner_color)
-        #if 0 == pity:
-        #    if owner_color == player_color:
-        #        if 0 == will_dead_pity_even_equal(ch_position, pm, af_ch, af_map, owner_color):#equal
-        #            score = sc + div * move_score(ch_position, pm, af_ch, af_map, player_color)
-        #        else: # 1 == or None ==
-        #            score = sc
-        #    else:
-        #        score = sc - div * move_score(ch_position, pm, af_ch, af_map, com_color)
-        #elif 1 == pity:
-        #    if owner_color == com_color:
-        #        score = sc + 40 - div * move_score(ch_position, pm, af_ch, af_map, com_color)
-        #    else:
-        #        score = sc - 8
-        #else: # None == pity
-        #    score = sc
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color)
         if 1 == pt and mscore > 0:
             score = sc + div * 2 * mscore
@@ -2014,17 +1928,10 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                         all_pm_2.append([(ch_com.row, ch_com.col), apm_com])
         
         for ch_position2, pm_com in all_pm_2:
-            #pity = will_dead_pity(ch_position2, pm_com, af_ch_2, af_map_2, com_color)
-            #if 0 == pity:
-            #    score2 = score - div * move_score(ch_position2, pm_com, af_ch_2, af_map_2, com_color, 2)
-            #elif 1 == pity:
-            #    score2 = score + 50 - div * move_score(ch_position2, pm_com, af_ch_2, af_map_2, com_color, 2)
-            #else: # None == pity
-            #    score2 = score
             score2 = score - div * move_score(ch_position2, pm_com, af_ch_2, af_map_2, com_color, 2)
             
-            if score2 > final_score:
-                continue
+            #if score2 > final_score:
+            #    continue
                             
             ###############################
             af_map_3 = copy.deepcopy(af_map_2)
@@ -2049,26 +1956,15 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             for ch_position3, pm_p in all_pm_3:
                 pity = will_dead_pity(ch_position3, pm_p, af_ch_3, af_map_3, owner_color)
                 if 0 == pity:
-                    #if owner_color == player_color:
-                    #    if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
-                    #        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
-                    #    else: # 1 == , None ==
-                    #        score3 = score2
-                    #else:
-                    #    score3 = score2 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
                     
                     if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
                         score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
                     else: # 1 == , None ==
                         score3 = score2
                         
-                elif 1 == pity:
-                    #if owner_color == com_color:
-                    #    score3 = score2 + 40 - div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, com_color, 3)
-                    #else:
-                    #    score3 = score2 - 8
-                    
+                elif 1 == pity:                   
                     score3 = score2 - 8
+                    
                 else: # None == pity
                     score3 = score2
                 
@@ -2077,7 +1973,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                     ch_player = ch_position3
                     pm_player = pm_p
                 
-                # marked 20190805
+                # unmarked 20190805
                 if score3 > alpha:
                     break
                             
@@ -2089,7 +1985,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                     
                 m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])
                 
-                # marked 20190805
+                # unmarked 20190805
                 if max_p_score < beta:
                     max_p_score = -2000
                     break                                        
@@ -2116,9 +2012,9 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             m3.append([ch_position, pm, ch_comp, pm_comp, coms])                           
             m4 = []
             
-            # marked 20190805
-            if coms > final_score:                            
-                break
+            # marked 20191104
+            #if coms > final_score:                            
+            #    break
 
         else:
             m3.append([ch_position, pm, None, None,score])
@@ -2546,7 +2442,6 @@ cdef void display_font(screen, int AI_vs_AI = 0):
         
 def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):    
     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
-    import pygame
     myfont = pygame.font.Font("wqy-zenhei.ttf",14)
     mytext = myfont.render(msg, True, color)
     mytext = mytext.convert_alpha()
@@ -2559,144 +2454,8 @@ def clean_back_n1_to_0(a_ch):
                 ch.back = 0
     return a_ch
 
-def index_to_chess_select(int index, chess_image_sel):
-
-    if 0 <= index < 5:
-        return chess_image_sel[0]
-    elif index < 7:
-        return chess_image_sel[1]
-    elif index < 9:
-        return chess_image_sel[2]
-    elif index < 11:
-        return chess_image_sel[3]
-    elif index < 13:
-        return chess_image_sel[4]
-    elif index < 15:
-        return chess_image_sel[5]
-    elif 15 == index:
-        return chess_image_sel[6]
-    elif 16 <= index < 21:
-        return chess_image_sel[7]
-    elif index < 23:
-        return chess_image_sel[8]
-    elif index < 25:
-        return chess_image_sel[9]
-    elif index < 27:
-        return chess_image_sel[10]
-    elif index < 29:
-        return chess_image_sel[11]
-    elif index < 31:
-        return chess_image_sel[12]
-    elif 31 == index:
-        return chess_image_sel[13]
-
-def index_to_chess_surface(int index, chess_image):    
-
-    if 0 <= index < 5:
-        return chess_image[0]
-    elif index < 7:
-        return chess_image[1]
-    elif index < 9:
-        return chess_image[2]
-    elif index < 11:
-        return chess_image[3]
-    elif index < 13:
-        return chess_image[4]
-    elif index < 15:
-        return chess_image[5]
-    elif 15 == index:
-        return chess_image[6]
-    elif 16 <= index < 21:
-        return chess_image[7]
-    elif index < 23:
-        return chess_image[8]
-    elif index < 25:
-        return chess_image[9]
-    elif index < 27:
-        return chess_image[10]
-    elif index < 29:
-        return chess_image[11]
-    elif index < 31:
-        return chess_image[12]
-    elif 31 == index:
-        return chess_image[13]
-        
-cdef int index_to_chess_value(int index):
-    if 0 <= index < 5:
-        return 1
-    elif index < 7:
-        return 2
-    elif index < 9:
-        return 3
-    elif index < 11:
-        return 4
-    elif index < 13:
-        return 5
-    elif index < 15:
-        return 6
-    elif 15 == index:
-        return 7
-    elif 16 <= index < 21:
-        return 1
-    elif index < 23:
-        return 2
-    elif index < 25:
-        return 3
-    elif index < 27:
-        return 4
-    elif index < 29:
-        return 5
-    elif index < 31:
-        return 6
-    elif 31 == index:
-        return 7
-        
-cdef int index_to_color(int index):
-    if 0 <= index < 16:
-        return 0
-    else:
-        return 1
-        
-def color_value_to_index(color, int value, bvalue_num):
-    if 0 == bvalue_num[color][value]:
-        return None
-    
-    if 0 == color:
-        if 1 == value:
-            return bvalue_num[color][value] - 1
-        elif 2 == value:
-            return bvalue_num[color][value] + 4
-        elif 3 == value:
-            return bvalue_num[color][value] + 6
-        elif 4 == value:
-            return bvalue_num[color][value] + 8
-        elif 5 == value:
-            return bvalue_num[color][value] + 10
-        elif 6 == value:
-            return bvalue_num[color][value] + 12
-        elif 7 == value:
-            return bvalue_num[color][value] + 14
-    elif 1 == color:
-        if 1 == value:
-            return bvalue_num[color][value] + 15
-        elif 2 == value:
-            return bvalue_num[color][value] + 20
-        elif 3 == value:
-            return bvalue_num[color][value] + 22
-        elif 4 == value:
-            return bvalue_num[color][value] + 24
-        elif 5 == value:
-            return bvalue_num[color][value] + 26
-        elif 6 == value:
-            return bvalue_num[color][value] + 28
-        elif 7 == value:
-            return bvalue_num[color][value] + 30
-
 # AI_vs_AI -> 0: human vs AI, 1: AI vs AI    
 def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
-    import pygame
-    from pygame.locals import QUIT
-
     global cstart_x
     global cstart_y
     global cstart_x2
@@ -2722,53 +2481,8 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
     global break_long_capture_org
     global com_ban_step
     global back_value_num
-    global step    
+    global step
     
-    cdef char* background_image_filename = 'Image/SHEET.gif'
-    cdef char* image_new        = 'Image/shield-and-swords.gif'
-    
-    cdef char* s_newgame = 'Sound/NEWGAME.WAV'
-    cdef char* s_capture = 'Sound/CAPTURE2.WAV'
-    cdef char* s_click   = 'Sound/CLICK.WAV'
-    cdef char* s_loss    = 'Sound/LOSS.WAV'
-    cdef char* s_move2   = 'Sound/MOVE2.WAV'
-    cdef char* s_win     = 'Sound/WIN.WAV'
-    
-    cdef char* image_chess_back = 'Image/back.gif'
-    
-    cdef char* image_chess_bk = 'Image/BK.GIF'
-    cdef char* image_chess_ba = 'Image/BA.GIF'
-    cdef char* image_chess_bb = 'Image/BB.GIF'
-    cdef char* image_chess_br = 'Image/BR.GIF'
-    cdef char* image_chess_bn = 'Image/BN.GIF'
-    cdef char* image_chess_bc = 'Image/BC.GIF'
-    cdef char* image_chess_bp = 'Image/BP.GIF'
-    cdef char* image_chess_rk = 'Image/RK.GIF'
-    cdef char* image_chess_ra = 'Image/RA.GIF'
-    cdef char* image_chess_rb = 'Image/RB.GIF'
-    cdef char* image_chess_rr = 'Image/RR.GIF'
-    cdef char* image_chess_rn = 'Image/RN.GIF'
-    cdef char* image_chess_rc = 'Image/RC.GIF'
-    cdef char* image_chess_rp = 'Image/RP.GIF'
-    
-    cdef char* image_chess_bks = 'Image/BKS.GIF'
-    cdef char* image_chess_bas = 'Image/BAS.GIF'
-    cdef char* image_chess_bbs = 'Image/BBS.GIF'
-    cdef char* image_chess_brs = 'Image/BRS.GIF'
-    cdef char* image_chess_bns = 'Image/BNS.GIF'
-    cdef char* image_chess_bcs = 'Image/BCS.GIF'
-    cdef char* image_chess_bps = 'Image/BPS.GIF'
-    cdef char* image_chess_rks = 'Image/RKS.GIF'
-    cdef char* image_chess_ras = 'Image/RAS.GIF'
-    cdef char* image_chess_rbs = 'Image/RBS.GIF'
-    cdef char* image_chess_rrs = 'Image/RRS.GIF'
-    cdef char* image_chess_rns = 'Image/RNS.GIF'
-    cdef char* image_chess_rcs = 'Image/RCS.GIF'
-    cdef char* image_chess_rps = 'Image/RPS.GIF'
-    
-    SCREEN_SIZE = (521, 313)
-    pygame.init()
-
     pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
     pygame.display.set_caption("Taiwan Blind Chess")
@@ -2806,20 +2520,11 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
     chess_rps = pygame.image.load(image_chess_rps).convert_alpha()
     
     chess_image_sel = [chess_bps, chess_bcs, chess_bns, chess_brs, chess_bbs, chess_bas, chess_bks, chess_rps, chess_rcs, chess_rns, chess_rrs, chess_rbs, chess_ras, chess_rks]
-    chess_image = [chess_bp, chess_bc, chess_bn, chess_br, chess_bb, chess_ba, chess_bk, chess_rp, chess_rc, chess_rn, chess_rr, chess_rb, chess_ra, chess_rk]
+    chess_image = [chess_bp, chess_bc, chess_bn, chess_br, chess_bb, chess_ba, chess_bk, chess_rp, chess_rc, chess_rn, chess_rr, chess_rb, chess_ra, chess_rk, chess_back]
     
     background = pygame.image.load(background_image_filename).convert_alpha()
     new_game   = pygame.image.load(image_new).convert_alpha()
-    
-    sound_new     = pygame.mixer.Sound(s_newgame)
-    sound_capture = pygame.mixer.Sound(s_capture)
-    sound_click   = pygame.mixer.Sound(s_click)
-    sound_loss    = pygame.mixer.Sound(s_loss)
-    sound_win     = pygame.mixer.Sound(s_win)
-    sound_move    = pygame.mixer.Sound(s_move2)
-    
-    sound_all = [sound_new, sound_capture, sound_click, sound_loss, sound_win, sound_move] 
-    
+
     while True:
         selected_c = None
         player_win = 0
@@ -2851,63 +2556,59 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         chess_index = ini_random_chess(chess_index)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+j], (i, j), chess_back)
+                ch = chess(chess_index[8*i+j], (i, j))
                 server_main_chess[i][j] = ch
                 # 32 is invalid value for initiation value only
-                main_chess[i][j] = chess(32, (i,j), chess_back)
+                main_chess[i][j] = chess(32, (i,j))
                 cor[i][j] = (ch.x, ch.y)
                 main_map[i][j] = (i, j)
         for i in range(0, 4):
             for j in range(0, 4):
-                ch = chess(chess_index[8*i+4+j], (i, 4+j), chess_back)
+                ch = chess(chess_index[8*i+4+j], (i, 4+j))
                 server_main_chess[i][4+j] = ch
                 # 32 is invalid value for initiation value only
-                main_chess[i][4+j] = chess(32, (i, 4+j), chess_back)
+                main_chess[i][4+j] = chess(32, (i, 4+j))
                 cor[i][4+j] = (ch.x, ch.y)
                 main_map[i][4+j] = (i, 4+j)
         
 		# Test data
         #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 1
-        #back_num = 5
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 0
         #
-        #chess_num[0] = 5
-        #chess_num[1] = 5
+        #chess_num[0] = 2
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 1 == i and j == 3:
-        #            continue
-        #        elif 2 == i and j > 3:
-        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(16, (2, 1), chess_back)
+        #ch = chess(15, (1, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][1] = ch
-        #main_map[2][1] = (2, 1)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(13, (3, 2), chess_back)
+        #ch = chess(13, (3, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][2] = ch
-        #main_map[3][2] = (3, 2)
+        #main_chess[3][1] = ch
+        #main_map[3][1] = (3, 1)
         #
-        #ch = chess(27, (3, 3), chess_back)
+        #ch = chess(29, (2, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
         #
-        #ch = chess(23, (3, 4), chess_back)
+        #ch = chess(16, (1, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][4] = ch
-        #main_map[3][4] = (3, 4)
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
 
         #End Test data
         
@@ -2991,40 +2692,56 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         
         # Test data 3
         #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
-        #back_num = 15
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 1
         #
-        #chess_num[0] = 13
-        #chess_num[1] = 14
+        #chess_num[0] = 3
+        #chess_num[1] = 4
         #
-        #main_chess[3][7].live = 0
-        #main_map[3][7] = None
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 1 == i and 4 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #ch = chess(31, (2, 6), chess_back)
+        #ch = chess(31, (1, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(16, (2, 7), chess_back)
+        #ch = chess(9, (1, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][7] = ch
-        #main_map[2][7] = (2, 7)
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
         #
-        #ch = chess(11, (3, 6), chess_back)
+        #ch = chess(10, (2, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6) 
+        #main_chess[2][4] = ch
+        #main_map[2][4] = (2, 4) 
         #
-        #ch = chess(7, (2, 5), chess_back)
+        #ch = chess(27, (2, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][5] = ch
         #main_map[2][5] = (2, 5) 
+        #
+        #ch = chess(29, (3, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
+        #
+        #ch = chess(16, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
         
         #End Test data 3
         
@@ -3094,7 +2811,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
             display_font(screen, AI_vs_AI)
             for cr in main_chess:
                 for c in cr:
-                    c.draw(screen, chess_back, chess_image_sel, chess_image)
+                    c.draw(screen, chess_image_sel, chess_image)
                        
             no_move = 1
             if 2 == turn_id:
@@ -3125,16 +2842,16 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                                 turn_id = player_color
                         if 1 == com_mv:
                             no_move = 0
-                            c.draw(screen, chess_back, chess_image_sel, chess_image)
+                            c.draw(screen, chess_image_sel, chess_image)
                             com_mv = 0
                 if 1 == no_move:
                     turn_id = player_color
             
             if selected_c != None:
                 selected_c.move()
-                selected_c.draw(screen, chess_back, chess_image_sel, chess_image)
+                selected_c.draw(screen, chess_image_sel, chess_image)
             
-            chess_ai(sound_all)
+            chess_ai()
             
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
@@ -3168,7 +2885,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                                         if 1 == player_first and 1 == first:
                                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
                                             # ch_index may different with cindex
-                                            main_chess[i][j] = chess(cindex, (i,j), chess_back)
+                                            main_chess[i][j] = chess(cindex, (i,j))
                                             main_chess[i][j].back = 0
                                             turn_id = index_to_color(cindex)
                                             player_color = turn_id
@@ -3184,7 +2901,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                                             selected_c = chc
                                         elif ch_index != -1 and 0 == first:
                                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
-                                            main_chess[i][j] = chess(cindex, (i, j), chess_back)
+                                            main_chess[i][j] = chess(cindex, (i, j))
                                             main_chess[i][j].back = 0
                                             selected_c = None
                                             back_num -= 1
@@ -3280,7 +2997,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                     for j, c in enumerate(cr):
                         if 32 == c.index and 1 == main_chess[i][j].live:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
-                            main_chess[i][j] = chess(cindex, (i, j), chess_back)
+                            main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
                 player_win = -1
                 
@@ -3290,7 +3007,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                     for j, c in enumerate(cr):
                         if 32 == c.index and 1 == main_chess[i][j].live:
                             cindex = color_value_to_index(server_main_chess[i][j].color, server_main_chess[i][j].value, back_value_num)
-                            main_chess[i][j] = chess(cindex, (i, j), chess_back)
+                            main_chess[i][j] = chess(cindex, (i, j))
                             main_chess[i][j].back = 0
                 player_win = 1
             
@@ -3299,7 +3016,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                 display_font(screen, AI_vs_AI)
                 for cr in main_chess:
                     for c in cr:
-                        c.draw(screen, chess_back, chess_image_sel, chess_image)
+                        c.draw(screen, chess_image_sel, chess_image)
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
@@ -3308,7 +3025,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                 display_font(screen, AI_vs_AI)
                 for cr in main_chess:
                     for c in cr:
-                        c.draw(screen, chess_back, chess_image_sel, chess_image)
+                        c.draw(screen, chess_image_sel, chess_image)
                 sound_loss.play()
                 pygame.display.update()
                 time.sleep(5)
