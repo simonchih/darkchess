@@ -6,6 +6,9 @@ except ImportError:
     pass
 
 import random, os
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1"
+
 import math
 import time 
 import pygame
