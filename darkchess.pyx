@@ -1761,14 +1761,6 @@ cdef int cant_move(a_map, a_ch, int owner_color):
                 for pm in ch.possible_move:
                     return 0
     return 1
-
-cdef int temp_clac_num_back():
-    cb = 0
-    for chr in my_ch:
-        for ch in chr:
-            if ch.back == 1:
-                cb += 1
-    return cb
     
 def com_think(a_map, a_ch):
     global open_score
