@@ -4,16 +4,6 @@ Image and Sound source (XiangQi Wizard):
 https://sourceforge.net/projects/xqwizard/?source=directory
 http://www.freeiconsweb.com/Free-Downloads.asp?id=494
 
-Intall with Python (For Mac and Linux):
-1. Install Python 3.5
-2. Install Pygame
-3. 
-Case I, greater or equal v0.9.0:
-Run 'Python dchess.py'
-
-Case II, lower than v0.9.0:
-Run 'Python darkchess.py'
-
 For English User, please refer Software Requirements Specification.pdf.
 (In installation folder)
 Or you can download from:

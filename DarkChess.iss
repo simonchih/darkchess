@@ -5,21 +5,22 @@
 
 [Setup]
 AppName=Basic Blind Chess
-AppVersion=0.8.6
+AppVersion=0.9.6
 DefaultDirName={pf}\Basic Blind Chess
 DefaultGroupName=Basic Blind Chess
-UninstallDisplayIcon={app}\darkchess.exe
+UninstallDisplayIcon={app}\dchess.exe
 Compression=lzma2
 SolidCompression=yes
 OutputDir=D:\darkchess
+ArchitecturesInstallIn64BitMode=x64
 
 [Files]
-Source: "D:\darkchess\darkchess_086\*.*"; DestDir: "{app}"
-Source: "D:\darkchess\darkchess_086\readme.txt"; DestDir: "{app}"; Flags: isreadme
-Source: "D:\darkchess\darkchess_086\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
-Source: "D:\darkchess\darkchess_086\Sound\*.*"; DestDir: "{app}\Sound"; Flags: ignoreversion recursesubdirs  
+Source: "D:\darkchess\darkchess_096\*.*"; DestDir: "{app}"; Check: Is64BitInstallMode
+Source: "D:\darkchess\darkchess_096\readme.txt"; DestDir: "{app}"; Flags: isreadme
+Source: "D:\darkchess\darkchess_096\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
+Source: "D:\darkchess\darkchess_096\Sound\*.*"; DestDir: "{app}\Sound"; Flags: ignoreversion recursesubdirs  
 
 [Icons]
-Name: "{group}\Basic Blind Chess"; Filename: "{app}\darkchess.exe"; IconFilename: "{app}\Image\darkchess_default.ico"
+Name: "{group}\Basic Blind Chess"; Filename: "{app}\dchess.exe"; IconFilename: "{app}\Image\darkchess_default.ico"
 Name: "{group}\Software Requirements Specification"; Filename: "{app}\Software Requirements Specification.pdf";
 Name: "{group}\Uninstall Basic Blind Chess"; Filename: "{uninstallexe}";
