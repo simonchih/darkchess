@@ -260,73 +260,37 @@ cdef list collect_possible_move(int i, int j, a_map, my_chess):
                     jump = 1
     return pm
 
-cdef int opp_cannon_can_eat((int, int)org, (int, int)dest, my_chess, a_map):
-    (i, j) = org
-    (ii, jj) = dest
-    o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
-    ch1 = None
-    ch2 = None
-    if i == ii:
-        for ki in range(ii+1, 4):
-            if a_map[ki][jj] != None:
-                (mi, mj) = a_map[ki][jj]
-                ch1 = my_chess[mi][mj]
-                break
-        for ki in range(ii-1, -1, -1):
-            if a_map[ki][jj] != None:
-                (mi, mj) = a_map[ki][jj]
-                ch2 = my_chess[mi][mj]
-                break
-        if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
-                return 1        
-    else:       
-        for kj in range(jj+1, 8):
-            if a_map[ii][kj] != None:
-                (mi, mj) = a_map[ii][kj]
-                ch1 = my_chess[mi][mj]
-                break
-        for kj in range(jj-1, -1, -1):
-            if a_map[ii][kj] != None:
-                (mi, mj) = a_map[ii][kj]
-                ch2 = my_chess[mi][mj]
-                break
-        if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
-                return 1
-    return 0
-
-cdef int next_cannon_can_eat_more((int, int)org, dest, a_map, my_chess):
-    global cannon_cor
-    cannon_cor = []
-    (i, j) = org
-    n = a_map[i][j]
-    if n == None:
-        return 0
-    nc = my_chess[n[0]][n[1]]
-    
-    was_ate = eat_by_bomb(org, a_map, my_chess)
-    if was_ate == 0:
-        return 0
-    else:
-        af_map = copy.deepcopy(a_map)
-        af_ch = copy.deepcopy(my_chess)
-        if org != None and dest != None:
-            af_map, af_ch = move(org, dest, af_map, af_ch)
-            all_chess_move(af_map, af_ch)
-            
-            for cc in cannon_cor:
-                afm = af_map[cc[0]][cc[1]]
-                if afm != None:
-                    afc = af_ch[afm[0]][afm[1]]
-                    for fcp in afc.possible_move:
-                        (pi, pj) = fcp
-                        c = af_map[pi][pj]
-                        if c != None and (pi == i or pj == j):
-                            ch = af_ch[c[0]][c[1]]
-                            if  eating_value_to_score(ch.value, king_live, ch.color) > eating_value_to_score(nc.value, king_live, nc.color):
-                                return 1
-    return 0                                
+#cdef int next_cannon_can_eat_more((int, int)org, dest, a_map, my_chess):
+#    global cannon_cor
+#    cannon_cor = []
+#    (i, j) = org
+#    n = a_map[i][j]
+#    if n == None:
+#        return 0
+#    nc = my_chess[n[0]][n[1]]
+#    
+#    was_ate = eat_by_bomb(org, a_map, my_chess)
+#    if was_ate == 0:
+#        return 0
+#    else:
+#        af_map = copy.deepcopy(a_map)
+#        af_ch = copy.deepcopy(my_chess)
+#        if org != None and dest != None:
+#            af_map, af_ch = move(org, dest, af_map, af_ch)
+#            all_chess_move(af_map, af_ch)
+#            
+#            for cc in cannon_cor:
+#                afm = af_map[cc[0]][cc[1]]
+#                if afm != None:
+#                    afc = af_ch[afm[0]][afm[1]]
+#                    for fcp in afc.possible_move:
+#                        (pi, pj) = fcp
+#                        c = af_map[pi][pj]
+#                        if c != None and (pi == i or pj == j):
+#                            ch = af_ch[c[0]][c[1]]
+#                            if  eating_value_to_score(ch.value, king_live, ch.color) > eating_value_to_score(nc.value, king_live, nc.color):
+#                                return 1
+#    return 0                                
     
 cdef int eat_by_bomb((int, int)org, a_map, my_chess):
     global cannon_cor
@@ -1581,45 +1545,43 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
     if a_map[desty][destx] == None:
         for ban in com_ban_step:
             if org == ban:
-                return -10.2
+                return -10
                 #return -0.2
         
-        ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
-        if 1 == ndead:
-            if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
-                return 7.5
-            elif a_map[orgy][orgx] != None:
-                m = a_map[orgy][orgx]
-                if 3 == my_chess[m[0]][m[1]].value:
-                    return 7
-                else:
-                    return 10
-        elif owner_color == player_color:
-            if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
-                return 8
-            return 0
-        elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
-            if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
-                return -8
-            else:
-                return 9 + ndead        
+        #ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
+        #if 1 == ndead:
+        #    if a_map[orgy][orgx] != None:
+        #        m = a_map[orgy][orgx]
+        #        if 3 == my_chess[m[0]][m[1]].value:
+        #            return 7
+        #        else:
+        #            return 10
+        #elif owner_color == player_color:
+        #    if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
+        #        return 8
+        #    return 0
+        #elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
+        #    if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
+        #        return -8
+        #    else:
+        #        return 9 + ndead        
         
-        if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
-            af_map = copy.deepcopy(a_map)
-            af_ch = copy.deepcopy(my_chess)
-            if org != None and dest != None:
-                af_map, af_ch = move(org, dest, af_map, af_ch)
-                all_chess_move(af_map, af_ch)
-                cannon = af_ch[af_map[dest[0]][dest[1]][0]][af_map[dest[0]][dest[1]][1]]
-                for pm in cannon.possible_move:
-                    (pmy, pmx) = pm
-                    am = af_map[pmy][pmx]
-                    if None == am:
-                        continue
-                    c = af_ch[am[0]][am[1]]
-                    if c.value > 5:
-                        return 7.3           
-            return 0
+        #if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
+        #    af_map = copy.deepcopy(a_map)
+        #    af_ch = copy.deepcopy(my_chess)
+        #    if org != None and dest != None:
+        #        af_map, af_ch = move(org, dest, af_map, af_ch)
+        #        all_chess_move(af_map, af_ch)
+        #        cannon = af_ch[af_map[dest[0]][dest[1]][0]][af_map[dest[0]][dest[1]][1]]
+        #        for pm in cannon.possible_move:
+        #            (pmy, pmx) = pm
+        #            am = af_map[pmy][pmx]
+        #            if None == am:
+        #                continue
+        #            c = af_ch[am[0]][am[1]]
+        #            if c.value > 5:
+        #                return 7.3           
+        #    return 0
         
         # Simon added 20191005
         if step is not 1:
@@ -1667,7 +1629,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
                 if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
                     return -0.1
         
-        return calc_move_score(max_value, max_dist, mvalue) + ndead
+        return calc_move_score(max_value, max_dist, mvalue)
     
     #elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
     else:
@@ -1869,6 +1831,8 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     cdef list m2 = []
     cdef list m3 = []
     cdef list m4 = []
+    cdef list m5 = []
+    cdef list m6 = []
     
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
@@ -1949,49 +1913,111 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                             all_pm_3.append([(ch_p.row, ch_p.col), apm_p])
                                 
             for ch_position3, pm_p in all_pm_3:
-                pity = will_dead_pity(ch_position3, pm_p, af_ch_3, af_map_3, owner_color)
-                if 0 == pity:
+                score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
+                #############################
+                af_map_4 = copy.deepcopy(af_map_3)
+                af_ch_4 = copy.deepcopy(af_ch_3)
+                if ch_position3 != None and pm_p != None:
+                    af_map_4, af_ch_4 = move(ch_position3, pm_p, af_map_4, af_ch_4)
+                    all_chess_move(af_map_4, af_ch_4)
                     
-                    if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
-                        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 3)
-                    else: # 1 == , None ==
-                        score3 = score2
+                if back_num > 0:
+                    all_pm_4 = [[None, None]]
+                else:
+                    all_pm_4 = []
+                    
+                for chr_com in af_ch_4:
+                    for ch_com in chr_com:                        
+                        if ch_com.color == 1 - owner_color and 1 == ch_com.live and ch_com.back < 1:
+                            for apm_com in ch_com.possible_move:
+                                all_pm_4.append([(ch_com.row, ch_com.col), apm_com])
+                
+                for ch_position4, pm_4 in all_pm_4:
+                    score4 = score3 - div * move_score(ch_position4, pm_4, af_ch_4, af_map_4, com_color, 4)
+                    
+                    #################################
+                    af_map_5 = copy.deepcopy(af_map_4)
+                    af_ch_5 = copy.deepcopy(af_ch_4)
+                    if ch_position4 != None and pm_4 != None:
+                        af_map_5, af_ch_5 = move(ch_position4, pm_4, af_map_5, af_ch_5)
+                        all_chess_move(af_map_5, af_ch_5)
                         
-                elif 1 == pity:                   
-                    score3 = score2 - 8
+                    if back_num > 0:
+                        all_pm_5 = [[None, None]]
+                    else:
+                        all_pm_5 = []
+                        
+                    for chr_p in af_ch_5:
+                        for ch_p in chr_p:
+                            if ch_p.color == owner_color and 1 == ch_p.live and ch_p.back < 1:
+                                for apm_p in ch_p.possible_move:
+                                    all_pm_5.append([(ch_p.row, ch_p.col), apm_p])
+                                        
+                    for ch_position5, pm_5 in all_pm_5:
+                        score5 = score4 + div * move_score(ch_position5, pm_5, af_ch_5, af_map_5, player_color, 5)
+                            
+                        ################################
+                        #for turn color = player
+                        if score5 > max_p_score: 
+                            max_p_score = score5
+                            ch_player = ch_position5
+                            pm_player = pm_5
+                        
+                        # unmarked 20190805
+                        if score5 > alpha:
+                            break
+                    ################################
+                    if max_p_score != -2000:
+                            
+                        if alpha > max_p_score:
+                            alpha = max_p_score
+                            
+                        m6.append([ch_position4, pm_4, ch_player, pm_player, max_p_score])
+                        
+                        # unmarked 20190805
+                        if max_p_score < beta:
+                            max_p_score = -2000
+                            break                                        
+                        
+                        max_p_score = -2000
+                            
+                    else:
+                        m6.append([ch_position4, pm_4, None, None, score4])
+                #########################
+                alpha = AI_min_score
+                
+                if m6:
+                    min_index = m6.index(min(m6, key=lambda s:s[4]))
+                    coms5 = m6[min_index][4]
+                    ch_comp5 = m6[min_index][0]
+                    pm_comp5 = m6[min_index][1]    
                     
-                else: # None == pity
-                    score3 = score2
-                
-                if score3 > max_p_score: #for turn color = player
-                    max_p_score = score3
-                    ch_player = ch_position3
-                    pm_player = pm_p
-                
-                # unmarked 20190805
-                if score3 > alpha:
-                    break
+                    if beta < coms5:
+                        beta = coms5
+                    
+                    m5.append([ch_position3, pm_p, ch_comp5, pm_comp5, coms5])                           
+                    m6 = []
+                    
+                    # marked 20191104
+                    #if coms > final_score:                            
+                    #    break
+        
+                else:
+                    m5.append([ch_position3, pm_p, None, None,score3])
                             
             #############################
-            if max_p_score != -2000:
-                                    
-                if alpha > max_p_score:
-                    alpha = max_p_score
-                    
-                m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])
+            beta = -1 *  AI_min_score
+            
+            if m5:
+                max_index = m5.index(max(m5, key=lambda s:s[4]))
+                ps5 = m5[max_index][4]
+                ch_5 = m5[max_index][0]
+                pm_5 = m5[max_index][1]
+                m4.append([ch_position, pm, ch_5, pm_5, ps5])
+                m5 = []
                 
-                # unmarked 20190805
-                if max_p_score < beta:
-                    max_p_score = -2000
-                    break                                        
-                
-                max_p_score = -2000
-                    
             else:
-                m4.append([ch_position2, pm_com, None, None, score2])
-                #max_p_score = -2000
-                
-            #print('m4', m4)
+                m4.append([ch_position, pm, None, None, score2])
         ###############################
         if m4:
             min_index = m4.index(min(m4, key=lambda s:s[4]))
@@ -1999,18 +2025,13 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             ch_comp = m4[min_index][0]
             pm_comp = m4[min_index][1]
             
-            alpha = AI_min_score
+            #alpha2 = AI_min_score
             
-            if beta < coms:
-                beta = coms
+            #if beta2 < coms:
+            #    beta2 = coms
             
             m3.append([ch_position, pm, ch_comp, pm_comp, coms])                           
             m4 = []
-            
-            # marked 20191104
-            #if coms > final_score:                            
-            #    break
-
         else:
             m3.append([ch_position, pm, None, None,score])
             #m4 = []
@@ -2037,31 +2058,31 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     #return m2, af_map, af_ch
 
 # dest_will_be_dead ...
-cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
-    n = a_map[org[0]][org[1]]
-    m = a_map[dest[0]][dest[1]]
-    if None == n:
-        return 0
-    elif m != None:
-    #eat
-        return 0
-    
-    af_map = copy.deepcopy(a_map)
-    af_ch = copy.deepcopy(a_ch)
-    af_map, af_ch = move(org, dest, af_map, af_ch)
-    all_chess_move(af_map, af_ch)
-    mm = af_map[dest[0]][dest[1]]
-    my = af_ch[mm[0]][mm[1]]
-    
-    for chr in af_ch:
-        for ch in chr:
-            if ch == my:
-                continue
-            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-                for pm in ch.possible_move:
-                    if pm == dest:
-                        return 1
-    return 0
+#cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
+#    n = a_map[org[0]][org[1]]
+#    m = a_map[dest[0]][dest[1]]
+#    if None == n:
+#        return 0
+#    elif m != None:
+#    #eat
+#        return 0
+#    
+#    af_map = copy.deepcopy(a_map)
+#    af_ch = copy.deepcopy(a_ch)
+#    af_map, af_ch = move(org, dest, af_map, af_ch)
+#    all_chess_move(af_map, af_ch)
+#    mm = af_map[dest[0]][dest[1]]
+#    my = af_ch[mm[0]][mm[1]]
+#    
+#    for chr in af_ch:
+#        for ch in chr:
+#            if ch == my:
+#                continue
+#            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
+#                for pm in ch.possible_move:
+#                    if pm == dest:
+#                        return 1
+#    return 0
 
 # will_be_dead    
 cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
@@ -2079,81 +2100,57 @@ cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
                         return 1
     return 0
 
-cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):    
-    cdef int opp_color = 1-owner_color
-    cdef int can_eat = 0
-    af_map = copy.deepcopy(a_map)
-    af_ch = copy.deepcopy(a_ch)
-    if nexti != None and nextj != None:
-        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        all_chess_move(af_map, af_ch)
-    for chr in af_ch:
-        for ch in chr:
-            if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
-                for pm in ch.possible_move:
-                    n = af_map[pm[0]][pm[1]]
-                    if n != None:
-                        nch = af_ch[n[0]][n[1]]
-                        if ch.value == nch.value:
-                            continue
-                    if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
-                        can_eat += 1
-    if can_eat >= 2:
-        return 1
-    else:
-        return 0
-
-cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
-    opp_color = 1-owner_color
-    af_map = copy.deepcopy(a_map)
-    af_ch = copy.deepcopy(a_ch)
-    if nexti != None and nextj != None:
-        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        all_chess_move(af_map, af_ch)
-    m = af_map[nextj[0]][nextj[1]]
-    my = af_ch[m[0]][m[1]]
-    
-    escape_step = 0
-    for eat_pm in my.possible_move:
-        if af_map[eat_pm[0]][eat_pm[1]] != None:
-            eat_step = 0
-            n = af_map[eat_pm[0]][eat_pm[1]]
-            nch = af_ch[n[0]][n[1]]
-
-            if nch.value == my.value:
-                continue
-            if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
-                if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
-                    for pm in nch.possible_move:
-                        if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
-                            eat_step += 1
-                    if eat_step == len(nch.possible_move):
-                        return 1
-                    elif escape_step > eat_step - len(nch.possible_move):
-                        escape_step = eat_step - len(nch.possible_move) #negative
-    #return 0
-    if 0 == escape_step:
-        return -0.09
-    else:
-        return escape_step/100
+#cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
+#    opp_color = 1-owner_color
+#    af_map = copy.deepcopy(a_map)
+#    af_ch = copy.deepcopy(a_ch)
+#    if nexti != None and nextj != None:
+#        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+#        all_chess_move(af_map, af_ch)
+#    m = af_map[nextj[0]][nextj[1]]
+#    my = af_ch[m[0]][m[1]]
+#    
+#    escape_step = 0
+#    for eat_pm in my.possible_move:
+#        if af_map[eat_pm[0]][eat_pm[1]] != None:
+#            eat_step = 0
+#            n = af_map[eat_pm[0]][eat_pm[1]]
+#            nch = af_ch[n[0]][n[1]]
+#
+#            if nch.value == my.value:
+#                continue
+#            if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
+#                if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
+#                    for pm in nch.possible_move:
+#                        if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
+#                            eat_step += 1
+#                    if eat_step == len(nch.possible_move):
+#                        return 1
+#                    elif escape_step > eat_step - len(nch.possible_move):
+#                        escape_step = eat_step - len(nch.possible_move) #negative
+#    #return 0
+#    if 0 == escape_step:
+#        return -0.09
+#    else:
+#        return escape_step/100
 
 # stand_will_be_dead_pity    
-cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
-    cdef int opp_color = 1-owner_color
-    n = a_map[org[0]][org[1]]
-    if None == n:
-        return 0
-    my = a_ch[n[0]][n[1]]
-    for chr in a_ch:
-        for ch in chr:
-            if ch == my:
-                continue
-            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-                for pm in ch.possible_move:
-                    if pm == org:
-                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
-                            return 1
-    return 0
+#cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
+#    cdef int opp_color = 1-owner_color
+#    n = a_map[org[0]][org[1]]
+#    if None == n:
+#        return 0
+#    my = a_ch[n[0]][n[1]]
+#    for chr in a_ch:
+#        for ch in chr:
+#            if ch == my:
+#                continue
+#            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
+#                for pm in ch.possible_move:
+#                    if pm == org:
+#                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
+#                            return 1
+#    return 0
 
 # will_be_dead_pity...
 cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_color):
