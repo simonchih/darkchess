@@ -87,8 +87,8 @@ cdef int com_color = 1
 cdef double max_value = 0
 cdef double max_dist = 32
 cdef int sindex = 0
-cdef double AI_min_score = 2000.0
-cdef double final_score = 2000.0 #mini
+cdef double AI_min_score = 9000.0
+cdef double final_score = 9000.0 #mini
 cdef list gb_m2 = []
 #max_cor = None
 open_score = None
@@ -1271,133 +1271,133 @@ cdef int caca(org, dest, my_chess, a_map, int owner_color):
     return 0
         
         
-cdef int near2_have_same_value(org, my_chess, a_map, int owner_color):
-    if org == None:
-        return 0
-    elif owner_color == player_color:
-        return 0
-    
-    (orgy, orgx) = org
-    
-    m = a_map[orgy][orgx]
-    if m == None:
-        return 0
-    elif 2 == my_chess[m[0]][m[1]].value:
-        return 0
-    
-    if orgy-2 >= 0:
-        n = a_map[orgy-2][orgx]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgy+2 <= 3:
-        n = a_map[orgy+2][orgx]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgx-2 >= 0:
-        n = a_map[orgy][orgx-2]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgx+2 <= 7:
-        n = a_map[orgy][orgx+2]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgy-1 >= 0 and orgx-1 >=0:
-        n = a_map[orgy-1][orgx-1]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgy-1 >= 0 and orgx+1 <=7:
-        n = a_map[orgy-1][orgx+1]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgy+1 <= 3 and orgx-1 >= 0:
-        n = a_map[orgy+1][orgx-1]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    if orgy+1 <= 3 and orgx+1 <= 7:
-        n = a_map[orgy+1][orgx+1]
-        if n == None:
-            pass
-        else:
-            mc = my_chess[n[0]][n[1]]
-            if 0 == mc.live or 1 == mc.back:
-                pass
-            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-                pass
-            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
-                return 1
-            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
-            #    return 1
-    return 0
+#cdef int near2_have_same_value(org, my_chess, a_map, int owner_color):
+#    if org == None:
+#        return 0
+#    elif owner_color == player_color:
+#        return 0
+#    
+#    (orgy, orgx) = org
+#    
+#    m = a_map[orgy][orgx]
+#    if m == None:
+#        return 0
+#    elif 2 == my_chess[m[0]][m[1]].value:
+#        return 0
+#    
+#    if orgy-2 >= 0:
+#        n = a_map[orgy-2][orgx]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgy+2 <= 3:
+#        n = a_map[orgy+2][orgx]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgx-2 >= 0:
+#        n = a_map[orgy][orgx-2]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgx+2 <= 7:
+#        n = a_map[orgy][orgx+2]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgy-1 >= 0 and orgx-1 >=0:
+#        n = a_map[orgy-1][orgx-1]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgy-1 >= 0 and orgx+1 <=7:
+#        n = a_map[orgy-1][orgx+1]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgy+1 <= 3 and orgx-1 >= 0:
+#        n = a_map[orgy+1][orgx-1]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    if orgy+1 <= 3 and orgx+1 <= 7:
+#        n = a_map[orgy+1][orgx+1]
+#        if n == None:
+#            pass
+#        else:
+#            mc = my_chess[n[0]][n[1]]
+#            if 0 == mc.live or 1 == mc.back:
+#                pass
+#            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#                pass
+#            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color and my_chess[n[0]][n[1]].value == my_chess[m[0]][m[1]].value:
+#                return 1
+#            #elif 1 == my_chess[m[0]][m[1]].value and 7 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+#            #    return 1
+#    return 0
 
 cdef void scan_king(my_chess):
     global king_live
@@ -1588,6 +1588,11 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
             return 0
         # End Simon 20191005
         
+        ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
+        
+        if 1 == ndead:
+            return 9
+        
         max_value = 0
         max_dist = 32
         #max_cor = None
@@ -1615,21 +1620,21 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
         elif 2 == cvalue:
             return calc_move_score(max_value, max_dist, mvalue) + 0.3
         
-        if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
-            if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
-                return -0.1
+        #if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
+        #    if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
+        #        return -0.1
         
-        ncor = near(orgy, orgx)
-        for nc in ncor:
-            if a_map[nc[0]][nc[1]] != None:
-                a = a_map[nc[0]][nc[1]]
-                small_value = my_chess[a[0]][a[1]].value
-                if 1 == my_chess[a[0]][a[1]].back:
-                    continue
-                if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
-                    return -0.1
+        #ncor = near(orgy, orgx)
+        #for nc in ncor:
+        #    if a_map[nc[0]][nc[1]] != None:
+        #        a = a_map[nc[0]][nc[1]]
+        #        small_value = my_chess[a[0]][a[1]].value
+        #        if 1 == my_chess[a[0]][a[1]].back:
+        #            continue
+        #        if player_color == my_chess[a[0]][a[1]].color and 1 == can_be_ate(small_value, org_value):
+        #            return -0.1
         
-        return calc_move_score(max_value, max_dist, mvalue)
+        return calc_move_score(max_value, max_dist, mvalue) + ndead
     
     #elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
     else:
@@ -1731,7 +1736,7 @@ def com_think(a_map, a_ch):
 
     cdef list m = []
     
-    cdef double min_score = 2000
+    cdef double min_score = 9000.0
     cdef double sc = 0
     
     all_chess_move(a_map, a_ch)
@@ -1826,7 +1831,7 @@ def com_think(a_map, a_ch):
 # extend to player-com-player
 def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, list gb_m2):
     
-    cdef double max_p_score = -2000
+    cdef double max_p_score = -9000.0
     
     cdef list m2 = []
     cdef list m3 = []
@@ -1967,7 +1972,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                         if score5 > alpha:
                             break
                     ################################
-                    if max_p_score != -2000:
+                    if max_p_score != -9000.0:
                             
                         if alpha > max_p_score:
                             alpha = max_p_score
@@ -1976,10 +1981,10 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                         
                         # unmarked 20190805
                         if max_p_score < beta:
-                            max_p_score = -2000
+                            max_p_score = -9000.0
                             break                                        
                         
-                        max_p_score = -2000
+                        max_p_score = -9000.0
                             
                     else:
                         m6.append([ch_position4, pm_4, None, None, score4])
@@ -2100,57 +2105,57 @@ cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
                         return 1
     return 0
 
-#cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
-#    opp_color = 1-owner_color
-#    af_map = copy.deepcopy(a_map)
-#    af_ch = copy.deepcopy(a_ch)
-#    if nexti != None and nextj != None:
-#        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-#        all_chess_move(af_map, af_ch)
-#    m = af_map[nextj[0]][nextj[1]]
-#    my = af_ch[m[0]][m[1]]
-#    
-#    escape_step = 0
-#    for eat_pm in my.possible_move:
-#        if af_map[eat_pm[0]][eat_pm[1]] != None:
-#            eat_step = 0
-#            n = af_map[eat_pm[0]][eat_pm[1]]
-#            nch = af_ch[n[0]][n[1]]
-#
-#            if nch.value == my.value:
-#                continue
-#            if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
-#                if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
-#                    for pm in nch.possible_move:
-#                        if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
-#                            eat_step += 1
-#                    if eat_step == len(nch.possible_move):
-#                        return 1
-#                    elif escape_step > eat_step - len(nch.possible_move):
-#                        escape_step = eat_step - len(nch.possible_move) #negative
-#    #return 0
-#    if 0 == escape_step:
-#        return -0.09
-#    else:
-#        return escape_step/100
+cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
+    opp_color = 1-owner_color
+    af_map = copy.deepcopy(a_map)
+    af_ch = copy.deepcopy(a_ch)
+    if nexti != None and nextj != None:
+        af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+        all_chess_move(af_map, af_ch)
+    m = af_map[nextj[0]][nextj[1]]
+    my = af_ch[m[0]][m[1]]
+    
+    escape_step = 0
+    for eat_pm in my.possible_move:
+        if af_map[eat_pm[0]][eat_pm[1]] != None:
+            eat_step = 0
+            n = af_map[eat_pm[0]][eat_pm[1]]
+            nch = af_ch[n[0]][n[1]]
+
+            if nch.value == my.value:
+                continue
+            if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
+                if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
+                    for pm in nch.possible_move:
+                        if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
+                            eat_step += 1
+                    if eat_step == len(nch.possible_move):
+                        return 1
+                    elif escape_step > eat_step - len(nch.possible_move):
+                        escape_step = eat_step - len(nch.possible_move) #negative
+    #return 0
+    if 0 == escape_step:
+        return -0.09
+    else:
+        return escape_step/100
 
 # stand_will_be_dead_pity    
-#cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
-#    cdef int opp_color = 1-owner_color
-#    n = a_map[org[0]][org[1]]
-#    if None == n:
-#        return 0
-#    my = a_ch[n[0]][n[1]]
-#    for chr in a_ch:
-#        for ch in chr:
-#            if ch == my:
-#                continue
-#            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-#                for pm in ch.possible_move:
-#                    if pm == org:
-#                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
-#                            return 1
-#    return 0
+cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
+    cdef int opp_color = 1-owner_color
+    n = a_map[org[0]][org[1]]
+    if None == n:
+        return 0
+    my = a_ch[n[0]][n[1]]
+    for chr in a_ch:
+        for ch in chr:
+            if ch == my:
+                continue
+            if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
+                for pm in ch.possible_move:
+                    if pm == org:
+                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
+                            return 1
+    return 0
 
 # will_be_dead_pity...
 cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_color):
@@ -2218,75 +2223,75 @@ cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_c
     return pity
 
 # will_be_dead_pity...
-def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
-    global king_live
-    
-    if None == nexti or None == nextj:
-        return None
-        
-    #if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):
-    #    return 0
-    
-    (y, x) = nexti
-    a = a_map[y][x]
-
-    if nextj != None:
-        (ii, jj) = nextj
-        b = a_map[ii][jj]
-        if b != None:
-            if 2 == a_ch[a[0]][a[1]].value:
-                if a_ch[b[0]][b[1]].value > 4:
-                    return 0
-            #if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
-            #    return 0
-    
-    af_map = copy.deepcopy(a_map)
-    af_ch = copy.deepcopy(a_ch)
-    af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-    all_chess_move(af_map, af_ch)
-    opp_color = 1 - owner_color
-
-    pity = 0
-    i2 = None
-    j2 = None
-    
-    for chr in af_ch:
-        if 1 == pity:
-            break
-        for ch in chr:
-            if ch.color == opp_color and 1 == ch.live:
-                for pm in ch.possible_move:
-                    if pm == nextj:
-                        if b == None:
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
-                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
-    
-    if i2!= None and j2!= None:                    
-        af2_map = copy.deepcopy(af_map)
-        af2_ch = copy.deepcopy(af_ch)
-        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
-        all_chess_move(af2_map, af2_ch)
-        
-        (ii, jj) = j2
-        b = af2_map[ii][jj]
-        
-        for chr in af2_ch:
-            if 0 == pity:
-                break
-            for ch in chr:
-                if ch.color == owner_color and 1 == ch.live:
-                    for pm in ch.possible_move:
-                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
-                            pity = 0
-                            break    
-    return pity
+#def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
+#    global king_live
+#    
+#    if None == nexti or None == nextj:
+#        return None
+#        
+#    #if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):
+#    #    return 0
+#    
+#    (y, x) = nexti
+#    a = a_map[y][x]
+#
+#    if nextj != None:
+#        (ii, jj) = nextj
+#        b = a_map[ii][jj]
+#        if b != None:
+#            if 2 == a_ch[a[0]][a[1]].value:
+#                if a_ch[b[0]][b[1]].value > 4:
+#                    return 0
+#            #if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
+#            #    return 0
+#    
+#    af_map = copy.deepcopy(a_map)
+#    af_ch = copy.deepcopy(a_ch)
+#    af_map, af_ch = move(nexti, nextj, af_map, af_ch)
+#    all_chess_move(af_map, af_ch)
+#    opp_color = 1 - owner_color
+#
+#    pity = 0
+#    i2 = None
+#    j2 = None
+#    
+#    for chr in af_ch:
+#        if 1 == pity:
+#            break
+#        for ch in chr:
+#            if ch.color == opp_color and 1 == ch.live:
+#                for pm in ch.possible_move:
+#                    if pm == nextj:
+#                        if b == None:
+#                            i2 = (ch.row, ch.col)
+#                            j2 = pm
+#                            pity = 1
+#                            break
+#                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
+#                            i2 = (ch.row, ch.col)
+#                            j2 = pm
+#                            pity = 1
+#                            break
+#    
+#    if i2!= None and j2!= None:                    
+#        af2_map = copy.deepcopy(af_map)
+#        af2_ch = copy.deepcopy(af_ch)
+#        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
+#        all_chess_move(af2_map, af2_ch)
+#        
+#        (ii, jj) = j2
+#        b = af2_map[ii][jj]
+#        
+#        for chr in af2_ch:
+#            if 0 == pity:
+#                break
+#            for ch in chr:
+#                if ch.color == owner_color and 1 == ch.live:
+#                    for pm in ch.possible_move:
+#                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+#                            pity = 0
+#                            break    
+#    return pity
 
 # will_be_dead_pity    
 def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
@@ -2382,21 +2387,21 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
 cdef int eating_value_to_score(int value, int king[], int owner_color):
     if 1 == value:
         if 1 == king[owner_color]:
-            return 24
+            return 64
         else:
-            return 20
+            return 60
     elif 2 == value:
-        return 150
+        return 450
     elif 3 == value:
-        return 23
+        return 63
     elif 4 == value:
-        return 49
+        return 139
     elif 5 == value:
-        return 99
+        return 299
     elif 6 == value:
-        return 300
+        return 900
     elif 7 == value:
-        return 599
+        return 1799
 
 cdef void display_font(screen, int AI_vs_AI = 0):
     
