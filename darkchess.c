@@ -2345,7 +2345,7 @@ static PyObject *__pyx_pf_9darkchess_38main(CYTHON_UNUSED PyObject *__pyx_self, 
 static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_index = {0, &__pyx_n_s_index, 0, 0, 0};
 static PyObject *__pyx_float_0_1;
 static PyObject *__pyx_float_0_5;
-static PyObject *__pyx_float_0_95;
+static PyObject *__pyx_float_0_9;
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
@@ -34011,7 +34011,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
  * 
  *         for mm in m:             # <<<<<<<<<<<<<<
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))
  */
     __pyx_t_1 = __pyx_v_m; __Pyx_INCREF(__pyx_t_1); __pyx_t_4 = 0;
     for (;;) {
@@ -34028,7 +34028,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
       /* "darkchess.pyx":1789
  *         for mm in m:
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))             # <<<<<<<<<<<<<<
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))             # <<<<<<<<<<<<<<
  *             threads[i].start()
  *             #threads[i].join()
  */
@@ -34078,9 +34078,9 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
       PyTuple_SET_ITEM(__pyx_t_21, 7, __pyx_t_19);
       __Pyx_GIVEREF(__pyx_t_17);
       PyTuple_SET_ITEM(__pyx_t_21, 8, __pyx_t_17);
-      __Pyx_INCREF(__pyx_float_0_95);
-      __Pyx_GIVEREF(__pyx_float_0_95);
-      PyTuple_SET_ITEM(__pyx_t_21, 9, __pyx_float_0_95);
+      __Pyx_INCREF(__pyx_float_0_9);
+      __Pyx_GIVEREF(__pyx_float_0_9);
+      PyTuple_SET_ITEM(__pyx_t_21, 9, __pyx_float_0_9);
       __Pyx_INCREF(__pyx_v_i);
       __Pyx_GIVEREF(__pyx_v_i);
       PyTuple_SET_ITEM(__pyx_t_21, 10, __pyx_v_i);
@@ -34109,7 +34109,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
 
       /* "darkchess.pyx":1790
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))
  *             threads[i].start()             # <<<<<<<<<<<<<<
  *             #threads[i].join()
  *             i += 1
@@ -34153,7 +34153,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
  * 
  *         for mm in m:             # <<<<<<<<<<<<<<
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))
  */
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -58809,7 +58809,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_float_0_1 = PyFloat_FromDouble(0.1); if (unlikely(!__pyx_float_0_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_5 = PyFloat_FromDouble(0.5); if (unlikely(!__pyx_float_0_5)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_0_95 = PyFloat_FromDouble(0.95); if (unlikely(!__pyx_float_0_95)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_0_9 = PyFloat_FromDouble(0.9); if (unlikely(!__pyx_float_0_9)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(0, 1, __pyx_L1_error)

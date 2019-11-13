@@ -1786,7 +1786,7 @@ def com_think(a_map, a_ch):
   
         for mm in m:
             #print('mm', mm)
-            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, gb_m2)))
+            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))
             threads[i].start()
             #threads[i].join()
             i += 1
