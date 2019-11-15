@@ -1786,7 +1786,7 @@ def com_think(a_map, a_ch):
   
         for mm in m:
             #print('mm', mm)
-            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, gb_m2)))
+            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.9, i, alpha, beta, player_color, com_color, back_num, gb_m2)))
             threads[i].start()
             #threads[i].join()
             i += 1
@@ -1829,7 +1829,7 @@ def com_think(a_map, a_ch):
 # extend one_turn to 3-level-deep
 # original one_turn for player(next to com player)
 # extend to player-com-player-com-player
-def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, list gb_m2):
+def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, int player_color, int com_color, int back_num, list gb_m2):
     
     cdef double max_p_score = -9000.0
     
@@ -1959,19 +1959,21 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                                     all_pm_5.append([(ch_p.row, ch_p.col), apm_p])
                                         
                     for ch_position5, pm_5 in all_pm_5:
-                        #pity = will_dead_pity(ch_position5, pm_5, af_ch_5, af_map_5, player_color)
-                        #if 0 == pity:
-                        #    if 0 == will_dead_pity_even_equal(ch_position5, pm_5, af_ch_5, af_map_5, player_color):
-                        #        score5 = score4 + div * move_score(ch_position5, pm_5, af_ch_5, af_map_5, player_color, 6)
-                        #    else: # 1 == , None ==
-                        #        score5 = score4
-                        #        
-                        #elif 1 == pity:                   
-                        #    score5 = score4 - 8
-                        #else:
-                        #    score5 = score4
+                        pity = will_dead_pity(ch_position5, pm_5, af_ch_5, af_map_5, player_color)
+                        
+                        if 0 == pity:
+                            if 0 == will_dead_pity_even_equal(ch_position5, pm_5, af_ch_5, af_map_5, player_color):
+                                score5 = score4 + div * move_score(ch_position5, pm_5, af_ch_5, af_map_5, player_color, 6)
+                                
+                            else: # 1 == , None ==
+                                score5 = score4
+                                
+                        elif 1 == pity:                   
+                            score5 = score4 - 8
+                        else:
+                            score5 = score4
 
-                        score5 = score4 + div * move_score(ch_position5, pm_5, af_ch_5, af_map_5, player_color, 6)
+                        #score5 = score4 + div * move_score(ch_position5, pm_5, af_ch_5, af_map_5, player_color, 6)
                             
                         ################################
                         #for turn color = player
@@ -1988,7 +1990,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                             
                         if alpha > max_p_score:
                             alpha = max_p_score
-                            
+                        
                         m6.append([ch_position4, pm_4, ch_player, pm_player, max_p_score])
                         
                         # unmarked 20191114
