@@ -195,7 +195,32 @@ cdef list ini_random_chess(list list):
 #                return p
 #    return None
 
+cdef void quick_chess_move(a_map, my_chess, org, dest):
+    (oi, oj) = org
+    onear = near(oi, oj)
+    (di, dj) = dest
+    dnear = near(di, dj)
+    for oc in onear:
+        (i, j) = oc
+        if a_map[i][j] != None:
+            cc = a_map[i][j]
+            if 1 == my_chess[cc[0]][cc[1]].live and my_chess[cc[0]][cc[1]].back < 1:
+                my_chess[cc[0]][cc[1]].possible_move = collect_possible_move(i, j, a_map, my_chess)
+    
+    for dc in dnear:
+        (i, j) = dc
+        if a_map[i][j] != None:
+            cc = a_map[i][j]
+            if 1 == my_chess[cc[0]][cc[1]].live and my_chess[cc[0]][cc[1]].back < 1:
+                my_chess[cc[0]][cc[1]].possible_move = collect_possible_move(i, j, a_map, my_chess)
+
+    for chr in my_chess:
+        for ch in chr:
+            if ch.back < 1 and 1 == ch.live and 2 == ch.value:
+                ch.possible_move = collect_possible_move(ch.row, ch.col, a_map, my_chess)
+
 cdef void all_chess_move(a_map, my_chess):
+
     for chr in my_chess:
         for ch in chr:
             if ch.back < 1 and 1 == ch.live:
@@ -1846,7 +1871,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
-        all_chess_move(af_map, af_ch)
+        quick_chess_move(af_map, af_ch, nexti, nextj)
     
     if owner_color == player_color and 1 == cant_move(af_map, af_ch, player_color) and 0 == back_num:
         m2.append([mm[0], mm[1], None, None, max_p_score])
@@ -1881,7 +1906,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
         af_ch_2 = copy.deepcopy(af_ch)
         if ch_position != None and pm != None:
             af_map_2, af_ch_2 = move(ch_position, pm, af_map_2, af_ch_2)
-            all_chess_move(af_map_2, af_ch_2)
+            quick_chess_move(af_map_2, af_ch_2, ch_position, pm)
         
         #if back_num > 0:
         #    m3.append([(ch.row, ch.col), pm, None, None, 10])
@@ -1907,7 +1932,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             af_ch_3 = copy.deepcopy(af_ch_2)
             if ch_position2 != None and pm_com != None:                                        
                 af_map_3, af_ch_3 = move(ch_position2, pm_com, af_map_3, af_ch_3)
-                all_chess_move(af_map_3, af_ch_3)
+                quick_chess_move(af_map_3, af_ch_3, ch_position2, pm_com)
             
             #if back_num > 0:
             #    m4.append([(ch_com.row, ch_com.col), pm_com, None, None, 10])
@@ -1929,7 +1954,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 af_ch_4 = copy.deepcopy(af_ch_3)
                 if ch_position3 != None and pm_p != None:
                     af_map_4, af_ch_4 = move(ch_position3, pm_p, af_map_4, af_ch_4)
-                    all_chess_move(af_map_4, af_ch_4)
+                    quick_chess_move(af_map_4, af_ch_4, ch_position3, pm_p)
                     
                 if back_num > 0:
                     all_pm_4 = [[None, None]]
@@ -1950,7 +1975,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                     af_ch_5 = copy.deepcopy(af_ch_4)
                     if ch_position4 != None and pm_4 != None:
                         af_map_5, af_ch_5 = move(ch_position4, pm_4, af_map_5, af_ch_5)
-                        all_chess_move(af_map_5, af_ch_5)
+                        quick_chess_move(af_map_5, af_ch_5, ch_position4, pm_4)
                         
                     if back_num > 0:
                         all_pm_5 = [[None, None]]
