@@ -1853,6 +1853,8 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
         #m2.append([mm[0], mm[1], None, None, sc])
         
         gb_m2[ind] = m2
+        q.put(gb_m2[ind])
+        
         return
         #return m2, af_map, af_ch
     
@@ -2798,15 +2800,13 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 1
+        #back_num = 0
         #
-        #chess_num[0] = 4
-        #chess_num[1] = 4
+        #chess_num[0] = 1
+        #chess_num[1] = 1
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 3 == i and 4 == j:
-        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
@@ -2816,35 +2816,11 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_chess[0][6] = ch
         #main_map[0][6] = (0, 6)
         #
-        #ch = chess(17, (3, 7))
+        #ch = chess(10, (0, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
-        #
-        #ch = chess(0, (2, 5))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][5] = ch
-        #main_map[2][5] = (2, 5)
-        #
-        #ch = chess(15, (3, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
-        #
-        #ch = chess(13, (1, 2))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2) 
-        #
-        #ch = chess(29, (0, 1))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1) 
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7)
         
         #End Test data 4
         
