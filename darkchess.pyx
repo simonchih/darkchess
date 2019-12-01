@@ -1566,10 +1566,7 @@ def calc_cannon_mark(my_chess, a_map, int owner_color):
 cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1):
     global max_value
     global mark
-    #global max_cor
     global max_dist
-    #global com_will_eat_chess
-    #global will_eat_escape_chess
     global cannon_mark
     
     if org == dest or None == org or None == dest:
@@ -1599,7 +1596,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
                 return 8
             return 0
         elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
-            if 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
+            if 1 == step and 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
                 return -8
             else:
                 return 9 + ndead        
