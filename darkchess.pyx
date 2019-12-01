@@ -87,8 +87,8 @@ cdef int com_color = 1
 cdef double max_value = 0
 cdef double max_dist = 32
 cdef int sindex = 0
-cdef double AI_min_score = 2000.0
-cdef double final_score = 2000.0 #mini
+cdef double AI_min_score = 9000.0
+cdef double final_score = 9000.0 #mini
 cdef list gb_m2 = []
 #max_cor = None
 open_score = None
@@ -1769,7 +1769,7 @@ def com_think(a_map, a_ch):
 
     cdef list m = []
     
-    cdef double min_score = 2000
+    cdef double min_score = 9000
     cdef double sc = 0
     
     all_chess_move(a_map, a_ch)
@@ -1864,7 +1864,7 @@ def com_think(a_map, a_ch):
 # extend to player-com-player
 def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, int player_color, int com_color, int back_num, list gb_m2):
     
-    cdef double max_p_score = -2000
+    cdef double max_p_score = -9000
     
     cdef list m2 = []
     cdef list m3 = []
@@ -1975,7 +1975,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                     break
                             
             #############################
-            if max_p_score != -2000:
+            if max_p_score != -9000:
                                     
                 if alpha > max_p_score:
                     alpha = max_p_score
@@ -1984,14 +1984,14 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 
                 # unmarked 20190805
                 if max_p_score < beta:
-                    max_p_score = -2000
+                    max_p_score = -9000
                     break                                        
                 
-                max_p_score = -2000
+                max_p_score = -9000
                     
             else:
                 m4.append([ch_position2, pm_com, None, None, score2])
-                #max_p_score = -2000
+                #max_p_score = -9000
                 
             #print('m4', m4)
         ###############################
@@ -2779,58 +2779,32 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         
         # Test data 5
         #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 1
-        #back_num = 8
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 0
         #
-        #chess_num[0] = 8
-        #chess_num[1] = 8
+        #chess_num[0] = 1
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if j < 2:
-        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(23, (0, 2))
+        #ch = chess(15, (3, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][2] = ch
-        #main_map[0][2] = (0, 2)
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
         #
-        #ch = chess(27, (1, 2))
+        #ch = chess(16, (2, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
         #
-        #ch = chess(5, (1, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][6] = ch
-        #main_map[1][6] = (1, 6)
-        #
-        #ch = chess(13, (1, 7))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
-        #
-        #ch = chess(7, (0, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][6] = ch
-        #main_map[0][6] = (0, 6)
-        #
-        #ch = chess(28, (3, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
-        #
-        #ch = chess(8, (1, 5))
+        #ch = chess(31, (1, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
