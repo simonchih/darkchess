@@ -1585,7 +1585,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
                 #return -0.2
         
         ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
-        if 1 == ndead:
+        if step > 2 and 0 == ndead:
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
             elif a_map[orgy][orgx] != None:
@@ -2130,7 +2130,8 @@ cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color
                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
                             eat_step += 1
                     if eat_step == len(nch.possible_move):
-                        return 1
+                        #return 1
+                        return 0 # Greater than negative number
                     elif escape_step > eat_step - len(nch.possible_move):
                         escape_step = eat_step - len(nch.possible_move) #negative
     #return 0
