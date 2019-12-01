@@ -1694,7 +1694,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1
         #        return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
-    global cor
+    #global cor
     global com_mv_map
     
     (orgi, orgj) = org
@@ -1728,7 +1728,7 @@ def move_s(org, dest, a_map, a_ch):
     return a_map, a_ch, af_map    
         
 def move(org, dest, a_map, a_ch):
-    global cor
+    #global cor
     
     if org == dest or None == org or None == dest:
         return a_map, a_ch
@@ -1739,7 +1739,7 @@ def move(org, dest, a_map, a_ch):
     if None == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
-        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
         a_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         a_map[orgi][orgj] = None
     else:
@@ -1747,7 +1747,7 @@ def move(org, dest, a_map, a_ch):
         org_ch  = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         dest_ch.live = 0
         (org_ch.row, org_ch.col) = (desti, destj)
-        (org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
+        #(org_ch.x, org_ch.y) = cor[org_ch.row][org_ch.col]
         a_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         a_map[orgi][orgj] = None
     
