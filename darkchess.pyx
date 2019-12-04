@@ -1563,7 +1563,7 @@ def calc_cannon_mark(my_chess, a_map, int owner_color):
     return cannon_mark
 
                 
-cdef double move_score(org, dest, my_chess, a_map, int owner_color, int step = 1):
+cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_color, int com_color, int step = 1):
     global max_value
     global mark
     global max_dist
@@ -1788,9 +1788,9 @@ def com_think(a_map, a_ch):
                 for pm in ch.possible_move:
                     pity = 0
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):                        
-                        score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                        score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color,)
                     else:                        
-                        score = sc + 50 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color)
+                        score = sc + 50 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color,)
                         pity = 1
                     
                     m.append(((ch.row, ch.col), pm, score, pity))
@@ -1895,7 +1895,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 score = sc
             
     for ch_position, pm in all_pm:
-        mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, 2)
+        mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, 2)
         if 1 == pt and mscore > 0:
             score = sc + div * 2 * mscore
         else:
@@ -1922,7 +1922,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                         all_pm_2.append([(ch_com.row, ch_com.col), apm_com])
         
         for ch_position2, pm_com in all_pm_2:
-            score2 = score - div * move_score(ch_position2, pm_com, af_ch_2, af_map_2, com_color, 3)
+            score2 = score - div * move_score(ch_position2, pm_com, af_ch_2, af_map_2, com_color, player_color, com_color, 3)
             
             #if score2 > final_score:
             #    continue
@@ -1952,7 +1952,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 if 0 == pity:
                     
                     if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
-                        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, 4)
+                        score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, player_color, com_color, 4)
                     else: # 1 == , None ==
                         score3 = score2
                         
@@ -2779,33 +2779,41 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 0
+        #back_num = 1
         #
-        #chess_num[0] = 1
+        #chess_num[0] = 3
         #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
+        #        if 2 == i and 1 == j:
+        #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(15, (3, 7))
+        #ch = chess(13, (3, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
         #
-        #ch = chess(16, (2, 6))
+        #ch = chess(11, (1, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
         #
-        #ch = chess(31, (1, 5))
+        #ch = chess(0, (3, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][5] = ch
-        #main_map[1][5] = (1, 5)
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        #
+        #ch = chess(29, (3, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
         
         # End test data 5
         
