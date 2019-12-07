@@ -865,7 +865,7 @@ struct __pyx_opt_args_9darkchess_move_score {
   int step;
 };
 
-/* "darkchess.pyx":2386
+/* "darkchess.pyx":2383
  *         return 1200
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
@@ -877,7 +877,7 @@ struct __pyx_opt_args_9darkchess_display_font {
   int AI_vs_AI;
 };
 
-/* "darkchess.pyx":2420
+/* "darkchess.pyx":2417
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  * 
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):             # <<<<<<<<<<<<<<
@@ -2322,7 +2322,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
 static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_index = {0, &__pyx_n_s_index, 0, 0, 0};
 static PyObject *__pyx_float_0_1;
 static PyObject *__pyx_float_0_5;
-static PyObject *__pyx_float_0_90;
+static PyObject *__pyx_float_0_99;
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
@@ -39927,7 +39927,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
  * 
  *         for mm in m:             # <<<<<<<<<<<<<<
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.90, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.99, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
  */
     __pyx_t_1 = __pyx_v_m; __Pyx_INCREF(__pyx_t_1); __pyx_t_4 = 0;
     for (;;) {
@@ -39944,7 +39944,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
       /* "darkchess.pyx":1801
  *         for mm in m:
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.90, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))             # <<<<<<<<<<<<<<
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.99, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))             # <<<<<<<<<<<<<<
  *             threads[i].start()
  *             #threads[i].join()
  */
@@ -40002,9 +40002,9 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
       PyTuple_SET_ITEM(__pyx_t_25, 7, __pyx_t_19);
       __Pyx_GIVEREF(__pyx_t_17);
       PyTuple_SET_ITEM(__pyx_t_25, 8, __pyx_t_17);
-      __Pyx_INCREF(__pyx_float_0_90);
-      __Pyx_GIVEREF(__pyx_float_0_90);
-      PyTuple_SET_ITEM(__pyx_t_25, 9, __pyx_float_0_90);
+      __Pyx_INCREF(__pyx_float_0_99);
+      __Pyx_GIVEREF(__pyx_float_0_99);
+      PyTuple_SET_ITEM(__pyx_t_25, 9, __pyx_float_0_99);
       __Pyx_INCREF(__pyx_v_i);
       __Pyx_GIVEREF(__pyx_v_i);
       PyTuple_SET_ITEM(__pyx_t_25, 10, __pyx_v_i);
@@ -40048,7 +40048,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
 
       /* "darkchess.pyx":1802
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.90, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.99, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
  *             threads[i].start()             # <<<<<<<<<<<<<<
  *             #threads[i].join()
  *             i += 1
@@ -40092,7 +40092,7 @@ static PyObject *__pyx_pf_9darkchess_28com_think(CYTHON_UNUSED PyObject *__pyx_s
  * 
  *         for mm in m:             # <<<<<<<<<<<<<<
  *             #print('mm', mm)
- *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.90, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
+ *             threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.99, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
  */
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -40966,7 +40966,7 @@ static PyObject *__pyx_pw_9darkchess_31one_turn(PyObject *__pyx_self, PyObject *
   return __pyx_r;
 }
 
-/* "darkchess.pyx":1978
+/* "darkchess.pyx":1975
  *         ###############################
  *         if m4:
  *             min_index = m4.index(min(m4, key=lambda s:s[4]))             # <<<<<<<<<<<<<<
@@ -40994,7 +40994,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("lambda", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1978, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1975, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -41011,7 +41011,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2004
+/* "darkchess.pyx":2001
  *     if m3:
  *         #print('m3=', m3)
  *         max_index = m3.index(max(m3, key=lambda s:s[4]))             # <<<<<<<<<<<<<<
@@ -41039,7 +41039,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("lambda1", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2004, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2001, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -43362,8 +43362,8 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  *                         score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, player_color, com_color, com_ban_step, king_live, 4)
  *                     else: # 1 == , None ==
  *                         score3 = score2             # <<<<<<<<<<<<<<
- * 
  *                 elif 1 == pity:
+ *                     score3 = score2 - 8
  */
           /*else*/ {
             __pyx_v_score3 = __pyx_v_score2;
@@ -43380,53 +43380,53 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
           goto __pyx_L70;
         }
 
-        /* "darkchess.pyx":1941
+        /* "darkchess.pyx":1940
+ *                     else: # 1 == , None ==
  *                         score3 = score2
- * 
  *                 elif 1 == pity:             # <<<<<<<<<<<<<<
  *                     score3 = score2 - 8
- * 
+ *                 else: # None == pity
  */
-        __pyx_t_7 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_v_pity, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1941, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_v_pity, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1940, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1941, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1940, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":1942
- * 
+          /* "darkchess.pyx":1941
+ *                         score3 = score2
  *                 elif 1 == pity:
  *                     score3 = score2 - 8             # <<<<<<<<<<<<<<
- * 
  *                 else: # None == pity
+ *                     score3 = score2
  */
           __pyx_v_score3 = (__pyx_v_score2 - 8.0);
 
-          /* "darkchess.pyx":1941
+          /* "darkchess.pyx":1940
+ *                     else: # 1 == , None ==
  *                         score3 = score2
- * 
  *                 elif 1 == pity:             # <<<<<<<<<<<<<<
  *                     score3 = score2 - 8
- * 
+ *                 else: # None == pity
  */
           goto __pyx_L70;
         }
 
-        /* "darkchess.pyx":1945
- * 
+        /* "darkchess.pyx":1943
+ *                     score3 = score2 - 8
  *                 else: # None == pity
  *                     score3 = score2             # <<<<<<<<<<<<<<
- * 
  *                 if score3 > max_p_score: #for turn color = player
+ *                     max_p_score = score3
  */
         /*else*/ {
           __pyx_v_score3 = __pyx_v_score2;
         }
         __pyx_L70:;
 
-        /* "darkchess.pyx":1947
+        /* "darkchess.pyx":1944
+ *                 else: # None == pity
  *                     score3 = score2
- * 
  *                 if score3 > max_p_score: #for turn color = player             # <<<<<<<<<<<<<<
  *                     max_p_score = score3
  *                     ch_player = ch_position3
@@ -43434,8 +43434,8 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __pyx_t_4 = ((__pyx_v_score3 > __pyx_v_max_p_score) != 0);
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":1948
- * 
+          /* "darkchess.pyx":1945
+ *                     score3 = score2
  *                 if score3 > max_p_score: #for turn color = player
  *                     max_p_score = score3             # <<<<<<<<<<<<<<
  *                     ch_player = ch_position3
@@ -43443,7 +43443,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
           __pyx_v_max_p_score = __pyx_v_score3;
 
-          /* "darkchess.pyx":1949
+          /* "darkchess.pyx":1946
  *                 if score3 > max_p_score: #for turn color = player
  *                     max_p_score = score3
  *                     ch_player = ch_position3             # <<<<<<<<<<<<<<
@@ -43453,7 +43453,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
           __Pyx_INCREF(__pyx_v_ch_position3);
           __Pyx_XDECREF_SET(__pyx_v_ch_player, __pyx_v_ch_position3);
 
-          /* "darkchess.pyx":1950
+          /* "darkchess.pyx":1947
  *                     max_p_score = score3
  *                     ch_player = ch_position3
  *                     pm_player = pm_p             # <<<<<<<<<<<<<<
@@ -43463,16 +43463,16 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
           __Pyx_INCREF(__pyx_v_pm_p);
           __Pyx_XDECREF_SET(__pyx_v_pm_player, __pyx_v_pm_p);
 
-          /* "darkchess.pyx":1947
+          /* "darkchess.pyx":1944
+ *                 else: # None == pity
  *                     score3 = score2
- * 
  *                 if score3 > max_p_score: #for turn color = player             # <<<<<<<<<<<<<<
  *                     max_p_score = score3
  *                     ch_player = ch_position3
  */
         }
 
-        /* "darkchess.pyx":1953
+        /* "darkchess.pyx":1950
  * 
  *                 # unmarked 20190805
  *                 if score3 > alpha:             # <<<<<<<<<<<<<<
@@ -43482,7 +43482,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __pyx_t_4 = ((__pyx_v_score3 > __pyx_v_alpha) != 0);
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":1954
+          /* "darkchess.pyx":1951
  *                 # unmarked 20190805
  *                 if score3 > alpha:
  *                     break             # <<<<<<<<<<<<<<
@@ -43491,7 +43491,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
           goto __pyx_L67_break;
 
-          /* "darkchess.pyx":1953
+          /* "darkchess.pyx":1950
  * 
  *                 # unmarked 20190805
  *                 if score3 > alpha:             # <<<<<<<<<<<<<<
@@ -43511,7 +43511,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       __pyx_L67_break:;
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-      /* "darkchess.pyx":1957
+      /* "darkchess.pyx":1954
  * 
  *             #############################
  *             if max_p_score != -9000:             # <<<<<<<<<<<<<<
@@ -43521,7 +43521,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       __pyx_t_4 = ((__pyx_v_max_p_score != -9000.0) != 0);
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":1959
+        /* "darkchess.pyx":1956
  *             if max_p_score != -9000:
  * 
  *                 if alpha > max_p_score:             # <<<<<<<<<<<<<<
@@ -43531,7 +43531,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __pyx_t_4 = ((__pyx_v_alpha > __pyx_v_max_p_score) != 0);
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":1960
+          /* "darkchess.pyx":1957
  * 
  *                 if alpha > max_p_score:
  *                     alpha = max_p_score             # <<<<<<<<<<<<<<
@@ -43540,7 +43540,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
           __pyx_v_alpha = __pyx_v_max_p_score;
 
-          /* "darkchess.pyx":1959
+          /* "darkchess.pyx":1956
  *             if max_p_score != -9000:
  * 
  *                 if alpha > max_p_score:             # <<<<<<<<<<<<<<
@@ -43549,18 +43549,18 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
         }
 
-        /* "darkchess.pyx":1962
+        /* "darkchess.pyx":1959
  *                     alpha = max_p_score
  * 
  *                 m4.append([ch_position2, pm_com, ch_player, pm_player, max_p_score])             # <<<<<<<<<<<<<<
  * 
  *                 # unmarked 20190805
  */
-        if (unlikely(!__pyx_v_ch_player)) { __Pyx_RaiseUnboundLocalError("ch_player"); __PYX_ERR(0, 1962, __pyx_L1_error) }
-        if (unlikely(!__pyx_v_pm_player)) { __Pyx_RaiseUnboundLocalError("pm_player"); __PYX_ERR(0, 1962, __pyx_L1_error) }
-        __pyx_t_21 = PyFloat_FromDouble(__pyx_v_max_p_score); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1962, __pyx_L1_error)
+        if (unlikely(!__pyx_v_ch_player)) { __Pyx_RaiseUnboundLocalError("ch_player"); __PYX_ERR(0, 1959, __pyx_L1_error) }
+        if (unlikely(!__pyx_v_pm_player)) { __Pyx_RaiseUnboundLocalError("pm_player"); __PYX_ERR(0, 1959, __pyx_L1_error) }
+        __pyx_t_21 = PyFloat_FromDouble(__pyx_v_max_p_score); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1959, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
-        __pyx_t_7 = PyList_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1962, __pyx_L1_error)
+        __pyx_t_7 = PyList_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1959, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_v_ch_position2);
         __Pyx_GIVEREF(__pyx_v_ch_position2);
@@ -43577,10 +43577,10 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __Pyx_GIVEREF(__pyx_t_21);
         PyList_SET_ITEM(__pyx_t_7, 4, __pyx_t_21);
         __pyx_t_21 = 0;
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m4, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1962, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m4, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1959, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "darkchess.pyx":1965
+        /* "darkchess.pyx":1962
  * 
  *                 # unmarked 20190805
  *                 if max_p_score < beta:             # <<<<<<<<<<<<<<
@@ -43590,7 +43590,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __pyx_t_4 = ((__pyx_v_max_p_score < __pyx_v_beta) != 0);
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":1966
+          /* "darkchess.pyx":1963
  *                 # unmarked 20190805
  *                 if max_p_score < beta:
  *                     max_p_score = -9000             # <<<<<<<<<<<<<<
@@ -43599,7 +43599,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
           __pyx_v_max_p_score = -9000.0;
 
-          /* "darkchess.pyx":1967
+          /* "darkchess.pyx":1964
  *                 if max_p_score < beta:
  *                     max_p_score = -9000
  *                     break             # <<<<<<<<<<<<<<
@@ -43608,7 +43608,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
           goto __pyx_L47_break;
 
-          /* "darkchess.pyx":1965
+          /* "darkchess.pyx":1962
  * 
  *                 # unmarked 20190805
  *                 if max_p_score < beta:             # <<<<<<<<<<<<<<
@@ -43617,7 +43617,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
         }
 
-        /* "darkchess.pyx":1969
+        /* "darkchess.pyx":1966
  *                     break
  * 
  *                 max_p_score = -9000             # <<<<<<<<<<<<<<
@@ -43626,7 +43626,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
         __pyx_v_max_p_score = -9000.0;
 
-        /* "darkchess.pyx":1957
+        /* "darkchess.pyx":1954
  * 
  *             #############################
  *             if max_p_score != -9000:             # <<<<<<<<<<<<<<
@@ -43636,7 +43636,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         goto __pyx_L74;
       }
 
-      /* "darkchess.pyx":1972
+      /* "darkchess.pyx":1969
  * 
  *             else:
  *                 m4.append([ch_position2, pm_com, None, None, score2])             # <<<<<<<<<<<<<<
@@ -43644,9 +43644,9 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  * 
  */
       /*else*/ {
-        __pyx_t_7 = PyFloat_FromDouble(__pyx_v_score2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1972, __pyx_L1_error)
+        __pyx_t_7 = PyFloat_FromDouble(__pyx_v_score2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1969, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_21 = PyList_New(5); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1972, __pyx_L1_error)
+        __pyx_t_21 = PyList_New(5); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1969, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
         __Pyx_INCREF(__pyx_v_ch_position2);
         __Pyx_GIVEREF(__pyx_v_ch_position2);
@@ -43663,7 +43663,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
         __Pyx_GIVEREF(__pyx_t_7);
         PyList_SET_ITEM(__pyx_t_21, 4, __pyx_t_7);
         __pyx_t_7 = 0;
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m4, __pyx_t_21); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1972, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m4, __pyx_t_21); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1969, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       }
       __pyx_L74:;
@@ -43679,7 +43679,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
     __pyx_L47_break:;
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-    /* "darkchess.pyx":1977
+    /* "darkchess.pyx":1974
  *             #print('m4', m4)
  *         ###############################
  *         if m4:             # <<<<<<<<<<<<<<
@@ -43689,80 +43689,80 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
     __pyx_t_4 = (PyList_GET_SIZE(__pyx_v_m4) != 0);
     if (__pyx_t_4) {
 
-      /* "darkchess.pyx":1978
+      /* "darkchess.pyx":1975
  *         ###############################
  *         if m4:
  *             min_index = m4.index(min(m4, key=lambda s:s[4]))             # <<<<<<<<<<<<<<
  *             coms = m4[min_index][4]
  *             ch_comp = m4[min_index][0]
  */
-      __pyx_t_17 = PyTuple_New(1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1978, __pyx_L1_error)
+      __pyx_t_17 = PyTuple_New(1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_INCREF(__pyx_v_m4);
       __Pyx_GIVEREF(__pyx_v_m4);
       PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_v_m4);
-      __pyx_t_21 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1978, __pyx_L1_error)
+      __pyx_t_21 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
-      __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9darkchess_8one_turn_lambda, 0, __pyx_n_s_one_turn_locals_lambda, NULL, __pyx_n_s_darkchess, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1978, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9darkchess_8one_turn_lambda, 0, __pyx_n_s_one_turn_locals_lambda, NULL, __pyx_n_s_darkchess, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_key, __pyx_t_7) < 0) __PYX_ERR(0, 1978, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_key, __pyx_t_7) < 0) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_17, __pyx_t_21); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1978, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_17, __pyx_t_21); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-      __pyx_t_21 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_m4, __pyx_t_7); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1978, __pyx_L1_error)
+      __pyx_t_21 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_m4, __pyx_t_7); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1975, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_min_index, __pyx_t_21);
       __pyx_t_21 = 0;
 
-      /* "darkchess.pyx":1979
+      /* "darkchess.pyx":1976
  *         if m4:
  *             min_index = m4.index(min(m4, key=lambda s:s[4]))
  *             coms = m4[min_index][4]             # <<<<<<<<<<<<<<
  *             ch_comp = m4[min_index][0]
  *             pm_comp = m4[min_index][1]
  */
-      __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1979, __pyx_L1_error)
+      __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1976, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
-      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1979, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1976, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       __Pyx_XDECREF_SET(__pyx_v_coms, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "darkchess.pyx":1980
+      /* "darkchess.pyx":1977
  *             min_index = m4.index(min(m4, key=lambda s:s[4]))
  *             coms = m4[min_index][4]
  *             ch_comp = m4[min_index][0]             # <<<<<<<<<<<<<<
  *             pm_comp = m4[min_index][1]
  * 
  */
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1980, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1977, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1980, __pyx_L1_error)
+      __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1977, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_ch_comp, __pyx_t_21);
       __pyx_t_21 = 0;
 
-      /* "darkchess.pyx":1981
+      /* "darkchess.pyx":1978
  *             coms = m4[min_index][4]
  *             ch_comp = m4[min_index][0]
  *             pm_comp = m4[min_index][1]             # <<<<<<<<<<<<<<
  * 
  *             alpha = AI_min_score
  */
-      __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1981, __pyx_L1_error)
+      __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m4, __pyx_v_min_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1978, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
-      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1981, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1978, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       __Pyx_XDECREF_SET(__pyx_v_pm_comp, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "darkchess.pyx":1983
+      /* "darkchess.pyx":1980
  *             pm_comp = m4[min_index][1]
  * 
  *             alpha = AI_min_score             # <<<<<<<<<<<<<<
@@ -43771,32 +43771,32 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
       __pyx_v_alpha = __pyx_v_9darkchess_AI_min_score;
 
-      /* "darkchess.pyx":1985
+      /* "darkchess.pyx":1982
  *             alpha = AI_min_score
  * 
  *             if beta < coms:             # <<<<<<<<<<<<<<
  *                 beta = coms
  * 
  */
-      __pyx_t_7 = PyFloat_FromDouble(__pyx_v_beta); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1985, __pyx_L1_error)
+      __pyx_t_7 = PyFloat_FromDouble(__pyx_v_beta); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1982, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_21 = PyObject_RichCompare(__pyx_t_7, __pyx_v_coms, Py_LT); __Pyx_XGOTREF(__pyx_t_21); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1985, __pyx_L1_error)
+      __pyx_t_21 = PyObject_RichCompare(__pyx_t_7, __pyx_v_coms, Py_LT); __Pyx_XGOTREF(__pyx_t_21); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1982, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_21); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1985, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_21); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1982, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":1986
+        /* "darkchess.pyx":1983
  * 
  *             if beta < coms:
  *                 beta = coms             # <<<<<<<<<<<<<<
  * 
  *             m3.append([ch_position, pm, ch_comp, pm_comp, coms])
  */
-        __pyx_t_18 = __pyx_PyFloat_AsDouble(__pyx_v_coms); if (unlikely((__pyx_t_18 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1986, __pyx_L1_error)
+        __pyx_t_18 = __pyx_PyFloat_AsDouble(__pyx_v_coms); if (unlikely((__pyx_t_18 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1983, __pyx_L1_error)
         __pyx_v_beta = __pyx_t_18;
 
-        /* "darkchess.pyx":1985
+        /* "darkchess.pyx":1982
  *             alpha = AI_min_score
  * 
  *             if beta < coms:             # <<<<<<<<<<<<<<
@@ -43805,14 +43805,14 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
       }
 
-      /* "darkchess.pyx":1988
+      /* "darkchess.pyx":1985
  *                 beta = coms
  * 
  *             m3.append([ch_position, pm, ch_comp, pm_comp, coms])             # <<<<<<<<<<<<<<
  *             m4 = []
  * 
  */
-      __pyx_t_21 = PyList_New(5); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1988, __pyx_L1_error)
+      __pyx_t_21 = PyList_New(5); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1985, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_INCREF(__pyx_v_ch_position);
       __Pyx_GIVEREF(__pyx_v_ch_position);
@@ -43829,22 +43829,22 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_INCREF(__pyx_v_coms);
       __Pyx_GIVEREF(__pyx_v_coms);
       PyList_SET_ITEM(__pyx_t_21, 4, __pyx_v_coms);
-      __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m3, __pyx_t_21); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1988, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m3, __pyx_t_21); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1985, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-      /* "darkchess.pyx":1989
+      /* "darkchess.pyx":1986
  * 
  *             m3.append([ch_position, pm, ch_comp, pm_comp, coms])
  *             m4 = []             # <<<<<<<<<<<<<<
  * 
  *             # marked 20191104
  */
-      __pyx_t_21 = PyList_New(0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1989, __pyx_L1_error)
+      __pyx_t_21 = PyList_New(0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1986, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF_SET(__pyx_v_m4, ((PyObject*)__pyx_t_21));
       __pyx_t_21 = 0;
 
-      /* "darkchess.pyx":1977
+      /* "darkchess.pyx":1974
  *             #print('m4', m4)
  *         ###############################
  *         if m4:             # <<<<<<<<<<<<<<
@@ -43854,7 +43854,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       goto __pyx_L77;
     }
 
-    /* "darkchess.pyx":1996
+    /* "darkchess.pyx":1993
  * 
  *         else:
  *             m3.append([ch_position, pm, None, None,score])             # <<<<<<<<<<<<<<
@@ -43862,9 +43862,9 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  * 
  */
     /*else*/ {
-      __pyx_t_21 = PyFloat_FromDouble(__pyx_v_score); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1996, __pyx_L1_error)
+      __pyx_t_21 = PyFloat_FromDouble(__pyx_v_score); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1993, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
-      __pyx_t_7 = PyList_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1996, __pyx_L1_error)
+      __pyx_t_7 = PyList_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1993, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_v_ch_position);
       __Pyx_GIVEREF(__pyx_v_ch_position);
@@ -43881,7 +43881,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_GIVEREF(__pyx_t_21);
       PyList_SET_ITEM(__pyx_t_7, 4, __pyx_t_21);
       __pyx_t_21 = 0;
-      __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m3, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1996, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m3, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1993, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
     __pyx_L77:;
@@ -43896,7 +43896,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2002
+  /* "darkchess.pyx":1999
  *         ###############################
  *     ###############################
  *     if m3:             # <<<<<<<<<<<<<<
@@ -43906,91 +43906,91 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_4 = (PyList_GET_SIZE(__pyx_v_m3) != 0);
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2004
+    /* "darkchess.pyx":2001
  *     if m3:
  *         #print('m3=', m3)
  *         max_index = m3.index(max(m3, key=lambda s:s[4]))             # <<<<<<<<<<<<<<
  *         ps = m3[max_index][4]
  *         ch_1 = m3[max_index][0]
  */
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2004, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_m3);
     __Pyx_GIVEREF(__pyx_v_m3);
     PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_m3);
-    __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2004, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_21 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9darkchess_8one_turn_1lambda1, 0, __pyx_n_s_one_turn_locals_lambda, NULL, __pyx_n_s_darkchess, __pyx_d, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2004, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9darkchess_8one_turn_1lambda1, 0, __pyx_n_s_one_turn_locals_lambda, NULL, __pyx_n_s_darkchess, __pyx_d, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_key, __pyx_t_21) < 0) __PYX_ERR(0, 2004, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_key, __pyx_t_21) < 0) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2004, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_m3, __pyx_t_21); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2004, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_m3, __pyx_t_21); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2001, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     __pyx_v_max_index = __pyx_t_7;
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2005
+    /* "darkchess.pyx":2002
  *         #print('m3=', m3)
  *         max_index = m3.index(max(m3, key=lambda s:s[4]))
  *         ps = m3[max_index][4]             # <<<<<<<<<<<<<<
  *         ch_1 = m3[max_index][0]
  *         pm_1 = m3[max_index][1]
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2005, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2002, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2005, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2002, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_ps = __pyx_t_21;
     __pyx_t_21 = 0;
 
-    /* "darkchess.pyx":2006
+    /* "darkchess.pyx":2003
  *         max_index = m3.index(max(m3, key=lambda s:s[4]))
  *         ps = m3[max_index][4]
  *         ch_1 = m3[max_index][0]             # <<<<<<<<<<<<<<
  *         pm_1 = m3[max_index][1]
  *         m2.append([mm[0], mm[1], ch_1, pm_1, ps])
  */
-    __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2006, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2003, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2006, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_21, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2003, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     __pyx_v_ch_1 = __pyx_t_7;
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2007
+    /* "darkchess.pyx":2004
  *         ps = m3[max_index][4]
  *         ch_1 = m3[max_index][0]
  *         pm_1 = m3[max_index][1]             # <<<<<<<<<<<<<<
  *         m2.append([mm[0], mm[1], ch_1, pm_1, ps])
  *     else:
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2007, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_m3, __pyx_v_max_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2004, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2007, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2004, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_pm_1 = __pyx_t_21;
     __pyx_t_21 = 0;
 
-    /* "darkchess.pyx":2008
+    /* "darkchess.pyx":2005
  *         ch_1 = m3[max_index][0]
  *         pm_1 = m3[max_index][1]
  *         m2.append([mm[0], mm[1], ch_1, pm_1, ps])             # <<<<<<<<<<<<<<
  *     else:
  *         m2.append([mm[0], mm[1], None, None, sc])
  */
-    __pyx_t_21 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2008, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2005, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2008, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2005, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2008, __pyx_L1_error)
+    __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2005, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_GIVEREF(__pyx_t_21);
     PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_21);
@@ -44007,10 +44007,10 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
     PyList_SET_ITEM(__pyx_t_2, 4, __pyx_v_ps);
     __pyx_t_21 = 0;
     __pyx_t_7 = 0;
-    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m2, __pyx_t_2); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 2008, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m2, __pyx_t_2); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 2005, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2002
+    /* "darkchess.pyx":1999
  *         ###############################
  *     ###############################
  *     if m3:             # <<<<<<<<<<<<<<
@@ -44020,7 +44020,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
     goto __pyx_L79;
   }
 
-  /* "darkchess.pyx":2010
+  /* "darkchess.pyx":2007
  *         m2.append([mm[0], mm[1], ch_1, pm_1, ps])
  *     else:
  *         m2.append([mm[0], mm[1], None, None, sc])             # <<<<<<<<<<<<<<
@@ -44028,13 +44028,13 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  *     #print('m2', m2)
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2010, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2007, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2010, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2007, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_21 = PyFloat_FromDouble(__pyx_v_sc); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2010, __pyx_L1_error)
+    __pyx_t_21 = PyFloat_FromDouble(__pyx_v_sc); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2007, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_17 = PyList_New(5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2010, __pyx_L1_error)
+    __pyx_t_17 = PyList_New(5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2007, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
     __Pyx_GIVEREF(__pyx_t_2);
     PyList_SET_ITEM(__pyx_t_17, 0, __pyx_t_2);
@@ -44051,12 +44051,12 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
     __pyx_t_2 = 0;
     __pyx_t_7 = 0;
     __pyx_t_21 = 0;
-    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m2, __pyx_t_17); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 2010, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_m2, __pyx_t_17); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 2007, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
   }
   __pyx_L79:;
 
-  /* "darkchess.pyx":2015
+  /* "darkchess.pyx":2012
  *     ###############################
  * 
  *     gb_m2[ind] = m2             # <<<<<<<<<<<<<<
@@ -44065,24 +44065,24 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  */
   if (unlikely(__pyx_v_gb_m2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 2015, __pyx_L1_error)
+    __PYX_ERR(0, 2012, __pyx_L1_error)
   }
-  if (unlikely(__Pyx_SetItemInt(__pyx_v_gb_m2, __pyx_v_ind, __pyx_v_m2, int, 1, __Pyx_PyInt_From_int, 1, 1, 1) < 0)) __PYX_ERR(0, 2015, __pyx_L1_error)
+  if (unlikely(__Pyx_SetItemInt(__pyx_v_gb_m2, __pyx_v_ind, __pyx_v_m2, int, 1, __Pyx_PyInt_From_int, 1, 1, 1) < 0)) __PYX_ERR(0, 2012, __pyx_L1_error)
 
-  /* "darkchess.pyx":2017
+  /* "darkchess.pyx":2014
  *     gb_m2[ind] = m2
  * 
  *     q.put(gb_m2[ind])             # <<<<<<<<<<<<<<
  *     #return m2, af_map, af_ch
  * 
  */
-  __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2017, __pyx_L1_error)
+  __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 2014, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
   if (unlikely(__pyx_v_gb_m2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 2017, __pyx_L1_error)
+    __PYX_ERR(0, 2014, __pyx_L1_error)
   }
-  __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_gb_m2, __pyx_v_ind, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2017, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_gb_m2, __pyx_v_ind, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2014, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_21))) {
@@ -44097,7 +44097,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_17 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_21, __pyx_t_2, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_21, __pyx_t_7);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2017, __pyx_L1_error)
+  if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2014, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_17);
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
@@ -44168,7 +44168,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2021
+/* "darkchess.pyx":2018
  * 
  * # dest_will_be_dead ...
  * cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):             # <<<<<<<<<<<<<<
@@ -44205,61 +44205,61 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   PyObject *(*__pyx_t_15)(PyObject *);
   __Pyx_RefNannySetupContext("dest_will_dead_owner_wont_eat", 0);
 
-  /* "darkchess.pyx":2022
+  /* "darkchess.pyx":2019
  * # dest_will_be_dead ...
  * cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
  *     n = a_map[org[0]][org[1]]             # <<<<<<<<<<<<<<
  *     m = a_map[dest[0]][dest[1]]
  *     if None == n:
  */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_org, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2022, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_org, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2019, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2022, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2019, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_org, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2022, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_org, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2019, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2022, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2019, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_n = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "darkchess.pyx":2023
+  /* "darkchess.pyx":2020
  * cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
  *     n = a_map[org[0]][org[1]]
  *     m = a_map[dest[0]][dest[1]]             # <<<<<<<<<<<<<<
  *     if None == n:
  *         return 0
  */
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_dest, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2023, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_dest, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2020, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2023, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2020, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_dest, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2023, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_dest, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2020, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2023, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2020, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2024
+  /* "darkchess.pyx":2021
  *     n = a_map[org[0]][org[1]]
  *     m = a_map[dest[0]][dest[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
  *         return 0
  *     elif m != None:
  */
-  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2024, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2024, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2021, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2021, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2025
+    /* "darkchess.pyx":2022
  *     m = a_map[dest[0]][dest[1]]
  *     if None == n:
  *         return 0             # <<<<<<<<<<<<<<
@@ -44269,7 +44269,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2024
+    /* "darkchess.pyx":2021
  *     n = a_map[org[0]][org[1]]
  *     m = a_map[dest[0]][dest[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
@@ -44278,19 +44278,19 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
   }
 
-  /* "darkchess.pyx":2026
+  /* "darkchess.pyx":2023
  *     if None == n:
  *         return 0
  *     elif m != None:             # <<<<<<<<<<<<<<
  *     #eat
  *         return 0
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_m, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2026, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2026, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_m, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2023, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2023, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2028
+    /* "darkchess.pyx":2025
  *     elif m != None:
  *     #eat
  *         return 0             # <<<<<<<<<<<<<<
@@ -44300,7 +44300,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2026
+    /* "darkchess.pyx":2023
  *     if None == n:
  *         return 0
  *     elif m != None:             # <<<<<<<<<<<<<<
@@ -44309,16 +44309,16 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
   }
 
-  /* "darkchess.pyx":2030
+  /* "darkchess.pyx":2027
  *         return 0
  * 
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(org, dest, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2030, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2027, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2030, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2027, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -44333,22 +44333,22 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2030, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2027, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_af_map = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2031
+  /* "darkchess.pyx":2028
  * 
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     af_map, af_ch = move(org, dest, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2031, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2028, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2031, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2028, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -44363,20 +44363,20 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   }
   __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2031, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2028, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_af_ch = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2032
+  /* "darkchess.pyx":2029
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(org, dest, af_map, af_ch)             # <<<<<<<<<<<<<<
  *     all_chess_move(af_map, af_ch)
  *     mm = af_map[dest[0]][dest[1]]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2032, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2029, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = NULL;
   __pyx_t_5 = 0;
@@ -44393,7 +44393,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[5] = {__pyx_t_1, __pyx_v_org, __pyx_v_dest, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 4+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 4+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_GOTREF(__pyx_t_2);
   } else
@@ -44401,13 +44401,13 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[5] = {__pyx_t_1, __pyx_v_org, __pyx_v_dest, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 4+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 4+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_GOTREF(__pyx_t_2);
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(4+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(4+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_1) {
       __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -44424,7 +44424,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __Pyx_INCREF(__pyx_v_af_ch);
     __Pyx_GIVEREF(__pyx_v_af_ch);
     PyTuple_SET_ITEM(__pyx_t_6, 3+__pyx_t_5, __pyx_v_af_ch);
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -44435,7 +44435,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2032, __pyx_L1_error)
+      __PYX_ERR(0, 2029, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -44448,15 +44448,15 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __Pyx_INCREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_t_6);
     #else
-    __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     #endif
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2032, __pyx_L1_error)
+    __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext;
@@ -44464,7 +44464,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __Pyx_GOTREF(__pyx_t_3);
     index = 1; __pyx_t_6 = __pyx_t_7(__pyx_t_1); if (unlikely(!__pyx_t_6)) goto __pyx_L4_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_1), 2) < 0) __PYX_ERR(0, 2032, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_1), 2) < 0) __PYX_ERR(0, 2029, __pyx_L1_error)
     __pyx_t_7 = NULL;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     goto __pyx_L5_unpacking_done;
@@ -44472,7 +44472,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_7 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2032, __pyx_L1_error)
+    __PYX_ERR(0, 2029, __pyx_L1_error)
     __pyx_L5_unpacking_done:;
   }
   __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_3);
@@ -44480,7 +44480,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2033
+  /* "darkchess.pyx":2030
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(org, dest, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -44489,49 +44489,49 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
   __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-  /* "darkchess.pyx":2034
+  /* "darkchess.pyx":2031
  *     af_map, af_ch = move(org, dest, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  *     mm = af_map[dest[0]][dest[1]]             # <<<<<<<<<<<<<<
  *     my = af_ch[mm[0]][mm[1]]
  * 
  */
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_dest, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2034, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_dest, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2031, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2034, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2031, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_dest, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2034, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_dest, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2031, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2034, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2031, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_mm = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "darkchess.pyx":2035
+  /* "darkchess.pyx":2032
  *     all_chess_move(af_map, af_ch)
  *     mm = af_map[dest[0]][dest[1]]
  *     my = af_ch[mm[0]][mm[1]]             # <<<<<<<<<<<<<<
  * 
  *     for chr in af_ch:
  */
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2035, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_mm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2032, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2035, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2032, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2035, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_mm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2032, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2035, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2032, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_my = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2037
+  /* "darkchess.pyx":2034
  *     my = af_ch[mm[0]][mm[1]]
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -44542,26 +44542,26 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __pyx_t_6 = __pyx_v_af_ch; __Pyx_INCREF(__pyx_t_6); __pyx_t_8 = 0;
     __pyx_t_9 = NULL;
   } else {
-    __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2037, __pyx_L1_error)
+    __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2034, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2037, __pyx_L1_error)
+    __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2034, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_9)) {
       if (likely(PyList_CheckExact(__pyx_t_6))) {
         if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2037, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2034, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2037, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2034, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2037, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2034, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2037, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2034, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -44571,7 +44571,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2037, __pyx_L1_error)
+          else __PYX_ERR(0, 2034, __pyx_L1_error)
         }
         break;
       }
@@ -44580,7 +44580,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2038
+    /* "darkchess.pyx":2035
  * 
  *     for chr in af_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -44591,26 +44591,26 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
       __pyx_t_3 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_3); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2038, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2035, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2038, __pyx_L1_error)
+      __pyx_t_11 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2035, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_11)) {
         if (likely(PyList_CheckExact(__pyx_t_3))) {
           if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2038, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2035, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2038, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2035, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2038, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2035, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2038, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2035, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -44620,7 +44620,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2038, __pyx_L1_error)
+            else __PYX_ERR(0, 2035, __pyx_L1_error)
           }
           break;
         }
@@ -44629,19 +44629,19 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2039
+      /* "darkchess.pyx":2036
  *     for chr in af_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  */
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2039, __pyx_L1_error)
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2039, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2036, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2036, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2040
+        /* "darkchess.pyx":2037
  *         for ch in chr:
  *             if ch == my:
  *                 continue             # <<<<<<<<<<<<<<
@@ -44650,7 +44650,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
         goto __pyx_L8_continue;
 
-        /* "darkchess.pyx":2039
+        /* "darkchess.pyx":2036
  *     for chr in af_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
@@ -44659,65 +44659,65 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
       }
 
-      /* "darkchess.pyx":2041
+      /* "darkchess.pyx":2038
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == dest:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_12) {
       } else {
         __pyx_t_4 = __pyx_t_12;
         goto __pyx_L12_bool_binop_done;
       }
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_12) {
       } else {
         __pyx_t_4 = __pyx_t_12;
         goto __pyx_L12_bool_binop_done;
       }
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2041, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 2038, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_t_4 = __pyx_t_12;
       __pyx_L12_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2042
+        /* "darkchess.pyx":2039
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == dest:
  *                         return 1
  */
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2042, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2039, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         if (likely(PyList_CheckExact(__pyx_t_13)) || PyTuple_CheckExact(__pyx_t_13)) {
           __pyx_t_1 = __pyx_t_13; __Pyx_INCREF(__pyx_t_1); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
         } else {
-          __pyx_t_14 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2042, __pyx_L1_error)
+          __pyx_t_14 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2039, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2042, __pyx_L1_error)
+          __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2039, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         for (;;) {
@@ -44725,17 +44725,17 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
             if (likely(PyList_CheckExact(__pyx_t_1))) {
               if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_1)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_13 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2042, __pyx_L1_error)
+              __pyx_t_13 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2039, __pyx_L1_error)
               #else
-              __pyx_t_13 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2042, __pyx_L1_error)
+              __pyx_t_13 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2039, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               #endif
             } else {
               if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2042, __pyx_L1_error)
+              __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2039, __pyx_L1_error)
               #else
-              __pyx_t_13 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2042, __pyx_L1_error)
+              __pyx_t_13 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2039, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               #endif
             }
@@ -44745,7 +44745,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2042, __pyx_L1_error)
+                else __PYX_ERR(0, 2039, __pyx_L1_error)
               }
               break;
             }
@@ -44754,19 +44754,19 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_13);
           __pyx_t_13 = 0;
 
-          /* "darkchess.pyx":2043
+          /* "darkchess.pyx":2040
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == dest:             # <<<<<<<<<<<<<<
  *                         return 1
  *     return 0
  */
-          __pyx_t_13 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_dest, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2043, __pyx_L1_error)
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2043, __pyx_L1_error)
+          __pyx_t_13 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_dest, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2040, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2040, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2044
+            /* "darkchess.pyx":2041
  *                 for pm in ch.possible_move:
  *                     if pm == dest:
  *                         return 1             # <<<<<<<<<<<<<<
@@ -44779,7 +44779,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             goto __pyx_L0;
 
-            /* "darkchess.pyx":2043
+            /* "darkchess.pyx":2040
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == dest:             # <<<<<<<<<<<<<<
@@ -44788,7 +44788,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
           }
 
-          /* "darkchess.pyx":2042
+          /* "darkchess.pyx":2039
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -44798,7 +44798,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "darkchess.pyx":2041
+        /* "darkchess.pyx":2038
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
@@ -44807,7 +44807,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
  */
       }
 
-      /* "darkchess.pyx":2038
+      /* "darkchess.pyx":2035
  * 
  *     for chr in af_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -44818,7 +44818,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2037
+    /* "darkchess.pyx":2034
  *     my = af_ch[mm[0]][mm[1]]
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -44828,7 +44828,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2045
+  /* "darkchess.pyx":2042
  *                     if pm == dest:
  *                         return 1
  *     return 0             # <<<<<<<<<<<<<<
@@ -44838,7 +44838,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2021
+  /* "darkchess.pyx":2018
  * 
  * # dest_will_be_dead ...
  * cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):             # <<<<<<<<<<<<<<
@@ -44869,7 +44869,7 @@ static int __pyx_f_9darkchess_dest_will_dead_owner_wont_eat(PyObject *__pyx_v_or
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2048
+/* "darkchess.pyx":2045
  * 
  * # will_be_dead
  * cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):             # <<<<<<<<<<<<<<
@@ -44901,7 +44901,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
   PyObject *(*__pyx_t_14)(PyObject *);
   __Pyx_RefNannySetupContext("will_dead", 0);
 
-  /* "darkchess.pyx":2049
+  /* "darkchess.pyx":2046
  * # will_be_dead
  * cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
  *     n = a_map[org[0]][org[1]]             # <<<<<<<<<<<<<<
@@ -44909,28 +44909,28 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  *         return 0
  */
   __pyx_t_1 = __pyx_v_org.f0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a_map, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2049, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a_map, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2046, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = __pyx_v_org.f1;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2049, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2046, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_n = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "darkchess.pyx":2050
+  /* "darkchess.pyx":2047
  * cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
  *     n = a_map[org[0]][org[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  */
-  __pyx_t_3 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2050, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2050, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2047, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2047, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2051
+    /* "darkchess.pyx":2048
  *     n = a_map[org[0]][org[1]]
  *     if None == n:
  *         return 0             # <<<<<<<<<<<<<<
@@ -44940,7 +44940,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2050
+    /* "darkchess.pyx":2047
  * cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
  *     n = a_map[org[0]][org[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
@@ -44949,28 +44949,28 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  */
   }
 
-  /* "darkchess.pyx":2052
+  /* "darkchess.pyx":2049
  *     if None == n:
  *         return 0
  *     my = a_ch[n[0]][n[1]]             # <<<<<<<<<<<<<<
  *     for chr in a_ch:
  *         for ch in chr:
  */
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2052, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2049, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2052, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2049, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2052, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2049, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2052, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2049, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_my = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2053
+  /* "darkchess.pyx":2050
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -44981,26 +44981,26 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
     __pyx_t_5 = __pyx_v_a_ch; __Pyx_INCREF(__pyx_t_5); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2053, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2050, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2053, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2050, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
       if (likely(PyList_CheckExact(__pyx_t_5))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2053, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2050, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2053, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2053, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2050, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2053, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -45010,7 +45010,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2053, __pyx_L1_error)
+          else __PYX_ERR(0, 2050, __pyx_L1_error)
         }
         break;
       }
@@ -45019,7 +45019,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2054
+    /* "darkchess.pyx":2051
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -45030,26 +45030,26 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
       __pyx_t_3 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_3); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2054, __pyx_L1_error)
+      __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2051, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2054, __pyx_L1_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2051, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
         if (likely(PyList_CheckExact(__pyx_t_3))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2054, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2051, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2054, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2051, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2054, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2051, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2054, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2051, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -45059,7 +45059,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2054, __pyx_L1_error)
+            else __PYX_ERR(0, 2051, __pyx_L1_error)
           }
           break;
         }
@@ -45068,19 +45068,19 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2055
+      /* "darkchess.pyx":2052
  *     for chr in a_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  */
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2055, __pyx_L1_error)
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2055, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2052, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2052, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2056
+        /* "darkchess.pyx":2053
  *         for ch in chr:
  *             if ch == my:
  *                 continue             # <<<<<<<<<<<<<<
@@ -45089,7 +45089,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  */
         goto __pyx_L6_continue;
 
-        /* "darkchess.pyx":2055
+        /* "darkchess.pyx":2052
  *     for chr in a_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
@@ -45098,65 +45098,65 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  */
       }
 
-      /* "darkchess.pyx":2057
+      /* "darkchess.pyx":2054
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == org:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       if (__pyx_t_11) {
       } else {
         __pyx_t_4 = __pyx_t_11;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_10, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_10, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_11) {
       } else {
         __pyx_t_4 = __pyx_t_11;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_12 = PyObject_RichCompare(__pyx_t_2, __pyx_t_10, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_12 = PyObject_RichCompare(__pyx_t_2, __pyx_t_10, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2057, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2054, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_4 = __pyx_t_11;
       __pyx_L10_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2058
+        /* "darkchess.pyx":2055
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == org:
  *                         return 1
  */
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2058, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2055, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
           __pyx_t_10 = __pyx_t_12; __Pyx_INCREF(__pyx_t_10); __pyx_t_13 = 0;
           __pyx_t_14 = NULL;
         } else {
-          __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2058, __pyx_L1_error)
+          __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2055, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_14 = Py_TYPE(__pyx_t_10)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2058, __pyx_L1_error)
+          __pyx_t_14 = Py_TYPE(__pyx_t_10)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2055, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         for (;;) {
@@ -45164,17 +45164,17 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
             if (likely(PyList_CheckExact(__pyx_t_10))) {
               if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_10)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_12 = PyList_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2058, __pyx_L1_error)
+              __pyx_t_12 = PyList_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2055, __pyx_L1_error)
               #else
-              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2058, __pyx_L1_error)
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2055, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_12);
               #endif
             } else {
               if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_10)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2058, __pyx_L1_error)
+              __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2055, __pyx_L1_error)
               #else
-              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2058, __pyx_L1_error)
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2055, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_12);
               #endif
             }
@@ -45184,7 +45184,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2058, __pyx_L1_error)
+                else __PYX_ERR(0, 2055, __pyx_L1_error)
               }
               break;
             }
@@ -45193,22 +45193,22 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "darkchess.pyx":2059
+          /* "darkchess.pyx":2056
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == org:             # <<<<<<<<<<<<<<
  *                         return 1
  *     return 0
  */
-          __pyx_t_12 = __pyx_convert__to_py___pyx_ctuple_int__and_int(__pyx_v_org); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2059, __pyx_L1_error)
+          __pyx_t_12 = __pyx_convert__to_py___pyx_ctuple_int__and_int(__pyx_v_org); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2056, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2059, __pyx_L1_error)
+          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2056, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2059, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2056, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2060
+            /* "darkchess.pyx":2057
  *                 for pm in ch.possible_move:
  *                     if pm == org:
  *                         return 1             # <<<<<<<<<<<<<<
@@ -45221,7 +45221,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             goto __pyx_L0;
 
-            /* "darkchess.pyx":2059
+            /* "darkchess.pyx":2056
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == org:             # <<<<<<<<<<<<<<
@@ -45230,7 +45230,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  */
           }
 
-          /* "darkchess.pyx":2058
+          /* "darkchess.pyx":2055
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -45240,7 +45240,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "darkchess.pyx":2057
+        /* "darkchess.pyx":2054
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
@@ -45249,7 +45249,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
  */
       }
 
-      /* "darkchess.pyx":2054
+      /* "darkchess.pyx":2051
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -45260,7 +45260,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2053
+    /* "darkchess.pyx":2050
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -45270,7 +45270,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2061
+  /* "darkchess.pyx":2058
  *                     if pm == org:
  *                         return 1
  *     return 0             # <<<<<<<<<<<<<<
@@ -45280,7 +45280,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2048
+  /* "darkchess.pyx":2045
  * 
  * # will_be_dead
  * cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):             # <<<<<<<<<<<<<<
@@ -45307,7 +45307,7 @@ static int __pyx_f_9darkchess_will_dead(__pyx_ctuple_int__and_int __pyx_v_org, P
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2063
+/* "darkchess.pyx":2060
  *     return 0
  * 
  * cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -45346,7 +45346,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   __pyx_ctuple_int__and_int __pyx_t_17;
   __Pyx_RefNannySetupContext("will_eat2_more", 0);
 
-  /* "darkchess.pyx":2064
+  /* "darkchess.pyx":2061
  * 
  * cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):
  *     cdef int opp_color = 1-owner_color             # <<<<<<<<<<<<<<
@@ -45355,7 +45355,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2065
+  /* "darkchess.pyx":2062
  * cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):
  *     cdef int opp_color = 1-owner_color
  *     cdef int can_eat = 0             # <<<<<<<<<<<<<<
@@ -45364,16 +45364,16 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
   __pyx_v_can_eat = 0;
 
-  /* "darkchess.pyx":2066
+  /* "darkchess.pyx":2063
  *     cdef int opp_color = 1-owner_color
  *     cdef int can_eat = 0
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2066, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2063, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2066, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2063, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -45388,22 +45388,22 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2066, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2063, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_af_map = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2067
+  /* "darkchess.pyx":2064
  *     cdef int can_eat = 0
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2067, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2064, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2067, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2064, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -45418,42 +45418,42 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2067, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2064, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_af_ch = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2068
+  /* "darkchess.pyx":2065
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:             # <<<<<<<<<<<<<<
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nexti, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2068, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2068, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nexti, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2065, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2065, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
   } else {
     __pyx_t_4 = __pyx_t_5;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2068, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2068, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2065, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2065, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_4 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2069
+    /* "darkchess.pyx":2066
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af_map, af_ch)
  *     for chr in af_ch:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2069, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2066, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     __pyx_t_6 = 0;
@@ -45470,7 +45470,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -45478,13 +45478,13 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -45501,7 +45501,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __Pyx_INCREF(__pyx_v_af_ch);
       __Pyx_GIVEREF(__pyx_v_af_ch);
       PyTuple_SET_ITEM(__pyx_t_7, 3+__pyx_t_6, __pyx_v_af_ch);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -45512,7 +45512,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2069, __pyx_L1_error)
+        __PYX_ERR(0, 2066, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -45525,15 +45525,15 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_7);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2069, __pyx_L1_error)
+      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2066, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_8 = Py_TYPE(__pyx_t_3)->tp_iternext;
@@ -45541,7 +45541,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __Pyx_GOTREF(__pyx_t_2);
       index = 1; __pyx_t_7 = __pyx_t_8(__pyx_t_3); if (unlikely(!__pyx_t_7)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_7);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2069, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2066, __pyx_L1_error)
       __pyx_t_8 = NULL;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L7_unpacking_done;
@@ -45549,7 +45549,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_8 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2069, __pyx_L1_error)
+      __PYX_ERR(0, 2066, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_2);
@@ -45557,7 +45557,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2070
+    /* "darkchess.pyx":2067
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -45566,7 +45566,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-    /* "darkchess.pyx":2068
+    /* "darkchess.pyx":2065
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:             # <<<<<<<<<<<<<<
@@ -45575,7 +45575,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
   }
 
-  /* "darkchess.pyx":2071
+  /* "darkchess.pyx":2068
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -45586,26 +45586,26 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     __pyx_t_1 = __pyx_v_af_ch; __Pyx_INCREF(__pyx_t_1); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
   } else {
-    __pyx_t_9 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2071, __pyx_L1_error)
+    __pyx_t_9 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2068, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_10 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2071, __pyx_L1_error)
+    __pyx_t_10 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2068, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_10)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2071, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2068, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2071, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2068, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2071, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2068, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2071, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2068, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -45615,7 +45615,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2071, __pyx_L1_error)
+          else __PYX_ERR(0, 2068, __pyx_L1_error)
         }
         break;
       }
@@ -45624,7 +45624,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2072
+    /* "darkchess.pyx":2069
  *         all_chess_move(af_map, af_ch)
  *     for chr in af_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -45635,26 +45635,26 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __pyx_t_7 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_7); __pyx_t_11 = 0;
       __pyx_t_12 = NULL;
     } else {
-      __pyx_t_11 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2072, __pyx_L1_error)
+      __pyx_t_11 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2069, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_12 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2072, __pyx_L1_error)
+      __pyx_t_12 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2069, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_12)) {
         if (likely(PyList_CheckExact(__pyx_t_7))) {
           if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_11); __Pyx_INCREF(__pyx_t_2); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2072, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_11); __Pyx_INCREF(__pyx_t_2); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2069, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_7, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2072, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_7, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2069, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_11); __Pyx_INCREF(__pyx_t_2); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2072, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_11); __Pyx_INCREF(__pyx_t_2); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2069, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_7, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2072, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_7, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2069, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -45664,7 +45664,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2072, __pyx_L1_error)
+            else __PYX_ERR(0, 2069, __pyx_L1_error)
           }
           break;
         }
@@ -45673,65 +45673,65 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2073
+      /* "darkchess.pyx":2070
  *     for chr in af_ch:
  *         for ch in chr:
  *             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     n = af_map[pm[0]][pm[1]]
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_5) {
       } else {
         __pyx_t_4 = __pyx_t_5;
         goto __pyx_L13_bool_binop_done;
       }
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_5) {
       } else {
         __pyx_t_4 = __pyx_t_5;
         goto __pyx_L13_bool_binop_done;
       }
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2073, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_t_4 = __pyx_t_5;
       __pyx_L13_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2074
+        /* "darkchess.pyx":2071
  *         for ch in chr:
  *             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     n = af_map[pm[0]][pm[1]]
  *                     if n != None:
  */
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2074, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2071, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         if (likely(PyList_CheckExact(__pyx_t_13)) || PyTuple_CheckExact(__pyx_t_13)) {
           __pyx_t_3 = __pyx_t_13; __Pyx_INCREF(__pyx_t_3); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
         } else {
-          __pyx_t_14 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2074, __pyx_L1_error)
+          __pyx_t_14 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2071, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_15 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2074, __pyx_L1_error)
+          __pyx_t_15 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2071, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         for (;;) {
@@ -45739,17 +45739,17 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
             if (likely(PyList_CheckExact(__pyx_t_3))) {
               if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_3)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_13 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2074, __pyx_L1_error)
+              __pyx_t_13 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2071, __pyx_L1_error)
               #else
-              __pyx_t_13 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2074, __pyx_L1_error)
+              __pyx_t_13 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2071, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               #endif
             } else {
               if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2074, __pyx_L1_error)
+              __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2071, __pyx_L1_error)
               #else
-              __pyx_t_13 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2074, __pyx_L1_error)
+              __pyx_t_13 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2071, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               #endif
             }
@@ -45759,7 +45759,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2074, __pyx_L1_error)
+                else __PYX_ERR(0, 2071, __pyx_L1_error)
               }
               break;
             }
@@ -45768,79 +45768,79 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_13);
           __pyx_t_13 = 0;
 
-          /* "darkchess.pyx":2075
+          /* "darkchess.pyx":2072
  *             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
  *                 for pm in ch.possible_move:
  *                     n = af_map[pm[0]][pm[1]]             # <<<<<<<<<<<<<<
  *                     if n != None:
  *                         nch = af_ch[n[0]][n[1]]
  */
-          __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2075, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2072, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2075, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2072, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2075, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2072, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_16 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2075, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2072, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_16);
           __pyx_t_16 = 0;
 
-          /* "darkchess.pyx":2076
+          /* "darkchess.pyx":2073
  *                 for pm in ch.possible_move:
  *                     n = af_map[pm[0]][pm[1]]
  *                     if n != None:             # <<<<<<<<<<<<<<
  *                         nch = af_ch[n[0]][n[1]]
  *                         if ch.value == nch.value:
  */
-          __pyx_t_16 = PyObject_RichCompare(__pyx_v_n, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2076, __pyx_L1_error)
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2076, __pyx_L1_error)
+          __pyx_t_16 = PyObject_RichCompare(__pyx_v_n, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2073, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2073, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2077
+            /* "darkchess.pyx":2074
  *                     n = af_map[pm[0]][pm[1]]
  *                     if n != None:
  *                         nch = af_ch[n[0]][n[1]]             # <<<<<<<<<<<<<<
  *                         if ch.value == nch.value:
  *                             continue
  */
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2077, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2074, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_16); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2077, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_16); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2074, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2077, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2074, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_13, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2077, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_13, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2074, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF_SET(__pyx_v_nch, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "darkchess.pyx":2078
+            /* "darkchess.pyx":2075
  *                     if n != None:
  *                         nch = af_ch[n[0]][n[1]]
  *                         if ch.value == nch.value:             # <<<<<<<<<<<<<<
  *                             continue
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
  */
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2078, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2075, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2078, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2075, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_16, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2078, __pyx_L1_error)
+            __pyx_t_13 = PyObject_RichCompare(__pyx_t_2, __pyx_t_16, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2075, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2078, __pyx_L1_error)
+            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2075, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             if (__pyx_t_4) {
 
-              /* "darkchess.pyx":2079
+              /* "darkchess.pyx":2076
  *                         nch = af_ch[n[0]][n[1]]
  *                         if ch.value == nch.value:
  *                             continue             # <<<<<<<<<<<<<<
@@ -45849,7 +45849,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
               goto __pyx_L16_continue;
 
-              /* "darkchess.pyx":2078
+              /* "darkchess.pyx":2075
  *                     if n != None:
  *                         nch = af_ch[n[0]][n[1]]
  *                         if ch.value == nch.value:             # <<<<<<<<<<<<<<
@@ -45858,7 +45858,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
             }
 
-            /* "darkchess.pyx":2076
+            /* "darkchess.pyx":2073
  *                 for pm in ch.possible_move:
  *                     n = af_map[pm[0]][pm[1]]
  *                     if n != None:             # <<<<<<<<<<<<<<
@@ -45867,18 +45867,18 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
           }
 
-          /* "darkchess.pyx":2080
+          /* "darkchess.pyx":2077
  *                         if ch.value == nch.value:
  *                             continue
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
  *                         can_eat += 1
  *     if can_eat >= 2:
  */
-          __pyx_t_17 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_pm); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2080, __pyx_L1_error)
+          __pyx_t_17 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_pm); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2077, __pyx_L1_error)
           __pyx_t_4 = ((1 == __pyx_f_9darkchess_stand_will_dead_pity(__pyx_t_17, __pyx_v_af_ch, __pyx_v_af_map, __pyx_v_opp_color)) != 0);
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2081
+            /* "darkchess.pyx":2078
  *                             continue
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
  *                         can_eat += 1             # <<<<<<<<<<<<<<
@@ -45887,7 +45887,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
             __pyx_v_can_eat = (__pyx_v_can_eat + 1);
 
-            /* "darkchess.pyx":2080
+            /* "darkchess.pyx":2077
  *                         if ch.value == nch.value:
  *                             continue
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
@@ -45896,7 +45896,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
           }
 
-          /* "darkchess.pyx":2074
+          /* "darkchess.pyx":2071
  *         for ch in chr:
  *             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -45907,7 +45907,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "darkchess.pyx":2073
+        /* "darkchess.pyx":2070
  *     for chr in af_ch:
  *         for ch in chr:
  *             if 1 == ch.live and ch.back < 1 and ch.color == owner_color:             # <<<<<<<<<<<<<<
@@ -45916,7 +45916,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
       }
 
-      /* "darkchess.pyx":2072
+      /* "darkchess.pyx":2069
  *         all_chess_move(af_map, af_ch)
  *     for chr in af_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -45926,7 +45926,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2071
+    /* "darkchess.pyx":2068
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -45936,7 +45936,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2082
+  /* "darkchess.pyx":2079
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
  *                         can_eat += 1
  *     if can_eat >= 2:             # <<<<<<<<<<<<<<
@@ -45946,7 +45946,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   __pyx_t_4 = ((__pyx_v_can_eat >= 2) != 0);
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2083
+    /* "darkchess.pyx":2080
  *                         can_eat += 1
  *     if can_eat >= 2:
  *         return 1             # <<<<<<<<<<<<<<
@@ -45956,7 +45956,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     __pyx_r = 1;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2082
+    /* "darkchess.pyx":2079
  *                     if 1 == stand_will_dead_pity(pm, af_ch, af_map, opp_color):
  *                         can_eat += 1
  *     if can_eat >= 2:             # <<<<<<<<<<<<<<
@@ -45965,7 +45965,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
  */
   }
 
-  /* "darkchess.pyx":2085
+  /* "darkchess.pyx":2082
  *         return 1
  *     else:
  *         return 0             # <<<<<<<<<<<<<<
@@ -45977,7 +45977,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
     goto __pyx_L0;
   }
 
-  /* "darkchess.pyx":2063
+  /* "darkchess.pyx":2060
  *     return 0
  * 
  * cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -46007,7 +46007,7 @@ static int __pyx_f_9darkchess_will_eat2_more(PyObject *__pyx_v_nexti, PyObject *
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2087
+/* "darkchess.pyx":2084
  *         return 0
  * 
  * cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -46045,7 +46045,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   double __pyx_t_14;
   __Pyx_RefNannySetupContext("owner_next_can_eat_dead_p", 0);
 
-  /* "darkchess.pyx":2088
+  /* "darkchess.pyx":2085
  * 
  * cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
  *     opp_color = 1-owner_color             # <<<<<<<<<<<<<<
@@ -46054,16 +46054,16 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2089
+  /* "darkchess.pyx":2086
  * cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
  *     opp_color = 1-owner_color
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2089, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2086, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2089, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2086, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -46078,22 +46078,22 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2089, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2086, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_af_map = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2090
+  /* "darkchess.pyx":2087
  *     opp_color = 1-owner_color
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2090, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2087, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2090, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2087, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -46108,42 +46108,42 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2090, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2087, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_af_ch = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2091
+  /* "darkchess.pyx":2088
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:             # <<<<<<<<<<<<<<
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nexti, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2091, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2091, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nexti, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2088, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2088, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
   } else {
     __pyx_t_4 = __pyx_t_5;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2091, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2091, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2088, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2088, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_4 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2092
+    /* "darkchess.pyx":2089
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af_map, af_ch)
  *     m = af_map[nextj[0]][nextj[1]]
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2092, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2089, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     __pyx_t_6 = 0;
@@ -46160,7 +46160,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -46168,13 +46168,13 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -46191,7 +46191,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       __Pyx_INCREF(__pyx_v_af_ch);
       __Pyx_GIVEREF(__pyx_v_af_ch);
       PyTuple_SET_ITEM(__pyx_t_7, 3+__pyx_t_6, __pyx_v_af_ch);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -46202,7 +46202,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2092, __pyx_L1_error)
+        __PYX_ERR(0, 2089, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -46215,15 +46215,15 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_7);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2092, __pyx_L1_error)
+      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2089, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_8 = Py_TYPE(__pyx_t_3)->tp_iternext;
@@ -46231,7 +46231,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       __Pyx_GOTREF(__pyx_t_2);
       index = 1; __pyx_t_7 = __pyx_t_8(__pyx_t_3); if (unlikely(!__pyx_t_7)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_7);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2092, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2089, __pyx_L1_error)
       __pyx_t_8 = NULL;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L7_unpacking_done;
@@ -46239,7 +46239,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_8 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2092, __pyx_L1_error)
+      __PYX_ERR(0, 2089, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_2);
@@ -46247,7 +46247,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
     __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2093
+    /* "darkchess.pyx":2090
  *     if nexti != None and nextj != None:
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -46256,7 +46256,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-    /* "darkchess.pyx":2091
+    /* "darkchess.pyx":2088
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     if nexti != None and nextj != None:             # <<<<<<<<<<<<<<
@@ -46265,49 +46265,49 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
   }
 
-  /* "darkchess.pyx":2094
+  /* "darkchess.pyx":2091
  *         af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *         all_chess_move(af_map, af_ch)
  *     m = af_map[nextj[0]][nextj[1]]             # <<<<<<<<<<<<<<
  *     my = af_ch[m[0]][m[1]]
  * 
  */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_nextj, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2094, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_nextj, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2091, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2094, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2091, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_nextj, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2094, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_nextj, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2091, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2094, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2091, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_m = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2095
+  /* "darkchess.pyx":2092
  *         all_chess_move(af_map, af_ch)
  *     m = af_map[nextj[0]][nextj[1]]
  *     my = af_ch[m[0]][m[1]]             # <<<<<<<<<<<<<<
  * 
  *     escape_step = 0
  */
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_m, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2095, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_m, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2092, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2095, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2092, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_m, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2095, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_m, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2092, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2095, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2092, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_my = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "darkchess.pyx":2097
+  /* "darkchess.pyx":2094
  *     my = af_ch[m[0]][m[1]]
  * 
  *     escape_step = 0             # <<<<<<<<<<<<<<
@@ -46317,22 +46317,22 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_escape_step = __pyx_int_0;
 
-  /* "darkchess.pyx":2098
+  /* "darkchess.pyx":2095
  * 
  *     escape_step = 0
  *     for eat_pm in my.possible_move:             # <<<<<<<<<<<<<<
  *         if af_map[eat_pm[0]][eat_pm[1]] != None:
  *             eat_step = 0
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_my, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2098, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_my, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2095, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
     __pyx_t_2 = __pyx_t_7; __Pyx_INCREF(__pyx_t_2); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
   } else {
-    __pyx_t_9 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2098, __pyx_L1_error)
+    __pyx_t_9 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2095, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2098, __pyx_L1_error)
+    __pyx_t_10 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2095, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   for (;;) {
@@ -46340,17 +46340,17 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2098, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2095, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2098, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2095, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2098, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_7); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2095, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2098, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2095, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -46360,7 +46360,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2098, __pyx_L1_error)
+          else __PYX_ERR(0, 2095, __pyx_L1_error)
         }
         break;
       }
@@ -46369,31 +46369,31 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
     __Pyx_XDECREF_SET(__pyx_v_eat_pm, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "darkchess.pyx":2099
+    /* "darkchess.pyx":2096
  *     escape_step = 0
  *     for eat_pm in my.possible_move:
  *         if af_map[eat_pm[0]][eat_pm[1]] != None:             # <<<<<<<<<<<<<<
  *             eat_step = 0
  *             n = af_map[eat_pm[0]][eat_pm[1]]
  */
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyObject_RichCompare(__pyx_t_3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_7 = PyObject_RichCompare(__pyx_t_3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2099, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2096, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "darkchess.pyx":2100
+      /* "darkchess.pyx":2097
  *     for eat_pm in my.possible_move:
  *         if af_map[eat_pm[0]][eat_pm[1]] != None:
  *             eat_step = 0             # <<<<<<<<<<<<<<
@@ -46403,67 +46403,67 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
       __Pyx_INCREF(__pyx_int_0);
       __Pyx_XDECREF_SET(__pyx_v_eat_step, __pyx_int_0);
 
-      /* "darkchess.pyx":2101
+      /* "darkchess.pyx":2098
  *         if af_map[eat_pm[0]][eat_pm[1]] != None:
  *             eat_step = 0
  *             n = af_map[eat_pm[0]][eat_pm[1]]             # <<<<<<<<<<<<<<
  *             nch = af_ch[n[0]][n[1]]
  * 
  */
-      __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2101, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2098, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2101, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_af_map, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2098, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2101, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_eat_pm, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2098, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2101, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2098, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "darkchess.pyx":2102
+      /* "darkchess.pyx":2099
  *             eat_step = 0
  *             n = af_map[eat_pm[0]][eat_pm[1]]
  *             nch = af_ch[n[0]][n[1]]             # <<<<<<<<<<<<<<
  * 
  *             if nch.value == my.value:
  */
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2102, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2099, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2102, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_af_ch, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2099, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2102, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2099, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2102, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2099, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF_SET(__pyx_v_nch, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "darkchess.pyx":2104
+      /* "darkchess.pyx":2101
  *             nch = af_ch[n[0]][n[1]]
  * 
  *             if nch.value == my.value:             # <<<<<<<<<<<<<<
  *                 continue
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2104, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_my, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2104, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_my, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2104, __pyx_L1_error)
+      __pyx_t_7 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2101, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2104, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2101, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2105
+        /* "darkchess.pyx":2102
  * 
  *             if nch.value == my.value:
  *                 continue             # <<<<<<<<<<<<<<
@@ -46472,7 +46472,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
         goto __pyx_L8_continue;
 
-        /* "darkchess.pyx":2104
+        /* "darkchess.pyx":2101
  *             nch = af_ch[n[0]][n[1]]
  * 
  *             if nch.value == my.value:             # <<<<<<<<<<<<<<
@@ -46481,76 +46481,76 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
       }
 
-      /* "darkchess.pyx":2106
+      /* "darkchess.pyx":2103
  *             if nch.value == my.value:
  *                 continue
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:             # <<<<<<<<<<<<<<
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
  *                     for pm in nch.possible_move:
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_live); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_live); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_7, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_7, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_5) {
       } else {
         __pyx_t_4 = __pyx_t_5;
         goto __pyx_L13_bool_binop_done;
       }
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_back); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_back); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (__pyx_t_5) {
       } else {
         __pyx_t_4 = __pyx_t_5;
         goto __pyx_L13_bool_binop_done;
       }
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_color); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_color); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_7, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_7, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2106, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_4 = __pyx_t_5;
       __pyx_L13_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2107
+        /* "darkchess.pyx":2104
  *                 continue
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
  *                     for pm in nch.possible_move:
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
  */
-        __pyx_t_11 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_eat_pm); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2107, __pyx_L1_error)
+        __pyx_t_11 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_eat_pm); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2104, __pyx_L1_error)
         __pyx_t_4 = ((1 == __pyx_f_9darkchess_stand_will_dead_pity(__pyx_t_11, __pyx_v_af_ch, __pyx_v_af_map, __pyx_v_opp_color)) != 0);
         if (__pyx_t_4) {
 
-          /* "darkchess.pyx":2108
+          /* "darkchess.pyx":2105
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
  *                     for pm in nch.possible_move:             # <<<<<<<<<<<<<<
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
  *                             eat_step += 1
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2108, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2105, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
             __pyx_t_1 = __pyx_t_3; __Pyx_INCREF(__pyx_t_1); __pyx_t_12 = 0;
             __pyx_t_13 = NULL;
           } else {
-            __pyx_t_12 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2108, __pyx_L1_error)
+            __pyx_t_12 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2105, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_13 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2108, __pyx_L1_error)
+            __pyx_t_13 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2105, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           for (;;) {
@@ -46558,17 +46558,17 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
               if (likely(PyList_CheckExact(__pyx_t_1))) {
                 if (__pyx_t_12 >= PyList_GET_SIZE(__pyx_t_1)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_12); __Pyx_INCREF(__pyx_t_3); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2108, __pyx_L1_error)
+                __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_12); __Pyx_INCREF(__pyx_t_3); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2105, __pyx_L1_error)
                 #else
-                __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2108, __pyx_L1_error)
+                __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2105, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 #endif
               } else {
                 if (__pyx_t_12 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_12); __Pyx_INCREF(__pyx_t_3); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2108, __pyx_L1_error)
+                __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_12); __Pyx_INCREF(__pyx_t_3); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2105, __pyx_L1_error)
                 #else
-                __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2108, __pyx_L1_error)
+                __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2105, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 #endif
               }
@@ -46578,7 +46578,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 2108, __pyx_L1_error)
+                  else __PYX_ERR(0, 2105, __pyx_L1_error)
                 }
                 break;
               }
@@ -46587,7 +46587,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
             __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "darkchess.pyx":2109
+            /* "darkchess.pyx":2106
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
  *                     for pm in nch.possible_move:
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
@@ -46597,19 +46597,19 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
             __pyx_t_4 = ((1 == __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(__pyx_v_eat_pm, __pyx_v_pm, __pyx_v_af_ch, __pyx_v_af_map, __pyx_v_opp_color)) != 0);
             if (__pyx_t_4) {
 
-              /* "darkchess.pyx":2110
+              /* "darkchess.pyx":2107
  *                     for pm in nch.possible_move:
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
  *                             eat_step += 1             # <<<<<<<<<<<<<<
  *                     if eat_step == len(nch.possible_move):
  *                         #return 1
  */
-              __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_eat_step, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2110, __pyx_L1_error)
+              __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_eat_step, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2107, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF_SET(__pyx_v_eat_step, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "darkchess.pyx":2109
+              /* "darkchess.pyx":2106
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
  *                     for pm in nch.possible_move:
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
@@ -46618,7 +46618,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
             }
 
-            /* "darkchess.pyx":2108
+            /* "darkchess.pyx":2105
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):
  *                     for pm in nch.possible_move:             # <<<<<<<<<<<<<<
@@ -46628,26 +46628,26 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
           }
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-          /* "darkchess.pyx":2111
+          /* "darkchess.pyx":2108
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
  *                             eat_step += 1
  *                     if eat_step == len(nch.possible_move):             # <<<<<<<<<<<<<<
  *                         #return 1
  *                         return 0 # Greater than negative number
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2111, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2108, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_12 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2111, __pyx_L1_error)
+          __pyx_t_12 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2108, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2111, __pyx_L1_error)
+          __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2108, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_3 = PyObject_RichCompare(__pyx_v_eat_step, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2111, __pyx_L1_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_v_eat_step, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2108, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2111, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2108, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2113
+            /* "darkchess.pyx":2110
  *                     if eat_step == len(nch.possible_move):
  *                         #return 1
  *                         return 0 # Greater than negative number             # <<<<<<<<<<<<<<
@@ -46658,7 +46658,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             goto __pyx_L0;
 
-            /* "darkchess.pyx":2111
+            /* "darkchess.pyx":2108
  *                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
  *                             eat_step += 1
  *                     if eat_step == len(nch.possible_move):             # <<<<<<<<<<<<<<
@@ -46667,48 +46667,48 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
           }
 
-          /* "darkchess.pyx":2114
+          /* "darkchess.pyx":2111
  *                         #return 1
  *                         return 0 # Greater than negative number
  *                     elif escape_step > eat_step - len(nch.possible_move):             # <<<<<<<<<<<<<<
  *                         escape_step = eat_step - len(nch.possible_move) #negative
  *     #return 0
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_12 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_12 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_1 = PyNumber_Subtract(__pyx_v_eat_step, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_1 = PyNumber_Subtract(__pyx_v_eat_step, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyObject_RichCompare(__pyx_v_escape_step, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_v_escape_step, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2114, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2111, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2115
+            /* "darkchess.pyx":2112
  *                         return 0 # Greater than negative number
  *                     elif escape_step > eat_step - len(nch.possible_move):
  *                         escape_step = eat_step - len(nch.possible_move) #negative             # <<<<<<<<<<<<<<
  *     #return 0
  *     if 0 == escape_step:
  */
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2115, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2112, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_12 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2115, __pyx_L1_error)
+            __pyx_t_12 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 2112, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2115, __pyx_L1_error)
+            __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2112, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_1 = PyNumber_Subtract(__pyx_v_eat_step, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2115, __pyx_L1_error)
+            __pyx_t_1 = PyNumber_Subtract(__pyx_v_eat_step, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2112, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_DECREF_SET(__pyx_v_escape_step, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "darkchess.pyx":2114
+            /* "darkchess.pyx":2111
  *                         #return 1
  *                         return 0 # Greater than negative number
  *                     elif escape_step > eat_step - len(nch.possible_move):             # <<<<<<<<<<<<<<
@@ -46717,7 +46717,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
           }
 
-          /* "darkchess.pyx":2107
+          /* "darkchess.pyx":2104
  *                 continue
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:
  *                 if 1 == stand_will_dead_pity(eat_pm, af_ch, af_map, opp_color):             # <<<<<<<<<<<<<<
@@ -46726,7 +46726,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
         }
 
-        /* "darkchess.pyx":2106
+        /* "darkchess.pyx":2103
  *             if nch.value == my.value:
  *                 continue
  *             if 1 == nch.live and nch.back < 1 and nch.color == opp_color:             # <<<<<<<<<<<<<<
@@ -46735,7 +46735,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
       }
 
-      /* "darkchess.pyx":2099
+      /* "darkchess.pyx":2096
  *     escape_step = 0
  *     for eat_pm in my.possible_move:
  *         if af_map[eat_pm[0]][eat_pm[1]] != None:             # <<<<<<<<<<<<<<
@@ -46744,7 +46744,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
     }
 
-    /* "darkchess.pyx":2098
+    /* "darkchess.pyx":2095
  * 
  *     escape_step = 0
  *     for eat_pm in my.possible_move:             # <<<<<<<<<<<<<<
@@ -46755,20 +46755,20 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2117
+  /* "darkchess.pyx":2114
  *                         escape_step = eat_step - len(nch.possible_move) #negative
  *     #return 0
  *     if 0 == escape_step:             # <<<<<<<<<<<<<<
  *         return -0.09
  *     else:
  */
-  __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_0, __pyx_v_escape_step, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2117, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_0, __pyx_v_escape_step, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2117, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2114, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2118
+    /* "darkchess.pyx":2115
  *     #return 0
  *     if 0 == escape_step:
  *         return -0.09             # <<<<<<<<<<<<<<
@@ -46778,7 +46778,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
     __pyx_r = -0.09;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2117
+    /* "darkchess.pyx":2114
  *                         escape_step = eat_step - len(nch.possible_move) #negative
  *     #return 0
  *     if 0 == escape_step:             # <<<<<<<<<<<<<<
@@ -46787,7 +46787,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  */
   }
 
-  /* "darkchess.pyx":2120
+  /* "darkchess.pyx":2117
  *         return -0.09
  *     else:
  *         return escape_step/100             # <<<<<<<<<<<<<<
@@ -46795,15 +46795,15 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
  * # stand_will_be_dead_pity
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_escape_step, __pyx_int_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2120, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_escape_step, __pyx_int_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_14 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_14 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 2120, __pyx_L1_error)
+    __pyx_t_14 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_14 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 2117, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_14;
     goto __pyx_L0;
   }
 
-  /* "darkchess.pyx":2087
+  /* "darkchess.pyx":2084
  *         return 0
  * 
  * cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -46834,7 +46834,7 @@ static double __pyx_f_9darkchess_owner_next_can_eat_dead_p(PyObject *__pyx_v_nex
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2123
+/* "darkchess.pyx":2120
  * 
  * # stand_will_be_dead_pity
  * cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -46871,7 +46871,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
   PyObject *__pyx_t_18 = NULL;
   __Pyx_RefNannySetupContext("stand_will_dead_pity", 0);
 
-  /* "darkchess.pyx":2124
+  /* "darkchess.pyx":2121
  * # stand_will_be_dead_pity
  * cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
  *     cdef int opp_color = 1-owner_color             # <<<<<<<<<<<<<<
@@ -46880,7 +46880,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2125
+  /* "darkchess.pyx":2122
  * cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
  *     cdef int opp_color = 1-owner_color
  *     n = a_map[org[0]][org[1]]             # <<<<<<<<<<<<<<
@@ -46888,28 +46888,28 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  *         return 0
  */
   __pyx_t_1 = __pyx_v_org.f0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a_map, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2125, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a_map, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = __pyx_v_org.f1;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2125, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, __pyx_t_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_n = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "darkchess.pyx":2126
+  /* "darkchess.pyx":2123
  *     cdef int opp_color = 1-owner_color
  *     n = a_map[org[0]][org[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  */
-  __pyx_t_3 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2126, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2126, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(Py_None, __pyx_v_n, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2123, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_4) {
 
-    /* "darkchess.pyx":2127
+    /* "darkchess.pyx":2124
  *     n = a_map[org[0]][org[1]]
  *     if None == n:
  *         return 0             # <<<<<<<<<<<<<<
@@ -46919,7 +46919,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2126
+    /* "darkchess.pyx":2123
  *     cdef int opp_color = 1-owner_color
  *     n = a_map[org[0]][org[1]]
  *     if None == n:             # <<<<<<<<<<<<<<
@@ -46928,28 +46928,28 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
   }
 
-  /* "darkchess.pyx":2128
+  /* "darkchess.pyx":2125
  *     if None == n:
  *         return 0
  *     my = a_ch[n[0]][n[1]]             # <<<<<<<<<<<<<<
  *     for chr in a_ch:
  *         for ch in chr:
  */
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2128, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2128, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2128, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2128, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_my = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2129
+  /* "darkchess.pyx":2126
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -46960,26 +46960,26 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
     __pyx_t_5 = __pyx_v_a_ch; __Pyx_INCREF(__pyx_t_5); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2129, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2129, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2126, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
       if (likely(PyList_CheckExact(__pyx_t_5))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2129, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2126, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2129, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2126, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2129, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 2126, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2129, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_5, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2126, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -46989,7 +46989,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2129, __pyx_L1_error)
+          else __PYX_ERR(0, 2126, __pyx_L1_error)
         }
         break;
       }
@@ -46998,7 +46998,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2130
+    /* "darkchess.pyx":2127
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -47009,26 +47009,26 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
       __pyx_t_3 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_3); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2130, __pyx_L1_error)
+      __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2127, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2130, __pyx_L1_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2127, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
         if (likely(PyList_CheckExact(__pyx_t_3))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2130, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2127, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2130, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2127, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2130, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2127, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2130, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2127, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -47038,7 +47038,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2130, __pyx_L1_error)
+            else __PYX_ERR(0, 2127, __pyx_L1_error)
           }
           break;
         }
@@ -47047,19 +47047,19 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2131
+      /* "darkchess.pyx":2128
  *     for chr in a_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  */
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2131, __pyx_L1_error)
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2131, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_ch, __pyx_v_my, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2128, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2128, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2132
+        /* "darkchess.pyx":2129
  *         for ch in chr:
  *             if ch == my:
  *                 continue             # <<<<<<<<<<<<<<
@@ -47068,7 +47068,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
         goto __pyx_L6_continue;
 
-        /* "darkchess.pyx":2131
+        /* "darkchess.pyx":2128
  *     for chr in a_ch:
  *         for ch in chr:
  *             if ch == my:             # <<<<<<<<<<<<<<
@@ -47077,65 +47077,65 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
       }
 
-      /* "darkchess.pyx":2133
+      /* "darkchess.pyx":2130
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == org:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_2, 1, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       if (__pyx_t_11) {
       } else {
         __pyx_t_4 = __pyx_t_11;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_10, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_10, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_11) {
       } else {
         __pyx_t_4 = __pyx_t_11;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_12 = PyObject_RichCompare(__pyx_t_2, __pyx_t_10, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_12 = PyObject_RichCompare(__pyx_t_2, __pyx_t_10, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2133, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 2130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_4 = __pyx_t_11;
       __pyx_L10_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "darkchess.pyx":2134
+        /* "darkchess.pyx":2131
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == org:
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
  */
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2134, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2131, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
           __pyx_t_10 = __pyx_t_12; __Pyx_INCREF(__pyx_t_10); __pyx_t_13 = 0;
           __pyx_t_14 = NULL;
         } else {
-          __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2134, __pyx_L1_error)
+          __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2131, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_14 = Py_TYPE(__pyx_t_10)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2134, __pyx_L1_error)
+          __pyx_t_14 = Py_TYPE(__pyx_t_10)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2131, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         for (;;) {
@@ -47143,17 +47143,17 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
             if (likely(PyList_CheckExact(__pyx_t_10))) {
               if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_10)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_12 = PyList_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2134, __pyx_L1_error)
+              __pyx_t_12 = PyList_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2131, __pyx_L1_error)
               #else
-              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2134, __pyx_L1_error)
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2131, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_12);
               #endif
             } else {
               if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_10)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2134, __pyx_L1_error)
+              __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_10, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 2131, __pyx_L1_error)
               #else
-              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2134, __pyx_L1_error)
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_10, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2131, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_12);
               #endif
             }
@@ -47163,7 +47163,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2134, __pyx_L1_error)
+                else __PYX_ERR(0, 2131, __pyx_L1_error)
               }
               break;
             }
@@ -47172,35 +47172,35 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "darkchess.pyx":2135
+          /* "darkchess.pyx":2132
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == org:             # <<<<<<<<<<<<<<
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
  *                             return 1
  */
-          __pyx_t_12 = __pyx_convert__to_py___pyx_ctuple_int__and_int(__pyx_v_org); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2135, __pyx_L1_error)
+          __pyx_t_12 = __pyx_convert__to_py___pyx_ctuple_int__and_int(__pyx_v_org); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2132, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2135, __pyx_L1_error)
+          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2132, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2135, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2132, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_4) {
 
-            /* "darkchess.pyx":2136
+            /* "darkchess.pyx":2133
  *                 for pm in ch.possible_move:
  *                     if pm == org:
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):             # <<<<<<<<<<<<<<
  *                             return 1
  *     return 0
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_will_dead_pity); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_will_dead_pity); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_15);
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
             __Pyx_GIVEREF(__pyx_t_15);
             PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_15);
@@ -47208,7 +47208,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
             PyTuple_SET_ITEM(__pyx_t_17, 1, __pyx_t_16);
             __pyx_t_15 = 0;
             __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_PyInt_From_int(__pyx_v_opp_color); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
             __pyx_t_15 = NULL;
             __pyx_t_1 = 0;
@@ -47225,7 +47225,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
             #if CYTHON_FAST_PYCALL
             if (PyFunction_Check(__pyx_t_12)) {
               PyObject *__pyx_temp[6] = {__pyx_t_15, __pyx_t_17, __pyx_v_pm, __pyx_v_a_ch, __pyx_v_a_map, __pyx_t_16};
-              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_1, 5+__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2136, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_1, 5+__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
               __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
@@ -47235,7 +47235,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
             #if CYTHON_FAST_PYCCALL
             if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
               PyObject *__pyx_temp[6] = {__pyx_t_15, __pyx_t_17, __pyx_v_pm, __pyx_v_a_ch, __pyx_v_a_map, __pyx_t_16};
-              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_1, 5+__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2136, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_1, 5+__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
               __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
@@ -47243,7 +47243,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
             } else
             #endif
             {
-              __pyx_t_18 = PyTuple_New(5+__pyx_t_1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2136, __pyx_L1_error)
+              __pyx_t_18 = PyTuple_New(5+__pyx_t_1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2133, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_18);
               if (__pyx_t_15) {
                 __Pyx_GIVEREF(__pyx_t_15); PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_15); __pyx_t_15 = NULL;
@@ -47263,19 +47263,19 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
               PyTuple_SET_ITEM(__pyx_t_18, 4+__pyx_t_1, __pyx_t_16);
               __pyx_t_17 = 0;
               __pyx_t_16 = 0;
-              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_18, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2136, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_18, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2133, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
             }
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_12 = __Pyx_PyInt_EqCObj(__pyx_int_0, __pyx_t_2, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_PyInt_EqCObj(__pyx_int_0, __pyx_t_2, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2136, __pyx_L1_error)
+            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 2133, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             if (__pyx_t_4) {
 
-              /* "darkchess.pyx":2137
+              /* "darkchess.pyx":2134
  *                     if pm == org:
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
  *                             return 1             # <<<<<<<<<<<<<<
@@ -47288,7 +47288,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               goto __pyx_L0;
 
-              /* "darkchess.pyx":2136
+              /* "darkchess.pyx":2133
  *                 for pm in ch.possible_move:
  *                     if pm == org:
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):             # <<<<<<<<<<<<<<
@@ -47297,7 +47297,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
             }
 
-            /* "darkchess.pyx":2135
+            /* "darkchess.pyx":2132
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:
  *                     if pm == org:             # <<<<<<<<<<<<<<
@@ -47306,7 +47306,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
           }
 
-          /* "darkchess.pyx":2134
+          /* "darkchess.pyx":2131
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -47316,7 +47316,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "darkchess.pyx":2133
+        /* "darkchess.pyx":2130
  *             if ch == my:
  *                 continue
  *             if 1 == ch.live and ch.back < 1 and ch.color == opp_color:             # <<<<<<<<<<<<<<
@@ -47325,7 +47325,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
  */
       }
 
-      /* "darkchess.pyx":2130
+      /* "darkchess.pyx":2127
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -47336,7 +47336,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2129
+    /* "darkchess.pyx":2126
  *         return 0
  *     my = a_ch[n[0]][n[1]]
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -47346,7 +47346,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2138
+  /* "darkchess.pyx":2135
  *                         if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
  *                             return 1
  *     return 0             # <<<<<<<<<<<<<<
@@ -47356,7 +47356,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2123
+  /* "darkchess.pyx":2120
  * 
  * # stand_will_be_dead_pity
  * cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -47387,7 +47387,7 @@ static int __pyx_f_9darkchess_stand_will_dead_pity(__pyx_ctuple_int__and_int __p
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2141
+/* "darkchess.pyx":2138
  * 
  * # will_be_dead_pity...
  * cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -47435,7 +47435,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   int __pyx_t_18;
   __Pyx_RefNannySetupContext("will_dead_pity_uncheck_will_dead", 0);
 
-  /* "darkchess.pyx":2144
+  /* "darkchess.pyx":2141
  *     global king_live
  * 
  *     (y, x) = nexti             # <<<<<<<<<<<<<<
@@ -47448,7 +47448,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2144, __pyx_L1_error)
+      __PYX_ERR(0, 2141, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -47461,21 +47461,21 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_2);
     #else
-    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2144, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2144, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_3 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2144, __pyx_L1_error)
+    __pyx_t_3 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
     index = 0; __pyx_t_1 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_1);
     index = 1; __pyx_t_2 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2144, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2141, __pyx_L1_error)
     __pyx_t_4 = NULL;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L4_unpacking_done;
@@ -47483,7 +47483,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2144, __pyx_L1_error)
+    __PYX_ERR(0, 2141, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_y = __pyx_t_1;
@@ -47491,34 +47491,34 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __pyx_v_x = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2145
+  /* "darkchess.pyx":2142
  * 
  *     (y, x) = nexti
  *     a = a_map[y][x]             # <<<<<<<<<<<<<<
  * 
  *     if nextj != None:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2145, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2145, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2147
+  /* "darkchess.pyx":2144
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2147, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2147, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2144, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2144, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "darkchess.pyx":2148
+    /* "darkchess.pyx":2145
  * 
  *     if nextj != None:
  *         (ii, jj) = nextj             # <<<<<<<<<<<<<<
@@ -47531,7 +47531,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2148, __pyx_L1_error)
+        __PYX_ERR(0, 2145, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -47544,21 +47544,21 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_t_2);
       #else
-      __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2148, __pyx_L1_error)
+      __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2145, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2148, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2145, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_3 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2148, __pyx_L1_error)
+      __pyx_t_3 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2145, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
       index = 0; __pyx_t_1 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_1);
       index = 1; __pyx_t_2 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2148, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2145, __pyx_L1_error)
       __pyx_t_4 = NULL;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L7_unpacking_done;
@@ -47566,7 +47566,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_4 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2148, __pyx_L1_error)
+      __PYX_ERR(0, 2145, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
     __pyx_v_ii = __pyx_t_1;
@@ -47574,89 +47574,89 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __pyx_v_jj = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2149
+    /* "darkchess.pyx":2146
  *     if nextj != None:
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]             # <<<<<<<<<<<<<<
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2149, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_jj); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2149, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_jj); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_b = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "darkchess.pyx":2150
+    /* "darkchess.pyx":2147
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:
  */
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2150, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2150, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2147, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2147, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
 
-      /* "darkchess.pyx":2151
+      /* "darkchess.pyx":2148
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0
  */
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_1, 2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_1, 2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2151, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2148, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_5) {
 
-        /* "darkchess.pyx":2152
+        /* "darkchess.pyx":2149
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:             # <<<<<<<<<<<<<<
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
  */
-        __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, __pyx_int_4, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, __pyx_int_4, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2152, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2149, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         if (__pyx_t_5) {
 
-          /* "darkchess.pyx":2153
+          /* "darkchess.pyx":2150
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0             # <<<<<<<<<<<<<<
@@ -47666,7 +47666,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
           __pyx_r = 0;
           goto __pyx_L0;
 
-          /* "darkchess.pyx":2152
+          /* "darkchess.pyx":2149
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:             # <<<<<<<<<<<<<<
@@ -47675,7 +47675,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
         }
 
-        /* "darkchess.pyx":2151
+        /* "darkchess.pyx":2148
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
@@ -47684,49 +47684,49 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
       }
 
-      /* "darkchess.pyx":2154
+      /* "darkchess.pyx":2151
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
  *                 return 0
  * 
  */
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2154, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2151, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_5) {
 
-        /* "darkchess.pyx":2155
+        /* "darkchess.pyx":2152
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
  *                 return 0             # <<<<<<<<<<<<<<
@@ -47736,7 +47736,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
         __pyx_r = 0;
         goto __pyx_L0;
 
-        /* "darkchess.pyx":2154
+        /* "darkchess.pyx":2151
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
@@ -47745,7 +47745,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
       }
 
-      /* "darkchess.pyx":2150
+      /* "darkchess.pyx":2147
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
@@ -47754,7 +47754,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
     }
 
-    /* "darkchess.pyx":2147
+    /* "darkchess.pyx":2144
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
@@ -47763,16 +47763,16 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
   }
 
-  /* "darkchess.pyx":2157
+  /* "darkchess.pyx":2154
  *                 return 0
  * 
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2157, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2157, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -47787,22 +47787,22 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   }
   __pyx_t_6 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2157, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_af_map = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2158
+  /* "darkchess.pyx":2155
  * 
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2158, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2158, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -47817,20 +47817,20 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   }
   __pyx_t_6 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2158, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_af_ch = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2159
+  /* "darkchess.pyx":2156
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)             # <<<<<<<<<<<<<<
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_move); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2159, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_move); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = NULL;
   __pyx_t_7 = 0;
@@ -47847,7 +47847,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[5] = {__pyx_t_2, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_6);
   } else
@@ -47855,13 +47855,13 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[5] = {__pyx_t_2, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_6);
   } else
   #endif
   {
-    __pyx_t_3 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -47878,7 +47878,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_INCREF(__pyx_v_af_ch);
     __Pyx_GIVEREF(__pyx_v_af_ch);
     PyTuple_SET_ITEM(__pyx_t_3, 3+__pyx_t_7, __pyx_v_af_ch);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -47889,7 +47889,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2159, __pyx_L1_error)
+      __PYX_ERR(0, 2156, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -47902,15 +47902,15 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_3);
     #else
-    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_2 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2159, __pyx_L1_error)
+    __pyx_t_2 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext;
@@ -47918,7 +47918,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_GOTREF(__pyx_t_1);
     index = 1; __pyx_t_3 = __pyx_t_4(__pyx_t_2); if (unlikely(!__pyx_t_3)) goto __pyx_L12_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_2), 2) < 0) __PYX_ERR(0, 2159, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_2), 2) < 0) __PYX_ERR(0, 2156, __pyx_L1_error)
     __pyx_t_4 = NULL;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     goto __pyx_L13_unpacking_done;
@@ -47926,7 +47926,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_4 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2159, __pyx_L1_error)
+    __PYX_ERR(0, 2156, __pyx_L1_error)
     __pyx_L13_unpacking_done:;
   }
   __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_1);
@@ -47934,7 +47934,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "darkchess.pyx":2160
+  /* "darkchess.pyx":2157
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -47943,7 +47943,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
   __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-  /* "darkchess.pyx":2161
+  /* "darkchess.pyx":2158
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color             # <<<<<<<<<<<<<<
@@ -47952,7 +47952,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2163
+  /* "darkchess.pyx":2160
  *     opp_color = 1 - owner_color
  * 
  *     pity = 0             # <<<<<<<<<<<<<<
@@ -47961,7 +47961,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
   __pyx_v_pity = 0;
 
-  /* "darkchess.pyx":2164
+  /* "darkchess.pyx":2161
  * 
  *     pity = 0
  *     i2 = None             # <<<<<<<<<<<<<<
@@ -47971,7 +47971,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __Pyx_INCREF(Py_None);
   __pyx_v_i2 = ((PyObject*)Py_None);
 
-  /* "darkchess.pyx":2165
+  /* "darkchess.pyx":2162
  *     pity = 0
  *     i2 = None
  *     j2 = None             # <<<<<<<<<<<<<<
@@ -47981,7 +47981,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __Pyx_INCREF(Py_None);
   __pyx_v_j2 = Py_None;
 
-  /* "darkchess.pyx":2167
+  /* "darkchess.pyx":2164
  *     j2 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -47992,26 +47992,26 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __pyx_t_6 = __pyx_v_af_ch; __Pyx_INCREF(__pyx_t_6); __pyx_t_8 = 0;
     __pyx_t_9 = NULL;
   } else {
-    __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2167, __pyx_L1_error)
+    __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2164, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2167, __pyx_L1_error)
+    __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2164, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_9)) {
       if (likely(PyList_CheckExact(__pyx_t_6))) {
         if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2167, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2164, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2167, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2164, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2167, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2164, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2167, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2164, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -48021,7 +48021,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2167, __pyx_L1_error)
+          else __PYX_ERR(0, 2164, __pyx_L1_error)
         }
         break;
       }
@@ -48030,7 +48030,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2168
+    /* "darkchess.pyx":2165
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -48040,7 +48040,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __pyx_t_5 = ((1 == __pyx_v_pity) != 0);
     if (__pyx_t_5) {
 
-      /* "darkchess.pyx":2169
+      /* "darkchess.pyx":2166
  *     for chr in af_ch:
  *         if 1 == pity:
  *             break             # <<<<<<<<<<<<<<
@@ -48049,7 +48049,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
       goto __pyx_L15_break;
 
-      /* "darkchess.pyx":2168
+      /* "darkchess.pyx":2165
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -48058,7 +48058,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
     }
 
-    /* "darkchess.pyx":2170
+    /* "darkchess.pyx":2167
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -48069,26 +48069,26 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __pyx_t_3 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_3); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2170, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2167, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2170, __pyx_L1_error)
+      __pyx_t_11 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2167, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_11)) {
         if (likely(PyList_CheckExact(__pyx_t_3))) {
           if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2170, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2167, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2170, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2167, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2170, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2167, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2170, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2167, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -48098,7 +48098,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2170, __pyx_L1_error)
+            else __PYX_ERR(0, 2167, __pyx_L1_error)
           }
           break;
         }
@@ -48107,54 +48107,54 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "darkchess.pyx":2171
+      /* "darkchess.pyx":2168
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_12 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_12 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (__pyx_t_13) {
       } else {
         __pyx_t_5 = __pyx_t_13;
         goto __pyx_L20_bool_binop_done;
       }
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_12, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_12, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2171, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2168, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_5 = __pyx_t_13;
       __pyx_L20_bool_binop_done:;
       if (__pyx_t_5) {
 
-        /* "darkchess.pyx":2172
+        /* "darkchess.pyx":2169
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == nextj:
  *                         if b == None:
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2172, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2169, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
           __pyx_t_12 = __pyx_t_2; __Pyx_INCREF(__pyx_t_12); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
         } else {
-          __pyx_t_14 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2172, __pyx_L1_error)
+          __pyx_t_14 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2169, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2172, __pyx_L1_error)
+          __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2169, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         for (;;) {
@@ -48162,17 +48162,17 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
             if (likely(PyList_CheckExact(__pyx_t_12))) {
               if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_12)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_2 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2172, __pyx_L1_error)
+              __pyx_t_2 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2169, __pyx_L1_error)
               #else
-              __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2172, __pyx_L1_error)
+              __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2169, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               #endif
             } else {
               if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2172, __pyx_L1_error)
+              __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2169, __pyx_L1_error)
               #else
-              __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2172, __pyx_L1_error)
+              __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2169, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               #endif
             }
@@ -48182,7 +48182,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2172, __pyx_L1_error)
+                else __PYX_ERR(0, 2169, __pyx_L1_error)
               }
               break;
             }
@@ -48191,43 +48191,43 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "darkchess.pyx":2173
+          /* "darkchess.pyx":2170
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  */
-          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2173, __pyx_L1_error)
-          __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2173, __pyx_L1_error)
+          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2170, __pyx_L1_error)
+          __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2170, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_5) {
 
-            /* "darkchess.pyx":2174
+            /* "darkchess.pyx":2171
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2174, __pyx_L1_error) }
-            __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2174, __pyx_L1_error)
-            __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2174, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2171, __pyx_L1_error) }
+            __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2171, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 2171, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_5) {
 
-              /* "darkchess.pyx":2175
+              /* "darkchess.pyx":2172
  *                     if pm == nextj:
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2175, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2172, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2175, __pyx_L1_error)
+              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2172, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2175, __pyx_L1_error)
+              __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2172, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_16);
               __Pyx_GIVEREF(__pyx_t_2);
               PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_2);
@@ -48238,7 +48238,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_16));
               __pyx_t_16 = 0;
 
-              /* "darkchess.pyx":2176
+              /* "darkchess.pyx":2173
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -48248,7 +48248,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2177
+              /* "darkchess.pyx":2174
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -48257,7 +48257,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2178
+              /* "darkchess.pyx":2175
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -48266,7 +48266,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               goto __pyx_L23_break;
 
-              /* "darkchess.pyx":2174
+              /* "darkchess.pyx":2171
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
@@ -48275,68 +48275,68 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
             }
 
-            /* "darkchess.pyx":2179
+            /* "darkchess.pyx":2176
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_16); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_16); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_16); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_16); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2179, __pyx_L1_error) }
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2176, __pyx_L1_error) }
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2179, __pyx_L1_error) }
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2176, __pyx_L1_error) }
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2179, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2176, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_5 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_7, __pyx_t_16, (1 - __pyx_v_owner_color)) > __pyx_f_9darkchess_eating_value_to_score(__pyx_t_18, __pyx_t_2, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_5) {
 
-              /* "darkchess.pyx":2180
+              /* "darkchess.pyx":2177
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2180, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2177, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2180, __pyx_L1_error)
+              __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2177, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2180, __pyx_L1_error)
+              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2177, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_17);
               __Pyx_GIVEREF(__pyx_t_2);
               PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_2);
@@ -48347,7 +48347,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_17));
               __pyx_t_17 = 0;
 
-              /* "darkchess.pyx":2181
+              /* "darkchess.pyx":2178
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -48357,7 +48357,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2182
+              /* "darkchess.pyx":2179
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -48366,7 +48366,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2183
+              /* "darkchess.pyx":2180
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -48375,7 +48375,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               goto __pyx_L23_break;
 
-              /* "darkchess.pyx":2179
+              /* "darkchess.pyx":2176
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -48384,7 +48384,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
             }
 
-            /* "darkchess.pyx":2173
+            /* "darkchess.pyx":2170
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
@@ -48393,7 +48393,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
           }
 
-          /* "darkchess.pyx":2172
+          /* "darkchess.pyx":2169
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -48404,7 +48404,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
         __pyx_L23_break:;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-        /* "darkchess.pyx":2171
+        /* "darkchess.pyx":2168
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -48413,7 +48413,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
       }
 
-      /* "darkchess.pyx":2170
+      /* "darkchess.pyx":2167
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -48423,7 +48423,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "darkchess.pyx":2167
+    /* "darkchess.pyx":2164
  *     j2 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -48434,38 +48434,38 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __pyx_L15_break:;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2185
+  /* "darkchess.pyx":2182
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  */
-  __pyx_t_6 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2185, __pyx_L1_error)
-  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2185, __pyx_L1_error)
+  __pyx_t_6 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2182, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2182, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (__pyx_t_13) {
   } else {
     __pyx_t_5 = __pyx_t_13;
     goto __pyx_L27_bool_binop_done;
   }
-  __pyx_t_6 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2185, __pyx_L1_error)
-  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2185, __pyx_L1_error)
+  __pyx_t_6 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2182, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2182, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_5 = __pyx_t_13;
   __pyx_L27_bool_binop_done:;
   if (__pyx_t_5) {
 
-    /* "darkchess.pyx":2186
+    /* "darkchess.pyx":2183
  * 
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)             # <<<<<<<<<<<<<<
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2186, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2183, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2186, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2183, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -48480,22 +48480,22 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     }
     __pyx_t_6 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_3, __pyx_v_af_map) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_v_af_map);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2186, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2183, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_v_af2_map = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2187
+    /* "darkchess.pyx":2184
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)             # <<<<<<<<<<<<<<
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_copy); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2187, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_copy); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2187, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_t_12 = NULL;
@@ -48510,20 +48510,20 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     }
     __pyx_t_6 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_12, __pyx_v_af_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_af_ch);
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2187, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_af2_ch = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2188
+    /* "darkchess.pyx":2185
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af2_map, af2_ch)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2188, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2185, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_12 = NULL;
     __pyx_t_18 = 0;
@@ -48540,7 +48540,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_GOTREF(__pyx_t_6);
     } else
@@ -48548,13 +48548,13 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_GOTREF(__pyx_t_6);
     } else
     #endif
     {
-      __pyx_t_17 = PyTuple_New(4+__pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_17 = PyTuple_New(4+__pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       if (__pyx_t_12) {
         __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -48571,7 +48571,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_INCREF(__pyx_v_af2_ch);
       __Pyx_GIVEREF(__pyx_v_af2_ch);
       PyTuple_SET_ITEM(__pyx_t_17, 3+__pyx_t_18, __pyx_v_af2_ch);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_17, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_17, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     }
@@ -48582,7 +48582,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2188, __pyx_L1_error)
+        __PYX_ERR(0, 2185, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -48595,15 +48595,15 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_17);
       #else
-      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       #endif
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_12 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2188, __pyx_L1_error)
+      __pyx_t_12 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2185, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_4 = Py_TYPE(__pyx_t_12)->tp_iternext;
@@ -48611,7 +48611,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_17 = __pyx_t_4(__pyx_t_12); if (unlikely(!__pyx_t_17)) goto __pyx_L29_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_17);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_12), 2) < 0) __PYX_ERR(0, 2188, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_12), 2) < 0) __PYX_ERR(0, 2185, __pyx_L1_error)
       __pyx_t_4 = NULL;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       goto __pyx_L30_unpacking_done;
@@ -48619,7 +48619,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_4 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2188, __pyx_L1_error)
+      __PYX_ERR(0, 2185, __pyx_L1_error)
       __pyx_L30_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af2_map, __pyx_t_3);
@@ -48627,7 +48627,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_DECREF_SET(__pyx_v_af2_ch, __pyx_t_17);
     __pyx_t_17 = 0;
 
-    /* "darkchess.pyx":2189
+    /* "darkchess.pyx":2186
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)             # <<<<<<<<<<<<<<
@@ -48636,7 +48636,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af2_map, __pyx_v_af2_ch);
 
-    /* "darkchess.pyx":2191
+    /* "darkchess.pyx":2188
  *         all_chess_move(af2_map, af2_ch)
  * 
  *         (ii, jj) = j2             # <<<<<<<<<<<<<<
@@ -48649,7 +48649,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2191, __pyx_L1_error)
+        __PYX_ERR(0, 2188, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -48662,21 +48662,21 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_17);
       #else
-      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2191, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2188, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2191, __pyx_L1_error)
+      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2188, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_3 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2191, __pyx_L1_error)
+      __pyx_t_3 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2188, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
       index = 0; __pyx_t_6 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_6)) goto __pyx_L31_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_6);
       index = 1; __pyx_t_17 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_17)) goto __pyx_L31_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_17);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2191, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 2188, __pyx_L1_error)
       __pyx_t_4 = NULL;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L32_unpacking_done;
@@ -48684,7 +48684,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_4 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2191, __pyx_L1_error)
+      __PYX_ERR(0, 2188, __pyx_L1_error)
       __pyx_L32_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_6);
@@ -48692,22 +48692,22 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __Pyx_XDECREF_SET(__pyx_v_jj, __pyx_t_17);
     __pyx_t_17 = 0;
 
-    /* "darkchess.pyx":2192
+    /* "darkchess.pyx":2189
  * 
  *         (ii, jj) = j2
  *         b = af2_map[ii][jj]             # <<<<<<<<<<<<<<
  * 
  *         for chr in af2_ch:
  */
-    __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2192, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2189, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_17, __pyx_v_jj); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2192, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_17, __pyx_v_jj); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2189, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     __Pyx_XDECREF_SET(__pyx_v_b, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2194
+    /* "darkchess.pyx":2191
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -48718,26 +48718,26 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __pyx_t_6 = __pyx_v_af2_ch; __Pyx_INCREF(__pyx_t_6); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2194, __pyx_L1_error)
+      __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2191, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2194, __pyx_L1_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 2191, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
         if (likely(PyList_CheckExact(__pyx_t_6))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_17 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_17); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2194, __pyx_L1_error)
+          __pyx_t_17 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_17); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2191, __pyx_L1_error)
           #else
-          __pyx_t_17 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2194, __pyx_L1_error)
+          __pyx_t_17 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2191, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_17);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_17); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2194, __pyx_L1_error)
+          __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_8); __Pyx_INCREF(__pyx_t_17); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 2191, __pyx_L1_error)
           #else
-          __pyx_t_17 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2194, __pyx_L1_error)
+          __pyx_t_17 = PySequence_ITEM(__pyx_t_6, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2191, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_17);
           #endif
         }
@@ -48747,7 +48747,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2194, __pyx_L1_error)
+            else __PYX_ERR(0, 2191, __pyx_L1_error)
           }
           break;
         }
@@ -48756,7 +48756,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_17);
       __pyx_t_17 = 0;
 
-      /* "darkchess.pyx":2195
+      /* "darkchess.pyx":2192
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -48766,7 +48766,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       __pyx_t_5 = ((0 == __pyx_v_pity) != 0);
       if (__pyx_t_5) {
 
-        /* "darkchess.pyx":2196
+        /* "darkchess.pyx":2193
  *         for chr in af2_ch:
  *             if 0 == pity:
  *                 break             # <<<<<<<<<<<<<<
@@ -48775,7 +48775,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
         goto __pyx_L34_break;
 
-        /* "darkchess.pyx":2195
+        /* "darkchess.pyx":2192
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -48784,7 +48784,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
       }
 
-      /* "darkchess.pyx":2197
+      /* "darkchess.pyx":2194
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -48795,26 +48795,26 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
         __pyx_t_17 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_17); __pyx_t_10 = 0;
         __pyx_t_11 = NULL;
       } else {
-        __pyx_t_10 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2197, __pyx_L1_error)
+        __pyx_t_10 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2194, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_11 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2197, __pyx_L1_error)
+        __pyx_t_11 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2194, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_11)) {
           if (likely(PyList_CheckExact(__pyx_t_17))) {
             if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_17)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2197, __pyx_L1_error)
+            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2194, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_17, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2197, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_17, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2194, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           } else {
             if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2197, __pyx_L1_error)
+            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2194, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_17, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2197, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_17, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2194, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           }
@@ -48824,7 +48824,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 2197, __pyx_L1_error)
+              else __PYX_ERR(0, 2194, __pyx_L1_error)
             }
             break;
           }
@@ -48833,54 +48833,54 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
         __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "darkchess.pyx":2198
+        /* "darkchess.pyx":2195
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  */
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_12 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_16 = PyObject_RichCompare(__pyx_t_3, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_16 = PyObject_RichCompare(__pyx_t_3, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         if (__pyx_t_13) {
         } else {
           __pyx_t_5 = __pyx_t_13;
           goto __pyx_L39_bool_binop_done;
         }
-        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
-        __pyx_t_12 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_16, 1, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_16, 1, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2198, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_t_5 = __pyx_t_13;
         __pyx_L39_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "darkchess.pyx":2199
+          /* "darkchess.pyx":2196
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0
  */
-          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2199, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2196, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
             __pyx_t_16 = __pyx_t_12; __Pyx_INCREF(__pyx_t_16); __pyx_t_14 = 0;
             __pyx_t_15 = NULL;
           } else {
-            __pyx_t_14 = -1; __pyx_t_16 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2199, __pyx_L1_error)
+            __pyx_t_14 = -1; __pyx_t_16 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2196, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_15 = Py_TYPE(__pyx_t_16)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2199, __pyx_L1_error)
+            __pyx_t_15 = Py_TYPE(__pyx_t_16)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2196, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
           for (;;) {
@@ -48888,17 +48888,17 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
               if (likely(PyList_CheckExact(__pyx_t_16))) {
                 if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_16)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_12); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2199, __pyx_L1_error)
+                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_12); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2196, __pyx_L1_error)
                 #else
-                __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2199, __pyx_L1_error)
+                __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2196, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 #endif
               } else {
                 if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_16)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_12); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2199, __pyx_L1_error)
+                __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_12); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2196, __pyx_L1_error)
                 #else
-                __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2199, __pyx_L1_error)
+                __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2196, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 #endif
               }
@@ -48908,7 +48908,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 2199, __pyx_L1_error)
+                  else __PYX_ERR(0, 2196, __pyx_L1_error)
                 }
                 break;
               }
@@ -48917,56 +48917,56 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
             __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_12);
             __pyx_t_12 = 0;
 
-            /* "darkchess.pyx":2200
+            /* "darkchess.pyx":2197
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             pity = 0
  *                             break
  */
-            __pyx_t_12 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2200, __pyx_L1_error)
-            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_12 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2197, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             if (__pyx_t_13) {
             } else {
               __pyx_t_5 = __pyx_t_13;
               goto __pyx_L44_bool_binop_done;
             }
-            __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_12); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_12); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_12 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2200, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2197, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_13 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_18, __pyx_t_12, (1 - __pyx_v_owner_color)) <= __pyx_f_9darkchess_eating_value_to_score(__pyx_t_7, __pyx_t_2, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -48975,7 +48975,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
             __pyx_L44_bool_binop_done:;
             if (__pyx_t_5) {
 
-              /* "darkchess.pyx":2201
+              /* "darkchess.pyx":2198
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0             # <<<<<<<<<<<<<<
@@ -48984,7 +48984,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               __pyx_v_pity = 0;
 
-              /* "darkchess.pyx":2202
+              /* "darkchess.pyx":2199
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0
  *                             break             # <<<<<<<<<<<<<<
@@ -48993,7 +48993,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
               goto __pyx_L42_break;
 
-              /* "darkchess.pyx":2200
+              /* "darkchess.pyx":2197
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -49002,7 +49002,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
             }
 
-            /* "darkchess.pyx":2199
+            /* "darkchess.pyx":2196
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -49013,7 +49013,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
           __pyx_L42_break:;
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-          /* "darkchess.pyx":2198
+          /* "darkchess.pyx":2195
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -49022,7 +49022,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
         }
 
-        /* "darkchess.pyx":2197
+        /* "darkchess.pyx":2194
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -49032,7 +49032,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
       }
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-      /* "darkchess.pyx":2194
+      /* "darkchess.pyx":2191
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -49043,7 +49043,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
     __pyx_L34_break:;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2185
+    /* "darkchess.pyx":2182
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
@@ -49052,7 +49052,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
  */
   }
 
-  /* "darkchess.pyx":2203
+  /* "darkchess.pyx":2200
  *                             pity = 0
  *                             break
  *     return pity             # <<<<<<<<<<<<<<
@@ -49062,7 +49062,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   __pyx_r = __pyx_v_pity;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2141
+  /* "darkchess.pyx":2138
  * 
  * # will_be_dead_pity...
  * cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -49101,7 +49101,7 @@ static int __pyx_f_9darkchess_will_dead_pity_uncheck_will_dead(PyObject *__pyx_v
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2206
+/* "darkchess.pyx":2203
  * 
  * # will_be_dead_pity...
  * def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -49150,29 +49150,29 @@ static PyObject *__pyx_pw_9darkchess_33will_dead_pity_even_equal(PyObject *__pyx
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_nextj)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 1); __PYX_ERR(0, 2206, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 1); __PYX_ERR(0, 2203, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a_ch)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 2); __PYX_ERR(0, 2206, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 2); __PYX_ERR(0, 2203, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a_map)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 3); __PYX_ERR(0, 2206, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 3); __PYX_ERR(0, 2203, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_owner_color)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 4); __PYX_ERR(0, 2206, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, 4); __PYX_ERR(0, 2203, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "will_dead_pity_even_equal") < 0)) __PYX_ERR(0, 2206, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "will_dead_pity_even_equal") < 0)) __PYX_ERR(0, 2203, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -49187,11 +49187,11 @@ static PyObject *__pyx_pw_9darkchess_33will_dead_pity_even_equal(PyObject *__pyx
     __pyx_v_nextj = values[1];
     __pyx_v_a_ch = values[2];
     __pyx_v_a_map = values[3];
-    __pyx_v_owner_color = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_owner_color == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2206, __pyx_L3_error)
+    __pyx_v_owner_color = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_owner_color == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2203, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2206, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("will_dead_pity_even_equal", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2203, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("darkchess.will_dead_pity_even_equal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -49244,29 +49244,29 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   int __pyx_t_18;
   __Pyx_RefNannySetupContext("will_dead_pity_even_equal", 0);
 
-  /* "darkchess.pyx":2209
+  /* "darkchess.pyx":2206
  *     global king_live
  * 
  *     if None == nexti or None == nextj:             # <<<<<<<<<<<<<<
  *         return None
  * 
  */
-  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nexti, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2209, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2209, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nexti, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2206, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2206, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2209, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2209, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2206, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2206, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2210
+    /* "darkchess.pyx":2207
  * 
  *     if None == nexti or None == nextj:
  *         return None             # <<<<<<<<<<<<<<
@@ -49277,7 +49277,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2209
+    /* "darkchess.pyx":2206
  *     global king_live
  * 
  *     if None == nexti or None == nextj:             # <<<<<<<<<<<<<<
@@ -49286,7 +49286,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   }
 
-  /* "darkchess.pyx":2215
+  /* "darkchess.pyx":2212
  *     #    return 0
  * 
  *     (y, x) = nexti             # <<<<<<<<<<<<<<
@@ -49299,7 +49299,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2215, __pyx_L1_error)
+      __PYX_ERR(0, 2212, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -49312,21 +49312,21 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_4);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2215, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2215, __pyx_L1_error)
+    __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_5 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2215, __pyx_L1_error)
+    __pyx_t_5 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = Py_TYPE(__pyx_t_5)->tp_iternext;
     index = 0; __pyx_t_2 = __pyx_t_6(__pyx_t_5); if (unlikely(!__pyx_t_2)) goto __pyx_L6_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_4 = __pyx_t_6(__pyx_t_5); if (unlikely(!__pyx_t_4)) goto __pyx_L6_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_4);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2215, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2212, __pyx_L1_error)
     __pyx_t_6 = NULL;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     goto __pyx_L7_unpacking_done;
@@ -49334,7 +49334,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_6 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2215, __pyx_L1_error)
+    __PYX_ERR(0, 2212, __pyx_L1_error)
     __pyx_L7_unpacking_done:;
   }
   __pyx_v_y = __pyx_t_2;
@@ -49342,34 +49342,34 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   __pyx_v_x = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "darkchess.pyx":2216
+  /* "darkchess.pyx":2213
  * 
  *     (y, x) = nexti
  *     a = a_map[y][x]             # <<<<<<<<<<<<<<
  * 
  *     if nextj != None:
  */
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2216, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2216, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_a = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2218
+  /* "darkchess.pyx":2215
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2218, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2218, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2215, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2215, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2219
+    /* "darkchess.pyx":2216
  * 
  *     if nextj != None:
  *         (ii, jj) = nextj             # <<<<<<<<<<<<<<
@@ -49382,7 +49382,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2219, __pyx_L1_error)
+        __PYX_ERR(0, 2216, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -49395,21 +49395,21 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_4);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2219, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2216, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2219, __pyx_L1_error)
+      __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2216, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_5 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2219, __pyx_L1_error)
+      __pyx_t_5 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2216, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = Py_TYPE(__pyx_t_5)->tp_iternext;
       index = 0; __pyx_t_2 = __pyx_t_6(__pyx_t_5); if (unlikely(!__pyx_t_2)) goto __pyx_L9_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
       index = 1; __pyx_t_4 = __pyx_t_6(__pyx_t_5); if (unlikely(!__pyx_t_4)) goto __pyx_L9_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_4);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2219, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2216, __pyx_L1_error)
       __pyx_t_6 = NULL;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       goto __pyx_L10_unpacking_done;
@@ -49417,7 +49417,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_6 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2219, __pyx_L1_error)
+      __PYX_ERR(0, 2216, __pyx_L1_error)
       __pyx_L10_unpacking_done:;
     }
     __pyx_v_ii = __pyx_t_2;
@@ -49425,89 +49425,89 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __pyx_v_jj = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2220
+    /* "darkchess.pyx":2217
  *     if nextj != None:
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]             # <<<<<<<<<<<<<<
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  */
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2217, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_jj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2220, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_jj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2217, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_b = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2221
+    /* "darkchess.pyx":2218
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:
  */
-    __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2221, __pyx_L1_error)
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2221, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2218, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2222
+      /* "darkchess.pyx":2219
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0
  */
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_2, 2, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_2, 2, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2222, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2219, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2223
+        /* "darkchess.pyx":2220
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:             # <<<<<<<<<<<<<<
  *                     return 0
  *             #if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
  */
-        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_int_4, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_int_4, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2223, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2220, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         if (__pyx_t_1) {
 
-          /* "darkchess.pyx":2224
+          /* "darkchess.pyx":2221
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:
  *                     return 0             # <<<<<<<<<<<<<<
@@ -49519,7 +49519,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
           __pyx_r = __pyx_int_0;
           goto __pyx_L0;
 
-          /* "darkchess.pyx":2223
+          /* "darkchess.pyx":2220
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 4:             # <<<<<<<<<<<<<<
@@ -49528,7 +49528,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
         }
 
-        /* "darkchess.pyx":2222
+        /* "darkchess.pyx":2219
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
@@ -49537,7 +49537,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
       }
 
-      /* "darkchess.pyx":2221
+      /* "darkchess.pyx":2218
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
@@ -49546,7 +49546,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
     }
 
-    /* "darkchess.pyx":2218
+    /* "darkchess.pyx":2215
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
@@ -49555,16 +49555,16 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   }
 
-  /* "darkchess.pyx":2228
+  /* "darkchess.pyx":2225
  *             #    return 0
  * 
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2228, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2228, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -49579,22 +49579,22 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   }
   __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2228, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_af_map = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "darkchess.pyx":2229
+  /* "darkchess.pyx":2226
  * 
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2229, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2229, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -49609,20 +49609,20 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   }
   __pyx_t_4 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2229, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_af_ch = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "darkchess.pyx":2230
+  /* "darkchess.pyx":2227
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)             # <<<<<<<<<<<<<<
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_move); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2230, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_move); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = NULL;
   __pyx_t_7 = 0;
@@ -49639,7 +49639,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_5)) {
     PyObject *__pyx_temp[5] = {__pyx_t_2, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else
@@ -49647,13 +49647,13 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
     PyObject *__pyx_temp[5] = {__pyx_t_2, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else
   #endif
   {
-    __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -49670,7 +49670,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_INCREF(__pyx_v_af_ch);
     __Pyx_GIVEREF(__pyx_v_af_ch);
     PyTuple_SET_ITEM(__pyx_t_8, 3+__pyx_t_7, __pyx_v_af_ch);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
@@ -49681,7 +49681,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2230, __pyx_L1_error)
+      __PYX_ERR(0, 2227, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -49694,15 +49694,15 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_INCREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_t_8);
     #else
-    __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     #endif
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2230, __pyx_L1_error)
+    __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_6 = Py_TYPE(__pyx_t_2)->tp_iternext;
@@ -49710,7 +49710,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_GOTREF(__pyx_t_5);
     index = 1; __pyx_t_8 = __pyx_t_6(__pyx_t_2); if (unlikely(!__pyx_t_8)) goto __pyx_L14_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_8);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_2), 2) < 0) __PYX_ERR(0, 2230, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_2), 2) < 0) __PYX_ERR(0, 2227, __pyx_L1_error)
     __pyx_t_6 = NULL;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     goto __pyx_L15_unpacking_done;
@@ -49718,7 +49718,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_6 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2230, __pyx_L1_error)
+    __PYX_ERR(0, 2227, __pyx_L1_error)
     __pyx_L15_unpacking_done:;
   }
   __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_5);
@@ -49726,7 +49726,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "darkchess.pyx":2231
+  /* "darkchess.pyx":2228
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -49735,7 +49735,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-  /* "darkchess.pyx":2232
+  /* "darkchess.pyx":2229
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color             # <<<<<<<<<<<<<<
@@ -49744,7 +49744,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2234
+  /* "darkchess.pyx":2231
  *     opp_color = 1 - owner_color
  * 
  *     pity = 0             # <<<<<<<<<<<<<<
@@ -49753,7 +49753,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   __pyx_v_pity = 0;
 
-  /* "darkchess.pyx":2235
+  /* "darkchess.pyx":2232
  * 
  *     pity = 0
  *     i2 = None             # <<<<<<<<<<<<<<
@@ -49763,7 +49763,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   __Pyx_INCREF(Py_None);
   __pyx_v_i2 = ((PyObject*)Py_None);
 
-  /* "darkchess.pyx":2236
+  /* "darkchess.pyx":2233
  *     pity = 0
  *     i2 = None
  *     j2 = None             # <<<<<<<<<<<<<<
@@ -49773,7 +49773,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   __Pyx_INCREF(Py_None);
   __pyx_v_j2 = Py_None;
 
-  /* "darkchess.pyx":2238
+  /* "darkchess.pyx":2235
  *     j2 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -49784,26 +49784,26 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __pyx_t_4 = __pyx_v_af_ch; __Pyx_INCREF(__pyx_t_4); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
   } else {
-    __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2238, __pyx_L1_error)
+    __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2235, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2238, __pyx_L1_error)
+    __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2235, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_10)) {
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_8 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2238, __pyx_L1_error)
+        __pyx_t_8 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2235, __pyx_L1_error)
         #else
-        __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2238, __pyx_L1_error)
+        __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         #endif
       } else {
         if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2238, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2235, __pyx_L1_error)
         #else
-        __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2238, __pyx_L1_error)
+        __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         #endif
       }
@@ -49813,7 +49813,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2238, __pyx_L1_error)
+          else __PYX_ERR(0, 2235, __pyx_L1_error)
         }
         break;
       }
@@ -49822,7 +49822,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2239
+    /* "darkchess.pyx":2236
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -49832,7 +49832,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __pyx_t_1 = ((1 == __pyx_v_pity) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2240
+      /* "darkchess.pyx":2237
  *     for chr in af_ch:
  *         if 1 == pity:
  *             break             # <<<<<<<<<<<<<<
@@ -49841,7 +49841,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
       goto __pyx_L17_break;
 
-      /* "darkchess.pyx":2239
+      /* "darkchess.pyx":2236
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -49850,7 +49850,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
     }
 
-    /* "darkchess.pyx":2241
+    /* "darkchess.pyx":2238
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -49861,26 +49861,26 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __pyx_t_8 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_8); __pyx_t_11 = 0;
       __pyx_t_12 = NULL;
     } else {
-      __pyx_t_11 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2241, __pyx_L1_error)
+      __pyx_t_11 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2238, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_12 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2241, __pyx_L1_error)
+      __pyx_t_12 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2238, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_12)) {
         if (likely(PyList_CheckExact(__pyx_t_8))) {
           if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_5); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2241, __pyx_L1_error)
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_5); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2238, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2241, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2238, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         } else {
           if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_5); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2241, __pyx_L1_error)
+          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_5); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2238, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2241, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2238, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         }
@@ -49890,7 +49890,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2241, __pyx_L1_error)
+            else __PYX_ERR(0, 2238, __pyx_L1_error)
           }
           break;
         }
@@ -49899,54 +49899,54 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "darkchess.pyx":2242
+      /* "darkchess.pyx":2239
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_13 = PyObject_RichCompare(__pyx_t_5, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_13 = PyObject_RichCompare(__pyx_t_5, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       if (__pyx_t_3) {
       } else {
         __pyx_t_1 = __pyx_t_3;
         goto __pyx_L22_bool_binop_done;
       }
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_13, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_13, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2242, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2239, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_1 = __pyx_t_3;
       __pyx_L22_bool_binop_done:;
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2243
+        /* "darkchess.pyx":2240
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == nextj:
  *                         if b == None:
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2243, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2240, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
           __pyx_t_13 = __pyx_t_2; __Pyx_INCREF(__pyx_t_13); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
         } else {
-          __pyx_t_14 = -1; __pyx_t_13 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2243, __pyx_L1_error)
+          __pyx_t_14 = -1; __pyx_t_13 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2240, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_15 = Py_TYPE(__pyx_t_13)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2243, __pyx_L1_error)
+          __pyx_t_15 = Py_TYPE(__pyx_t_13)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2240, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         for (;;) {
@@ -49954,17 +49954,17 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
             if (likely(PyList_CheckExact(__pyx_t_13))) {
               if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_13)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_2 = PyList_GET_ITEM(__pyx_t_13, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2243, __pyx_L1_error)
+              __pyx_t_2 = PyList_GET_ITEM(__pyx_t_13, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2240, __pyx_L1_error)
               #else
-              __pyx_t_2 = PySequence_ITEM(__pyx_t_13, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2243, __pyx_L1_error)
+              __pyx_t_2 = PySequence_ITEM(__pyx_t_13, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2240, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               #endif
             } else {
               if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_13)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_13, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2243, __pyx_L1_error)
+              __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_13, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2240, __pyx_L1_error)
               #else
-              __pyx_t_2 = PySequence_ITEM(__pyx_t_13, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2243, __pyx_L1_error)
+              __pyx_t_2 = PySequence_ITEM(__pyx_t_13, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2240, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               #endif
             }
@@ -49974,7 +49974,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2243, __pyx_L1_error)
+                else __PYX_ERR(0, 2240, __pyx_L1_error)
               }
               break;
             }
@@ -49983,43 +49983,43 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "darkchess.pyx":2244
+          /* "darkchess.pyx":2241
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  */
-          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2244, __pyx_L1_error)
-          __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2244, __pyx_L1_error)
+          __pyx_t_2 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2241, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2241, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_1) {
 
-            /* "darkchess.pyx":2245
+            /* "darkchess.pyx":2242
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2245, __pyx_L1_error) }
-            __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2245, __pyx_L1_error)
-            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2245, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2242, __pyx_L1_error) }
+            __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2242, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2242, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2246
+              /* "darkchess.pyx":2243
  *                     if pm == nextj:
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2246, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2243, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2246, __pyx_L1_error)
+              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2243, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
-              __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2246, __pyx_L1_error)
+              __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2243, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_16);
               __Pyx_GIVEREF(__pyx_t_2);
               PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_2);
@@ -50030,7 +50030,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_16));
               __pyx_t_16 = 0;
 
-              /* "darkchess.pyx":2247
+              /* "darkchess.pyx":2244
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -50040,7 +50040,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2248
+              /* "darkchess.pyx":2245
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -50049,7 +50049,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2249
+              /* "darkchess.pyx":2246
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -50058,7 +50058,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               goto __pyx_L25_break;
 
-              /* "darkchess.pyx":2245
+              /* "darkchess.pyx":2242
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
@@ -50067,68 +50067,68 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
             }
 
-            /* "darkchess.pyx":2250
+            /* "darkchess.pyx":2247
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_16); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_16); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_16); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_16); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_16 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2250, __pyx_L1_error) }
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2247, __pyx_L1_error) }
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2250, __pyx_L1_error) }
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2247, __pyx_L1_error) }
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2250, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_1 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_7, __pyx_t_16, (1 - __pyx_v_owner_color)) >= __pyx_f_9darkchess_eating_value_to_score(__pyx_t_18, __pyx_t_2, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2251
+              /* "darkchess.pyx":2248
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2251, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2248, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2251, __pyx_L1_error)
+              __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2248, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2251, __pyx_L1_error)
+              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2248, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_17);
               __Pyx_GIVEREF(__pyx_t_2);
               PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_2);
@@ -50139,7 +50139,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_17));
               __pyx_t_17 = 0;
 
-              /* "darkchess.pyx":2252
+              /* "darkchess.pyx":2249
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -50149,7 +50149,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2253
+              /* "darkchess.pyx":2250
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -50158,7 +50158,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2254
+              /* "darkchess.pyx":2251
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -50167,7 +50167,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               goto __pyx_L25_break;
 
-              /* "darkchess.pyx":2250
+              /* "darkchess.pyx":2247
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -50176,7 +50176,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
             }
 
-            /* "darkchess.pyx":2244
+            /* "darkchess.pyx":2241
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
@@ -50185,7 +50185,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
           }
 
-          /* "darkchess.pyx":2243
+          /* "darkchess.pyx":2240
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -50196,7 +50196,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
         __pyx_L25_break:;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "darkchess.pyx":2242
+        /* "darkchess.pyx":2239
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -50205,7 +50205,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
       }
 
-      /* "darkchess.pyx":2241
+      /* "darkchess.pyx":2238
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -50215,7 +50215,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2238
+    /* "darkchess.pyx":2235
  *     j2 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -50226,38 +50226,38 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   __pyx_L17_break:;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "darkchess.pyx":2256
+  /* "darkchess.pyx":2253
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  */
-  __pyx_t_4 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2256, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2256, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2253, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2253, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L29_bool_binop_done;
   }
-  __pyx_t_4 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2256, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2256, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2253, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2253, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L29_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2257
+    /* "darkchess.pyx":2254
  * 
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)             # <<<<<<<<<<<<<<
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_copy); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2257, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_copy); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2257, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_8 = NULL;
@@ -50272,22 +50272,22 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     }
     __pyx_t_4 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_8, __pyx_v_af_map) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_v_af_map);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2257, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     __pyx_v_af2_map = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2258
+    /* "darkchess.pyx":2255
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)             # <<<<<<<<<<<<<<
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_copy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2258, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_copy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2255, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2258, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2255, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     __pyx_t_13 = NULL;
@@ -50302,20 +50302,20 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     }
     __pyx_t_4 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_13, __pyx_v_af_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_v_af_ch);
     __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2258, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2255, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_af2_ch = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2259
+    /* "darkchess.pyx":2256
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af2_map, af2_ch)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_move); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2259, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_move); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_t_13 = NULL;
     __pyx_t_18 = 0;
@@ -50332,7 +50332,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_8)) {
       PyObject *__pyx_temp[5] = {__pyx_t_13, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else
@@ -50340,13 +50340,13 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
       PyObject *__pyx_temp[5] = {__pyx_t_13, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_18, 4+__pyx_t_18); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else
     #endif
     {
-      __pyx_t_17 = PyTuple_New(4+__pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_17 = PyTuple_New(4+__pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       if (__pyx_t_13) {
         __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_13); __pyx_t_13 = NULL;
@@ -50363,7 +50363,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_INCREF(__pyx_v_af2_ch);
       __Pyx_GIVEREF(__pyx_v_af2_ch);
       PyTuple_SET_ITEM(__pyx_t_17, 3+__pyx_t_18, __pyx_v_af2_ch);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_17, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_17, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     }
@@ -50374,7 +50374,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2259, __pyx_L1_error)
+        __PYX_ERR(0, 2256, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -50387,15 +50387,15 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_t_17);
       #else
-      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       #endif
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_13 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2259, __pyx_L1_error)
+      __pyx_t_13 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2256, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_6 = Py_TYPE(__pyx_t_13)->tp_iternext;
@@ -50403,7 +50403,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_GOTREF(__pyx_t_8);
       index = 1; __pyx_t_17 = __pyx_t_6(__pyx_t_13); if (unlikely(!__pyx_t_17)) goto __pyx_L31_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_17);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_13), 2) < 0) __PYX_ERR(0, 2259, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_13), 2) < 0) __PYX_ERR(0, 2256, __pyx_L1_error)
       __pyx_t_6 = NULL;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       goto __pyx_L32_unpacking_done;
@@ -50411,7 +50411,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_t_6 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2259, __pyx_L1_error)
+      __PYX_ERR(0, 2256, __pyx_L1_error)
       __pyx_L32_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af2_map, __pyx_t_8);
@@ -50419,7 +50419,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_DECREF_SET(__pyx_v_af2_ch, __pyx_t_17);
     __pyx_t_17 = 0;
 
-    /* "darkchess.pyx":2260
+    /* "darkchess.pyx":2257
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)             # <<<<<<<<<<<<<<
@@ -50428,7 +50428,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af2_map, __pyx_v_af2_ch);
 
-    /* "darkchess.pyx":2262
+    /* "darkchess.pyx":2259
  *         all_chess_move(af2_map, af2_ch)
  * 
  *         (ii, jj) = j2             # <<<<<<<<<<<<<<
@@ -50441,7 +50441,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2262, __pyx_L1_error)
+        __PYX_ERR(0, 2259, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -50454,21 +50454,21 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_17);
       #else
-      __pyx_t_4 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2262, __pyx_L1_error)
+      __pyx_t_4 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2259, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2262, __pyx_L1_error)
+      __pyx_t_17 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2259, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2262, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2259, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_6 = Py_TYPE(__pyx_t_8)->tp_iternext;
       index = 0; __pyx_t_4 = __pyx_t_6(__pyx_t_8); if (unlikely(!__pyx_t_4)) goto __pyx_L33_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_4);
       index = 1; __pyx_t_17 = __pyx_t_6(__pyx_t_8); if (unlikely(!__pyx_t_17)) goto __pyx_L33_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_17);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_8), 2) < 0) __PYX_ERR(0, 2262, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_8), 2) < 0) __PYX_ERR(0, 2259, __pyx_L1_error)
       __pyx_t_6 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L34_unpacking_done;
@@ -50476,7 +50476,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_6 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2262, __pyx_L1_error)
+      __PYX_ERR(0, 2259, __pyx_L1_error)
       __pyx_L34_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_4);
@@ -50484,22 +50484,22 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __Pyx_XDECREF_SET(__pyx_v_jj, __pyx_t_17);
     __pyx_t_17 = 0;
 
-    /* "darkchess.pyx":2263
+    /* "darkchess.pyx":2260
  * 
  *         (ii, jj) = j2
  *         b = af2_map[ii][jj]             # <<<<<<<<<<<<<<
  * 
  *         for chr in af2_ch:
  */
-    __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2263, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2260, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_17, __pyx_v_jj); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2263, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_17, __pyx_v_jj); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2260, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     __Pyx_XDECREF_SET(__pyx_v_b, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2265
+    /* "darkchess.pyx":2262
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -50510,26 +50510,26 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __pyx_t_4 = __pyx_v_af2_ch; __Pyx_INCREF(__pyx_t_4); __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2265, __pyx_L1_error)
+      __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2262, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2265, __pyx_L1_error)
+      __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 2262, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_10)) {
         if (likely(PyList_CheckExact(__pyx_t_4))) {
           if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_17 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_17); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2265, __pyx_L1_error)
+          __pyx_t_17 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_17); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2262, __pyx_L1_error)
           #else
-          __pyx_t_17 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2265, __pyx_L1_error)
+          __pyx_t_17 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2262, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_17);
           #endif
         } else {
           if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_17); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2265, __pyx_L1_error)
+          __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_17); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 2262, __pyx_L1_error)
           #else
-          __pyx_t_17 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2265, __pyx_L1_error)
+          __pyx_t_17 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2262, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_17);
           #endif
         }
@@ -50539,7 +50539,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2265, __pyx_L1_error)
+            else __PYX_ERR(0, 2262, __pyx_L1_error)
           }
           break;
         }
@@ -50548,7 +50548,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_17);
       __pyx_t_17 = 0;
 
-      /* "darkchess.pyx":2266
+      /* "darkchess.pyx":2263
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -50558,7 +50558,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       __pyx_t_1 = ((0 == __pyx_v_pity) != 0);
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2267
+        /* "darkchess.pyx":2264
  *         for chr in af2_ch:
  *             if 0 == pity:
  *                 break             # <<<<<<<<<<<<<<
@@ -50567,7 +50567,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
         goto __pyx_L36_break;
 
-        /* "darkchess.pyx":2266
+        /* "darkchess.pyx":2263
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -50576,7 +50576,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
       }
 
-      /* "darkchess.pyx":2268
+      /* "darkchess.pyx":2265
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -50587,26 +50587,26 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
         __pyx_t_17 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_17); __pyx_t_11 = 0;
         __pyx_t_12 = NULL;
       } else {
-        __pyx_t_11 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2268, __pyx_L1_error)
+        __pyx_t_11 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2265, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_12 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2268, __pyx_L1_error)
+        __pyx_t_12 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 2265, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_12)) {
           if (likely(PyList_CheckExact(__pyx_t_17))) {
             if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_17)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_8 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2268, __pyx_L1_error)
+            __pyx_t_8 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2265, __pyx_L1_error)
             #else
-            __pyx_t_8 = PySequence_ITEM(__pyx_t_17, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2268, __pyx_L1_error)
+            __pyx_t_8 = PySequence_ITEM(__pyx_t_17, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2265, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             #endif
           } else {
             if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2268, __pyx_L1_error)
+            __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 2265, __pyx_L1_error)
             #else
-            __pyx_t_8 = PySequence_ITEM(__pyx_t_17, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2268, __pyx_L1_error)
+            __pyx_t_8 = PySequence_ITEM(__pyx_t_17, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2265, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             #endif
           }
@@ -50616,7 +50616,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 2268, __pyx_L1_error)
+              else __PYX_ERR(0, 2265, __pyx_L1_error)
             }
             break;
           }
@@ -50625,54 +50625,54 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
         __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "darkchess.pyx":2269
+        /* "darkchess.pyx":2266
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  */
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_13 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_16 = PyObject_RichCompare(__pyx_t_8, __pyx_t_13, Py_EQ); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_16 = PyObject_RichCompare(__pyx_t_8, __pyx_t_13, Py_EQ); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         if (__pyx_t_3) {
         } else {
           __pyx_t_1 = __pyx_t_3;
           goto __pyx_L41_bool_binop_done;
         }
-        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
-        __pyx_t_13 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_16, 1, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_16, 1, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2269, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2266, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_1 = __pyx_t_3;
         __pyx_L41_bool_binop_done:;
         if (__pyx_t_1) {
 
-          /* "darkchess.pyx":2270
+          /* "darkchess.pyx":2267
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0
  */
-          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2270, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2267, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
           if (likely(PyList_CheckExact(__pyx_t_13)) || PyTuple_CheckExact(__pyx_t_13)) {
             __pyx_t_16 = __pyx_t_13; __Pyx_INCREF(__pyx_t_16); __pyx_t_14 = 0;
             __pyx_t_15 = NULL;
           } else {
-            __pyx_t_14 = -1; __pyx_t_16 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2270, __pyx_L1_error)
+            __pyx_t_14 = -1; __pyx_t_16 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2267, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_15 = Py_TYPE(__pyx_t_16)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2270, __pyx_L1_error)
+            __pyx_t_15 = Py_TYPE(__pyx_t_16)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 2267, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           for (;;) {
@@ -50680,17 +50680,17 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
               if (likely(PyList_CheckExact(__pyx_t_16))) {
                 if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_16)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_13 = PyList_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2270, __pyx_L1_error)
+                __pyx_t_13 = PyList_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2267, __pyx_L1_error)
                 #else
-                __pyx_t_13 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2270, __pyx_L1_error)
+                __pyx_t_13 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2267, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_13);
                 #endif
               } else {
                 if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_16)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2270, __pyx_L1_error)
+                __pyx_t_13 = PyTuple_GET_ITEM(__pyx_t_16, __pyx_t_14); __Pyx_INCREF(__pyx_t_13); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(0, 2267, __pyx_L1_error)
                 #else
-                __pyx_t_13 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2270, __pyx_L1_error)
+                __pyx_t_13 = PySequence_ITEM(__pyx_t_16, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2267, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_13);
                 #endif
               }
@@ -50700,7 +50700,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 2270, __pyx_L1_error)
+                  else __PYX_ERR(0, 2267, __pyx_L1_error)
                 }
                 break;
               }
@@ -50709,56 +50709,56 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
             __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_13);
             __pyx_t_13 = 0;
 
-            /* "darkchess.pyx":2271
+            /* "darkchess.pyx":2268
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             pity = 0
  *                             break
  */
-            __pyx_t_13 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2271, __pyx_L1_error)
-            __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_13 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2268, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             if (__pyx_t_3) {
             } else {
               __pyx_t_1 = __pyx_t_3;
               goto __pyx_L46_bool_binop_done;
             }
-            __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_13); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_18 = __Pyx_PyInt_As_int(__pyx_t_13); if (unlikely((__pyx_t_18 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_13 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2271, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2268, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_3 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_18, __pyx_t_13, (1 - __pyx_v_owner_color)) < __pyx_f_9darkchess_eating_value_to_score(__pyx_t_7, __pyx_t_2, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
@@ -50767,7 +50767,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
             __pyx_L46_bool_binop_done:;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2272
+              /* "darkchess.pyx":2269
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0             # <<<<<<<<<<<<<<
@@ -50776,7 +50776,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               __pyx_v_pity = 0;
 
-              /* "darkchess.pyx":2273
+              /* "darkchess.pyx":2270
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             pity = 0
  *                             break             # <<<<<<<<<<<<<<
@@ -50785,7 +50785,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
               goto __pyx_L44_break;
 
-              /* "darkchess.pyx":2271
+              /* "darkchess.pyx":2268
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -50794,7 +50794,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
             }
 
-            /* "darkchess.pyx":2270
+            /* "darkchess.pyx":2267
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -50805,7 +50805,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
           __pyx_L44_break:;
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-          /* "darkchess.pyx":2269
+          /* "darkchess.pyx":2266
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -50814,7 +50814,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
         }
 
-        /* "darkchess.pyx":2268
+        /* "darkchess.pyx":2265
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -50824,7 +50824,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
       }
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-      /* "darkchess.pyx":2265
+      /* "darkchess.pyx":2262
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -50835,7 +50835,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
     __pyx_L36_break:;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2256
+    /* "darkchess.pyx":2253
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
@@ -50844,7 +50844,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  */
   }
 
-  /* "darkchess.pyx":2274
+  /* "darkchess.pyx":2271
  *                             pity = 0
  *                             break
  *     return pity             # <<<<<<<<<<<<<<
@@ -50852,13 +50852,13 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
  * # will_be_dead_pity
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_pity); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2274, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_pity); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2271, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2206
+  /* "darkchess.pyx":2203
  * 
  * # will_be_dead_pity...
  * def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -50898,7 +50898,7 @@ static PyObject *__pyx_pf_9darkchess_32will_dead_pity_even_equal(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2277
+/* "darkchess.pyx":2274
  * 
  * # will_be_dead_pity
  * def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -50947,29 +50947,29 @@ static PyObject *__pyx_pw_9darkchess_35will_dead_pity(PyObject *__pyx_self, PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_nextj)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 1); __PYX_ERR(0, 2277, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 1); __PYX_ERR(0, 2274, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a_ch)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 2); __PYX_ERR(0, 2277, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 2); __PYX_ERR(0, 2274, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a_map)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 3); __PYX_ERR(0, 2277, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 3); __PYX_ERR(0, 2274, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_owner_color)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 4); __PYX_ERR(0, 2277, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, 4); __PYX_ERR(0, 2274, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "will_dead_pity") < 0)) __PYX_ERR(0, 2277, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "will_dead_pity") < 0)) __PYX_ERR(0, 2274, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -50984,11 +50984,11 @@ static PyObject *__pyx_pw_9darkchess_35will_dead_pity(PyObject *__pyx_self, PyOb
     __pyx_v_nextj = values[1];
     __pyx_v_a_ch = values[2];
     __pyx_v_a_map = values[3];
-    __pyx_v_owner_color = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_owner_color == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2277, __pyx_L3_error)
+    __pyx_v_owner_color = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_owner_color == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2274, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2277, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("will_dead_pity", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2274, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("darkchess.will_dead_pity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -51046,29 +51046,29 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   int __pyx_t_19;
   __Pyx_RefNannySetupContext("will_dead_pity", 0);
 
-  /* "darkchess.pyx":2280
+  /* "darkchess.pyx":2277
  *     global king_live
  * 
  *     if None == nexti or None == nextj:             # <<<<<<<<<<<<<<
  *         return None
  * 
  */
-  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nexti, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2280, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2280, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nexti, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2277, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2277, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2280, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2280, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(Py_None, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2277, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2277, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2281
+    /* "darkchess.pyx":2278
  * 
  *     if None == nexti or None == nextj:
  *         return None             # <<<<<<<<<<<<<<
@@ -51079,7 +51079,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2280
+    /* "darkchess.pyx":2277
  *     global king_live
  * 
  *     if None == nexti or None == nextj:             # <<<<<<<<<<<<<<
@@ -51088,18 +51088,18 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "darkchess.pyx":2283
+  /* "darkchess.pyx":2280
  *         return None
  * 
  *     if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):             # <<<<<<<<<<<<<<
  *         return 0
  * 
  */
-  __pyx_t_4 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_nexti); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2283, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert__from_py___pyx_ctuple_int__and_int(__pyx_v_nexti); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2280, __pyx_L1_error)
   __pyx_t_1 = ((1 == __pyx_f_9darkchess_will_dead(__pyx_t_4, __pyx_v_a_ch, __pyx_v_a_map, (1 - __pyx_v_owner_color))) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2284
+    /* "darkchess.pyx":2281
  * 
  *     if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):
  *         return 0             # <<<<<<<<<<<<<<
@@ -51111,7 +51111,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_r = __pyx_int_0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2283
+    /* "darkchess.pyx":2280
  *         return None
  * 
  *     if 1 == will_dead(nexti, a_ch, a_map, 1-owner_color):             # <<<<<<<<<<<<<<
@@ -51120,7 +51120,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "darkchess.pyx":2286
+  /* "darkchess.pyx":2283
  *         return 0
  * 
  *     (y, x) = nexti             # <<<<<<<<<<<<<<
@@ -51133,7 +51133,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2286, __pyx_L1_error)
+      __PYX_ERR(0, 2283, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -51146,21 +51146,21 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_5);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2286, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2286, __pyx_L1_error)
+    __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_6 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2286, __pyx_L1_error)
+    __pyx_t_6 = PyObject_GetIter(__pyx_v_nexti); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_7 = Py_TYPE(__pyx_t_6)->tp_iternext;
     index = 0; __pyx_t_2 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_2)) goto __pyx_L7_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_5 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_5)) goto __pyx_L7_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_5);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2286, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2283, __pyx_L1_error)
     __pyx_t_7 = NULL;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     goto __pyx_L8_unpacking_done;
@@ -51168,7 +51168,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2286, __pyx_L1_error)
+    __PYX_ERR(0, 2283, __pyx_L1_error)
     __pyx_L8_unpacking_done:;
   }
   __pyx_v_y = __pyx_t_2;
@@ -51176,34 +51176,34 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __pyx_v_x = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2287
+  /* "darkchess.pyx":2284
  * 
  *     (y, x) = nexti
  *     a = a_map[y][x]             # <<<<<<<<<<<<<<
  * 
  *     if nextj != None:
  */
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2287, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2287, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_a = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2289
+  /* "darkchess.pyx":2286
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2289, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2289, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_nextj, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2286, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2286, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2290
+    /* "darkchess.pyx":2287
  * 
  *     if nextj != None:
  *         (ii, jj) = nextj             # <<<<<<<<<<<<<<
@@ -51216,7 +51216,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2290, __pyx_L1_error)
+        __PYX_ERR(0, 2287, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -51229,21 +51229,21 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_5);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2290, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2287, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2290, __pyx_L1_error)
+      __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2287, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_6 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2290, __pyx_L1_error)
+      __pyx_t_6 = PyObject_GetIter(__pyx_v_nextj); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2287, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = Py_TYPE(__pyx_t_6)->tp_iternext;
       index = 0; __pyx_t_2 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_2)) goto __pyx_L10_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
       index = 1; __pyx_t_5 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_5)) goto __pyx_L10_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_5);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2290, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2287, __pyx_L1_error)
       __pyx_t_7 = NULL;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       goto __pyx_L11_unpacking_done;
@@ -51251,7 +51251,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2290, __pyx_L1_error)
+      __PYX_ERR(0, 2287, __pyx_L1_error)
       __pyx_L11_unpacking_done:;
     }
     __pyx_v_ii = __pyx_t_2;
@@ -51259,89 +51259,89 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_v_jj = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "darkchess.pyx":2291
+    /* "darkchess.pyx":2288
  *     if nextj != None:
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]             # <<<<<<<<<<<<<<
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  */
-    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2291, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_map, __pyx_v_ii); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2288, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_jj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2291, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_jj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2288, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_b = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2292
+    /* "darkchess.pyx":2289
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 5:
  */
-    __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2292, __pyx_L1_error)
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2292, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2289, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2289, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2293
+      /* "darkchess.pyx":2290
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
  *                 if a_ch[b[0]][b[1]].value > 5:
  *                     return 0
  */
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_2, 2, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyInt_EqCObj(__pyx_int_2, __pyx_t_2, 2, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2293, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2290, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2294
+        /* "darkchess.pyx":2291
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 5:             # <<<<<<<<<<<<<<
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
  */
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = PyObject_RichCompare(__pyx_t_6, __pyx_int_5, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_5 = PyObject_RichCompare(__pyx_t_6, __pyx_int_5, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2294, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2291, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         if (__pyx_t_1) {
 
-          /* "darkchess.pyx":2295
+          /* "darkchess.pyx":2292
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 5:
  *                     return 0             # <<<<<<<<<<<<<<
@@ -51353,7 +51353,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           __pyx_r = __pyx_int_0;
           goto __pyx_L0;
 
-          /* "darkchess.pyx":2294
+          /* "darkchess.pyx":2291
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:
  *                 if a_ch[b[0]][b[1]].value > 5:             # <<<<<<<<<<<<<<
@@ -51362,7 +51362,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
         }
 
-        /* "darkchess.pyx":2293
+        /* "darkchess.pyx":2290
  *         b = a_map[ii][jj]
  *         if b != None:
  *             if 2 == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
@@ -51371,49 +51371,49 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       }
 
-      /* "darkchess.pyx":2296
+      /* "darkchess.pyx":2293
  *                 if a_ch[b[0]][b[1]].value > 5:
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
  *                 return 0
  * 
  */
-      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = PyObject_RichCompare(__pyx_t_5, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_8 = PyObject_RichCompare(__pyx_t_5, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2296, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2293, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2297
+        /* "darkchess.pyx":2294
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:
  *                 return 0             # <<<<<<<<<<<<<<
@@ -51425,7 +51425,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __pyx_r = __pyx_int_0;
         goto __pyx_L0;
 
-        /* "darkchess.pyx":2296
+        /* "darkchess.pyx":2293
  *                 if a_ch[b[0]][b[1]].value > 5:
  *                     return 0
  *             if a_ch[b[0]][b[1]].value == a_ch[a[0]][a[1]].value:             # <<<<<<<<<<<<<<
@@ -51434,7 +51434,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       }
 
-      /* "darkchess.pyx":2292
+      /* "darkchess.pyx":2289
  *         (ii, jj) = nextj
  *         b = a_map[ii][jj]
  *         if b != None:             # <<<<<<<<<<<<<<
@@ -51443,7 +51443,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
     }
 
-    /* "darkchess.pyx":2289
+    /* "darkchess.pyx":2286
  *     a = a_map[y][x]
  * 
  *     if nextj != None:             # <<<<<<<<<<<<<<
@@ -51452,16 +51452,16 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "darkchess.pyx":2299
+  /* "darkchess.pyx":2296
  *                 return 0
  * 
  *     af_map = copy.deepcopy(a_map)             # <<<<<<<<<<<<<<
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2299, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2299, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -51476,22 +51476,22 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   }
   __pyx_t_8 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_v_a_map) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_a_map);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2299, __pyx_L1_error)
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_af_map = __pyx_t_8;
   __pyx_t_8 = 0;
 
-  /* "darkchess.pyx":2300
+  /* "darkchess.pyx":2297
  * 
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)             # <<<<<<<<<<<<<<
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2300, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2300, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -51506,20 +51506,20 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   }
   __pyx_t_8 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_v_a_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_a_ch);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2300, __pyx_L1_error)
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_af_ch = __pyx_t_8;
   __pyx_t_8 = 0;
 
-  /* "darkchess.pyx":2301
+  /* "darkchess.pyx":2298
  *     af_map = copy.deepcopy(a_map)
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)             # <<<<<<<<<<<<<<
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2301, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   __pyx_t_9 = 0;
@@ -51536,7 +51536,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[5] = {__pyx_t_5, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_8);
   } else
@@ -51544,13 +51544,13 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[5] = {__pyx_t_5, __pyx_v_nexti, __pyx_v_nextj, __pyx_v_af_map, __pyx_v_af_ch};
-    __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_8);
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -51567,7 +51567,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_INCREF(__pyx_v_af_ch);
     __Pyx_GIVEREF(__pyx_v_af_ch);
     PyTuple_SET_ITEM(__pyx_t_6, 3+__pyx_t_9, __pyx_v_af_ch);
-    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -51578,7 +51578,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 2301, __pyx_L1_error)
+      __PYX_ERR(0, 2298, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -51591,15 +51591,15 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_6);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     #endif
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_5 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2301, __pyx_L1_error)
+    __pyx_t_5 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_7 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -51607,7 +51607,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_6 = __pyx_t_7(__pyx_t_5); if (unlikely(!__pyx_t_6)) goto __pyx_L16_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2301, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2298, __pyx_L1_error)
     __pyx_t_7 = NULL;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     goto __pyx_L17_unpacking_done;
@@ -51615,7 +51615,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_7 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 2301, __pyx_L1_error)
+    __PYX_ERR(0, 2298, __pyx_L1_error)
     __pyx_L17_unpacking_done:;
   }
   __Pyx_DECREF_SET(__pyx_v_af_map, __pyx_t_2);
@@ -51623,7 +51623,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __Pyx_DECREF_SET(__pyx_v_af_ch, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "darkchess.pyx":2302
+  /* "darkchess.pyx":2299
  *     af_ch = copy.deepcopy(a_ch)
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)             # <<<<<<<<<<<<<<
@@ -51632,7 +51632,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   __pyx_f_9darkchess_all_chess_move(__pyx_v_af_map, __pyx_v_af_ch);
 
-  /* "darkchess.pyx":2303
+  /* "darkchess.pyx":2300
  *     af_map, af_ch = move(nexti, nextj, af_map, af_ch)
  *     all_chess_move(af_map, af_ch)
  *     opp_color = 1 - owner_color             # <<<<<<<<<<<<<<
@@ -51641,7 +51641,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   __pyx_v_opp_color = (1 - __pyx_v_owner_color);
 
-  /* "darkchess.pyx":2305
+  /* "darkchess.pyx":2302
  *     opp_color = 1 - owner_color
  * 
  *     pity = 0             # <<<<<<<<<<<<<<
@@ -51650,7 +51650,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   __pyx_v_pity = 0;
 
-  /* "darkchess.pyx":2306
+  /* "darkchess.pyx":2303
  * 
  *     pity = 0
  *     i2 = None             # <<<<<<<<<<<<<<
@@ -51660,7 +51660,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(Py_None);
   __pyx_v_i2 = ((PyObject*)Py_None);
 
-  /* "darkchess.pyx":2307
+  /* "darkchess.pyx":2304
  *     pity = 0
  *     i2 = None
  *     j2 = None             # <<<<<<<<<<<<<<
@@ -51670,7 +51670,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(Py_None);
   __pyx_v_j2 = Py_None;
 
-  /* "darkchess.pyx":2308
+  /* "darkchess.pyx":2305
  *     i2 = None
  *     j2 = None
  *     i3 = None             # <<<<<<<<<<<<<<
@@ -51680,7 +51680,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(Py_None);
   __pyx_v_i3 = ((PyObject*)Py_None);
 
-  /* "darkchess.pyx":2309
+  /* "darkchess.pyx":2306
  *     j2 = None
  *     i3 = None
  *     j3 = None             # <<<<<<<<<<<<<<
@@ -51690,7 +51690,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(Py_None);
   __pyx_v_j3 = Py_None;
 
-  /* "darkchess.pyx":2311
+  /* "darkchess.pyx":2308
  *     j3 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -51701,26 +51701,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_t_8 = __pyx_v_af_ch; __Pyx_INCREF(__pyx_t_8); __pyx_t_10 = 0;
     __pyx_t_11 = NULL;
   } else {
-    __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2311, __pyx_L1_error)
+    __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2308, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2311, __pyx_L1_error)
+    __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2308, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_11)) {
       if (likely(PyList_CheckExact(__pyx_t_8))) {
         if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_6); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2311, __pyx_L1_error)
+        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_6); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2308, __pyx_L1_error)
         #else
-        __pyx_t_6 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2311, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2308, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         #endif
       } else {
         if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_6); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2311, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_6); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2308, __pyx_L1_error)
         #else
-        __pyx_t_6 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2311, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2308, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         #endif
       }
@@ -51730,7 +51730,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2311, __pyx_L1_error)
+          else __PYX_ERR(0, 2308, __pyx_L1_error)
         }
         break;
       }
@@ -51739,7 +51739,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2312
+    /* "darkchess.pyx":2309
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -51749,7 +51749,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = ((1 == __pyx_v_pity) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2313
+      /* "darkchess.pyx":2310
  *     for chr in af_ch:
  *         if 1 == pity:
  *             break             # <<<<<<<<<<<<<<
@@ -51758,7 +51758,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       goto __pyx_L19_break;
 
-      /* "darkchess.pyx":2312
+      /* "darkchess.pyx":2309
  * 
  *     for chr in af_ch:
  *         if 1 == pity:             # <<<<<<<<<<<<<<
@@ -51767,7 +51767,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
     }
 
-    /* "darkchess.pyx":2314
+    /* "darkchess.pyx":2311
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -51778,26 +51778,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __pyx_t_6 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_6); __pyx_t_12 = 0;
       __pyx_t_13 = NULL;
     } else {
-      __pyx_t_12 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2314, __pyx_L1_error)
+      __pyx_t_12 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2311, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_13 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2314, __pyx_L1_error)
+      __pyx_t_13 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2311, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_13)) {
         if (likely(PyList_CheckExact(__pyx_t_6))) {
           if (__pyx_t_12 >= PyList_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_12); __Pyx_INCREF(__pyx_t_2); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2314, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_12); __Pyx_INCREF(__pyx_t_2); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2311, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2314, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2311, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_12 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_12); __Pyx_INCREF(__pyx_t_2); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2314, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_12); __Pyx_INCREF(__pyx_t_2); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2311, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2314, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2311, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -51807,7 +51807,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2314, __pyx_L1_error)
+            else __PYX_ERR(0, 2311, __pyx_L1_error)
           }
           break;
         }
@@ -51816,54 +51816,54 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2315
+      /* "darkchess.pyx":2312
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_14 = PyObject_RichCompare(__pyx_t_2, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_14 = PyObject_RichCompare(__pyx_t_2, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       if (__pyx_t_3) {
       } else {
         __pyx_t_1 = __pyx_t_3;
         goto __pyx_L24_bool_binop_done;
       }
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_5 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_14, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_14, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2315, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2312, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_1 = __pyx_t_3;
       __pyx_L24_bool_binop_done:;
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2316
+        /* "darkchess.pyx":2313
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                     if pm == nextj:
  *                         if b == None:
  */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2316, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2313, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
           __pyx_t_14 = __pyx_t_5; __Pyx_INCREF(__pyx_t_14); __pyx_t_15 = 0;
           __pyx_t_16 = NULL;
         } else {
-          __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2316, __pyx_L1_error)
+          __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2313, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
-          __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2316, __pyx_L1_error)
+          __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2313, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         for (;;) {
@@ -51871,17 +51871,17 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             if (likely(PyList_CheckExact(__pyx_t_14))) {
               if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_14)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_5 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2316, __pyx_L1_error)
+              __pyx_t_5 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2313, __pyx_L1_error)
               #else
-              __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2316, __pyx_L1_error)
+              __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2313, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
               #endif
             } else {
               if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_14)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2316, __pyx_L1_error)
+              __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2313, __pyx_L1_error)
               #else
-              __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2316, __pyx_L1_error)
+              __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2313, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
               #endif
             }
@@ -51891,7 +51891,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 2316, __pyx_L1_error)
+                else __PYX_ERR(0, 2313, __pyx_L1_error)
               }
               break;
             }
@@ -51900,43 +51900,43 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_5);
           __pyx_t_5 = 0;
 
-          /* "darkchess.pyx":2317
+          /* "darkchess.pyx":2314
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  */
-          __pyx_t_5 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2317, __pyx_L1_error)
-          __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2317, __pyx_L1_error)
+          __pyx_t_5 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_nextj, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2314, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2314, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           if (__pyx_t_1) {
 
-            /* "darkchess.pyx":2318
+            /* "darkchess.pyx":2315
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2318, __pyx_L1_error) }
-            __pyx_t_5 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2318, __pyx_L1_error)
-            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2318, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2315, __pyx_L1_error) }
+            __pyx_t_5 = PyObject_RichCompare(__pyx_v_b, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2315, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2315, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2319
+              /* "darkchess.pyx":2316
  *                     if pm == nextj:
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2319, __pyx_L1_error)
+              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2316, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2319, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2316, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2319, __pyx_L1_error)
+              __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2316, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_17);
               __Pyx_GIVEREF(__pyx_t_5);
               PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_5);
@@ -51947,7 +51947,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_17));
               __pyx_t_17 = 0;
 
-              /* "darkchess.pyx":2320
+              /* "darkchess.pyx":2317
  *                         if b == None:
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -51957,7 +51957,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2321
+              /* "darkchess.pyx":2318
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -51966,7 +51966,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2322
+              /* "darkchess.pyx":2319
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -51975,7 +51975,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               goto __pyx_L27_break;
 
-              /* "darkchess.pyx":2318
+              /* "darkchess.pyx":2315
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:
  *                         if b == None:             # <<<<<<<<<<<<<<
@@ -51984,68 +51984,68 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
             }
 
-            /* "darkchess.pyx":2323
+            /* "darkchess.pyx":2320
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  */
-            __pyx_t_17 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_17); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_17); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            __pyx_t_17 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
-            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_17); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_17); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_17); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_17); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            __pyx_t_17 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_17 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2323, __pyx_L1_error) }
-            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2320, __pyx_L1_error) }
+            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2323, __pyx_L1_error) }
-            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            if (unlikely(!__pyx_v_b)) { __Pyx_RaiseUnboundLocalError("b"); __PYX_ERR(0, 2320, __pyx_L1_error) }
+            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_18 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_18 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_18);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-            __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2323, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2320, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __pyx_t_1 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_9, __pyx_t_17, (1 - __pyx_v_owner_color)) > __pyx_f_9darkchess_eating_value_to_score(__pyx_t_19, __pyx_t_5, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2324
+              /* "darkchess.pyx":2321
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j2 = pm
  *                             pity = 1
  */
-              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2324, __pyx_L1_error)
+              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2321, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
-              __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2324, __pyx_L1_error)
+              __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2321, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_17);
-              __pyx_t_18 = PyTuple_New(2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2324, __pyx_L1_error)
+              __pyx_t_18 = PyTuple_New(2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2321, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_18);
               __Pyx_GIVEREF(__pyx_t_5);
               PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_5);
@@ -52056,7 +52056,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_DECREF_SET(__pyx_v_i2, ((PyObject*)__pyx_t_18));
               __pyx_t_18 = 0;
 
-              /* "darkchess.pyx":2325
+              /* "darkchess.pyx":2322
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm             # <<<<<<<<<<<<<<
@@ -52066,7 +52066,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j2, __pyx_v_pm);
 
-              /* "darkchess.pyx":2326
+              /* "darkchess.pyx":2323
  *                             i2 = (ch.row, ch.col)
  *                             j2 = pm
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -52075,7 +52075,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2327
+              /* "darkchess.pyx":2324
  *                             j2 = pm
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -52084,7 +52084,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               goto __pyx_L27_break;
 
-              /* "darkchess.pyx":2323
+              /* "darkchess.pyx":2320
  *                             pity = 1
  *                             break
  *                         elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -52093,7 +52093,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
             }
 
-            /* "darkchess.pyx":2317
+            /* "darkchess.pyx":2314
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:
  *                     if pm == nextj:             # <<<<<<<<<<<<<<
@@ -52102,7 +52102,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
           }
 
-          /* "darkchess.pyx":2316
+          /* "darkchess.pyx":2313
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:
  *                 for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -52113,7 +52113,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __pyx_L27_break:;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-        /* "darkchess.pyx":2315
+        /* "darkchess.pyx":2312
  *             break
  *         for ch in chr:
  *             if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -52122,7 +52122,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       }
 
-      /* "darkchess.pyx":2314
+      /* "darkchess.pyx":2311
  *         if 1 == pity:
  *             break
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -52132,7 +52132,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "darkchess.pyx":2311
+    /* "darkchess.pyx":2308
  *     j3 = None
  * 
  *     for chr in af_ch:             # <<<<<<<<<<<<<<
@@ -52143,38 +52143,38 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   __pyx_L19_break:;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "darkchess.pyx":2329
+  /* "darkchess.pyx":2326
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  */
-  __pyx_t_8 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2329, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2329, __pyx_L1_error)
+  __pyx_t_8 = PyObject_RichCompare(__pyx_v_i2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2326, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2326, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   if (__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L31_bool_binop_done;
   }
-  __pyx_t_8 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2329, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2329, __pyx_L1_error)
+  __pyx_t_8 = PyObject_RichCompare(__pyx_v_j2, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2326, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2326, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L31_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2330
+    /* "darkchess.pyx":2327
  * 
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)             # <<<<<<<<<<<<<<
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_copy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2330, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_copy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2330, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -52189,22 +52189,22 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     }
     __pyx_t_8 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_6, __pyx_v_af_map) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_v_af_map);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2330, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     __pyx_v_af2_map = __pyx_t_8;
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2331
+    /* "darkchess.pyx":2328
  *     if i2!= None and j2!= None:
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)             # <<<<<<<<<<<<<<
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_copy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2331, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_copy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2328, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2331, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2328, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     __pyx_t_14 = NULL;
@@ -52219,20 +52219,20 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     }
     __pyx_t_8 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_14, __pyx_v_af_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_af_ch);
     __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2331, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2328, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_af2_ch = __pyx_t_8;
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2332
+    /* "darkchess.pyx":2329
  *         af2_map = copy.deepcopy(af_map)
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af2_map, af2_ch)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_move); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2332, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_move); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2329, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_14 = NULL;
     __pyx_t_19 = 0;
@@ -52249,7 +52249,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[5] = {__pyx_t_14, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_19, 4+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_19, 4+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_GOTREF(__pyx_t_8);
     } else
@@ -52257,13 +52257,13 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[5] = {__pyx_t_14, __pyx_v_i2, __pyx_v_j2, __pyx_v_af2_map, __pyx_v_af2_ch};
-      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_19, 4+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_19, 4+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_GOTREF(__pyx_t_8);
     } else
     #endif
     {
-      __pyx_t_18 = PyTuple_New(4+__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_18 = PyTuple_New(4+__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       if (__pyx_t_14) {
         __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -52280,7 +52280,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_v_af2_ch);
       __Pyx_GIVEREF(__pyx_v_af2_ch);
       PyTuple_SET_ITEM(__pyx_t_18, 3+__pyx_t_19, __pyx_v_af2_ch);
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_18, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_18, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
     }
@@ -52291,7 +52291,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2332, __pyx_L1_error)
+        __PYX_ERR(0, 2329, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -52304,15 +52304,15 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_18);
       #else
-      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_18 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_18 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       #endif
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_14 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2332, __pyx_L1_error)
+      __pyx_t_14 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_7 = Py_TYPE(__pyx_t_14)->tp_iternext;
@@ -52320,7 +52320,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_GOTREF(__pyx_t_6);
       index = 1; __pyx_t_18 = __pyx_t_7(__pyx_t_14); if (unlikely(!__pyx_t_18)) goto __pyx_L33_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_18);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_14), 2) < 0) __PYX_ERR(0, 2332, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_14), 2) < 0) __PYX_ERR(0, 2329, __pyx_L1_error)
       __pyx_t_7 = NULL;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       goto __pyx_L34_unpacking_done;
@@ -52328,7 +52328,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __pyx_t_7 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2332, __pyx_L1_error)
+      __PYX_ERR(0, 2329, __pyx_L1_error)
       __pyx_L34_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af2_map, __pyx_t_6);
@@ -52336,7 +52336,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF_SET(__pyx_v_af2_ch, __pyx_t_18);
     __pyx_t_18 = 0;
 
-    /* "darkchess.pyx":2333
+    /* "darkchess.pyx":2330
  *         af2_ch = copy.deepcopy(af_ch)
  *         af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
  *         all_chess_move(af2_map, af2_ch)             # <<<<<<<<<<<<<<
@@ -52345,7 +52345,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af2_map, __pyx_v_af2_ch);
 
-    /* "darkchess.pyx":2335
+    /* "darkchess.pyx":2332
  *         all_chess_move(af2_map, af2_ch)
  * 
  *         (ii, jj) = j2             # <<<<<<<<<<<<<<
@@ -52358,7 +52358,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2335, __pyx_L1_error)
+        __PYX_ERR(0, 2332, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -52371,21 +52371,21 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_t_18);
       #else
-      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2335, __pyx_L1_error)
+      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2332, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_18 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2335, __pyx_L1_error)
+      __pyx_t_18 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2332, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       #endif
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_6 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2335, __pyx_L1_error)
+      __pyx_t_6 = PyObject_GetIter(__pyx_v_j2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2332, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = Py_TYPE(__pyx_t_6)->tp_iternext;
       index = 0; __pyx_t_8 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_8)) goto __pyx_L35_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_8);
       index = 1; __pyx_t_18 = __pyx_t_7(__pyx_t_6); if (unlikely(!__pyx_t_18)) goto __pyx_L35_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_18);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2335, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_6), 2) < 0) __PYX_ERR(0, 2332, __pyx_L1_error)
       __pyx_t_7 = NULL;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       goto __pyx_L36_unpacking_done;
@@ -52393,7 +52393,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2335, __pyx_L1_error)
+      __PYX_ERR(0, 2332, __pyx_L1_error)
       __pyx_L36_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_8);
@@ -52401,22 +52401,22 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_jj, __pyx_t_18);
     __pyx_t_18 = 0;
 
-    /* "darkchess.pyx":2336
+    /* "darkchess.pyx":2333
  * 
  *         (ii, jj) = j2
  *         b = af2_map[ii][jj]             # <<<<<<<<<<<<<<
  * 
  *         for chr in af2_ch:
  */
-    __pyx_t_18 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2336, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_PyObject_GetItem(__pyx_v_af2_map, __pyx_v_ii); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_18, __pyx_v_jj); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2336, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_18, __pyx_v_jj); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
     __Pyx_XDECREF_SET(__pyx_v_b, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2338
+    /* "darkchess.pyx":2335
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -52427,26 +52427,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __pyx_t_8 = __pyx_v_af2_ch; __Pyx_INCREF(__pyx_t_8); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2338, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af2_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2335, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2338, __pyx_L1_error)
+      __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2335, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_11)) {
         if (likely(PyList_CheckExact(__pyx_t_8))) {
           if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_18 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_18); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2338, __pyx_L1_error)
+          __pyx_t_18 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_18); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2335, __pyx_L1_error)
           #else
-          __pyx_t_18 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2338, __pyx_L1_error)
+          __pyx_t_18 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2335, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_18);
           #endif
         } else {
           if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_18 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_18); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2338, __pyx_L1_error)
+          __pyx_t_18 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_18); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2335, __pyx_L1_error)
           #else
-          __pyx_t_18 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2338, __pyx_L1_error)
+          __pyx_t_18 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2335, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_18);
           #endif
         }
@@ -52456,7 +52456,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2338, __pyx_L1_error)
+            else __PYX_ERR(0, 2335, __pyx_L1_error)
           }
           break;
         }
@@ -52465,7 +52465,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_18);
       __pyx_t_18 = 0;
 
-      /* "darkchess.pyx":2339
+      /* "darkchess.pyx":2336
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -52475,7 +52475,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __pyx_t_1 = ((0 == __pyx_v_pity) != 0);
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2340
+        /* "darkchess.pyx":2337
  *         for chr in af2_ch:
  *             if 0 == pity:
  *                 break             # <<<<<<<<<<<<<<
@@ -52484,7 +52484,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
         goto __pyx_L38_break;
 
-        /* "darkchess.pyx":2339
+        /* "darkchess.pyx":2336
  * 
  *         for chr in af2_ch:
  *             if 0 == pity:             # <<<<<<<<<<<<<<
@@ -52493,7 +52493,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       }
 
-      /* "darkchess.pyx":2341
+      /* "darkchess.pyx":2338
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -52504,26 +52504,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __pyx_t_18 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_18); __pyx_t_12 = 0;
         __pyx_t_13 = NULL;
       } else {
-        __pyx_t_12 = -1; __pyx_t_18 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2341, __pyx_L1_error)
+        __pyx_t_12 = -1; __pyx_t_18 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2338, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __pyx_t_13 = Py_TYPE(__pyx_t_18)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2341, __pyx_L1_error)
+        __pyx_t_13 = Py_TYPE(__pyx_t_18)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2338, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_13)) {
           if (likely(PyList_CheckExact(__pyx_t_18))) {
             if (__pyx_t_12 >= PyList_GET_SIZE(__pyx_t_18)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyList_GET_ITEM(__pyx_t_18, __pyx_t_12); __Pyx_INCREF(__pyx_t_6); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2341, __pyx_L1_error)
+            __pyx_t_6 = PyList_GET_ITEM(__pyx_t_18, __pyx_t_12); __Pyx_INCREF(__pyx_t_6); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2338, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_18, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2341, __pyx_L1_error)
+            __pyx_t_6 = PySequence_ITEM(__pyx_t_18, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2338, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
             #endif
           } else {
             if (__pyx_t_12 >= PyTuple_GET_SIZE(__pyx_t_18)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_18, __pyx_t_12); __Pyx_INCREF(__pyx_t_6); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2341, __pyx_L1_error)
+            __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_18, __pyx_t_12); __Pyx_INCREF(__pyx_t_6); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2338, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_18, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2341, __pyx_L1_error)
+            __pyx_t_6 = PySequence_ITEM(__pyx_t_18, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2338, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
             #endif
           }
@@ -52533,7 +52533,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 2341, __pyx_L1_error)
+              else __PYX_ERR(0, 2338, __pyx_L1_error)
             }
             break;
           }
@@ -52542,54 +52542,54 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_6);
         __pyx_t_6 = 0;
 
-        /* "darkchess.pyx":2342
+        /* "darkchess.pyx":2339
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_14 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyInt_From_int(__pyx_v_owner_color); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_17 = PyObject_RichCompare(__pyx_t_6, __pyx_t_14, Py_EQ); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_17 = PyObject_RichCompare(__pyx_t_6, __pyx_t_14, Py_EQ); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
         if (__pyx_t_3) {
         } else {
           __pyx_t_1 = __pyx_t_3;
           goto __pyx_L43_bool_binop_done;
         }
-        __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_14 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_17, 1, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_17, 1, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2342, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2339, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __pyx_t_1 = __pyx_t_3;
         __pyx_L43_bool_binop_done:;
         if (__pyx_t_1) {
 
-          /* "darkchess.pyx":2343
+          /* "darkchess.pyx":2340
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i3 = (ch.row, ch.col)
  */
-          __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2343, __pyx_L1_error)
+          __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2340, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
           if (likely(PyList_CheckExact(__pyx_t_14)) || PyTuple_CheckExact(__pyx_t_14)) {
             __pyx_t_17 = __pyx_t_14; __Pyx_INCREF(__pyx_t_17); __pyx_t_15 = 0;
             __pyx_t_16 = NULL;
           } else {
-            __pyx_t_15 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_t_14); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2343, __pyx_L1_error)
+            __pyx_t_15 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_t_14); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2340, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_17);
-            __pyx_t_16 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2343, __pyx_L1_error)
+            __pyx_t_16 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2340, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           for (;;) {
@@ -52597,17 +52597,17 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               if (likely(PyList_CheckExact(__pyx_t_17))) {
                 if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_17)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_14 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_15); __Pyx_INCREF(__pyx_t_14); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2343, __pyx_L1_error)
+                __pyx_t_14 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_15); __Pyx_INCREF(__pyx_t_14); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2340, __pyx_L1_error)
                 #else
-                __pyx_t_14 = PySequence_ITEM(__pyx_t_17, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2343, __pyx_L1_error)
+                __pyx_t_14 = PySequence_ITEM(__pyx_t_17, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2340, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_14);
                 #endif
               } else {
                 if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_14 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_15); __Pyx_INCREF(__pyx_t_14); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2343, __pyx_L1_error)
+                __pyx_t_14 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_15); __Pyx_INCREF(__pyx_t_14); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2340, __pyx_L1_error)
                 #else
-                __pyx_t_14 = PySequence_ITEM(__pyx_t_17, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2343, __pyx_L1_error)
+                __pyx_t_14 = PySequence_ITEM(__pyx_t_17, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2340, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_14);
                 #endif
               }
@@ -52617,7 +52617,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 2343, __pyx_L1_error)
+                  else __PYX_ERR(0, 2340, __pyx_L1_error)
                 }
                 break;
               }
@@ -52626,56 +52626,56 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_14);
             __pyx_t_14 = 0;
 
-            /* "darkchess.pyx":2344
+            /* "darkchess.pyx":2341
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
  *                             i3 = (ch.row, ch.col)
  *                             j3 = pm
  */
-            __pyx_t_14 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2344, __pyx_L1_error)
-            __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_14 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j2, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2341, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             if (__pyx_t_3) {
             } else {
               __pyx_t_1 = __pyx_t_3;
               goto __pyx_L48_bool_binop_done;
             }
-            __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_14); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_a_ch, __pyx_t_14); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_14); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_14); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_value); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_t_14); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_t_14); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            __pyx_t_14 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_14 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_af2_ch, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_b, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2344, __pyx_L1_error)
+            __pyx_t_5 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_king_live, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2341, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
             __pyx_t_3 = ((__pyx_f_9darkchess_eating_value_to_score(__pyx_t_19, __pyx_t_14, (1 - __pyx_v_owner_color)) <= __pyx_f_9darkchess_eating_value_to_score(__pyx_t_9, __pyx_t_5, __pyx_v_owner_color)) != 0);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -52684,18 +52684,18 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             __pyx_L48_bool_binop_done:;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2345
+              /* "darkchess.pyx":2342
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i3 = (ch.row, ch.col)             # <<<<<<<<<<<<<<
  *                             j3 = pm
  *                             pity = 0
  */
-              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2345, __pyx_L1_error)
+              __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_row); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2342, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
-              __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2345, __pyx_L1_error)
+              __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_col); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2342, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_14);
-              __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2345, __pyx_L1_error)
+              __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2342, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GIVEREF(__pyx_t_5);
               PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5);
@@ -52706,7 +52706,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_DECREF_SET(__pyx_v_i3, ((PyObject*)__pyx_t_2));
               __pyx_t_2 = 0;
 
-              /* "darkchess.pyx":2346
+              /* "darkchess.pyx":2343
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
  *                             i3 = (ch.row, ch.col)
  *                             j3 = pm             # <<<<<<<<<<<<<<
@@ -52716,7 +52716,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               __Pyx_INCREF(__pyx_v_pm);
               __Pyx_DECREF_SET(__pyx_v_j3, __pyx_v_pm);
 
-              /* "darkchess.pyx":2347
+              /* "darkchess.pyx":2344
  *                             i3 = (ch.row, ch.col)
  *                             j3 = pm
  *                             pity = 0             # <<<<<<<<<<<<<<
@@ -52725,7 +52725,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               __pyx_v_pity = 0;
 
-              /* "darkchess.pyx":2348
+              /* "darkchess.pyx":2345
  *                             j3 = pm
  *                             pity = 0
  *                             break             # <<<<<<<<<<<<<<
@@ -52734,7 +52734,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               goto __pyx_L46_break;
 
-              /* "darkchess.pyx":2344
+              /* "darkchess.pyx":2341
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):             # <<<<<<<<<<<<<<
@@ -52743,7 +52743,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
             }
 
-            /* "darkchess.pyx":2343
+            /* "darkchess.pyx":2340
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -52754,7 +52754,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           __pyx_L46_break:;
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-          /* "darkchess.pyx":2342
+          /* "darkchess.pyx":2339
  *                 break
  *             for ch in chr:
  *                 if ch.color == owner_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -52763,7 +52763,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
         }
 
-        /* "darkchess.pyx":2341
+        /* "darkchess.pyx":2338
  *             if 0 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -52773,7 +52773,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       }
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "darkchess.pyx":2338
+      /* "darkchess.pyx":2335
  *         b = af2_map[ii][jj]
  * 
  *         for chr in af2_ch:             # <<<<<<<<<<<<<<
@@ -52784,7 +52784,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_L38_break:;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2329
+    /* "darkchess.pyx":2326
  *                             break
  * 
  *     if i2!= None and j2!= None:             # <<<<<<<<<<<<<<
@@ -52793,41 +52793,41 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "darkchess.pyx":2350
+  /* "darkchess.pyx":2347
  *                             break
  * 
  *     if i3!= None and j3!= None:             # <<<<<<<<<<<<<<
  *         af3_map = copy.deepcopy(af2_map)
  *         af3_ch = copy.deepcopy(af2_ch)
  */
-  __pyx_t_8 = PyObject_RichCompare(__pyx_v_i3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2350, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2350, __pyx_L1_error)
+  __pyx_t_8 = PyObject_RichCompare(__pyx_v_i3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2347, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2347, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   if (__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L51_bool_binop_done;
   }
-  __pyx_t_8 = PyObject_RichCompare(__pyx_v_j3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2350, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2350, __pyx_L1_error)
+  __pyx_t_8 = PyObject_RichCompare(__pyx_v_j3, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2347, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2347, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L51_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2351
+    /* "darkchess.pyx":2348
  * 
  *     if i3!= None and j3!= None:
  *         af3_map = copy.deepcopy(af2_map)             # <<<<<<<<<<<<<<
  *         af3_ch = copy.deepcopy(af2_ch)
  *         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_copy); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2351, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_copy); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
-    __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2351, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-    if (unlikely(!__pyx_v_af2_map)) { __Pyx_RaiseUnboundLocalError("af2_map"); __PYX_ERR(0, 2351, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_af2_map)) { __Pyx_RaiseUnboundLocalError("af2_map"); __PYX_ERR(0, 2348, __pyx_L1_error) }
     __pyx_t_18 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_17))) {
       __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_17);
@@ -52840,25 +52840,25 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     }
     __pyx_t_8 = (__pyx_t_18) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_18, __pyx_v_af2_map) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_v_af2_map);
     __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2351, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     __pyx_v_af3_map = __pyx_t_8;
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2352
+    /* "darkchess.pyx":2349
  *     if i3!= None and j3!= None:
  *         af3_map = copy.deepcopy(af2_map)
  *         af3_ch = copy.deepcopy(af2_ch)             # <<<<<<<<<<<<<<
  *         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
  *         all_chess_move(af3_map, af3_ch)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_copy); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2352, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_copy); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
-    __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2352, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_deepcopy); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-    if (unlikely(!__pyx_v_af2_ch)) { __Pyx_RaiseUnboundLocalError("af2_ch"); __PYX_ERR(0, 2352, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_af2_ch)) { __Pyx_RaiseUnboundLocalError("af2_ch"); __PYX_ERR(0, 2349, __pyx_L1_error) }
     __pyx_t_17 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_18))) {
       __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_18);
@@ -52871,20 +52871,20 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     }
     __pyx_t_8 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_18, __pyx_t_17, __pyx_v_af2_ch) : __Pyx_PyObject_CallOneArg(__pyx_t_18, __pyx_v_af2_ch);
     __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2352, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
     __pyx_v_af3_ch = __pyx_t_8;
     __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2353
+    /* "darkchess.pyx":2350
  *         af3_map = copy.deepcopy(af2_map)
  *         af3_ch = copy.deepcopy(af2_ch)
  *         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)             # <<<<<<<<<<<<<<
  *         all_chess_move(af3_map, af3_ch)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_move); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2353, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_move); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2350, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
     __pyx_t_17 = NULL;
     __pyx_t_9 = 0;
@@ -52901,7 +52901,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_18)) {
       PyObject *__pyx_temp[5] = {__pyx_t_17, __pyx_v_i3, __pyx_v_j3, __pyx_v_af3_map, __pyx_v_af3_ch};
-      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_18, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_18, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
       __Pyx_GOTREF(__pyx_t_8);
     } else
@@ -52909,13 +52909,13 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_18)) {
       PyObject *__pyx_temp[5] = {__pyx_t_17, __pyx_v_i3, __pyx_v_j3, __pyx_v_af3_map, __pyx_v_af3_ch};
-      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_18, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_18, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
       __Pyx_GOTREF(__pyx_t_8);
     } else
     #endif
     {
-      __pyx_t_2 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       if (__pyx_t_17) {
         __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_17); __pyx_t_17 = NULL;
@@ -52932,7 +52932,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_v_af3_ch);
       __Pyx_GIVEREF(__pyx_v_af3_ch);
       PyTuple_SET_ITEM(__pyx_t_2, 3+__pyx_t_9, __pyx_v_af3_ch);
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_18, __pyx_t_2, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_18, __pyx_t_2, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
@@ -52943,7 +52943,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2353, __pyx_L1_error)
+        __PYX_ERR(0, 2350, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -52956,15 +52956,15 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_INCREF(__pyx_t_18);
       __Pyx_INCREF(__pyx_t_2);
       #else
-      __pyx_t_18 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_18 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_17 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2353, __pyx_L1_error)
+      __pyx_t_17 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_7 = Py_TYPE(__pyx_t_17)->tp_iternext;
@@ -52972,7 +52972,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_GOTREF(__pyx_t_18);
       index = 1; __pyx_t_2 = __pyx_t_7(__pyx_t_17); if (unlikely(!__pyx_t_2)) goto __pyx_L53_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_17), 2) < 0) __PYX_ERR(0, 2353, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_17), 2) < 0) __PYX_ERR(0, 2350, __pyx_L1_error)
       __pyx_t_7 = NULL;
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       goto __pyx_L54_unpacking_done;
@@ -52980,7 +52980,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       __pyx_t_7 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2353, __pyx_L1_error)
+      __PYX_ERR(0, 2350, __pyx_L1_error)
       __pyx_L54_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_af3_map, __pyx_t_18);
@@ -52988,7 +52988,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF_SET(__pyx_v_af3_ch, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2354
+    /* "darkchess.pyx":2351
  *         af3_ch = copy.deepcopy(af2_ch)
  *         af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
  *         all_chess_move(af3_map, af3_ch)             # <<<<<<<<<<<<<<
@@ -52997,7 +52997,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
     __pyx_f_9darkchess_all_chess_move(__pyx_v_af3_map, __pyx_v_af3_ch);
 
-    /* "darkchess.pyx":2356
+    /* "darkchess.pyx":2353
  *         all_chess_move(af3_map, af3_ch)
  * 
  *         for chr in af3_ch:             # <<<<<<<<<<<<<<
@@ -53008,26 +53008,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __pyx_t_8 = __pyx_v_af3_ch; __Pyx_INCREF(__pyx_t_8); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af3_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2356, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_af3_ch); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2353, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2356, __pyx_L1_error)
+      __pyx_t_11 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 2353, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_11)) {
         if (likely(PyList_CheckExact(__pyx_t_8))) {
           if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2356, __pyx_L1_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2353, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2356, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2353, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2356, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 2353, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2356, __pyx_L1_error)
+          __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2353, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -53037,7 +53037,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2356, __pyx_L1_error)
+            else __PYX_ERR(0, 2353, __pyx_L1_error)
           }
           break;
         }
@@ -53046,7 +53046,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2357
+      /* "darkchess.pyx":2354
  * 
  *         for chr in af3_ch:
  *             if 1 == pity:             # <<<<<<<<<<<<<<
@@ -53056,7 +53056,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       __pyx_t_1 = ((1 == __pyx_v_pity) != 0);
       if (__pyx_t_1) {
 
-        /* "darkchess.pyx":2358
+        /* "darkchess.pyx":2355
  *         for chr in af3_ch:
  *             if 1 == pity:
  *                 break             # <<<<<<<<<<<<<<
@@ -53065,7 +53065,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
         goto __pyx_L56_break;
 
-        /* "darkchess.pyx":2357
+        /* "darkchess.pyx":2354
  * 
  *         for chr in af3_ch:
  *             if 1 == pity:             # <<<<<<<<<<<<<<
@@ -53074,7 +53074,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
       }
 
-      /* "darkchess.pyx":2359
+      /* "darkchess.pyx":2356
  *             if 1 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -53085,26 +53085,26 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __pyx_t_2 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_2); __pyx_t_12 = 0;
         __pyx_t_13 = NULL;
       } else {
-        __pyx_t_12 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2359, __pyx_L1_error)
+        __pyx_t_12 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2356, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_13 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2359, __pyx_L1_error)
+        __pyx_t_13 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 2356, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_13)) {
           if (likely(PyList_CheckExact(__pyx_t_2))) {
             if (__pyx_t_12 >= PyList_GET_SIZE(__pyx_t_2)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_18 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_12); __Pyx_INCREF(__pyx_t_18); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2359, __pyx_L1_error)
+            __pyx_t_18 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_12); __Pyx_INCREF(__pyx_t_18); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2356, __pyx_L1_error)
             #else
-            __pyx_t_18 = PySequence_ITEM(__pyx_t_2, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2359, __pyx_L1_error)
+            __pyx_t_18 = PySequence_ITEM(__pyx_t_2, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2356, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_18);
             #endif
           } else {
             if (__pyx_t_12 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_18 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_12); __Pyx_INCREF(__pyx_t_18); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2359, __pyx_L1_error)
+            __pyx_t_18 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_12); __Pyx_INCREF(__pyx_t_18); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(0, 2356, __pyx_L1_error)
             #else
-            __pyx_t_18 = PySequence_ITEM(__pyx_t_2, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2359, __pyx_L1_error)
+            __pyx_t_18 = PySequence_ITEM(__pyx_t_2, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2356, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_18);
             #endif
           }
@@ -53114,7 +53114,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 2359, __pyx_L1_error)
+              else __PYX_ERR(0, 2356, __pyx_L1_error)
             }
             break;
           }
@@ -53123,54 +53123,54 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
         __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_18);
         __pyx_t_18 = 0;
 
-        /* "darkchess.pyx":2360
+        /* "darkchess.pyx":2357
  *                 break
  *             for ch in chr:
  *                 if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
  *                     for pm in ch.possible_move:
  *                         if pm == j3:
  */
-        __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_color); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __pyx_t_17 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_17 = __Pyx_PyInt_From_long(__pyx_v_opp_color); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_14 = PyObject_RichCompare(__pyx_t_18, __pyx_t_17, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_14 = PyObject_RichCompare(__pyx_t_18, __pyx_t_17, Py_EQ); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         if (__pyx_t_3) {
         } else {
           __pyx_t_1 = __pyx_t_3;
           goto __pyx_L61_bool_binop_done;
         }
-        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_live); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_17 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_14, 1, 0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_17 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_14, 1, 0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2360, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2357, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
         __pyx_t_1 = __pyx_t_3;
         __pyx_L61_bool_binop_done:;
         if (__pyx_t_1) {
 
-          /* "darkchess.pyx":2361
+          /* "darkchess.pyx":2358
  *             for ch in chr:
  *                 if ch.color == opp_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
  *                         if pm == j3:
  *                             pity = 1
  */
-          __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2361, __pyx_L1_error)
+          __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_possible_move); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2358, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_17);
           if (likely(PyList_CheckExact(__pyx_t_17)) || PyTuple_CheckExact(__pyx_t_17)) {
             __pyx_t_14 = __pyx_t_17; __Pyx_INCREF(__pyx_t_14); __pyx_t_15 = 0;
             __pyx_t_16 = NULL;
           } else {
-            __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_17); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2361, __pyx_L1_error)
+            __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_17); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 2358, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2361, __pyx_L1_error)
+            __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 2358, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
           for (;;) {
@@ -53178,17 +53178,17 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
               if (likely(PyList_CheckExact(__pyx_t_14))) {
                 if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_14)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_17 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_17); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2361, __pyx_L1_error)
+                __pyx_t_17 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_17); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2358, __pyx_L1_error)
                 #else
-                __pyx_t_17 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2361, __pyx_L1_error)
+                __pyx_t_17 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2358, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 #endif
               } else {
                 if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_14)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_17); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2361, __pyx_L1_error)
+                __pyx_t_17 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_17); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 2358, __pyx_L1_error)
                 #else
-                __pyx_t_17 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2361, __pyx_L1_error)
+                __pyx_t_17 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2358, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 #endif
               }
@@ -53198,7 +53198,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 2361, __pyx_L1_error)
+                  else __PYX_ERR(0, 2358, __pyx_L1_error)
                 }
                 break;
               }
@@ -53207,19 +53207,19 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
             __Pyx_XDECREF_SET(__pyx_v_pm, __pyx_t_17);
             __pyx_t_17 = 0;
 
-            /* "darkchess.pyx":2362
+            /* "darkchess.pyx":2359
  *                 if ch.color == opp_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j3:             # <<<<<<<<<<<<<<
  *                             pity = 1
  *                             break
  */
-            __pyx_t_17 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j3, Py_EQ); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2362, __pyx_L1_error)
-            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2362, __pyx_L1_error)
+            __pyx_t_17 = PyObject_RichCompare(__pyx_v_pm, __pyx_v_j3, Py_EQ); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 2359, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 2359, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
             if (__pyx_t_1) {
 
-              /* "darkchess.pyx":2363
+              /* "darkchess.pyx":2360
  *                     for pm in ch.possible_move:
  *                         if pm == j3:
  *                             pity = 1             # <<<<<<<<<<<<<<
@@ -53228,7 +53228,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               __pyx_v_pity = 1;
 
-              /* "darkchess.pyx":2364
+              /* "darkchess.pyx":2361
  *                         if pm == j3:
  *                             pity = 1
  *                             break             # <<<<<<<<<<<<<<
@@ -53237,7 +53237,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
               goto __pyx_L64_break;
 
-              /* "darkchess.pyx":2362
+              /* "darkchess.pyx":2359
  *                 if ch.color == opp_color and 1 == ch.live:
  *                     for pm in ch.possible_move:
  *                         if pm == j3:             # <<<<<<<<<<<<<<
@@ -53246,7 +53246,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
             }
 
-            /* "darkchess.pyx":2361
+            /* "darkchess.pyx":2358
  *             for ch in chr:
  *                 if ch.color == opp_color and 1 == ch.live:
  *                     for pm in ch.possible_move:             # <<<<<<<<<<<<<<
@@ -53257,7 +53257,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
           __pyx_L64_break:;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-          /* "darkchess.pyx":2360
+          /* "darkchess.pyx":2357
  *                 break
  *             for ch in chr:
  *                 if ch.color == opp_color and 1 == ch.live:             # <<<<<<<<<<<<<<
@@ -53266,7 +53266,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
         }
 
-        /* "darkchess.pyx":2359
+        /* "darkchess.pyx":2356
  *             if 1 == pity:
  *                 break
  *             for ch in chr:             # <<<<<<<<<<<<<<
@@ -53276,7 +53276,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2356
+      /* "darkchess.pyx":2353
  *         all_chess_move(af3_map, af3_ch)
  * 
  *         for chr in af3_ch:             # <<<<<<<<<<<<<<
@@ -53287,7 +53287,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
     __pyx_L56_break:;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "darkchess.pyx":2350
+    /* "darkchess.pyx":2347
  *                             break
  * 
  *     if i3!= None and j3!= None:             # <<<<<<<<<<<<<<
@@ -53296,7 +53296,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "darkchess.pyx":2365
+  /* "darkchess.pyx":2362
  *                             pity = 1
  *                             break
  *     return pity             # <<<<<<<<<<<<<<
@@ -53304,13 +53304,13 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
  * cdef int eating_value_to_score(int value, king, int owner_color):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_8 = __Pyx_PyInt_From_long(__pyx_v_pity); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2365, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyInt_From_long(__pyx_v_pity); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2362, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_r = __pyx_t_8;
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2277
+  /* "darkchess.pyx":2274
  * 
  * # will_be_dead_pity
  * def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
@@ -53354,7 +53354,7 @@ static PyObject *__pyx_pf_9darkchess_34will_dead_pity(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2367
+/* "darkchess.pyx":2364
  *     return pity
  * 
  * cdef int eating_value_to_score(int value, king, int owner_color):             # <<<<<<<<<<<<<<
@@ -53370,7 +53370,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
   int __pyx_t_3;
   __Pyx_RefNannySetupContext("eating_value_to_score", 0);
 
-  /* "darkchess.pyx":2368
+  /* "darkchess.pyx":2365
  * 
  * cdef int eating_value_to_score(int value, king, int owner_color):
  *     if 1 == value:             # <<<<<<<<<<<<<<
@@ -53380,23 +53380,23 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
   switch (__pyx_v_value) {
     case 1:
 
-    /* "darkchess.pyx":2369
+    /* "darkchess.pyx":2366
  * cdef int eating_value_to_score(int value, king, int owner_color):
  *     if 1 == value:
  *         if 1 == king[owner_color]:             # <<<<<<<<<<<<<<
  *             return 45
  *         else:
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_king, __pyx_v_owner_color, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2369, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_king, __pyx_v_owner_color, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2366, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2369, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_EqCObj(__pyx_int_1, __pyx_t_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2366, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2369, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 2366, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_3) {
 
-      /* "darkchess.pyx":2370
+      /* "darkchess.pyx":2367
  *     if 1 == value:
  *         if 1 == king[owner_color]:
  *             return 45             # <<<<<<<<<<<<<<
@@ -53406,7 +53406,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
       __pyx_r = 45;
       goto __pyx_L0;
 
-      /* "darkchess.pyx":2369
+      /* "darkchess.pyx":2366
  * cdef int eating_value_to_score(int value, king, int owner_color):
  *     if 1 == value:
  *         if 1 == king[owner_color]:             # <<<<<<<<<<<<<<
@@ -53415,7 +53415,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
  */
     }
 
-    /* "darkchess.pyx":2372
+    /* "darkchess.pyx":2369
  *             return 45
  *         else:
  *             return 40             # <<<<<<<<<<<<<<
@@ -53427,7 +53427,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
       goto __pyx_L0;
     }
 
-    /* "darkchess.pyx":2368
+    /* "darkchess.pyx":2365
  * 
  * cdef int eating_value_to_score(int value, king, int owner_color):
  *     if 1 == value:             # <<<<<<<<<<<<<<
@@ -53437,7 +53437,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 2:
 
-    /* "darkchess.pyx":2374
+    /* "darkchess.pyx":2371
  *             return 40
  *     elif 2 == value:
  *         return 300             # <<<<<<<<<<<<<<
@@ -53447,7 +53447,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 0x12C;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2373
+    /* "darkchess.pyx":2370
  *         else:
  *             return 40
  *     elif 2 == value:             # <<<<<<<<<<<<<<
@@ -53457,7 +53457,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 3:
 
-    /* "darkchess.pyx":2376
+    /* "darkchess.pyx":2373
  *         return 300
  *     elif 3 == value:
  *         return 43             # <<<<<<<<<<<<<<
@@ -53467,7 +53467,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 43;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2375
+    /* "darkchess.pyx":2372
  *     elif 2 == value:
  *         return 300
  *     elif 3 == value:             # <<<<<<<<<<<<<<
@@ -53477,7 +53477,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 4:
 
-    /* "darkchess.pyx":2378
+    /* "darkchess.pyx":2375
  *         return 43
  *     elif 4 == value:
  *         return 89             # <<<<<<<<<<<<<<
@@ -53487,7 +53487,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 89;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2377
+    /* "darkchess.pyx":2374
  *     elif 3 == value:
  *         return 43
  *     elif 4 == value:             # <<<<<<<<<<<<<<
@@ -53497,7 +53497,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 5:
 
-    /* "darkchess.pyx":2380
+    /* "darkchess.pyx":2377
  *         return 89
  *     elif 5 == value:
  *         return 179             # <<<<<<<<<<<<<<
@@ -53507,7 +53507,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 0xB3;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2379
+    /* "darkchess.pyx":2376
  *     elif 4 == value:
  *         return 89
  *     elif 5 == value:             # <<<<<<<<<<<<<<
@@ -53517,7 +53517,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 6:
 
-    /* "darkchess.pyx":2382
+    /* "darkchess.pyx":2379
  *         return 179
  *     elif 6 == value:
  *         return 599             # <<<<<<<<<<<<<<
@@ -53527,7 +53527,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 0x257;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2381
+    /* "darkchess.pyx":2378
  *     elif 5 == value:
  *         return 179
  *     elif 6 == value:             # <<<<<<<<<<<<<<
@@ -53537,7 +53537,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     break;
     case 7:
 
-    /* "darkchess.pyx":2384
+    /* "darkchess.pyx":2381
  *         return 599
  *     elif 7 == value:
  *         return 1200             # <<<<<<<<<<<<<<
@@ -53547,7 +53547,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     __pyx_r = 0x4B0;
     goto __pyx_L0;
 
-    /* "darkchess.pyx":2383
+    /* "darkchess.pyx":2380
  *     elif 6 == value:
  *         return 599
  *     elif 7 == value:             # <<<<<<<<<<<<<<
@@ -53558,7 +53558,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     default: break;
   }
 
-  /* "darkchess.pyx":2367
+  /* "darkchess.pyx":2364
  *     return pity
  * 
  * cdef int eating_value_to_score(int value, king, int owner_color):             # <<<<<<<<<<<<<<
@@ -53579,7 +53579,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2386
+/* "darkchess.pyx":2383
  *         return 1200
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
@@ -53608,7 +53608,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     }
   }
 
-  /* "darkchess.pyx":2388
+  /* "darkchess.pyx":2385
  * cdef void display_font(screen, int AI_vs_AI = 0):
  * 
  *     if 1 == player_win:             # <<<<<<<<<<<<<<
@@ -53618,7 +53618,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_t_1 = ((1 == __pyx_v_9darkchess_player_win) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2389
+    /* "darkchess.pyx":2386
  * 
  *     if 1 == player_win:
  *         if 0 == AI_vs_AI:             # <<<<<<<<<<<<<<
@@ -53628,7 +53628,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __pyx_t_1 = ((0 == __pyx_v_AI_vs_AI) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2390
+      /* "darkchess.pyx":2387
  *     if 1 == player_win:
  *         if 0 == AI_vs_AI:
  *             winer = u"!!!"             # <<<<<<<<<<<<<<
@@ -53638,7 +53638,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_kp_u__15);
       __pyx_v_winer = __pyx_kp_u__15;
 
-      /* "darkchess.pyx":2389
+      /* "darkchess.pyx":2386
  * 
  *     if 1 == player_win:
  *         if 0 == AI_vs_AI:             # <<<<<<<<<<<<<<
@@ -53648,7 +53648,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       goto __pyx_L4;
     }
 
-    /* "darkchess.pyx":2392
+    /* "darkchess.pyx":2389
  *             winer = u"!!!"
  *         else:
  *             winer = u"!!!"             # <<<<<<<<<<<<<<
@@ -53661,16 +53661,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     }
     __pyx_L4:;
 
-    /* "darkchess.pyx":2393
+    /* "darkchess.pyx":2390
  *         else:
  *             winer = u"!!!"
  *         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif -1 == player_win:
  *         winer = u"..."
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2393, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -53687,7 +53687,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_winer, __pyx_tuple__17};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else
@@ -53695,13 +53695,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_winer, __pyx_tuple__17};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -53712,16 +53712,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_tuple__17);
       __Pyx_GIVEREF(__pyx_tuple__17);
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__17);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2393, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2393, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_5);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5);
@@ -53744,7 +53744,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -53754,7 +53754,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -53762,7 +53762,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -53773,14 +53773,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_6);
       __pyx_t_4 = 0;
       __pyx_t_6 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2390, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2388
+    /* "darkchess.pyx":2385
  * cdef void display_font(screen, int AI_vs_AI = 0):
  * 
  *     if 1 == player_win:             # <<<<<<<<<<<<<<
@@ -53790,7 +53790,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     goto __pyx_L3;
   }
 
-  /* "darkchess.pyx":2394
+  /* "darkchess.pyx":2391
  *             winer = u"!!!"
  *         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
  *     elif -1 == player_win:             # <<<<<<<<<<<<<<
@@ -53800,7 +53800,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_t_1 = ((-1L == __pyx_v_9darkchess_player_win) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2395
+    /* "darkchess.pyx":2392
  *         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
  *     elif -1 == player_win:
  *         winer = u"..."             # <<<<<<<<<<<<<<
@@ -53810,16 +53810,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __Pyx_INCREF(__pyx_kp_u__18);
     __pyx_v_winer = __pyx_kp_u__18;
 
-    /* "darkchess.pyx":2396
+    /* "darkchess.pyx":2393
  *     elif -1 == player_win:
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif -2 == player_win:
  *         winer = u"..."
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2396, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_4 = NULL;
     __pyx_t_7 = 0;
@@ -53836,7 +53836,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_winer, __pyx_tuple__19};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_5);
     } else
@@ -53844,13 +53844,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_winer, __pyx_tuple__19};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_5);
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_4) {
         __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -53861,16 +53861,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_tuple__19);
       __Pyx_GIVEREF(__pyx_tuple__19);
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__19);
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2396, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2396, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GIVEREF(__pyx_t_6);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6);
@@ -53893,7 +53893,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -53903,7 +53903,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -53911,7 +53911,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -53922,14 +53922,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_5 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2393, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2394
+    /* "darkchess.pyx":2391
  *             winer = u"!!!"
  *         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
  *     elif -1 == player_win:             # <<<<<<<<<<<<<<
@@ -53939,7 +53939,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     goto __pyx_L3;
   }
 
-  /* "darkchess.pyx":2397
+  /* "darkchess.pyx":2394
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif -2 == player_win:             # <<<<<<<<<<<<<<
@@ -53949,7 +53949,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_t_1 = ((-2L == __pyx_v_9darkchess_player_win) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2398
+    /* "darkchess.pyx":2395
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif -2 == player_win:
  *         winer = u"..."             # <<<<<<<<<<<<<<
@@ -53959,16 +53959,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __Pyx_INCREF(__pyx_kp_u__20);
     __pyx_v_winer = __pyx_kp_u__20;
 
-    /* "darkchess.pyx":2399
+    /* "darkchess.pyx":2396
  *     elif -2 == player_win:
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif 1 == first:
  *         if 1 == player_first:
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2399, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2399, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_7 = 0;
@@ -53985,7 +53985,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_winer, __pyx_tuple__19};
-      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_6);
     } else
@@ -53993,13 +53993,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_winer, __pyx_tuple__19};
-      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_6);
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_5) {
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -54010,16 +54010,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_tuple__19);
       __Pyx_GIVEREF(__pyx_tuple__19);
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__19);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2399, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2399, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2399, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_GIVEREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4);
@@ -54042,7 +54042,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54052,7 +54052,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54060,7 +54060,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     } else
     #endif
     {
-      __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54071,14 +54071,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_7, __pyx_t_5);
       __pyx_t_6 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2399, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2396, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "darkchess.pyx":2397
+    /* "darkchess.pyx":2394
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif -2 == player_win:             # <<<<<<<<<<<<<<
@@ -54088,7 +54088,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     goto __pyx_L3;
   }
 
-  /* "darkchess.pyx":2400
+  /* "darkchess.pyx":2397
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif 1 == first:             # <<<<<<<<<<<<<<
@@ -54098,7 +54098,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_t_1 = ((1 == __pyx_v_9darkchess_first) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2401
+    /* "darkchess.pyx":2398
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif 1 == first:
  *         if 1 == player_first:             # <<<<<<<<<<<<<<
@@ -54108,7 +54108,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __pyx_t_1 = ((1 == __pyx_v_9darkchess_player_first) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2402
+      /* "darkchess.pyx":2399
  *     elif 1 == first:
  *         if 1 == player_first:
  *             up = u""             # <<<<<<<<<<<<<<
@@ -54118,16 +54118,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_n_u__21);
       __pyx_v_up = __pyx_n_u__21;
 
-      /* "darkchess.pyx":2403
+      /* "darkchess.pyx":2400
  *         if 1 == player_first:
  *             up = u""
  *             screen.blit(write(up, (150, 150, 150)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *         else:
  *             uc = u""
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2403, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2400, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2400, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = NULL;
       __pyx_t_7 = 0;
@@ -54144,7 +54144,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_up, __pyx_tuple__22};
-        __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else
@@ -54152,13 +54152,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_up, __pyx_tuple__22};
-        __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_6) {
           __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -54169,16 +54169,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__22);
         __Pyx_GIVEREF(__pyx_tuple__22);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__22);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2400, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2403, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2400, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2403, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2400, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5);
@@ -54201,7 +54201,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -54211,7 +54211,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -54219,7 +54219,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54230,14 +54230,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_6);
         __pyx_t_4 = 0;
         __pyx_t_6 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2400, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2401
+      /* "darkchess.pyx":2398
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif 1 == first:
  *         if 1 == player_first:             # <<<<<<<<<<<<<<
@@ -54247,7 +54247,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       goto __pyx_L5;
     }
 
-    /* "darkchess.pyx":2405
+    /* "darkchess.pyx":2402
  *             screen.blit(write(up, (150, 150, 150)), (text_x, text_y))
  *         else:
  *             uc = u""             # <<<<<<<<<<<<<<
@@ -54258,16 +54258,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       __Pyx_INCREF(__pyx_n_u__23);
       __pyx_v_uc = __pyx_n_u__23;
 
-      /* "darkchess.pyx":2406
+      /* "darkchess.pyx":2403
  *         else:
  *             uc = u""
  *             screen.blit(write(uc, (150, 150, 150)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif turn_id == player_color:
  *         up = u""
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2406, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2406, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_4 = NULL;
       __pyx_t_7 = 0;
@@ -54284,7 +54284,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_uc, __pyx_tuple__22};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_5);
       } else
@@ -54292,13 +54292,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_uc, __pyx_tuple__22};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_5);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_4) {
           __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -54309,16 +54309,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__22);
         __Pyx_GIVEREF(__pyx_tuple__22);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__22);
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2406, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2406, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2406, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6);
@@ -54341,7 +54341,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -54351,7 +54351,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -54359,7 +54359,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54370,7 +54370,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_7, __pyx_t_4);
         __pyx_t_5 = 0;
         __pyx_t_4 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2406, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2403, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
@@ -54379,7 +54379,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     }
     __pyx_L5:;
 
-    /* "darkchess.pyx":2400
+    /* "darkchess.pyx":2397
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
  *     elif 1 == first:             # <<<<<<<<<<<<<<
@@ -54389,7 +54389,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     goto __pyx_L3;
   }
 
-  /* "darkchess.pyx":2407
+  /* "darkchess.pyx":2404
  *             uc = u""
  *             screen.blit(write(uc, (150, 150, 150)), (text_x, text_y))
  *     elif turn_id == player_color:             # <<<<<<<<<<<<<<
@@ -54399,7 +54399,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_t_1 = ((__pyx_v_9darkchess_turn_id == __pyx_v_9darkchess_player_color) != 0);
   if (__pyx_t_1) {
 
-    /* "darkchess.pyx":2408
+    /* "darkchess.pyx":2405
  *             screen.blit(write(uc, (150, 150, 150)), (text_x, text_y))
  *     elif turn_id == player_color:
  *         up = u""             # <<<<<<<<<<<<<<
@@ -54409,7 +54409,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __Pyx_INCREF(__pyx_n_u__24);
     __pyx_v_up = __pyx_n_u__24;
 
-    /* "darkchess.pyx":2409
+    /* "darkchess.pyx":2406
  *     elif turn_id == player_color:
  *         up = u""
  *         if 1 == player_color:             # <<<<<<<<<<<<<<
@@ -54419,16 +54419,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __pyx_t_1 = ((1 == __pyx_v_9darkchess_player_color) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2410
+      /* "darkchess.pyx":2407
  *         up = u""
  *         if 1 == player_color:
  *             screen.blit(write(up, (255, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *         else:
  *             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2410, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2407, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2410, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2407, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_5 = NULL;
       __pyx_t_7 = 0;
@@ -54445,7 +54445,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_up, __pyx_tuple__25};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
@@ -54453,13 +54453,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_up, __pyx_tuple__25};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_5) {
           __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -54470,16 +54470,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__25);
         __Pyx_GIVEREF(__pyx_tuple__25);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__25);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2410, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2407, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2410, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2407, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2410, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2407, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4);
@@ -54502,7 +54502,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54512,7 +54512,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54520,7 +54520,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54531,14 +54531,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_7, __pyx_t_5);
         __pyx_t_6 = 0;
         __pyx_t_5 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2410, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2407, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2409
+      /* "darkchess.pyx":2406
  *     elif turn_id == player_color:
  *         up = u""
  *         if 1 == player_color:             # <<<<<<<<<<<<<<
@@ -54548,7 +54548,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       goto __pyx_L6;
     }
 
-    /* "darkchess.pyx":2412
+    /* "darkchess.pyx":2409
  *             screen.blit(write(up, (255, 0, 0)), (text_x, text_y))
  *         else:
  *             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
@@ -54556,9 +54556,9 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
  *         uc = u""
  */
     /*else*/ {
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2412, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2412, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = NULL;
       __pyx_t_7 = 0;
@@ -54575,7 +54575,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_up, __pyx_tuple__26};
-        __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else
@@ -54583,13 +54583,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_up, __pyx_tuple__26};
-        __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_6) {
           __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -54600,16 +54600,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__26);
         __Pyx_GIVEREF(__pyx_tuple__26);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__26);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2412, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2412, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2412, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5);
@@ -54632,7 +54632,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -54642,7 +54642,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_4, __pyx_t_6};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -54650,7 +54650,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54661,7 +54661,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_6);
         __pyx_t_4 = 0;
         __pyx_t_6 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2412, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
@@ -54670,7 +54670,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     }
     __pyx_L6:;
 
-    /* "darkchess.pyx":2407
+    /* "darkchess.pyx":2404
  *             uc = u""
  *             screen.blit(write(uc, (150, 150, 150)), (text_x, text_y))
  *     elif turn_id == player_color:             # <<<<<<<<<<<<<<
@@ -54680,7 +54680,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     goto __pyx_L3;
   }
 
-  /* "darkchess.pyx":2414
+  /* "darkchess.pyx":2411
  *             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))
  *     else: #turn_id == com_color or turn_id == 2
  *         uc = u""             # <<<<<<<<<<<<<<
@@ -54691,7 +54691,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __Pyx_INCREF(__pyx_n_u__27);
     __pyx_v_uc = __pyx_n_u__27;
 
-    /* "darkchess.pyx":2415
+    /* "darkchess.pyx":2412
  *     else: #turn_id == com_color or turn_id == 2
  *         uc = u""
  *         if 1 == com_color:             # <<<<<<<<<<<<<<
@@ -54701,16 +54701,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
     __pyx_t_1 = ((1 == __pyx_v_9darkchess_com_color) != 0);
     if (__pyx_t_1) {
 
-      /* "darkchess.pyx":2416
+      /* "darkchess.pyx":2413
  *         uc = u""
  *         if 1 == com_color:
  *             screen.blit(write(uc, (255, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *         else:
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2416, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2413, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2416, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2413, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_4 = NULL;
       __pyx_t_7 = 0;
@@ -54727,7 +54727,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_uc, __pyx_tuple__25};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_5);
       } else
@@ -54735,13 +54735,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_v_uc, __pyx_tuple__25};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_5);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_4) {
           __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -54752,16 +54752,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__25);
         __Pyx_GIVEREF(__pyx_tuple__25);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__25);
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2416, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2413, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2416, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2413, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2416, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2413, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6);
@@ -54784,7 +54784,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -54794,7 +54794,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_5, __pyx_t_4};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -54802,7 +54802,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54813,14 +54813,14 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_7, __pyx_t_4);
         __pyx_t_5 = 0;
         __pyx_t_4 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2416, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2413, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "darkchess.pyx":2415
+      /* "darkchess.pyx":2412
  *     else: #turn_id == com_color or turn_id == 2
  *         uc = u""
  *         if 1 == com_color:             # <<<<<<<<<<<<<<
@@ -54830,7 +54830,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       goto __pyx_L7;
     }
 
-    /* "darkchess.pyx":2418
+    /* "darkchess.pyx":2415
  *             screen.blit(write(uc, (255, 0, 0)), (text_x, text_y))
  *         else:
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
@@ -54838,9 +54838,9 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):
  */
     /*else*/ {
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2418, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_screen, __pyx_n_s_blit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2418, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_5 = NULL;
       __pyx_t_7 = 0;
@@ -54857,7 +54857,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_uc, __pyx_tuple__26};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
@@ -54865,13 +54865,13 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_uc, __pyx_tuple__26};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
       #endif
       {
-        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         if (__pyx_t_5) {
           __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -54882,16 +54882,16 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         __Pyx_INCREF(__pyx_tuple__26);
         __Pyx_GIVEREF(__pyx_tuple__26);
         PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_tuple__26);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2418, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2418, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_9darkchess_text_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2418, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4);
@@ -54914,7 +54914,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54924,7 +54924,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -54932,7 +54932,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
       } else
       #endif
       {
-        __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         if (__pyx_t_8) {
           __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -54943,7 +54943,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
         PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_7, __pyx_t_5);
         __pyx_t_6 = 0;
         __pyx_t_5 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2418, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2415, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
@@ -54954,7 +54954,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   }
   __pyx_L3:;
 
-  /* "darkchess.pyx":2386
+  /* "darkchess.pyx":2383
  *         return 1200
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
@@ -54979,7 +54979,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __Pyx_RefNannyFinishContext();
 }
 
-/* "darkchess.pyx":2420
+/* "darkchess.pyx":2417
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  * 
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):             # <<<<<<<<<<<<<<
@@ -55026,7 +55026,7 @@ static PyObject *__pyx_pw_9darkchess_37write(PyObject *__pyx_self, PyObject *__p
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "write") < 0)) __PYX_ERR(0, 2420, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "write") < 0)) __PYX_ERR(0, 2417, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -55040,14 +55040,14 @@ static PyObject *__pyx_pw_9darkchess_37write(PyObject *__pyx_self, PyObject *__p
     }
     __pyx_v_msg = values[0];
     if (values[1]) {
-      __pyx_v_color = __pyx_convert__from_py___pyx_ctuple_int__and_int__and_int(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2420, __pyx_L3_error)
+      __pyx_v_color = __pyx_convert__from_py___pyx_ctuple_int__and_int__and_int(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 2417, __pyx_L3_error)
     } else {
       __pyx_v_color = __pyx_k__28;
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("write", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2420, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("write", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2417, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("darkchess.write", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -55073,37 +55073,37 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("write", 0);
 
-  /* "darkchess.pyx":2422
+  /* "darkchess.pyx":2419
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):
  *     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
  *     myfont = pygame.font.Font("wqy-zenhei.ttf",14)             # <<<<<<<<<<<<<<
  *     mytext = myfont.render(msg, True, color)
  *     mytext = mytext.convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pygame); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pygame); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_font); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_font); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Font); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Font); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_myfont = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2423
+  /* "darkchess.pyx":2420
  *     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
  *     myfont = pygame.font.Font("wqy-zenhei.ttf",14)
  *     mytext = myfont.render(msg, True, color)             # <<<<<<<<<<<<<<
  *     mytext = mytext.convert_alpha()
  *     return mytext
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_myfont, __pyx_n_s_render); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2423, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_myfont, __pyx_n_s_render); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_convert__to_py___pyx_ctuple_int__and_int__and_int(__pyx_v_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2423, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert__to_py___pyx_ctuple_int__and_int__and_int(__pyx_v_color); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -55120,7 +55120,7 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_v_msg, Py_True, __pyx_t_3};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2423, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2420, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -55129,14 +55129,14 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_v_msg, Py_True, __pyx_t_3};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2423, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2420, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2423, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -55150,7 +55150,7 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
     __Pyx_GIVEREF(__pyx_t_3);
     PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_5, __pyx_t_3);
     __pyx_t_3 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2423, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -55158,14 +55158,14 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   __pyx_v_mytext = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2424
+  /* "darkchess.pyx":2421
  *     myfont = pygame.font.Font("wqy-zenhei.ttf",14)
  *     mytext = myfont.render(msg, True, color)
  *     mytext = mytext.convert_alpha()             # <<<<<<<<<<<<<<
  *     return mytext
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mytext, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2424, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mytext, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -55179,13 +55179,13 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2424, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_mytext, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "darkchess.pyx":2425
+  /* "darkchess.pyx":2422
  *     mytext = myfont.render(msg, True, color)
  *     mytext = mytext.convert_alpha()
  *     return mytext             # <<<<<<<<<<<<<<
@@ -55197,7 +55197,7 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   __pyx_r = __pyx_v_mytext;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2420
+  /* "darkchess.pyx":2417
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  * 
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):             # <<<<<<<<<<<<<<
@@ -55222,7 +55222,7 @@ static PyObject *__pyx_pf_9darkchess_36write(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2427
+/* "darkchess.pyx":2424
  *     return mytext
  * 
  * def clean_back_n1_to_0(a_ch):             # <<<<<<<<<<<<<<
@@ -55260,7 +55260,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
   int __pyx_t_9;
   __Pyx_RefNannySetupContext("clean_back_n1_to_0", 0);
 
-  /* "darkchess.pyx":2428
+  /* "darkchess.pyx":2425
  * 
  * def clean_back_n1_to_0(a_ch):
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -55271,26 +55271,26 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
     __pyx_t_1 = __pyx_v_a_ch; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2428, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_a_ch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2428, __pyx_L1_error)
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2425, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 2428, __pyx_L1_error)
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 2425, __pyx_L1_error)
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2428, __pyx_L1_error)
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2425, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 2428, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 2425, __pyx_L1_error)
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2428, __pyx_L1_error)
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2425, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         #endif
       }
@@ -55300,7 +55300,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2428, __pyx_L1_error)
+          else __PYX_ERR(0, 2425, __pyx_L1_error)
         }
         break;
       }
@@ -55309,7 +55309,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
     __Pyx_XDECREF_SET(__pyx_v_chr, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2429
+    /* "darkchess.pyx":2426
  * def clean_back_n1_to_0(a_ch):
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -55320,26 +55320,26 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
       __pyx_t_4 = __pyx_v_chr; __Pyx_INCREF(__pyx_t_4); __pyx_t_5 = 0;
       __pyx_t_6 = NULL;
     } else {
-      __pyx_t_5 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2429, __pyx_L1_error)
+      __pyx_t_5 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_chr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2426, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2429, __pyx_L1_error)
+      __pyx_t_6 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2426, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_6)) {
         if (likely(PyList_CheckExact(__pyx_t_4))) {
           if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_7); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 2429, __pyx_L1_error)
+          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_7); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 2426, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2429, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2426, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         } else {
           if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_7); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 2429, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_7); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 2426, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2429, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2426, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         }
@@ -55349,7 +55349,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2429, __pyx_L1_error)
+            else __PYX_ERR(0, 2426, __pyx_L1_error)
           }
           break;
         }
@@ -55358,32 +55358,32 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
       __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "darkchess.pyx":2430
+      /* "darkchess.pyx":2427
  *     for chr in a_ch:
  *         for ch in chr:
  *             if -1 == ch.back:             # <<<<<<<<<<<<<<
  *                 ch.back = 0
  *     return a_ch
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2430, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_ch, __pyx_n_s_back); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyInt_EqCObj(__pyx_int_neg_1, __pyx_t_7, -1L, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2430, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_EqCObj(__pyx_int_neg_1, __pyx_t_7, -1L, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 2430, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 2427, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_9) {
 
-        /* "darkchess.pyx":2431
+        /* "darkchess.pyx":2428
  *         for ch in chr:
  *             if -1 == ch.back:
  *                 ch.back = 0             # <<<<<<<<<<<<<<
  *     return a_ch
  * 
  */
-        if (__Pyx_PyObject_SetAttrStr(__pyx_v_ch, __pyx_n_s_back, __pyx_int_0) < 0) __PYX_ERR(0, 2431, __pyx_L1_error)
+        if (__Pyx_PyObject_SetAttrStr(__pyx_v_ch, __pyx_n_s_back, __pyx_int_0) < 0) __PYX_ERR(0, 2428, __pyx_L1_error)
 
-        /* "darkchess.pyx":2430
+        /* "darkchess.pyx":2427
  *     for chr in a_ch:
  *         for ch in chr:
  *             if -1 == ch.back:             # <<<<<<<<<<<<<<
@@ -55392,7 +55392,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
  */
       }
 
-      /* "darkchess.pyx":2429
+      /* "darkchess.pyx":2426
  * def clean_back_n1_to_0(a_ch):
  *     for chr in a_ch:
  *         for ch in chr:             # <<<<<<<<<<<<<<
@@ -55402,7 +55402,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "darkchess.pyx":2428
+    /* "darkchess.pyx":2425
  * 
  * def clean_back_n1_to_0(a_ch):
  *     for chr in a_ch:             # <<<<<<<<<<<<<<
@@ -55412,7 +55412,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2432
+  /* "darkchess.pyx":2429
  *             if -1 == ch.back:
  *                 ch.back = 0
  *     return a_ch             # <<<<<<<<<<<<<<
@@ -55424,7 +55424,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
   __pyx_r = __pyx_v_a_ch;
   goto __pyx_L0;
 
-  /* "darkchess.pyx":2427
+  /* "darkchess.pyx":2424
  *     return mytext
  * 
  * def clean_back_n1_to_0(a_ch):             # <<<<<<<<<<<<<<
@@ -55448,7 +55448,7 @@ static PyObject *__pyx_pf_9darkchess_38clean_back_n1_to_0(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "darkchess.pyx":2435
+/* "darkchess.pyx":2432
  * 
  * # AI_vs_AI -> 0: human vs AI, 1: AI vs AI
  * def main(int AI_vs_AI = 0, int AI_Limit_step = 200):             # <<<<<<<<<<<<<<
@@ -55494,7 +55494,7 @@ static PyObject *__pyx_pw_9darkchess_41main(PyObject *__pyx_self, PyObject *__py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "main") < 0)) __PYX_ERR(0, 2435, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "main") < 0)) __PYX_ERR(0, 2432, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -55507,19 +55507,19 @@ static PyObject *__pyx_pw_9darkchess_41main(PyObject *__pyx_self, PyObject *__py
       }
     }
     if (values[0]) {
-      __pyx_v_AI_vs_AI = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_AI_vs_AI == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2435, __pyx_L3_error)
+      __pyx_v_AI_vs_AI = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_AI_vs_AI == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2432, __pyx_L3_error)
     } else {
       __pyx_v_AI_vs_AI = ((int)0);
     }
     if (values[1]) {
-      __pyx_v_AI_Limit_step = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_AI_Limit_step == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2435, __pyx_L3_error)
+      __pyx_v_AI_Limit_step = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_AI_Limit_step == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2432, __pyx_L3_error)
     } else {
       __pyx_v_AI_Limit_step = ((int)0xC8);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("main", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2435, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("main", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2432, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("darkchess.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -55633,27 +55633,27 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   PyObject *(*__pyx_t_31)(PyObject *);
   __Pyx_RefNannySetupContext("main", 0);
 
-  /* "darkchess.pyx":2463
+  /* "darkchess.pyx":2460
  *     global step
  * 
  *     pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))             # <<<<<<<<<<<<<<
  *     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
  *     pygame.display.set_caption("Taiwan Blind Chess")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_icon); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_icon); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_image); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_image); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_load); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_load); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -55668,7 +55668,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_kp_s_Image_darkchess_default_png) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_kp_s_Image_darkchess_default_png);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -55684,27 +55684,27 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2463, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2464
+  /* "darkchess.pyx":2461
  * 
  *     pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
  *     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)             # <<<<<<<<<<<<<<
  *     pygame.display.set_caption("Taiwan Blind Chess")
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_mode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_mode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_SCREEN_SIZE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_SCREEN_SIZE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_6 = 0;
@@ -55721,7 +55721,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_3, __pyx_int_0, __pyx_int_32};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2464, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2461, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -55730,14 +55730,14 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_3, __pyx_int_0, __pyx_int_32};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2464, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2461, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2464, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2461, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -55751,7 +55751,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_GIVEREF(__pyx_int_32);
     PyTuple_SET_ITEM(__pyx_t_5, 2+__pyx_t_6, __pyx_int_32);
     __pyx_t_3 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2464, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2461, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -55759,19 +55759,19 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_screen = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2465
+  /* "darkchess.pyx":2462
  *     pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
  *     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
  *     pygame.display.set_caption("Taiwan Blind Chess")             # <<<<<<<<<<<<<<
  * 
  *     chess_back = pygame.image.load(image_chess_back).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2465, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2465, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_display); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_set_caption); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2465, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_set_caption); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -55786,17 +55786,125 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_kp_s_Taiwan_Blind_Chess) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_Taiwan_Blind_Chess);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2465, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2467
+  /* "darkchess.pyx":2464
  *     pygame.display.set_caption("Taiwan Blind Chess")
  * 
  *     chess_back = pygame.image.load(image_chess_back).convert_alpha()             # <<<<<<<<<<<<<<
  * 
  *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2464, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_v_chess_back = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "darkchess.pyx":2466
+ *     chess_back = pygame.image.load(image_chess_back).convert_alpha()
+ * 
+ *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()             # <<<<<<<<<<<<<<
+ *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()
+ *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_chess_bk = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "darkchess.pyx":2467
+ * 
+ *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()
+ *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()             # <<<<<<<<<<<<<<
+ *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
+ *     chess_br = pygame.image.load(image_chess_br).convert_alpha()
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -55806,7 +55914,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_back); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2467, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ba); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -55842,133 +55950,25 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_v_chess_back = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "darkchess.pyx":2469
- *     chess_back = pygame.image.load(image_chess_back).convert_alpha()
- * 
- *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()             # <<<<<<<<<<<<<<
- *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()
- *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2469, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_chess_bk = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "darkchess.pyx":2470
- * 
- *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()
- *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()             # <<<<<<<<<<<<<<
- *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
- *     chess_br = pygame.image.load(image_chess_br).convert_alpha()
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ba); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_2);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2470, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_ba = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2471
+  /* "darkchess.pyx":2468
  *     chess_bk = pygame.image.load(image_chess_bk).convert_alpha()
  *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()
  *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_br = pygame.image.load(image_chess_br).convert_alpha()
  *     chess_bn = pygame.image.load(image_chess_bn).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -55983,10 +55983,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56001,28 +56001,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2471, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bb = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2472
+  /* "darkchess.pyx":2469
  *     chess_ba = pygame.image.load(image_chess_ba).convert_alpha()
  *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
  *     chess_br = pygame.image.load(image_chess_br).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bn = pygame.image.load(image_chess_bn).convert_alpha()
  *     chess_bc = pygame.image.load(image_chess_bc).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_br); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_br); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56037,10 +56037,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56055,28 +56055,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2472, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_br = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2473
+  /* "darkchess.pyx":2470
  *     chess_bb = pygame.image.load(image_chess_bb).convert_alpha()
  *     chess_br = pygame.image.load(image_chess_br).convert_alpha()
  *     chess_bn = pygame.image.load(image_chess_bn).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bc = pygame.image.load(image_chess_bc).convert_alpha()
  *     chess_bp = pygame.image.load(image_chess_bp).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56091,10 +56091,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56109,28 +56109,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2473, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bn = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2474
+  /* "darkchess.pyx":2471
  *     chess_br = pygame.image.load(image_chess_br).convert_alpha()
  *     chess_bn = pygame.image.load(image_chess_bn).convert_alpha()
  *     chess_bc = pygame.image.load(image_chess_bc).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bp = pygame.image.load(image_chess_bp).convert_alpha()
  *     chess_rk = pygame.image.load(image_chess_rk).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56145,10 +56145,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56163,28 +56163,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2474, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_bc = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2475
+  /* "darkchess.pyx":2472
  *     chess_bn = pygame.image.load(image_chess_bn).convert_alpha()
  *     chess_bc = pygame.image.load(image_chess_bc).convert_alpha()
  *     chess_bp = pygame.image.load(image_chess_bp).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rk = pygame.image.load(image_chess_rk).convert_alpha()
  *     chess_ra = pygame.image.load(image_chess_ra).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56199,10 +56199,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56217,28 +56217,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2475, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bp = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2476
+  /* "darkchess.pyx":2473
  *     chess_bc = pygame.image.load(image_chess_bc).convert_alpha()
  *     chess_bp = pygame.image.load(image_chess_bp).convert_alpha()
  *     chess_rk = pygame.image.load(image_chess_rk).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_ra = pygame.image.load(image_chess_ra).convert_alpha()
  *     chess_rb = pygame.image.load(image_chess_rb).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56253,10 +56253,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56271,28 +56271,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2476, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rk = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2477
+  /* "darkchess.pyx":2474
  *     chess_bp = pygame.image.load(image_chess_bp).convert_alpha()
  *     chess_rk = pygame.image.load(image_chess_rk).convert_alpha()
  *     chess_ra = pygame.image.load(image_chess_ra).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rb = pygame.image.load(image_chess_rb).convert_alpha()
  *     chess_rr = pygame.image.load(image_chess_rr).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ra); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ra); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56307,10 +56307,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56325,28 +56325,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2477, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_ra = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2478
+  /* "darkchess.pyx":2475
  *     chess_rk = pygame.image.load(image_chess_rk).convert_alpha()
  *     chess_ra = pygame.image.load(image_chess_ra).convert_alpha()
  *     chess_rb = pygame.image.load(image_chess_rb).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rr = pygame.image.load(image_chess_rr).convert_alpha()
  *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56361,10 +56361,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56379,28 +56379,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rb = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2479
+  /* "darkchess.pyx":2476
  *     chess_ra = pygame.image.load(image_chess_ra).convert_alpha()
  *     chess_rb = pygame.image.load(image_chess_rb).convert_alpha()
  *     chess_rr = pygame.image.load(image_chess_rr).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()
  *     chess_rc = pygame.image.load(image_chess_rc).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56415,10 +56415,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56433,28 +56433,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_rr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2480
+  /* "darkchess.pyx":2477
  *     chess_rb = pygame.image.load(image_chess_rb).convert_alpha()
  *     chess_rr = pygame.image.load(image_chess_rr).convert_alpha()
  *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rc = pygame.image.load(image_chess_rc).convert_alpha()
  *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56469,10 +56469,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56487,18 +56487,126 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2480, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rn = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2481
+  /* "darkchess.pyx":2478
  *     chess_rr = pygame.image.load(image_chess_rr).convert_alpha()
  *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()
  *     chess_rc = pygame.image.load(image_chess_rc).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()
  * 
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_chess_rc = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "darkchess.pyx":2479
+ *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()
+ *     chess_rc = pygame.image.load(image_chess_rc).convert_alpha()
+ *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()             # <<<<<<<<<<<<<<
+ * 
+ *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2479, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_v_chess_rp = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "darkchess.pyx":2481
+ *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()
+ * 
+ *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()             # <<<<<<<<<<<<<<
+ *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()
+ *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -56508,7 +56616,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2481, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56544,15 +56652,15 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_chess_rc = __pyx_t_1;
+  __pyx_v_chess_bks = __pyx_t_1;
   __pyx_t_1 = 0;
 
   /* "darkchess.pyx":2482
- *     chess_rn = pygame.image.load(image_chess_rn).convert_alpha()
- *     chess_rc = pygame.image.load(image_chess_rc).convert_alpha()
- *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()             # <<<<<<<<<<<<<<
  * 
  *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()
+ *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()             # <<<<<<<<<<<<<<
+ *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
+ *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -56562,7 +56670,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2482, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bas); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56598,133 +56706,25 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_v_chess_rp = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "darkchess.pyx":2484
- *     chess_rp = pygame.image.load(image_chess_rp).convert_alpha()
- * 
- *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()             # <<<<<<<<<<<<<<
- *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()
- *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2484, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_chess_bks = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "darkchess.pyx":2485
- * 
- *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()
- *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()             # <<<<<<<<<<<<<<
- *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
- *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bas); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_2);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_bas = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2486
+  /* "darkchess.pyx":2483
  *     chess_bks = pygame.image.load(image_chess_bks).convert_alpha()
  *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()
  *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()
  *     chess_bns = pygame.image.load(image_chess_bns).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56739,10 +56739,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56757,28 +56757,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2486, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bbs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2487
+  /* "darkchess.pyx":2484
  *     chess_bas = pygame.image.load(image_chess_bas).convert_alpha()
  *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
  *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bns = pygame.image.load(image_chess_bns).convert_alpha()
  *     chess_bcs = pygame.image.load(image_chess_bcs).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_brs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_brs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56793,10 +56793,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56811,28 +56811,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2487, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_brs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2488
+  /* "darkchess.pyx":2485
  *     chess_bbs = pygame.image.load(image_chess_bbs).convert_alpha()
  *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()
  *     chess_bns = pygame.image.load(image_chess_bns).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bcs = pygame.image.load(image_chess_bcs).convert_alpha()
  *     chess_bps = pygame.image.load(image_chess_bps).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56847,10 +56847,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56865,28 +56865,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2488, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bns = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2489
+  /* "darkchess.pyx":2486
  *     chess_brs = pygame.image.load(image_chess_brs).convert_alpha()
  *     chess_bns = pygame.image.load(image_chess_bns).convert_alpha()
  *     chess_bcs = pygame.image.load(image_chess_bcs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_bps = pygame.image.load(image_chess_bps).convert_alpha()
  *     chess_rks = pygame.image.load(image_chess_rks).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -56901,10 +56901,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -56919,28 +56919,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2489, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_bcs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2490
+  /* "darkchess.pyx":2487
  *     chess_bns = pygame.image.load(image_chess_bns).convert_alpha()
  *     chess_bcs = pygame.image.load(image_chess_bcs).convert_alpha()
  *     chess_bps = pygame.image.load(image_chess_bps).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rks = pygame.image.load(image_chess_rks).convert_alpha()
  *     chess_ras = pygame.image.load(image_chess_ras).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_bps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -56955,10 +56955,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -56973,28 +56973,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2490, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_bps = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2491
+  /* "darkchess.pyx":2488
  *     chess_bcs = pygame.image.load(image_chess_bcs).convert_alpha()
  *     chess_bps = pygame.image.load(image_chess_bps).convert_alpha()
  *     chess_rks = pygame.image.load(image_chess_rks).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_ras = pygame.image.load(image_chess_ras).convert_alpha()
  *     chess_rbs = pygame.image.load(image_chess_rbs).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -57009,10 +57009,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -57027,28 +57027,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2491, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rks = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2492
+  /* "darkchess.pyx":2489
  *     chess_bps = pygame.image.load(image_chess_bps).convert_alpha()
  *     chess_rks = pygame.image.load(image_chess_rks).convert_alpha()
  *     chess_ras = pygame.image.load(image_chess_ras).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rbs = pygame.image.load(image_chess_rbs).convert_alpha()
  *     chess_rrs = pygame.image.load(image_chess_rrs).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ras); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_ras); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -57063,10 +57063,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -57081,28 +57081,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2492, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_ras = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2493
+  /* "darkchess.pyx":2490
  *     chess_rks = pygame.image.load(image_chess_rks).convert_alpha()
  *     chess_ras = pygame.image.load(image_chess_ras).convert_alpha()
  *     chess_rbs = pygame.image.load(image_chess_rbs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rrs = pygame.image.load(image_chess_rrs).convert_alpha()
  *     chess_rns = pygame.image.load(image_chess_rns).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rbs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -57117,10 +57117,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -57135,28 +57135,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2493, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rbs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2494
+  /* "darkchess.pyx":2491
  *     chess_ras = pygame.image.load(image_chess_ras).convert_alpha()
  *     chess_rbs = pygame.image.load(image_chess_rbs).convert_alpha()
  *     chess_rrs = pygame.image.load(image_chess_rrs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rns = pygame.image.load(image_chess_rns).convert_alpha()
  *     chess_rcs = pygame.image.load(image_chess_rcs).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rrs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rrs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -57171,10 +57171,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -57189,28 +57189,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2494, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_rrs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2495
+  /* "darkchess.pyx":2492
  *     chess_rbs = pygame.image.load(image_chess_rbs).convert_alpha()
  *     chess_rrs = pygame.image.load(image_chess_rrs).convert_alpha()
  *     chess_rns = pygame.image.load(image_chess_rns).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rcs = pygame.image.load(image_chess_rcs).convert_alpha()
  *     chess_rps = pygame.image.load(image_chess_rps).convert_alpha()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -57225,10 +57225,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -57243,28 +57243,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2495, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rns = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2496
+  /* "darkchess.pyx":2493
  *     chess_rrs = pygame.image.load(image_chess_rrs).convert_alpha()
  *     chess_rns = pygame.image.load(image_chess_rns).convert_alpha()
  *     chess_rcs = pygame.image.load(image_chess_rcs).convert_alpha()             # <<<<<<<<<<<<<<
  *     chess_rps = pygame.image.load(image_chess_rps).convert_alpha()
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rcs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -57279,10 +57279,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -57297,28 +57297,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2496, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_chess_rcs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2497
+  /* "darkchess.pyx":2494
  *     chess_rns = pygame.image.load(image_chess_rns).convert_alpha()
  *     chess_rcs = pygame.image.load(image_chess_rcs).convert_alpha()
  *     chess_rps = pygame.image.load(image_chess_rps).convert_alpha()             # <<<<<<<<<<<<<<
  * 
  *     chess_image_sel = [chess_bps, chess_bcs, chess_bns, chess_brs, chess_bbs, chess_bas, chess_bks, chess_rps, chess_rcs, chess_rns, chess_rrs, chess_rbs, chess_ras, chess_rks]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_chess_rps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -57333,10 +57333,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -57351,20 +57351,20 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2497, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_chess_rps = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2499
+  /* "darkchess.pyx":2496
  *     chess_rps = pygame.image.load(image_chess_rps).convert_alpha()
  * 
  *     chess_image_sel = [chess_bps, chess_bcs, chess_bns, chess_brs, chess_bbs, chess_bas, chess_bks, chess_rps, chess_rcs, chess_rns, chess_rrs, chess_rbs, chess_ras, chess_rks]             # <<<<<<<<<<<<<<
  *     chess_image = [chess_bp, chess_bc, chess_bn, chess_br, chess_bb, chess_ba, chess_bk, chess_rp, chess_rc, chess_rn, chess_rr, chess_rb, chess_ra, chess_rk, chess_back]
  * 
  */
-  __pyx_t_1 = PyList_New(14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2499, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_chess_bps);
   __Pyx_GIVEREF(__pyx_v_chess_bps);
@@ -57411,14 +57411,14 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_chess_image_sel = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2500
+  /* "darkchess.pyx":2497
  * 
  *     chess_image_sel = [chess_bps, chess_bcs, chess_bns, chess_brs, chess_bbs, chess_bas, chess_bks, chess_rps, chess_rcs, chess_rns, chess_rrs, chess_rbs, chess_ras, chess_rks]
  *     chess_image = [chess_bp, chess_bc, chess_bn, chess_br, chess_bb, chess_ba, chess_bk, chess_rp, chess_rc, chess_rn, chess_rr, chess_rb, chess_ra, chess_rk, chess_back]             # <<<<<<<<<<<<<<
  * 
  *     background = pygame.image.load(background_image_filename).convert_alpha()
  */
-  __pyx_t_1 = PyList_New(15); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2500, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(15); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_chess_bp);
   __Pyx_GIVEREF(__pyx_v_chess_bp);
@@ -57468,22 +57468,22 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_chess_image = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2502
+  /* "darkchess.pyx":2499
  *     chess_image = [chess_bp, chess_bc, chess_bn, chess_br, chess_bb, chess_ba, chess_bk, chess_rp, chess_rc, chess_rn, chess_rr, chess_rb, chess_ra, chess_rk, chess_back]
  * 
  *     background = pygame.image.load(background_image_filename).convert_alpha()             # <<<<<<<<<<<<<<
  *     new_game   = pygame.image.load(image_new).convert_alpha()
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_background_image_filename); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_background_image_filename); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -57498,10 +57498,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -57516,28 +57516,28 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2502, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_background = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2503
+  /* "darkchess.pyx":2500
  * 
  *     background = pygame.image.load(background_image_filename).convert_alpha()
  *     new_game   = pygame.image.load(image_new).convert_alpha()             # <<<<<<<<<<<<<<
  * 
  *     while True:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pygame); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_image); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_load); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_9darkchess_image_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -57552,10 +57552,10 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_convert_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -57570,13 +57570,13 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2503, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_new_game = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2505
+  /* "darkchess.pyx":2502
  *     new_game   = pygame.image.load(image_new).convert_alpha()
  * 
  *     while True:             # <<<<<<<<<<<<<<
@@ -57585,7 +57585,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   while (1) {
 
-    /* "darkchess.pyx":2506
+    /* "darkchess.pyx":2503
  * 
  *     while True:
  *         selected_c = None             # <<<<<<<<<<<<<<
@@ -57595,7 +57595,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_INCREF(Py_None);
     __Pyx_XDECREF_SET(__pyx_v_selected_c, Py_None);
 
-    /* "darkchess.pyx":2507
+    /* "darkchess.pyx":2504
  *     while True:
  *         selected_c = None
  *         player_win = 0             # <<<<<<<<<<<<<<
@@ -57604,7 +57604,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_player_win = 0;
 
-    /* "darkchess.pyx":2508
+    /* "darkchess.pyx":2505
  *         selected_c = None
  *         player_win = 0
  *         turn_id = 0             # <<<<<<<<<<<<<<
@@ -57613,7 +57613,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_turn_id = 0;
 
-    /* "darkchess.pyx":2509
+    /* "darkchess.pyx":2506
  *         player_win = 0
  *         turn_id = 0
  *         player_color = 0             # <<<<<<<<<<<<<<
@@ -57622,7 +57622,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_player_color = 0;
 
-    /* "darkchess.pyx":2510
+    /* "darkchess.pyx":2507
  *         turn_id = 0
  *         player_color = 0
  *         com_color = 1             # <<<<<<<<<<<<<<
@@ -57631,7 +57631,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_com_color = 1;
 
-    /* "darkchess.pyx":2511
+    /* "darkchess.pyx":2508
  *         player_color = 0
  *         com_color = 1
  *         first = 1             # <<<<<<<<<<<<<<
@@ -57640,7 +57640,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_first = 1;
 
-    /* "darkchess.pyx":2512
+    /* "darkchess.pyx":2509
  *         com_color = 1
  *         first = 1
  *         moving = 1             # <<<<<<<<<<<<<<
@@ -57649,7 +57649,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_moving = 1;
 
-    /* "darkchess.pyx":2513
+    /* "darkchess.pyx":2510
  *         first = 1
  *         moving = 1
  *         com_mv = 0             # <<<<<<<<<<<<<<
@@ -57658,16 +57658,16 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_com_mv = 0;
 
-    /* "darkchess.pyx":2514
+    /* "darkchess.pyx":2511
  *         moving = 1
  *         com_mv = 0
  *         com_moving_end = 1             # <<<<<<<<<<<<<<
  *         game_start = 1
  *         chess_num[:] = [16, 16]
  */
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_com_moving_end, __pyx_int_1) < 0) __PYX_ERR(0, 2514, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_com_moving_end, __pyx_int_1) < 0) __PYX_ERR(0, 2511, __pyx_L1_error)
 
-    /* "darkchess.pyx":2515
+    /* "darkchess.pyx":2512
  *         com_mv = 0
  *         com_moving_end = 1
  *         game_start = 1             # <<<<<<<<<<<<<<
@@ -57676,7 +57676,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_game_start = 1;
 
-    /* "darkchess.pyx":2516
+    /* "darkchess.pyx":2513
  *         com_moving_end = 1
  *         game_start = 1
  *         chess_num[:] = [16, 16]             # <<<<<<<<<<<<<<
@@ -57687,7 +57687,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_t_7[1] = 16;
     memcpy(&(__pyx_v_9darkchess_chess_num[0]), __pyx_t_7, sizeof(__pyx_v_9darkchess_chess_num[0]) * (2));
 
-    /* "darkchess.pyx":2517
+    /* "darkchess.pyx":2514
  *         game_start = 1
  *         chess_num[:] = [16, 16]
  *         back_num = 32             # <<<<<<<<<<<<<<
@@ -57696,56 +57696,56 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_back_num = 32;
 
-    /* "darkchess.pyx":2518
+    /* "darkchess.pyx":2515
  *         chess_num[:] = [16, 16]
  *         back_num = 32
  *         break_long_capture_dest = []             # <<<<<<<<<<<<<<
  *         break_long_capture_org = []
  *         com_ban_step = []
  */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2518, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2515, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XGOTREF(__pyx_v_9darkchess_break_long_capture_dest);
     __Pyx_DECREF_SET(__pyx_v_9darkchess_break_long_capture_dest, ((PyObject*)__pyx_t_1));
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "darkchess.pyx":2519
+    /* "darkchess.pyx":2516
  *         back_num = 32
  *         break_long_capture_dest = []
  *         break_long_capture_org = []             # <<<<<<<<<<<<<<
  *         com_ban_step = []
  *         move_step = [None, None, None, None]
  */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2519, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XGOTREF(__pyx_v_9darkchess_break_long_capture_org);
     __Pyx_DECREF_SET(__pyx_v_9darkchess_break_long_capture_org, ((PyObject*)__pyx_t_1));
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "darkchess.pyx":2520
+    /* "darkchess.pyx":2517
  *         break_long_capture_dest = []
  *         break_long_capture_org = []
  *         com_ban_step = []             # <<<<<<<<<<<<<<
  *         move_step = [None, None, None, None]
  *         sindex = 0
  */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2520, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XGOTREF(__pyx_v_9darkchess_com_ban_step);
     __Pyx_DECREF_SET(__pyx_v_9darkchess_com_ban_step, ((PyObject*)__pyx_t_1));
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "darkchess.pyx":2521
+    /* "darkchess.pyx":2518
  *         break_long_capture_org = []
  *         com_ban_step = []
  *         move_step = [None, None, None, None]             # <<<<<<<<<<<<<<
  *         sindex = 0
  *         step = 0
  */
-    __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2521, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2518, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(Py_None);
     __Pyx_GIVEREF(Py_None);
@@ -57764,7 +57764,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "darkchess.pyx":2522
+    /* "darkchess.pyx":2519
  *         com_ban_step = []
  *         move_step = [None, None, None, None]
  *         sindex = 0             # <<<<<<<<<<<<<<
@@ -57773,7 +57773,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_sindex = 0;
 
-    /* "darkchess.pyx":2523
+    /* "darkchess.pyx":2520
  *         move_step = [None, None, None, None]
  *         sindex = 0
  *         step = 0             # <<<<<<<<<<<<<<
@@ -57782,7 +57782,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     __pyx_v_9darkchess_step = 0;
 
-    /* "darkchess.pyx":2524
+    /* "darkchess.pyx":2521
  *         sindex = 0
  *         step = 0
  *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
@@ -57799,7 +57799,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_t_8[7] = 1;
     memcpy(&((__pyx_v_9darkchess_back_value_num[0])[0]), __pyx_t_8, sizeof((__pyx_v_9darkchess_back_value_num[0])[0]) * (8));
 
-    /* "darkchess.pyx":2525
+    /* "darkchess.pyx":2522
  *         step = 0
  *         back_value_num[0][:] = [0, 5, 2, 2, 2, 2, 2, 1]
  *         back_value_num[1][:] = [0, 5, 2, 2, 2, 2, 2, 1]             # <<<<<<<<<<<<<<
@@ -57816,26 +57816,26 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_t_9[7] = 1;
     memcpy(&((__pyx_v_9darkchess_back_value_num[1])[0]), __pyx_t_9, sizeof((__pyx_v_9darkchess_back_value_num[1])[0]) * (8));
 
-    /* "darkchess.pyx":2528
+    /* "darkchess.pyx":2525
  *         #back_value_num = [[0, 5, 2, 2, 2, 2, 2, 1], [0, 5, 2, 2, 2, 2, 2, 1]]
  * 
  *         player_first = random.randint(0, 1)             # <<<<<<<<<<<<<<
  * 
  *         if 1 == AI_vs_AI:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_random); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2528, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_random); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2525, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_randint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2528, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_randint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2525, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2528, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2525, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2528, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2525, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_9darkchess_player_first = __pyx_t_6;
 
-    /* "darkchess.pyx":2530
+    /* "darkchess.pyx":2527
  *         player_first = random.randint(0, 1)
  * 
  *         if 1 == AI_vs_AI:             # <<<<<<<<<<<<<<
@@ -57845,7 +57845,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_t_10 = ((1 == __pyx_v_AI_vs_AI) != 0);
     if (__pyx_t_10) {
 
-      /* "darkchess.pyx":2531
+      /* "darkchess.pyx":2528
  * 
  *         if 1 == AI_vs_AI:
  *             player_first = 0             # <<<<<<<<<<<<<<
@@ -57854,7 +57854,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
       __pyx_v_9darkchess_player_first = 0;
 
-      /* "darkchess.pyx":2530
+      /* "darkchess.pyx":2527
  *         player_first = random.randint(0, 1)
  * 
  *         if 1 == AI_vs_AI:             # <<<<<<<<<<<<<<
@@ -57863,24 +57863,24 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  */
     }
 
-    /* "darkchess.pyx":2533
+    /* "darkchess.pyx":2530
  *             player_first = 0
  * 
  *         chess_index = ini_random_chess(chess_index)             # <<<<<<<<<<<<<<
  *         for i in range(0, 4):
  *             for j in range(0, 4):
  */
-    __pyx_t_1 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_chess_index, 32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2533, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_carray_to_py_int(__pyx_v_9darkchess_chess_index, 32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2530, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!(likely(PyList_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 2533, __pyx_L1_error)
-    __pyx_t_5 = __pyx_f_9darkchess_ini_random_chess(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2533, __pyx_L1_error)
+    if (!(likely(PyList_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 2530, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_9darkchess_ini_random_chess(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2530, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(__Pyx_carray_from_py_int(__pyx_t_5, __pyx_t_11, 32) < 0)) __PYX_ERR(0, 2533, __pyx_L1_error)
+    if (unlikely(__Pyx_carray_from_py_int(__pyx_t_5, __pyx_t_11, 32) < 0)) __PYX_ERR(0, 2530, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     memcpy(&(__pyx_v_9darkchess_chess_index[0]), __pyx_t_11, sizeof(__pyx_v_9darkchess_chess_index[0]) * (32));
 
-    /* "darkchess.pyx":2534
+    /* "darkchess.pyx":2531
  * 
  *         chess_index = ini_random_chess(chess_index)
  *         for i in range(0, 4):             # <<<<<<<<<<<<<<
@@ -57888,12 +57888,12 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 ch = chess(chess_index[8*i+j], (i, j))
  */
     for (__pyx_t_12 = 0; __pyx_t_12 < 4; __pyx_t_12+=1) {
-      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2534, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2531, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "darkchess.pyx":2535
+      /* "darkchess.pyx":2532
  *         chess_index = ini_random_chess(chess_index)
  *         for i in range(0, 4):
  *             for j in range(0, 4):             # <<<<<<<<<<<<<<
@@ -57901,27 +57901,72 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 server_main_chess[i][j] = ch
  */
       for (__pyx_t_13 = 0; __pyx_t_13 < 4; __pyx_t_13+=1) {
-        __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2535, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2532, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_5);
         __pyx_t_5 = 0;
 
-        /* "darkchess.pyx":2536
+        /* "darkchess.pyx":2533
  *         for i in range(0, 4):
  *             for j in range(0, 4):
  *                 ch = chess(chess_index[8*i+j], (i, j))             # <<<<<<<<<<<<<<
  *                 server_main_chess[i][j] = ch
  *                 # 32 is invalid value for initiation value only
  */
-        __pyx_t_5 = PyNumber_Multiply(__pyx_int_8, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2536, __pyx_L1_error)
+        __pyx_t_5 = PyNumber_Multiply(__pyx_int_8, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2533, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_1 = PyNumber_Add(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2536, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Add(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2533, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 2536, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 2533, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyInt_From_int((__pyx_v_9darkchess_chess_index[__pyx_t_14])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2536, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_From_int((__pyx_v_9darkchess_chess_index[__pyx_t_14])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2533, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2533, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_INCREF(__pyx_v_i);
+        __Pyx_GIVEREF(__pyx_v_i);
+        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_i);
+        __Pyx_INCREF(__pyx_v_j);
+        __Pyx_GIVEREF(__pyx_v_j);
+        PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_j);
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2533, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GIVEREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_5);
+        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
+        __pyx_t_1 = 0;
+        __pyx_t_5 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2533, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_ch, ((struct __pyx_obj_5chess_chess *)__pyx_t_5));
+        __pyx_t_5 = 0;
+
+        /* "darkchess.pyx":2534
+ *             for j in range(0, 4):
+ *                 ch = chess(chess_index[8*i+j], (i, j))
+ *                 server_main_chess[i][j] = ch             # <<<<<<<<<<<<<<
+ *                 # 32 is invalid value for initiation value only
+ *                 main_chess[i][j] = chess(32, (i,j))
+ */
+        if (unlikely(__pyx_v_9darkchess_server_main_chess == Py_None)) {
+          PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+          __PYX_ERR(0, 2534, __pyx_L1_error)
+        }
+        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_server_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2534, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_v_j, ((PyObject *)__pyx_v_ch)) < 0)) __PYX_ERR(0, 2534, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+        /* "darkchess.pyx":2536
+ *                 server_main_chess[i][j] = ch
+ *                 # 32 is invalid value for initiation value only
+ *                 main_chess[i][j] = chess(32, (i,j))             # <<<<<<<<<<<<<<
+ *                 cor[i][j] = (ch.x, ch.y)
+ *                 main_map[i][j] = (i, j)
+ */
         __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2536, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_INCREF(__pyx_v_i);
@@ -57932,82 +57977,37 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_j);
         __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2536, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-        __Pyx_GIVEREF(__pyx_t_5);
-        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
-        __pyx_t_1 = 0;
-        __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2536, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_ch, ((struct __pyx_obj_5chess_chess *)__pyx_t_5));
-        __pyx_t_5 = 0;
-
-        /* "darkchess.pyx":2537
- *             for j in range(0, 4):
- *                 ch = chess(chess_index[8*i+j], (i, j))
- *                 server_main_chess[i][j] = ch             # <<<<<<<<<<<<<<
- *                 # 32 is invalid value for initiation value only
- *                 main_chess[i][j] = chess(32, (i,j))
- */
-        if (unlikely(__pyx_v_9darkchess_server_main_chess == Py_None)) {
-          PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2537, __pyx_L1_error)
-        }
-        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_server_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2537, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_v_j, ((PyObject *)__pyx_v_ch)) < 0)) __PYX_ERR(0, 2537, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
-        /* "darkchess.pyx":2539
- *                 server_main_chess[i][j] = ch
- *                 # 32 is invalid value for initiation value only
- *                 main_chess[i][j] = chess(32, (i,j))             # <<<<<<<<<<<<<<
- *                 cor[i][j] = (ch.x, ch.y)
- *                 main_map[i][j] = (i, j)
- */
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2539, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_INCREF(__pyx_v_i);
-        __Pyx_GIVEREF(__pyx_v_i);
-        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_i);
-        __Pyx_INCREF(__pyx_v_j);
-        __Pyx_GIVEREF(__pyx_v_j);
-        PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_j);
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2539, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_int_32);
         __Pyx_GIVEREF(__pyx_int_32);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_int_32);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
         __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2539, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2536, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         if (unlikely(__pyx_v_9darkchess_main_chess == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2539, __pyx_L1_error)
+          __PYX_ERR(0, 2536, __pyx_L1_error)
         }
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2539, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2536, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(0, 2539, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(0, 2536, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "darkchess.pyx":2540
+        /* "darkchess.pyx":2537
  *                 # 32 is invalid value for initiation value only
  *                 main_chess[i][j] = chess(32, (i,j))
  *                 cor[i][j] = (ch.x, ch.y)             # <<<<<<<<<<<<<<
  *                 main_map[i][j] = (i, j)
  *         for i in range(0, 4):
  */
-        __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_ch->x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2540, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_ch->x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2537, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_ch->y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2540, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_ch->y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2537, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2540, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2537, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5);
@@ -58017,22 +58017,22 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         __pyx_t_2 = 0;
         if (unlikely(__pyx_v_9darkchess_cor == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2540, __pyx_L1_error)
+          __PYX_ERR(0, 2537, __pyx_L1_error)
         }
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_cor, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2540, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_cor, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2537, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_1) < 0)) __PYX_ERR(0, 2540, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_1) < 0)) __PYX_ERR(0, 2537, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "darkchess.pyx":2541
+        /* "darkchess.pyx":2538
  *                 main_chess[i][j] = chess(32, (i,j))
  *                 cor[i][j] = (ch.x, ch.y)
  *                 main_map[i][j] = (i, j)             # <<<<<<<<<<<<<<
  *         for i in range(0, 4):
  *             for j in range(0, 4):
  */
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2538, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_v_i);
         __Pyx_GIVEREF(__pyx_v_i);
@@ -58042,17 +58042,17 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_j);
         if (unlikely(__pyx_v_9darkchess_main_map == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2541, __pyx_L1_error)
+          __PYX_ERR(0, 2538, __pyx_L1_error)
         }
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_map, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_map, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2538, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_1) < 0)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_j, __pyx_t_1) < 0)) __PYX_ERR(0, 2538, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
     }
 
-    /* "darkchess.pyx":2542
+    /* "darkchess.pyx":2539
  *                 cor[i][j] = (ch.x, ch.y)
  *                 main_map[i][j] = (i, j)
  *         for i in range(0, 4):             # <<<<<<<<<<<<<<
@@ -58060,12 +58060,12 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 ch = chess(chess_index[8*i+4+j], (i, 4+j))
  */
     for (__pyx_t_12 = 0; __pyx_t_12 < 4; __pyx_t_12+=1) {
-      __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2542, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2539, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "darkchess.pyx":2543
+      /* "darkchess.pyx":2540
  *                 main_map[i][j] = (i, j)
  *         for i in range(0, 4):
  *             for j in range(0, 4):             # <<<<<<<<<<<<<<
@@ -58073,30 +58073,80 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 server_main_chess[i][4+j] = ch
  */
       for (__pyx_t_13 = 0; __pyx_t_13 < 4; __pyx_t_13+=1) {
-        __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2543, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2540, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "darkchess.pyx":2544
+        /* "darkchess.pyx":2541
  *         for i in range(0, 4):
  *             for j in range(0, 4):
  *                 ch = chess(chess_index[8*i+4+j], (i, 4+j))             # <<<<<<<<<<<<<<
  *                 server_main_chess[i][4+j] = ch
  *                 # 32 is invalid value for initiation value only
  */
-        __pyx_t_1 = PyNumber_Multiply(__pyx_int_8, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2544, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Multiply(__pyx_int_8, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2541, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_4, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2544, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_4, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2541, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2544, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2541, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 2544, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 2541, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyInt_From_int((__pyx_v_9darkchess_chess_index[__pyx_t_14])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2544, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_From_int((__pyx_v_9darkchess_chess_index[__pyx_t_14])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2541, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_INCREF(__pyx_v_i);
+        __Pyx_GIVEREF(__pyx_v_i);
+        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_i);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
+        __pyx_t_2 = 0;
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GIVEREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_5);
+        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
+        __pyx_t_1 = 0;
+        __pyx_t_5 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2541, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_ch, ((struct __pyx_obj_5chess_chess *)__pyx_t_5));
+        __pyx_t_5 = 0;
+
+        /* "darkchess.pyx":2542
+ *             for j in range(0, 4):
+ *                 ch = chess(chess_index[8*i+4+j], (i, 4+j))
+ *                 server_main_chess[i][4+j] = ch             # <<<<<<<<<<<<<<
+ *                 # 32 is invalid value for initiation value only
+ *                 main_chess[i][4+j] = chess(32, (i, 4+j))
+ */
+        if (unlikely(__pyx_v_9darkchess_server_main_chess == Py_None)) {
+          PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+          __PYX_ERR(0, 2542, __pyx_L1_error)
+        }
+        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_server_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2542, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2542, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_t_2, ((PyObject *)__pyx_v_ch)) < 0)) __PYX_ERR(0, 2542, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+        /* "darkchess.pyx":2544
+ *                 server_main_chess[i][4+j] = ch
+ *                 # 32 is invalid value for initiation value only
+ *                 main_chess[i][4+j] = chess(32, (i, 4+j))             # <<<<<<<<<<<<<<
+ *                 cor[i][4+j] = (ch.x, ch.y)
+ *                 main_map[i][4+j] = (i, 4+j)
+ */
         __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2544, __pyx_L1_error)
@@ -58109,90 +58159,40 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         __pyx_t_2 = 0;
         __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-        __Pyx_GIVEREF(__pyx_t_5);
-        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
-        __pyx_t_1 = 0;
-        __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2544, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_ch, ((struct __pyx_obj_5chess_chess *)__pyx_t_5));
-        __pyx_t_5 = 0;
-
-        /* "darkchess.pyx":2545
- *             for j in range(0, 4):
- *                 ch = chess(chess_index[8*i+4+j], (i, 4+j))
- *                 server_main_chess[i][4+j] = ch             # <<<<<<<<<<<<<<
- *                 # 32 is invalid value for initiation value only
- *                 main_chess[i][4+j] = chess(32, (i, 4+j))
- */
-        if (unlikely(__pyx_v_9darkchess_server_main_chess == Py_None)) {
-          PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2545, __pyx_L1_error)
-        }
-        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_server_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2545, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2545, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_t_2, ((PyObject *)__pyx_v_ch)) < 0)) __PYX_ERR(0, 2545, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-        /* "darkchess.pyx":2547
- *                 server_main_chess[i][4+j] = ch
- *                 # 32 is invalid value for initiation value only
- *                 main_chess[i][4+j] = chess(32, (i, 4+j))             # <<<<<<<<<<<<<<
- *                 cor[i][4+j] = (ch.x, ch.y)
- *                 main_map[i][4+j] = (i, 4+j)
- */
-        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2547, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2547, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_INCREF(__pyx_v_i);
-        __Pyx_GIVEREF(__pyx_v_i);
-        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_i);
-        __Pyx_GIVEREF(__pyx_t_2);
-        PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
-        __pyx_t_2 = 0;
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2547, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_int_32);
         __Pyx_GIVEREF(__pyx_int_32);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_int_32);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
         __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2547, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5chess_chess), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         if (unlikely(__pyx_v_9darkchess_main_chess == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2547, __pyx_L1_error)
+          __PYX_ERR(0, 2544, __pyx_L1_error)
         }
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2547, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_chess, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2547, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_1, __pyx_t_5) < 0)) __PYX_ERR(0, 2547, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_1, __pyx_t_5) < 0)) __PYX_ERR(0, 2544, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "darkchess.pyx":2548
+        /* "darkchess.pyx":2545
  *                 # 32 is invalid value for initiation value only
  *                 main_chess[i][4+j] = chess(32, (i, 4+j))
  *                 cor[i][4+j] = (ch.x, ch.y)             # <<<<<<<<<<<<<<
  *                 main_map[i][4+j] = (i, 4+j)
  * 
  */
-        __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_ch->x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_ch->x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_ch->y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_ch->y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5);
@@ -58202,27 +58202,27 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         __pyx_t_1 = 0;
         if (unlikely(__pyx_v_9darkchess_cor == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2548, __pyx_L1_error)
+          __PYX_ERR(0, 2545, __pyx_L1_error)
         }
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_cor, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_cor, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_5 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_5, __pyx_t_2) < 0)) __PYX_ERR(0, 2548, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_5, __pyx_t_2) < 0)) __PYX_ERR(0, 2545, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "darkchess.pyx":2549
+        /* "darkchess.pyx":2546
  *                 main_chess[i][4+j] = chess(32, (i, 4+j))
  *                 cor[i][4+j] = (ch.x, ch.y)
  *                 main_map[i][4+j] = (i, 4+j)             # <<<<<<<<<<<<<<
  * 
  * 		# Test data
  */
-        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2549, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2546, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2549, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2546, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_INCREF(__pyx_v_i);
         __Pyx_GIVEREF(__pyx_v_i);
@@ -58232,13 +58232,13 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
         __pyx_t_2 = 0;
         if (unlikely(__pyx_v_9darkchess_main_map == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 2549, __pyx_L1_error)
+          __PYX_ERR(0, 2546, __pyx_L1_error)
         }
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_map, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2549, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_9darkchess_main_map, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2546, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2549, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_AddCObj(__pyx_int_4, __pyx_v_j, 4, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2546, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_1, __pyx_t_5) < 0)) __PYX_ERR(0, 2549, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_1, __pyx_t_5) < 0)) __PYX_ERR(0, 2546, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -64181,7 +64181,7 @@ static PyObject *__pyx_pf_9darkchess_40main(CYTHON_UNUSED PyObject *__pyx_self, 
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "darkchess.pyx":2435
+  /* "darkchess.pyx":2432
  * 
  * # AI_vs_AI -> 0: human vs AI, 1: AI vs AI
  * def main(int AI_vs_AI = 0, int AI_Limit_step = 200):             # <<<<<<<<<<<<<<
@@ -66132,8 +66132,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(0, 5, __pyx_L1_error)
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 173, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 389, __pyx_L1_error)
-  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 1978, __pyx_L1_error)
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 2004, __pyx_L1_error)
+  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 1975, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 2001, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 81, __pyx_L1_error)
   __pyx_builtin_OverflowError = __Pyx_GetBuiltinName(__pyx_n_s_OverflowError); if (!__pyx_builtin_OverflowError) __PYX_ERR(1, 81, __pyx_L1_error)
   __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(1, 94, __pyx_L1_error)
@@ -66268,69 +66268,69 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "darkchess.pyx":2393
+  /* "darkchess.pyx":2390
  *         else:
  *             winer = u"!!!"
  *         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif -1 == player_win:
  *         winer = u"..."
  */
-  __pyx_tuple__17 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 2393, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 2390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "darkchess.pyx":2396
+  /* "darkchess.pyx":2393
  *     elif -1 == player_win:
  *         winer = u"..."
  *         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     elif -2 == player_win:
  *         winer = u"..."
  */
-  __pyx_tuple__19 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_255, __pyx_int_0); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 2396, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_255, __pyx_int_0); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 2393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "darkchess.pyx":2403
+  /* "darkchess.pyx":2400
  *         if 1 == player_first:
  *             up = u""
  *             screen.blit(write(up, (150, 150, 150)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *         else:
  *             uc = u""
  */
-  __pyx_tuple__22 = PyTuple_Pack(3, __pyx_int_150, __pyx_int_150, __pyx_int_150); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 2403, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(3, __pyx_int_150, __pyx_int_150, __pyx_int_150); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 2400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "darkchess.pyx":2410
+  /* "darkchess.pyx":2407
  *         up = u""
  *         if 1 == player_color:
  *             screen.blit(write(up, (255, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *         else:
  *             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))
  */
-  __pyx_tuple__25 = PyTuple_Pack(3, __pyx_int_255, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 2410, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(3, __pyx_int_255, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 2407, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
 
-  /* "darkchess.pyx":2412
+  /* "darkchess.pyx":2409
  *             screen.blit(write(up, (255, 0, 0)), (text_x, text_y))
  *         else:
  *             screen.blit(write(up, (0, 0, 0)), (text_x, text_y))             # <<<<<<<<<<<<<<
  *     else: #turn_id == com_color or turn_id == 2
  *         uc = u""
  */
-  __pyx_tuple__26 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 2412, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(3, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 2409, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
 
-  /* "darkchess.pyx":2422
+  /* "darkchess.pyx":2419
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):
  *     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
  *     myfont = pygame.font.Font("wqy-zenhei.ttf",14)             # <<<<<<<<<<<<<<
  *     mytext = myfont.render(msg, True, color)
  *     mytext = mytext.convert_alpha()
  */
-  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_kp_s_wqy_zenhei_ttf, __pyx_int_14); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_kp_s_wqy_zenhei_ttf, __pyx_int_14); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 2419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
 
@@ -66513,65 +66513,65 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__58);
   __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(19, 0, 62, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_one_turn, 1844, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 1844, __pyx_L1_error)
 
-  /* "darkchess.pyx":2206
+  /* "darkchess.pyx":2203
  * 
  * # will_be_dead_pity...
  * def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     global king_live
  * 
  */
-  __pyx_tuple__60 = PyTuple_Pack(22, __pyx_n_s_nexti, __pyx_n_s_nextj, __pyx_n_s_a_ch, __pyx_n_s_a_map, __pyx_n_s_owner_color, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_a, __pyx_n_s_ii, __pyx_n_s_jj, __pyx_n_s_b, __pyx_n_s_af_map, __pyx_n_s_af_ch, __pyx_n_s_opp_color, __pyx_n_s_pity, __pyx_n_s_i2, __pyx_n_s_j2, __pyx_n_s_chr, __pyx_n_s_ch, __pyx_n_s_pm, __pyx_n_s_af2_map, __pyx_n_s_af2_ch); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 2206, __pyx_L1_error)
+  __pyx_tuple__60 = PyTuple_Pack(22, __pyx_n_s_nexti, __pyx_n_s_nextj, __pyx_n_s_a_ch, __pyx_n_s_a_map, __pyx_n_s_owner_color, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_a, __pyx_n_s_ii, __pyx_n_s_jj, __pyx_n_s_b, __pyx_n_s_af_map, __pyx_n_s_af_ch, __pyx_n_s_opp_color, __pyx_n_s_pity, __pyx_n_s_i2, __pyx_n_s_j2, __pyx_n_s_chr, __pyx_n_s_ch, __pyx_n_s_pm, __pyx_n_s_af2_map, __pyx_n_s_af2_ch); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 2203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__60);
   __Pyx_GIVEREF(__pyx_tuple__60);
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(5, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_will_dead_pity_even_equal, 2206, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 2206, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(5, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_will_dead_pity_even_equal, 2203, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 2203, __pyx_L1_error)
 
-  /* "darkchess.pyx":2277
+  /* "darkchess.pyx":2274
  * 
  * # will_be_dead_pity
  * def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     global king_live
  * 
  */
-  __pyx_tuple__62 = PyTuple_Pack(26, __pyx_n_s_nexti, __pyx_n_s_nextj, __pyx_n_s_a_ch, __pyx_n_s_a_map, __pyx_n_s_owner_color, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_a, __pyx_n_s_ii, __pyx_n_s_jj, __pyx_n_s_b, __pyx_n_s_af_map, __pyx_n_s_af_ch, __pyx_n_s_opp_color, __pyx_n_s_pity, __pyx_n_s_i2, __pyx_n_s_j2, __pyx_n_s_i3, __pyx_n_s_j3, __pyx_n_s_chr, __pyx_n_s_ch, __pyx_n_s_pm, __pyx_n_s_af2_map, __pyx_n_s_af2_ch, __pyx_n_s_af3_map, __pyx_n_s_af3_ch); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 2277, __pyx_L1_error)
+  __pyx_tuple__62 = PyTuple_Pack(26, __pyx_n_s_nexti, __pyx_n_s_nextj, __pyx_n_s_a_ch, __pyx_n_s_a_map, __pyx_n_s_owner_color, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_a, __pyx_n_s_ii, __pyx_n_s_jj, __pyx_n_s_b, __pyx_n_s_af_map, __pyx_n_s_af_ch, __pyx_n_s_opp_color, __pyx_n_s_pity, __pyx_n_s_i2, __pyx_n_s_j2, __pyx_n_s_i3, __pyx_n_s_j3, __pyx_n_s_chr, __pyx_n_s_ch, __pyx_n_s_pm, __pyx_n_s_af2_map, __pyx_n_s_af2_ch, __pyx_n_s_af3_map, __pyx_n_s_af3_ch); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 2274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__62);
   __Pyx_GIVEREF(__pyx_tuple__62);
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(5, 0, 26, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_will_dead_pity, 2277, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 2277, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(5, 0, 26, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_will_dead_pity, 2274, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 2274, __pyx_L1_error)
 
-  /* "darkchess.pyx":2420
+  /* "darkchess.pyx":2417
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  * 
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):             # <<<<<<<<<<<<<<
  *     #myfont = pygame.font.SysFont("None", 32) #To avoid py2exe error
  *     myfont = pygame.font.Font("wqy-zenhei.ttf",14)
  */
-  __pyx_tuple__64 = PyTuple_Pack(4, __pyx_n_s_msg, __pyx_n_s_color, __pyx_n_s_myfont, __pyx_n_s_mytext); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 2420, __pyx_L1_error)
+  __pyx_tuple__64 = PyTuple_Pack(4, __pyx_n_s_msg, __pyx_n_s_color, __pyx_n_s_myfont, __pyx_n_s_mytext); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 2417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__64);
   __Pyx_GIVEREF(__pyx_tuple__64);
-  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_write, 2420, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 2420, __pyx_L1_error)
+  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_write, 2417, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 2417, __pyx_L1_error)
 
-  /* "darkchess.pyx":2427
+  /* "darkchess.pyx":2424
  *     return mytext
  * 
  * def clean_back_n1_to_0(a_ch):             # <<<<<<<<<<<<<<
  *     for chr in a_ch:
  *         for ch in chr:
  */
-  __pyx_tuple__66 = PyTuple_Pack(3, __pyx_n_s_a_ch, __pyx_n_s_chr, __pyx_n_s_ch); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 2427, __pyx_L1_error)
+  __pyx_tuple__66 = PyTuple_Pack(3, __pyx_n_s_a_ch, __pyx_n_s_chr, __pyx_n_s_ch); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 2424, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__66);
   __Pyx_GIVEREF(__pyx_tuple__66);
-  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_clean_back_n1_to_0, 2427, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 2427, __pyx_L1_error)
+  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_clean_back_n1_to_0, 2424, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 2424, __pyx_L1_error)
 
-  /* "darkchess.pyx":2435
+  /* "darkchess.pyx":2432
  * 
  * # AI_vs_AI -> 0: human vs AI, 1: AI vs AI
  * def main(int AI_vs_AI = 0, int AI_Limit_step = 200):             # <<<<<<<<<<<<<<
  *     global cstart_x
  *     global cstart_y
  */
-  __pyx_tuple__68 = PyTuple_Pack(67, __pyx_n_s_AI_vs_AI, __pyx_n_s_AI_Limit_step, __pyx_n_s_screen, __pyx_n_s_chess_back, __pyx_n_s_chess_bk, __pyx_n_s_chess_ba, __pyx_n_s_chess_bb, __pyx_n_s_chess_br, __pyx_n_s_chess_bn, __pyx_n_s_chess_bc, __pyx_n_s_chess_bp, __pyx_n_s_chess_rk, __pyx_n_s_chess_ra, __pyx_n_s_chess_rb, __pyx_n_s_chess_rr, __pyx_n_s_chess_rn, __pyx_n_s_chess_rc, __pyx_n_s_chess_rp, __pyx_n_s_chess_bks, __pyx_n_s_chess_bas, __pyx_n_s_chess_bbs, __pyx_n_s_chess_brs, __pyx_n_s_chess_bns, __pyx_n_s_chess_bcs, __pyx_n_s_chess_bps, __pyx_n_s_chess_rks, __pyx_n_s_chess_ras, __pyx_n_s_chess_rbs, __pyx_n_s_chess_rrs, __pyx_n_s_chess_rns, __pyx_n_s_chess_rcs, __pyx_n_s_chess_rps, __pyx_n_s_chess_image_sel, __pyx_n_s_chess_image, __pyx_n_s_background, __pyx_n_s_new_game, __pyx_n_s_selected_c, __pyx_n_s_moving, __pyx_n_s_com_mv, __pyx_n_s_game_start, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_ch, __pyx_n_s_cr, __pyx_n_s_c, __pyx_n_s_no_move, __pyx_n_s_desti, __pyx_n_s_destj, __pyx_n_s_dest_ch, __pyx_n_s_event, __pyx_n_s_mouseX, __pyx_n_s_mouseY, __pyx_n_s_click_once, __pyx_n_s_chr, __pyx_n_s_chc, __pyx_n_s_ch_index, __pyx_n_s_cindex, __pyx_n_s_pm, __pyx_n_s_org, __pyx_n_s_dest, __pyx_n_s_possible_mv, __pyx_n_s_br, __pyx_n_s_b, __pyx_n_s_d, __pyx_n_s_o, __pyx_n_s_dx, __pyx_n_s_dy); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 2435, __pyx_L1_error)
+  __pyx_tuple__68 = PyTuple_Pack(67, __pyx_n_s_AI_vs_AI, __pyx_n_s_AI_Limit_step, __pyx_n_s_screen, __pyx_n_s_chess_back, __pyx_n_s_chess_bk, __pyx_n_s_chess_ba, __pyx_n_s_chess_bb, __pyx_n_s_chess_br, __pyx_n_s_chess_bn, __pyx_n_s_chess_bc, __pyx_n_s_chess_bp, __pyx_n_s_chess_rk, __pyx_n_s_chess_ra, __pyx_n_s_chess_rb, __pyx_n_s_chess_rr, __pyx_n_s_chess_rn, __pyx_n_s_chess_rc, __pyx_n_s_chess_rp, __pyx_n_s_chess_bks, __pyx_n_s_chess_bas, __pyx_n_s_chess_bbs, __pyx_n_s_chess_brs, __pyx_n_s_chess_bns, __pyx_n_s_chess_bcs, __pyx_n_s_chess_bps, __pyx_n_s_chess_rks, __pyx_n_s_chess_ras, __pyx_n_s_chess_rbs, __pyx_n_s_chess_rrs, __pyx_n_s_chess_rns, __pyx_n_s_chess_rcs, __pyx_n_s_chess_rps, __pyx_n_s_chess_image_sel, __pyx_n_s_chess_image, __pyx_n_s_background, __pyx_n_s_new_game, __pyx_n_s_selected_c, __pyx_n_s_moving, __pyx_n_s_com_mv, __pyx_n_s_game_start, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_ch, __pyx_n_s_cr, __pyx_n_s_c, __pyx_n_s_no_move, __pyx_n_s_desti, __pyx_n_s_destj, __pyx_n_s_dest_ch, __pyx_n_s_event, __pyx_n_s_mouseX, __pyx_n_s_mouseY, __pyx_n_s_click_once, __pyx_n_s_chr, __pyx_n_s_chc, __pyx_n_s_ch_index, __pyx_n_s_cindex, __pyx_n_s_pm, __pyx_n_s_org, __pyx_n_s_dest, __pyx_n_s_possible_mv, __pyx_n_s_br, __pyx_n_s_b, __pyx_n_s_d, __pyx_n_s_o, __pyx_n_s_dx, __pyx_n_s_dy); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 2432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__68);
   __Pyx_GIVEREF(__pyx_tuple__68);
-  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(2, 0, 67, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_main_2, 2435, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 2435, __pyx_L1_error)
+  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(2, 0, 67, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_darkchess_pyx, __pyx_n_s_main_2, 2432, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 2432, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -66584,7 +66584,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_float_0_1 = PyFloat_FromDouble(0.1); if (unlikely(!__pyx_float_0_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_5 = PyFloat_FromDouble(0.5); if (unlikely(!__pyx_float_0_5)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_0_90 = PyFloat_FromDouble(0.90); if (unlikely(!__pyx_float_0_90)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_0_99 = PyFloat_FromDouble(0.99); if (unlikely(!__pyx_float_0_99)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -68745,31 +68745,31 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_one_turn, __pyx_t_5) < 0) __PYX_ERR(0, 1844, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2206
+  /* "darkchess.pyx":2203
  * 
  * # will_be_dead_pity...
  * def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     global king_live
  * 
  */
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_33will_dead_pity_even_equal, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2206, __pyx_L1_error)
+  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_33will_dead_pity_even_equal, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_will_dead_pity_even_equal, __pyx_t_5) < 0) __PYX_ERR(0, 2206, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_will_dead_pity_even_equal, __pyx_t_5) < 0) __PYX_ERR(0, 2203, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2277
+  /* "darkchess.pyx":2274
  * 
  * # will_be_dead_pity
  * def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):             # <<<<<<<<<<<<<<
  *     global king_live
  * 
  */
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_35will_dead_pity, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2277, __pyx_L1_error)
+  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_35will_dead_pity, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_will_dead_pity, __pyx_t_5) < 0) __PYX_ERR(0, 2277, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_will_dead_pity, __pyx_t_5) < 0) __PYX_ERR(0, 2274, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2420
+  /* "darkchess.pyx":2417
  *             screen.blit(write(uc, (0, 0, 0)), (text_x, text_y))
  * 
  * def write(msg="pygame is cool", (int, int, int)color= (0,0,0)):             # <<<<<<<<<<<<<<
@@ -68780,33 +68780,33 @@ if (!__Pyx_RefNanny) {
   __pyx_t_23.f1 = 0;
   __pyx_t_23.f2 = 0;
   __pyx_k__28 = __pyx_t_23;
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_37write, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2420, __pyx_L1_error)
+  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_37write, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_write, __pyx_t_5) < 0) __PYX_ERR(0, 2420, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_write, __pyx_t_5) < 0) __PYX_ERR(0, 2417, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2427
+  /* "darkchess.pyx":2424
  *     return mytext
  * 
  * def clean_back_n1_to_0(a_ch):             # <<<<<<<<<<<<<<
  *     for chr in a_ch:
  *         for ch in chr:
  */
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_39clean_back_n1_to_0, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2427, __pyx_L1_error)
+  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_39clean_back_n1_to_0, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2424, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clean_back_n1_to_0, __pyx_t_5) < 0) __PYX_ERR(0, 2427, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clean_back_n1_to_0, __pyx_t_5) < 0) __PYX_ERR(0, 2424, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "darkchess.pyx":2435
+  /* "darkchess.pyx":2432
  * 
  * # AI_vs_AI -> 0: human vs AI, 1: AI vs AI
  * def main(int AI_vs_AI = 0, int AI_Limit_step = 200):             # <<<<<<<<<<<<<<
  *     global cstart_x
  *     global cstart_y
  */
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_41main, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2435, __pyx_L1_error)
+  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_9darkchess_41main, NULL, __pyx_n_s_darkchess); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_main_2, __pyx_t_5) < 0) __PYX_ERR(0, 2435, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_main_2, __pyx_t_5) < 0) __PYX_ERR(0, 2432, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "darkchess.pyx":1
