@@ -2368,7 +2368,7 @@ cdef int eating_value_to_score(int value, king, int owner_color):
         else:
             return 40
     elif 2 == value:
-        return 300
+        return 295
     elif 3 == value:
         return 43
     elif 4 == value:
@@ -2378,7 +2378,7 @@ cdef int eating_value_to_score(int value, king, int owner_color):
     elif 6 == value:
         return 599
     elif 7 == value:
-        return 1200
+        return 1212
 
 cdef void display_font(screen, int AI_vs_AI = 0):
     

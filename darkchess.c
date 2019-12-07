@@ -866,7 +866,7 @@ struct __pyx_opt_args_9darkchess_move_score {
 };
 
 /* "darkchess.pyx":2383
- *         return 1200
+ *         return 1212
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
  * 
@@ -53420,7 +53420,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
  *         else:
  *             return 40             # <<<<<<<<<<<<<<
  *     elif 2 == value:
- *         return 300
+ *         return 295
  */
     /*else*/ {
       __pyx_r = 40;
@@ -53440,25 +53440,25 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     /* "darkchess.pyx":2371
  *             return 40
  *     elif 2 == value:
- *         return 300             # <<<<<<<<<<<<<<
+ *         return 295             # <<<<<<<<<<<<<<
  *     elif 3 == value:
  *         return 43
  */
-    __pyx_r = 0x12C;
+    __pyx_r = 0x127;
     goto __pyx_L0;
 
     /* "darkchess.pyx":2370
  *         else:
  *             return 40
  *     elif 2 == value:             # <<<<<<<<<<<<<<
- *         return 300
+ *         return 295
  *     elif 3 == value:
  */
     break;
     case 3:
 
     /* "darkchess.pyx":2373
- *         return 300
+ *         return 295
  *     elif 3 == value:
  *         return 43             # <<<<<<<<<<<<<<
  *     elif 4 == value:
@@ -53469,7 +53469,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
 
     /* "darkchess.pyx":2372
  *     elif 2 == value:
- *         return 300
+ *         return 295
  *     elif 3 == value:             # <<<<<<<<<<<<<<
  *         return 43
  *     elif 4 == value:
@@ -53522,7 +53522,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
  *     elif 6 == value:
  *         return 599             # <<<<<<<<<<<<<<
  *     elif 7 == value:
- *         return 1200
+ *         return 1212
  */
     __pyx_r = 0x257;
     goto __pyx_L0;
@@ -53540,18 +53540,18 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
     /* "darkchess.pyx":2381
  *         return 599
  *     elif 7 == value:
- *         return 1200             # <<<<<<<<<<<<<<
+ *         return 1212             # <<<<<<<<<<<<<<
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):
  */
-    __pyx_r = 0x4B0;
+    __pyx_r = 0x4BC;
     goto __pyx_L0;
 
     /* "darkchess.pyx":2380
  *     elif 6 == value:
  *         return 599
  *     elif 7 == value:             # <<<<<<<<<<<<<<
- *         return 1200
+ *         return 1212
  * 
  */
     break;
@@ -53580,7 +53580,7 @@ static int __pyx_f_9darkchess_eating_value_to_score(int __pyx_v_value, PyObject 
 }
 
 /* "darkchess.pyx":2383
- *         return 1200
+ *         return 1212
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
  * 
@@ -54955,7 +54955,7 @@ static void __pyx_f_9darkchess_display_font(PyObject *__pyx_v_screen, struct __p
   __pyx_L3:;
 
   /* "darkchess.pyx":2383
- *         return 1200
+ *         return 1212
  * 
  * cdef void display_font(screen, int AI_vs_AI = 0):             # <<<<<<<<<<<<<<
  * 
