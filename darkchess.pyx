@@ -1879,7 +1879,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     for ch_position, pm in all_pm:
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
         if 1 == pt and mscore > 0:
-            score = sc + div * 1.5 * mscore
+            score = sc + 1.35 * mscore
         else:
             score = sc + div * mscore
         
