@@ -1798,7 +1798,7 @@ def com_think(a_map, a_ch):
   
         for mm in m:
             #print('mm', mm)
-            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.99, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
+            threads.append(Process(target = one_turn, args = (q, a_map, a_ch, mm, player_color, mm[0], mm[1], mm[2], mm[3], 0.95, i, alpha, beta, player_color, com_color, back_num, com_ban_step, king_live, gb_m2)))
             threads[i].start()
             #threads[i].join()
             i += 1
@@ -2364,21 +2364,21 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
 cdef int eating_value_to_score(int value, king, int owner_color):
     if 1 == value:
         if 1 == king[owner_color]:
-            return 45
+            return 30
         else:
-            return 40
+            return 25
     elif 2 == value:
-        return 295
+        return 290
     elif 3 == value:
-        return 43
+        return 28
     elif 4 == value:
-        return 89
+        return 75
     elif 5 == value:
-        return 179
+        return 165
     elif 6 == value:
-        return 599
+        return 595
     elif 7 == value:
-        return 1212
+        return 1205
 
 cdef void display_font(screen, int AI_vs_AI = 0):
     
@@ -2550,6 +2550,45 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #com_color = 0
         #player_color = 1
         #turn_id = 0
+        #back_num = 28
+        #
+        #chess_num[0] = 15
+        #chess_num[1] = 16
+        #
+        #main_chess[1][1].live = 0
+        #main_map[1][1] = None
+        #
+        #ch = chess(5, (1, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
+        #
+        #ch = chess(13, (2, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][0] = ch
+        #main_map[2][0] = (2, 0)
+        #
+        #ch = chess(21, (0, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][0] = ch
+        #main_map[0][0] = (0, 0)
+        #
+        #ch = chess(25, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+
+        #End Test data
+        
+        # Test data 2
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
         #back_num = 0
         #
         #chess_num[0] = 2
@@ -2560,86 +2599,29 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(15, (1, 1))
+        #ch = chess(15, (1, 3))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
+        #main_chess[1][3] = ch
+        #main_map[1][3] = (1, 3)
         #
-        #ch = chess(13, (3, 1))
+        #ch = chess(13, (3, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[3][1] = ch
-        #main_map[3][1] = (3, 1)
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
         #
-        #ch = chess(29, (2, 2))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][2] = ch
-        #main_map[2][2] = (2, 2)
-        #
-        #ch = chess(16, (1, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][6] = ch
-        #main_map[1][6] = (1, 6)
-
-        #End Test data
-        
-        # Test data 2
-        #first = 0
-        #com_color = 0
-        #player_color = 1
-        #turn_id = 0
-        #back_num = 24
-        #
-        #chess_num[0] = 15
-        #chess_num[1] = 15
-        #
-        #main_chess[3][2].live = 0
-        #main_map[3][2] = None
-        #
-        #ch = chess(14, (3, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][3] = ch
-        #main_map[3][3] = (3, 3)
-        #
-        #ch = chess(13, (2, 4))
+        #ch = chess(29, (2, 4))
         #ch.back = 0
         #ch.live = 1
         #main_chess[2][4] = ch
         #main_map[2][4] = (2, 4)
         #
-        #ch = chess(5, (2, 3))
+        #ch = chess(27, (1, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)
-        #
-        #ch = chess(0, (1, 4))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][4] = ch
-        #main_map[1][4] = (1, 4)
-        #
-        #ch = chess(16, (0, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
-        #
-        #ch = chess(23, (1, 2))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
-        #
-        #ch = chess(25, (1, 3))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][3] = ch
-        #main_map[1][3] = (1, 3)
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
         
         #End Test data 2
         
@@ -2749,40 +2731,34 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 27
+        #back_num = 28
         #
         #chess_num[0] = 15
         #chess_num[1] = 16
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 1 == i and 1 == j:
+        #        if 0 == i and 1 == j:
         #            main_chess[i][j].live = 0
         #            main_map[i][j] = None
         #
-        #ch = chess(13, (2, 0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][0] = ch
-        #main_map[2][0] = (2, 0)
-        #
-        #ch = chess(5, (1, 0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
-        #
-        #ch = chess(21, (0, 0))
+        #ch = chess(16, (0, 0))
         #ch.back = 0
         #ch.live = 1
         #main_chess[0][0] = ch
         #main_map[0][0] = (0, 0)
         #
-        #ch = chess(27, (1, 2))
+        #ch = chess(13, (0, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
+        #main_chess[0][2] = ch
+        #main_map[0][2] = (0, 2)
+        #
+        #ch = chess(7, (1, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
         
         # End test data 5
         
