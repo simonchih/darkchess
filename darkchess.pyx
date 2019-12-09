@@ -1849,6 +1849,10 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     cdef list m3 = []
     cdef list m4 = []
     
+    for ban in com_ban_step:
+        if nexti == ban:
+            pt = 1
+    
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
     if nexti != None and nextj != None:
@@ -1882,16 +1886,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             score = sc + 1.35 * mscore
         else:
             score = sc + div * mscore
-        
-        ban_continue = 0
-        for ban in com_ban_step:
-            if nexti == ban:
-                m3.append([ch_position, pm, None, None,score])
-                ban_continue = 1
-                break
-            
-        if 1 == ban_continue:
-            continue
+
         #############################
         af_map_2 = copy.deepcopy(af_map)
         af_ch_2 = copy.deepcopy(af_ch)
