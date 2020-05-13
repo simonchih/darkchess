@@ -1444,9 +1444,11 @@ cdef void scan_king(my_chess):
                 king_live[ch.color] = ch.live
 
 cdef bint in_com_possible_move(org, possible_mv):
-    for pm in possible_mv:
-        if org == pm:
-            return True
+    #for pm in possible_mv:
+    #    if org == pm:
+    #        return True
+    if org in possible_mv:
+        return True
             
     return False
                 
@@ -1581,7 +1583,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
                 return -10.2
                 #return -0.2
         
-        ndead = owner_next_can_eat_dead_p(org, dest, my_chess, a_map, owner_color)
+        ndead = escape_way_to_run(org, dest, my_chess, a_map, owner_color)
         if step > 2 and 0 == ndead:
             if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
                 return 7.5
@@ -1735,7 +1737,8 @@ cdef int cant_move(a_map, a_ch, int owner_color):
     for chr in a_ch:
         for ch in chr:
             if ch.color == owner_color and 1 == ch.live:
-                for pm in ch.possible_move:
+                #for pm in ch.possible_move:
+                if ch.possible_move:
                     return 0
     return 1
     
@@ -2043,9 +2046,11 @@ cdef int dest_will_dead_owner_wont_eat(org, dest, a_ch, a_map, int opp_color):
             if ch == my:
                 continue
             if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-                for pm in ch.possible_move:
-                    if pm == dest:
-                        return 1
+                #for pm in ch.possible_move:
+                #    if pm == dest:
+                #        return 1
+                if dest in ch.possible_move:
+                    return 1
     return 0
 
 # will_be_dead    
@@ -2059,9 +2064,11 @@ cdef int will_dead((int, int)org, a_ch, a_map, int opp_color):
             if ch == my:
                 continue
             if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-                for pm in ch.possible_move:
-                    if pm == org:
-                        return 1
+                #for pm in ch.possible_move:
+                #    if pm == org:
+                #        return 1
+                if org in ch.possible_move:
+                    return 1
     return 0
 
 cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):    
@@ -2088,7 +2095,9 @@ cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):
     else:
         return 0
 
-cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color):
+# return 0: NO way, 
+# else return the more negative score the more possible to escape
+cdef double escape_way_to_run(nexti, nextj, a_ch, a_map, int owner_color):
     opp_color = 1-owner_color
     af_map = copy.deepcopy(a_map)
     af_ch = copy.deepcopy(a_ch)
@@ -2113,11 +2122,10 @@ cdef double owner_next_can_eat_dead_p(nexti, nextj, a_ch, a_map, int owner_color
                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
                             eat_step += 1
                     if eat_step == len(nch.possible_move):
-                        #return 1
                         return 0 # Greater than negative number
                     elif escape_step > eat_step - len(nch.possible_move):
                         escape_step = eat_step - len(nch.possible_move) #negative
-    #return 0
+                        
     if 0 == escape_step:
         return -0.09
     else:
@@ -2135,10 +2143,13 @@ cdef int stand_will_dead_pity((int , int)org, a_ch, a_map, int owner_color):
             if ch == my:
                 continue
             if 1 == ch.live and ch.back < 1 and ch.color == opp_color: 
-                for pm in ch.possible_move:
-                    if pm == org:
-                        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
-                            return 1
+                #for pm in ch.possible_move:
+                #    if pm == org:
+                #        if 0 == will_dead_pity((ch.row, ch.col) ,pm, a_ch, a_map, opp_color):
+                #            return 1
+                if org in ch.possible_move:
+                    if 0 == will_dead_pity((ch.row, ch.col) , org, a_ch, a_map, opp_color):
+                        return 1
     return 0
 
 # will_be_dead_pity...
@@ -2173,18 +2184,17 @@ cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_c
             break
         for ch in chr:
             if ch.color == opp_color and 1 == ch.live:
-                for pm in ch.possible_move:
-                    if pm == nextj:
-                        if b == None:
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
-                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
+                #for pm in ch.possible_move:
+                #    if pm == nextj:
+                if nextj in ch.possible_move:
+                    if b == None:
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1
+                    elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1
     
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
@@ -2200,10 +2210,13 @@ cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_c
                 break
             for ch in chr:
                 if ch.color == owner_color and 1 == ch.live:
-                    for pm in ch.possible_move:
-                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #for pm in ch.possible_move:
+                    #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #        pity = 0
+                    #        break
+                    if j2 in ch.possible_move:
+                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                             pity = 0
-                            break    
     return pity
 
 # will_be_dead_pity...
@@ -2244,18 +2257,17 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
             break
         for ch in chr:
             if ch.color == opp_color and 1 == ch.live:
-                for pm in ch.possible_move:
-                    if pm == nextj:
-                        if b == None:
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
-                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
+                #for pm in ch.possible_move:
+                #    if pm == nextj:
+                if nextj in ch.possible_move:
+                    if b == None:
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1
+                    elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) >= eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1
     
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
@@ -2271,10 +2283,13 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
                 break
             for ch in chr:
                 if ch.color == owner_color and 1 == ch.live:
-                    for pm in ch.possible_move:
-                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #for pm in ch.possible_move:
+                    #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #        pity = 0
+                    #        break
+                    if j2 in ch.possible_move:
+                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                             pity = 0
-                            break    
     return pity
 
 # will_be_dead_pity    
@@ -2317,18 +2332,17 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
             break
         for ch in chr:
             if ch.color == opp_color and 1 == ch.live:
-                for pm in ch.possible_move:
-                    if pm == nextj:
-                        if b == None:
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1 
-                            break
-                        elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
-                            i2 = (ch.row, ch.col)
-                            j2 = pm
-                            pity = 1
-                            break
+                #for pm in ch.possible_move:
+                #    if pm == nextj:
+                if nextj in ch.possible_move:
+                    if b == None:
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1 
+                    elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
+                        i2 = (ch.row, ch.col)
+                        j2 = nextj
+                        pity = 1
     
     if i2!= None and j2!= None:                    
         af2_map = copy.deepcopy(af_map)
@@ -2344,12 +2358,17 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
                 break
             for ch in chr:
                 if ch.color == owner_color and 1 == ch.live:
-                    for pm in ch.possible_move:
-                        if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #for pm in ch.possible_move:
+                    #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                    #        i3 = (ch.row, ch.col)
+                    #        j3 = pm
+                    #        pity = 0
+                    #        break
+                    if j2 in ch.possible_move:
+                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                             i3 = (ch.row, ch.col)
-                            j3 = pm
+                            j3 = j2
                             pity = 0
-                            break 
     
     if i3!= None and j3!= None:                    
         af3_map = copy.deepcopy(af2_map)
@@ -2362,10 +2381,12 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
                 break
             for ch in chr:
                 if ch.color == opp_color and 1 == ch.live:
-                    for pm in ch.possible_move:
-                        if pm == j3:
-                            pity = 1
-                            break     
+                    #for pm in ch.possible_move:
+                    #    if pm == j3:
+                    #        pity = 1
+                    #        break
+                    if j3 in ch.possible_move:
+                        pity = 1
     return pity
         
 cdef int eating_value_to_score(int value, king, int owner_color):
