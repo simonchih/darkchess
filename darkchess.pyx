@@ -1578,10 +1578,11 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
     (desty, destx) = dest
     
     if a_map[desty][destx] == None:
-        for ban in com_ban_step:
-            if org == ban:
-                return -10.2
-                #return -0.2
+        #for ban in com_ban_step:
+        #    if org == ban:
+        #        return -10.2
+        if org in com_ban_step:
+            return -10.2
         
         ndead = escape_way_to_run(org, dest, my_chess, a_map, owner_color)
         if step > 2 and 0 == ndead:
@@ -1589,9 +1590,11 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
                 return 7.5
             elif a_map[orgy][orgx] != None:
                 m = a_map[orgy][orgx]
+                n = a_map[desty][destx]
                 if 3 == my_chess[m[0]][m[1]].value:
                     return 7
                 else:
+                    #if v != None:
                     return 10
         elif owner_color == player_color:
             if 1 == will_eat2_more(org, dest, my_chess, a_map, owner_color):
@@ -1670,7 +1673,13 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
     
     #elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
     else:
-        return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+        ndead = escape_way_to_run(org, dest, my_chess, a_map, owner_color)
+        if 0 == ndead:
+            org_score = eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+            
+            return org_score + 10
+        else:   
+            return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
 
 def move_s(org, dest, a_map, a_ch):
     #global cor
@@ -2095,7 +2104,7 @@ cdef int will_eat2_more(nexti, nextj, a_ch, a_map, int owner_color):
     else:
         return 0
 
-# return 0: NO way, 
+# return 0: NO way to escape 
 # else return the more negative score the more possible to escape
 cdef double escape_way_to_run(nexti, nextj, a_ch, a_map, int owner_color):
     opp_color = 1-owner_color
@@ -2122,7 +2131,7 @@ cdef double escape_way_to_run(nexti, nextj, a_ch, a_map, int owner_color):
                         if 1 == will_dead_pity_uncheck_will_dead(eat_pm, pm, af_ch, af_map, opp_color):
                             eat_step += 1
                     if eat_step == len(nch.possible_move):
-                        return 0 # Greater than negative number
+                        return 0 # 0 greater than negative number
                     elif escape_step > eat_step - len(nch.possible_move):
                         escape_step = eat_step - len(nch.possible_move) #negative
                         
@@ -2922,6 +2931,62 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[0][3] = (0, 3)
         
         # End test data 7
+        
+        # test data 8
+        
+        #first = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 0
+        #king_live[0] = 0
+        #king_live[1] = 0
+        #
+        #chess_num[0] = 4
+        #chess_num[1] = 2
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(13, (2, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(5, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(0, (2, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+        #
+        #ch = chess(1, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(29, (3, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][1] = ch
+        #main_map[3][1] = (3, 1)
+        #
+        #ch = chess(27, (2, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        
+        # End test data 8
         
         while 0 == player_win:
             if 1 == game_start:
