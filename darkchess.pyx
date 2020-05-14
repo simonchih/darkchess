@@ -1590,7 +1590,6 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
                 return 7.5
             elif a_map[orgy][orgx] != None:
                 m = a_map[orgy][orgx]
-                n = a_map[desty][destx]
                 if 3 == my_chess[m[0]][m[1]].value:
                     return 7
                 else:
