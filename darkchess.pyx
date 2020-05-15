@@ -1673,12 +1673,13 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
     #elif 1 == my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].live:
     else:
         ndead = escape_way_to_run(org, dest, my_chess, a_map, owner_color)
-        if 0 == ndead:
-            org_score = eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
-            
+        
+        org_score = eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+        
+        if 0 == ndead:    
             return org_score + 10
         else:   
-            return eating_value_to_score(my_chess[a_map[desty][destx][0]][a_map[desty][destx][1]].value, king_live, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color)
+            return org_score
 
 def move_s(org, dest, a_map, a_ch):
     #global cor
