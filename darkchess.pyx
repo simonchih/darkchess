@@ -378,7 +378,7 @@ cdef int eat_by_bomb((int, int)org, a_map, my_chess):
             jump = 1
     return was_ate
 
-# analyze all back pieces, it's pssible for human player, NOT cheating
+# analyze all back pieces, it's possible for human player, NOT cheating
 cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int no_max, int y, int x):
     global com_color
     global player_color
@@ -405,11 +405,10 @@ cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int
                         was_ate_num += num
                 elif v > n_max:
                     eat_possible_num += num
-                #elif c.value <= n_max:
                 else:
                     if v != 1 or n_max != 2 or n_min != 2:
                         was_ate_num += num
-            else: # player_color == c.color
+            else:
                 if 2 == v:
                     if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
                         was_ate_num += num
@@ -426,7 +425,6 @@ cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int
                         was_ate_num += num
                 elif v >= no_min:
                     was_ate_num += num
-                #elif c.value < no_min:
                 else:
                     if v != 1 or n_max != 2 or n_min != 2:
                         eat_possible_num += num
