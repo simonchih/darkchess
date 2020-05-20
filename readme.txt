@@ -20,9 +20,9 @@ v0.7.2版開始修正大部份長捉的問題，
 v0.8.7開始，增加AI搜尋的深度，需使用未來高效能的電腦，
 比較跑得動。
 
-known issue:從v0.9.4,支援multi processing以後, 
+Known Issue:從v0.9.4,支援multi processing以後, 
 本程式的GUI容易出現Not Responding,
-但是在只開本遊戲的情況，等候許多，
+但是在只開本遊戲的情況，等候許久，
 最終AI(電腦方)都還是會有回應。
 
 遊戲說明：
