@@ -135,7 +135,6 @@ cdef list com_mv_map = [0, 0]
 cdef int back_num = 32
 #com_will_eat_chess = []
 #will_eat_escape_chess = []
-cdef list cannon_cor = []
 cdef list break_long_capture_dest = []
 cdef list break_long_capture_org = []
 cdef list com_ban_step = []
@@ -294,42 +293,9 @@ cdef int opp_cannon_can_eat((int, int)org, (int, int)dest, my_chess, a_map):
         if ch1 != None and ch2 != None:
             if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
                 return 1
-    return 0
-
-cdef int next_cannon_can_eat_more((int, int)org, dest, a_map, my_chess):
-    global cannon_cor
-    cannon_cor = []
-    (i, j) = org
-    n = a_map[i][j]
-    if n == None:
-        return 0
-    nc = my_chess[n[0]][n[1]]
-    
-    was_ate = eat_by_bomb(org, a_map, my_chess)
-    if was_ate == 0:
-        return 0
-    else:
-        af_map = copy.deepcopy(a_map)
-        af_ch = copy.deepcopy(my_chess)
-        if org != None and dest != None:
-            af_map, af_ch = move(org, dest, af_map, af_ch)
-            all_chess_move(af_map, af_ch)
-            
-            for cc in cannon_cor:
-                afm = af_map[cc[0]][cc[1]]
-                if afm != None:
-                    afc = af_ch[afm[0]][afm[1]]
-                    for fcp in afc.possible_move:
-                        (pi, pj) = fcp
-                        c = af_map[pi][pj]
-                        if c != None and (pi == i or pj == j):
-                            ch = af_ch[c[0]][c[1]]
-                            if  eating_value_to_score(ch.value, king_live, ch.color) > eating_value_to_score(nc.value, king_live, nc.color):
-                                return 1
-    return 0                                
+    return 0                               
     
 cdef int eat_by_bomb((int, int)org, a_map, my_chess):
-    global cannon_cor
     (i, j) = org
     cdef int jump = 0
     cdef int was_ate = 0
@@ -338,7 +304,6 @@ cdef int eat_by_bomb((int, int)org, a_map, my_chess):
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
-                cannon_cor.append((ii,j))
                 was_ate = 1
                 break
         elif a_map[ii][j] != None:
@@ -349,7 +314,6 @@ cdef int eat_by_bomb((int, int)org, a_map, my_chess):
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back or my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value:
-                cannon_cor.append((ii,j))
                 was_ate = 1
                 break
         elif a_map[ii][j] != None:
@@ -360,7 +324,6 @@ cdef int eat_by_bomb((int, int)org, a_map, my_chess):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
-                cannon_cor.append((i,jj))
                 was_ate = 1
                 break
         elif a_map[i][jj] != None:
@@ -371,7 +334,6 @@ cdef int eat_by_bomb((int, int)org, a_map, my_chess):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back or my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color == my_chess[a_map[i][j][0]][a_map[i][j][1]].color:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value:
-                cannon_cor.append((i,jj))
                 was_ate = 1
                 break
         elif a_map[i][jj] != None:
@@ -480,7 +442,6 @@ cpdef int if_cannon_can_eat((int, int)org, a_map, my_chess, int owner_color):
     return eat_number
    
 cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
-    global cannon_cor
     (i, j) = org
     cdef int jump = 0
     cdef int was_ate = 0
@@ -489,7 +450,6 @@ cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value and player_color == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color:
-                cannon_cor.append((ii,j))
                 was_ate = 1
                 break
         elif a_map[ii][j] != None:
@@ -500,7 +460,6 @@ cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
             if 1 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].back:
                 break
             elif 2 == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].value and player_color == my_chess[a_map[ii][j][0]][a_map[ii][j][1]].color:
-                cannon_cor.append((ii,j))
                 was_ate = 1
                 break
         elif a_map[ii][j] != None:
@@ -511,7 +470,6 @@ cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value and player_color == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color:
-                cannon_cor.append((i,jj))
                 was_ate = 1
                 break
         elif a_map[i][jj] != None:
@@ -522,7 +480,6 @@ cpdef int eat_by_player_bomb((int, int)org, a_map, my_chess, int player_color):
             if 1 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].back:
                 break
             elif 2 == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].value and player_color == my_chess[a_map[i][jj][0]][a_map[i][jj][1]].color:
-                cannon_cor.append((i,jj))
                 was_ate = 1
                 break
         elif a_map[i][jj] != None:
@@ -1598,10 +1555,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
                 return 8
             return 0
         elif 0 == dest_will_dead_owner_wont_eat(org, dest, main_chess, main_map, player_color) and 1 == stand_will_dead_pity((orgy, orgx), main_chess, main_map, com_color):
-            if 1 == step and 1 == next_cannon_can_eat_more(org, dest, a_map, my_chess):
-                return -8
-            else:
-                return 9 + ndead        
+            return 9 + ndead        
         
         if  2 == my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].value:
             af_map = copy.deepcopy(a_map)
@@ -1892,6 +1846,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             
     for ch_position, pm in all_pm:
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
+        
         if 1 == pt and mscore > 0:
             score = sc + 1.35 * mscore
         else:
@@ -1951,7 +1906,20 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 if 0 == pity:
                     
                     if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
+                        p_a = af_map_3[ch_position3[0]][ch_position3[1]]
+                        if None == p_a:
+                            print(crash)
+                        else:
+                            c_a = af_ch_3[p_a[0]][p_a[1]]
+                            
                         score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, player_color, com_color, com_ban_step, king_live, 4)
+                        
+                        #bomb_score = eating_value_to_score(c_a.value, king_live, c_a.color)
+                        bomb_score = 290 # fast than function return
+                        
+                        if 2 == c_a.value and score3 > bomb_score:
+                            score3 -= bomb_score#bomb possible to die
+                        
                     else: # 1 == , None ==
                         score3 = score2
                 elif 1 == pity:                   
@@ -1985,7 +1953,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             else:
                 m4.append([ch_position2, pm_com, None, None, score2])
                 #max_p_score = -9000
-                
+            
             #print('m4', m4)
         ###############################
         if m4:
@@ -2892,11 +2860,11 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_chess[3][7] = ch
         #main_map[3][7] = (3, 7)
         #
-        #ch = chess(16, (2, 5))
+        #ch = chess(16, (3, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][5] = ch
-        #main_map[2][5] = (2, 5)
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
         #
         #ch = chess(27, (3, 2))
         #ch.back = 0
@@ -2904,11 +2872,11 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_chess[3][2] = ch
         #main_map[3][2] = (3, 2)
         #
-        #ch = chess(13, (1, 7))
+        #ch = chess(13, (1, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][7] = ch
-        #main_map[1][7] = (1, 7)
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
         #
         #ch = chess(21, (2, 0))
         #ch.back = 0
@@ -2916,17 +2884,17 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_chess[2][0] = ch
         #main_map[2][0] = (2, 0)
         #
-        #ch = chess(10, (0, 1))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        ##ch = chess(10, (1, 3))
+        ##ch.back = 0
+        ##ch.live = 1
+        ##main_chess[1][3] = ch
+        ##main_map[1][3] = (1, 3)
         #
-        #ch = chess(22, (0, 3))
+        #ch = chess(22, (2, 2))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
         
         # End test data 7
         
