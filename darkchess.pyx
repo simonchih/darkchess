@@ -1179,7 +1179,7 @@ cdef void move_max_value(int orgx, int orgy, int destx, int desty, my_chess, a_m
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j+1, dist+1)
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, owner_color, i, j-1, dist+1)
 
-# return 0: NOT caca, 1: caca, 2:equal        
+# return 0: NOT caca, 1: caca, 2:equal, 3: same row or column with equal value       
 cdef int caca(org, dest, my_chess, a_map, int owner_color):        
     if org == None:
         return 0
@@ -1259,6 +1259,64 @@ cdef int caca(org, dest, my_chess, a_map, int owner_color):
                     return 1
                 elif 2 == eat_value:
                     return 2
+                    
+    if desty-2 >= 0:
+        n = a_map[desty-2][destx]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass                
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 2 == eat_value:
+                    return 3
+    if desty+2 <= 3:
+        n = a_map[desty+2][destx]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 2 == eat_value:
+                    return 3
+    if destx-2 >= 0:
+        n = a_map[desty][destx-2]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 2 == eat_value:
+                    return 3
+    if destx+2 <= 7:
+        n = a_map[desty][destx+2]
+        if n == None:
+            pass
+        else:
+            mc = my_chess[n[0]][n[1]]
+            if 0 == mc.live or 1 == mc.back:
+                pass
+            elif 7 == my_chess[m[0]][m[1]].value and 1 == my_chess[n[0]][n[1]].value and my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                pass
+            elif my_chess[n[0]][n[1]].color != my_chess[m[0]][m[1]].color:
+                eat_value = can_be_ate_equal(my_chess[n[0]][n[1]].value, my_chess[m[0]][m[1]].value)
+                if 2 == eat_value:
+                    return 3
+                    
     return 0
         
         
@@ -1428,13 +1486,11 @@ cdef void save_step_and_break_long_capture(org, dest, a_map, my_chess):
                     dt = (row+i, col+j)
                     while(br < len(break_long_capture_dest)):
                         b = 0
-                        for d in break_long_capture_dest[br]:
-                            if dt == d:
-                                del break_long_capture_dest[br]
-                                del break_long_capture_org[br]
-                                del com_ban_step[br]
-                                b = 1
-                                break
+                        if dt in break_long_capture_dest[br]:
+                            del break_long_capture_dest[br]
+                            del break_long_capture_org[br]
+                            del com_ban_step[br]
+                            b = 1
                         if 0 == b:
                             br += 1
         # End Simon added 20191016
@@ -1605,6 +1661,8 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
             return calc_move_score(max_value, max_dist, mvalue) + 0.1
         elif 2 == cvalue:
             return calc_move_score(max_value, max_dist, mvalue) + 0.3
+        elif 3 == cvalue:
+            return calc_move_score(max_value, max_dist, mvalue) + 0.3
         
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
@@ -1642,8 +1700,9 @@ def move_s(org, dest, a_map, a_ch):
     
     af_map = copy.deepcopy(a_map)
     
-    if org == dest:
-        print("crash")
+    #if org == dest:
+    #    print("crash")
+    
     if None == a_map[desti][destj]:
         org_ch = a_ch[a_map[orgi][orgj][0]][a_map[orgi][orgj][1]]
         (org_ch.row, org_ch.col) = (desti, destj)
@@ -1907,10 +1966,9 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                     
                     if 0 == will_dead_pity_even_equal(ch_position3, pm_p, af_ch_3, af_map_3, owner_color):#equal
                         p_a = af_map_3[ch_position3[0]][ch_position3[1]]
-                        if None == p_a:
-                            print(crash)
-                        else:
-                            c_a = af_ch_3[p_a[0]][p_a[1]]
+                        #if None == p_a:
+                        #    print(crash)
+                        c_a = af_ch_3[p_a[0]][p_a[1]]
                             
                         score3 = score2 + div * move_score(ch_position3, pm_p, af_ch_3, af_map_3, player_color, player_color, com_color, com_ban_step, king_live, 4)
                         
@@ -2953,6 +3011,48 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[2][6] = (2, 6)
         
         # End test data 8
+        
+        # test data 9
+        
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 0
+        #chess_num[0] = 2
+        #chess_num[1] = 2
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(13, (1, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
+        #
+        #ch = chess(15, (0, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][3] = ch
+        #main_map[0][3] = (0, 3)
+        #
+        #ch = chess(29, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+        #
+        #ch = chess(23, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
+        
+        # End test data 9
+        
         
         while 0 == player_win:
             if 1 == game_start:
