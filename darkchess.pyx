@@ -1662,7 +1662,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
         elif 2 == cvalue:
             return calc_move_score(max_value, max_dist, mvalue) + 0.3
         elif 3 == cvalue:
-            return calc_move_score(max_value, max_dist, mvalue) + 0.3
+            return calc_move_score(max_value, max_dist, mvalue) + 0.28
         
         if 1 == near2_have_same_value(org, my_chess, a_map, owner_color):
             if 0 == will_dead_pity_even_equal(org, dest, my_chess, a_map, owner_color):
@@ -2792,35 +2792,38 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 28
-        ##king_live[0] = 0
-        #
-        #chess_num[0] = 15
-        #chess_num[1] = 16
+        #back_num = 0
+        #chess_num[0] = 2
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 0 == i and 1 == j:
-        #            main_chess[i][j].live = 0
-        #            main_map[i][j] = None
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
         #
-        #ch = chess(16, (0, 0))
+        #ch = chess(13, (1, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0)
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
         #
-        #ch = chess(13, (0, 2))
+        #ch = chess(15, (0, 1))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][2] = ch
-        #main_map[0][2] = (0, 2)
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
         #
-        #ch = chess(9, (1, 0))
+        #ch = chess(29, (3, 0))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
+        #main_chess[3][0] = ch
+        #main_map[3][0] = (3, 0)
+        #
+        #ch = chess(23, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
         
         # End test data 5
         
@@ -3052,7 +3055,6 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[1][7] = (1, 7)
         
         # End test data 9
-        
         
         while 0 == player_win:
             if 1 == game_start:
