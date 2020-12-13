@@ -374,7 +374,7 @@ cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int
                 if 2 == v:
                     if 0 < if_cannon_can_eat((y, x), a_map, my_chess, player_color):
                         was_ate_num += num
-                    elif no_max >= 3:
+                    elif no_max >= 3 and no_max > n_max:
                         eat_possible_num += num
                 elif 8 == no_min:
                     continue
@@ -388,8 +388,9 @@ cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int
                 elif v >= no_min:
                     was_ate_num += num
                 else:
-                    if v != 1 or n_max != 2 or n_min != 2:
-                        eat_possible_num += num
+                    if v != 1 or no_max != 2 or no_min != 2:
+                        if no_max > n_max:
+                            eat_possible_num += num
     
     return eat_possible_num - was_ate_num
 
@@ -1846,9 +1847,9 @@ def com_think(a_map, a_ch):
                     mf.append([gb_m2[i][0][0], gb_m2[i][0][1], gb_m2[i][0][4]])
                     gb_m2[i] = None
                     
-            #for event in pygame.event.get():
-            #        if event.type == QUIT:
-            #            exit()
+            for event in pygame.event.get():
+                    if event.type == QUIT:
+                        exit()
         
         if mf:
             print('mf=', mf)
@@ -1904,6 +1905,12 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                 score = sc
             
     for ch_position, pm in all_pm:
+        # To avoid "Not Responding" 20200923
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                exit()
+        # End 20200923
+    
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
         
         if 1 == pt and mscore > 0:
