@@ -259,41 +259,41 @@ cdef list collect_possible_move(int i, int j, a_map, my_chess):
                     jump = 1
     return pm
 
-cdef int opp_cannon_can_eat((int, int)org, (int, int)dest, my_chess, a_map):
-    (i, j) = org
-    (ii, jj) = dest
-    o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
-    ch1 = None
-    ch2 = None
-    if i == ii:
-        for ki in range(ii+1, 4):
-            if a_map[ki][jj] != None:
-                (mi, mj) = a_map[ki][jj]
-                ch1 = my_chess[mi][mj]
-                break
-        for ki in range(ii-1, -1, -1):
-            if a_map[ki][jj] != None:
-                (mi, mj) = a_map[ki][jj]
-                ch2 = my_chess[mi][mj]
-                break
-        if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
-                return 1        
-    else:       
-        for kj in range(jj+1, 8):
-            if a_map[ii][kj] != None:
-                (mi, mj) = a_map[ii][kj]
-                ch1 = my_chess[mi][mj]
-                break
-        for kj in range(jj-1, -1, -1):
-            if a_map[ii][kj] != None:
-                (mi, mj) = a_map[ii][kj]
-                ch2 = my_chess[mi][mj]
-                break
-        if ch1 != None and ch2 != None:
-            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
-                return 1
-    return 0                               
+#cdef int opp_cannon_can_eat((int, int)org, (int, int)dest, my_chess, a_map):
+#    (i, j) = org
+#    (ii, jj) = dest
+#    o_color = my_chess[a_map[i][j][0]][a_map[i][j][1]].color
+#    ch1 = None
+#    ch2 = None
+#    if i == ii:
+#        for ki in range(ii+1, 4):
+#            if a_map[ki][jj] != None:
+#                (mi, mj) = a_map[ki][jj]
+#                ch1 = my_chess[mi][mj]
+#                break
+#        for ki in range(ii-1, -1, -1):
+#            if a_map[ki][jj] != None:
+#                (mi, mj) = a_map[ki][jj]
+#                ch2 = my_chess[mi][mj]
+#                break
+#        if ch1 != None and ch2 != None:
+#            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
+#                return 1        
+#    else:       
+#        for kj in range(jj+1, 8):
+#            if a_map[ii][kj] != None:
+#                (mi, mj) = a_map[ii][kj]
+#                ch1 = my_chess[mi][mj]
+#                break
+#        for kj in range(jj-1, -1, -1):
+#            if a_map[ii][kj] != None:
+#                (mi, mj) = a_map[ii][kj]
+#                ch2 = my_chess[mi][mj]
+#                break
+#        if ch1 != None and ch2 != None:
+#            if (ch1.color == o_color and ch2.color == 1 - o_color and ch1.back < 1 and ch2.back < 1 and ch2.value == 2) or (ch1.color == 1 - o_color and ch2.color == o_color and ch1.back < 1 and ch2.back < 1 and ch1.value == 2):
+#                return 1
+#    return 0                               
     
 cdef int eat_by_bomb((int, int)org, a_map, my_chess):
     (i, j) = org
@@ -362,6 +362,7 @@ cdef int check_eat_number(a_map, my_chess, int n_min, int n_max, int no_min, int
                     was_ate_num += num
                 elif 7 == n_max and 1 == v:
                     if 7 == n_min or 2 == n_min:
+                        # there are bugs for 2 == n_min
                         eat_possible_num += num
                     else:
                         was_ate_num += num
@@ -1598,9 +1599,10 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
         
         ndead = escape_way_to_run(org, dest, my_chess, a_map, owner_color)
         if step > 2 and 0 == ndead:
-            if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
-                return 7.5
-            elif a_map[orgy][orgx] != None:
+            # marked 20201217
+            #if 1 == opp_cannon_can_eat(org, dest, my_chess, a_map):
+            #    return 7.5
+            if a_map[orgy][orgx] != None:
                 m = a_map[orgy][orgx]
                 if 3 == my_chess[m[0]][m[1]].value:
                     return 7
