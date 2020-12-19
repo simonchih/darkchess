@@ -64,13 +64,6 @@ cdef char* s_loss    = 'Sound/LOSS.WAV'
 cdef char* s_move2   = 'Sound/MOVE2.WAV'
 cdef char* s_win     = 'Sound/WIN.WAV'
 
-sound_new     = pygame.mixer.Sound(s_newgame)
-sound_capture = pygame.mixer.Sound(s_capture)
-sound_click   = pygame.mixer.Sound(s_click)
-sound_loss    = pygame.mixer.Sound(s_loss)
-sound_win     = pygame.mixer.Sound(s_win)
-sound_move    = pygame.mixer.Sound(s_move2)
-
 cdef int text_x = 237
 cdef int text_y = 16
 cdef int new_game_iconi = 440
@@ -139,6 +132,16 @@ cdef list break_long_capture_dest = []
 cdef list break_long_capture_org = []
 cdef list com_ban_step = []
 cdef list move_step = [None, None, None, None]
+
+# For pygame.error: mixer not initialized, 20201219
+pygame.init() #still fail with pygame 2.0.0
+
+sound_new     = pygame.mixer.Sound(s_newgame)
+sound_capture = pygame.mixer.Sound(s_capture)
+sound_click   = pygame.mixer.Sound(s_click)
+sound_loss    = pygame.mixer.Sound(s_loss)
+sound_win     = pygame.mixer.Sound(s_win)
+sound_move    = pygame.mixer.Sound(s_move2)
 
 # return 0: can't eat, 1: can eat, 2: equal
 cdef int can_be_ate_equal(int small_value, int big_value):
@@ -2334,7 +2337,8 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
                             pity = 0
     return pity
 
-# will_be_dead_pity    
+# will_be_dead_pity
+# Some situations are NOT considered    
 def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
     global king_live
     
@@ -3064,6 +3068,84 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[1][7] = (1, 7)
         
         # End test data 9
+        
+        # Test data 10
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 3
+        #chess_num[0] = 1
+        #chess_num[1] = 2
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if (0 == i and 5 == j) or (2 == i and 6 == j) or (3 == i and 5 == j):
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #        
+        #ch = chess(11, (0, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][4] = ch
+        #main_map[0][4] = (0, 4)
+        #
+        #ch = chess(12, (0, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
+        #
+        #ch = chess(1, (1, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
+        #
+        #ch = chess(13, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+        #
+        #ch = chess(5, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
+        #
+        #ch = chess(29, (2, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][1] = ch
+        #main_map[2][1] = (2, 1)
+        #
+        #ch = chess(7, (2, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][7] = ch
+        #main_map[2][7] = (2, 7)
+        #
+        #ch = chess(15, (3, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        #
+        #ch = chess(9, (3, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
+        #
+        #ch = chess(14, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        
+        # End test data 10
         
         while 0 == player_win:
             if 1 == game_start:
