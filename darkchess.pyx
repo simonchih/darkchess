@@ -133,15 +133,8 @@ cdef list break_long_capture_org = []
 cdef list com_ban_step = []
 cdef list move_step = [None, None, None, None]
 
-# For pygame.error: mixer not initialized, 20201219
-pygame.init() #still fail with pygame 2.0.0
-
-sound_new     = pygame.mixer.Sound(s_newgame)
-sound_capture = pygame.mixer.Sound(s_capture)
-sound_click   = pygame.mixer.Sound(s_click)
-sound_loss    = pygame.mixer.Sound(s_loss)
-sound_win     = pygame.mixer.Sound(s_win)
-sound_move    = pygame.mixer.Sound(s_move2)
+# 20201219 added
+pygame.init()
 
 # return 0: can't eat, 1: can eat, 2: equal
 cdef int can_be_ate_equal(int small_value, int big_value):
@@ -969,6 +962,7 @@ def chess_ai():
             if open_score != None:
                 if None == org:
                     dest = select_back_chess(main_map, main_chess)
+                    sound_click = pygame.mixer.Sound(s_click)
                     sound_click.play()
                     sc = server_main_chess[main_map[dest[0]][dest[1]][0]][main_map[dest[0]][dest[1]][1]]
                     cindex = color_value_to_index(sc.color, sc.value, back_value_num)
@@ -986,6 +980,7 @@ def chess_ai():
                         main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                         save_step_and_break_long_capture(org, dest, a_map, main_chess)
                     else:
+                        sound_click = pygame.mixer.Sound(s_click)
                         sound_click.play()
                         sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                         cindex = color_value_to_index(sc.color, sc.value, back_value_num)
@@ -1004,6 +999,7 @@ def chess_ai():
                             main_map, main_chess, a_map = move_s(org, dest, main_map, main_chess)
                             save_step_and_break_long_capture(org, dest, a_map, main_chess)
                         else:
+                            sound_click = pygame.mixer.Sound(s_click)
                             sound_click.play()
                             sc = server_main_chess[main_map[temp[0]][temp[1]][0]][main_map[temp[0]][temp[1]][1]]
                             cindex = color_value_to_index(sc.color, sc.value, back_value_num)
@@ -1717,6 +1713,7 @@ def move_s(org, dest, a_map, a_ch):
         af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
+        sound_move = pygame.mixer.Sound(s_move2)
         sound_move.play()
     else:
         #dest_ch = a_ch[a_map[desti][destj][0]][a_map[desti][destj][1]]
@@ -1728,6 +1725,7 @@ def move_s(org, dest, a_map, a_ch):
         af_map[desti][destj] = (list(a_map[orgi][orgj])[0], list(a_map[orgi][orgj])[1])
         af_map[orgi][orgj] = None
         a_map[orgi][orgj] = None
+        sound_capture = pygame.mixer.Sound(s_capture)
         sound_capture.play()
     
     return a_map, a_ch, af_map    
@@ -3149,6 +3147,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         
         while 0 == player_win:
             if 1 == game_start:
+                sound_new = pygame.mixer.Sound(s_newgame)
                 sound_new.play()
                 game_start = 0
 
@@ -3222,6 +3221,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                         if new_game_iconi < mouseX < new_game_iconi + new_game.get_width() and new_game_iconj < mouseY < new_game_iconj + new_game.get_height():
                             player_win = -1
                         all_chess_move(main_map, main_chess)
+                        sound_click = pygame.mixer.Sound(s_click)
                         sound_click.play()
                         click_once = 0
                         for i, chr in enumerate(main_chess):
@@ -3267,8 +3267,10 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                                     if main_map[pm[0]][pm[1]] != None:
                                         main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].live = 0
                                         chess_num[main_chess[main_map[pm[0]][pm[1]][0]][main_map[pm[0]][pm[1]][1]].color] -= 1
+                                        sound_capture = pygame.mixer.Sound(s_capture)
                                         sound_capture.play()
                                     else:
+                                        sound_move = pygame.mixer.Sound(s_move2)
                                         sound_move.play()
                                     main_map[pm[0]][pm[1]] = main_map[selected_c.row][selected_c.col]
                                     main_map[selected_c.row][selected_c.col] = None
@@ -3364,6 +3366,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                 for cr in main_chess:
                     for c in cr:
                         c.draw(screen, chess_image_sel, chess_image)
+                sound_win = pygame.mixer.Sound(s_win)
                 sound_win.play()
                 pygame.display.update()
                 time.sleep(5)
@@ -3373,6 +3376,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                 for cr in main_chess:
                     for c in cr:
                         c.draw(screen, chess_image_sel, chess_image)
+                sound_loss = pygame.mixer.Sound(s_loss)
                 sound_loss.play()
                 pygame.display.update()
                 time.sleep(5)
