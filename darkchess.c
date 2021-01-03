@@ -41464,7 +41464,7 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
  *         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
  * 
  *         if 1 == pt and mscore > 0:             # <<<<<<<<<<<<<<
- *             score = sc + 1.35 * mscore
+ *             score = sc + 1.01 * mscore
  *         else:
  */
     __pyx_t_6 = ((1 == __pyx_v_pt) != 0);
@@ -41481,24 +41481,24 @@ static PyObject *__pyx_pf_9darkchess_30one_turn(CYTHON_UNUSED PyObject *__pyx_se
       /* "darkchess.pyx":1920
  * 
  *         if 1 == pt and mscore > 0:
- *             score = sc + 1.35 * mscore             # <<<<<<<<<<<<<<
+ *             score = sc + 1.01 * mscore             # <<<<<<<<<<<<<<
  *         else:
  *             score = sc + div * mscore
  */
-      __pyx_v_score = (__pyx_v_sc + (1.35 * __pyx_v_mscore));
+      __pyx_v_score = (__pyx_v_sc + (1.01 * __pyx_v_mscore));
 
       /* "darkchess.pyx":1919
  *         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
  * 
  *         if 1 == pt and mscore > 0:             # <<<<<<<<<<<<<<
- *             score = sc + 1.35 * mscore
+ *             score = sc + 1.01 * mscore
  *         else:
  */
       goto __pyx_L33;
     }
 
     /* "darkchess.pyx":1922
- *             score = sc + 1.35 * mscore
+ *             score = sc + 1.01 * mscore
  *         else:
  *             score = sc + div * mscore             # <<<<<<<<<<<<<<
  * 

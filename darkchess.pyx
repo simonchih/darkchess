@@ -1917,7 +1917,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
         
         if 1 == pt and mscore > 0:
-            score = sc + 1.35 * mscore
+            score = sc + 1.01 * mscore
         else:
             score = sc + div * mscore
 
@@ -3085,7 +3085,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_chess[0][6] = ch
         #main_map[0][6] = (0, 6)
         #
-        #ch = chess(5, (1, 5))
+        #ch = chess(11, (1, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[1][5] = ch
