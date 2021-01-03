@@ -3061,7 +3061,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         
         # End test data 9
         
-        # Test data 10, known issue
+        # Test data 10
         #first = 0
         #com_color = 1
         #player_color = 0
@@ -3110,6 +3110,66 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[1][4] = (1, 4)
         
         # End test data 10
+        
+        # Test data 11
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 0
+        #king_live[1] = 0
+        #
+        #chess_num[0] = 4
+        #chess_num[1] = 4
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(15, (3, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
+        #
+        #ch = chess(9, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(16, (2, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5)
+        #
+        #ch = chess(21, (2, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][0] = ch
+        #main_map[2][0] = (2, 0)
+        #
+        #ch = chess(13, (0, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
+        #
+        #ch = chess(29, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+        #
+        #ch = chess(27, (3, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        
+        # End test data 11
         
         while 0 == player_win:
             if 1 == game_start:
