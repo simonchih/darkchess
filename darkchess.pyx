@@ -1798,8 +1798,10 @@ def com_think(a_map, a_ch):
                     pity = 0
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):                        
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color, com_ban_step, king_live)
-                    else:                        
-                        score = sc + 20 - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color, com_ban_step, king_live)
+                    else:
+                        self_score = eating_value_to_score(ch.value, king_live, com_color) * 0.2
+                        
+                        score = sc + 40 + self_score - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color, com_ban_step, king_live)
                         pity = 1
                     
                     m.append(((ch.row, ch.col), pm, score, pity))
@@ -1916,10 +1918,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
         
-        if 1 == pt and mscore > 0:
-            score = sc + 1.01 * mscore
-        else:
-            score = sc + div * mscore
+        score = sc + div * mscore
 
         #############################
         af_map_2 = copy.deepcopy(af_map)
@@ -1987,6 +1986,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
                         
                         if 2 == c_a.value and score3 > bomb_score:
                             score3 -= bomb_score#bomb possible to die
+                            
                         
                     else: # 1 == , None ==
                         score3 = score2
@@ -2035,7 +2035,8 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
             if beta < coms:
                 beta = coms
             
-            m3.append([ch_position, pm, ch_comp, pm_comp, coms])                           
+            m3.append([ch_position, pm, ch_comp, pm_comp, coms])
+            
             m4 = []
             
             # marked 20191104
@@ -3170,6 +3171,94 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[3][2] = (3, 2)
         
         # End test data 11
+        
+        # Test data 12
+        #first = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 2
+        #king_live[1] = 0
+        #
+        #chess_num[0] = 8
+        #chess_num[1] = 4
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 0 == i and 5 == j:
+        #            continue
+        #        if 1 == i and 6 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(27, (0, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][1] = ch
+        #main_map[0][1] = (0, 1)
+        #
+        #ch = chess(13, (1, 0))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][0] = ch
+        #main_map[1][0] = (1, 0)
+        #
+        #ch = chess(14, (1, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][2] = ch
+        #main_map[1][2] = (1, 2)
+        #
+        #ch = chess(9, (2, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][2] = ch
+        #main_map[2][2] = (2, 2)
+        #
+        #ch = chess(15, (2, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][3] = ch
+        #main_map[2][3] = (2, 3)
+        #
+        #ch = chess(10, (2, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][4] = ch
+        #main_map[2][4] = (2, 4)
+        #
+        #ch = chess(0, (2, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5)
+        #
+        #ch = chess(25, (2, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        #
+        #ch = chess(11, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(12, (0, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
+        #
+        #ch = chess(28, (3, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        
+        # End test data 12
         
         while 0 == player_win:
             if 1 == game_start:
