@@ -1,28 +1,5 @@
-For Windows:
+Cython>=0.29.21
+pygame>=2.0.1
+pyinstaller>=4.0
 
-1. Download Python 3.7+ below:
-https://www.python.org/downloads/
 
-2. Customize installation with Python 3 and then checked "pip" to install pip
-
-3. Install pygame with command below:
-py -3 -m pip install pygame
-
-4. Install cython with command below:
-py -3 -m pip install cython
-
-5. Install pyinstaller with command below:
-py -3 -m pip install pyinstaller
-
-6. run py setup.py build_ext --inplace
-e.g.
-py -3 setup.py build_ext --inplace
-
-7. run PyInstaller, e.g. 
-py -3 -m PyInstaller -F --noconsole dchess.py --hidden-import random --hidden-import os --hidden-import math --hidden-import time --hidden-import pygame --hidden-import copy --hidden-import threading --hidden-import sys --hidden-import chess --hidden-import chess_data --hidden-import pygame.locals
-
-For Linux:
-Almost the same step as windows,
-but you need replace "py -3 -m pip install pygame" with
-"pip3 install pygame" in step 3.
-Or replace "py -3" with "python3" if needed.
