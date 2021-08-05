@@ -1659,6 +1659,7 @@ cdef double move_score(org, dest, my_chess, a_map, int owner_color, int player_c
         move_max_value(orgx, orgy, destx, desty, my_chess, a_map, org_value, my_chess[a_map[orgy][orgx][0]][a_map[orgy][orgx][1]].color, desty, destx)
         
         cvalue = caca(org, dest, my_chess, a_map, owner_color)
+        
         if 1 == cvalue:
             return calc_move_score(max_value, max_dist, mvalue) + 0.1
         elif 2 == cvalue:
@@ -1783,9 +1784,9 @@ def com_think(a_map, a_ch):
     scan_king(a_ch)
     
     if back_num > 0:
-        open_score = 0
-        m.append((None, None, 0, 0))
-        min_score = 0
+        open_score = 0.01
+        m.append((None, None, 0.01, 0))
+        min_score = 0.01
         org = None
         dest = None
     else:
@@ -1798,6 +1799,7 @@ def com_think(a_map, a_ch):
                     pity = 0
                     if 0 == will_dead_pity((ch.row, ch.col), pm, a_ch, a_map, com_color):                        
                         score = sc - move_score((ch.row, ch.col), pm, a_ch, a_map, com_color, player_color, com_color, com_ban_step, king_live)
+                        
                     else:
                         self_score = eating_value_to_score(ch.value, king_live, com_color) * 0.2
                         
@@ -2373,65 +2375,90 @@ def will_dead_pity(nexti, nextj, a_ch, a_map, int owner_color):
     j3 = None
     
     for chr in af_ch:
-        if 1 == pity:
-            break
         for ch in chr:
-            if ch.color == opp_color and 1 == ch.live:
-                #for pm in ch.possible_move:
-                #    if pm == nextj:
+            if 1 == ch.back or 0 == ch.live:
+                continue
+            if ch.color == opp_color:
                 if nextj in ch.possible_move:
                     if b == None:
+                        org_b = b
                         i2 = (ch.row, ch.col)
                         j2 = nextj
-                        pity = 1 
+                        pity = 1
+                        
+                        af2_map = copy.deepcopy(af_map)
+                        af2_ch = copy.deepcopy(af_ch)
+                        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
+                        all_chess_move(af2_map, af2_ch)
+                        
+                        (ii, jj) = j2
+                        b = af2_map[ii][jj]
+                        
+                        for chr in af2_ch:
+                            for ch in chr:
+                                if 1 == ch.back or 0 == ch.live:
+                                    continue
+                                if ch.color == owner_color:
+                                    if j2 in ch.possible_move:
+                                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                                            i3 = (ch.row, ch.col)
+                                            j3 = j2
+                                            pity = 0
+                                            
+                                            af3_map = copy.deepcopy(af2_map)
+                                            af3_ch = copy.deepcopy(af2_ch)
+                                            af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
+                                            all_chess_move(af3_map, af3_ch)
+                                            
+                                            for chr in af3_ch:
+                                                for ch in chr:
+                                                    if 1 == ch.back or 0 == ch.live:
+                                                        continue
+                                                    if ch.color == opp_color:
+                                                        if j3 in ch.possible_move:
+                                                            return 1
+                                                            
+                        if 1 == pity: return 1
+                        else: b = org_b
+                                            
                     elif eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) > eating_value_to_score(a_ch[b[0]][b[1]].value, king_live, owner_color):
                         i2 = (ch.row, ch.col)
                         j2 = nextj
                         pity = 1
-    
-    if i2!= None and j2!= None:                    
-        af2_map = copy.deepcopy(af_map)
-        af2_ch = copy.deepcopy(af_ch)
-        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
-        all_chess_move(af2_map, af2_ch)
-        
-        (ii, jj) = j2
-        b = af2_map[ii][jj]
-        
-        for chr in af2_ch:
-            if 0 == pity:
-                break
-            for ch in chr:
-                if ch.color == owner_color and 1 == ch.live:
-                    #for pm in ch.possible_move:
-                    #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
-                    #        i3 = (ch.row, ch.col)
-                    #        j3 = pm
-                    #        pity = 0
-                    #        break
-                    if j2 in ch.possible_move:
-                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
-                            i3 = (ch.row, ch.col)
-                            j3 = j2
-                            pity = 0
-    
-    if i3!= None and j3!= None:                    
-        af3_map = copy.deepcopy(af2_map)
-        af3_ch = copy.deepcopy(af2_ch)
-        af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
-        all_chess_move(af3_map, af3_ch)
-        
-        for chr in af3_ch:
-            if 1 == pity:
-                break
-            for ch in chr:
-                if ch.color == opp_color and 1 == ch.live:
-                    #for pm in ch.possible_move:
-                    #    if pm == j3:
-                    #        pity = 1
-                    #        break
-                    if j3 in ch.possible_move:
-                        pity = 1
+                        
+                        af2_map = copy.deepcopy(af_map)
+                        af2_ch = copy.deepcopy(af_ch)
+                        af2_map, af2_ch = move(i2, j2, af2_map, af2_ch)
+                        all_chess_move(af2_map, af2_ch)
+                        
+                        (ii, jj) = j2
+                        b = af2_map[ii][jj]
+                        
+                        for chr in af2_ch:
+                            for ch in chr:
+                                if 1 == ch.back or 0 == ch.live:
+                                    continue
+                                if ch.color == owner_color:
+                                    if j2 in ch.possible_move:
+                                        if eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
+                                            i3 = (ch.row, ch.col)
+                                            j3 = j2
+                                            pity = 0
+                                            
+                                            af3_map = copy.deepcopy(af2_map)
+                                            af3_ch = copy.deepcopy(af2_ch)
+                                            af3_map, af3_ch = move(i3, j3, af3_map, af3_ch)
+                                            all_chess_move(af3_map, af3_ch)
+                                            
+                                            for chr in af3_ch:
+                                                for ch in chr:
+                                                    if 1 == ch.back or 0 == ch.live:
+                                                        continue
+                                                    if ch.color == opp_color:
+                                                        if j3 in ch.possible_move:
+                                                            return 1
+                        if 1 == pity: return 1
+                        
     return pity
         
 cdef int eating_value_to_score(int value, king, int owner_color):
@@ -3259,6 +3286,158 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #main_map[3][2] = (3, 2)
         
         # End test data 12
+        
+        # Test data 13
+        #first = 0
+        #com_color = 1
+        #player_color = 0
+        #turn_id = 1
+        #back_num = 1
+        #king_live[0] = 0
+        #king_live[1] = 0
+        #
+        #chess_num[0] = 3
+        #chess_num[1] = 2
+        #
+        #for c in [0, 1]:
+        #    for v in range(1, 8):
+        #        back_value_num[c][v] = 0
+        #
+        #back_value_num[0][5] = 1
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 1 == i and 6 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(11, (1, 6))
+        #ch.back = 1
+        #ch.live = 1
+        #server_main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
+        #
+        #ch = chess(21, (1, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
+        #
+        #ch = chess(16, (1, 1))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][1] = ch
+        #main_map[1][1] = (1, 1)
+        #
+        #ch = chess(9, (3, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        #
+        #ch = chess(10, (0, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7)
+        
+        # End test data 13
+        
+        # Test data 14
+        #first = 0
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 3
+        #
+        #chess_num[0] = 9
+        #chess_num[1] = 6
+        #
+        #for i in range(0, 4):
+        #    for j in range(0, 8):
+        #        if 2 == i and 3 == j:
+        #            continue
+        #        if 0 == i and 5 == j:
+        #            continue
+        #        if 2 == i and 7 == j:
+        #            continue
+        #        main_chess[i][j].live = 0
+        #        main_map[i][j] = None
+        #
+        #ch = chess(13, (1, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][5] = ch
+        #main_map[1][5] = (1, 5)
+        #
+        #ch = chess(7, (1, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][6] = ch
+        #main_map[1][6] = (1, 6)
+        #
+        #ch = chess(8, (2, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
+        #
+        #ch = chess(23, (3, 5))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
+        #
+        #ch = chess(24, (1, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][4] = ch
+        #main_map[1][4] = (1, 4)
+        #
+        #ch = chess(29, (2, 4))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[2][4] = ch
+        #main_map[2][4] = (2, 4)
+        #
+        #ch = chess(31, (3, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
+        #
+        #ch = chess(0, (0, 6))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][6] = ch
+        #main_map[0][6] = (0, 6)
+        #
+        #ch = chess(1, (3, 2))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][2] = ch
+        #main_map[3][2] = (3, 2)
+        #
+        #ch = chess(11, (0, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7)
+        #
+        #ch = chess(15, (1, 7))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[1][7] = ch
+        #main_map[1][7] = (1, 7)
+        #
+        #ch = chess(14, (3, 3))
+        #ch.back = 0
+        #ch.live = 1
+        #main_chess[3][3] = ch
+        #main_map[3][3] = (3, 3)
+        
+        # End test data 14
         
         while 0 == player_win:
             if 1 == game_start:
