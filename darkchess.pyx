@@ -2511,7 +2511,9 @@ cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_c
         if 1 == pity:
             break
         for ch in chr:
-            if ch.color == opp_color and 1 == ch.live:
+            if 1 == ch.back or 0 == ch.live:
+                continue
+            if ch.color == opp_color:
                 #for pm in ch.possible_move:
                 #    if pm == nextj:
                 if nextj in ch.possible_move:
@@ -2537,7 +2539,9 @@ cdef int will_dead_pity_uncheck_will_dead(nexti, nextj, a_ch, a_map, int owner_c
             if 0 == pity:
                 break
             for ch in chr:
-                if ch.color == owner_color and 1 == ch.live:
+                if 1 == ch.back or 0 == ch.live:
+                    continue
+                if ch.color == owner_color:
                     #for pm in ch.possible_move:
                     #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) <= eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                     #        pity = 0
@@ -2584,7 +2588,9 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
         if 1 == pity:
             break
         for ch in chr:
-            if ch.color == opp_color and 1 == ch.live:
+            if 1 == ch.back or 0 == ch.live:
+                continue
+            if ch.color == opp_color:
                 #for pm in ch.possible_move:
                 #    if pm == nextj:
                 if nextj in ch.possible_move:
@@ -2610,7 +2616,9 @@ def will_dead_pity_even_equal(nexti, nextj, a_ch, a_map, int owner_color):
             if 0 == pity:
                 break
             for ch in chr:
-                if ch.color == owner_color and 1 == ch.live:
+                if 1 == ch.back or 0 == ch.live:
+                    continue
+                if ch.color == owner_color:
                     #for pm in ch.possible_move:
                     #    if pm == j2 and eating_value_to_score(a_ch[a[0]][a[1]].value, king_live, 1-owner_color) < eating_value_to_score(af2_ch[b[0]][b[1]].value, king_live, owner_color):
                     #        pity = 0
@@ -3706,78 +3714,59 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         # End test data 14
         
         # Test data 15
+        # known defect (pending)
         #first = 0
-        #com_color = 1
-        #player_color = 0
-        #turn_id = 1
-        #back_num = 1
+        #com_color = 0
+        #player_color = 1
+        #turn_id = 0
+        #back_num = 25
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if 1 == i and 6 == j:
+        #        if j < 5:
+        #            continue
+        #        elif 0 == i and 5 == j:
+        #            continue
+        #        elif 1 == i and 5 == j:
+        #            continue
+        #        elif 2 == i and 5 == j:
+        #            continue
+        #        elif 0 == i and 6 == j:
+        #            continue
+        #        elif 1 == i and 6 == j:
         #            continue
         #        main_chess[i][j].live = 0
         #        main_map[i][j] = None
         #
-        #ch = chess(14, (1, 6))
-        #ch.back = 1
-        #ch.live = 1
-        #server_main_chess[1][6] = ch
-        #main_map[1][6] = (1, 6)
-        #
-        #ch = chess(29, (0, 0))
+        #ch = chess(15, (0, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][0] = ch
-        #main_map[0][0] = (0, 0)
+        #main_chess[0][7] = ch
+        #main_map[0][7] = (0, 7)
         #
-        #ch = chess(30, (0, 5))
+        #ch = chess(13, (2, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][5] = ch
-        #main_map[0][5] = (0, 5)
+        #main_chess[2][6] = ch
+        #main_map[2][6] = (2, 6)
         #
-        #ch = chess(31, (0, 1))
+        #ch = chess(5, (3, 6))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][1] = ch
-        #main_map[0][1] = (0, 1)
+        #main_chess[3][6] = ch
+        #main_map[3][6] = (3, 6)
         #
-        #ch = chess(15, (2, 3))
+        #ch = chess(16, (3, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][3] = ch
-        #main_map[2][3] = (2, 3)
+        #main_chess[3][5] = ch
+        #main_map[3][5] = (3, 5)
         #
-        #ch = chess(16, (0, 3))
+        #ch = chess(25, (3, 7))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][3] = ch
-        #main_map[0][3] = (0, 3)
-        #
-        #ch = chess(7, (1, 0))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][0] = ch
-        #main_map[1][0] = (1, 0)
-        #
-        #ch = chess(13, (1, 1))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][1] = ch
-        #main_map[1][1] = (1, 1)
-        #
-        #ch = chess(0, (1, 2))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[1][2] = ch
-        #main_map[1][2] = (1, 2)
-        #
-        #ch = chess(9, (2, 4))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[2][4] = ch
-        #main_map[2][4] = (2, 4)
+        #main_chess[3][7] = ch
+        #main_map[3][7] = (3, 7)
         
         # End test data 15
         
