@@ -1923,6 +1923,7 @@ def com_think(a_map, a_ch):
 def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int pt, double div, int ind, double alpha, double beta, int player_color, int com_color, int back_num, list com_ban_step, king_live, list gb_m2):
     
     cdef double max_p_score = -9000
+    div2 = 0.901
     
     cdef list m2 = []
     cdef list m3 = []
@@ -1968,7 +1969,7 @@ def one_turn(q, a_map, a_ch, mm, int owner_color, nexti, nextj, double sc, int p
     
         mscore =  move_score(ch_position, pm, af_ch, af_map, player_color, player_color, com_color, com_ban_step, king_live, 2)
         
-        score = sc + div * mscore
+        score = sc + div2 * mscore
 
         #############################
         af_map_2 = copy.deepcopy(af_map)
@@ -3256,7 +3257,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         #king_live[1] = 0
         #
         #chess_num[0] = 8
-        #chess_num[1] = 1
+        #chess_num[1] = 2
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
@@ -3472,59 +3473,38 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
         # End test data 14
         
         # Test data 15
-        # known defect (pending)
         #first = 0
         #com_color = 0
         #player_color = 1
         #turn_id = 0
-        #back_num = 25
+        #back_num = 26
         #
         #for i in range(0, 4):
         #    for j in range(0, 8):
-        #        if j < 5:
-        #            continue
-        #        elif 0 == i and 5 == j:
-        #            continue
-        #        elif 1 == i and 5 == j:
-        #            continue
-        #        elif 2 == i and 5 == j:
-        #            continue
-        #        elif 0 == i and 6 == j:
-        #            continue
-        #        elif 1 == i and 6 == j:
-        #            continue
-        #        main_chess[i][j].live = 0
-        #        main_map[i][j] = None
+        #        if 3 == i and j > 3:
+        #            main_chess[i][j].live = 0
+        #            main_map[i][j] = None
+        #        elif 2 == i and 6 > j > 3:
+        #            main_chess[i][j].live = 0
+        #            main_map[i][j] = None
         #
-        #ch = chess(15, (0, 7))
+        #ch = chess(7, (2, 5))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[0][7] = ch
-        #main_map[0][7] = (0, 7)
+        #main_chess[2][5] = ch
+        #main_map[2][5] = (2, 5)
         #
-        #ch = chess(13, (2, 6))
+        #ch = chess(9, (3, 4))
         #ch.back = 0
         #ch.live = 1
-        #main_chess[2][6] = ch
-        #main_map[2][6] = (2, 6)
+        #main_chess[3][4] = ch
+        #main_map[3][4] = (3, 4)
         #
-        #ch = chess(5, (3, 6))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][6] = ch
-        #main_map[3][6] = (3, 6)
-        #
-        #ch = chess(16, (3, 5))
+        #ch = chess(29, (3, 5))
         #ch.back = 0
         #ch.live = 1
         #main_chess[3][5] = ch
         #main_map[3][5] = (3, 5)
-        #
-        #ch = chess(25, (3, 7))
-        #ch.back = 0
-        #ch.live = 1
-        #main_chess[3][7] = ch
-        #main_map[3][7] = (3, 7)
         
         # End test data 15
         
