@@ -1,0 +1,400 @@
+Unity Editor version:    6000.3.2f1 (a9779f353c9b)
+Branch:                  6000.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.6 (Build 24G84)
+Darwin version:          24.6.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        24576 MB
+Date:                    2026-02-20T01:49:29Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7857)
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-nographics
+-quit
+-createProject
+/Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity
+-logFile
+/Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity/unity_create.log
+/Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8456478912]  Target information:
+
+Player connection [8456478912]  * "[IP] 192.168.20.30 [Port] 55504 [Flags] 2 [Guid] 2324950449 [EditorId] 2324950449 [Version] 1048832 [Id] OSXEditor(0,FIT0721deMacBook-Pro-2.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8456478912] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8456478912] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-7856" after 0.1 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Module] Error: Timed-out after 60.01s, waiting for Licensing to initialize
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.2f1 (a9779f353c9b)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] Error: Licensing initialization failed after 74.83s
+[Licensing::Module] Licensing is initialized (took 14.33s).
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7870)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Registered in 89.218065 seconds.
+- Loaded All Assemblies, in 89.477 seconds
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.218 seconds
+Domain Reload Profiling: 89695ms
+	BeginReloadAssembly (81ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (11ms)
+	RebuildCommonClasses (20ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (89256ms)
+	LoadAllAssembliesAndSetupDomain (114ms)
+		LoadAssemblies (71ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (111ms)
+			TypeCache.Refresh (110ms)
+				TypeCache.ScanAssembly (100ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (219ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (197ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (47ms)
+			ProcessInitializeOnLoadAttributes (74ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7911)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7922)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Done resolving packages in 0.85 seconds
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7943)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Package Manager] Unknown entitlement status [0] for package [com.unity.multiplayer.center]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.accessibility]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.adaptiveperformance]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.ai]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.androidjni]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.animation]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.assetbundle]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.audio]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.cloth]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.director]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.imageconversion]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.imgui]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.jsonserialize]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.particlesystem]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.physics]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.physics2d]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.screencapture]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.terrain]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.terrainphysics]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.tilemap]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.ui]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.uielements]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.umbra]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unityanalytics]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unitywebrequest]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unitywebrequestassetbundle]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unitywebrequestaudio]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unitywebrequesttexture]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.unitywebrequestwww]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.vectorgraphics]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.vehicles]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.video]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.vr]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.wind]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.xr]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.subsystems]
+[Package Manager] Unknown entitlement status [0] for package [com.unity.modules.hierarchycore]
+[Package Manager] Lock file was modified
+[Package Manager] The following packages were not registered because your license doesn't allow it.
+  com.unity.multiplayer.center@1.0.1
+  com.unity.modules.accessibility@1.0.0
+  com.unity.modules.adaptiveperformance@1.0.0
+  com.unity.modules.ai@1.0.0
+  com.unity.modules.androidjni@1.0.0
+  com.unity.modules.animation@1.0.0
+  com.unity.modules.assetbundle@1.0.0
+  com.unity.modules.audio@1.0.0
+  com.unity.modules.cloth@1.0.0
+  com.unity.modules.director@1.0.0
+  com.unity.modules.imageconversion@1.0.0
+  com.unity.modules.imgui@1.0.0
+  com.unity.modules.jsonserialize@1.0.0
+  com.unity.modules.particlesystem@1.0.0
+  com.unity.modules.physics@1.0.0
+  com.unity.modules.physics2d@1.0.0
+  com.unity.modules.screencapture@1.0.0
+  com.unity.modules.terrain@1.0.0
+  com.unity.modules.terrainphysics@1.0.0
+  com.unity.modules.tilemap@1.0.0
+  com.unity.modules.ui@1.0.0
+  com.unity.modules.uielements@1.0.0
+  com.unity.modules.umbra@1.0.0
+  com.unity.modules.unityanalytics@1.0.0
+  com.unity.modules.unitywebrequest@1.0.0
+  com.unity.modules.unitywebrequestassetbundle@1.0.0
+  com.unity.modules.unitywebrequestaudio@1.0.0
+  com.unity.modules.unitywebrequesttexture@1.0.0
+  com.unity.modules.unitywebrequestwww@1.0.0
+  com.unity.modules.vectorgraphics@1.0.0
+  com.unity.modules.vehicles@1.0.0
+  com.unity.modules.video@1.0.0
+  com.unity.modules.vr@1.0.0
+  com.unity.modules.wind@1.0.0
+  com.unity.modules.xr@1.0.0
+  com.unity.modules.subsystems@1.0.0
+  com.unity.modules.hierarchycore@1.0.0
+[Package Manager] Registered 0 packages:
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+AssetDatabase: script compilation time: 0.000121s
+Begin MonoManager ReloadAssembly
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7979)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+- Loaded All Assemblies, in 75.070 seconds
+Start importing Assets using Guid(00000000000000001000000000000000) (DefaultImporter) -> (artifact id: '4b55c7cb15071bfc086d0e52a7664a41') in 0.007446 seconds
+Start importing ProjectSettings/InputManager.asset using Guid(00000000000000002000000000000000) (LibraryAssetImporter) -> (artifact id: '3d278bdfa729973ecf92c670ca181c88') in 0.000673125 seconds
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) (LibraryAssetImporter) -> (artifact id: '4aa03ef27a83f311e598313a3ec2fbc3') in 0.000323959 seconds
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '81a509bc0d255c70253f6dab07c5ac52') in 0.0006155 seconds
+Start importing ProjectSettings/AudioManager.asset using Guid(00000000000000006000000000000000) (LibraryAssetImporter) -> (artifact id: '7bb8de31f311db17f0fefe3abfd595f1') in 0.000206041 seconds
+Start importing ProjectSettings/TimeManager.asset using Guid(00000000000000007000000000000000) (LibraryAssetImporter) -> (artifact id: '52c307e924e96ceef905bcc2cea85a00') in 0.000172583 seconds
+Start importing ProjectSettings/DynamicsManager.asset using Guid(00000000000000008000000000000000) (LibraryAssetImporter) -> (artifact id: '3b3a57d98a2cd89991e7d2d6c563badf') in 0.000208083 seconds
+Start importing ProjectSettings/QualitySettings.asset using Guid(00000000000000009000000000000000) (LibraryAssetImporter) -> (artifact id: '3d22d777d340243128ed3ffa349fb55a') in 0.000243458 seconds
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: '1923232d45cb936aef47cec131f33975') in 0.000176917 seconds
+Start importing ProjectSettings/EditorSettings.asset using Guid(0000000000000000c000000000000000) (LibraryAssetImporter) -> (artifact id: '88a81b0cd41f2e6791b296dbea0c2761') in 0.000169667 seconds
+Start importing ProjectSettings/NavMeshAreas.asset using Guid(00000000000000004100000000000000) (LibraryAssetImporter) -> (artifact id: '4ba0a6bb5cc18b1619eb3b3f4ce570d1') in 0.000168417 seconds
+Start importing ProjectSettings/Physics2DSettings.asset using Guid(00000000000000005100000000000000) (LibraryAssetImporter) -> (artifact id: 'bb8ce7f5b2d944741959db20200075a7') in 0.000174 seconds
+Start importing ProjectSettings/GraphicsSettings.asset using Guid(00000000000000006100000000000000) (LibraryAssetImporter) -> (artifact id: '041f8e671a93a484399854eca4c35b80') in 0.000172833 seconds
+Start importing ProjectSettings/ClusterInputManager.asset using Guid(00000000000000007100000000000000) (LibraryAssetImporter) -> (artifact id: '5a028a71a6163b7bc9a46219c48662ec') in 0.000161792 seconds
+Start importing ProjectSettings/UnityConnectSettings.asset using Guid(0000000000000000a100000000000000) (LibraryAssetImporter) -> (artifact id: '5a6e69f8200d884ded3f19f546ea756a') in 0.000169458 seconds
+Start importing ProjectSettings/PresetManager.asset using Guid(0000000000000000b100000000000000) (LibraryAssetImporter) -> (artifact id: '669bd2cb5cdf99ef516d1350fa42393e') in 0.000166375 seconds
+Start importing ProjectSettings/VFXManager.asset using Guid(0000000000000000c100000000000000) (LibraryAssetImporter) -> (artifact id: 'dd6732d958402095937fd19a0cecb735') in 0.000156292 seconds
+Start importing ProjectSettings/VersionControlSettings.asset using Guid(0000000000000000d100000000000000) (LibraryAssetImporter) -> (artifact id: 'b89f810c452b248c014f182ae5caa680') in 0.000155041 seconds
+Start importing ProjectSettings/MemorySettings.asset using Guid(0000000000000000f100000000000000) (LibraryAssetImporter) -> (artifact id: '19f032dc933bd79e61da5c81f7ddd1ac') in 0.000161583 seconds
+Start importing ProjectSettings/MultiplayerManager.asset using Guid(00000000000000000200000000000000) (LibraryAssetImporter) -> (artifact id: 'f060d13f2990d90fc35c577bb4111c66') in 0.000174708 seconds
+Start importing Library/BuildInstructions using Guid(00000000000000002300000000000000) (DefaultImporter) -> (artifact id: 'ade3aeda13ad9960ede0e143cb33502a') in 0.000075459 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.218 seconds
+Domain Reload Profiling: 75288ms
+	BeginReloadAssembly (75028ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (20ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (7ms)
+	LoadAllAssembliesAndSetupDomain (7ms)
+		LoadAssemblies (64ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (5ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (218ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (158ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (58ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Start importing Library/BuildPlayer.prefs using Guid(00000000000000005000000000000000) (DefaultImporter) -> (artifact id: '083d37eb6b0e82b8f5c1ec86344d848d') in 0.002076917 seconds
+Loading style catalogs (6)
+	StyleSheets/Extensions/base/common.uss
+	UIPackageResources/StyleSheets/Default/Variables/Public/common.uss
+	StyleSheets/Northstar/common.uss
+	StyleSheets/Extensions/fonts/inter.uss
+	StyleSheets/Extensions/base/dark.uss
+	UIPackageResources/StyleSheets/Default/Northstar/Palette/dark.uss
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=90ffd685d412045adbdc14fee7eba718): Total: 151.247 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=22 (actual=22, local cache=0, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=284 ms
+		Asset DB Callback time: managed=77 ms, native=75811 ms
+		Scripting: domain reloads=1, domain reload time=75069 ms, compile time=2 ms, other=1 ms
+		Project Asset Count: scripts=21, non-scripts=1
+		Asset File Changes: new=22, changed=22, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 75810.882ms
+	ApplyChangesToAssetFolders: 0.021ms
+	Scan: 20.372ms
+	OnSourceAssetsModified: 1.074ms
+	CategorizeAssetsWithTransientArtifact: 0.008ms
+	ProcessAssetsWithTransientArtifactChanges: 0.040ms
+	CategorizeAssets: 0.069ms
+	ImportOutOfDateAssets: 235.771ms (216.892ms without children)
+		ImportManagerImport: 16.574ms (2.007ms without children)
+			ImportInProcess: 14.543ms
+			UpdateCategorizedAssets: 0.024ms
+		CompileScripts: 2.131ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.073ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.002ms
+		InitializingProgressBar: 0.003ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.096ms
+	PostProcessAllAssets: 76.716ms
+	Hotreload: 0.386ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 1.009ms
+	PersistCurrentRevisions: 0.022ms
+	UnloadStreamsEnd: 0.000ms
+	GenerateScriptTypeHashes: 0.001ms
+	Untracked: 75101.032ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 0.030ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Unity
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7990)
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+[Licensing::Module] Timed-out after 60.00s, waiting for channel: "LicenseClient-fit0721"
+[Licensing::Module] The re-connection attempt was UN-successful.
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 16 unused Assets / (0.9 MB). Loaded Objects now: 618.
+Memory consumption went from 100.9 MB to 100.0 MB.
+Total: 4.298708 ms (FindLiveObjects: 0.020125 ms CreateObjectMapping: 0.002208 ms MarkObjects: 4.032167 ms  DeleteObjects: 0.243791 ms)
+
+[Licensing::Module] Error: The connection with the Unity Licensing Client has been lost. Attempting to reconnect.
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 8004)

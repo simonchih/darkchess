@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "GameActivity",
+					"jsonFile" : "directory-GameActivity-RelWithDebInfo-f368e6d506ea21fe2607.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "GameActivity",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FramePacing",
+					"jsonFile" : "directory-FramePacing-RelWithDebInfo-87e3a8450f19c90fd65e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "FramePacing",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Unity"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "game",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "swappywrapper",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "game::@d02bb112ea9f9c2ed29f",
+					"jsonFile" : "target-game-RelWithDebInfo-fe5f466c76a383919b20.json",
+					"name" : "game",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "swappywrapper::@7e25bd1f32ce224db4e9",
+					"jsonFile" : "target-swappywrapper-RelWithDebInfo-27ed1ff6be0a021aa0d9.json",
+					"name" : "swappywrapper",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity/.utmp/RelWithDebInfo/3cm242z2/arm64-v8a",
+		"source" : "/Users/fit0721/Documents/GitHub/darkchess_unity_v086/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
