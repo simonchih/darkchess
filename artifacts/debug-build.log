@@ -1,0 +1,109 @@
+167 INFO: PyInstaller: 6.16.0, contrib hooks: 2026.8
+167 INFO: Python: 3.9.5
+182 INFO: Platform: Windows-10-10.0.26200-SP0
+182 INFO: Python environment: C:\simon\darkchess\.venv
+194 INFO: Module search paths (PYTHONPATH):
+['C:\\simon\\darkchess',
+ 'C:\\Program Files\\Python39\\python39.zip',
+ 'C:\\Program Files\\Python39\\DLLs',
+ 'C:\\Program Files\\Python39\\lib',
+ 'C:\\Program Files\\Python39',
+ 'C:\\simon\\darkchess\\.venv',
+ 'C:\\simon\\darkchess\\.venv\\lib\\site-packages',
+ 'C:\\simon\\darkchess',
+ 'C:\\simon\\darkchess']
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+634 INFO: Appending 'datas' from .spec
+641 INFO: checking Analysis
+641 INFO: Building Analysis because Analysis-00.toc is non existent
+641 INFO: Looking for Python shared library...
+641 INFO: Using Python shared library: C:\Program Files\Python39\python39.dll
+641 INFO: Running Analysis Analysis-00.toc
+641 INFO: Target bytecode optimization level: 0
+641 INFO: Initializing module dependency graph...
+642 INFO: Initializing module graph hook caches...
+665 INFO: Analyzing modules for base_library.zip ...
+1393 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+2908 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3491 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3938 INFO: Caching module dependency graph...
+3998 INFO: Analyzing C:\simon\darkchess\dchess.py
+4035 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+4212 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+4600 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+4659 INFO: Processing standard module hook 'hook-pygame.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\pygame\\__pyinstaller'
+4841 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+4843 INFO: SetuptoolsInfo: initializing cached setuptools info...
+9179 INFO: Setuptools: 'typing_extensions' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.typing_extensions'!
+9184 INFO: Processing standard module hook 'hook-setuptools.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9211 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9215 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9215 INFO: Processing pre-find-module-path hook 'hook-distutils.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+9556 INFO: Processing standard module hook 'hook-distutils.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9572 INFO: Processing standard module hook 'hook-distutils.util.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9598 INFO: Processing standard module hook 'hook-_osx_support.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9616 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9635 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9819 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9820 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+9905 INFO: Processing pre-safe-import-module hook 'hook-jaraco.functools.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9906 INFO: Setuptools: 'jaraco.functools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.functools'!
+9913 INFO: Processing pre-safe-import-module hook 'hook-jaraco.text.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9914 INFO: Setuptools: 'jaraco.text' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.text'!
+9920 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+9928 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9930 INFO: Processing pre-safe-import-module hook 'hook-jaraco.context.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+9930 INFO: Setuptools: 'jaraco.context' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.context'!
+10083 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+10100 INFO: Processing standard module hook 'hook-importlib_metadata.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+10118 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+10290 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+10291 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+10619 INFO: Processing standard module hook 'hook-pkg_resources.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+10959 INFO: Processing pre-safe-import-module hook 'hook-platformdirs.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+10959 INFO: Setuptools: 'platformdirs' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.platformdirs'!
+11102 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+11103 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+11376 INFO: Analyzing hidden import 'chess'
+11376 INFO: Analyzing hidden import 'pygame.locals'
+11377 INFO: Processing module hooks (post-graph stage)...
+11753 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+12326 INFO: Performing binary vs. data reclassification (104 entries)
+12363 INFO: Looking for ctypes DLLs
+12374 INFO: Analyzing run-time hooks ...
+12377 INFO: Including run-time hook 'pyi_rth_pkgres.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+12381 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+12381 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+12382 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+12384 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+12397 INFO: Creating base_library.zip...
+12418 INFO: Looking for dynamic libraries
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+12894 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\simon\\darkchess\\.venv\\lib\\site-packages\\pygame']
+12894 INFO: Extra DLL search directories (PATH): []
+13711 INFO: Warnings written to C:\simon\darkchess\build\debug\warn-debug.txt
+13774 INFO: Graph cross-reference written to C:\simon\darkchess\build\debug\xref-debug.html
+13803 INFO: checking PYZ
+13803 INFO: Building PYZ because PYZ-00.toc is non existent
+13803 INFO: Building PYZ (ZlibArchive) C:\simon\darkchess\build\debug\PYZ-00.pyz
+14110 INFO: Building PYZ (ZlibArchive) C:\simon\darkchess\build\debug\PYZ-00.pyz completed successfully.
+14126 INFO: checking PKG
+14126 INFO: Building PKG because PKG-00.toc is non existent
+14126 INFO: Building PKG (CArchive) DarkChess-debug.pkg
+18351 INFO: Building PKG (CArchive) DarkChess-debug.pkg completed successfully.
+18356 INFO: Bootloader C:\simon\darkchess\.venv\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\run.exe
+18356 INFO: checking EXE
+18356 INFO: Building EXE because EXE-00.toc is non existent
+18356 INFO: Building EXE from EXE-00.toc
+18356 INFO: Copying bootloader EXE to C:\simon\darkchess\dist\DarkChess-debug.exe
+18457 INFO: Copying icon to EXE
+18500 INFO: Copying 0 resources to EXE
+18501 INFO: Embedding manifest in EXE
+18544 INFO: Appending PKG archive to EXE
+18617 INFO: Fixing EXE headers
+18933 INFO: Building EXE from EXE-00.toc completed successfully.
+18939 INFO: Build complete! The results are available in: C:\simon\darkchess\dist
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html

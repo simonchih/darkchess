@@ -1,0 +1,13 @@
+Compiling darkchess.pyx because it changed.
+[1/1] Cythonizing darkchess.pyx
+running build_ext
+building 'darkchess' extension
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\bin\Hostx64\x64\cl.exe" /c /nologo /O2 /W3 /GL /DNDEBUG /MD -IC:\simon\darkchess\.venv\include "-IC:\Program Files\Python39\include" "-IC:\Program Files\Python39\Include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\ATLMFC\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" /Tcbuild/cython\darkchess.c /Fobuild\temp.win-amd64-cpython-39\Release\build/cython\darkchess.obj
+darkchess.c
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\bin\Hostx64\x64\link.exe" /nologo /INCREMENTAL:NO /LTCG /DLL /MANIFEST:EMBED,ID=2 /MANIFESTUAC:NO /LIBPATH:C:\simon\darkchess\.venv\libs "/LIBPATH:C:\Program Files\Python39\libs" "/LIBPATH:C:\Program Files\Python39" /LIBPATH:C:\simon\darkchess\.venv\PCbuild\amd64 "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\ATLMFC\lib\x64" "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\lib\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64" /EXPORT:PyInit_darkchess build\temp.win-amd64-cpython-39\Release\build/cython\darkchess.obj /OUT:build\lib.win-amd64-cpython-39\darkchess.cp39-win_amd64.pyd /IMPLIB:build\temp.win-amd64-cpython-39\Release\build/cython\darkchess.cp39-win_amd64.lib
+   正在建立程式庫 build\temp.win-amd64-cpython-39\Release\build/cython\darkchess.cp39-win_amd64.lib 和物件 build\temp.win-amd64-cpython-39\Release\build/cython\darkchess.cp39-win_amd64.exp
+正在產生程式碼
+已完成程式碼產生
+copying build\lib.win-amd64-cpython-39\chess_data.cp39-win_amd64.pyd -> 
+copying build\lib.win-amd64-cpython-39\chess.cp39-win_amd64.pyd -> 
+copying build\lib.win-amd64-cpython-39\darkchess.cp39-win_amd64.pyd -> 

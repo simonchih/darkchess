@@ -1,0 +1,120 @@
+Building Taiwan Dark Chess...
+Requirement already satisfied: Cython==0.29.37 in c:\simon\darkchess\.venv\lib\site-packages (from -r requirements.txt (line 1)) (0.29.37)
+Requirement already satisfied: pygame==2.6.1 in c:\simon\darkchess\.venv\lib\site-packages (from -r requirements.txt (line 2)) (2.6.1)
+Requirement already satisfied: pyinstaller==6.16.0 in c:\simon\darkchess\.venv\lib\site-packages (from -r requirements.txt (line 3)) (6.16.0)
+Requirement already satisfied: Pillow==11.3.0 in c:\simon\darkchess\.venv\lib\site-packages (from -r requirements.txt (line 4)) (11.3.0)
+Requirement already satisfied: setuptools==69.5.1 in c:\simon\darkchess\.venv\lib\site-packages (from -r requirements.txt (line 5)) (69.5.1)
+Requirement already satisfied: pyinstaller-hooks-contrib>=2025.8 in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (2026.8)
+Requirement already satisfied: importlib-metadata>=4.6 in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (8.7.1)
+Requirement already satisfied: pefile!=2024.8.26,>=2022.5.30 in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (2023.2.7)
+Requirement already satisfied: packaging>=22.0 in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (26.3)
+Requirement already satisfied: pywin32-ctypes>=0.2.1 in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (0.2.3)
+Requirement already satisfied: altgraph in c:\simon\darkchess\.venv\lib\site-packages (from pyinstaller==6.16.0->-r requirements.txt (line 3)) (0.17.5)
+Requirement already satisfied: zipp>=3.20 in c:\simon\darkchess\.venv\lib\site-packages (from importlib-metadata>=4.6->pyinstaller==6.16.0->-r requirements.txt (line 3)) (3.23.1)
+WARNING: You are using pip version 21.1.1; however, version 26.0.1 is available.
+You should consider upgrading via the 'C:\simon\darkchess\.venv\Scripts\python.exe -m pip install --upgrade pip' command.
+running build_ext
+copying build\lib.win-amd64-cpython-39\chess_data.cp39-win_amd64.pyd -> 
+copying build\lib.win-amd64-cpython-39\chess.cp39-win_amd64.pyd -> 
+copying build\lib.win-amd64-cpython-39\darkchess.cp39-win_amd64.pyd -> 
+test_animation_does_not_mutate_piece (test_game.Presentation) ... ok
+test_flip_has_back_edge_and_face (test_game.Presentation) ... ok
+test_solid_back_and_complete_half_board_grid (test_game.Presentation) ... ok
+test_ai_and_rules_unchanged (test_game.Rules) ... ok
+test_all_adjacent_capture_pairs (test_game.Rules) ... ok
+test_board_edges_and_no_diagonal (test_game.Rules) ... ok
+test_cannon_screen_in_four_directions (test_game.Rules) ... ok
+test_friendly_and_hidden_blocks (test_game.Rules) ... ok
+test_optional_screenshot_write_failure_is_reported (test_smoke_snapshot.Snapshot) ... ok
+test_snapshot_uses_new_file_and_preserves_existing_preview (test_smoke_snapshot.Snapshot) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.705s
+
+OK
+166 INFO: PyInstaller: 6.16.0, contrib hooks: 2026.8
+168 INFO: Python: 3.9.5
+181 INFO: Platform: Windows-10-10.0.26200-SP0
+181 INFO: Python environment: C:\simon\darkchess\.venv
+187 INFO: Removing temporary files and cleaning cache in C:\Users\User\AppData\Local\pyinstaller
+197 INFO: Module search paths (PYTHONPATH):
+['C:\\simon\\darkchess',
+ 'C:\\Program Files\\Python39\\python39.zip',
+ 'C:\\Program Files\\Python39\\DLLs',
+ 'C:\\Program Files\\Python39\\lib',
+ 'C:\\Program Files\\Python39',
+ 'C:\\simon\\darkchess\\.venv',
+ 'C:\\simon\\darkchess\\.venv\\lib\\site-packages',
+ 'C:\\simon\\darkchess',
+ 'C:\\simon\\darkchess']
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+644 INFO: Appending 'datas' from .spec
+651 INFO: checking Analysis
+651 INFO: Building Analysis because Analysis-00.toc is non existent
+651 INFO: Looking for Python shared library...
+651 INFO: Using Python shared library: C:\Program Files\Python39\python39.dll
+651 INFO: Running Analysis Analysis-00.toc
+651 INFO: Target bytecode optimization level: 0
+651 INFO: Initializing module dependency graph...
+653 INFO: Initializing module graph hook caches...
+673 INFO: Analyzing modules for base_library.zip ...
+1458 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+2444 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+2997 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3267 INFO: Caching module dependency graph...
+3309 INFO: Analyzing C:\simon\darkchess\dchess.py
+3332 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3443 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3706 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3784 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+3795 INFO: Processing standard module hook 'hook-pygame.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\pygame\\__pyinstaller'
+3952 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+3954 INFO: SetuptoolsInfo: initializing cached setuptools info...
+4547 INFO: Processing standard module hook 'hook-pkg_resources.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+5574 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+5607 INFO: Analyzing hidden import 'chess'
+5607 INFO: Analyzing hidden import 'pygame.locals'
+5608 INFO: Processing module hooks (post-graph stage)...
+6054 INFO: Processing pre-safe-import-module hook 'hook-platformdirs.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+6055 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+6289 INFO: Performing binary vs. data reclassification (97 entries)
+6320 INFO: Looking for ctypes DLLs
+6325 INFO: Analyzing run-time hooks ...
+6327 INFO: Including run-time hook 'pyi_rth_pkgres.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+6330 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+6332 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+6333 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\simon\\darkchess\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+6341 INFO: Creating base_library.zip...
+6365 INFO: Looking for dynamic libraries
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+6677 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\simon\\darkchess\\.venv\\lib\\site-packages\\pygame']
+6677 INFO: Extra DLL search directories (PATH): []
+7501 INFO: Warnings written to C:\simon\darkchess\build\dchess\warn-dchess.txt
+7537 INFO: Graph cross-reference written to C:\simon\darkchess\build\dchess\xref-dchess.html
+7558 INFO: checking PYZ
+7558 INFO: Building PYZ because PYZ-00.toc is non existent
+7558 INFO: Building PYZ (ZlibArchive) C:\simon\darkchess\build\dchess\PYZ-00.pyz
+7747 INFO: Building PYZ (ZlibArchive) C:\simon\darkchess\build\dchess\PYZ-00.pyz completed successfully.
+7756 INFO: checking PKG
+7756 INFO: Building PKG because PKG-00.toc is non existent
+7756 INFO: Building PKG (CArchive) DarkChess.pkg
+11908 INFO: Building PKG (CArchive) DarkChess.pkg completed successfully.
+11913 INFO: Bootloader C:\simon\darkchess\.venv\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+11913 INFO: checking EXE
+11914 INFO: Building EXE because EXE-00.toc is non existent
+11914 INFO: Building EXE from EXE-00.toc
+11916 INFO: Copying bootloader EXE to C:\simon\darkchess\dist\DarkChess.exe
+11965 INFO: Copying icon to EXE
+12006 INFO: Copying 0 resources to EXE
+12006 INFO: Embedding manifest in EXE
+12048 INFO: Appending PKG archive to EXE
+12111 INFO: Fixing EXE headers
+12401 INFO: Building EXE from EXE-00.toc completed successfully.
+12406 INFO: Build complete! The results are available in: C:\simon\darkchess\dist
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Standalone EXE verified: player flip, AI replies, animation, resources and spawned worker.
+Verification report: C:\simon\darkchess\artifacts\exe-smoke\run-iyah7o01\report.json
+SUCCESS: C:\simon\darkchess\dist\DarkChess.exe

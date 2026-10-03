@@ -1,0 +1,17 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+step = 2
+step = 1
+step = 2
+step = 3
+step = 4
+step = 5
+step = 6
+mf= [[None, None, -544.49], [(2, 5), (2, 6), -604.0], [(2, 5), (2, 4), -672.5]]
+step = 7
+mf= [[(2, 6), (2, 5), 762.265], [None, None, 535.51]]
+step = 8
+mf= [[(2, 4), (3, 4), -75.0], [None, None, -67.49], [(2, 4), (2, 5), -79.83636363636364]]
+step = 9
+mf= [[None, None, 1620.605], [(3, 4), (2, 4), 1675.785]]
+step = 10

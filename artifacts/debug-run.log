@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "pyi_rth_pkgres.py", line 177, in <module>
+  File "pyi_rth_pkgres.py", line 44, in _pyi_rthook
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "pkg_resources\__init__.py", line 90, in <module>
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "setuptools\_vendor\jaraco\text\__init__.py", line 12, in <module>
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "setuptools\_vendor\jaraco\context.py", line 17, in <module>
+ModuleNotFoundError: No module named 'backports'
+[PYI-15876:ERROR] Failed to execute script 'pyi_rth_pkgres' due to unhandled exception!

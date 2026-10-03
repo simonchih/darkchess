@@ -18,44 +18,46 @@ from pygame.locals import *
 from sys import exit
 from multiprocessing import Process, Queue
 
+from presentation import FlipAnimator
+
 from chess cimport *
 from chess_data import *
 from chess_data cimport *
 
-cdef char* background_image_filename = 'Image/SHEET.gif'
-cdef char* image_new        = 'Image/shield-and-swords.gif'
+cdef char* background_image_filename = 'Image/SHEET.png'
+cdef char* image_new        = 'Image/shield-and-swords.png'
 
-cdef char* image_chess_back = 'Image/back.gif'
+cdef char* image_chess_back = 'Image/back.png'
 
-cdef char* image_chess_bk = 'Image/BK.GIF'
-cdef char* image_chess_ba = 'Image/BA.GIF'
-cdef char* image_chess_bb = 'Image/BB.GIF'
-cdef char* image_chess_br = 'Image/BR.GIF'
-cdef char* image_chess_bn = 'Image/BN.GIF'
-cdef char* image_chess_bc = 'Image/BC.GIF'
-cdef char* image_chess_bp = 'Image/BP.GIF'
-cdef char* image_chess_rk = 'Image/RK.GIF'
-cdef char* image_chess_ra = 'Image/RA.GIF'
-cdef char* image_chess_rb = 'Image/RB.GIF'
-cdef char* image_chess_rr = 'Image/RR.GIF'
-cdef char* image_chess_rn = 'Image/RN.GIF'
-cdef char* image_chess_rc = 'Image/RC.GIF'
-cdef char* image_chess_rp = 'Image/RP.GIF'
+cdef char* image_chess_bk = 'Image/BK.png'
+cdef char* image_chess_ba = 'Image/BA.png'
+cdef char* image_chess_bb = 'Image/BB.png'
+cdef char* image_chess_br = 'Image/BR.png'
+cdef char* image_chess_bn = 'Image/BN.png'
+cdef char* image_chess_bc = 'Image/BC.png'
+cdef char* image_chess_bp = 'Image/BP.png'
+cdef char* image_chess_rk = 'Image/RK.png'
+cdef char* image_chess_ra = 'Image/RA.png'
+cdef char* image_chess_rb = 'Image/RB.png'
+cdef char* image_chess_rr = 'Image/RR.png'
+cdef char* image_chess_rn = 'Image/RN.png'
+cdef char* image_chess_rc = 'Image/RC.png'
+cdef char* image_chess_rp = 'Image/RP.png'
 
-cdef char* image_chess_bks = 'Image/BKS.GIF'
-cdef char* image_chess_bas = 'Image/BAS.GIF'
-cdef char* image_chess_bbs = 'Image/BBS.GIF'
-cdef char* image_chess_brs = 'Image/BRS.GIF'
-cdef char* image_chess_bns = 'Image/BNS.GIF'
-cdef char* image_chess_bcs = 'Image/BCS.GIF'
-cdef char* image_chess_bps = 'Image/BPS.GIF'
-cdef char* image_chess_rks = 'Image/RKS.GIF'
-cdef char* image_chess_ras = 'Image/RAS.GIF'
-cdef char* image_chess_rbs = 'Image/RBS.GIF'
-cdef char* image_chess_rrs = 'Image/RRS.GIF'
-cdef char* image_chess_rns = 'Image/RNS.GIF'
-cdef char* image_chess_rcs = 'Image/RCS.GIF'
-cdef char* image_chess_rps = 'Image/RPS.GIF'
+cdef char* image_chess_bks = 'Image/BKS.png'
+cdef char* image_chess_bas = 'Image/BAS.png'
+cdef char* image_chess_bbs = 'Image/BBS.png'
+cdef char* image_chess_brs = 'Image/BRS.png'
+cdef char* image_chess_bns = 'Image/BNS.png'
+cdef char* image_chess_bcs = 'Image/BCS.png'
+cdef char* image_chess_bps = 'Image/BPS.png'
+cdef char* image_chess_rks = 'Image/RKS.png'
+cdef char* image_chess_ras = 'Image/RAS.png'
+cdef char* image_chess_rbs = 'Image/RBS.png'
+cdef char* image_chess_rrs = 'Image/RRS.png'
+cdef char* image_chess_rns = 'Image/RNS.png'
+cdef char* image_chess_rcs = 'Image/RCS.png'
+cdef char* image_chess_rps = 'Image/RPS.png'
 
 cdef char* s_newgame = 'Sound/NEWGAME.WAV'
 cdef char* s_capture = 'Sound/CAPTURE2.WAV'
@@ -2608,7 +2610,7 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
     
     pygame.display.set_icon(pygame.image.load("Image/darkchess_default.png"))
     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
-    pygame.display.set_caption("Taiwan Blind Chess")
+    pygame.display.set_caption("臺灣暗棋")
     
     chess_back = pygame.image.load(image_chess_back).convert_alpha()
 
@@ -2648,7 +2650,9 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
     background = pygame.image.load(background_image_filename).convert_alpha()
     new_game   = pygame.image.load(image_new).convert_alpha()
 
+    render_status = lambda target: display_font(target, AI_vs_AI)
     while True:
+        flip_animator = FlipAnimator()
         selected_c = None
         player_win = 0
         turn_id = 0
@@ -3560,7 +3564,9 @@ def main(int AI_vs_AI = 0, int AI_Limit_step = 200):
                 selected_c.move()
                 selected_c.draw(screen, chess_image_sel, chess_image)
             
+            flip_animator.present(screen, main_chess, chess_image_sel, chess_image, background, new_game, render_status)
             chess_ai()
+            flip_animator.present(screen, main_chess, chess_image_sel, chess_image, background, new_game, render_status)
             
             if 1 == AI_vs_AI and turn_id != 2:
                 player_color, com_color = com_color, player_color
