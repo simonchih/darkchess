@@ -2,11 +2,41 @@
 
 ## 執行
 
-直接執行 `dist/DarkChess.exe`。這是一個 Windows x64 單檔程式，已包含 Cython 模組、pygame、圖片、音效與中文字型；玩家不需要安裝 Python，也不需要另外複製 Image 或 Sound 資料夾。
+Windows 直接執行 `dist/DarkChess.exe`；macOS 執行 `dist/DarkChess`。兩者都是單檔程式，已包含 Cython 模組、pygame、圖片、音效與中文字型；玩家不需要安裝 Python，也不需要另外複製 Image 或 Sound 資料夾。
 
 點擊暗棋翻面；拖曳自己的明棋到合法位置移動或吃子。右上角「新局」沿用原有重新開局流程。
 
 ## 一鍵建置
+
+### macOS
+
+雙擊 `build_macos.command`。建置會建立獨立的 `.venv-macos`、安裝指定版本套件、重建美工、編譯 Cython、執行規則與動畫測試，再產生單一可執行檔 `dist/DarkChess`，並將它複製到只有該執行檔的獨立資料夾做遊戲與 spawn 子程序驗證。失敗時停止並保留錯誤訊息。
+
+建置電腦需先具備：
+
+- macOS 與 Python 3.9–3.12（包含 pip）。
+- Xcode 或 Apple Command Line Tools；未安裝時先執行 `xcode-select --install`。
+- 首次安裝套件需要網路。
+
+命令列／自動化可執行：
+
+```sh
+./build_macos.command --no-pause
+./dist/DarkChess
+```
+
+可使用 `PYTHON=python3.11 ./build_macos.command --no-pause` 指定首次建立虛擬環境的 Python。之後沿用 `.venv-macos`；若要更換 Python 或 CPU 架構，先移除該虛擬環境再建置。Apple Silicon 使用 arm64 Python，Intel Mac 使用 x86_64 Python；產物依建置環境的 Python 架構而定。請在要支援的最舊 macOS 上建置，再於目標系統驗證。
+
+採用 [PyInstaller 單檔模式](https://www.pyinstaller.org/en/stable/usage.html)，產物是 Unix 可執行檔，啟動會解壓內含資源到暫存目錄。從 Finder 開啟時可能會顯示 Terminal 視窗。交付時只需複製 `dist/DarkChess` 並保留可執行權限（必要時執行 `chmod +x DarkChess`）。目前使用本機 ad-hoc 簽章，未做 Apple Developer ID 簽署或公證。
+
+驗證報告寫入 `artifacts/macos-smoke/run-*/report.json`。也可單獨執行：
+
+```sh
+.venv-macos/bin/python tools/verify_exe.py
+./dist/DarkChess --self-test "$PWD/artifacts/macos-manual-smoke"
+```
+
+### Windows
 
 雙擊 `build_windows.bat`。建置會建立 `.venv`、安裝指定版本套件、重建美工、編譯 Cython、執行規則與動畫測試，再產生 `dist/DarkChess.exe`，並將 EXE 複製到獨立資料夾驗證執行。失敗時停止並保留錯誤訊息。
 
@@ -46,4 +76,4 @@ dist\DarkChess.exe --self-test C:\simon\darkchess\artifacts\exe-smoke
 
 自我測試使用 SDL 無視窗模式，執行實際遊戲迴圈，模擬玩家點擊翻棋、電腦回應、AI 對弈，並檢查 Windows spawn 子程序。輸出目錄會產生 `report.json` 和單次截圖 `game-<識別碼>.png`。建置驗證每次使用 `artifacts/exe-smoke/run-*` 獨立目錄，報告路徑會顯示在建置輸出。截圖僅供診斷，儲存失敗會記錄警告；遊戲與子程序驗證仍必須成功。此測試選項不影響一般開啟遊戲。
 
-Android 僅同步美工資源，本次建置及執行驗證的交付目標是 Windows x64。
+Android 僅同步美工資源；桌面單檔建置支援 Windows x64 與 macOS 原生架構。
