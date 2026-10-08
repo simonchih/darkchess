@@ -1,0 +1,12 @@
+# ninja log v5
+1	190	1791467364811349802	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f6dc006a49431b86
+191	331	1791467364938550530	/Users/fit0721/Documents/GitHub/darkchess/UnityDarkChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/w3j2l6p3/obj/arm64-v8a/libswappywrapper.so	84c6e4eefe16751e
+1	582	1791467365199522231	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9aed16433f4174e5
+0	585	1791467365203779793	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	420aff6cf580b305
+0	602	1791467365219877477	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	99023f591eadc01e
+1	607	1791467365225640660	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	8501cb83d05a43ce
+0	627	1791467365245925446	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3c06cd9a05432fa1
+1	658	1791467365276476816	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9e032e84c91dfa77
+1	753	1791467365371654639	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7bd48d02b97c8778
+0	815	1791467365433318560	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e55c348d80a51c95
+815	910	1791467365528379546	/Users/fit0721/Documents/GitHub/darkchess/UnityDarkChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/w3j2l6p3/obj/arm64-v8a/libgame.so	d69ee28be34050d

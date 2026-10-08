@@ -16,7 +16,7 @@ namespace DarkChessUnity
 
     public static class P
     {
-        public static dynamic L(params object[] values) { var list = new PList(); list.Items.AddRange(values); return list; }
+        public static object L(params object[] values) { var list = new PList(); list.Items.AddRange(values); return list; }
         public static int Int(object value) { if (value == null) return 0; return (int)Number(value); }
         public static double Number(object value) { if (value == null) throw new InvalidOperationException("None used as a number"); return Convert.ToDouble(value); }
         public static bool Truth(object value)
@@ -43,7 +43,7 @@ namespace DarkChessUnity
         public static bool Contains(object list, object value) { foreach (object item in Iter(list)) if (Equal(item, value)) return true; return false; }
         public static int Len(object list) { return ((PList)list).Items.Count; }
         public static IEnumerable Iter(object list) { return (IEnumerable)list; }
-        public static dynamic Get(object list, object index)
+        public static object Get(object list, object index)
         {
             var items = ((PList)list).Items;
             int i = Int(index); if (i < 0) i += items.Count;
@@ -56,10 +56,10 @@ namespace DarkChessUnity
             items[i] = value;
         }
         public static void Delete(object list, object index) { ((PList)list).Items.RemoveAt(Int(index)); }
-        public static dynamic CopyList(object value) { var list = new PList(); list.extend(value); return list; }
+        public static object CopyList(object value) { var list = new PList(); list.extend(value); return list; }
         public static void Replace(object list, object value) { ((PList)list).Items.Clear(); ((PList)list).extend(value); }
-        public static dynamic DeepCopy(object value) { return Copy(value, new Dictionary<object, object>()); }
-        static dynamic Copy(object value, Dictionary<object, object> memo)
+        public static object DeepCopy(object value) { return Copy(value, new Dictionary<object, object>()); }
+        static object Copy(object value, Dictionary<object, object> memo)
         {
             if (value == null || value is string || value.GetType().IsValueType) return value;
             if (memo.TryGetValue(value, out object previous)) return previous;
@@ -78,14 +78,14 @@ namespace DarkChessUnity
             throw new ArgumentException("Unsupported copy: " + value.GetType());
         }
         static bool Integral(object a) { return a is int || a is long || a is bool; }
-        public static dynamic Add(object a, object b)
+        public static object Add(object a, object b)
         {
             if (a is PList && b is PList) { var result = (PList)CopyList(a); result.extend(b); return result; }
             if (Integral(a) && Integral(b)) return Int(a) + Int(b);
             return Number(a) + Number(b);
         }
-        public static dynamic Sub(object a, object b) { if (Integral(a) && Integral(b)) return Int(a) - Int(b); return Number(a) - Number(b); }
-        public static dynamic Mul(object a, object b)
+        public static object Sub(object a, object b) { if (Integral(a) && Integral(b)) return Int(a) - Int(b); return Number(a) - Number(b); }
+        public static object Mul(object a, object b)
         {
             if (a is PList || b is PList)
             {
@@ -97,13 +97,13 @@ namespace DarkChessUnity
             if (Integral(a) && Integral(b)) return Int(a) * Int(b);
             return Number(a) * Number(b);
         }
-        public static dynamic Div(object a, object b) { return Number(a) / Number(b); }
-        public static dynamic Mod(object a, object b) { int x = Int(a), y = Int(b); return (x % y + y) % y; }
-        public static dynamic Neg(object a) { if (Integral(a)) return -Int(a); return -Number(a); }
-        public static dynamic Abs(object a) { if (Integral(a)) return Math.Abs(Int(a)); return Math.Abs(Number(a)); }
-        public static dynamic Range(object stop) { return Range(0, stop, 1); }
-        public static dynamic Range(object start, object stop) { return Range(start, stop, 1); }
-        public static dynamic Range(object start, object stop, object step)
+        public static object Div(object a, object b) { return Number(a) / Number(b); }
+        public static object Mod(object a, object b) { int x = Int(a), y = Int(b); return (x % y + y) % y; }
+        public static object Neg(object a) { if (Integral(a)) return -Int(a); return -Number(a); }
+        public static object Abs(object a) { if (Integral(a)) return Math.Abs(Int(a)); return Math.Abs(Number(a)); }
+        public static object Range(object stop) { return Range(0, stop, 1); }
+        public static object Range(object start, object stop) { return Range(start, stop, 1); }
+        public static object Range(object start, object stop, object step)
         {
             int a = Int(start), b = Int(stop), s = Int(step);
             if (s == 0) throw new ArgumentException("Zero range step");
@@ -111,13 +111,13 @@ namespace DarkChessUnity
             for (int i = a; s > 0 ? i < b : i > b; i += s) result.append(i);
             return result;
         }
-        public static dynamic Enumerate(object values)
+        public static object Enumerate(object values)
         {
             int i = 0; var result = new PList();
             foreach (object v in Iter(values)) result.append(L(i++, v));
             return result;
         }
-        public static dynamic Extreme(object values, bool maximum, Func<dynamic, dynamic> key)
+        public static object Extreme(object values, bool maximum, Func<object, object> key)
         {
             object result = null; double score = 0; bool first = true;
             foreach (object v in Iter(values))
@@ -134,7 +134,7 @@ namespace DarkChessUnity
     public class Piece
     {
         public int index, color, value, row, col, x, y, back = 1, live = 1;
-        public dynamic possible_move = P.L();
+        public object possible_move = P.L();
         public object MemberClone() { return MemberwiseClone(); }
     }
 

@@ -52,7 +52,11 @@ class Emitter:
             if isinstance(n.value,bool): return str(n.value).lower()
             return json.dumps(n.value,ensure_ascii=False)
         if isinstance(n, (ast.List,ast.Tuple)): return 'P.L('+', '.join(self.expr(x) for x in n.elts)+')'
-        if isinstance(n, ast.Attribute): return self.expr(n.value)+'.'+self.name(n.attr)
+        if isinstance(n, ast.Attribute):
+            # Explicit receiver types avoid runtime binder call sites on IL2CPP/AOT.
+            receiver = {'append':'PList', 'extend':'PList', 'index':'PList',
+                        'put':'ResultQueue', 'play':'DisplaySound'}.get(n.attr, 'Piece')
+            return '(('+receiver+')'+self.expr(n.value)+').'+self.name(n.attr)
         if isinstance(n, ast.Subscript):
             if isinstance(n.slice,ast.Slice): assert n.slice.lower is None and n.slice.upper is None; return 'P.CopyList('+self.expr(n.value)+')'
             return 'P.Get('+self.expr(n.value)+', '+self.expr(n.slice)+')'
@@ -82,10 +86,18 @@ class Emitter:
                 parts.append(term); left=right
             return '('+' && '.join(parts)+')'
         if isinstance(n, ast.Lambda):
-            return 'new Func<dynamic, dynamic>(('+', '.join(self.name(a.arg) for a in n.args.args)+') => '+self.expr(n.body)+')'
+            return 'new Func<object, object>(('+', '.join(self.name(a.arg) for a in n.args.args)+') => '+self.expr(n.body)+')'
         if isinstance(n, ast.Call):
             fname=ast.unparse(n.func)
             args=[self.expr(x) for x in n.args]
+            optional_ints = set()
+            if fname in functions:
+                fn = functions[fname]
+                offset = len(fn.args.args) - len(fn.args.defaults)
+                optional_ints = {fn.args.args[offset+i].arg for i, d in enumerate(fn.args.defaults)
+                                if isinstance(d, ast.Constant) and d.value is not None}
+                for i, arg in enumerate(fn.args.args[:len(args)]):
+                    if arg.arg in optional_ints: args[i] = 'P.Int('+args[i]+')'
             if fname in ('min','max'):
                 key=next((self.expr(k.value) for k in n.keywords if k.arg=='key'),None)
                 return 'P.Extreme('+args[0]+', '+('true' if fname=='max' else 'false')+', '+(key or 'null')+')'
@@ -95,7 +107,7 @@ class Emitter:
                     'index_to_color':'IndexToColor','index_to_chess_value':'IndexToValue',
                     'pygame.mixer.Sound':'NewSound','parallel_search':'ParallelSearch'}
             call=mapped.get(fname,self.expr(n.func))
-            args += [self.name(k.arg)+': '+self.expr(k.value) for k in n.keywords]
+            args += [self.name(k.arg)+': '+('P.Int('+self.expr(k.value)+')' if k.arg in optional_ints else self.expr(k.value)) for k in n.keywords]
             return call+'('+', '.join(args)+')'
         raise ValueError(ast.dump(n))
     def cast(self, name, expression):
@@ -103,12 +115,15 @@ class Emitter:
         return ('P.Int('+expression+')' if typ=='int' else 'P.Number('+expression+')' if typ=='double' else expression)
     def assign(self,n,value):
         if isinstance(n,ast.Name): self.w(self.name(n.id)+' = '+self.cast(n.id,value)+';')
-        elif isinstance(n,ast.Attribute): self.w(self.expr(n)+' = '+value+';')
+        elif isinstance(n,ast.Attribute):
+            # Piece scalar fields use source C integer conversion; lists stay boxed.
+            if n.attr != 'possible_move': value = 'P.Int('+value+')'
+            self.w(self.expr(n)+' = '+value+';')
         elif isinstance(n,ast.Subscript):
             if isinstance(n.slice,ast.Slice): self.w('P.Replace('+self.expr(n.value)+', '+value+');')
             else:self.w('P.Set('+self.expr(n.value)+', '+self.expr(n.slice)+', '+value+');')
         elif isinstance(n,(ast.Tuple,ast.List)):
-            temp=self.temp(); self.w('dynamic '+temp+' = '+value+';')
+            temp=self.temp(); self.w('object '+temp+' = '+value+';')
             for i,el in enumerate(n.elts): self.assign(el,'P.Get('+temp+', '+str(i)+')')
         else: raise ValueError(ast.dump(n))
     def block(self,nodes):
@@ -127,7 +142,7 @@ class Emitter:
             if n.orelse:self.w('else');self.block(n.orelse)
         elif isinstance(n,ast.For):
             if ast.unparse(n.iter).startswith('pygame.event.get'): return
-            t=self.temp(); self.w('foreach (dynamic '+t+' in P.Iter('+self.expr(n.iter)+'))');self.w('{');self.indent+=1
+            t=self.temp(); self.w('foreach (object '+t+' in P.Iter('+self.expr(n.iter)+'))');self.w('{');self.indent+=1
             self.assign(n.target,t)
             for child in n.body:self.stmt(child)
             self.indent-=1;self.w('}')
@@ -163,10 +178,10 @@ class Emitter:
         self.current=n.name
         defaults=[None]*(len(n.args.args)-len(n.args.defaults))+n.args.defaults
         signature=[]
-        for arg,default in zip(n.args.args,defaults):signature.append(('int ' if default is not None and not (isinstance(default,ast.Constant) and default.value is None) else 'dynamic ')+self.name(arg.arg)+(' = '+(self.expr(default) if isinstance(default,ast.Constant) else ast.unparse(default)) if default else ''))
+        for arg,default in zip(n.args.args,defaults):signature.append(('int ' if default is not None and not (isinstance(default,ast.Constant) and default.value is None) else 'object ')+self.name(arg.arg)+(' = '+(self.expr(default) if isinstance(default,ast.Constant) else ast.unparse(default)) if default else ''))
         self.w('// Original darkchess.pyx: '+str(source[:source.index(original)].count('\n')+1))
-        self.w('public dynamic '+self.name(n.name)+'('+', '.join(signature)+')');self.w('{');self.indent+=1
-        for name in sorted(stores-params-globals_): self.w('dynamic '+self.name(name)+' = null;')
+        self.w('public object '+self.name(n.name)+'('+', '.join(signature)+')');self.w('{');self.indent+=1
+        for name in sorted(stores-params-globals_): self.w('object '+self.name(name)+' = null;')
         for name in params:
             if name in self.typed:self.w(self.name(name)+' = '+self.cast(name,self.name(name))+';')
         for child in n.body:self.stmt(child)

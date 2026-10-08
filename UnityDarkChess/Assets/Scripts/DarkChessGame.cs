@@ -63,7 +63,7 @@ namespace DarkChessUnity
         void Snapshot()
         {
             visible.Clear();
-            foreach(dynamic row in P.Iter(game.main_chess))foreach(Piece piece in P.Iter(row))
+            foreach(object row in P.Iter(game.main_chess))foreach(Piece piece in P.Iter(row))
                 if(piece.live==1)visible.Add((Piece)P.DeepCopy(piece));
         }
         void BeginComputer()
@@ -103,7 +103,7 @@ namespace DarkChessUnity
                     game.FinishComputerMove();moveStart=-1;Snapshot();flips.Clear();animation=false;
                     if(aiVsAi&&P.Int(game.player_win)==0)
                     {
-                        dynamic temp=game.player_color;game.player_color=game.com_color;game.com_color=temp;
+                        object temp=game.player_color;game.player_color=game.com_color;game.com_color=temp;
                         pendingComputer=true;
                     }
                 }
@@ -235,7 +235,7 @@ namespace DarkChessUnity
             {
                 if(p.color!=P.Int(game.player_color)||p.back==1)continue;
                 Piece actual=game.At(p.row,p.col);
-                foreach(dynamic dest in P.Iter(actual.possible_move))
+                foreach(object dest in P.Iter(actual.possible_move))
                     if(game.HumanMove(p.row,p.col,P.Int(P.Get(dest,0)),P.Int(P.Get(dest,1))))
                     {
                         Snapshot();pendingComputer=P.Int(game.player_win)==0;smokeMoves++;smokeLegalMoves++;

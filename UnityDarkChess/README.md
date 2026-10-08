@@ -1,6 +1,6 @@
 # 臺灣暗棋 — Unity 6000.3.2f1
 
-完整原生 C# Unity 桌面專案。執行與建置不需要 Python、Cython、pygame 或外部 AI 引擎。
+完整原生 C# Unity 專案，支援桌面與 Android ARM64。執行與建置不需要 Python、Cython、pygame 或外部 AI 引擎。
 
 ## 開啟與遊玩
 
@@ -22,7 +22,21 @@ macOS 已建好的獨立程式：`Builds/macOS/DarkChess.app`，可直接開啟�
   -executeMethod DarkChessBuild.Mac -logFile build.log
 ```
 
-使用 Unity 的 Mono 與完整 .NET Framework 相容設定。IL2CPP、WebGL、行動平台不在本次驗證範圍。
+桌面使用 Unity 的 Mono 與完整 .NET Framework 相容設定。
+
+### Android ARM64 APK
+
+先在 Unity Hub 為 **6000.3.2f1** 安裝 Android Build Support（含 SDK、NDK、OpenJDK）。選單 **Dark Chess → Build Android ARM64 APK** 會設定 IL2CPP、ARM64 與 Release C++ 編譯，產生 `Builds/Android/DarkChess-arm64.apk`。
+
+在此資料夾執行命令列建置前，先關閉此專案的 Unity Editor：
+
+```sh
+/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/MacOS/Unity \
+  -batchmode -nographics -quit -projectPath "$PWD" -buildTarget Android \
+  -executeMethod DarkChessBuild.AndroidArm64 -logFile android-build.log
+```
+
+AI 引擎使用 `object` 容器及明確型別轉換，不依賴 C# `dynamic` 的執行期繫結，避免 IL2CPP 產生大量 CallSite 程式碼而在 ARM64 C++ 編譯時耗用大量時間與記憶體。重新產生引擎時，`tools/unity/port_core.py` 也會保留此方式。APK 已驗證 ARM64 建置與簽章；手機上的遊玩仍需實機驗證。WebGL 尚未驗證。
 
 ## AI 與规则保留方式
 

@@ -45,8 +45,23 @@ public static class DarkChessBuild
         Build("Builds/Windows/DarkChess.exe", BuildTarget.StandaloneWindows64);
     }
 
+    [MenuItem("Dark Chess/Build Android ARM64 APK")]
+    public static void AndroidArm64()
+    {
+        PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
+        PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+        PlayerSettings.SetIl2CppCompilerConfiguration(NamedBuildTarget.Android, Il2CppCompilerConfiguration.Release);
+        EditorUserBuildSettings.buildAppBundle = false;
+        EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
+        if (!EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android))
+            throw new Exception("Cannot switch to Android. Install Android Build Support in Unity Hub.");
+        AssetDatabase.SaveAssets();
+        Build("Builds/Android/DarkChess-arm64.apk", BuildTarget.Android);
+    }
+
     static void Build(string path, BuildTarget target)
     {
+        Directory.CreateDirectory(Path.GetDirectoryName(path));
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
         {
             scenes = new[] { "Assets/Scenes/DarkChess.unity" },
