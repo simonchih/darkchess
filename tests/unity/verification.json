@@ -1,0 +1,80 @@
+{
+  "unity_version": "6000.3.2f1",
+  "tested_platform": "macOS Apple Silicon",
+  "runtime": "native Unity C#; no Python or Cython",
+  "original_source_preserved": true,
+  "core_parity": {
+    "success": true,
+    "cases": 19138,
+    "failed": 0,
+    "methods": {
+      "can_be_ate": 49,
+      "can_be_ate_equal": 49,
+      "collect_possible_move": 1243,
+      "near": 32,
+      "eat_by_bomb": 398,
+      "if_cannon_can_eat": 398,
+      "eat_by_player_bomb": 398,
+      "stand_will_dead_pity": 398,
+      "will_dead_pity": 2272,
+      "will_dead_pity_even_equal": 2272,
+      "escape_way_to_run": 2272,
+      "caca": 2272,
+      "near2_have_same_value": 2272,
+      "first_move_score": 2272,
+      "move_score": 2272,
+      "one_turn": 119,
+      "ini_random_chess": 5,
+      "select_back_chess": 5,
+      "com_think": 40,
+      "save_step_and_break_long_capture": 100
+    }
+  },
+  "long_capture_history": {
+    "success": true,
+    "cases": 100,
+    "failed": 0,
+    "methods": {
+      "save_step_and_break_long_capture": 100
+    }
+  },
+  "total_source_parity_cases": 19138,
+  "game_flow": {
+    "success": true,
+    "assertions": 53
+  },
+  "built_player": {
+    "success": true,
+    "unityVersion": "6000.3.2f1",
+    "error": "",
+    "playerMoves": 16,
+    "playerFlips": 13,
+    "legalPlayerMoves": 3,
+    "capturedPieces": 8,
+    "aiWorkers": 122,
+    "steps": 32,
+    "pythonFree": true
+  },
+  "original_unittests": {
+    "tests": 10,
+    "success": true
+  },
+  "core_source_sha256": {
+    "GameState.cs": "6c849d44366563242bc31089ff9ad462eca482afc9d0cf1f4d22b4a33399b987",
+    "OriginalEngine.Generated.cs": "69853f69f8bb79ecf46906ae5d308bc15d54ac240b2ec6cfd30b43eb31617c37",
+    "PortSemantics.cs": "140f44d3eca2592902e86b1da55deadc438313e51f5c3b2009292623415727e7",
+    "OriginalEngine.cs": "feba30067ecb3037d67bbb13edb6d2fb3838dc6339f99a2f2837dea12c8cbb78",
+    "SourceFloat.cs": "1fb0c6e0a431d5762adb8d73e62bbc8b4f9557327e56d318c80267e7bc3f577d"
+  },
+  "original_source_sha256": {
+    "darkchess.pyx": "b6fb79827f330e061fc74a0a5a2430cd143853d2c7536baede4857644922ebf4",
+    "chess.pyx": "5ad2f0767285718b3ee5a0fbb0f442017747e68cc9522b709d83ddcf057c541c",
+    "chess_data.pyx": "e5dbc616126dc6293936c2b818418afb3da69ee1151956adbab9064e2999918b"
+  },
+  "verification_date": "2026-10-08",
+  "ui_source_sha256": "98dc46c46a0467b4ee58b983587d7714479ec90cb9bb8c5a4b7c6e1680397284",
+  "mouse_input_verification": {
+    "status": "awaiting_manual_confirmation",
+    "automation_limitation": "Computer-use click coordinates differ from the mouse position reported by Unity."
+  }
+}

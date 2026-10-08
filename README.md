@@ -1,3 +1,11 @@
+# Unity 6000.3.2f1 原生 C# 版本
+
+Unity 專案位於 [`UnityDarkChess`](UnityDarkChess/README.md)，使用 Unity Hub 加入該資料夾並開啟 `Assets/Scenes/DarkChess.unity` 即可按 Play。此版本的規則與 AI 已移植成 C#，遊戲執行不依賴 Python 或 Cython。macOS 可直接開啟 `UnityDarkChess/Builds/macOS/DarkChess.app`。
+
+原始 Cython 專案保留作為 AI／規則對照基準。Unity 使用獨立 C# 搜尋實例平行計算候選，保留原版完成佇列的同分選步行為；詳細移植與驗證說明見 Unity README。
+
+以下為原始 Cython 版本的說明。
+
 # 臺灣暗棋
 
 ## 執行
