@@ -6,3 +6,4 @@ dist/
 __pycache__/
 artifacts/baseline_*
 .DS_Store
+/artifacts

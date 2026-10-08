@@ -6,7 +6,8 @@ from multiprocessing import set_start_method, freeze_support
 if __name__ == "__main__":
     freeze_support()
     os.chdir(getattr(sys, '_MEIPASS', str(Path(__file__).resolve().parent)))
-    set_start_method('spawn')
+    # Startup hooks may have already initialized the default context.
+    set_start_method('spawn', force=True)
     if len(sys.argv) == 3 and sys.argv[1] == '--self-test':
         from smoke_test import run
         run(sys.argv[2])

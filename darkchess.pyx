@@ -2541,7 +2541,7 @@ cdef void display_font(screen, int AI_vs_AI = 0):
         screen.blit(write(winer, (0, 0, 255)), (text_x, text_y))
     elif -1 == player_win:
         winer = u"電腦勝..."
-        screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
+        screen.blit(write(winer, (0, 100, 0)), (text_x, text_y))
     elif -2 == player_win:
         winer = u"強制結束..."
         screen.blit(write(winer, (0, 255, 0)), (text_x, text_y))
